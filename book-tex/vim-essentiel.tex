@@ -1,0 +1,90 @@
+\input{headers}
+
+\begin{document}
+
+% Front matter
+\frontmatter
+
+% r.1 blank page
+\blankpage
+
+% v.2 epigraphs
+\newpage\thispagestyle{empty}
+\openepigraph{%
+The public is more familiar with bad design than good design.
+It is, in effect, conditioned to prefer bad design, 
+because that is what it lives with. 
+The new becomes threatening, the old reassuring.
+}{Paul Rand%, {\itshape Design, Form, and Chaos}
+}
+\vfill
+\openepigraph{%
+A designer knows that he has achieved perfection 
+not when there is nothing left to add, 
+but when there is nothing left to take away.
+}{Antoine de Saint-Exup\'{e}ry}
+\vfill
+\openepigraph{%
+\ldots the designer of a new system must not only be the implementor and the first 
+large-scale user; the designer should also write the first user manual\ldots 
+If I had not participated fully in all these activities, 
+literally hundreds of improvements would never have been made, 
+because I would never have thought of them or perceived 
+why they were important.
+}{Donald E. Knuth}
+
+
+% r.3 full title page
+\maketitle
+
+
+% v.4 copyright page
+\newpage
+\begin{fullwidth}
+~\vfill
+\thispagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+Copyright \copyright\ \the\year\ \thanklessauthor
+
+\par\smallcaps{Published by \thanklesspublisher}
+
+\par\smallcaps{tufte-latex.googlecode.com}
+
+\par Licensed under the Apache License, Version 2.0 (the ``License''); you may not
+use this file except in compliance with the License. You may obtain a copy
+of the License at \url{http://www.apache.org/licenses/LICENSE-2.0}. Unless
+required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an \smallcaps{``AS IS'' BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND}, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.\index{license}
+
+\par\textit{First printing, \monthyear}
+\end{fullwidth}
+
+% r.5 contents
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+% r.7 dedication
+\cleardoublepage
+~\vfill
+\begin{doublespace}
+\noindent\fontsize{18}{22}\selectfont\itshape
+\nohyphenation
+Dedicated to those who appreciate \LaTeX{} 
+and the work of \mbox{Edward R.~Tufte} 
+and \mbox{Donald E.~Knuth}.
+\end{doublespace}
+\vfill
+\vfill
+
+
+
+\printindex
+
+\end{document}

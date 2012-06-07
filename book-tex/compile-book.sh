@@ -1,7 +1,6 @@
-pdflatex sample-book
-bibtex sample-book
-texindy --language english sample-book.idx
+pdflatex vim-essentiel
+texindy --language french vim-essentiel.idx
 # or makeindex sample-book.idx
-pdflatex sample-book
-pdflatex sample-book
-pdflatex sample-book
+pdflatex vim-essentiel
+pdflatex vim-essentiel
+pdflatex vim-essentiel
