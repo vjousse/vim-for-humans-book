@@ -1,0 +1,11 @@
+*.aux
+*.bbl
+*.blg
+*.def
+*.ind
+*.idx
+*.lof
+*.log
+*.lot
+*.out
+*.toc
