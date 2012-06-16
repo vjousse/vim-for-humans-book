@@ -25,7 +25,7 @@ Copyright \copyright\ \the\year\ \thanklessauthor
 
 \par\smallcaps{Style \LaTeX{} \url{http://tufte-latex.googlecode.com}}
 
-\par Si vous n'avez pas payé cette copie, bah tant pis pour moi ;)
+\par Si vous n'avez pas payé cette copie, bah tant pis pour moi ;) Mais sachez que vous auriez dû !
 
 \end{fullwidth}
 
@@ -42,14 +42,33 @@ Copyright \copyright\ \the\year\ \thanklessauthor
 \begin{doublespace}
 \noindent\fontsize{18}{22}\selectfont\itshape
 \nohyphenation
-Merci à ma femme et mes enfants qui ont permis à ce guide de voir le jour.
+Merci à ma femme et mes enfants qui ont permis à ce livre de voir le jour.
 \end{doublespace}
 \vfill
 \vfill
 
 % r.9 introduction
 \cleardoublepage
+
 \input{introduction}
+
+\chapter{Rendre ViM utilisable}
+
+Ça peut paraître étonnant comme approche, mais c'est pour moi la première chose à faire : rendre \emph{Vim} utilisable par un humain lambda. Si tout le monde semble s'accorder sur le fait que \emph{Vim} est un éditeur très puissant, tout le monde pourra aussi s'accorder sur le fait que de base, il est juste imbitable. Soyons honnête, sans une configuration par défaut minimale, utiliser \emph{Vim} est contre-productif. C'est à mon avis le premier obstacle à surmonter avant toute autre chose. C'est ce que les autres éditeurs ``Mainstream'' comme Textmate, Sublimetext, Notepad++ ou Netbeans proposent, c'est à dire en environnement à minima utilisable tel quel, même si on en n'exploite pas la totale puissance au début.
+
+Voici donc ce qui manque à un \emph{Vim} nu (et ce qui est pour moi une cause d'abandon pour beaucoup d'entre vous) :
+
+\begin{marginfigure}%
+  \includegraphics[width=\linewidth]{solarized-yinyang.png}
+  \caption{Le thème Solarized en sombre et en clair.}
+  \label{fig:solarized}
+\end{marginfigure}
+
+\begin{description}
+    \item[Explorateur de fichiers] Nerdtree?
+    \item[Coloration syntaxique] On va utiliser par défaut le thème Solarized (\url{http://ethanschoonover.com/solarized}). Si votre but est d'être efficace (et pas de préférer le rose au bleu), c'est le meilleur thème disponible actuellement (tout éditeur de texte confondu). La figure \ref{fig:solarized} vous donne une idée des deux look disponibles (clair ou sombre). Pour ma part j'utilise le thème sombre.
+    \item[Explication des 2 principaux modes] Insertion / Normal
+\end{description}
 
 \mainmatter
 
