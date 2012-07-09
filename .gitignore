@@ -9,3 +9,5 @@
 *.lot
 *.out
 *.toc
+*.txt
+*.vim
