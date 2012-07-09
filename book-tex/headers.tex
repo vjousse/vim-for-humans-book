@@ -51,6 +51,13 @@
 % Prints a trailing space in a smart way.
 \usepackage{xspace}
 
+% Format code using pygment
+\usepackage{minted}
+\usemintedstyle{solarized}
+%\definecolor{bg}{RGB}{0,43,54}
+%Light bg
+\definecolor{bg}{RGB}{253,246,227}
+
 %%
 % Some shortcuts for Tufte's book titles.  The lowercase commands will
 % produce the initials of the book title in italics.  The all-caps commands
@@ -73,6 +80,7 @@
   December\fi\space\number\year
 }
 
+\newcommand{\vim}{\emph{Vim}\xspace}
 
 % Prints an epigraph and speaker in sans serif, all-caps type.
 \newcommand{\openepigraph}[2]{%
@@ -142,6 +150,12 @@
 \newcommand{\docmsg}[2]{\bigskip\begin{fullwidth}\noindent\ttfamily#1\end{fullwidth}\medskip\par\noindent#2}
 \newcommand{\docfilehook}[2]{\texttt{#1}\index{file hooks!#2}\index{#1@\texttt{#1}}}
 \newcommand{\doccounter}[1]{\texttt{#1}\index{#1 counter@\texttt{#1} counter}}
+
+% Keys shortcuts
+\newcommand{\tesc}{\hlred{Esc} (\hlred{Échap})\xspace}
+\newcommand{\ttesc}{la touche \tesc}
+\newcommand{\ti}{\hlred{i}\xspace}
+\newcommand{\tti}{la touche \ti}
 
 % Generates the index
 \usepackage{makeidx}
