@@ -61,11 +61,27 @@ Si vous vous demandez pourquoi ces modes, pourquoi on semble se compliquer la vi
 
 \section{Les modes : d'où \vim tire sa puissance}
 
+Je pense que nous serons tous à peu prêt d'accord sur le fait que si vous souhaitez apprendre à utiliser \vim, c'est pour gagner en efficacité pour la saisie/manipulation de texte/code. Pour gagner en efficacité lorsque l'on tape du code il n'y a pas 36 solutions, il n'y en a qu'une en fait : il faut bouger le moins possible les mains (voire pas du tout), et ne bouger que les doigts.
+
+Pour ce faire bien sur, vous oubliez tout d'abord l'utilisation de la souris. En plus d'être lent, le mouvement clavier -> souris puis souris -> clavier est très mauvais pour vos articulations et les troubles musculosquelettiques en général\sidenote{Vous êtes peut-être jeune et n'avez pas encore eu ce type de soucis. Mais croyez moi, ça vient beaucoup plus vite qu'on ne le croit. Si vous passez votre journée sur un ordinateur, ne négligez pas ces facteurs, vous le regretterez un jour.}. D'après \emph{Wikipedia}, c'est le type de maladie professionnelle la plus courante à l'heure actuelle\sidenote{\url{https://fr.wikipedia.org/wiki/Troubles_musculosquelettiques}}.
+
+Vous oubliez aussi le mouvement de votre main droite pour vous déplacer vers les touches directionnelles afin de bouger votre curseur. C'est une perte de temps et c'est totalement inutile avec \vim.
+
+Qu'est-ce que vous avez le droit de faire dans le coup ? Pas grand chose, si ce n'est garder vos mains sur la position de repos comme le montre la figure \ref{fig:hand-position}.
+
 \begin{figure}%
   \includegraphics[width=\linewidth]{hand-position.png}
   \caption{Position de repos, clavier QWERTY. \emph{Illustration par Cy21 - CC-BY-SA-3.0 (\url{www.creativecommons.org/licenses/by-sa/3.0}) ou GFDL (\url{www.gnu.org/copyleft/fdl.html}), via Wikimedia Commons \url{http://commons.wikimedia.org/wiki/File:Typing-home-keys-hand-position.svg}}}
   \label{fig:hand-position}
 \end{figure}
+
+Ce parti pris (bouger le moins possible les mains du clavier) justifie à lui seul la présence d'un mode \emph{normal} et d'un mode \emph{insertion} dans \vim. En passant de l'un à l'autre, les touches sous vos doigts serviront tantôt à vous déplacer et à réaliser des opérations sur le texte\sidenote{C'est le mode \emph{normal}} (copier/coller, macros, \ldots), tantôt à sélectionner\sidenote{C'est le mode \emph{visuel}} et tantôt à insérer du texte\sidenote{C'est le mode \emph{insertion}}. Tout cela bien sur en évitant l'utilisation de combinaisons de touches du style \emph{Ctrl + touche} qui ne sont généralement pas bonnes pour vos doigts (\emph{Emacs} si tu nous lis, je te salue).
+
+Par défaut, on passe du mode \emph{insertion} au mode \emph{normal} en appuyant sur la \ttesc, mais c'est une des premières choses que l'on changera : \ttesc est bien trop loin sur les claviers actuels. 
+
+Pour passer de mode \emph{normal} au mode \emph{insertion}, on peut par exemple appuyer sur \tti On apprendra par la suite qu'il existe d'autre moyens de faire. Par exemple pour rentrer en mode insertion tout en créant une nouvelle ligne en dessous de la ligne courante (peut importe où se trouve votre curseur), on utilisera \tto en mode \emph{normal}.
+
+\newthought{Si vous voulez pousser la démarche} jusqu'au bout, vous pouvez aussi vous procurer un clavier orthogonal Typematrix\sidenote{\url{http://www.typematrix.com/}}. C'est ce que j'utilise personnellement, et mes doigts m'en remercient tous les jours.
 
 \section{La configuration par défaut : indispensable}
 
