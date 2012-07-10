@@ -51,106 +51,10 @@ Merci à ma femme et mes enfants qui ont permis à ce livre de voir le jour.
 \cleardoublepage
 
 \input{introduction}
+
 \mainmatter
 
-\chapter{Rendre \vim utilisable}
-
-\newthought{Ça peut paraître étonnant} comme approche, mais c'est pour moi la première chose à faire : rendre \vim utilisable par un humain lambda. Si tout le monde semble s'accorder sur le fait que \vim est un \textbf{éditeur très puissant}, tout le monde pourra aussi s'accorder sur le fait que de base, il est juste \textbf{imbitable}. Soyons honnête, sans une configuration par défaut minimale, utiliser \vim est \textbf{contre-productif}. 
-
-C'est à mon avis le premier obstacle à surmonter avant toute autre chose. C'est ce que les autres éditeurs ``Mainstream'' comme Textmate, Sublimetext, Notepad++ ou Netbeans proposent, c'est à dire un environnement à minima utilisable tel quel, même si l'on en n'exploite pas la totalité.
-
-Voici donc ce qui manque à un \vim nu (et ce qui est pour moi une \textbf{cause d'abandon pour beaucoup} d'entre vous) :
-
-\begin{marginfigure}%
-  \includegraphics[width=\linewidth]{solarized-yinyang.png}
-  \caption{Le thème \emph{Solarized} en sombre et en clair. \url{http://ethanschoonover.com/solarized}}
-  \label{fig:solarized}
-\end{marginfigure}
-
-\begin{description}
-    \item[Configuration par défaut] \vim est configurable grâce à un fichier nommé \emph{vimrc}, qui est bien entendu vide par défaut. La première étape va être d'avoir un fichier \emph{vimrc} avec une configuration minimale.
-    \item[Coloration syntaxique] De base, \vim est tout blanc et tout moche. On va utiliser le thème \emph{Solarized} (\url{http://ethanschoonover.com/solarized}). Si votre but est d'être efficace, c'est le meilleur thème disponible actuellement (tout éditeur de texte confondu). La figure \ref{fig:solarized} vous donne une idée des deux look disponibles (clair ou sombre). Pour ma part j'utilise le thème sombre.
-    \item[Explorateur de fichiers] Si vous utilisez \vim avec une interface graphique (ce qui est le cas de 99\% d'entre vous je suppose) vous avez par défaut un menu \Verb|Fichier| vous permettant d'ouvrir un fichier. C'est certes un bon début, mais avoir à disposition un explorateur de projet à la Netbeans ou à la Textmate peut s'avérer très pratique. Pour obtenir le même comportement, nous utiliserons Nerdtree. À savoir qu'à la fin de ce livre, vous n'aurez plus besoin de la souris (et donc des menus et autres boutons).
-\end{description}
-
-Ce chapitre est indispensable si vous n'avez que peu d'expérience (voir pas du tout) avec \vim. À la fin de ce chapitre, vous aurez un \vim dont vous pourrez commencer à vous servir pour vos tâches de tous les jours. Cela devrait être suffisant pour vous permettre d'apprendre le reste petit à petit. Car il n'y a pas de secret, il vous faudra pratiquer pour apprendre \vim, alors autant commencer de suite et le moins douloureusement possible.
-
-En revanche, si vous êtes déjà familier avec \vim et n'utilisez déjà plus la souris, vous pouvez sagement sauter ce chapitre (soyez sur tout de même de donner sa chance au thème \emph{Solarized}).
-
-\section{Préambule indispensable : le mode insertion}
-
-Prenons le pari de créer le fichier \emph{vimrc} avec \vim lui même. Comme je vous le disais, le plus tôt vous commencerez, le mieux ce sera.
-Vous devrez certainement commencer par installer une version de \vim. Si vous utilisez un Mac, essayez MacVim \sidenote{MacVim: \url{http://code.google.com/p/macvim/}} sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système ``Unix'' vous devriez surement avoir gVim à votre disposition (ou tout du moins facilement installable grâce à votre gestionnaire de logiciels). Pour Windows, il semblerait y avoir une version disponible sure le site officiel de \vim\sidenote{Page de téléchargement officielle de \vim : \url{http://www.vim.org/download.php}}, mais je ne l'ai pas testée.
-
-Cliquez sur \Verb|Fichier (File) -> Nouveau (New)|. Le texte d'accueil par défaut de \vim devrait avoir disparu et vous devriez avoir une page blanche comme sur la figure \ref{fig:vim-new}. 
-
-\begin{figure}%
-  \includegraphics[width=\linewidth]{vim-new.png}
-  \caption{Nouveau fichier vide.}
-  \label{fig:vim-new}
-\end{figure}
-
-Commençons par entrer un commentaire dans d'entête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur \tti (le curseur devrait changer d'aspect) et entrez le commentaire ci-dessous\sidenote{Si vous ne savez pas trop ce que vous avez fait et que \vim vous affiche des trucs en rouge en bas à gauche au ne semble pas réagir comme il faut quand vous appuyez sur \tti, appuyez plusieurs fois sur \ttesc, ça devrait vous remettre au mode par défaut de \vim}.
-
-\begin{minted}[bgcolor=bg, gobble=8]{vim}
-        " VIM Configuration - Vincent Jousse
-\end{minted}
-
-Vous aurez remarqué que les commentaires en \emph{VimL} (le langage de configuration de \vim) commencent par un \Verb|"|. Appuyez ensuite sur \ttesc pour revenir au mode par défaut (le mode normal) de \vim. Et voilà le travail, cf figure \ref{fig:vim-first-comment}.
-
-\begin{figure}%
-  \includegraphics[width=\linewidth]{vim-first-comment.png}
-  \caption{Mon premier commentaire.}
-  \label{fig:vim-first-comment}
-\end{figure}
-
-Tout ça pour ça me direz vous, et vous avez bien raison. Mais tout cela a une logique que je vais vous expliquer. L'avantage de \vim est qu'il est généralement logique, quand vous avez compris la logique, tout vous semble limpide et tomber sous le sens.
-
-Par défaut, \vim est lancé dans un mode que l'on appelle le mode ``Normal''. C'est à dire que ce mode n'est pas fait pour écrire du texte (ça, ça sera le mode ``Insert'') mais juste pour se déplacer et manipuler du texte. C'est la présence de ces 2 différents modes (il y en a d'autres mais ce n'est pas le sujet pour l'instant) qui fait toute la puissance de \vim. Il vous faudra un certain temps pour vous rendre compte de cette puissance par vous même, alors faites moi juste confiance pour l'instant.
-
-Si vous vous demandez pourquoi ces modes, pourquoi on semble se compliquer la vie (on se la simplifie en fait) et en quel honneur, dans le mode par défaut, il n'est même pas possible d'insérer du texte, lisez attentivement la section qui suit.
-
-\section{Les modes : d'où \vim tire sa puissance}
-
-\begin{figure}%
-  \includegraphics[width=\linewidth]{hand-position.png}
-  \caption{Position de repos, clavier QWERTY. \emph{Illustration par Cy21 - CC-BY-SA-3.0 (\url{www.creativecommons.org/licenses/by-sa/3.0}) ou GFDL (\url{www.gnu.org/copyleft/fdl.html}), via Wikimedia Commons \url{http://commons.wikimedia.org/wiki/File:Typing-home-keys-hand-position.svg}}}
-  \label{fig:hand-position}
-\end{figure}
-
-\section{La configuration par défaut : indispensable}
-
-
-
-\section{La coloration syntaxique : le futile indispensable}
-
-\TODO
-
-\section{L'explorateur de fichiers : parce qu'ouvrir des fichiers, ça peut être pratique}
-
-
-\begin{fullwidth}
-    \begin{minted}[bgcolor=bg]{vim}
-        " VIM Configuration - Vincent Jousse
-        " Some links : http://nvie.com/posts/how-i-boosted-my-vim/
-
-        set nocompatible                  " Must come first because it changes other options.
-
-        " Use pathogen to easily modify the runtime path to include all
-        " plugins under the ~/.vim/bundle directory
-        call pathogen#helptags()
-        call pathogen#runtime_append_all_bundles()
-
-        " Quickly edit/reload the vimrc file
-        nmap <silent> <leader>ev :e $MYVIMRC<CR>
-        nmap <silent> <leader>sv :so $MYVIMRC<C
-
-        " Colorsheme
-        set t_Co=256
-    \end{minted}
-\end{fullwidth}
-
-\TODO
+\input{usable-vim}
 
 \printindex
 
