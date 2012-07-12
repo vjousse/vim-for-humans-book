@@ -1,0 +1,26 @@
+" Annule la compatibilté avec l'ancêtre Vi : totalement indispensable
+set nocompatible
+
+" -- Affichage
+set title                         " Mets à jour le titre de votre fenêtre ou de votre terminal
+set number                        " Affiche le numéro des lignes
+set ruler                         " Affiche la position actuelle du curseur
+set wrap                          " Affiche les lignes trop longues sur plusieurs lignes
+"set nowrap                       " Ne coupe pas les lignes trop longues à l'affichage
+
+set scrolloff=3                   " Affiche un minimum de 3 lignes autour du curseur (pour le scroll)
+
+" -- Recherche
+set ignorecase                    " Ignore la casse lors d'une recherche
+set smartcase                     " Si une recherche contient une majuscule, ré-active la
+                                  " sensibilité à la casse
+set incsearch                     " Surligne les résultats de recherche pendant la saisie
+set hlsearch                      " Surligne les résultats de recherche
+
+" -- Beep
+set visualbell                    " Empêche Vim de beeper
+set noerrorbells                  " Empêche Vim de beeper
+
+
+" Active le comportement 'habituel' de la touche retour en arrière
+set backspace=indent,eol,start
