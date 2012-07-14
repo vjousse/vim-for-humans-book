@@ -86,47 +86,16 @@ Pour passer du mode \emph{normal} au mode \emph{insertion}, on peut par exemple 
 \newpage
 \section{La configuration par défaut : indispensable}
 
-\newthought{Passons aux choses sérieuses}, c'est à dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \emph{.vimrc} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
+\newthought{Passons aux choses sérieuses}, c'est à dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \emph{.vimrc}\sidenote{Ce fichier doit se trouver dans votre répertoire d'accueil. \emph{/home/votre\_user/.vimrc} sous Linux, \emph{/Users/votre\_user/.vimrc} sous Mac Os X ou plus généralement \emph{\textasciitilde{}/.vimrc.}} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
+
+J'ai commenté chacune des lignes du fichier directement dans le code. Rien de sorcier ici, on se demande juste pourquoi tout cela n'est pas inclus par défaut.
 
 \begin{listing}[H]
-\begin{fullwidth}
-    \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
-        " VIM Configuration - Vincent Jousse
-        " Annule la compatibilte avec l'ancetre Vi : totalement indispensable
-        set nocompatible
-
-        " -- Affichage
-        set title                         " Mets a jour le titre de votre fenetre ou de votre
-                                          " terminal
-        set number                        " Affiche le numero des lignes
-        set ruler                         " Affiche la position actuelle du curseur
-        set wrap                          " Affiche les lignes trop longues sur plusieurs
-                                          " lignes
-        "set nowrap                       " Ne coupe pas les lignes trop longues a
-                                          " l'affichage
-
-        set scrolloff=3                   " Affiche un minimum de 3 lignes autour du curseur
-                                          " (pour le scroll)
-
-        " -- Recherche
-        set ignorecase                    " Ignore la casse lors d'une recherche
-        set smartcase                     " Si une recherche contient une majuscule,
-                                          " re-active la sensibilite a la casse
-        set incsearch                     " Surligne les resultats de recherche pendant la 
-                                          " saisie
-        set hlsearch                      " Surligne les resultats de recherche
-
-        " -- Beep
-        set visualbell                    " Empeche Vim de beeper
-        set noerrorbells                  " Empeche Vim de beeper
-
-
-        " Active le comportement 'habituel' de la touche retour en arriere
-        set backspace=indent,eol,start
-    \end{minted}
-    \caption{Une configuration par défaut sensée.}
-    \label{code:first-config}
-\end{fullwidth}
+    \begin{fullwidth}
+        \inputminted[bgcolor=bg, fontsize=\footnotesize]{vim}{../vimconfig/vimrc}
+        \caption{Une configuration par défaut sensée.}
+        \label{code:first-config}
+    \end{fullwidth}
 \end{listing}
 
 
