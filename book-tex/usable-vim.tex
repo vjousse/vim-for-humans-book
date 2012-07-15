@@ -86,16 +86,14 @@ Pour passer du mode \emph{normal} au mode \emph{insertion}, on peut par exemple 
 \newpage
 \section{La configuration par défaut : indispensable}
 
-\newthought{Passons aux choses sérieuses}, c'est à dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \emph{.vimrc}\sidenote{Ce fichier doit se trouver dans votre répertoire d'accueil. \emph{/home/votre\_user/.vimrc} sous Linux, \emph{/Users/votre\_user/.vimrc} sous Mac Os X ou plus généralement \emph{\textasciitilde{}/.vimrc.}} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
+\newthought{Passons aux choses sérieuses}, c'est à dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \emph{.vimrc}\sidenote{Ce fichier doit se trouver dans votre répertoire d'accueil. \emph{/home/votre\_user/.vimrc} sous Linux, \emph{/Users/votre\_user/.vimrc} sous Mac Os X ou plus généralement \emph{\textasciitilde{}/.vimrc}. Sous Windows vous pouvez créer un fichier nommé \emph{\_vimrc} qui doit se situer dans votre répertoire \emph{\%HOME\%} qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au dessus" de votre répertoire \emph{Mes Documents}. Plus d'infos sur Wikipedia \url{http://en.wikipedia.org/wiki/Home\_directory\#Default\_Home\_Directory\_per\_Operating\_System}} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
 
 J'ai commenté chacune des lignes du fichier directement dans le code. Rien de sorcier ici, on se demande juste pourquoi tout cela n'est pas inclus par défaut.
 
 \begin{listing}[H]
-    \begin{fullwidth}
-        \inputminted[bgcolor=bg, fontsize=\footnotesize]{vim}{../vimconfig/vimrc}
-        \caption{Une configuration par défaut sensée.}
-        \label{code:first-config}
-    \end{fullwidth}
+    \inputminted[bgcolor=bg, fontsize=\footnotesize]{vim}{../vimconfig/vimrc}
+    \caption{Une configuration par défaut sensée.}
+    \label{code:first-config}
 \end{listing}
 
 
