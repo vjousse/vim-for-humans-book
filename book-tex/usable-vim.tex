@@ -106,11 +106,26 @@ Vous devriez avoir un \vim qui ressemble à celui sur la figure \ref{fig:first-c
   \label{fig:first-config}
 \end{figure}
 
-Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au chapitre suivant !
+Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au suivant !
 
-\section{La coloration syntaxique : le futile indispensable}
+\section{Que la couleur soit !}
 
-\TODO
+\newthought{Tout d'abord} il suffit de l'activer dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration \emph{.vimrc}.
+
+\begin{listing}[H]
+\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
+" Active la coloration syntaxique
+syntax enable
+\end{minted}
+\end{listing}
+
+Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-hl}.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vim-syntax-hl.png}
+  \caption{Coloration syntaxique par défaut.}
+  \label{fig:syntax-hl}
+\end{figure}
 
 \section{L'explorateur de fichiers : parce qu'ouvrir des fichiers, ça peut être pratique}
 
