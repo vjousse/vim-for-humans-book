@@ -117,15 +117,20 @@ Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au suivant !
 " Active la coloration syntaxique
 syntax enable
 \end{minted}
+  \caption{Activation de la coloration syntaxique.}
 \end{listing}
 
-Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-hl}.
+Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-hl}\sidenote{Pour l'instant, le plus facile pour que les modifications apportées à votre \emph{.vimrc} soient prisent en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la \vim de suite, en mode normal tapez \vimscmd{:so \textasciitilde/.vimrc}.
+
+\vimscmd{:so} étant un raccourci pour \vimscmd{:source}.}. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème. .
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-syntax-hl.png}
   \caption{Coloration syntaxique par défaut.}
   \label{fig:syntax-hl}
 \end{figure}
+
+Les thèmes vont vous permettre de rendre votre \vim un peu moins austère.
 
 \section{L'explorateur de fichiers : parce qu'ouvrir des fichiers, ça peut être pratique}
 
