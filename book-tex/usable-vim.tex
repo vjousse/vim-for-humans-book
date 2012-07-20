@@ -110,7 +110,7 @@ Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au suivant !
 
 \section{Que la couleur soit !}
 
-\newthought{Tout d'abord} il suffit de l'activer dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration \emph{.vimrc}.
+\newthought{Tout d'abord} il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration \emph{.vimrc}.
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
@@ -122,7 +122,7 @@ syntax enable
 
 Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-hl}\sidenote{Pour l'instant, le plus facile pour que les modifications apportées à votre \emph{.vimrc} soient prisent en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la \vim de suite, en mode normal tapez \vimscmd{:so \textasciitilde/.vimrc}.
 
-\vimscmd{:so} étant un raccourci pour \vimscmd{:source}.}. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème. .
+\vimscmd{:so} étant un raccourci pour \vimscmd{:source}.}. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-syntax-hl.png}
@@ -130,7 +130,21 @@ Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-h
   \label{fig:syntax-hl}
 \end{figure}
 
-Les thèmes vont vous permettre de rendre votre \vim un peu moins austère.
+Les thèmes vont vous permettre de rendre votre \vim un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème solarized \url{http://ethanschoonover.com/solarized} (avec fond clair ou foncé, ça dépendra de vous).
+
+Pour l'installer, commencez tout d'abord par créer un répertoire nommé \Verb|.vim| au même endroit que votre \emph{.vimrc}. Dans ce répertoire \Verb|.vim|, créez un sous-répertoire nommé \Verb|colors|. Téléchargez ensuite le fichier du thème Solarized \url{https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim}\sidenote{ou copiez celui qui vous a été fourni avec le téléchargement de ce livre}(c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire \Verb|vim/colors/| fraichement créé. Activez ensuite le thème Solarized dans votre \emph{.vimrc} comme décrit dans le listing X.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vim-solarized-dark.png}
+  \caption{Le thème Solarized sombre.}
+  \label{fig:vim-solarized-dark}
+\end{figure}
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vim-solarized-light.png}
+  \caption{Le thème solarized clair.}
+  \label{fig:vim-solarized-light}
+\end{figure}
 
 \section{L'explorateur de fichiers : parce qu'ouvrir des fichiers, ça peut être pratique}
 
