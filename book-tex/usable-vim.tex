@@ -13,7 +13,7 @@ Voici donc ce qui manque à un \vim nu (et ce qui est pour moi une \textbf{cause
 \end{marginfigure}
 
 \begin{description}
-    \item[Configuration par défaut] \vim est configurable grâce à un fichier nommé \emph{vimrc}, qui est bien entendu vide par défaut. La première étape va être d'avoir un fichier \emph{vimrc} avec une configuration minimale.
+    \item[Configuration par défaut] \vim est configurable grâce à un fichier nommé \vimrc, qui est bien entendu vide par défaut. La première étape va être d'avoir un fichier \vimrc avec une configuration minimale.
     \item[Coloration syntaxique] De base, \vim est tout blanc et tout moche. On va utiliser le thème \emph{Solarized} (\url{http://ethanschoonover.com/solarized}). Si votre but est d'être efficace, c'est le meilleur thème disponible actuellement (tout éditeur de texte confondu). La figure \ref{fig:solarized} vous donne une idée des deux look disponibles (clair ou sombre). Pour ma part j'utilise le thème sombre.
     \item[Explorateur de fichiers] Si vous utilisez \vim avec une interface graphique (ce qui est le cas de 99\% d'entre vous je suppose) vous avez par défaut un menu \Verb|Fichier| vous permettant d'ouvrir un fichier. C'est certes un bon début, mais avoir à disposition un explorateur de projet à la Netbeans ou à la Textmate peut s'avérer très pratique. Pour obtenir le même comportement, nous utiliserons Nerdtree. À savoir qu'à la fin de ce livre, vous n'aurez plus besoin de la souris (et donc des menus et autres boutons).
 \end{description}
@@ -24,7 +24,7 @@ En revanche, si vous êtes déjà familier avec \vim et n'utilisez déjà plus l
 
 \section{Préambule indispensable : le mode insertion}
 
-Prenons le pari de créer le fichier \emph{vimrc} avec \vim lui même. Comme je vous le disais, le plus tôt vous commencerez, le mieux ce sera.
+Prenons le pari de créer le fichier \vimrc avec \vim lui même. Comme je vous le disais, le plus tôt vous commencerez, le mieux ce sera.
 Vous devrez certainement commencer par installer une version de \vim. Si vous utilisez un Mac, essayez MacVim \sidenote{MacVim: \url{http://code.google.com/p/macvim/}} sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système ``Unix'' vous devriez surement avoir gVim à votre disposition (ou tout du moins facilement installable grâce à votre gestionnaire de logiciels). Pour Windows, il semblerait y avoir une version disponible sure le site officiel de \vim\sidenote{Page de téléchargement officielle de \vim : \url{http://www.vim.org/download.php}}, mais je ne l'ai pas testée.
 
 Cliquez sur \Verb|Fichier (File) -> Nouveau (New)|. Le texte d'accueil par défaut de \vim devrait avoir disparu et vous devriez avoir une page blanche comme sur la figure \ref{fig:vim-new}. 
@@ -86,7 +86,7 @@ Pour passer du mode \emph{normal} au mode \emph{insertion}, on peut par exemple 
 \newpage
 \section{La configuration par défaut : indispensable}
 
-\newthought{Passons aux choses sérieuses}, c'est à dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \emph{.vimrc}\sidenote{Ce fichier doit se trouver dans votre répertoire d'accueil. \emph{/home/votre\_user/.vimrc} sous Linux, \emph{/Users/votre\_user/.vimrc} sous Mac Os X ou plus généralement \emph{\textasciitilde{}/.vimrc}. Sous Windows vous pouvez créer un fichier nommé \emph{\_vimrc} qui doit se situer dans votre répertoire \emph{\%HOME\%} qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au dessus" de votre répertoire \emph{Mes Documents}. Plus d'infos sur Wikipedia \url{http://en.wikipedia.org/wiki/Home\_directory\#Default\_Home\_Directory\_per\_Operating\_System}} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
+\newthought{Passons aux choses sérieuses}, c'est à dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \vimrc\sidenote{Ce fichier doit se trouver dans votre répertoire d'accueil. \emph{/home/votre\_user/.vimrc} sous Linux, \emph{/Users/votre\_user/.vimrc} sous Mac Os X ou plus généralement \emph{\textasciitilde{}/.vimrc}. Sous Windows vous pouvez créer un fichier nommé \emph{\_vimrc} qui doit se situer dans votre répertoire \emph{\%HOME\%} qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au dessus" de votre répertoire \emph{Mes Documents}. Plus d'infos sur Wikipedia \url{http://en.wikipedia.org/wiki/Home\_directory\#Default\_Home\_Directory\_per\_Operating\_System}} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
 
 J'ai commenté chacune des lignes du fichier directement dans le code. Rien de sorcier ici, on se demande juste pourquoi tout cela n'est pas inclus par défaut.
 
@@ -110,7 +110,7 @@ Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au suivant !
 
 \section{Que la couleur soit !}
 
-\newthought{Tout d'abord} il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration \emph{.vimrc}.
+\newthought{Tout d'abord} il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration \vimrc.
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
@@ -121,7 +121,7 @@ syntax enable
   \label{lst:syntax-hl}
 \end{listing}
 
-Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-hl}\sidenote{Pour l'instant, le plus facile pour que les modifications apportées à votre \emph{.vimrc} soient prisent en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la \vim de suite, en mode normal tapez \vimscmd{:so \textasciitilde/.vimrc}.
+Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-hl}\sidenote{Pour l'instant, le plus facile pour que les modifications apportées à votre \vimrc soient prisent en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la \vim de suite, en mode normal tapez \vimscmd{:so \textasciitilde/.vimrc}.
 
 \vimscmd{:so} étant un raccourci pour \vimscmd{:source}.}. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
 
@@ -133,7 +133,7 @@ Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-h
 
 Les thèmes vont vous permettre de rendre votre \vim un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème solarized \url{http://ethanschoonover.com/solarized} (avec fond clair ou foncé, ça dépendra de vous).
 
-Pour l'installer, commencez tout d'abord par créer un répertoire nommé \Verb|.vim| au même endroit que votre \emph{.vimrc}. Dans ce répertoire \Verb|.vim|, créez un sous-répertoire nommé \Verb|colors|. Téléchargez ensuite le fichier du thème Solarized \url{https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim}\sidenote{ou copiez celui qui vous a été fourni avec le téléchargement de ce livre}(c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire \Verb|vim/colors/| fraichement créé. Activez ensuite le thème Solarized dans votre \emph{.vimrc} comme le montre le code dans le listing \ref{lst:solarized}. Pour tester le thème clair, remplacez \Verb|dark| par \Verb|light| pour la valeur \Verb|background|.
+Pour l'installer, commencez tout d'abord par créer un répertoire nommé \Verb|.vim| au même endroit que votre \vimrc. Dans ce répertoire \Verb|.vim|, créez un sous-répertoire nommé \Verb|colors|. Téléchargez ensuite le fichier du thème Solarized \url{https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim}\sidenote{ou copiez celui qui vous a été fourni avec le téléchargement de ce livre}(c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire \Verb|vim/colors/| fraichement créé. Activez ensuite le thème Solarized dans votre \vimrc comme le montre le code dans le listing \ref{lst:solarized}. Pour tester le thème clair, remplacez \Verb|dark| par \Verb|light| pour la valeur \Verb|background|.
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
@@ -161,7 +161,7 @@ Les images \ref{fig:vim-solarized-dark} et \ref{fig:vim-solarized-light} vous do
 
 \newthought{Un bonus} (si vous n'utilisez pas \vim directement dans votre terminal) serait de choisir une police de caractère qui vous convient un peu mieux, c'est bien sur facultatif mais bon, je présume que certains d'entre vous sont des esthètes aguerris.
 
-Si vous êtes sous Mac Os X je vous conseille la police \Verb|Monaco| qui est plutôt sympathique. Rajoutez les lignes suivantes à votre \emph{.vimrc} pour l'utiliser :
+Si vous êtes sous Mac Os X je vous conseille la police \Verb|Monaco| qui est plutôt sympathique. Rajoutez les lignes suivantes à votre \vimrc pour l'utiliser :
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
@@ -174,16 +174,20 @@ set antialias
 
 Vous pouvez bien sur changer le \Verb|h13| par \Verb|h12| si vous voulez une police plus petite (ou par \Verb|h14| si vous en voulez une plus grande).
 
-Sinon sous Linux j'utilise la police DejaVuSansMono que je trouve plutôt sympathique :
+Sinon sous Linux j'utilise la police \Verb|DejaVu Sans Mono| que je trouve plutôt sympathique :
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
-set guifont=DejaVuSansMono
+set guifont=DejaVu\ Sans\ Mono\ 10
 set antialias
 \end{minted}
   \caption{Utilisation de la police DejaVuSansMono sous Linux.}
   \label{lst:dejavusansmono}
 \end{listing}
+
+Vous pouvez là aussi bien sur changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez on mode normal \vimcmd{:set guifont:*}.
+
+Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne \url{https://github.com/vjousse/vim-for-humans/blob/master/syntaxhighlight/vimrc} ou avec les fichiers mis à disposition avec ce livre. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de \vim dans le coup.
 
 
 
