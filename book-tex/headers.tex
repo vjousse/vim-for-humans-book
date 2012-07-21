@@ -37,6 +37,8 @@
 \usepackage{fancyvrb}
 \fvset{fontsize=\normalsize}
 
+\usepackage{fancybox}
+
 %%
 % Prints argument within hanging parentheses (i.e., parentheses that take
 % up no horizontal space).  Useful in tabular environments.
@@ -156,8 +158,8 @@
 \newcommand{\tti}{la touche \ti}
 \newcommand{\tto}{la touche \hlred{o}\xspace}
 
-\newcommand{\vimscmd}[1]{\colorbox{bg}{\hlred{\Verb|{\footnotesize #1}|}}}
-\newcommand{\vimcmd}[1]{\colorbox{bg}{\hlred{\Verb|#1|}}}
+\newcommand{\vimscmd}[1]{\fcolorbox{black}{bg}{\hlred{\Verb|{\footnotesize #1}|}}}
+\newcommand{\vimcmd}[1]{\fcolorbox{black}{bg}{\hlred{\Verb|#1|}}}
 
 \newcommand{\vim}{\emph{Vim}\xspace}
 \newcommand{\vimrc}{\emph{.vimrc}\xspace}
