@@ -116,6 +116,11 @@ Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au suivant !
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
 " Active la coloration syntaxique
 syntax enable
+" Active les comportements specifiques aux types de fichiers comme
+" la syntaxe et l'indentation
+filetype on
+filetype plugin on
+filetype indent on
 \end{minted}
   \caption{Activation de la coloration syntaxique.}
   \label{lst:syntax-hl}
@@ -196,7 +201,9 @@ Nous y voilà, nous avons un \vim à peu près utilisable avec de jolies couleur
 
 \subsection{Gestionnaire de plugins: Pathogen}
 
-\TODO
+Pathogen\sidenote{\url{https://github.com/tpope/vim-pathogen/}} est typique du plugin que vous découvrez après avoir commencé à configurer votre \vim et qui génère ce type de réaction : "Ah si j'avais su j'aurais directement commencé avec". Ça tombe bien, c'est ce que nous allons faire.
+
+Tout d'abord petite explication de comment on installe et configure des plugins dans \vim. Ils s'installent en copiant les fichiers adéquats (la plus part du temps du style \emph{*.vim}) dans des sous répertoire de votre répertoire de configuartion \emph{.vim}. On a déjà d'ailleurs commencé à y créer un sous répertoire colors.
 
 \subsection{Explorateur de fichiers : NerdTree}
 
