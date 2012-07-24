@@ -228,6 +228,19 @@ Nous installerons ensuite nos plugins directement dans le répertoire \Verb|.vim
 mkdir -p ~/.vim/bundle
 \end{verbatim}
 
+Il ne vous reste plus qu'à activer pathogen dans votre \vimrc et le tour est joué. Nous placerons le code listé dans 
+\ref{code:pathogen} au début du fichier \vimrc, directement après la ligne \Verb|set nocompatible|.
+
+\begin{listing}[H]
+
+\begin{minted}[bgcolor=bg]{vim}
+call pathogen#infect()
+\end{minted}
+\caption{Activation du plugin pathogen.}
+\label{code:pathogen}
+\end{listing}
+
+
 \subsection{Explorateur de fichiers : NerdTree}
 
 \TODO
