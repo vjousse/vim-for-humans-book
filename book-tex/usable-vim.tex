@@ -207,26 +207,39 @@ Tout d'abord petite explication de comment on installe et configure des plugins 
 
 Le problème avec cette approche c'est que les différents plugins ne sont pas isolés (vous allez devoir copier leurs fichiers dans les différents sous-répertoires) et que vous allez donc vous retrouver avec des fichiers un peu partout sans savoir à qui ils appartiennent. Autant vous dire qu'une fois que vous voulez désinstaller ou mettre à jour un plugin, c'est vite l'enfer pour savoir quels sont ses fichiers.
 
-C'est la que pathogen arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous répertoire rien que pour lui. La figure X vous donne un exemple de répertoire \Verb|.vim| avant et après l'utilisation de pathogen \TODO image montrant la différence de rangement des répertoires
+C'est la que pathogen arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous répertoire rien que pour lui. La figure \ref{fig:pathogen-tree} vous donne un exemple de répertoire \Verb|.vim| avant et après l'utilisation de pathogen. Certes la version avec pathogen contient plus de sous répertoires, mais croyez moi sur parole, ce rangement va vous éviter bien des ennuis par la suite.
 
+\begin{figure}%
+  \includegraphics[width=\linewidth]{pathogen-tree.png}
+  \caption{\emph{.vim} avant et après Pathogen.}
+  \label{fig:pathogen-tree}
+\end{figure}
 
-Commençons par installer pathogen. Créez un répertoire nommé \Verb|autoload| dans votre répertoire \Verb|.vim| et copiez y \Verb|pathogen.vim| que vous pouvez télécharger ici : \url{https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim} (ou qui vous a été fourni avec ce PDF). Pour les utilisateurs Unix voici un extrait de la doc \sidenote{Si vous n'avez pas \Verb|curl| vous pouvez aussi utiliser \Verb|wget -O -|} :
+Commençons par installer pathogen. Créez un répertoire nommé \Verb|autoload| dans votre répertoire \Verb|.vim| et copiez y \Verb|pathogen.vim| que vous pouvez télécharger ici : \url{https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim} (ou qui vous a été fourni avec ce PDF). Pour les utilisateurs Unix, le listing \ref{code:pathogen-install} explique comment l'installer\sidenote{Si vous n'avez pas \Verb|{\footnotesize curl}| vous pouvez aussi utiliser \Verb|{\footnotesize wget -O -}|}.
 
-\begin{verbatim}
-# Création du répertoire autoload
+\begin{listing}[H]
+\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
+# Creation du repertoire autoload
 mkdir -p ~/.vim/autoload 
 
-# Téléchargement et installation de pathogen
+# Telechargement et installation de pathogen
 curl -so ~/.vim/autoload/pathogen.vim \
     https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-\end{verbatim}
+\end{minted}
+  \caption{Installation de pathogen.}
+  \label{code:pathogen-install}
+\end{listing}
 
-Nous installerons ensuite nos plugins directement dans le répertoire \Verb|.vim/bundle| que vous allez vous empresser de créer :
+Nous installerons ensuite nos plugins directement dans le répertoire \Verb|.vim/bundle| que vous allez vous empresser de créer, cf. le listing \ref{code:pathogen-bundle}.
 
-\begin{verbatim}
-# Création du répertoire bundle
+\begin{listing}[H]
+\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
+# Creation du repertoire bundle
 mkdir -p ~/.vim/bundle
-\end{verbatim}
+\end{minted}
+  \caption{Création du répertoire d'installation des plugins.}
+  \label{code:pathogen-bundle}
+\end{listing}
 
 Il ne vous reste plus qu'à activer pathogen dans votre \vimrc et le tour est joué. Nous placerons le code listé dans 
 \ref{code:pathogen} au début du fichier \vimrc, directement après la ligne \Verb|set nocompatible|.
