@@ -267,8 +267,25 @@ mv ~/.vim/colors ~/.vim/bundle/solarized
   \label{code:solarized-bundle}
 \end{listing}
 
-Voilà notre \vim est presque près pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet, c'est ici que \emph{NerdTree} entre en lisse.
+Voilà notre \vim est presque près pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet, c'est ici que \emph{The NERD Tree} entre en lisse.
 
-\subsection{Explorateur de fichiers : NerdTree}
+\subsection{Explorateur de fichiers : The NERD Tree}
 
-\TODO
+The NERD Tree est un plugin permettant d'afficher visuellement une arborescence de fichiers directement dans la partie gauche (par défaut) dans votre \vim à la \emph{TextMate}, \emph{Sublime Text} ou encore \emph{Eclipse/Netbeans}. Ce plugin n'est pas essentiel si vous souhaitez tout contrôler au clavier (je ne l'utilise plus moi même), mais est assez pratique lorsque l'on débute avec \vim.
+
+L'alternative que nous verrons plus tard au chapitre \TODO est d'utiliser le plugin \emph{Ctrl-p} pour trouver des fichiers et les plugins \emph{LustyExplorer} et \emph{LustyJuggler} pour naviguer entre les fichiers. En effet, devoir visualiser l'arborescence pour trouver un fichier est toujours plus lent que de trouver le fichier à partir de son nom par exemple. The NERD Tree vous permettra donc d'obtenir un \vim se comportant comme un éditeur classique avec un explorateur de fichiers sur lequel vous pourrez cliquer.
+
+Nous allons tout d'abord préparer pathogen pour installer les différents fichiers de \emph{The NERD Tree}.
+
+\begin{listing}[H]
+\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
+# Creation du repertoire pour The NERD Tree
+mkdir ~/.vim/bundle/nerdtree
+\end{minted}
+  \caption{Création du répertoire pour The NERD Tree.}
+  \label{code:nerdtree-bundle}
+\end{listing}
+
+Téléchargez ensuite le dernier \emph{.zip} disponible sur la page du plugin \url{http://www.vim.org/scripts/script.php?script_id=1658}. À l'heure où j'écris ces lignes la dernière version disponible est la version 4.2.0 disponible en téléchargement à cette adresse\sidenote{C'est la version que vous trouverez dans les fichiers mis à disposition avec ce PDF} : \url{http://www.vim.org/scripts/download_script.php?src_id=17123}.
+
+Ouvrez le fichier zip et placez son contenu dans le répertoire \Verb|~/.vim/bundle/nerdtree| que nous venons de créer.
