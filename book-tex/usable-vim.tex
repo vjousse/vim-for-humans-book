@@ -288,4 +288,31 @@ mkdir ~/.vim/bundle/nerdtree
 
 Téléchargez ensuite le dernier \emph{.zip} disponible sur la page du plugin \url{http://www.vim.org/scripts/script.php?script_id=1658}. À l'heure où j'écris ces lignes la dernière version disponible est la version 4.2.0 disponible en téléchargement à cette adresse\sidenote{C'est la version que vous trouverez dans les fichiers mis à disposition avec ce PDF} : \url{http://www.vim.org/scripts/download_script.php?src_id=17123}.
 
-Ouvrez le fichier zip et placez son contenu dans le répertoire \Verb|~/.vim/bundle/nerdtree| que nous venons de créer.
+Ouvrez le fichier zip et placez son contenu dans le répertoire \Verb|~/.vim/bundle/nerdtree| que nous venons de créer. Vous devriez avoir une arborescence ressemblant à celle ci-dessous pour votre répertoire \Verb|nerdtree| :
+
+\begin{verbatim}
+nerdtree
+|-- doc
+|   `-- NERD_tree.txt
+|-- nerdtree_plugin
+|   |-- exec_menuitem.vim
+|   `-- fs_menu.vim
+|-- plugin
+|   `-- NERD_tree.vim
+`-- syntax
+    `-- nerdtree.vim
+\end{verbatim}
+
+Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant \vimcmd{:NERDTree} en mode normal. Si vous préférez activer \emph{The NERD Tree} à chaque fois que vous ouvrez votre \vim, ajoutez ces lignes dans votre \vimrc:
+
+\begin{listing}[H]
+\begin{minted}[bgcolor=bg]{vim}
+" Activation de NERDTree au lancement de vim
+autocmd vimenter * NERDTree
+\end{minted}
+\caption{Activation de NERDTree au lancement de \vim.}
+\label{code:pathogen}
+\end{listing}
+
+Rien de particulier ensuite, \emph{The NERD Tree} vous affiche l'arborescence du répertoire où vous avez lancé \vim. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur \ttm lorsque vous êtes dans \emph{The NERD Tree}. Pour passer de la fenêtre de \emph{NERD Tree} à la fenêtre d'édition de votre fichier au clavier, appuyez sur \hlred{Ctrl + w + w}\sidenote{La touche \hlred{\emph{Control}} (Ctrl) et tout en la laissant appuyée, deux fois \hlred{w}.}. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres \vim (il n'est pas spécifique à \emph{The NERD Tree}).
+
