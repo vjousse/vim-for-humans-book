@@ -207,7 +207,7 @@ Tout d'abord petite explication de comment on installe et configure des plugins 
 
 Le problème avec cette approche c'est que les différents plugins ne sont pas isolés (vous allez devoir copier leurs fichiers dans les différents sous-répertoires) et que vous allez donc vous retrouver avec des fichiers un peu partout sans savoir à qui ils appartiennent. Autant vous dire qu'une fois que vous voulez désinstaller ou mettre à jour un plugin, c'est vite l'enfer pour savoir quels sont ses fichiers.
 
-C'est la que pathogen arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous répertoire rien que pour lui. La figure \ref{fig:pathogen-tree} vous donne un exemple de répertoire \Verb|.vim| avant et après l'utilisation de pathogen. Certes la version avec pathogen contient plus de sous répertoires, mais croyez moi sur parole, ce rangement va vous éviter bien des ennuis par la suite.
+C'est la que pathogen arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous répertoire rien que pour lui. La figure \ref{fig:pathogen-tree} vous donne un exemple de répertoire \Verb|.vim| avant et après l'utilisation de pathogen. Certes la version avec pathogen contient plus de sous répertoires, mais croyez moi sur parole, ce rangement va vous éviter bien des ennuis par la suite\sidenote{Et vous pourrez au passage très facilement utiliser \emph{git} pour gérer chacun de vos plugins comme des submodules, ce qu'il est impossible de réaliser sinon.}.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{pathogen-tree.png}
@@ -215,7 +215,7 @@ C'est la que pathogen arrive à la rescousse, il va vous permettre d'installer c
   \label{fig:pathogen-tree}
 \end{figure}
 
-Commençons par installer pathogen. Créez un répertoire nommé \Verb|autoload| dans votre répertoire \Verb|.vim| et copiez y \Verb|pathogen.vim| que vous pouvez télécharger ici : \url{https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim} (ou qui vous a été fourni avec ce PDF). Pour les utilisateurs Unix, le listing \ref{code:pathogen-install} explique comment l'installer\sidenote{Si vous n'avez pas \Verb|{\footnotesize curl}| vous pouvez aussi utiliser \Verb|{\footnotesize wget -O -}|}.
+Commençons par installer pathogen. Créez un répertoire nommé \Verb|autoload| dans votre répertoire \Verb|.vim| et copiez y \Verb|pathogen.vim| que vous pouvez télécharger ici : \url{https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim} (ou qui vous a été fourni avec ce PDF). Pour les utilisateurs Unix, le listing \ref{code:pathogen-install} explique comment l'installer\sidenote{Si vous n'avez pas \Verb|{\footnotesize curl}| vous pouvez aussi utiliser \scmd{wget -O -}}.
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
@@ -247,12 +247,27 @@ Il ne vous reste plus qu'à activer pathogen dans votre \vimrc et le tour est jo
 \begin{listing}[H]
 
 \begin{minted}[bgcolor=bg]{vim}
+" Activation de pathogen
 call pathogen#infect()
 \end{minted}
 \caption{Activation du plugin pathogen.}
 \label{code:pathogen}
 \end{listing}
 
+Puisque charité bien ordonnée commence par soit même, nous allons ranger notre petit plugin solarized en utilisant pathogen. Il nous suffit de créer un répertoire \Verb|solarized| dans notre répertoire \Verb|bundle| fraichement créé\sidenote{Vous pouvez l'appeler comme vous le souhaitez, tout sous-répertoire du répertoire \Verb|{\footnotesize bundle}| sera considéré comme un répertoire de plugin.}. Nous déplaçons ensuite le répertoire \Verb|colors| dans le répertoire \Verb|solarized| cf. le listing \ref{code:solarized-bundle}.
+
+\begin{listing}[H]
+\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
+# Creation du repertoire pour solarized
+mkdir ~/.vim/bundle/solarized
+# Et hop un peu de rangement
+mv ~/.vim/colors ~/.vim/bundle/solarized
+\end{minted}
+  \caption{Utilisation de solarized via pathogen.}
+  \label{code:solarized-bundle}
+\end{listing}
+
+Voilà notre \vim est presque près pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet, c'est ici que \emph{NerdTree} entre en lisse.
 
 \subsection{Explorateur de fichiers : NerdTree}
 
