@@ -91,7 +91,7 @@ Pour passer du mode \emph{normal} au mode \emph{insertion}, on peut par exemple 
 J'ai commenté chacune des lignes du fichier directement dans le code. Rien de sorcier ici, on se demande juste pourquoi tout cela n'est pas inclus par défaut.
 
 \begin{listing}[H]
-    \inputminted[bgcolor=bg, fontsize=\footnotesize]{vim}{../vimconfig/firstconfig/vimrc}
+    \inputminted[bgcolor=bg, fontsize=\footnotesize]{vim}{../../vim-for-humans/firstconfig/vimrc}
     \caption{Une configuration par défaut sensée.}
     \label{code:first-config}
 \end{listing}
@@ -314,7 +314,9 @@ autocmd vimenter * NERDTree
 \label{code:pathogen}
 \end{listing}
 
-Rien de particulier ensuite, \emph{The NERD Tree} vous affiche l'arborescence du répertoire où vous avez lancé \vim, comme vous le montre la figure \ref{fig:vim-nerdtree}. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur \ttm lorsque vous êtes dans \emph{The NERD Tree}. Pour passer de la fenêtre de \emph{NERD Tree} à la fenêtre d'édition de votre fichier au clavier, appuyez sur \hlred{Ctrl + w + w}\sidenote{La touche \hlred{\emph{Control}} (Ctrl) et tout en la laissant appuyée, deux fois \hlred{w}.}. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres \vim (il n'est pas spécifique à \emph{The NERD Tree}).
+Rien de particulier ensuite, \emph{The NERD Tree} vous affiche l'arborescence du répertoire où vous avez lancé \vim, comme vous le montre la figure \ref{fig:vim-nerdtree}. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. 
+
+Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur \ttm lorsque vous êtes dans \emph{The NERD Tree}. Pour passer de la fenêtre de \emph{NERD Tree} à la fenêtre d'édition de votre fichier au clavier, appuyez sur \hlred{Ctrl + w + w}\sidenote{La touche \hlred{\emph{Control}} (Ctrl) et tout en la laissant appuyée, deux fois \hlred{w}.}. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres \vim (il n'est pas spécifique à \emph{The NERD Tree}).
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-nerdtree.png}
