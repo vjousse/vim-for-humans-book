@@ -1,0 +1,26 @@
+\chapter{L'outil de manipulation de texte rêvé}
+
+Alors oui, pour ceux qui se demandent, je fais des rêves bizarres, mais bon chacun a ses petites tares cachées. Et rêver d'un outil qui améliore ma vie quotidienne en tant que codeur (ou écrivain, ou formateur, ou \ldots) n'est pas si étrange que ça.
+
+Ce qui fait et fera encore le succès de \vim est sa capacité à \textbf{faciliter les manipulations de texte}. Certes il va vous proposer des fonctionnalités propres à chaque tâche que vous effectuerez \footnote{Souvent par l'intermédiaire de plugins.} comme la validation syntaxique de code, la correction orthographique, \ldots Mais à la fin, c'est toujours à écrire/corriger/manipuler/se déplacer dans du texte que vous passerez la majeure partie de votre temps. 
+
+C'est la que l'approche de \vim est différente d'IDE comme Eclipse / Netbeans / PhpStorm et consœurs. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, \vim adopte l'approche opposée : vous serez \textbf{très efficace} à manipuler/écrire du texte quelque soit le texte et vous pourrez enrichir \vim avec des fonctionnalités propres à votre langage de programmation via des plugins.
+
+Nous allons donc voir dans ce chapitre comment utiliser \vim à bon escient (vous allez commencer à oublier votre souris) et quelle est la logique derrière tous ces enchaînements de commandes qui paraissent barbares au non initié. Vous devriez pouvoir, à la fin de ce chapitre, \textbf{vous passer de votre souris} pour éditer/manipuler le contenu d'un fichier\footnote{En tout cas, vous devriez vous forcer à le faire en apprenant \vim, ce n'est pas si dur que ça, et c'est ce qui fait la différence entre \vim et les autres : le tout clavier.}.
+
+\section{Se déplacer par l'exemple : Essayer de copier / coller}\label{sec:se-deplacer}
+
+Nous avons déjà vu dans la section «\nameref{sec:modeinsertion}» comment passer du mode insertion (pour saisir du texte) au mode normal (\emph{a priori} pour l'instant, vous ne savez pas trop à quoi sert ce mode). En appuyant sur \tti votre curseur passe en mode insertion (lorsque vous êtes en mode normal) et en appuyant sur \ttesc il repasse dans le mode normal. Bon bah on est bien Tintin. Et maintenant ? 
+
+Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur \ttshift) pour sélectionner du texte et vous allez dans le \Verb|menu Édition| puis \Verb|Copier|. Et ensuite \Verb|menu Édition| puis \Verb|Coller|. Bah tiens, essayez pour voir.
+
+Si vous avez suivi la section «\nameref{sec:modes}» traitant de la position idéale pour votre main, vous savez que vous avez fait une ou plusieurs choses que vous devriez vous interdire :
+
+
+\begin{itemize}
+    \item Vous avez utilisé votre souris
+    \item Vous avez déplacé grandement votre main droite de sa position de repos, pour aller atteindre les flèches directionnelles qui sont très mal placées sur un clavier
+\end{itemize}
+
+
+Alors certes ce n'est pas grave en soit, mais c'est \textbf{inefficace} (se servir de la souris ou déplacer votre main droite vers les touches directionnelles est très lent) et \textbf{nuisible} pour vos petites mains. Si vous n'êtes pas prêt à vous forcer à ne pas le faire, je vous recommanderais presque d'\textbf{arrêter l'apprentissage de \vim} dès maintenant. \vim a été pensé pour ne pas utiliser la souris et pour ne pas bouger vos mains (ou presque). Ne pas se forcer à le faire, c'est ne pas utiliser \vim, et à un moment ou un autre, \textbf{vous le quitterez pour un éditeur} qui aura été pensé pour être utilisé à la souris.

@@ -22,7 +22,7 @@ Ce chapitre est indispensable si vous n'avez que peu d'expérience (voir pas du 
 
 En revanche, si vous êtes déjà familier avec \vim et n'utilisez déjà plus la souris, vous pouvez sagement sauter ce chapitre (soyez sur tout de même de donner sa chance au thème \emph{Solarized}).
 
-\section{Préambule indispensable : le mode insertion}
+\section{Préambule indispensable : le mode insertion}\label{sec:modeinsertion}
 
 Prenons le pari de créer le fichier \vimrc avec \vim lui même. Comme je vous le disais, le plus tôt vous commencerez, le mieux ce sera.
 Vous devrez certainement commencer par installer une version de \vim. Si vous utilisez un Mac, essayez MacVim \sidenote{MacVim: \url{http://code.google.com/p/macvim/}} sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système ``Unix'' vous devriez surement avoir gVim à votre disposition (ou tout du moins facilement installable grâce à votre gestionnaire de logiciels). Pour Windows, il semblerait y avoir une version disponible sure le site officiel de \vim\sidenote{Page de téléchargement officielle de \vim : \url{http://www.vim.org/download.php}}, mais je ne l'ai pas testée.
@@ -59,7 +59,7 @@ Par défaut, \vim est lancé dans un mode que l'on appelle le mode ``Normal''. C
 
 Si vous vous demandez pourquoi ces modes, pourquoi on semble se compliquer la vie (on se la simplifie en fait) et en quel honneur, dans le mode par défaut, il n'est même pas possible d'insérer du texte, lisez attentivement la section qui suit.
 
-\section{Les modes : d'où \vim tire sa puissance}
+\section{Les modes : d'où \vim tire sa puissance}\label{sec:modes}
 
 Je pense que nous serons tous à peu prêt d'accord sur le fait que si vous souhaitez apprendre à utiliser \vim, c'est pour gagner en efficacité pour la saisie/manipulation de texte/code. Pour gagner en efficacité lorsque l'on tape du code il n'y a pas 36 solutions, il n'y en a qu'une en fait : il faut bouger le moins possible les mains (voire pas du tout), et ne bouger que les doigts.
 
@@ -67,7 +67,7 @@ Pour ce faire bien sur, vous oubliez tout d'abord l'utilisation de la souris. En
 
 Vous oubliez aussi le mouvement de votre main droite pour vous déplacer vers les touches directionnelles afin de bouger votre curseur. C'est une perte de temps et c'est totalement inutile avec \vim.
 
-Qu'est-ce que vous avez le droit de faire dans le coup ? Pas grand chose, si ce n'est garder vos mains sur la position de repos comme le montre la figure \ref{fig:hand-position}. Vous trouverez d'ailleurs sur la plus part de claviers des marques sur les touches F et J, c'est pour vous donner un repère tactile d'où doivent se trouver vos indexes dans la position de repos.
+Qu'est-ce que vous avez le droit de faire dans le coup ? Pas grand chose, si ce n'est garder vos mains sur la position de repos comme le montre la figure \ref{fig:hand-position}. Vous trouverez d'ailleurs sur la plus part de claviers des marques sur les touches F et J, c'est pour vous donner un repère tactile de la position où doivent se trouver vos indexes dans la position de repos.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{hand-position.png}
@@ -81,7 +81,10 @@ Par défaut, on passe du mode \emph{insertion} au mode \emph{normal} en appuyant
 
 Pour passer du mode \emph{normal} au mode \emph{insertion}, on peut par exemple appuyer sur \tti On apprendra par la suite qu'il existe d'autre moyens de faire. Par exemple pour rentrer en mode insertion tout en créant une nouvelle ligne en dessous de la ligne courante (peut importe où se trouve votre curseur sur la ligne), on utilisera \tto en mode \emph{normal}.
 
+J'y reviendrai plus tard dans «\nameref{sec:se-deplacer}» mais si vous n'êtes pas prêt, à terme, à ne plus utiliser votre souris et les flèches directionnelles pour éditer du texte, je vous recommanderais presque d'arrêter votre apprentissage maintenant, c'est aussi simple que cela. \vim a été pensé pour être utilisé sans souris et en bougeant le moins possible les mains.
+
 \newthought{Si vous voulez pousser la démarche} jusqu'au bout, vous pouvez aussi vous procurer un clavier orthogonal \emph{TypeMatrix}\sidenote{\url{http://www.typematrix.com/}}. C'est ce que j'utilise personnellement, et mes doigts m'en remercient tous les jours.
+
 
 \newpage
 \section{La configuration par défaut : indispensable}
