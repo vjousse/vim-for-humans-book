@@ -49,6 +49,17 @@ Admettons donc que vous êtes en mode «normal» et que vous avez un peu de text
   \label{fig:vim-twain}
 \end{figure}
 
+La façon la plus naturelle\footnote{Mais pas la plus efficace, nous verrons cela un peu plus loin.} de copier/coller le mot «impossible» va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur \ttv (pour passer en mode «visuel»), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur \tty\footnote{La touche \ty étant utilisée comme raccourci du mot \emph{yank} en anglais.}. Vous avez copié votre premier mot.
+
+Déplacez vous ensuite à la fin de la phrase (toujours en mode «normal») puis appuyez sur \ttp. Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure \ref{fig:vim-paste}.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vim-paste.png}
+  \caption{\vim après le copier/coller.}
+  \label{fig:vim-paste}
+\end{figure}
+
+
 \section{Se passer des touches directionnelles}
 
 \section{Se passer de la touche Échap}
