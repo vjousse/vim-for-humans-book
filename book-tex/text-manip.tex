@@ -51,7 +51,7 @@ Admettons donc que vous êtes en mode «normal» et que vous avez un peu de text
 
 La façon la plus naturelle\footnote{Mais pas la plus efficace, nous verrons cela un peu plus loin.} de copier/coller le mot «impossible» va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur \ttv (pour passer en mode «visuel»), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur \tty\footnote{La touche \ty étant utilisée comme raccourci du mot \emph{yank} en anglais.}. Vous avez copié votre premier mot.
 
-Déplacez vous ensuite à la fin de la phrase (toujours en mode «normal») puis appuyez sur \ttp. Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure \ref{fig:vim-paste}.
+Déplacez vous ensuite à la fin de la phrase (toujours en mode «normal») puis appuyez sur \ttp\footnote{Raccourci du mot \emph{paste} cette fois ci.}. Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure \ref{fig:vim-paste}.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-paste.png}
@@ -59,11 +59,36 @@ Déplacez vous ensuite à la fin de la phrase (toujours en mode «normal») puis
   \label{fig:vim-paste}
 \end{figure}
 
+On se rend donc compte ici que \vim se sert de l'astuce des modes (et notamment du mode «normal» pour les déplacements) afin de ne pas avoir à se servir de la souris.
+À partir du moment où vous aurez pris l'habitude de passer rapidement d'un mode à l'autre (et pour cela se passer de \ttesc va devenir indispensable), utiliser la souris vous apparaitra comme une perte de temps, mais pour cela il va falloir pratiquer un peu bien sur.
+
 
 \section{Se passer des touches directionnelles}
 
-\section{Se passer de la touche Échap}
-\label{sec:esc}
+Nous y voilà. Encore plus que de se priver de la souris, se priver des touches directionnelles est la chose à faire si l'on veut utiliser \vim, pour de vrai. \vim va vous permettre de faire tout plus rapidement et plus intuitivement à la seule condition de le faire sans les touches directionnelles.
+Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main certes, mais ça va aussi vous forcer à passer en mode «normal» pour réaliser vos déplacements et vos mouvements de texte. Il n'y a qu'à ce moment là\footnote{Un peu douloureux au début il est vrai.} que vous commencerez à vraiment tirer parti de \vim.
+
+Pour cette section, je vais vous expliquer comment vous déplacer sans utiliser les touches directionnelles. Puis, une fois que vous aurez une vague idée de comment faire, je vous donnerai le code à mettre dans votre \vimrc pour désactiver les touches directionnelles complètement. Car oui, il n'y a que comme ça que vous y arriverez (en tout cas il n'y a que comme ça que j'y suis arrivé).
+
+
+\subsection{Se déplacer}
+
+En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un caractère :
+\begin{itemize}
+    \item \tth pour aller à gauche
+    \item \ttj pour aller en bas
+    \item \ttk pour aller en haut
+    \item \ttl pour aller à droite
+\end{itemize}
+
+Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien\footnote{Vous trouverez le clavier sur lequel \emph{Vi} a été conçu dan la section «\nameref{sec:esc}», vous comprendrez ainsi mieux pourquoi c'est comme cela.}. 
+
+À noter qu'à force, on se sert de moins en moins des déplacements gauche/droite d'un caractère. On va leur préférer les déplacements de mot en mot, de paragraphe en paragraphe ou les déplacements grâce à des recherches.
+
+
+\TODO petit dessin hjkl
+
+\section{Se passer de la touche Échap}\label{sec:esc}
 
 \section{À vous de jouer}
 
