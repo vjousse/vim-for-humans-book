@@ -63,7 +63,7 @@ Si vous vous demandez pourquoi ces modes, pourquoi on semble se compliquer la vi
 
 Je pense que nous serons tous à peu prêt d'accord sur le fait que si vous souhaitez apprendre à utiliser \vim, c'est pour gagner en efficacité pour la saisie/manipulation de texte/code. Pour gagner en efficacité lorsque l'on tape du code il n'y a pas 36 solutions, il n'y en a qu'une en fait : il faut bouger le moins possible les mains (voire pas du tout), et ne bouger que les doigts.
 
-Pour ce faire bien sur, vous oubliez tout d'abord l'utilisation de la souris. En plus d'être lent, le mouvement clavier -> souris puis souris -> clavier est très mauvais pour vos articulations et les troubles musculosquelettiques en général\sidenote{Vous êtes peut-être jeune et n'avez pas encore eu ce type de soucis. Mais croyez moi, ça vient beaucoup plus vite qu'on ne le croit. Si vous passez votre journée sur un ordinateur, ne négligez pas ces facteurs, vous le regretterez un jour.}. D'après \emph{Wikipedia}, c'est le type de maladie professionnelle la plus courante à l'heure actuelle\sidenote{\url{https://fr.wikipedia.org/wiki/Troubles_musculosquelettiques}}.
+Pour ce faire bien sûr, vous oubliez tout d'abord l'utilisation de la souris. En plus d'être lent, le mouvement clavier -> souris puis souris -> clavier est très mauvais pour vos articulations et les troubles musculosquelettiques en général\sidenote{Vous êtes peut-être jeune et n'avez pas encore eu ce type de soucis. Mais croyez moi, ça vient beaucoup plus vite qu'on ne le croit. Si vous passez votre journée sur un ordinateur, ne négligez pas ces facteurs, vous le regretterez un jour.}. D'après \emph{Wikipedia}, c'est le type de maladie professionnelle la plus courante à l'heure actuelle\sidenote{\url{https://fr.wikipedia.org/wiki/Troubles_musculosquelettiques}}.
 
 Vous oubliez aussi le mouvement de votre main droite pour vous déplacer vers les touches directionnelles afin de bouger votre curseur. C'est une perte de temps et c'est totalement inutile avec \vim.
 
@@ -75,7 +75,7 @@ Qu'est-ce que vous avez le droit de faire dans le coup ? Pas grand chose, si ce 
   \label{fig:hand-position}
 \end{figure}
 
-Ce parti pris (bouger le moins possible les mains du clavier) justifie à lui seul la présence d'un mode \emph{normal} et d'un mode \emph{insertion} dans \vim. En passant de l'un à l'autre, les touches sous vos doigts serviront tantôt à vous déplacer et à réaliser des opérations sur le texte\sidenote{C'est le mode \emph{normal}} (copier/coller, macros, \ldots), tantôt à sélectionner\sidenote{C'est le mode \emph{visuel}} et tantôt à insérer du texte\sidenote{C'est le mode \emph{insertion}}. Tout cela bien sur en évitant l'utilisation de combinaisons de touches du style \emph{Ctrl + touche} qui ne sont généralement pas bonnes pour vos doigts (\emph{Emacs} si tu nous lis, je te salue).
+Ce parti pris (bouger le moins possible les mains du clavier) justifie à lui seul la présence d'un mode \emph{normal} et d'un mode \emph{insertion} dans \vim. En passant de l'un à l'autre, les touches sous vos doigts serviront tantôt à vous déplacer et à réaliser des opérations sur le texte\sidenote{C'est le mode \emph{normal}} (copier/coller, macros, \ldots), tantôt à sélectionner\sidenote{C'est le mode \emph{visuel}} et tantôt à insérer du texte\sidenote{C'est le mode \emph{insertion}}. Tout cela bien sûr en évitant l'utilisation de combinaisons de touches du style \emph{Ctrl + touche} qui ne sont généralement pas bonnes pour vos doigts (\emph{Emacs} si tu nous lis, je te salue).
 
 Par défaut, on passe du mode \emph{insertion} au mode \emph{normal} en appuyant sur la \ttesc, mais c'est une des premières choses que l'on changera : \ttesc est bien trop loin sur les claviers actuels. 
 
@@ -167,7 +167,7 @@ Les images \ref{fig:vim-solarized-dark} et \ref{fig:vim-solarized-light} vous do
   \label{fig:vim-solarized-light}
 \end{figure}
 
-\newthought{Un bonus} (si vous n'utilisez pas \vim directement dans votre terminal) serait de choisir une police de caractère qui vous convient un peu mieux, c'est bien sur facultatif mais bon, je présume que certains d'entre vous sont des esthètes aguerris.
+\newthought{Un bonus} (si vous n'utilisez pas \vim directement dans votre terminal) serait de choisir une police de caractère qui vous convient un peu mieux, c'est bien sûr facultatif mais bon, je présume que certains d'entre vous sont des esthètes aguerris.
 
 Si vous êtes sous Mac Os X je vous conseille la police \Verb|Monaco| qui est plutôt sympathique. Rajoutez les lignes suivantes à votre \vimrc pour l'utiliser :
 
@@ -180,7 +180,7 @@ set antialias
   \label{lst:monaco}
 \end{listing}
 
-Vous pouvez bien sur changer le \Verb|h13| par \Verb|h12| si vous voulez une police plus petite (ou par \Verb|h14| si vous en voulez une plus grande).
+Vous pouvez bien sûr changer le \Verb|h13| par \Verb|h12| si vous voulez une police plus petite (ou par \Verb|h14| si vous en voulez une plus grande).
 
 Sinon sous Linux j'utilise la police \Verb|DejaVu Sans Mono| que je trouve plutôt sympathique :
 
@@ -193,7 +193,7 @@ set antialias
   \label{lst:dejavusansmono}
 \end{listing}
 
-Vous pouvez là aussi bien sur changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez on mode normal \vimcmd{:set guifont:*}.
+Vous pouvez là aussi bien sûr changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez on mode normal \vimcmd{:set guifont:*}.
 
 Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne \url{https://github.com/vjousse/vim-for-humans/blob/master/syntaxhighlight/vimrc} ou avec les fichiers mis à disposition avec ce livre. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de \vim dans le coup.
 
