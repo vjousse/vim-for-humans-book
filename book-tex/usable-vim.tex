@@ -18,14 +18,14 @@ Voici donc ce qui manque à un \vim nu (et ce qui est pour moi une \textbf{cause
     \item[Explorateur de fichiers] Si vous utilisez \vim avec une interface graphique (ce qui est le cas de 99\% d'entre vous je suppose) vous avez par défaut un menu \Verb|Fichier| vous permettant d'ouvrir un fichier. C'est certes un bon début, mais avoir à disposition un explorateur de projet à la Netbeans ou à la Textmate peut s'avérer très pratique. Pour obtenir le même comportement, nous utiliserons Nerdtree. À savoir qu'à la fin de ce livre, vous n'aurez plus besoin de la souris (et donc des menus et autres boutons).
 \end{description}
 
-Ce chapitre est indispensable si vous n'avez que peu d'expérience (voir pas du tout) avec \vim. À la fin de ce chapitre, vous aurez un \vim dont vous pourrez commencer à vous servir pour vos tâches de tous les jours. Cela devrait être suffisant pour vous permettre d'apprendre le reste petit à petit. Car il n'y a pas de secret, il vous faudra pratiquer pour apprendre \vim, alors autant commencer de suite et le moins douloureusement possible.
+Ce chapitre est indispensable si vous n'avez que peu d'expérience (voire pas du tout) avec \vim. À la fin de ce chapitre, vous aurez un \vim dont vous pourrez commencer à vous servir pour vos tâches de tous les jours. Cela devrait être suffisant pour vous permettre d'apprendre le reste petit à petit. Car il n'y a pas de secret, il vous faudra pratiquer pour apprendre \vim, alors autant commencer de suite et le moins douloureusement possible.
 
-En revanche, si vous êtes déjà familier avec \vim et n'utilisez déjà plus la souris, vous pouvez sagement sauter ce chapitre (soyez sur tout de même de donner sa chance au thème \emph{Solarized}).
+En revanche, si vous êtes déjà familier avec \vim et n'utilisez déjà plus la souris, vous pouvez sagement sauter ce chapitre (soyez sûr tout de même de donner sa chance au thème \emph{Solarized}).
 
 \section{Préambule indispensable : le mode insertion}\label{sec:modeinsertion}
 
 Prenons le pari de créer le fichier \vimrc avec \vim lui même. Comme je vous le disais, le plus tôt vous commencerez, le mieux ce sera.
-Vous devrez certainement commencer par installer une version de \vim. Si vous utilisez un Mac, essayez MacVim \sidenote{MacVim: \url{http://code.google.com/p/macvim/}} sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système ``Unix'' vous devriez surement avoir gVim à votre disposition (ou tout du moins facilement installable grâce à votre gestionnaire de logiciels). Pour Windows, il semblerait y avoir une version disponible sure le site officiel de \vim\sidenote{Page de téléchargement officielle de \vim : \url{http://www.vim.org/download.php}}, mais je ne l'ai pas testée.
+Vous devrez certainement commencer par installer une version de \vim. Si vous utilisez un Mac, essayez MacVim \sidenote{MacVim: \url{http://code.google.com/p/macvim/}} sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système ``Unix'' vous devriez sûrement avoir gVim à votre disposition (ou tout du moins facilement installable grâce à votre gestionnaire de logiciels). Pour Windows, il semblerait y avoir une version disponible sur le site officiel de \vim\sidenote{Page de téléchargement officielle de \vim : \url{http://www.vim.org/download.php}}, mais je ne l'ai pas testée.
 
 Cliquez sur \Verb|Fichier (File) -> Nouveau (New)|. Le texte d'accueil par défaut de \vim devrait avoir disparu et vous devriez avoir une page blanche comme sur la figure \ref{fig:vim-new}. 
 
@@ -35,7 +35,7 @@ Cliquez sur \Verb|Fichier (File) -> Nouveau (New)|. Le texte d'accueil par défa
   \label{fig:vim-new}
 \end{figure}
 
-Commençons par entrer un commentaire dans d'entête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur \tti (le curseur devrait changer d'aspect) et entrez le commentaire ci-dessous\sidenote{Si vous ne savez pas trop ce que vous avez fait et que \vim vous affiche des trucs en rouge en bas à gauche au ne semble pas réagir comme il faut quand vous appuyez sur \tti, appuyez plusieurs fois sur \ttesc, ça devrait vous remettre au mode par défaut de \vim}.
+Commençons par entrer un commentaire dans l'en-tête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur \tti (le curseur devrait changer d'aspect) et entrez le commentaire ci-dessous\sidenote{Si vous ne savez pas trop ce que vous avez fait et que \vim vous affiche des trucs en rouge en bas à gauche au ne semble pas réagir comme il faut quand vous appuyez sur \tti, appuyez plusieurs fois sur \ttesc, ça devrait vous remettre au mode par défaut de \vim}.
 \begin{listing}[H]
 
     \begin{minted}[bgcolor=bg, gobble=8]{vim}
@@ -53,9 +53,9 @@ Vous aurez remarqué que les commentaires en \emph{VimL} (le langage de configur
   \label{fig:vim-first-comment}
 \end{figure}
 
-Tout ça pour ça me direz vous, et vous avez bien raison. Mais tout cela a une logique que je vais vous expliquer. L'avantage de \vim est qu'il est généralement logique, quand vous avez compris la logique, tout vous semble limpide et tomber sous le sens.
+Tout ça pour ça me direz-vous, et vous avez bien raison. Mais tout cela a une logique que je vais vous expliquer. L'avantage de \vim est qu'il est généralement logique. Quand vous avez compris la logique, tout vous semble limpide et tomber sous le sens.
 
-Par défaut, \vim est lancé dans un mode que l'on appelle le mode ``Normal''. C'est à dire que ce mode n'est pas fait pour écrire du texte (ça, ça sera le mode ``Insert'') mais juste pour se déplacer et manipuler du texte. C'est la présence de ces 2 différents modes (il y en a d'autres mais ce n'est pas le sujet pour l'instant) qui fait toute la puissance de \vim. Il vous faudra un certain temps pour vous rendre compte de cette puissance par vous même, alors faites moi juste confiance pour l'instant.
+Par défaut, \vim est lancé dans un mode que l'on appelle le mode ``Normal''. C'est à dire que ce mode n'est pas fait pour écrire du texte (ça, ça sera le mode ``Insert'') mais juste pour se déplacer et manipuler du texte. C'est la présence de ces 2 différents modes (il y en a d'autres mais ce n'est pas le sujet pour l'instant) qui fait toute la puissance de \vim. Il vous faudra un certain temps pour vous rendre compte de cette puissance par vous-même, alors faites-moi juste confiance pour l'instant.
 
 Si vous vous demandez pourquoi ces modes, pourquoi on semble se compliquer la vie (on se la simplifie en fait) et en quel honneur, dans le mode par défaut, il n'est même pas possible d'insérer du texte, lisez attentivement la section qui suit.
 
@@ -67,7 +67,7 @@ Pour ce faire bien sûr, vous oubliez tout d'abord l'utilisation de la souris. E
 
 Vous oubliez aussi le mouvement de votre main droite pour vous déplacer vers les touches directionnelles afin de bouger votre curseur. C'est une perte de temps et c'est totalement inutile avec \vim.
 
-Qu'est-ce que vous avez le droit de faire dans le coup ? Pas grand chose, si ce n'est garder vos mains sur la position de repos comme le montre la figure \ref{fig:hand-position}. Vous trouverez d'ailleurs sur la plus part de claviers des marques sur les touches F et J, c'est pour vous donner un repère tactile de la position où doivent se trouver vos indexes dans la position de repos.
+Qu'est-ce que vous avez le droit de faire dans le coup ? Pas grand chose, si ce n'est garder vos mains sur la position de repos comme le montre la figure \ref{fig:hand-position}. Vous trouverez d'ailleurs sur la plus part des claviers des marques sur les touches F et J, c'est pour vous donner un repère tactile de la position où doivent se trouver vos index dans la position de repos.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{hand-position.png}
@@ -79,7 +79,7 @@ Ce parti pris (bouger le moins possible les mains du clavier) justifie à lui se
 
 Par défaut, on passe du mode \emph{insertion} au mode \emph{normal} en appuyant sur la \ttesc, mais c'est une des premières choses que l'on changera : \ttesc est bien trop loin sur les claviers actuels. 
 
-Pour passer du mode \emph{normal} au mode \emph{insertion}, on peut par exemple appuyer sur \tti On apprendra par la suite qu'il existe d'autre moyens de faire. Par exemple pour rentrer en mode insertion tout en créant une nouvelle ligne en dessous de la ligne courante (peut importe où se trouve votre curseur sur la ligne), on utilisera \tto en mode \emph{normal}.
+Pour passer du mode \emph{normal} au mode \emph{insertion}, on peut par exemple appuyer sur \tti. On apprendra par la suite qu'il existe d'autres moyens de faire. Par exemple pour rentrer en mode insertion tout en créant une nouvelle ligne en dessous de la ligne courante (peut importe où se trouve votre curseur sur la ligne), on utilisera \tto en mode \emph{normal}.
 
 J'y reviendrai plus tard dans «\nameref{sec:se-deplacer}» mais si vous n'êtes pas prêt, à terme, à ne plus utiliser votre souris et les flèches directionnelles pour éditer du texte, je vous recommanderais presque d'arrêter votre apprentissage maintenant, c'est aussi simple que cela. \vim a été pensé pour être utilisé sans souris et en bougeant le moins possible les mains.
 
