@@ -75,10 +75,10 @@ Pour cette section, je vais vous expliquer comment vous déplacer sans utiliser 
 
 En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un caractère :
 \begin{itemize}
-    \item \tth pour aller à gauche
-    \item \ttj pour aller en bas
-    \item \ttk pour aller en haut
-    \item \ttl pour aller à droite
+    \item \tth pour aller \textbf{à gauche}
+    \item \ttj pour aller \textbf{en bas}
+    \item \ttk pour aller \textbf{en haut}
+    \item \ttl pour aller \textbf{à droite}
 \end{itemize}
 
 \begin{figure}%
@@ -87,12 +87,34 @@ En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un carac
   \label{fig:vim-hjkl}
 \end{figure}
 
-Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien\footnote{Vous trouverez le clavier sur lequel \emph{Vi} a été conçu dan la section «\nameref{sec:esc}», vous comprendrez ainsi mieux pourquoi c'est comme cela.}. 
+Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien\footnote{Vous trouverez le clavier sur lequel \emph{Vi} a été conçu dan la section «\nameref{sec:esc}», vous comprendrez ainsi mieux pourquoi c'est comme cela.}.
 
-À noter qu'à force, on se sert de moins en moins des déplacements gauche/droite d'un caractère. On va leur préférer les déplacements de mot en mot, de paragraphe en paragraphe ou les déplacements grâce à des recherches.
+À noter qu'à force, on se sert de moins en moins des déplacements gauche/droite d'un caractère. On va leur préférer les déplacements de mot en mot, de paragraphe en paragraphe ou les déplacements grâce à des recherches. Quelques exemples de déplacements "rapides" que nous re-verrons plus en détail plus tard :
 
+\begin{itemize}
+    \item \tte se déplace \textbf{à la fin du mot courant}
+    \item \ttb se déplace \textbf{au début du mot courant}
+    \item \ttw se déplace \textbf{au début du mot suivant}
+    \item \tthat se déplace \textbf{au premier caractère non blanc de la ligne}
+    \item \ttdollar se déplace \textbf{à la fin de la ligne}
+    \item \ttzero se déplace \textbf{au début de la ligne}
+\end{itemize}
+
+Vous avez ici le minimum pour vous déplacer en mode normal. Il existe aussi des commandes vous permettant de vous déplacer puis de rentrer en mode insertion directement, elles sont très pratiques car elles vont vous permettre d'économiser quelques touches. En voici quelques unes que j'utilise à peu près tout le temps :
+
+\begin{itemize}
+    \item \tti se place en mode insertion \textbf{avant l'emplacement du curseur}
+    \item \tta se place en mode insertion \textbf{après l'emplacement du curseur}
+    \item \ttI se place en mode insertion \textbf{au début de la ligne}
+    \item \ttA se place en mode insertion \textbf{à la fin de la ligne}
+    \item \tto insère une nouvelle ligne \textbf{en dessous de la ligne courante}
+    \item \ttO insère une nouvelle ligne \textbf{au dessus de la ligne courante}
+    \item \ttr \textbf{remplace les caractères} sous le curseur
+\end{itemize}
 
 \section{Se passer de la touche Échap}\label{sec:esc}
+
+\section{Combiner des touches/déplacements}
 
 \section{À vous de jouer}
 
