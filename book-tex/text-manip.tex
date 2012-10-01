@@ -89,7 +89,7 @@ En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un carac
 
 Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien\footnote{Vous trouverez le clavier sur lequel \emph{Vi} a été conçu dan la section «\nameref{sec:esc}», vous comprendrez ainsi mieux pourquoi c'est comme cela.}.
 
-À noter qu'à force, on se sert de moins en moins des déplacements gauche/droite d'un caractère. On va leur préférer les déplacements de mot en mot, de paragraphe en paragraphe ou les déplacements grâce à des recherches. Quelques exemples de déplacements "rapides" que nous re-verrons plus en détail plus tard :
+À noter qu'à force, on se sert de moins en moins des déplacements gauche/droite d'un caractère. On va leur préférer les déplacements de mot en mot, de paragraphe en paragraphe ou les déplacements grâce à des recherches. Quelques exemples de déplacements "rapides" que j'utilise :
 
 \begin{itemize}
     \item \tte se déplace \textbf{à la fin du mot courant}
@@ -112,9 +112,38 @@ Vous avez ici le minimum pour vous déplacer en mode normal. Il existe aussi des
     \item \ttr \textbf{remplace les caractères} sous le curseur
 \end{itemize}
 
+Arrêtons-nous un peu là dessus. Au risque d'insister lourdement, mais la clé de l'utilisation de \vim vient de ce que nous venons de voir dans ce chapitre, ni plus, ni moins. Il y a une chose que vous avez à vous forcer à faire, c'est \textbf{d'utiliser les touches hjkl} pour les déplacements. Si vous y arrivez, tout le reste vous l'apprendrez au fur et à mesure.
+
+Vous trouverez des sites entiers vous détaillant les différentes commandes possibles, les différentes combinaisons, j'en passe et des meilleures. Vous les apprendrez puis les oublierez (ou pas, en fonction de si elles vous sont vraiment utiles). Si vous avez un seul effort à faire c'est celui de se passer des touches directionnelles et donc de vous forcer à utiliser le mode normal. Le reste tombera sous le sens.
+
+Voici l'ultime configuration qu'il vous faudra mettre dans votre \vimrc pour atteindre le Saint Graal : désactiver les touches directionnelles.
+
+\begin{listing}[H]
+
+    \begin{minted}[bgcolor=bg, gobble=8]{vim}
+        " Desactiver les touches directionnelles
+        map <up> <nop>
+        map <down> <nop>
+        map <left> <nop>
+        map <right> <nop>
+        imap <up> <nop>
+        imap <down> <nop>
+        imap <left> <nop>
+        imap <right> <nop>
+    \end{minted}
+    \caption{Désactiver les touches directionnelles.}
+    \label{code:touches-directionnelles}
+\end{listing}
+
+Nous y voilà. Croyez-moi, vous allez souffrir un peu au début. Mais je pense que personnellement pour moi, ça n'a pas duré plus de 2 jours. Ensuite vous aurez oublié. Si vous n'êtes pas prêt à galérer un peu pendant deux jours pour améliorer votre efficacité à vie, que faites vous ici !
+
+N'oubliez pas que le but ici est de gagner en rapidité en ne bougeant quasi plus ses mains de la rangée de repos, et en utilisant le plus possible le «mode normal». Au boulot !
+
 \section{Se passer de la touche Échap}\label{sec:esc}
 
 \section{Combiner des touches/déplacements}
+
+\TODO référence déplacement \vim (en annexe ?)
 
 \section{À vous de jouer}
 
