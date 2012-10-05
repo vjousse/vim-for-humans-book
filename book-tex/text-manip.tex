@@ -71,7 +71,7 @@ Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main cert
 Pour cette section, je vais vous expliquer comment vous déplacer sans utiliser les touches directionnelles. Puis, une fois que vous aurez une vague idée de comment faire, je vous donnerai le code à mettre dans votre \vimrc pour désactiver les touches directionnelles complètement. Car oui, il n'y a que comme ça que vous y arriverez (en tout cas il n'y a que comme ça que j'y suis arrivé).
 
 
-\subsection{Se déplacer}
+\subsection{Se déplacer sans les touches directionnelles}
 
 En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un caractère :
 \begin{itemize}
@@ -135,15 +135,77 @@ Voici l'ultime configuration qu'il vous faudra mettre dans votre \vimrc pour att
     \label{code:touches-directionnelles}
 \end{listing}
 
-Nous y voilà. Croyez-moi, vous allez souffrir un peu au début. Mais je pense que personnellement pour moi, ça n'a pas duré plus de 2 jours. Ensuite vous aurez oublié. Si vous n'êtes pas prêt à galérer un peu pendant deux jours pour améliorer votre efficacité à vie, que faites vous ici !
+Nous y voilà. Croyez-moi, vous allez souffrir un peu au début. Pour moi, ça n'a pas du durer plus de 2 jours. Ensuite vous aurez oublié. Si vous n'êtes pas prêt à galérer un peu pendant deux jours pour améliorer votre efficacité à vie, que faites vous ici !
+
+Je ne vous donnerai pas beaucoup plus d'autres détails sur toutes les touches possibles et imaginables pour vous déplacer, d'autres ressources le font déjà bien mieux que moi. Je vais en revanche vous apprendre dans \nameref{sec:combine-move} comment les utiliser à bon escient.
+
+On peut notamment citer le livre gratuit "A byte of \vim" traduit en français et disponible à l'adresse suivante : \url{http://www.swaroopch.org/notes/Vim_fr:Table_des_Mati\%C3\%A8res}.
+
+Ou encore l'infographie de la figure \ref{fig:vim-cheat-sheet}\footnote{Téléchargeable sur \url{http://www.nathael.org/}} qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vi-vim-cheat-sheet.png}
+  \caption{Les touches \vim.}
+  \label{fig:vim-cheat-sheet}
+\end{figure}
 
 N'oubliez pas que le but ici est de gagner en rapidité en ne bougeant quasi plus ses mains de la rangée de repos, et en utilisant le plus possible le «mode normal». Au boulot !
 
 \section{Se passer de la touche Échap}\label{sec:esc}
 
-\section{Combiner des touches/déplacements}
+Utiliser \ttesc pour sortir du mode «insertion» semble être une hérésie tellement elle est difficilement accessible. Il faut déplacer entièrement la main gauche pour y accéder ou alors se torturer le petit doigt.
 
+Pour comprendre pourquoi \ttesc est utilisée par défaut, il faut faire un bon de quelques années en arrière, pour se retrouver en face du clavier sur lequel \emph{Vi} a été développé. Vous pouvez voir sur la photo \ref{fig:vim-keyboard} que \ttesc était très facilement accessible. Vous pouvez aussi noter l'emplacement des touches directionnelles. Malheureusement depuis, cela a bien changé.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{lsi-adm3a-full-keyboard.jpg}
+  \caption{Le clavier sur lequel \emph{Vi} a été réalisé.}
+  \label{fig:vim-keyboard}
+\end{figure}
+
+L'étape ultime (après avoir réussi à se passer des touches directionnelles) est donc de rapprocher \ttesc de vos petits doigts. Il y a plusieurs solutions pour cela, mais celle que je vous recommande si vous avez un clavier avec une disposition française est la suivante (dans votre \vimrc) :
+
+\begin{listing}[H]
+
+    \begin{minted}[bgcolor=bg, gobble=8]{vim}
+        " Les ; sons rarement utilise l'un a la suite de l'autre
+        :imap ;; <Esc>
+    \end{minted}
+    \caption{Taper deux fois sur \hlred{;} pour quitter le mode normal.}
+    \label{code:avoid-esc}
+\end{listing}
+
+Lorsque vous êtes en mode insertion, il vous suffit d'appuyer deux fois sur \ttsemicolon pour retourner au mode normal. \ttsemicolon ne vous demande pas de bouger votre main de la rangée de repos et on l'utilise rarement deux fois de suite (et si c'est le cas, il suffit d'attendre un peu avant de taper le deuxième \tsemicolon), c'est donc le parfait candidat.
+
+Voici d'autres solutions possibles (cf \url{http://vim.wikia.com/wiki/Avoid_the_escape_key}):
+
+\begin{listing}[H]
+    \begin{minted}[bgcolor=bg, gobble=8]{vim}
+
+        :imap jj <Esc>
+
+        :imap jk <Esc>
+
+        :imap ii <Esc>
+
+        :imap ` <Esc>
+
+        " Shift-Espace (peut ne pas marcher sur votre systeme).
+        :imap <S-Space> <Esc>
+
+        " Sous Linux avec gvim Vim en console, vous pouvez utiliser Alt-Space.
+        :imap <M-Space> <Esc>
+    \end{minted}
+    \caption{D'autres combinaisons de touches possibles pour quitter le mode normal.}
+    \label{code:avoid-esc-alt}
+\end{listing}
+
+
+\section{Combiner des touches/déplacements}
+\label{sec:combine-move}
 \TODO référence déplacement \vim (en annexe ?)
+
+\section{Rechercher / Se déplacer rapidement}
 
 \section{À vous de jouer}
 
