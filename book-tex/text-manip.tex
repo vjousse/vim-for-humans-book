@@ -63,7 +63,7 @@ On se rend donc compte ici que \vim se sert de l'astuce des modes (et notamment 
 À partir du moment où vous aurez pris l'habitude de passer rapidement d'un mode à l'autre (et pour cela se passer de \ttesc va devenir indispensable), utiliser la souris vous apparaîtra comme une perte de temps, mais pour cela il va falloir pratiquer un peu bien sûr.
 
 
-\section{Se passer des touches directionnelles}
+\section{Se passer des touches directionnelles}\label{sec:se-passer-touches-dir}
 
 Nous y voilà. Encore plus que de se priver de la souris, se priver des touches directionnelles est la chose à faire si l'on veut utiliser \vim, pour de vrai. \vim va vous permettre de faire tout plus rapidement et plus intuitivement à la seule condition de le faire sans les touches directionnelles.
 Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main certes, mais ça va aussi vous forcer à passer en mode «normal» pour réaliser vos déplacements et vos mouvements de texte. Il n'y a qu'à ce moment là\footnote{Un peu douloureux au début il est vrai.} que vous commencerez à vraiment tirer parti de \vim.
@@ -200,13 +200,49 @@ Voici d'autres solutions possibles (cf \url{http://vim.wikia.com/wiki/Avoid_the_
     \label{code:avoid-esc-alt}
 \end{listing}
 
-
 \section{Combiner des touches/déplacements}
 \label{sec:combine-move}
-\TODO référence déplacement \vim (en annexe ?)
+
+Maintenant que nous savons nous déplacer en mode normal, il est temps de voir comment réaliser d'autres opérations. Nous avons déjà vu le copier/coller au chapitre \nameref{sec:se-deplacer}, nous allons maintenant voir comment supprimer/éditer plus facilement.
+
+Dans \nameref{sec:se-passer-touches-dir} nous avons vu qu'il suffisait d'utiliser \ttw pour se déplacer au début du mot suivant. Nous allons essayer de combiner cela avec quelques nouvelles touches du mode normal :
+
+\begin{itemize}
+    \item \ttd est utilisé pour « supprimer »
+    \item \ttc est utilisé pour « supprimer et passer en mode insertion »
+\end{itemize}
+
+À noter que ce qui est supprimé est placé dans le presse-papier en même temps (le supprimé se comporte par défaut comme un « couper »).
+
+La particularité de ces touches, c'est qu'elles attendent ensuite un « ordre de déplacement » pour savoir quoi supprimer. Il va donc falloir les combiner avec les déplacements que nous avons déjà vus dans \nameref{sec:se-passer-touches-dir}.
+
+Cela donnera par exemple :
+
+\begin{itemize}
+    \item appuyer sur \ttd puis sur \ttw supprimera les caractères jusqu'au prochain mot
+    \item appuyer sur \ttc puis sur \ttw supprimera les caractères jusqu'au prochain mot et passera en mode insertion
+    \item appuyer sur \ttd puis sur \ttdollar supprimera tout jusqu'à la fin de la ligne
+    \item appuyer sur \ttd puis sur \tthat supprimera tout jusqu'au début de la ligne
+\end{itemize}
+
+Vous pouvez aussi utiliser cela pour copier :
+
+\begin{itemize}
+    \item appuyer sur \tty puis sur \ttw copiera les caractères jusqu'au prochain mot
+    \item appuyer sur \tty puis sur \ttdollar copiera tout jusqu'à la fin de la ligne
+    \item appuyer sur \tty puis sur \tthat copiera tout jusqu'au début de la ligne
+\end{itemize}
+
+Il ne vous restera qu'a appuyer sur \ttp pour coller ce que vous voulez où vous voulez.
 
 \section{Rechercher / Se déplacer rapidement}
+
+Recherche, marqueurs, sauts de pages
+
+\section{Mémo : les opérations usuelles}
+cf. http://www.tuteurs.ens.fr/unix/editeurs/vim.html
 
 \section{À vous de jouer}
 
 \TODO exercices
+\TODO jeu en ligne vim
