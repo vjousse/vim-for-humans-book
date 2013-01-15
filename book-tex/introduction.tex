@@ -13,7 +13,7 @@ Et pourtant, ils restent difficiles à apprendre. Non pas qu'ils soient plus com
 
 Ce livre a pour but de pallier ce manque en vous guidant tout au long de votre découverte de \vim\sidenote{Je laisse \emph{Emacs} à ceux qui savent. Pour un bref comparatif c'est ici : \url{http://fr.wikipedia.org/wiki/Guerre_d'éditeurs}. Les goûts et les couleurs …}. Il ne prétend pas être un guide exhaustif \footnote{Vous pouvez essayer \emph{A Byte of \vim} pour celà : \url{http://www.swaroopch.org/notes/Vim}} mais plutôt un bon moyen de gagner du temps en allant à l'essentiel et en vous évitant de parcourir tout internet pour trouver le moyen le plus rapide de tirer parti de \vim.
 
-Vous aussi vous en avez marre d'attendre la release de TextMate 2\footnote{À noter que depuis l'écriture de ce livre, le code de TextMate 2 a été publié sous licence GPL : \url{https://github.com/textmate/textmate}} ? D'essayer le n-ième éditeur à la mode et de devoir tout réapprendre et ce jusqu'à la prochaine mode ? De devoir changer d'éditeur quand vous passez de votre Mac, à votre Linux, à votre serveur ? Alors vous aussi, rejoignez la communauté des gens heureux de leur éditeur de texte. \textbf{Le changement, c'est maintenant}.
+Vous aussi vous en avez marre d'attendre la release de TextMate 2\footnote{À noter que depuis l'écriture de ce livre, le code de TextMate 2 a été publié sous licence GPL : \url{https://github.com/textmate/textmate}} ? D'essayer le n-ième éditeur à la mode et de devoir tout réapprendre et ce jusqu'à la prochaine mode ? De devoir changer d'éditeur quand vous passez de votre Mac, à votre Windows, à votre Linux ? Alors vous aussi, rejoignez la communauté des gens heureux de leur éditeur de texte. \textbf{Le changement, c'est maintenant}.
 
 \section{Pour qui ?}
 
@@ -21,10 +21,10 @@ Vous aussi vous en avez marre d'attendre la release de TextMate 2\footnote{À no
 
 Par exemple vous êtes :
 \begin{description}
-    \item[Étudiant] Si vous voulez faire bien sûr un CV, c'est un must (en plus d'être un attrape geekette en puissance\footnote{À confirmer.}). Vous aurez un outil unique pour écrire tout ce que vous avez à écrire (et que vous pourrez réutiliser tout au long de votre carrière) : vos rapports en \LaTeX, vos présentations\footnote{En utilisant \emph{impress.js} par exemple : \url{http://bartaz.github.com/impress.js}. Basé sur du HTML/JS/CSS, je vous le recommande grandement pour des présentations originales et basées sur des techno non propriétaires.}, votre code (si vous avez besoin d'OpenOffice ou de Word pour écrire vos rapports, il est temps de changer d'outil et d'utiliser \LaTeX).
-    \item[Prof] Il est temps de montrer l'exemple et d'apprendre à vos étudiants à bien utiliser un des outils qui leur servira à vie, bien plus qu'un quelconque langage de programmation.
+    \item[Étudiant] Si vous voulez faire bien sûr un CV, c'est un must (en plus d'être un attrape geekette en puissance\footnote{À confirmer.}). Vous aurez un outil unique pour écrire tout ce que vous avez à écrire (et que vous pourrez réutiliser tout au long de votre carrière) : vos rapports en \LaTeX, vos présentations\footnote{En utilisant \emph{impress.js} par exemple : \url{http://bartaz.github.com/impress.js}. Basé sur du HTML/JS/CSS, je vous le recommande grandement pour des présentations originales et basées sur des technologies non propriétaires.}, votre code (si vous avez besoin d'OpenOffice ou de Word pour écrire vos rapports, il est temps de changer d'outil et d'utiliser \LaTeX).
+    \item[Enseignant] Il est temps de montrer l'exemple et d'apprendre à vos étudiants à bien utiliser un des outils qui leur servira à vie, bien plus qu'un quelconque langage de programmation.
     \item[Codeur] Investir dans votre outil de tous les jours est indispensable. Quitte à apprendre des raccourcis claviers, autant le faire de manière utile. Si cet investissement est encore rentable dans 10 ans, c'est juste l'investissement parfait, c'est \vim.
-    \item[Administrateur système Unix] Si vous utilisez emacs vous êtes pardonnable, si vous utilisez nano/pico vous êtes pendable, sinon il est grand temps de s'y mettre les gars, c'est un des cas d'utilisation parfait (un éditeur de texte surpuissant ne nécessitant pas d'interface graphique).
+    \item[Administrateur système Unix] Si vous utilisez \emph{Emacs} vous êtes pardonnable, si vous utilisez nano/pico je ne peux plus rien pour vous, sinon il est grand temps de s'y mettre les gars, c'est un des cas d'utilisation parfait (un éditeur de texte surpuissant ne nécessitant pas d'interface graphique).
     \item[Écrivain] Si vous écrivez en markdown/RST/WikiMarkup ou en \LaTeX, \vim vous fera gagner beaucoup de temps. Vous ne pourrez plus repasser à un autre éditeur, ou vous voudrez le "Vimifier" à tout prix.
 \end{description}
 
@@ -39,13 +39,13 @@ Faites moi confiance, je suis passé et repassé par ces 5 rôles, mon meilleur 
     \item Comment vous pouvez facilement déduire les "raccourcis claviers" avec quelques règles simples.
 \end{itemize}
 
-Si je devais le résumer en une phrase : puisque vous vous considérez comme {\bf un artiste, passez du temps à apprendre} comment utiliser votre outil, comme un artiste, une bonne fois pour toute.
+Si je devais le résumer en une phrase : puisque vous vous considérez comme {\bf un artiste, passez du temps à apprendre} comment utiliser l'outil qui vous permet de vous exprimer, une bonne fois pour toute.
 
 \section{Ce que vous n'apprendrez pas (entre autres choses)}
 
 \begin{itemize}
-    \item Vous n'apprendrez pas comment installer/configurer \vim pour Windows. Pas que ce ne soit pas faisable, mais je n'ai que très peu de connaissances sous Windows. Ça viendra peut-être, mais pas tout de suite. On couvrira ici Linux/Unix (et donc Mac Os X aussi).
-    \item Vous n'apprendrez pas comment utiliser \emph{Vi} (notez l'absence du "m"). Je vais vous apprendre à être productif pour coder/produire du texte avec \vim, pas à faire le beau devant les copains avec \emph{Vi}\footnote{\vim est suffisant pour cela de toute façon}. Pour ceux qui ne suivent pas, \emph{Vi} est "l'ancêtre de \vim (qui veut dire \emph{Vi} - \emph{IMproved}, \emph{Vi} amélioré)" et est installé par défaut sur tous les Unix (même sur votre Mac OS X).
+    \item Vous n'apprendrez pas comment installer/configurer \vim pour Windows. Pas que ce ne soit pas faisable, mais je n'ai que très peu de connaissances sous Windows. Ça viendra peut-être, mais pas tout de suite. On couvrira ici Linux/Unix (et par extension Mac Os X).
+    \item Vous n'apprendrez pas comment utiliser \emph{Vi} (notez l'absence du "m"). Je vais vous apprendre à être productif pour coder/produire du texte avec \vim, pas à faire le beau devant les copains avec \emph{Vi}\footnote{\vim est suffisant pour cela de toute façon.}. Pour ceux qui ne suivent pas, \emph{Vi} est "l'ancêtre de \vim (qui veut dire \emph{Vi} - \emph{IMproved}, \emph{Vi} amélioré)" et est installé par défaut sur tous les Unix (même sur votre Mac OS X).
     \item Vous n'apprendrez pas à connaitre les entrailles de \vim par c\oe ur : ce n'est pas une référence, mais un guide utile et pragmatique.
     \item Vous n'apprendrez pas comment modifier votre \vim parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème \emph{Solarized} (\url{http://ethanschoonover.com/solarized}), il est juste parfait pour travailler.
 \end{itemize}
