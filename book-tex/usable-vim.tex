@@ -143,7 +143,16 @@ Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-h
 
 Les thèmes vont vous permettre de rendre votre \vim un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème solarized \url{http://ethanschoonover.com/solarized} (avec fond clair ou foncé, ça dépendra de vous).
 
-Pour l'installer, commencez tout d'abord par créer un répertoire nommé \Verb|.vim|\sidenote{Ce répertoire s'appelle \Verb|vimfiles| sous Windows. À chaque fois que je ferai référence au répertoire \Verb|.vim| ça sera en fait \Verb|vimfiles| pour les Windowsiens} au même endroit que votre \vimrc\sidenote{Dans votre répertoire utilisateur donc.}. Dans ce répertoire \Verb|.vim|, créez un sous-répertoire nommé \Verb|colors|. Téléchargez ensuite le fichier du thème Solarized \url{https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim}\sidenote{ou copiez celui qui vous a été fourni avec le téléchargement de ce livre}(c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire \Verb|vim/colors/| fraîchement créé. Activez ensuite le thème Solarized dans votre \vimrc comme le montre le code dans le listing \ref{lst:solarized}. Pour tester le thème clair, remplacez \Verb|dark| par \Verb|light| (au niveau de la définition de la propriété \Verb|background|).
+Pour l'installer, commencez tout d'abord par créer un répertoire nommé \Verb|.vim|\sidenote{Ce répertoire s'appelle \Verb|vimfiles| sous Windows. À chaque fois que je ferai référence au répertoire \Verb|.vim| ça sera en fait \Verb|vimfiles| pour les Windowsiens} au même endroit que votre \vimrc\sidenote{Dans votre répertoire utilisateur donc.}. Dans ce répertoire \Verb|.vim|, créez un sous-répertoire nommé \Verb|colors|. Téléchargez ensuite le fichier du thème Solarized \url{https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim}\sidenote{ou copiez celui qui vous a été fourni avec le téléchargement de ce livre}(c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire \Verb|vim/colors/| fraîchement créé. Votre répertoire \Verb|.vim| devrait ressembler à celui de la figure \ref{fig:solarized-tree}.
+
+\begin{figure}%
+  \center
+  \includegraphics[width=0.3\linewidth]{solarized-tree.png}
+  \caption{Le contenu du répertoire .vim avec Solarized.}
+  \label{fig:solarized-tree}
+\end{figure}
+
+Activez ensuite le thème Solarized dans votre \vimrc comme le montre le code dans le listing \ref{lst:solarized}. Pour tester le thème clair, remplacez \Verb|dark| par \Verb|light| (au niveau de la définition de la propriété \Verb|background|).
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
