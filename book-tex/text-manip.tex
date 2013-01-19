@@ -238,10 +238,10 @@ Cela donnera par exemple :
   \hline
   Action & Résultat \\
   \hline
-  \ttd puis \ttw & supprime les caractères jusqu'au prochain mot \\
-  \ttc puis \ttw & supprime les caractères jusqu'au prochain mot et passera en mode insertion \\
-  \ttd puis \ttdollar & supprime tout jusqu'à la fin de la ligne \\
-  \ttd puis \tthat & supprime tout jusqu'au début de la ligne \\
+  \ttd\xspace puis \ttw & supprime les caractères jusqu'au prochain mot \\
+  \ttc\xspace puis \ttw & supprime les caractères jusqu'au prochain mot et passera en mode insertion \\
+  \ttd\xspace puis \ttdollar & supprime tout jusqu'à la fin de la ligne \\
+  \ttd\xspace puis \tthat & supprime tout jusqu'au début de la ligne \\
   \hline
 \end{tabular}
 \bigskip
@@ -255,14 +255,50 @@ Vous pouvez aussi utiliser cela pour copier :
   Action & Résultat \\
   \hline
 
-  \tty puis \ttw & copie les caractères jusqu'au prochain mot \\
-  \tty puis \ttdollar & copie tout jusqu'à la fin de la ligne \\
-  \tty puis \tthat & copie tout jusqu'au début de la ligne \\
+  \tty\xspace puis \ttw & copie les caractères jusqu'au prochain mot \\
+  \tty\xspace puis \ttdollar & copie tout jusqu'à la fin de la ligne \\
+  \tty\xspace puis \tthat & copie tout jusqu'au début de la ligne \\
   \hline
 \end{tabular}
 \bigskip
 
 Il ne vous restera qu'a appuyer sur \ttp pour coller ce que vous voulez où vous voulez. Par défaut \ttp colle le texte après la position courante du curseur. Si vous voulez coller avant la position du curseur, utilisez \ttP.
+\bigskip
+
+Il arrive de temps en temps de vouloir aussi supprimer du texte (non sans blague !), voici quelques commandes utiles pour cela :
+
+
+\bigskip
+\begin{tabular}[H]{|c|c|}
+  \hline
+  Action & Résultat \\
+  \hline
+
+  \td\td & efface la ligne courante et la place dans le presse-papier \\
+  \tx & efface le caractère sous le curseur \\
+  \tX & efface le caractère avant le curseur \\
+  \hline
+\end{tabular}
+
+\bigskip
+
+La plupart des mouvements peuvent être préfixés par un nombre multiplicateur. Voici quelques exemples :
+
+\bigskip
+\begin{tabular}[H]{|c|c|}
+  \hline
+  Action & Résultat \\
+  \hline
+
+  \hlred{\Verb|2|}\td\td & efface deux lignes \\
+  \hlred{\Verb|3|}\tx & efface 3 caractères vers l'avant du curseur \\
+  \hlred{\Verb|3|}\tX & efface 3 caractères vers l'arrière du curseur \\
+  \hlred{\Verb|2|}\ty\ty & copie 2 lignes dans le presse-papier\\
+  \hlred{\Verb|5|}\tj & se déplace de 5 lignes vers le bas\\
+  \hline
+\end{tabular}
+\bigskip
+
 
 \section{Rechercher / Se déplacer rapidement}
 
@@ -322,12 +358,35 @@ Attention par défaut, la recherche utilise les expressions régulières POSIX. 
 
 Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à \ttstar. Utiliser \ttstar fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez \ttsharp.
 
-\section{Mémo : les opérations usuelles}
-cf. http://www.tuteurs.ens.fr/unix/editeurs/vim.html
+\section{Les modes}
 
-Sauvegarder, exécuter une commande bash ?
+\TODO. Mode normal, mode insertion, mode visuel et mode ligne de commande.
 
 \section{À vous de jouer}
 
-\TODO exercices
-\TODO jeu en ligne vim
+Vous devriez maintenant être capable de n'utiliser que le clavier pour les opérations de manipulation de texte et d'édition. Je n'ai fait que survoler la puissance de \vim ici, mais ça devrait être suffisant pour survivre. Je vous ai donné ici le strict nécessaire, mais ce strict nécessaire vous permet déjà de profiter de \vim et du plaisir de ne plus utiliser la souris.
+
+À vous maintenant de lire les nombreuses ressources disponibles sur internet vous décrivant tous les mouvements possibles et imaginables. Je ne manquerai d'ailleurs pas de compléter ce guide avec des articles sur le site internet qui lui est dédié \url{http://www.vimebook.com}.
+
+\bigskip
+Voici une liste de ressources qui pourraient vous être utiles, malheureusement les ressources en français sont assez rares :
+
+\begin{itemize}
+    \item A byte of \vim en français \url{http://www.swaroopch.com/notes/vim_fr/}
+    \item Un petit pense bête sympathique de différents raccourcis clavier \url{http://www.tuteurs.ens.fr/unix/editeurs/vim.html}
+    \item Un wiki non officiel francophone (un peu fouillis soit dit en passant) : \url{www.vim-fr.org/}
+    \item Les vidéos Peepcode en anglais mais vraiment superbement réalisées : \url{https://peepcode.com/products/smash-into-vim-i} et \url{https://peepcode.com/products/smash-into-vim-ii}
+    \item Le blog de Derek Wyatt's en anglais \url{http://www.derekwyatt.org/vim/vim-tutorial-videos/}
+\end{itemize}
+
+\bigskip
+Histoire de réveilleur l'enfant qui est en vous, je vous conseille vivement d'aller vous amuser avec \url{http://vim-adventures.com/}. C'est un jeu de rôle en ligne qui a pour but de vous apprendre à manipuler \vim ! Je vous ai mis un petit aperçu dans l'image numéro \ref{fig:vim-adventures}.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vim-adventures.png}
+  \caption{Vim adventures, une façon ludique d'apprendre \vim.}
+  \label{fig:vim-adventures}
+\end{figure}
+
+
+Nous allons maintenant passer à la vitesse supérieure : l'utilisation de plugins, ou comment rendre \vim incontournable.
