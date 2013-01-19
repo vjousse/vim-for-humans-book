@@ -98,6 +98,7 @@ Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de m
   Touche & Déplacement \\
   \hline
   \te & \textbf{à la fin du mot courant} \\
+  \tb & \textbf{au début du mot courant} \\
   \tw & \textbf{au début du mot suivant} \\
   \that & \textbf{au premier caractère non blanc de la ligne} \\
   \tdollar & \textbf{à la fin de la ligne} \\
@@ -225,7 +226,7 @@ Dans \nameref{sec:se-passer-touches-dir} nous avons vu qu'il suffisait d'utilise
     \item \ttc est utilisée pour « supprimer et passer en mode insertion »
 \end{itemize}
 
-À noter que ce qui est supprimé est placé dans le presse-papier en même temps (le supprimé se comporte par défaut comme un « couper »).
+À noter que ce qui est supprimé est placé dans le presse-papier en même temps (le « supprimer » se comporte par défaut comme un « couper »).
 
 La particularité de ces touches, c'est qu'elles attendent ensuite un « ordre de déplacement » pour savoir quoi supprimer. Il va donc falloir les combiner avec les déplacements que nous avons déjà vus dans \nameref{sec:se-passer-touches-dir}.
 
@@ -261,14 +262,69 @@ Vous pouvez aussi utiliser cela pour copier :
 \end{tabular}
 \bigskip
 
-Il ne vous restera qu'a appuyer sur \ttp pour coller ce que vous voulez où vous voulez.
+Il ne vous restera qu'a appuyer sur \ttp pour coller ce que vous voulez où vous voulez. Par défaut \ttp colle le texte après la position courante du curseur. Si vous voulez coller avant la position du curseur, utilisez \ttP.
 
 \section{Rechercher / Se déplacer rapidement}
 
-Recherche, marqueurs, sauts de pages
+\subsection{Sauts de page}
+
+Maintenant que nous connaissons les commandes de base pour éditer du texte avec \vim, voyons voir comment nous déplacer plus rapidement dans notre document. Nous avons déjà évoqué les touches \tw, \tb, \that et \tdollar qui nous permettent respectivement de se déplacer à la fin d'un mot, au début d'un mot, au début d'une ligne et la fin d'une ligne. 
+
+\bigskip
+
+Voyons voir comment « scroller » sans la souris. Pour faire défiler les pages, il faut utiliser :
+
+\begin{itemize}
+    \item \tctrl + \tf pour passer à la page suivante (\tf pour forward)
+    \item \tctrl + \tb pour passer à la page précédente (\tb pour backward)
+\end{itemize}
+
+\bigskip
+
+Ces raccourcis vont vous permettre d'avancer rapidement dans votre document. 
+
+Vous pouvez aussi :
+
+\begin{itemize}
+    \item Vous rendre au début du fichier en tapant \tg\tg
+    \item Vous rendre à la fin du fichier en tapant \tG\tG
+    \item Vous rendre à la ligne 23 en tapant \tcolon\hlred{\Verb|23|}
+\end{itemize}
+
+\subsection{Les marqueurs}
+
+Lorsque je me déplace dans un fichier, j'aime bien pouvoir revenir à certains endroits. Par exemple lorsque je me rends au début du fichier alors que j'étais en train de travailler au milieu de celui-ci, j'aime bien pouvoir revenir directement où je travaillais. Heureusement, \vim a tout prévu pour cela grâce à l'utilisation de \textbf{marqueurs}. Les marqueurs sont tout simplement des « marque-pages » qui permettent à votre curseur de se retrouver à la position où vous aviez mis votre marqueur.
+
+Un marqueur se pose en tapant \tm\ta. Pour déplacer votre curseur à la position du marqueur tapez \tapos\ta. Vous pouvez placez plusieurs marqueurs en changeant \ta par n'importe quelle lettre de l'alphabet (on appelle cela des registres en langage \vim). Pour placer un autre marqueur vous pouvez par exemple utiliser la lettre \td. Grâce à \tm\td vous placerez le marqueur et à \tapos\td vous vous y rendrez.
+
+\subsection{La recherche}
+
+En mode normal, vous pouvez lancez une recherche en utilisant \ttslash suivi du texte que vous souhaitez rechercher puis de \ttenter. Grâce à notre configuration de \vim vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse.
+
+Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela :
+
+\begin{listing}[H]
+
+    \begin{minted}[bgcolor=bg, gobble=8]{vim}
+        " -- Recherche
+        set ignorecase            " Ignore la casse lors d'une recherche
+        set smartcase             " Si une recherche contient une majuscule,
+                                  " re-active la sensibilite a la casse
+        set incsearch             " Surligne les resultats de recherche pendant la
+                                  " saisie
+        set hlsearch              " Surligne les resultats de recherche
+    \end{minted}
+    \caption{Configuration de la recherche avec \vim.}
+    \label{code:search-config}
+\end{listing}
+
+Parler de la recherche magique ? De chercher / remplacer ?
+
 
 \section{Mémo : les opérations usuelles}
 cf. http://www.tuteurs.ens.fr/unix/editeurs/vim.html
+
+Sauvegarder, exécuter une commande bash ?
 
 \section{À vous de jouer}
 
