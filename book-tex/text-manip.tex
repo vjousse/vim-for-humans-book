@@ -266,13 +266,13 @@ Il ne vous restera qu'a appuyer sur \ttp pour coller ce que vous voulez où vous
 
 \section{Rechercher / Se déplacer rapidement}
 
+Maintenant que nous connaissons les commandes de base pour éditer du texte avec \vim, voyons voir comment nous déplacer plus rapidement dans notre document. Nous avons déjà évoqué les touches \tw, \tb, \that et \tdollar qui nous permettent respectivement de se déplacer à la fin d'un mot, au début d'un mot, au début d'une ligne et la fin d'une ligne. Tout d'abord, voyons voir comment « scroller » sans la souris. À noter que toutes ces commandes se font en mode « normal ».
+
 \subsection{Sauts de page}
 
-Maintenant que nous connaissons les commandes de base pour éditer du texte avec \vim, voyons voir comment nous déplacer plus rapidement dans notre document. Nous avons déjà évoqué les touches \tw, \tb, \that et \tdollar qui nous permettent respectivement de se déplacer à la fin d'un mot, au début d'un mot, au début d'une ligne et la fin d'une ligne. 
+Pour faire défiler les pages, il faut utiliser :
 
 \bigskip
-
-Voyons voir comment « scroller » sans la souris. Pour faire défiler les pages, il faut utiliser :
 
 \begin{itemize}
     \item \tctrl + \tf pour passer à la page suivante (\tf pour forward)
@@ -299,7 +299,7 @@ Un marqueur se pose en tapant \tm\ta. Pour déplacer votre curseur à la positio
 
 \subsection{La recherche}
 
-En mode normal, vous pouvez lancez une recherche en utilisant \ttslash suivi du texte que vous souhaitez rechercher puis de \ttenter. Grâce à notre configuration de \vim vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse.
+En mode normal, vous pouvez lancez une recherche en utilisant \ttslash suivi du texte que vous souhaitez rechercher puis de \ttenter. Grâce à notre configuration de \vim vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse. Vous pouvez vous déplacer à la prochaine occurrence de la recherche grâce à \ttn. Pour vous déplacer à la précédente utilisez \ttN.
 
 Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela :
 
@@ -318,7 +318,11 @@ Pour rappel, voici les lignes de votre fichier de configuration qui permettent d
     \label{code:search-config}
 \end{listing}
 
-Parler de la recherche magique ? De chercher / remplacer ?
+Attention par défaut, la recherche utilise les expressions régulières POSIX. Si vous souhaitez rechercher des caractères habituellement utilisés dans les expressions régulières (comme [ ] \^{ } \$ /) n'oubliez pas de les préfixer par \textbackslash.
+
+Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à \ttstar. Utiliser \ttstar fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez \ttsharp.
+
+Parler de De chercher / remplacer ? \TODO
 
 
 \section{Mémo : les opérations usuelles}
