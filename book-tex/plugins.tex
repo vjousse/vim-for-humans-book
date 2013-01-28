@@ -9,4 +9,55 @@ Qu'on ne se méprenne pas, \vim peut bien sûr s'utiliser sans plugins. Il peut 
 
 Nous avons déjà vu NerdTree dans \nameref{ssec:nerdtree} qui permettait d'avoir un explorateur de projet dans une fenêtre latérale de \vim. Le problème de ce plugin est qu'il n'est pas fait pour être utilisé au clavier. Certes vous pouvez utiliser le clavier, mais il ne sera pas aussi efficace que les plugins pensés uniquement pour une utilisation au clavier.
 
-En effet, le premier plugin que j'installe partout où j'ai à utiliser \vim, c'est \emph{Lusty Explorer}\sidenote{\url{http://www.vim.org/scripts/script.php?script_id=1890}}. Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. (gros avantage fuzzy searching)
+Personnellement, le premier plugin que j'installe partout où j'ai à utiliser \vim, c'est \emph{Lusty Explorer}\sidenote{\url{http://www.vim.org/scripts/script.php?script\_id=1890}}. Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. Il va aussi permettre de naviguer rapidement entre vos différents fichiers déjà ouverts (vos buffers on jargon \vim). Commençons par l'installer.
+
+Rendez-vous sur l'url du script \url{http://www.vim.org/scripts/script.php?script\_id=1890} et télécharger la dernière version (c'est actuellement la 4.3)\sidenote{http://www.vim.org/scripts/download\_script.php?src\_id=17529}. Faites ensuite le nécessaire dans votre répertoire \Verb|.vim/| pour qu'il ressemble à la structure ci-dessous :
+
+\begin{verbatim}
+.vim
+|-- autoload
+|   `-- pathogen.vim
+`-- bundle
+    |-- lusty-explorer
+    |   `-- plugin
+    |       `-- lusty-explorer.vim
+\end{verbatim}
+
+Si vous avez suivi tout ce que l'on a fait depuis le début votre répertoire \dotvim, il devrait maintenant ressembler à cela :
+
+\begin{verbatim}
+.vim
+|-- autoload
+|   `-- pathogen.vim
+`-- bundle
+    |-- lusty-explorer
+    |   `-- plugin
+    |       `-- lusty-explorer.vim
+    |-- nerdtree
+    |   |-- doc
+    |   |   `-- NERD_tree.txt
+    |   |-- nerdtree_plugin
+    |   |   |-- exec_menuitem.vim
+    |   |   `-- fs_menu.vim
+    |   |-- plugin
+    |   |   `-- NERD_tree.vim
+    |   `-- syntax
+    |       `-- nerdtree.vim
+    `-- solarized
+        `-- colors
+            `-- solarized.vim
+\end{verbatim}
+
+Reste à voir comment l'utiliser. Si l'on se réfère à la documentation, voilà ce que l'on trouve :
+
+\begin{verbatim}
+<Leader>lf  - Opens filesystem explorer.
+<Leader>lr  - Opens filesystem explorer at the directory of the current file.
+<Leader>lb  - Opens buffer explorer.
+<Leader>lg  - Opens buffer grep. 
+\end{verbatim}
+
+On voit qu'il est fait mention d'une touche nommée \tleader qu'il faut ensuite faire suivre d'autres touches comme \emph{lf}, \emph{lr}, \emph{lb} et \emph{lg}. Cette touche \tleader est une touche spéciale que l'on définit dans le fichier \vimrc. Elle sera énormément utilisée par tous les plugins, beaucoup des commandes de ces derniers commenceront par la touche \tleader. C'est un moyen d'éviter les collisions avec les raccourcis par défaut de \vim.
+
+Il faut donc bien sûr se choisir une touche \tleader. Par défaut, \vim utilise \backslash comme touche \tleader. Sur nos claviers francophones c'est une très mauvaise idée d'utiliser cette touche car elle n'est pas pratique du tout. La plupart des utilisateurs de \vim la remplace par la touche \tcomma. Elle directement accessible sous votre index ce qui en fait une parfaite candidate. Pour spécifier cela à \vim il va falloir rajouter une ligne dans votre fichier \vimrc, à savoir :
+
