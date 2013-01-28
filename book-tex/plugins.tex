@@ -11,7 +11,7 @@ Nous avons déjà vu NerdTree dans \nameref{ssec:nerdtree} qui permettait d'avoi
 
 Personnellement, le premier plugin que j'installe partout où j'ai à utiliser \vim, c'est \emph{Lusty Explorer}\sidenote{\url{http://www.vim.org/scripts/script.php?script\_id=1890}}. Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. Il va aussi permettre de naviguer rapidement entre vos différents fichiers déjà ouverts (vos buffers on jargon \vim). Commençons par l'installer.
 
-Rendez-vous sur l'url du script \url{http://www.vim.org/scripts/script.php?script\_id=1890} et télécharger la dernière version (c'est actuellement la 4.3)\sidenote{http://www.vim.org/scripts/download\_script.php?src\_id=17529}. Faites ensuite le nécessaire dans votre répertoire \Verb|.vim/| pour qu'il ressemble à la structure ci-dessous :
+Rendez-vous sur l'url du script \url{http://www.vim.org/scripts/script.php?script\_id=1890} et télécharger la dernière version (c'est actuellement la 4.3)\sidenote{\url{http://www.vim.org/scripts/download\_script.php?src\_id=17529}}. Faites ensuite le nécessaire dans votre répertoire \Verb|.vim/| pour qu'il ressemble à la structure ci-dessous :
 
 \begin{verbatim}
 .vim
@@ -48,16 +48,37 @@ Si vous avez suivi tout ce que l'on a fait depuis le début votre répertoire \d
             `-- solarized.vim
 \end{verbatim}
 
-Reste à voir comment l'utiliser. Si l'on se réfère à la documentation, voilà ce que l'on trouve :
+Reste à voir comment l'utiliser. Si l'on se réfère à la documentation, voilà ce que l'on trouve (traduit en français) :
 
 \begin{verbatim}
-<Leader>lf  - Opens filesystem explorer.
-<Leader>lr  - Opens filesystem explorer at the directory of the current file.
-<Leader>lb  - Opens buffer explorer.
-<Leader>lg  - Opens buffer grep. 
+<Leader>lf  - Ouvre l'explorateur de fichiers.
+<Leader>lr  - Ouvre l'explorateur de fichiers à partir du répertoire du fichier courant.
+<Leader>lb  - Ouvre l'explorateur de buffers.
+<Leader>lg  - Ouvre la recherche dans les buffers.
 \end{verbatim}
 
-On voit qu'il est fait mention d'une touche nommée \tleader qu'il faut ensuite faire suivre d'autres touches comme \emph{lf}, \emph{lr}, \emph{lb} et \emph{lg}. Cette touche \tleader est une touche spéciale que l'on définit dans le fichier \vimrc. Elle sera énormément utilisée par tous les plugins, beaucoup des commandes de ces derniers commenceront par la touche \tleader. C'est un moyen d'éviter les collisions avec les raccourcis par défaut de \vim.
+On voit qu'il est fait mention d'une touche nommée \tleader qu'il faut ensuite faire suivre d'autres touches comme \emph{lf}, \emph{lr}, \emph{lb} et \emph{lg}. Cette touche \tleader est une touche spéciale que l'on définit dans son fichier \vimrc. Elle sera énormément utilisée par tous les plugins, beaucoup des commandes de ces derniers commenceront par la touche \tleader. C'est un moyen d'éviter les collisions avec les raccourcis par défaut de \vim.
 
-Il faut donc bien sûr se choisir une touche \tleader. Par défaut, \vim utilise \backslash comme touche \tleader. Sur nos claviers francophones c'est une très mauvaise idée d'utiliser cette touche car elle n'est pas pratique du tout. La plupart des utilisateurs de \vim la remplace par la touche \tcomma. Elle directement accessible sous votre index ce qui en fait une parfaite candidate. Pour spécifier cela à \vim il va falloir rajouter une ligne dans votre fichier \vimrc, à savoir :
+Il faut donc choisir une touche \tleader. Par défaut, \vim utilise \textbackslash\xspace comme touche \tleader. Sur nos claviers francophones c'est une très mauvaise idée d'utiliser cette touche car elle n'est pas pratique du tout. La plupart des utilisateurs de \vim la remplace par la touche \tcomma. Elle est directement accessible sous l'index de la main droite ce qui en fait une parfaite candidate. Pour spécifier cela à \vim il va falloir rajouter une ligne dans votre fichier \vimrc, à savoir :
 
+\begin{listing}[H]
+
+    \begin{minted}[bgcolor=bg, gobble=8]{vim}
+        let mapleader = ","
+    \end{minted}
+    \caption{Spécifier la touche leader.}
+    \label{code:leader}
+\end{listing}
+
+Une fois la modification effectuée et prise en compte (en redémarrant \vim ou en tapant \vimcmd{:source \~{}/.vimrc} en mode normal), vous devriez être en mesure de taper \vimshortcut{,lr} et d'avoir le même style de résultat que sur la figure \ref{fig:vim-lusty}.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vim-lusty.png}
+  \caption{\vim avec Lusty Explorer d'activé en bas.}
+  \label{fig:vim-lusty}
+\end{figure}
+
+Je vous conseille maintenant de désactiver \emph{The Nerd Tree} (en commentant la ligne au dessus du \emph{mapleader} comme je l'ai fait), il ne vous servira plus à grand chose.
+
+Deux parties à lusty
+Ctrl-n, Ctrl-e et d'autres ?
