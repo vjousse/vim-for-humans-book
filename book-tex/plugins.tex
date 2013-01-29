@@ -78,7 +78,27 @@ Une fois la modification effectuée et prise en compte (en redémarrant \vim ou 
   \label{fig:vim-lusty}
 \end{figure}
 
-Je vous conseille maintenant de désactiver \emph{The Nerd Tree} (en commentant la ligne au dessus du \emph{mapleader} comme je l'ai fait), il ne vous servira plus à grand chose.
+Je vous conseille maintenant de désactiver \emph{The Nerd Tree} (en commentant la ligne au dessus du \emph{mapleader} comme je l'ai fait), il ne vous servira plus à grand chose, \emph{Lusty Explorer} le remplace à merveille.
 
-Deux parties à lusty
-Ctrl-n, Ctrl-e et d'autres ?
+Vous pouvez constater sur la figure \ref{fig:vim-lusty} qu'il y a deux parties à \emph{Lusty Explorer}. La partie basse vous indique le répertoire que vous êtes en train d'explorer et la partie haute liste le contenu de ce répertoire. En surbrillance se trouve l'élément couramment sélectionné. Dans le cas de la figure \ref{fig:vim-lusty} c'est le répertoire \Verb|.vim/| en jaune  (la couleur pourra être différente en fonction de votre thème).
+
+\emph{Lusty Explorer} utilise une fonctionnalité de \emph{Fuzzy matching} qui va vous permettre de ne taper qu'une partie d'un nom de fichier pour le sélectionner. Dans mon exemple, si, dans la fenêtre de \emph{Lusty}, je saisi \Verb|.vimi| il va me sélectionner le fichier \Verb|.viminfo| sans que j'ai à lui spécifier le nom entier, je n'aurais ensuite plus qu'à appuyer sur \ttenter pour ouvrir le fichier dans \vim. La figure \ref{fig:vim-lusty-fuzzy} vous montre l'exemple en question.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vim-lusty-fuzzy.png}
+  \caption{Lusty Explorer et le Fuzzy matching.}
+  \label{fig:vim-lusty-fuzzy}
+\end{figure}
+
+\emph{Lusty Explorer} dispose en plus de quelques raccourcis bien pratiques pour utiliser le navigateur de fichiers :
+
+\begin{itemize}
+    \item \tctrl + \tn pour sélectionner le fichier/répertoire suivant
+    \item \tctrl + \tp pour sélectionner le fichier/répertoire précédent
+    \item \tctrl + \tw pour descendre au répertoire parent
+    \item \tctrl + \te crée un nouveau fichier vide (non sauvegardé sur le disque) avec le nom spécifié actuellement dans \emph{Lusty Explorer}. Vous n'aurez plus qu'à utiliser \vimcmd{:w} pour écrire le contenu du fichier sur le disque.
+\end{itemize}
+
+\emph{Lusty Explorer} s'utilise donc pour deux choses : naviguer sur votre système de fichiers avec \vimshortcut{,lr} et \vimshortcut{,lf}, et naviguer entre vos fichiers ouverts (buffers) avec \vimshortcut{'lb}. Personnellement j'utilise moins la recherche dans les buffers avec \vimshortcut{,lg}, à vous de tester et de vous faire votre propre opinion.
+
+Ce plugin est indispensable et ajoute à lui seul énormément de valeur à \vim : se passer de la souris pour ouvrir des fichiers. Prenez donc le temps nécessaire pour l'apprendre correctement, c'est un investissement qui vaut le coup.
