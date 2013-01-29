@@ -4,8 +4,7 @@ Soyons clair, \vim sans ses plugins, c'est comme Milan sans Rémo\sidenote{\copy
 
 Qu'on ne se méprenne pas, \vim peut bien sûr s'utiliser sans plugins. Il peut d'ailleurs s'avérer utile de savoir faire les manipulations de base sans avoir besoin d'installer de plugin, car c'est souvent le cas sur des serveurs : il n'y a aucun plugin d'installé. Dans ce cas là, savoir ouvrir, sauvegarder sous, passer d'un fichier à l'autre avec les commandes de \vim par défaut peut vous sauver la mise. En revanche, dans votre travail quotidien de rédaction ou de code, les plugins sont indispensables pour pleinement tirer partie de \vim.
 
-\section{Naviguer sur le disque et entre les fichiers}
-
+\section{Naviguer sur le disque et entre les fichiers : \emph{Lusty Explorer}}
 
 Nous avons déjà vu NerdTree dans \nameref{ssec:nerdtree} qui permettait d'avoir un explorateur de projet dans une fenêtre latérale de \vim. Le problème de ce plugin est qu'il n'est pas fait pour être utilisé au clavier. Certes vous pouvez utiliser le clavier, mais il ne sera pas aussi efficace que les plugins pensés uniquement pour une utilisation au clavier.
 
@@ -102,3 +101,25 @@ Vous pouvez constater sur la figure \ref{fig:vim-lusty} qu'il y a deux parties �
 \emph{Lusty Explorer} s'utilise donc pour deux choses : naviguer sur votre système de fichiers avec \vimshortcut{,lr} et \vimshortcut{,lf}, et naviguer entre vos fichiers ouverts (buffers) avec \vimshortcut{'lb}. Personnellement j'utilise moins la recherche dans les buffers avec \vimshortcut{,lg}, à vous de tester et de vous faire votre propre opinion.
 
 Ce plugin est indispensable et ajoute à lui seul énormément de valeur à \vim : se passer de la souris pour ouvrir des fichiers. Prenez donc le temps nécessaire pour l'apprendre correctement, c'est un investissement qui vaut le coup.
+
+\section{Recherche dans les fichiers sur le disque : \emph{Ack}}
+
+ack : \url{http://www.vim.org/scripts/script.php?script\_id=2572}
+
+\section{Recherche de fichiers sur le disque}
+
+ctrlp : \url{https://github.com/kien/ctrlp.vim}
+
+\section{Complétion automatique}
+
+neocomplcache : \url{http://www.vim.org/scripts/script.php?script\_id=2620}
+
+\section{Les plugins avancés}
+
+surround : \url{http://www.vim.org/scripts/script.php?script\_id=1697}
+
+fugitive : git management \url{https://github.com/tpope/vim-fugitive}
+
+syntastic : checking code syntax \url{https://github.com/scrooloose/syntastic}
+
+ctags + ctrlp : code navigation \url{http://andrew-stewart.ca/2012/10/31/vim-ctags}
