@@ -77,7 +77,7 @@ Une fois la modification effectuée et prise en compte (en redémarrant \vim ou 
   \label{fig:vim-lusty}
 \end{figure}
 
-Je vous conseille maintenant de désactiver \emph{The Nerd Tree} (en commentant la ligne au dessus du \emph{mapleader} comme je l'ai fait), il ne vous servira plus à grand chose, \emph{Lusty Explorer} le remplace à merveille.
+Je vous conseille maintenant de désactiver \emph{The Nerd Tree} (en commentant la ligne au dessus du \emph{mapleader} comme je l'ai fait dans la figure \ref{fig:vim-lusty-fuzzy}), il ne vous servira plus à grand chose, \emph{Lusty Explorer} le remplace à merveille.
 
 Vous pouvez constater sur la figure \ref{fig:vim-lusty} qu'il y a deux parties à \emph{Lusty Explorer}. La partie basse vous indique le répertoire que vous êtes en train d'explorer et la partie haute liste le contenu de ce répertoire. En surbrillance se trouve l'élément couramment sélectionné. Dans le cas de la figure \ref{fig:vim-lusty} c'est le répertoire \Verb|.vim/| en jaune  (la couleur pourra être différente en fonction de votre thème).
 
@@ -92,7 +92,7 @@ Vous pouvez constater sur la figure \ref{fig:vim-lusty} qu'il y a deux parties �
 \emph{Lusty Explorer} dispose en plus de quelques raccourcis bien pratiques pour utiliser le navigateur de fichiers :
 
 \begin{itemize}
-    \item \tctrl + \tn pour sélectionner le fichier/répertoire suivant
+    \item \tctrl + \tn\xspace pour sélectionner le fichier/répertoire suivant
     \item \tctrl + \tp pour sélectionner le fichier/répertoire précédent
     \item \tctrl + \tw pour descendre au répertoire parent
     \item \tctrl + \te crée un nouveau fichier vide (non sauvegardé sur le disque) avec le nom spécifié actuellement dans \emph{Lusty Explorer}. Vous n'aurez plus qu'à utiliser \vimcmd{:w} pour écrire le contenu du fichier sur le disque.
@@ -100,13 +100,17 @@ Vous pouvez constater sur la figure \ref{fig:vim-lusty} qu'il y a deux parties �
 
 \emph{Lusty Explorer} s'utilise donc pour deux choses : naviguer sur votre système de fichiers avec \vimshortcut{,lr} et \vimshortcut{,lf}, et naviguer entre vos fichiers ouverts (buffers) avec \vimshortcut{'lb}. Personnellement j'utilise moins la recherche dans les buffers avec \vimshortcut{,lg}, à vous de tester et de vous faire votre propre opinion.
 
+Je vous conseille en guise de test d'ouvrir plusieurs fichiers avec \vimshortcut{,lr} ou \vimshortcut{,lf}. Ensuite, entraînez-vous à naviguer entre ces différents fichiers ouverts en même temps à l'aide de \vimshortcut{,lb}. C'est une des combinaisons que j'utilise le plus au quotidien.
+
 Ce plugin est indispensable et ajoute à lui seul énormément de valeur à \vim : se passer de la souris pour ouvrir des fichiers. Prenez donc le temps nécessaire pour l'apprendre correctement, c'est un investissement qui vaut le coup.
 
 \section{Recherche dans les fichiers sur le disque : \emph{Ack}}
 
 Lorsque l'on édite un fichier appartenant à un projet plus gros contenant lui même beaucoup de fichiers, il arrive souvent de vouloir rechercher une occurrence d'une chaîne de caractères dans tous les fichiers du projet. Pour ce faire, \vim dispose d'un plugin permettant d'utiliser \emph{Ack} pour faire cette recherche.
 
-\emph{Ack}\sidenote{http://betterthangrep.com/} est un programme écrit en \emph{perl} qui remplaçant avantageusement le bon vieux \emph{grep} pour effectuer des recherches dans des fichiers. Il a en revanche un désavantage par rapport à \emph{grep} : il est rarement installé par défaut. Nous allons donc devoir commencer par installer \emph{Ack} avant de pouvoir aller plus loin. Cela va bien sûr dépendre de la plateforme sur laquelle vous utilisez \vim, vous pourrez trouver différente instructions en fonction de votre plateforme sur la page du plugin : \url{https://github.com/mileszs/ack.vim#installation}.
+\emph{Ack}\sidenote{\url{http://betterthangrep.com/}} est un programme écrit en \emph{perl} qui remplace avantageusement le bon vieux \emph{grep} pour effectuer des recherches dans des fichiers. Il a en revanche un désavantage par rapport à \emph{grep} : il est rarement installé par défaut. Nous allons donc commencer par installer \emph{Ack} avant de pouvoir aller plus loin. Cela va bien sûr dépendre de la plateforme sur laquelle vous utilisez \vim, vous pourrez trouver différentes instructions en fonction de votre plateforme sur la page du plugin : \url{http://github.com/mileszs/ack.vim#installation}.
+
+Pour Debian/Ubuntu : \textbf{\emph{sudo apt-get install ack-grep}}. Pour Mac Os X vous allez avoir besoin de Homebrew (\url{http://mxcl.github.com/homebrew/}) en utilisant \textbf{\emph{brew install ack}}. Pour les utilisateurs de MacPorts ça sera avec la commande \textbf{\emph{sudo port install p5-app-ack}}. Pour Windows installez Strawberry Perl (\url{http://strawberryperl.com/}) et dans le shell de commandes exécutez \textbf{\emph{C:\textbackslash>cpan App::Ack}}.
 
 ack : \url{http://www.vim.org/scripts/script.php?script\_id=2572}
 
