@@ -127,6 +127,38 @@ bundle
 
 Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant \vim ou en tapant \vimcmd{:source \~{}/.vimrc} en mode normal.
 
+Il va ensuite falloir ajouter quelques lignes à notre fichier \vimrc pour faciliter d'utilisation du plugin :
+
+\begin{listing}[H]
+
+    \begin{minted}[bgcolor=bg, gobble=8]{vim}
+        " Parametres par defaut pour ack
+        let g:ackprg="ack -H --nocolor --nogroup --column"
+        " Place un marqueur et cherche
+        nmap <leader>j mA:Ack<space>
+        " Place un marqueur et cherche le mot sous le curseur
+        nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
+        nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
+    \end{minted}
+    \caption{Configuration du plugin Ack.}
+    \label{code:leader}
+\end{listing}
+
+Ack recherchera alors à partir du répertoire où se trouve votre fichier couramment ouvert. Il vous affichera les résultats dans une fenêtre que l'on appelle \emph{Quickfix Window}. \TODO faire un screen
+
+
+Voici quelques commandes disponibles dans cette fenêtre :
+
+\begin{itemize}
+    \item \textbf{o} : ouvrir (idem que <Entrée>
+    \item \textbf{go} : voir un aperçu (ouvre le fichier mais mantient le focus sur les résultats de ack.vim)
+    \item \textbf{t} : ouvrir dans un nouvel onglet
+    \item \textbf{T} : ouvrir dans un nouvel onglet en arrière plan
+    \item \textbf{h} : ouvrir en séparant la fenêtre horizontalement
+    \item \textbf{v} : ouvrir en séparant la fenètre verticalement
+    \item \textbf{q} : fermer la fenêtre quickfix
+\end{itemize}
+
 \section{Recherche de fichiers sur le disque}
 
 Utile pour de grands projets avec beaucoup de fichiers
