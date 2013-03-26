@@ -331,7 +331,7 @@ Vous pouvez aussi :
 
 Lorsque je me déplace dans un fichier, j'aime bien pouvoir revenir à certains endroits. Par exemple lorsque je me rends au début du fichier alors que j'étais en train de travailler au milieu de celui-ci, j'aime bien pouvoir revenir directement où je travaillais. Heureusement, \vim a tout prévu pour cela grâce à l'utilisation de \textbf{marqueurs}. Les marqueurs sont tout simplement des « marque-pages » qui permettent à votre curseur de se retrouver à la position où vous aviez mis votre marqueur.
 
-Un marqueur se pose en tapant \tm\ta. Pour déplacer votre curseur à la position du marqueur tapez \tapos\ta. Vous pouvez placez plusieurs marqueurs en changeant \ta par n'importe quelle lettre de l'alphabet (on appelle cela des registres en langage \vim). Pour placer un autre marqueur vous pouvez par exemple utiliser la lettre \td. Grâce à \tm\td vous placerez le marqueur et à \tapos\td vous vous y rendrez.
+Un marqueur se pose en tapant \tm\ta. Pour déplacer votre curseur à la position du marqueur tapez \tapos\ta. Vous pouvez placez plusieurs marqueurs en changeant \ta par n'importe quelle lettre de l'alphabet (on appelle cela des registres en langage \vim). Pour placer un autre marqueur vous pouvez par exemple utiliser la lettre \td. Grâce à \tm\td\xspace vous placerez le marqueur et à \tapos\td\xspace vous vous y rendrez.
 
 \subsection{La recherche}
 
@@ -358,9 +358,13 @@ Attention par défaut, la recherche utilise les expressions régulières POSIX. 
 
 Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à \ttstar. Utiliser \ttstar fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez \ttsharp.
 
-\section{Les modes}
+\section{Le mode visuel}
 
-\TODO. Mode normal, mode insertion, mode visuel et mode ligne de commande.
+Je vous en ai déjà parlé lors de l'explication sur le Copier / Coller, mais comme je sais que certains d'entre vous sont tête en l'air, je vous fais un petit rappel ici.
+
+Lorsque vous êtes en mode "normal" appuyez sur \ttv pour passer en mode "visuel". Vous pourrez alors sélectionner des caractères ou des lignes entières grâce aux différentes façon de vous déplacer que vous venez d'apprendre. Vous pourrez ensuite copier le texte sélectionné avec \tty\xspace puis le coller avec \ttp. Pour le couper il vous faudra utiliser \ttd.
+
+En mode normal vous pourrez utiliser \ttV pour sélectionner lignes par lignes. Et bien sûr, utiliser \ttesc ou \vimcmd{;;} pour revenir au mode normal.
 
 \section{À vous de jouer}
 

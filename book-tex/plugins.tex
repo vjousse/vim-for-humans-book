@@ -225,14 +225,30 @@ bundle
 
 Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant \vim ou en tapant \vimcmd{:source \~{}/.vimrc} en mode normal.
 
+Nous n'avons plus qu'à ajouter un raccourci dans notre \vimrc pour invoquer CtrlP. Dans mon cas j'ai choisi \vimcmd{,c}, mais vous pouvez choisir ce que vous voulez.
 
-ctrlp : \url{https://github.com/kien/ctrlp.vim}
+\begin{listing}[H]
 
-\section{Complétion automatique}
+    \begin{minted}[bgcolor=bg, gobble=8]{vim}
+        let g:ctrlp_map = '<leader>c'
+    \end{minted}
+    \caption{Configuration du raccourci pour activer CtrlP.}
+    \label{code:leader}
+\end{listing}
 
-neocomplcache : \url{http://www.vim.org/scripts/script.php?script\_id=2620}
+La figure \ref{fig:vim-ctrlp} vous montre CtrlP en action.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vim-ctrlp.png}
+  \caption{\vim avec CtrlP de lancé.}
+  \label{fig:vim-ctrlp}
+\end{figure}
+
+À noter que CtrlP peut aussi être utilisé pour naviguer entre les fichiers ouverts (comme Lusty). Mais à l'usage, je le trouve moins pratique que Lusty. Vous pouvez aussi vous en servir pour naviguer automatiquement dans votre code en "suivant" vos fonctions grâce aux tags (comme on peut le faire dans Eclipse). C'est un trop vaste sujet pour être traité dans ce guide, mais si ça vous intéresse vous pouvez déjà consulter cet article de blog sur le sujet : \url{http://andrew-stewart.ca/2012/10/31/vim-ctags} (en anglais).
 
 \section{Les plugins avancés}
+
+neocomplcache : \url{http://www.vim.org/scripts/script.php?script\_id=2620}
 
 surround : \url{http://www.vim.org/scripts/script.php?script\_id=1697}
 
