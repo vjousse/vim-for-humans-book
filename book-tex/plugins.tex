@@ -225,7 +225,7 @@ bundle
 
 Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant \vim ou en tapant \vimcmd{:source \~{}/.vimrc} en mode normal.
 
-Nous n'avons plus qu'à ajouter un raccourci dans notre \vimrc pour invoquer CtrlP. Dans mon cas j'ai choisi \vimcmd{,c}, mais vous pouvez choisir ce que vous voulez.
+Nous n'avons plus qu'à ajouter un raccourci dans notre \vimrc pour invoquer CtrlP comme le montre le listing \ref{code:ctrlp}. Dans mon cas j'ai choisi \vimcmd{,c}, mais vous pouvez choisir ce que vous voulez.
 
 \begin{listing}[H]
 
@@ -233,10 +233,10 @@ Nous n'avons plus qu'à ajouter un raccourci dans notre \vimrc pour invoquer Ctr
         let g:ctrlp_map = '<leader>c'
     \end{minted}
     \caption{Configuration du raccourci pour activer CtrlP.}
-    \label{code:leader}
+    \label{code:ctrlp}
 \end{listing}
 
-La figure \ref{fig:vim-ctrlp} vous montre CtrlP en action.
+La figure \ref{fig:vim-ctrlp} vous montre CtrlP en action. Il vous suffit de l'invoquer avec \vimcmd{,c} et de taper le début du fichier que vous recherchez. Quand le fichier voulu sera sélectionné en premier, il ne vous restera plus qu'à appuyer sur \ttenter pour l'ouvrir.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-ctrlp.png}
