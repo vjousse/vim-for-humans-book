@@ -110,7 +110,7 @@ Lorsque l'on édite un fichier appartenant à un projet plus gros contenant lui 
 
 \emph{Ack}\sidenote{\url{http://betterthangrep.com/}} est un programme écrit en \emph{perl} qui remplace avantageusement le bon vieux \emph{grep} pour effectuer des recherches dans des fichiers. Il a en revanche un désavantage par rapport à \emph{grep} : il est rarement installé par défaut. Nous allons donc commencer par installer \emph{Ack} avant de pouvoir aller plus loin. Cela va bien sûr dépendre de la plateforme sur laquelle vous utilisez \vim, vous pourrez trouver différentes instructions en fonction de votre plateforme sur la page du plugin : \url{http://github.com/mileszs/ack.vim#installation}.
 
-Pour Debian/Ubuntu : \textbf{\emph{sudo apt-get install ack-grep}}. Pour Mac Os X vous allez avoir besoin de Homebrew (\url{http://mxcl.github.com/homebrew/}) en utilisant \textbf{\emph{brew install ack}}. Pour les utilisateurs de MacPorts ça sera avec la commande \textbf{\emph{sudo port install p5-app-ack}}. Pour Windows installez Strawberry Perl (\url{http://strawberryperl.com/}) et dans le shell de commandes exécutez \textbf{\emph{C:\textbackslash>cpan App::Ack}}. Vous devriez ensuite pouvoir utiliser la commande \textbf{ack} dans votre terminale de commandes en lieu et place de \textbf{grep}.
+Pour Debian/Ubuntu : \textbf{\emph{sudo apt-get install ack-grep}}. Pour Mac Os X vous allez avoir besoin de Homebrew (\url{http://mxcl.github.com/homebrew/}) en utilisant \textbf{\emph{brew install ack}}. Pour les utilisateurs de MacPorts ça sera avec la commande \textbf{\emph{sudo port install p5-app-ack}}. Pour Windows installez Strawberry Perl (\url{http://strawberryperl.com/}) et dans le shell de commandes exécutez \textbf{\emph{C:\textbackslash>cpan App::Ack}}. Vous devriez ensuite pouvoir utiliser la commande \textbf{ack} dans votre terminal de commandes en lieu et place de \textbf{grep}.
 
 Rendez-vous sur la page du plugin ack\sidenote{\url{http://www.vim.org/scripts/script.php?script\_id=2572}} et téléchargez la dernière version (à l'heure où j'écris ces lignes c'est la version 0.3.1). Décompressez l'archive dan votre répertoire \Verb|~/.vim/bundle/|, de manière à obtenir une structure de ce type :
 
@@ -141,10 +141,25 @@ Il va ensuite falloir ajouter quelques lignes à notre fichier \vimrc pour facil
         nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
     \end{minted}
     \caption{Configuration du plugin Ack.}
-    \label{code:leader}
+    \label{code:ack}
 \end{listing}
 
-Ack recherchera alors à partir du répertoire où se trouve votre fichier couramment ouvert. Il vous affichera les résultats dans une fenêtre que l'on appelle \emph{Quickfix Window}. \TODO faire un screen
+Ack recherchera alors à partir du répertoire où se trouve votre fichier couramment ouvert. Vous pouvez faire quelques tests si vous le souhaitez (en supposant que votre touche <leader> est la touche \tcomma :
+
+\begin{itemize}
+    \item \vimcmd{,j} \emph{toto} : recherchera \emph{toto} à partir du répertoire du fichier courant,
+    \item \vimcmd{,ja} avec votre curseur sur un mot recherchera ce mot.
+\end{itemize}
+
+\bigskip
+
+Le plugin Ack vous affichera les résultats dans une fenêtre que l'on appelle \emph{Quickfix Window}, cf image \ref{fig:vim-ack-quickfix}.
+
+\begin{figure}%
+  \includegraphics[width=\linewidth]{vim-ack-quickfix.png}
+  \caption{\vim avec la fenêtre Quickfix de Ack.}
+  \label{fig:vim-ack-quickfix}
+\end{figure}
 
 
 Voici quelques commandes disponibles dans cette fenêtre :
@@ -155,13 +170,61 @@ Voici quelques commandes disponibles dans cette fenêtre :
     \item \textbf{t} : ouvrir dans un nouvel onglet
     \item \textbf{T} : ouvrir dans un nouvel onglet en arrière plan
     \item \textbf{h} : ouvrir en séparant la fenêtre horizontalement
-    \item \textbf{v} : ouvrir en séparant la fenètre verticalement
+    \item \textbf{v} : ouvrir en séparant la fenêtre verticalement
     \item \textbf{q} : fermer la fenêtre quickfix
 \end{itemize}
 
+\bigskip
+
+À noter que par défaut Ack ne recherche que dans les fichiers qu'il reconnait comme pertinents (il ne fera pas de recherche dans les fichiers temporaires, les fichiers des gestionnaires de version, etc.). Si vous souhaitez que Ack recherche dans tous les fichiers indépendamment de leur type, vous devez spécifier l'option \Verb|-u| comme ceci dans votre \vimrc :
+
+\begin{listing}[H]
+
+    \begin{minted}[bgcolor=bg, gobble=8]{vim}
+        " Parametres par defaut pour ack
+        let g:ackprg="ack -H -u --nocolor --nogroup --column"
+    \end{minted}
+    \caption{Configuration du plugin Ack pour rechercher dans tous les fichiers.}
+    \label{code:leader}
+\end{listing}
+
 \section{Recherche de fichiers sur le disque}
 
-Utile pour de grands projets avec beaucoup de fichiers
+Non ce n'est pas pareil que Ack, relisez bien le titre. Ici nous n'allons pas chercher dans les fichiers, mais nous allons plutôt chercher des fichiers à ouvrir avec \vim. Ça peut s'avérer très utile lorsque vous avez travaillez sur des projets où les fichiers sont éparpillés dans un grand nombre de répertoires.
+
+Comme d'habitude nous allons commencer par installer le plugin. Une fois n'est pas coutume, le plugin dispose d'une page dédiée plutôt bien réalisée que vous trouverez ici : \url{http://kien.github.com/ctrlp.vim/}. Scrollez tout en bas pour télécharger la dernière version en "Direct Downloads". Pour les paresseux, voici un lien direct : \url{http://github.com/kien/ctrlp.vim/zipball/master}. Décompressez l'archive dan votre répertoire \Verb|~/.vim/bundle/|, de manière à obtenir une structure de ce type :
+
+\begin{verbatim}
+
+bundle
+|
+…
+|-- ctrlp
+|   |-- autoload
+|   |   |-- ctrlp
+|   |   |   |-- bookmarkdir.vim
+|   |   |   |-- buffertag.vim
+|   |   |   |-- changes.vim
+|   |   |   |-- dir.vim
+|   |   |   |-- line.vim
+|   |   |   |-- mixed.vim
+|   |   |   |-- mrufiles.vim
+|   |   |   |-- quickfix.vim
+|   |   |   |-- rtscript.vim
+|   |   |   |-- tag.vim
+|   |   |   |-- undo.vim
+|   |   |   `-- utils.vim
+|   |   `-- ctrlp.vim
+|   |-- doc
+|   |   `-- ctrlp.txt
+|   |-- plugin
+|   |   `-- ctrlp.vim
+|   `-- readme.md
+…
+\end{verbatim}
+
+Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant \vim ou en tapant \vimcmd{:source \~{}/.vimrc} en mode normal.
+
 
 ctrlp : \url{https://github.com/kien/ctrlp.vim}
 
