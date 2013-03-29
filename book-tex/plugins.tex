@@ -190,7 +190,7 @@ Voici quelques commandes disponibles dans cette fenêtre :
 
 \section{Recherche de fichiers sur le disque}
 
-Non ce n'est pas pareil que Ack, relisez bien le titre. Ici nous n'allons pas chercher dans les fichiers, mais nous allons plutôt chercher des fichiers à ouvrir avec \vim. Ça peut s'avérer très utile lorsque vous avez travaillez sur des projets où les fichiers sont éparpillés dans un grand nombre de répertoires.
+Non ce n'est pas pareil que Ack, relisez bien le titre. Ici nous n'allons pas chercher dans les fichiers, mais nous allons plutôt chercher des fichiers à ouvrir avec \vim. Ça peut s'avérer très utile lorsque vous avez à travailler sur des projets où les fichiers sont éparpillés dans un grand nombre de répertoires.
 
 Comme d'habitude nous allons commencer par installer le plugin. Une fois n'est pas coutume, le plugin dispose d'une page dédiée plutôt bien réalisée que vous trouverez ici : \url{http://kien.github.com/ctrlp.vim/}. Scrollez tout en bas pour télécharger la dernière version en "Direct Downloads". Pour les paresseux, voici un lien direct : \url{http://github.com/kien/ctrlp.vim/zipball/master}. Décompressez l'archive dan votre répertoire \Verb|~/.vim/bundle/|, de manière à obtenir une structure de ce type :
 
@@ -238,7 +238,7 @@ Nous n'avons plus qu'à ajouter un raccourci dans notre \vimrc pour invoquer Ctr
 
 La figure \ref{fig:vim-ctrlp} vous montre CtrlP en action. Il vous suffit de l'invoquer avec \vimcmd{,c} et de taper le début du fichier que vous recherchez. Quand le fichier voulu sera sélectionné en premier, il ne vous restera plus qu'à appuyer sur \ttenter pour l'ouvrir.
 
-\begin{figure}%
+\begin{figure}
   \includegraphics[width=\linewidth]{vim-ctrlp.png}
   \caption{\vim avec CtrlP de lancé.}
   \label{fig:vim-ctrlp}
@@ -248,12 +248,19 @@ La figure \ref{fig:vim-ctrlp} vous montre CtrlP en action. Il vous suffit de l'i
 
 \section{Les plugins avancés}
 
-neocomplcache : \url{http://www.vim.org/scripts/script.php?script\_id=2620}
+J'aurais pu faire un livre entier qui recense les plugins \vim, mais je pense que l'intérêt aurait été assez limité. Je ne vais donc pas vous décrire plus en détails d'autres plugins. En revanche je vous donne ci-dessous une liste de plugins qui pourraient vous intéresser. Cette liste est issue d'un sondage que j'avais effectué sur Twitter demandant à mes followers quels étaient les plugins \vim indispensables selon eux. La voici :
 
-surround : \url{http://www.vim.org/scripts/script.php?script\_id=1697}
 
-fugitive : git management \url{https://github.com/tpope/vim-fugitive}
+\begin{itemize}
 
-syntastic : checking code syntax \url{https://github.com/scrooloose/syntastic}
+    \item \textbf{neocomplcache}. C'est un plugin de complétion automatique. Il peut compléter les noms de fichiers, les attributs du langage que vous utilisez, les snippets et encore bien d'autres choses. Le repo Github : \url{https://github.com/Shougo/neocomplcache}.
 
-ctags + ctrlp : code navigation \url{http://andrew-stewart.ca/2012/10/31/vim-ctags}
+    \item \textbf{surround}. Ce plugin permet de gérer (changer, ajouter, supprimer) tout ce qui « entoure » : les parenthèses, les crochets, les guillemets … Par exemple vous pourrez en une combinaison de touches changer "Hello world!" en 'Hello world!' ou <q>Hello world!</q>. Le repo Github : \url{https://github.com/tpope/vim-surround}.
+
+    \item \textbf{fugitive}. Si vous travaillez sur du code source vous utilisez forcément un gestionnaire de version de code source. Si ce n'est pas le cas vous pouvez aller vous cacher. Sinon si vous utilisez Git, Le plugin fugitive est pour vous. Il permet de gérer git directement dans \vim. Le repo Github :  \url{https://github.com/tpope/vim-fugitive}
+
+    \item \textbf{syntastic}. Syntastic vérifie pour vous la syntaxe de votre code source. Il va, comme peut le faire Eclipse par exemple, vous afficher vos erreurs de syntaxe directement dans \vim. Peut vous faire gagner en temps certain si vous éditez souvent du code. Le repo Github est par ici : \url{https://github.com/scrooloose/syntastic}
+
+    \item \textbf{ctags + ctrlp}. Ctags est un petit programme externe qui va parcourir votre code source et qui va ensuite vous permettre de « suivre » vos fonctions dans votre code source. Très pratique pour naviguer dans votre code source. Utilisé conjointement avec \textbf{ctrlp} décrit plus haut, il s'avère vite indispensable. Tout est expliqué ici : \url{http://andrew-stewart.ca/2012/10/31/vim-ctags}.
+
+\end{itemize}
