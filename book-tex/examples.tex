@@ -6,6 +6,29 @@ Cette dernière partie est là pour vous donner un endroit de référence où vo
 
 \section{Questions / réponses}
 
+\subsection{Comment quitter \vim ?}
+
+La première chose à faire est de se mettre en mode normal. Grosso modo, excitez-vous sur \ttesc ou \ttsemicolon en fonction de votre configuration et vous devriez vous retrouver en mode normal. Ensuite tapez \vimcmd{:q} pour quitter. Il y a de grandes chances que \vim ne vous laisse pas faire. Si vous avez des modifications non enregistrées par exemple, il ne voudra pas quitter. Vous pouvez annuler les modification en le forçant à quitter grâce à l'utilisation de \vimcmd{!} comme ceci : \vimcmd{:q!}. Vous pouvez aussi enregistrer vos modifications puis quitter comme ceci : \vimcmd{:wq}.
+
+\subsection{Comment sauvegarder sous ?}
+
+En mode normal, si vous tapez \vimcmd{:w}, \vim par défaut sauvegarde vos modifications dans le fichier courant. Si vous souhaitez utiliser un autre nom de fichier pour « sauvegarder sous », vous avez juste à lui spécifier le nom du fichier après \vimcmd{w} comme ceci : \vimcmd{:w monfichier.txt}. \vim sauvegardera alors votre fichier sous le nom \emph{monfichier.txt}. En revanche \vim n'ouvrira pas \emph{monfichier.txt}, il restera sur votre précédent fichier.
+
+Si vous souhaitez que \vim sauvegarde sous \emph{monfichier.txt} et ouvre ensuite ce fichier dans le tampon courant, vous devrez utiliser \vimcmd{:sav monfichier.txt}.
+
+\subsection{Comment copier/couper coller ?}
+
+Celle là est facile, j'y ai déjà consacré un chapitre, cf. \nameref{sec:se-deplacer}. 
+
+En résumé : 
+
+\begin{itemize}
+    \item Passez en mode visuel avec \ttv,
+    \item Sélectionnez ce que vous voulez copier en vous déplaçant,
+    \item Copiez avec \tty\xspace ou couper avec \ttx ou \ttd,
+    \item Collez après l'emplacement du curseur avec \ttp ou avant l'emplacement du curseur avec \ttP.
+\end{itemize}
+
 \section{Pense-bête}
 
 \bigskip
