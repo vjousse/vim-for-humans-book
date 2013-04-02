@@ -31,23 +31,35 @@ En résumé :
 
 \subsection{Comment créer un nouveau fichier ?}
 
-La façon traditionnelle de faire est de taper, en mode normal, \vimcmd{:e monfichier.txt} pour ouvrir un tampon (buffer) vide. Ensuite, sauvegardez votre tampon grâce à \vimcmd{:w}. Il sera sauvegardé sous le nom \Verb|monfichier.txt} dans le répertoire courant.
+La façon traditionnelle de faire est de taper, en mode normal, \vimcmd{:e monfichier.txt} pour ouvrir un tampon (buffer) vide. Ensuite, sauvegardez votre tampon grâce à \vimcmd{:w}. Il sera sauvegardé sous le nom \Verb|monfichier.txt| dans le répertoire courant.
 
 Vous pouvez aussi utiliser Lusty Explorer (cf. \nameref{lusty}) pour ce faire. Lancez le grâce à \vimcmd{,lr} ou \vimcmd{,lf}, tapez le nom du fichier que vous souhaitez créer puis appuyez sur \ttctrl puis en même temps \tte. Vous pouvez ensuite le sauvegarder de la même manière que ci-dessus.
+
+\subsection{Annuler / Refaire}
+
+Pour annuler il suffit d'utiliser \ttu en mode normal. Pour annuler le annuler (donc refaire) maintenez \ttctrl appuyée puis \ttr.
 
 \section{Pense-bête}
 
 \bigskip
-\begin{tabular}[H]{|c|c|}
+\begin{tabularx}{17cm}{|X|c|X|}
   \hline
-  Résultat attendu & Action\\
+  Résultat attendu & Action & Commentaire \\
+  \hline \hline
+  Sauvegarder & :w & (w pour write)\\
   \hline
-  Sauvegarder & :w (w pour write)\\
-  Sauvegarder et quitter & :wq (wq pour write and quit)\\
-  Quitter sans sauvegarder (forcer à quitter) & :q! \\
-  Annuler (Undo) & u \\
-  Refaire (Redo) & Ctrl+r \\
+  Sauvegarder sous & :w nomdefichier.txt & Sauvegarde sous nomdefichier.txt mais n'ouvre pas nomdefichier.txt \\
   \hline
-\end{tabular}
+  Sauvegarder sous & :sav nomdefichier.txt & Sauvegarde sous et ouvre nomdefichier.txt  \\
+  \hline
+  Sauvegarder et quitter & :wq (wq pour write and quit) & \\
+  \hline
+  Quitter sans sauvegarder (forcer à quitter) & :q! & \\
+  \hline
+  Annuler (Undo) & u & \\
+  \hline
+  Refaire (Redo) & Ctrl+r & \\
+  \hline
+\end{tabularx}
 \bigskip
 
