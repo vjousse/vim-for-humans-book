@@ -20,7 +20,7 @@ Si vous souhaitez que \vim sauvegarde sous \emph{monfichier.txt} et ouvre ensuit
 
 Celle là est facile, j'y ai déjà consacré un chapitre, cf. \nameref{sec:se-deplacer}. 
 
-En résumé : 
+En résumé :
 
 \begin{itemize}
     \item Passez en mode visuel avec \ttv,
@@ -28,6 +28,12 @@ En résumé :
     \item Copiez avec \tty\xspace ou couper avec \ttx ou \ttd,
     \item Collez après l'emplacement du curseur avec \ttp ou avant l'emplacement du curseur avec \ttP.
 \end{itemize}
+
+\subsection{Comment créer un nouveau fichier ?}
+
+La façon traditionnelle de faire est de taper, en mode normal, \vimcmd{:e monfichier.txt} pour ouvrir un tampon (buffer) vide. Ensuite, sauvegardez votre tampon grâce à \vimcmd{:w}. Il sera sauvegardé sous le nom \Verb|monfichier.txt} dans le répertoire courant.
+
+Vous pouvez aussi utiliser Lusty Explorer (cf. \nameref{lusty}) pour ce faire. Lancez le grâce à \vimcmd{,lr} ou \vimcmd{,lf}, tapez le nom du fichier que vous souhaitez créer puis appuyez sur \ttctrl puis en même temps \tte. Vous pouvez ensuite le sauvegarder de la même manière que ci-dessus.
 
 \section{Pense-bête}
 
