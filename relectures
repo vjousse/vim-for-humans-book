@@ -1,0 +1,4 @@
+Flo :
+- Refaire les screens avec un truc qui a un peu plus de geule style MacVim ou un beau thème GTK
+- ctags pourrait être plus explicité, vu que c'est natif dans vim (sans utiliser ctrlp, juste :tag, :pop, ...)
+- regarder du côté de cscope
