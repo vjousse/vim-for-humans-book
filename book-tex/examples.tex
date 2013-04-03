@@ -157,5 +157,29 @@ Pour annuler il suffit d'utiliser \ttu en mode normal. Pour annuler le annuler (
 
 \section{Chercher et/ou remplacer}
 
-\bigskip
+\begin{tabularx}{17cm}{|X|c|X|}
+  \hline
+  Résultat attendu & Action & Commentaire \\
+  \hline \hline
+  \textbf{Rechercher} & \vimcmd{/\emph{toto}} & Cherche la chaîne de caractères \emph{toto} à partir de l'emplacement courant du curseur \\
+  \hline
+  \textbf{Suivant} & \vimcmd{n} & Affiche le prochain résultat de recherche\\
+  \hline
+  \textbf{Précédent} & \vimcmd{N} & Affiche le précédent résultat de recherche\\
+  \hline
+  \textbf{Remplacer sur la ligne courante} & \vimcmd{:s/toto/titi} & Remplace toto par titi sur la ligne courante (une fois)\\
+  \hline
+  \textbf{Remplacer tout sur la ligne courante} & \vimcmd{:s/toto/titi/g} & Remplace toto par titi sur la ligne courante (pour toutes les occurrences de toto)\\
+  \hline
+  \textbf{Remplacer dans toutes les lignes} & \vimcmd{:\%s/toto/titi} & Remplace toto par titi sur toutes les lignes du fichier (une fois par ligne)\\
+  \hline
+  \textbf{Remplacer tout dans toutes les lignes} & \vimcmd{:\%s/toto/titi/g} & Remplace toto par titi sur toutes les lignes du ficher (pour toutes les occurrences de toto par ligne)\\
+  \hline
+
+  \textbf{Remplacer sur la ligne courante en ignorant la casse} & \vimcmd{:s/toto/titi/i} & Remplace toto par titi sur la ligne courante (une fois)\\
+  \hline
+  \textbf{Remplacer tout sur la ligne courante en ignorant la casse} & \vimcmd{:s/toto/titi/gi} & Remplace toto par titi sur la ligne courante (pour toutes les occurrences de toto)\\
+  \hline
+\end{tabularx}
+
 
