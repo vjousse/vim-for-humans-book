@@ -1,2 +1,2 @@
-pdflatex -shell-escape vim-essentiel.tex
-evince vim-essentiel.pdf
+pdflatex -shell-escape vim-pour-les-humains.tex
+evince vim-pour-les-humains.pdf
