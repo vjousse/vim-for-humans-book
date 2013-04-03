@@ -41,25 +41,121 @@ Pour annuler il suffit d'utiliser \ttu en mode normal. Pour annuler le annuler (
 
 \section{Pense-bête}
 
-\bigskip
+\section{Fichiers}
+
 \begin{tabularx}{17cm}{|X|c|X|}
   \hline
   Résultat attendu & Action & Commentaire \\
   \hline \hline
-  Sauvegarder & :w & (w pour write)\\
+  \textbf{Sauvegarder} & \vimcmd{:w} & (w pour write)\\
   \hline
-  Sauvegarder sous & :w nomdefichier.txt & Sauvegarde sous nomdefichier.txt mais n'ouvre pas nomdefichier.txt \\
+  \textbf{Sauvegarder sous} & \vimcmd{:w \emph{nomdefichier.txt}} & Sauvegarde sous nomdefichier.txt mais n'ouvre pas nomdefichier.txt \\
   \hline
-  Sauvegarder sous & :sav nomdefichier.txt & Sauvegarde sous et ouvre nomdefichier.txt  \\
+  \textbf{Sauvegarder sous / ouvre} & \vimcmd{:sav \emph{nomdefichier.txt}} & Sauvegarde sous et ouvre nomdefichier.txt  \\
   \hline
-  Sauvegarder et quitter & :wq (wq pour write and quit) & \\
+  \textbf{Quitter sans sauvegarder (forcer à quitter)} & \vimcmd{:q!} & \\
   \hline
-  Quitter sans sauvegarder (forcer à quitter) & :q! & \\
-  \hline
-  Annuler (Undo) & u & \\
-  \hline
-  Refaire (Redo) & Ctrl+r & \\
+  \textbf{Sauvegarder et quitter} & \vimcmd{:wq} (wq pour write and quit) & \\
   \hline
 \end{tabularx}
+
+\section{Déplacements}
+
+\begin{tabularx}{17cm}{|X|c|}
+  \hline
+  Résultat attendu & Action \\
+  \hline \hline
+  \textbf{Se déplacer d'un caractère à gauche} & \vimcmd{h} \\
+  \hline
+  \textbf{Se déplacer d'un caractère en bas} & \vimcmd{j} \\
+  \hline
+  \textbf{Se déplacer d'un caractère en haut} & \vimcmd{k} \\
+  \hline
+  \textbf{Se déplacer d'un caractère à droite} & \vimcmd{l} \\
+  \hline
+  \textbf{Se déplacer à la fin d'un mot} & \vimcmd{e} \\
+  \hline
+  \textbf{Se déplacer au début d'un mot} & \vimcmd{b} \\
+  \hline
+  \textbf{Se déplacer au début du mot suivant} & \vimcmd{w} \\
+  \hline
+  \textbf{Se déplacer à la ligne 42} & \vimcmd{:42} \\
+  \hline
+  \textbf{Se déplacer au début du fichier} & \vimcmd{gg} ou \vimcmd{:0} \\
+  \hline
+  \textbf{Se déplacer à la fin du fichier} & \vimcmd{GG} ou \vimcmd{:\$} \\
+  \hline
+  \textbf{Se déplacer à la fin de la ligne} & \vimcmd{\$} \\
+  \hline
+  \textbf{Se déplacer au premier caractère non vide de la ligne} & \vimcmd{\^{ }} \\
+  \hline
+  \textbf{Se déplacer au début de la ligne} & \vimcmd{0} \\
+  \hline
+  \textbf{Descendre d'une page} & \vimcmd{Ctrl+f} \\
+  \hline
+  \textbf{Monter d'une page} & \vimcmd{Ctrl+b} \\
+  \hline
+  \textbf{Se déplacer à la première ligne de l'écran} & \vimcmd{H} \\
+  \hline
+  \textbf{Se déplacer au milieu de l'écran} & \vimcmd{M} \\
+  \hline
+  \textbf{Se déplacer à la dernière ligne de l'écran} & \vimcmd{L} \\
+  \hline
+\end{tabularx}
+
+\section{Édition de texte}
+
+\begin{tabularx}{17cm}{|X|c|X|}
+  \hline
+  Résultat attendu & Action & Commentaire \\
+  \hline \hline
+  \textbf{Insérer avant le curseur} & \vimcmd{i} & \\
+  \hline
+  \textbf{Insérer avant le premier caractère non vide de la ligne} & \vimcmd{I} & \\
+  \hline
+  \textbf{Insérer après le curseur} & \vimcmd{a} & \\
+  \hline
+  \textbf{Insérer à la fin de la ligne} & \vimcmd{A} & \\
+  \hline
+  \textbf{Insérer une nouvelle ligne en dessous} & \vimcmd{o} & \\
+  \hline
+  \textbf{Insérer une nouvelle ligne au dessus} & \vimcmd{O} & \\
+  \hline
+  \textbf{Remplace le reste de la ligne} & \vimcmd{C} & \\
+  \hline
+  \textbf{Remplace un seul caractère (et reste en mode normal)} & \vimcmd{r} & \\
+  \hline
+  \textbf{Supprime le caractère après le curseur (comme la touche suppr.)} & \vimcmd{x} & \\
+  \hline
+  \textbf{Supprime le caractère avant le curseur (comme la touche backspace)} & \vimcmd{X} & \\
+  \hline
+  \textbf{Supprime la ligne courante} & \vimcmd{dd} & \\
+  \hline
+  \textbf{Copie la ligne courante} & \vimcmd{yy} & \\
+  \hline
+  \textbf{Colle après le curseur. Si c'est une ligne, colle la ligne en dessous.} & \vimcmd{p} & \\
+  \hline
+  \textbf{Colle avant le curseur. Si c'est une ligne, colle la ligne au dessus.} & \vimcmd{P} & \\
+  \hline
+  \textbf{Intervertit la case des caractères (majuscules / minuscules)} & \vimcmd{\textasciitilde} & Marche en mode visuel\\
+  \hline
+  \textbf{Déplace le texte vers la droite (indentation)} & \vimcmd{>} & Marche en mode visuel \\
+  \hline
+  \textbf{Déplace le texte vers la gauche} & \vimcmd{<} & Marche en mode visuel \\
+  \hline
+  \textbf{En mode visuel, supprime la sélection} & \vimcmd{d} & Mode visuel \\
+  \hline
+  \textbf{En mode visuel, remplace la sélection} & \vimcmd{c} & Mode visuel \\
+  \hline
+  \textbf{En mode visuel, copie la sélection} & \vimcmd{y} & Mode visuel \\
+  \hline
+  \textbf{Annuler (Undo)} & \vimcmd{u} & \\
+  \hline
+  \textbf{Refaire (Redo)} & \vimcmd{Ctrl+r} & \\
+  \hline
+\end{tabularx}
+
+\section{Chercher et/ou remplacer}
+
 \bigskip
 
