@@ -2,3 +2,18 @@ Flo :
 - Refaire les screens avec un truc qui a un peu plus de geule style MacVim ou un beau thème GTK
 - ctags pourrait être plus explicité, vu que c'est natif dans vim (sans utiliser ctrlp, juste :tag, :pop, ...)
 - regarder du côté de cscope
+
+==========================================
+
+Thomas Belin :
+- Nécessité de NerdTree au début vu qu'on l'utilise pas du tout ? Peut-être mettre les plugins au début ou carrément enlever the NerdTree
+- quand tu parle du mode de déplacement hjkl, pourquoi ne pas citer les sites web qui implémentent ce mode  (dans ceux que je connais: Gmail, Google, Google Reader, Jira, 9gag)
+"Sinon pour les tous petits détails que j'ai rencontrés : 
+- les images d'exemple sont très peu lisible. (par exemple on ne vois pas facilement la différence entre "Figure 13: Vim prêt pour le copier/coller." et "Figure 12: Vim en mode insertion.") ;
+- je trouve que l'utilisation du mot "juste" (c'est, encore une fois, très personnel) dans le texte baissent ma crédibilité vis a vis de ce que je lis ("c’est juste l’investissement parfait", "il est juste parfait pour travailler", "il est juste imbitable") ;
+
+Pour les fautes de Français, je suis désolé je ne suis pas vraiment très bon dans ce domaine, j'ai relevé deux petites coquilles  :
+- "vos buffers on jargon Vim" => "vos buffers en jargon Vim" ;
+- "Rendez-vous sur l’url du script [..] et télécharger la dernière version" => "Rendez-vous sur l’url du script [..] et téléchargez la dernière version"."
+
+==========================================
