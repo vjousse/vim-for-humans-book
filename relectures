@@ -17,3 +17,33 @@ Pour les fautes de Français, je suis désolé je ne suis pas vraiment très bon
 - "Rendez-vous sur l’url du script [..] et télécharger la dernière version" => "Rendez-vous sur l’url du script [..] et téléchargez la dernière version"."
 
 ==========================================
+
+Clément Delmas :
+- Page 22 : Le lien vers le fichier de config (http://github.com/vjousse/vim-for-humans/fr/firstconfig/) donne sur une 404
+Le bon lien serait : https://github.com/vjousse/vim-for-humans/blob/master/firstconfig/vimrc
+- Page 29 : Une fois NerdTree installé, la commande :NERDTree n'a pas fonctionné.
+Par contre, j'ai ajouté l'activation automatique, j'ai redémarré MacVim et le plugin a fonctionné.
+- Ah et sinon, pour l'activation de Pathogen, j'ai mis beaucoup de temps à comprendre qu'il fallait l'activer au début du fichier,
+et non à la fin (et donc j'ai un peu ramé à ce niveau là). D'ailleurs, ça a sûrement joué au niveau de NerdTree (ou pas, je ne saurais pas te dire)...
+
+==========================================
+
+Yann Moisan :
+
+p15 artiste -> artisan (c'est ma traduction préférée de software craftsman)
+p17 99% vim avec interface graphique -> pas convaincu, ça reste quand même un truc de geek donc CLI
+p20 s/plus part/plupart
++1 pour solarized dark
+plein de solution pour ouvrir un fichier sans plugin : vim fic1 fic2 ou :e
+p38 s/tout le reste vous l’apprendrez/vous apprendrez tout le reste (plus fluide)
+p40 je préfère jj à ;;
+p41 s/dest/d est
+p41 s/cest/c est
+p41 supprime tout jusqu’au début de la ligne -> jusqu'au premier caractère non blanc
+p43 s/GG/G
+Amha, je parlerais des raccourcis comme crtl i/o et ctrl n/p
+Amha, le problème de présenter les plugins aux débutants est qu'ils utilisent des plugins pour faire des choses offertes nativement …
+Practical Vim débute en indiquant que pour tirer parti de Vim, il faut apprendre le touch typing : je trouve cette mise en garde assez pertinente.
+
+2 ressources que j'aime beaucoup :
+http://vimgolf.com/
