@@ -47,3 +47,23 @@ Practical Vim débute en indiquant que pour tirer parti de Vim, il faut apprendr
 
 2 ressources que j'aime beaucoup :
 http://vimgolf.com/
+
+==========================================
+
+Ludovic Fardel :
+
+p30
+note de marge (ndm) 29: ctrl+w+w, il n'est pas nécessaire de maintenir ctrl pour le 2ème w.  Cela peut même empecher ctrl+w shift+w de fonctionner (pour naviguer dans l'autre sens, utile en cas de nombreux split).
+
+Gestionnaire de plugins Pathogen. Une petite mention de Vundle (qui simplifie presque plus)  fait défaut, je pense.
+
+
+p39 Ca n'a pas dû durer plus de 2 jours.
+
+p40,41 Tu introduis le mapping (pour esc), sans pour autant le nommer. Peut-être, peux-tu avertir que mapper à tout va pour aboutir à des conflits.
+
+p23 ndm20 et p49 plus 'simple' que de devoir taper le chemin vers ~/.vimrc
+
+:so $MYVIMRC
+" Alternative that can be used if vimrc is the current file:
+:so %
