@@ -67,3 +67,12 @@ p23 ndm20 et p49 plus 'simple' que de devoir taper le chemin vers ~/.vimrc
 :so $MYVIMRC
 " Alternative that can be used if vimrc is the current file:
 :so %
+
+===========================================
+
+Gildas Quéméner :
+
+ J'ai relevé deux petites erreurs:
+ Page 19, commentaire 12, il y a une typo : "en bas à gauche OU ne semble 
+ pas réagir"
+ Page 33, c'est lourd : "à manipuler/écrire du texte QUELQU'IL soit"
