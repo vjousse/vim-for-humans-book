@@ -11,9 +11,6 @@ Thomas Belin :
 "Sinon pour les tous petits détails que j'ai rencontrés : 
 - les images d'exemple sont très peu lisible. (par exemple on ne vois pas facilement la différence entre "Figure 13: Vim prêt pour le copier/coller." et "Figure 12: Vim en mode insertion.") ;
 
-Pour les fautes de Français, je suis désolé je ne suis pas vraiment très bon dans ce domaine, j'ai relevé deux petites coquilles  :
-- "vos buffers on jargon Vim" => "vos buffers en jargon Vim" ;
-- "Rendez-vous sur l’url du script [..] et télécharger la dernière version" => "Rendez-vous sur l’url du script [..] et téléchargez la dernière version"."
 
 ==========================================
 
@@ -29,49 +26,12 @@ et non à la fin (et donc j'ai un peu ramé à ce niveau là). D'ailleurs, ça a
 
 Yann Moisan :
 
-p15 artiste -> artisan (c'est ma traduction préférée de software craftsman)
-p17 99% vim avec interface graphique -> pas convaincu, ça reste quand même un truc de geek donc CLI
-p20 s/plus part/plupart
-+1 pour solarized dark
 plein de solution pour ouvrir un fichier sans plugin : vim fic1 fic2 ou :e
-p38 s/tout le reste vous l’apprendrez/vous apprendrez tout le reste (plus fluide)
-p40 je préfère jj à ;;
-p41 s/dest/d est
-p41 s/cest/c est
-p41 supprime tout jusqu’au début de la ligne -> jusqu'au premier caractère non blanc
-p43 s/GG/G
+
 Amha, je parlerais des raccourcis comme crtl i/o et ctrl n/p
 Amha, le problème de présenter les plugins aux débutants est qu'ils utilisent des plugins pour faire des choses offertes nativement …
 Practical Vim débute en indiquant que pour tirer parti de Vim, il faut apprendre le touch typing : je trouve cette mise en garde assez pertinente.
 
 2 ressources que j'aime beaucoup :
 http://vimgolf.com/
-
-==========================================
-
-Ludovic Fardel :
-
-p30
-note de marge (ndm) 29: ctrl+w+w, il n'est pas nécessaire de maintenir ctrl pour le 2ème w.  Cela peut même empecher ctrl+w shift+w de fonctionner (pour naviguer dans l'autre sens, utile en cas de nombreux split).
-
-Gestionnaire de plugins Pathogen. Une petite mention de Vundle (qui simplifie presque plus)  fait défaut, je pense.
-
-
-p39 Ca n'a pas dû durer plus de 2 jours.
-
-p40,41 Tu introduis le mapping (pour esc), sans pour autant le nommer. Peut-être, peux-tu avertir que mapper à tout va pour aboutir à des conflits.
-
-p23 ndm20 et p49 plus 'simple' que de devoir taper le chemin vers ~/.vimrc
-
-:so $MYVIMRC
-" Alternative that can be used if vimrc is the current file:
-:so %
-
-===========================================
-
-Gildas Quéméner :
-
- J'ai relevé deux petites erreurs:
- Page 19, commentaire 12, il y a une typo : "en bas à gauche OU ne semble 
- pas réagir"
- Page 33, c'est lourd : "à manipuler/écrire du texte QUELQU'IL soit"
+http://vimbits.com/

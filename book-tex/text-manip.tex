@@ -4,7 +4,7 @@ Alors oui, pour ceux qui se demandent, je fais des rêves bizarres, mais bon cha
 
 Ce qui fait et fera encore le succès de \vim est sa capacité à \textbf{faciliter les manipulations de texte}. Certes il va vous proposer des fonctionnalités propres à chaque tâche que vous effectuerez \footnote{Souvent par l'intermédiaire de plugins.} comme la validation syntaxique de code, la correction orthographique, \ldots Mais à la fin, c'est toujours à écrire/corriger/manipuler/se déplacer dans du texte que vous passerez la majeure partie de votre temps. 
 
-C'est là que l'approche de \vim est différente d'IDE comme Eclipse / Netbeans / PhpStorm et consorts. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, \vim adopte l'approche opposée : vous serez \textbf{très efficace} à manipuler/écrire du texte quel que soit le texte et vous pourrez enrichir \vim avec des fonctionnalités propres à votre langage de programmation via des plugins.
+C'est là que l'approche de \vim est différente d'IDE comme Eclipse / Netbeans / PhpStorm et consorts. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, \vim adopte l'approche opposée : vous serez \textbf{très efficace} à manipuler/écrire du texte quel qu'il soit et vous pourrez enrichir \vim avec des fonctionnalités propres à votre langage de programmation via des plugins.
 
 Nous allons donc voir dans ce chapitre comment utiliser \vim à bon escient (vous allez commencer à oublier votre souris) et quelle est la logique derrière tous ces enchaînements de commandes qui paraissent barbares au non-initié. Vous devriez pouvoir, à la fin de ce chapitre, \textbf{vous passer de votre souris} pour éditer/manipuler le contenu d'un fichier\footnote{En tout cas, vous devriez vous forcer à le faire en apprenant \vim, ce n'est pas si dur que ça, et c'est ce qui fait la différence entre \vim et les autres : le tout clavier.}.
 
@@ -126,7 +126,7 @@ Vous avez ici le minimum pour vous déplacer en mode normal. Il existe aussi des
 \end{tabular}
 \bigskip
 
-Arrêtons-nous un peu là dessus. Au risque d'insister lourdement, mais la clé de l'utilisation de \vim vient de ce que nous venons de voir dans ce chapitre, ni plus, ni moins. Il y a une chose que vous avez à vous forcer à faire, c'est \textbf{d'utiliser les touches hjkl} pour les déplacements. Si vous y arrivez, tout le reste vous l'apprendrez au fur et à mesure.
+Arrêtons-nous un peu là dessus. Au risque d'insister lourdement, mais la clé de l'utilisation de \vim vient de ce que nous venons de voir dans ce chapitre, ni plus, ni moins. Il y a une chose que vous avez à vous forcer à faire, c'est \textbf{d'utiliser les touches hjkl} pour les déplacements. Si vous y arrivez, vous apprendrez tout le reste au fur et à mesure.
 
 Vous trouverez des sites entiers vous détaillant les différentes commandes possibles, les différentes combinaisons, j'en passe et des meilleures. Vous les apprendrez puis les oublierez (ou pas, en fonction de si elles vous sont vraiment utiles). Si vous avez un seul effort à faire c'est celui de se passer des touches directionnelles et donc de vous forcer à utiliser le mode normal. Le reste tombera sous le sens.
 
@@ -149,7 +149,7 @@ Voici l'ultime configuration qu'il vous faudra mettre dans votre \vimrc pour att
     \label{code:touches-directionnelles}
 \end{listing}
 
-Nous y voilà. Croyez-moi, vous allez souffrir un peu au début. Pour moi, ça n'a pas dû durer plus de 2 jours. Ensuite vous aurez oublié. Si vous n'êtes pas prêt à galérer un peu pendant deux jours pour améliorer votre efficacité à vie, que faites-vous ici !
+Nous y voilà. Croyez-moi, vous allez souffrir un peu au début. Pour moi, ça n'a pas duré plus de deux jours. Ensuite vous aurez oublié. Si vous n'êtes pas prêt à galérer un peu pendant deux jours pour améliorer votre efficacité à vie, que faites-vous ici !
 
 Je ne vous donnerai pas d'autres détails sur toutes les touches possibles pour vous déplacer, d'autres ressources le font déjà bien mieux que moi. Je vais en revanche vous apprendre dans \nameref{sec:combine-move} comment les utiliser à bon escient.
 
@@ -222,8 +222,8 @@ Maintenant que nous savons nous déplacer en mode normal, il est temps de voir c
 Dans \nameref{sec:se-passer-touches-dir} nous avons vu qu'il suffisait d'utiliser \ttw pour se déplacer au début du mot suivant. Nous allons essayer de combiner cela avec quelques nouvelles touches du mode normal :
 
 \begin{itemize}
-    \item \ttd est utilisée pour « supprimer »
-    \item \ttc est utilisée pour « supprimer et passer en mode insertion »
+    \item \ttd\xspace est utilisée pour « supprimer »
+    \item \ttc\xspace est utilisée pour « supprimer et passer en mode insertion »
 \end{itemize}
 
 À noter que ce qui est supprimé est placé dans le presse-papier en même temps (le « supprimer » se comporte par défaut comme un « couper »).
@@ -257,7 +257,7 @@ Vous pouvez aussi utiliser cela pour copier :
 
   \tty\xspace puis \ttw & copie les caractères jusqu'au prochain mot \\
   \tty\xspace puis \ttdollar & copie tout jusqu'à la fin de la ligne \\
-  \tty\xspace puis \tthat & copie tout jusqu'au début de la ligne \\
+  \tty\xspace puis \tthat & copie tout jusqu'au premier caractère non blanc de la ligne \\
   \hline
 \end{tabular}
 \bigskip
@@ -323,7 +323,7 @@ Vous pouvez aussi :
 
 \begin{itemize}
     \item Vous rendre au début du fichier en tapant \tg\tg
-    \item Vous rendre à la fin du fichier en tapant \tG\tG
+    \item Vous rendre à la fin du fichier en tapant \tG
     \item Vous rendre à la ligne 23 en tapant \tcolon\hlred{\Verb|23|}
 \end{itemize}
 

@@ -35,7 +35,7 @@ Cliquez sur \Verb|Fichier (File) -> Nouveau (New)|. Le texte d'accueil par défa
   \label{fig:vim-new}
 \end{figure}
 
-Commençons par entrer un commentaire dans l'en-tête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur \tti (le curseur devrait changer d'aspect) et entrez le commentaire ci-dessous\sidenote{Si vous ne savez pas trop ce que vous avez fait et que \vim vous affiche des trucs en rouge en bas à gauche au ne semble pas réagir comme il faut quand vous appuyez sur \tti, appuyez plusieurs fois sur \ttesc, ça devrait vous remettre au mode par défaut de \vim}.
+Commençons par entrer un commentaire dans l'en-tête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur \tti (le curseur devrait changer d'aspect) et entrez le commentaire ci-dessous\sidenote{Si vous ne savez pas trop ce que vous avez fait et que \vim vous affiche des trucs en rouge en bas à gauche ou ne semble pas réagir comme il faut quand vous appuyez sur \tti, appuyez plusieurs fois sur \ttesc, ça devrait vous remettre au mode par défaut de \vim}.
 \begin{listing}[H]
 
     \begin{minted}[bgcolor=bg, gobble=8]{vim}
@@ -67,7 +67,7 @@ Pour ce faire bien sûr, vous oubliez tout d'abord l'utilisation de la souris. E
 
 Vous oubliez aussi le mouvement de votre main droite vers les touches directionnelles gauche/droite/bas/haut. C'est une perte de temps et c'est totalement inutile avec \vim.
 
-Qu'est-ce que vous avez le droit de faire dans le coup ? Pas grand chose, si ce n'est garder vos mains sur la position de repos comme le montre la figure \ref{fig:hand-position}. Vous trouverez d'ailleurs sur la plus part des claviers des marques sur les touches F et J, c'est pour vous donner un repère tactile de la position où doivent se trouver vos index dans la position de repos.
+Qu'est-ce que vous avez le droit de faire dans le coup ? Pas grand chose, si ce n'est garder vos mains sur la position de repos comme le montre la figure \ref{fig:hand-position}. Vous trouverez d'ailleurs sur la plupart des claviers des marques sur les touches F et J, c'est pour vous donner un repère tactile de la position où doivent se trouver vos index dans la position de repos.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{hand-position.png}
@@ -131,7 +131,7 @@ filetype indent on
   \label{lst:syntax-hl}
 \end{listing}
 
-Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-hl}\sidenote{Pour l'instant, le plus facile pour que les modifications apportées à votre \vimrc soient prises en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la \vim de suite, en mode normal tapez \vimscmd{:so \textasciitilde/.vimrc}.
+Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-hl}\sidenote{Pour l'instant, le plus facile pour que les modifications apportées à votre \vimrc soient prises en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la \vim de suite, en mode normal tapez \vimscmd{:so \textasciitilde/.vimrc} ou \vimscmd{:so \$MYVIMRC}.
 
 \vimscmd{:so} étant un raccourci pour \vimscmd{:source}.}. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
 
@@ -281,6 +281,9 @@ mv ~/.vim/colors ~/.vim/bundle/solarized
   \label{code:solarized-bundle}
 \end{listing}
 
+Actuellement, Pathogen reste encore le gestionnaire de plugins \vim le plus utilisé. Mais depuis peu, un challenger est arrivé, il s'appelle Vundle \url{https://github.com/gmarik/vundle}. J'ai choisi de vous présenter Pathogen car c'est de lui que vous entendrez parler le plus, mais sachez que Vundle est aussi une alternative intéressante : il est compatible avec Pathogen et il gère les versions et les mises à jours de vos plugins directement depuis internet. Pour ceux qui connaissent Ruby, c'est le Bundler \sidenote{\url{http://gembundler.com/}} pour \vim.
+
+
 Voilà notre \vim est presque près pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet, c'est ici que \emph{The NERD Tree} entre en lice.
 
 \subsection{Explorateur de fichiers : The NERD Tree}
@@ -330,7 +333,7 @@ autocmd vimenter * NERDTree
 
 Rien de particulier ensuite, \emph{The NERD Tree} vous affiche l'arborescence du répertoire où vous avez lancé \vim, comme vous le montre la figure \ref{fig:vim-nerdtree}. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. 
 
-Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur \ttm lorsque vous êtes dans \emph{The NERD Tree}. Pour passer de la fenêtre de \emph{NERD Tree} à la fenêtre d'édition de votre fichier au clavier, appuyez sur \hlred{Ctrl + w + w}\sidenote{La touche \hlred{\emph{Control}} (Ctrl) et tout en la laissant appuyée, deux fois \hlred{w}.}. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres \vim (il n'est pas spécifique à \emph{The NERD Tree}).
+Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur \ttm lorsque vous êtes dans \emph{The NERD Tree}. Pour passer de la fenêtre de \emph{NERD Tree} à la fenêtre d'édition de votre fichier au clavier, appuyez sur \hlred{Ctrl + w} puis \hlred{w}\sidenote{La touche \hlred{\emph{Control}} (Ctrl) et tout en la laissant appuyée la touche \hlred{w}. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur \hlred{w}.}. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres \vim (il n'est pas spécifique à \emph{The NERD Tree}).
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-nerdtree.png}

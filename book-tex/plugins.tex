@@ -8,9 +8,9 @@ Qu'on ne se méprenne pas, \vim peut bien sûr s'utiliser sans plugins. Il peut 
 
 Nous avons déjà vu NerdTree dans \nameref{ssec:nerdtree} qui permettait d'avoir un explorateur de projet dans une fenêtre latérale de \vim. Le problème de ce plugin est qu'il n'est pas fait pour être utilisé au clavier. Certes vous pouvez utiliser le clavier, mais il ne sera pas aussi efficace que les plugins pensés uniquement pour une utilisation au clavier.
 
-Personnellement, le premier plugin que j'installe partout où j'ai à utiliser \vim, c'est \emph{Lusty Explorer}\sidenote{\url{http://www.vim.org/scripts/script.php?script\_id=1890}}. Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. Il va aussi permettre de naviguer rapidement entre vos différents fichiers déjà ouverts (vos buffers on jargon \vim). Commençons par l'installer.
+Personnellement, le premier plugin que j'installe partout où j'ai à utiliser \vim, c'est \emph{Lusty Explorer}\sidenote{\url{http://www.vim.org/scripts/script.php?script\_id=1890}}. Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. Il va aussi permettre de naviguer rapidement entre vos différents fichiers déjà ouverts (vos buffers en jargon \vim). Commençons par l'installer.
 
-Rendez-vous sur l'url du script \url{http://www.vim.org/scripts/script.php?script\_id=1890} et télécharger la dernière version (c'est actuellement la 4.3)\sidenote{\url{http://www.vim.org/scripts/download\_script.php?src\_id=17529}}. Faites ensuite le nécessaire dans votre répertoire \Verb|.vim/| pour qu'il ressemble à la structure ci-dessous :
+Rendez-vous sur l'url du script \url{http://www.vim.org/scripts/script.php?script\_id=1890} et téléchargez la dernière version (c'est actuellement la 4.3)\sidenote{\url{http://www.vim.org/scripts/download\_script.php?src\_id=17529}}. Faites ensuite le nécessaire dans votre répertoire \Verb|.vim/| pour qu'il ressemble à la structure ci-dessous :
 
 \begin{verbatim}
 .vim
@@ -69,7 +69,7 @@ Il faut donc choisir une touche \tleader. Par défaut, \vim utilise \textbacksla
     \label{code:leader}
 \end{listing}
 
-Une fois la modification effectuée et prise en compte (en redémarrant \vim ou en tapant \vimcmd{:source \~{}/.vimrc} en mode normal), vous devriez être en mesure de taper \vimshortcut{,lr} et d'avoir le même style de résultat que sur la figure \ref{fig:vim-lusty}.
+Une fois la modification effectuée et prise en compte (en redémarrant \vim ou en tapant \vimcmd{:so \~{}/.vimrc} ou \vimcmd{:so \$MYVIMRC} en mode normal), vous devriez être en mesure de taper \vimshortcut{,lr} et d'avoir le même style de résultat que sur la figure \ref{fig:vim-lusty}.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-lusty.png}
