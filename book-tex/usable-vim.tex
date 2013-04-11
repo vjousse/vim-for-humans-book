@@ -91,7 +91,7 @@ L'ultime changement serait d'utiliser une disposition de clavier encore plus eff
 \newpage
 \section{La configuration par défaut : indispensable}
 
-\newthought{Passons aux choses sérieuses}, c'est-à-dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \vimrc\sidenote{Ce fichier doit se trouver dans votre répertoire d'accueil. \emph{/home/votre\_user/.vimrc} sous Linux, \emph{/Users/votre\_user/.vimrc} sous Mac OS X ou plus généralement \emph{\textasciitilde{}/.vimrc}. Sous Windows vous pouvez créer un fichier nommé \emph{\_vimrc} qui doit se situer dans votre répertoire \emph{\%HOME\%} qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au dessus" de votre répertoire \emph{Mes Documents}. Plus d'infos sur Wikipedia \url{http://en.wikipedia.org/wiki/Home\_directory\#Default\_Home\_Directory\_per\_Operating\_System}} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
+\newthought{Passons aux choses sérieuses}, c'est-à-dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \vimrc\sidenote{Ce fichier doit se trouver dans votre répertoire d'accueil. \emph{/home/votre\_user/.vimrc} sous Linux, \emph{/Users/votre\_user/.vimrc} sous Mac OS X ou plus généralement \emph{\textasciitilde{}/.vimrc}. Sous Windows vous pouvez créer un fichier nommé \emph{\_vimrc} qui doit se situer dans votre répertoire \emph{\%HOME\%} qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au-dessus" de votre répertoire \emph{Mes Documents}. Plus d'infos sur Wikipedia \url{http://en.wikipedia.org/wiki/Home\_directory\#Default\_Home\_Directory\_per\_Operating\_System}} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
 
 J'ai commenté chacune des lignes du fichier directement dans le code. Rien de sorcier ici, on se demande juste pourquoi tout cela n'est pas inclus par défaut.
 
@@ -145,9 +145,9 @@ Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-h
   \label{fig:syntax-hl}
 \end{figure}
 
-Les thèmes vont vous permettre de rendre votre \vim un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème solarized \url{http://ethanschoonover.com/solarized} (avec fond clair ou foncé, ça dépendra de vous).
+Les thèmes vont vous permettre de rendre votre \vim un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème \emph{Solarized} \url{http://ethanschoonover.com/solarized} (avec fond clair ou foncé, ça dépendra de vous).
 
-Pour l'installer, commencez tout d'abord par créer un répertoire nommé \Verb|.vim|\sidenote{Ce répertoire s'appelle \Verb|vimfiles| sous Windows. À chaque fois que je ferai référence au répertoire \Verb|.vim| ça sera en fait \Verb|vimfiles| pour les Windowsiens} au même endroit que votre \vimrc\sidenote{Dans votre répertoire utilisateur donc.}. Dans ce répertoire \Verb|.vim|, créez un sous-répertoire nommé \Verb|colors|. Téléchargez ensuite le fichier du thème Solarized \url{https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim}\sidenote{ou copiez celui qui vous a été fourni avec le téléchargement de ce livre}(c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire \Verb|vim/colors/| fraîchement créé. Votre répertoire \Verb|.vim| devrait ressembler à celui de la figure \ref{fig:solarized-tree}.
+Pour l'installer, commencez tout d'abord par créer un répertoire nommé \Verb|.vim|\sidenote{Ce répertoire s'appelle \Verb|vimfiles| sous Windows. À chaque fois que je ferai référence au répertoire \Verb|.vim| ça sera en fait \Verb|vimfiles| pour les Windowsiens} au même endroit que votre \vimrc\sidenote{Dans votre répertoire utilisateur donc.}. Dans ce répertoire \Verb|.vim|, créez un sous-répertoire nommé \Verb|colors|. Téléchargez ensuite le fichier du thème \emph{Solarized} \url{https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim}\sidenote{ou copiez celui qui vous a été fourni avec le téléchargement de ce livre} (c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire \Verb|vim/colors/| fraîchement créé. Votre répertoire \Verb|.vim| devrait ressembler à celui de la figure \ref{fig:solarized-tree}.
 
 \begin{figure}%
   \center
@@ -172,19 +172,19 @@ Les images \ref{fig:vim-solarized-dark} et \ref{fig:vim-solarized-light} vous do
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-solarized-dark.png}
-  \caption{Le thème Solarized sombre.}
+  \caption{Le thème \emph{Solarized} sombre.}
   \label{fig:vim-solarized-dark}
 \end{figure}
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-solarized-light.png}
-  \caption{Le thème solarized clair.}
+  \caption{Le thème \emph{Solarized} clair.}
   \label{fig:vim-solarized-light}
 \end{figure}
 
-\newthought{Un bonus} (si vous n'utilisez pas \vim directement dans votre terminal) serait de choisir une police de caractères qui vous convient un peu mieux, c'est bien sûr facultatif mais bon, je présume que certains d'entre vous sont des esthètes aguerris.
+\newthought{Un bonus} (si vous n'utilisez pas \vim directement dans votre terminal) serait de choisir une police de caractères qui vous convient un peu mieux. C'est bien sûr facultatif, mais je présume que certains d'entre vous sont des esthètes aguerris.
 
-Si vous êtes sous Mac Os X je vous conseille la police \Verb|Monaco| qui est assez conviviale. Rajoutez les lignes suivantes à votre \vimrc pour l'utiliser :
+Si vous êtes sous Mac OS X je vous conseille la police \Verb|Monaco| qui est assez conviviale. Rajoutez les lignes suivantes à votre \vimrc pour l'utiliser :
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
@@ -210,22 +210,22 @@ set antialias
 
 Vous pouvez là aussi bien sûr changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez en mode normal \vimcmd{:set guifont:*}.
 
-Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne \url{https://github.com/vjousse/vim-for-humans/blob/master/syntaxhighlight/vimrc} ou avec les fichiers mis à disposition avec ce livre. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de \vim dans le coup.
+Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne \url{https://github.com/vjousse/vim-for-humans/blob/master/syntaxhighlight/vimrc}. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de \vim.
 
 
 \section{L'explorateur de fichiers : notre premier plugin}
 
-Nous y voilà, nous avons un \vim à peu près utilisable avec de jolies couleurs. Maintenant, il faudrait être capable d'ouvrir des fichiers autrement qu'en faisant \Verb|Fichier (File) -> Ouvrir (Open)|. Ça va être une bonne occasion pour installer notre premier plugin (ce n'est pas comme si nous avions d'autres choix de toute façon). Nous allons procéder ici en deux étapes, tout d'abord installer un gestionnaire de plugins pour éviter que ça devienne trop le bazar dans vos plugins, puis installer ensuite le plugin qu'il nous faut pour explorer un répertoire de fichiers.
+Nous y voilà, nous avons un \vim à peu près utilisable avec de jolies couleurs. Maintenant, il faudrait être capable d'ouvrir des fichiers autrement qu'en faisant \Verb|Fichier (File) -> Ouvrir (Open)|. Ça va être une bonne occasion pour installer notre premier plugin (ce n'est pas comme si nous avions d'autres choix de toute façon). Nous allons procéder ici en deux étapes, tout d'abord installer un gestionnaire de plugins pour éviter que ça devienne trop le bazar dans vos plugins, puis installer le plugin adéquat pour explorer un répertoire de fichiers.
 
 \subsection{Gestionnaire de plugins: Pathogen}
 
-Pathogen\sidenote{\url{https://github.com/tpope/vim-pathogen/}} est typique du plugin que vous découvrez après avoir commencé à configurer votre \vim et qui génère ce type de réaction : "Ah si j'avais su j'aurais directement commencé avec". Ça tombe bien, c'est ce que nous allons faire.
+\emph{Pathogen}\sidenote{\url{https://github.com/tpope/vim-pathogen/}} est le genre de plugin typique que vous découvrez après avoir commencé à configurer votre \vim et qui génère ce type de réaction : « Ah si j'avais su j'aurais directement commencé avec ». Ça tombe bien, c'est ce que nous allons faire.
 
-Tout d'abord, petite explication de comment on installe et configure des plugins dans \vim. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en \emph{*.vim}) dans des sous-répertoires de votre répertoire de configuration \emph{.vim}. On a déjà d'ailleurs commencé à y créer un sous-répertoire \Verb|colors| qui contient notre "plugin" de coloration Solarized.
+Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans \vim. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en \emph{*.vim}) dans des sous-répertoires de votre répertoire de configuration \emph{.vim}. On a déjà d'ailleurs commencé à y créer un sous-répertoire \Verb|colors| qui contient notre "plugin" de coloration Solarized.
 
 Le problème avec cette approche c'est que les différents plugins ne sont pas isolés (vous allez devoir copier leurs fichiers dans les différents sous-répertoires) et que vous allez donc vous retrouver avec des fichiers un peu partout sans savoir à qui ils appartiennent. Autant vous dire qu'une fois que vous voulez désinstaller ou mettre à jour un plugin, c'est vite l'enfer pour savoir quels sont ses fichiers.
 
-C'est là que pathogen arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. La figure \ref{fig:pathogen-tree} vous donne un exemple de répertoire \Verb|.vim| avant et après l'utilisation de pathogen. Certes la version avec pathogen contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite\sidenote{Et vous pourrez au passage très facilement utiliser \emph{git} pour gérer chacun de vos plugins comme des submodules, ce qu'il est impossible de réaliser sinon.}.
+C'est là que \emph{Pathogen} arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. La figure \ref{fig:pathogen-tree} vous donne un exemple de répertoire \Verb|.vim| avant et après l'utilisation de \emph{Pathogen}. Certes la version avec \emph{Pathogen} contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite\sidenote{Et vous pourrez au passage très facilement utiliser \emph{git} pour gérer chacun de vos plugins comme des submodules, ce qu'il est impossible de réaliser sinon.}.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{pathogen-tree.png}
@@ -233,7 +233,7 @@ C'est là que pathogen arrive à la rescousse, il va vous permettre d'installer 
   \label{fig:pathogen-tree}
 \end{figure}
 
-Commençons par installer pathogen. Créez un répertoire nommé \Verb|autoload| dans votre répertoire \Verb|.vim| et copiez y \Verb|pathogen.vim| que vous pouvez télécharger ici : \url{https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim} (ou qui vous a été fourni avec ce PDF). Pour les utilisateurs Unix, le listing \ref{code:pathogen-install} explique comment l'installer\sidenote{Si vous n'avez pas \Verb|{\footnotesize curl}| vous pouvez aussi utiliser \scmd{wget -O -}}.
+Commençons par installer \emph{Pathogen}. Créez un répertoire nommé \Verb|autoload| dans votre répertoire \Verb|.vim| et copiez y \Verb|pathogen.vim| que vous pouvez télécharger ici : \url{https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim} (ou qui vous a été fourni avec ce PDF). Pour les utilisateurs Unix, le listing \ref{code:pathogen-install} explique comment l'installer\sidenote{Si vous n'avez pas \Verb|{\footnotesize curl}| vous pouvez aussi utiliser \scmd{wget -O -}}.
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
@@ -272,7 +272,7 @@ call pathogen#infect()
 \label{code:pathogen}
 \end{listing}
 
-Puisque charité bien ordonnée commence par soi-même, nous allons ranger notre petit plugin solarized en utilisant pathogen. Il nous suffit de créer un répertoire \Verb|solarized| dans notre répertoire \Verb|bundle| fraîchement créé\sidenote{Vous pouvez l'appeler comme vous le souhaitez, tout sous-répertoire du répertoire \Verb|{\footnotesize bundle}| sera considéré comme un répertoire de plugin.}. Nous déplaçons ensuite le répertoire \Verb|colors| dans le répertoire \Verb|solarized| (cf. le listing \ref{code:solarized-bundle}).
+Puisque charité bien ordonnée commence par soi-même, nous allons ranger notre petit plugin \emph{Solarized} en utilisant \emph{Pathogen}. Il nous suffit de créer un répertoire \Verb|solarized| dans notre répertoire \Verb|bundle| fraîchement créé\sidenote{Vous pouvez l'appeler comme vous le souhaitez, tout sous-répertoire du répertoire \Verb|{\footnotesize bundle}| sera considéré comme un répertoire de plugin.}. Nous déplaçons ensuite le répertoire \Verb|colors| dans le répertoire \Verb|solarized| (cf. le listing \ref{code:solarized-bundle}).
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
@@ -288,15 +288,15 @@ mv ~/.vim/colors ~/.vim/bundle/solarized
 Actuellement, Pathogen reste encore le gestionnaire de plugins \vim le plus utilisé. Mais depuis peu, un challenger est arrivé, il s'appelle Vundle \url{https://github.com/gmarik/vundle}. J'ai choisi de vous présenter Pathogen car c'est de lui que vous entendrez parler le plus, mais sachez que Vundle est aussi une alternative intéressante : il est compatible avec Pathogen et il gère les versions et les mises à jours de vos plugins directement depuis internet. Pour ceux qui connaissent Ruby, c'est le Bundler \sidenote{\url{http://gembundler.com/}} pour \vim.
 
 
-Voilà notre \vim est presque près pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet, c'est ici que \emph{The NERD Tree} entre en lice.
+Voilà notre \vim est presque prêt pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet. C'est ici que \emph{The NERD Tree} entre en lice.
 
 \subsection{Explorateur de fichiers : The NERD Tree}
 \label{ssec:nerdtree}
-The NERD Tree est un plugin permettant d'afficher visuellement une arborescence de fichiers directement dans la partie gauche (par défaut) de votre \vim, à la \emph{TextMate}, \emph{Sublime Text} ou encore \emph{Eclipse/Netbeans}. Ce plugin n'est pas essentiel si vous souhaitez tout contrôler au clavier (je ne l'utilise plus moi-même), mais est assez pratique lorsque l'on débute avec \vim.
+The NERD Tree est un plugin permettant d'afficher visuellement une arborescence de fichiers directement dans la partie gauche (par défaut) de votre \vim, à la \emph{TextMate}, \emph{Sublime Text} ou encore \emph{Eclipse/NetBeans}. Ce plugin n'est pas essentiel si vous souhaitez tout contrôler au clavier (je ne l'utilise plus moi-même), mais est assez pratique lorsque l'on débute avec \vim.
 
-L'alternative que nous verrons plus tard au chapitre \TODO est d'utiliser les plugin \emph{Ctrl-p} ou \emph{Command-t} pour trouver des fichiers et les plugins \emph{LustyExplorer} et \emph{LustyJuggler} pour naviguer entre les fichiers. En effet, devoir visualiser l'arborescence pour trouver un fichier est toujours plus lent que de trouver le fichier à partir de son nom par exemple. The NERD Tree vous permettra donc d'obtenir un \vim se comportant comme un éditeur classique avec un explorateur de fichiers sur lequel vous pourrez cliquer.
+L'alternative que nous verrons plus tard au chapitre \nameref{plugins} est d'utiliser les plugin \emph{Ctrl-p} ou \emph{Command-t} pour trouver des fichiers et les plugins \emph{LustyExplorer} et \emph{LustyJuggler} pour naviguer entre les fichiers. En effet, devoir visualiser l'arborescence pour trouver un fichier est toujours plus lent que de trouver le fichier à partir de son nom par exemple. The NERD Tree vous permettra donc d'obtenir un \vim se comportant comme un éditeur classique avec un explorateur de fichiers sur lequel vous pourrez cliquer.
 
-Nous allons tout d'abord préparer pathogen pour installer les différents fichiers de \emph{The NERD Tree}.
+Nous allons tout d'abord préparer \emph{Pathogen} pour installer les différents fichiers de \emph{The NERD Tree}.
 
 \begin{listing}[H]
 \begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
@@ -307,7 +307,7 @@ mkdir ~/.vim/bundle/nerdtree
   \label{code:nerdtree-bundle}
 \end{listing}
 
-Téléchargez ensuite le dernier \emph{.zip} disponible sur la page du plugin \url{http://www.vim.org/scripts/script.php?script_id=1658}. À l'heure où j'écris ces lignes la dernière version disponible est la version 4.2.0 disponible en téléchargement à cette adresse\sidenote{C'est la version que vous trouverez dans les fichiers mis à disposition avec ce PDF} : \url{http://www.vim.org/scripts/download_script.php?src_id=17123}.
+Téléchargez ensuite le dernier \emph{.zip} disponible sur la page du plugin \url{http://www.vim.org/scripts/script.php?script_id=1658}. À l'heure où j'écris ces lignes, la dernière version disponible est la version 4.2.0 que vous pouvez télécharger à cette adresse : \url{http://www.vim.org/scripts/download_script.php?src_id=17123}.
 
 Ouvrez le fichier zip et placez son contenu dans le répertoire \Verb|~/.vim/bundle/nerdtree| que nous venons de créer. Vous devriez avoir une arborescence ressemblant à celle ci-dessous pour votre répertoire \Verb|nerdtree| :
 
@@ -335,9 +335,11 @@ autocmd vimenter * NERDTree
 \label{code:nerdtreee}
 \end{listing}
 
+C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (\hlred{\Verb|vimenter|}), peu importe le type de fichier (\hlred\Verb|*|), lancer \emph{The NERD Tree} (\hlred{\Verb|NERDTree|}).
+
 Rien de particulier ensuite, \emph{The NERD Tree} vous affiche l'arborescence du répertoire où vous avez lancé \vim, comme vous le montre la figure \ref{fig:vim-nerdtree}. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. 
 
-Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur \ttm lorsque vous êtes dans \emph{The NERD Tree}. Pour passer de la fenêtre de \emph{NERD Tree} à la fenêtre d'édition de votre fichier au clavier, appuyez sur \hlred{Ctrl + w} puis \hlred{w}\sidenote{La touche \hlred{\emph{Control}} (Ctrl) et tout en la laissant appuyée la touche \hlred{w}. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur \hlred{w}.}. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres \vim (il n'est pas spécifique à \emph{The NERD Tree}).
+Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur \ttm\xspace lorsque vous êtes dans \emph{The NERD Tree}. Pour passer de la fenêtre de \emph{NERD Tree} à la fenêtre d'édition de votre fichier au clavier, appuyez sur \hlred{Ctrl + w} puis \hlred{w}\sidenote{La touche \hlred{\emph{Control}} (Ctrl) et tout en la laissant appuyée la touche \hlred{w}. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur \hlred{w}.}. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres \vim (il n'est pas spécifique à \emph{The NERD Tree}).
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-nerdtree.png}
@@ -347,6 +349,6 @@ Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuy
 
 \section{Nous voilà fin prêts}
 
-Nous venons de couvrir ce qui pour moi manque cruellement à \vim : une configuration par défaut acceptable. Je ne dis pas que c'est la panacée pour l'instant, mais ça devrait vous permettre d'avoir un \vim utilisable comme n'importe quel autre éditeur de texte dont vous ne connaissez pas encore toutes les possibilités. Vous pouvez pour l'instant utiliser la souris pour faire un peu tout ce que vous voulez, heureusement ça ne va pas durer.
+Nous venons de couvrir ce qui pour moi manque cruellement à \vim : une configuration par défaut acceptable. Je ne dis pas que c'est la panacée pour l'instant, mais ça devrait vous permettre d'avoir un \vim utilisable comme n'importe quel autre éditeur de texte dont vous ne connaissez pas encore toutes les possibilités. Vous pouvez pour l'instant utiliser la souris pour faire un peu tout ce que vous voulez. Heureusement, ça ne va pas durer.
 
-Nous allons maintenant aborder ce qui fait que \vim est unique et tant prisé : sa gestion des modes et des commandes pour manipuler le texte. La balle est dans votre camp maintenant : ou vous êtes prêt à changer vos habitudes et à passer à un autre niveau d'efficacité, ou alors n'utiliser \vim que comme un bloc-notes amélioré vous convient\footnote{Dans ce cas là, vous pouvez vous arrêter là.}. C'est vous qui voyez !
+Nous allons maintenant aborder ce qui fait l'unicité de \vim : sa gestion des modes et des commandes pour manipuler le texte. La balle est dans votre camp maintenant : ou vous êtes prêt à changer vos habitudes et à passer à un autre niveau d'efficacité, ou alors n'utiliser \vim que comme un bloc-notes amélioré vous convient\footnote{Dans ce cas là, vous pouvez vous arrêter là.}. C'est vous qui voyez !
