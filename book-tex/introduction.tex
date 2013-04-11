@@ -1,19 +1,19 @@
 \chapter*{Introduction}
 
-\newthought{Lorsque le besoin} d'écrire ou de coder se fait se sentir, le choix d'un éditeur de texte est primordial. Il en existe énormément sur le "marché", mais peu d'entre eux peuvent se targuer d'environ 40 ans d'existence. C'est le cas d'\emph{Emacs}\sidenote{\url{http://www.gnu.org/software/emacs/}}, de \emph{Vi} et de son "successeur" \vim\sidenote{\url{http://www.vim.org/}}. Ils ont été créés dans les années 70 et sont toujours très utilisés actuellement\sidenote{À noter que \vim n'est arrivé qu'en 1991}. Comme vous avez sans doute pu le voir, ce n'est pas grâce à la beauté de leur site internet ou à l'efficacité de leur communication. Voici quelques \textbf{raisons de leur succès} :
+\newthought{Lorsque le besoin} d'écrire ou de coder se fait se sentir, le choix d'un éditeur de texte est primordial. Il en existe énormément sur le "marché", mais peu d'entre eux peuvent se targuer d'environ 40 ans d'existence. C'est le cas d'\emph{Emacs} (\url{http://www.gnu.org/software/emacs/}), de \emph{Vi} et de son "successeur amélioré" \vim (\url{http://www.vim.org/}). Ils ont été créés dans les années 70 et sont toujours très utilisés actuellement. Comme vous avez sans doute pu le voir, ce n'est pas grâce à la beauté de leur site internet ou à l'efficacité de leur communication. Voici quelques \textbf{raisons de leur succès} :
 
 \begin{description}
     \item[Pour la vie] \hfill \\ Ils s'apprennent une fois et s'utilisent pour toujours. Dans un monde où les technologies/langages changent tout le temps, c'est une aubaine de pouvoir investir sur du long terme.
     \item[Partout] \hfill \\ Ils sont disponibles sur toutes les plateformes possibles et imaginables (et l'ont toujours été).
     \item[Augmentent votre productivité] \hfill \\ Ils présentent un rapport temps investi / gain de productivité fabuleux.
-    \item[Couteaux Suisses] \hfill \\ Ils permettent d'éditer tout et n'importe quoi. Quand vous changerez de langage de programmation, vous n'aurez pas à changer d'éditeur. À noter que ce livre a bien sûr été écrit avec \vim.
+    \item[Couteaux suisses] \hfill \\ Ils permettent d'éditer tout et n'importe quoi. Quand vous changerez de langage de programmation, vous n'aurez pas à changer d'éditeur. À noter que ce livre a bien sûr été écrit avec \vim.
 \end{description}
 
-Et pourtant, ils restent difficiles à apprendre. Non pas qu'ils soient plus compliqués qu'autre chose, non pas que vous ne soyez pas à la hauteur, mais plutôt à cause d'un manque de pédagogie des différentes documentations.
+Et pourtant, ces éditeurs de texte restent difficiles à apprendre. Non pas qu'ils soient plus compliqués qu'autre chose, non pas que vous ne soyez pas à la hauteur, mais plutôt à cause d'un manque de pédagogie des différentes documentations.
 
-Ce livre a pour but de pallier ce manque en vous guidant tout au long de votre découverte de \vim\sidenote{Je laisse \emph{Emacs} à ceux qui savent. Pour un bref comparatif c'est ici : \url{http://fr.wikipedia.org/wiki/Guerre_d'éditeurs}. Les goûts et les couleurs …}. Il ne prétend pas être un guide exhaustif \footnote{Vous pouvez essayer \emph{A Byte of \vim} pour celà : \url{http://www.swaroopch.org/notes/Vim}} mais plutôt un bon moyen de gagner du temps en allant à l'essentiel et en vous évitant de parcourir tout internet pour trouver le moyen le plus rapide de tirer parti de \vim.
+Ce livre a pour but de pallier ce manque en vous guidant tout au long de votre découverte de \vim\sidenote{Je laisse \emph{Emacs} à ceux qui savent. Pour un bref comparatif c'est ici : \url{http://fr.wikipedia.org/wiki/Guerre_d'\%C3\%A9diteurs}. Les goûts et les couleurs …}. Il ne prétend pas être un guide exhaustif \footnote{Vous pouvez essayer \emph{A Byte of \vim} pour celà : \url{http://www.swaroopch.org/notes/Vim}} mais plutôt un bon moyen de gagner du temps en allant à l'essentiel et en vous évitant de parcourir tout internet pour trouver le moyen le plus rapide de tirer parti de \vim.
 
-Vous aussi vous en avez marre d'attendre la release de TextMate 2\footnote{À noter que depuis l'écriture de ce livre, le code de TextMate 2 a été publié sous licence GPL : \url{https://github.com/textmate/textmate}} ? D'essayer le n-ième éditeur à la mode et de devoir tout réapprendre et ce jusqu'à la prochaine mode ? De devoir changer d'éditeur quand vous passez de votre Mac, à votre Windows, à votre Linux ? Alors vous aussi, rejoignez la communauté des gens heureux de leur éditeur de texte. \textbf{Le changement, c'est maintenant}.
+Vous aussi vous en avez marre d'attendre la release de TextMate 2\footnote{À noter que depuis l'écriture de ce livre, le code de TextMate 2 a été publié sous licence GPL : \url{https://github.com/textmate/textmate}} ? D'essayer le n-ième éditeur à la mode et de devoir tout réapprendre et ce jusqu'à la prochaine mode ? De devoir changer d'éditeur quand vous passez de votre Mac, à votre Windows, à votre Linux ? Alors vous aussi, rejoignez la communauté des gens heureux de leur éditeur de texte. \textbf{Le changement, c'est maintenant} !
 
 \section{Pour qui ?}
 
@@ -21,11 +21,11 @@ Vous aussi vous en avez marre d'attendre la release de TextMate 2\footnote{À no
 
 Par exemple vous êtes :
 \begin{description}
-    \item[Étudiant] Si vous voulez faire bien sûr un CV, c'est un must (en plus d'être un attrape geekette en puissance\footnote{À confirmer.}). Vous aurez un outil unique pour écrire tout ce que vous avez à écrire (et que vous pourrez réutiliser tout au long de votre carrière) : vos rapports en \LaTeX, vos présentations\footnote{En utilisant \emph{impress.js} par exemple : \url{http://bartaz.github.com/impress.js}. Basé sur du HTML/JS/CSS, je vous le recommande grandement pour des présentations originales et basées sur des technologies non propriétaires.}, votre code (si vous avez besoin d'OpenOffice ou de Word pour écrire vos rapports, il est temps de changer d'outil et d'utiliser \LaTeX).
+    \item[Étudiant] Si vous voulez faire bien sur un CV, c'est un must (en plus d'être un attrape geekette en puissance\footnote{À confirmer.}). Vous aurez un outil unique pour écrire tout ce que vous avez à écrire (et que vous pourrez réutiliser tout au long de votre carrière) : vos rapports en \LaTeX, vos présentations\footnote{En utilisant \emph{impress.js} par exemple : \url{http://bartaz.github.com/impress.js}. Basé sur du HTML/JS/CSS, je vous le recommande grandement pour des présentations originales et basées sur des technologies non propriétaires.}, votre code (si vous avez besoin d'OpenOffice ou de Word pour écrire vos rapports, il est temps de changer d'outil et d'utiliser \LaTeX).
     \item[Enseignant] Il est temps de montrer l'exemple et d'apprendre à vos étudiants à bien utiliser un des outils qui leur servira à vie, bien plus qu'un quelconque langage de programmation.
     \item[Codeur] Investir dans votre outil de tous les jours est indispensable. Quitte à apprendre des raccourcis claviers, autant le faire de manière utile. Si cet investissement est encore rentable dans 10 ans, c'est ce que l'on pourrait appeler l'investissement parfait, c'est \vim.
-    \item[Administrateur système Unix] Si vous utilisez \emph{Emacs} vous êtes pardonnable, si vous utilisez nano/pico je ne peux plus rien pour vous, sinon il est grand temps de s'y mettre les gars, c'est un des cas d'utilisation parfait (un éditeur de texte surpuissant ne nécessitant pas d'interface graphique).
-    \item[Écrivain] Si vous écrivez en markdown/RST/WikiMarkup ou en \LaTeX, \vim vous fera gagner beaucoup de temps. Vous ne pourrez plus repasser à un autre éditeur, ou vous voudrez le "Vimifier" à tout prix.
+    \item[Administrateur système Unix] Si vous utilisez \emph{Emacs} vous êtes pardonnable. Si vous utilisez nano/pico je ne peux plus rien pour vous, sinon il est grand temps de s'y mettre les gars. Administrer un système Unix à distance est un des cas d'utilisation parfait pour \vim (un éditeur de texte surpuissant ne nécessitant pas d'interface graphique).
+    \item[Écrivain] Si vous écrivez en markdown/reStructuredText/WikiMarkup ou en \LaTeX, \vim vous fera gagner beaucoup de temps. Vous ne pourrez plus repasser à un autre éditeur, ou vous voudrez le "Vimifier" à tout prix.
 \end{description}
 
 Faites moi confiance, je suis passé et repassé par ces 5 rôles, mon meilleur investissement a toujours été \vim, et de loin.
@@ -36,7 +36,7 @@ Faites moi confiance, je suis passé et repassé par ces 5 rôles, mon meilleur 
     \item Comment utiliser \vim comme un éditeur "normal" d'abord (vous savez, ceux qui permettent d'ouvrir des fichiers, de cliquer avec la souris, qui ont une coloration syntaxique ...). En somme, la démystification de \vim qui vous permettra d'aller plus loin.
     \item Comment passer de l'édition de texte classique à la puissance de \vim, petit à petit (c'est là que l'addiction commence).
     \item Comment vous passer de la souris et pourquoi c'est la meilleure chose qu'il puisse vous arriver quand vous programmez/tapez du texte.
-    \item Comment vous pouvez facilement déduire les "raccourcis claviers" avec quelques règles simples.
+    \item Comment vous pouvez facilement déduire les raccourcis claviers avec quelques règles simples.
 \end{itemize}
 
 Si je devais le résumer en une phrase : puisque vous vous considérez comme {\bf un artiste, passez du temps à apprendre} comment utiliser l'outil qui vous permet de vous exprimer, une bonne fois pour toute.
@@ -44,7 +44,7 @@ Si je devais le résumer en une phrase : puisque vous vous considérez comme {\b
 \section{Ce que vous n'apprendrez pas (entre autres choses)}
 
 \begin{itemize}
-    \item Vous n'apprendrez pas comment installer/configurer \vim pour Windows. Pas que ce ne soit pas faisable, mais je n'ai que très peu de connaissances sous Windows. Ça viendra peut-être, mais pas tout de suite. On couvrira ici Linux/Unix (et par extension Mac Os X).
+    \item Vous n'apprendrez pas comment installer/configurer \vim pour Windows. Pas que ce ne soit pas faisable, mais je n'ai que très peu de connaissances de Windows. Ça viendra peut-être, mais pas tout de suite. On couvrira ici Linux/Unix (et par extension Mac OS X).
     \item Vous n'apprendrez pas comment utiliser \emph{Vi} (notez l'absence du "m"). Je vais vous apprendre à être productif pour coder/produire du texte avec \vim, pas à faire le beau devant les copains avec \emph{Vi}\footnote{\vim est suffisant pour cela de toute façon.}. Pour ceux qui ne suivent pas, \emph{Vi} est "l'ancêtre de \vim (qui veut dire \emph{Vi} - \emph{IMproved}, \emph{Vi} amélioré)" et est installé par défaut sur tous les Unix (même sur votre Mac OS X).
     \item Vous n'apprendrez pas à connaitre les entrailles de \vim par c\oe ur : ce n'est pas une référence, mais un guide utile et pragmatique.
     \item Vous n'apprendrez pas comment modifier votre \vim parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème \emph{Solarized} (\url{http://ethanschoonover.com/solarized}), il est parfait pour travailler.
@@ -57,8 +57,8 @@ Alors, prêt pour l'aventure ? Prêt à sacrifier une heure pour débuter avec \
 \vim fait partie de ces outils avec lesquels vous allez galérer au début. Le but de ce guide est de vous mettre le pied à l'étrier et de diminuer la hauteur de la marche à franchir. Mais soyez conscients que vous mettre à \vim va vous demander de la volonté et quelques efforts. Comme on dit souvent, on n'a rien sans rien. Voici la méthode que je vous recommande pour apprivoiser la bête :
 
 \begin{itemize}
-    \item Ne l'utilisez pas comme principal outil de travail au début. Faites des séances de 20/30 minutes par jour où vous vous forcerez à l'utiliser. Ce qui est important c'est de faire entrer \vim dans vos habitudes. Si vous le faites trop brusquement il y a de grandes chances que vous abandonniez au bout de quelques jours. Lorsque vous vous sentirez à l'aise avec les bases vous pourrez commencer à l'intégrer dans votre travail quotidien.
-    \item Gardez une feuille avec les principaux raccourcis imprimée à côté de vous. Comme tous les raccourcis claviers il va d'abord falloir les mémoriser, et il n'y a pas mieux qu'un pense-bête et un peu de pratique.
+    \item Ne l'utilisez pas comme principal outil de travail au début. Faites des séances de 20/30 minutes par jour où vous vous forcerez à l'utiliser. Ce qui est important, c'est de faire entrer \vim dans vos habitudes. Si vous le faites trop brusquement, il y a de grandes chances que vous abandonniez au bout de quelques jours. Lorsque vous vous sentirez à l'aise avec les bases vous pourrez commencer à l'intégrer dans votre travail quotidien.
+    \item Gardez une feuille avec les principaux raccourcis imprimée à côté de vous. Comme tous les raccourcis claviers, il va d'abord falloir les mémoriser. Pour cela, rien de mieux qu'un pense-bête et un peu de pratique.
     \item Gardez la foi. Au début vous ne comprendrez pas bien pourquoi vous devez passer du temps à apprendre un truc qui vous fait tant perdre de productivité. Et puis un jour vous aurez un déclic et vous vous demanderez pourquoi tous vos logiciels ne peuvent pas se contrôler avec les commandes de \vim.
     \item Gardez à l'esprit que c'est un investissement pour vos 20 prochaines années, et c'est bien connu, un investissement ce n'est pas rentable de suite.
 \end{itemize}
