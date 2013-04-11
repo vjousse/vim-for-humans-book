@@ -53,11 +53,7 @@ Vous aurez remarqué que les commentaires en \emph{VimL} (le langage de configur
   \label{fig:vim-first-comment}
 \end{figure}
 
-Il ne nous reste plus qu'à sauvegarder notre fichier nouvellement créé. Nous voulons le placer à la racine de notre compte utilisateur, c'est à dire l'enregistrer sous \hlred{\Verb|\textasciitilde{}/.vimrc|}. Sous Mac OS X et Linux, \hlred{\Verb|\textasciitilde{}|} désigne le répertoire d'accueil de l'utilisateur courant. Attention, les fichiers commençant par un \hlred{.} sont des fichiers cachés sous Linux et Mac OS X, ne vous étonnez donc pas de ne pas le voir par défaut dans votre navigateur de fichiers.
-
-Pour les utilisateurs de la souris, il suffira de se servir du menu \Verb|Fichier (ou File)| puis \Verb|Sauvegarder sous (ou Save as)| et de l'enregistrer dans le répertoire d'accueil de l'utilisateur courant sous le nom de \hlred{\Verb|.vimrc|}. Pour ceux qui veulent déjà utiliser le clavier, il vous suffira, après avoir appuyé sur \ttesc pour repasser en mode \emph{Normal}, de taper \vimcmd{:sav ~/.vimrc}. Pour sauvegarder vos prochaines modifications, utilisez le menu avec la souris ou tapez en mode \emph{Normal} \vimcmd{:w}.
-
-Tout ça pour ça me direz-vous, et vous avez bien raison. Mais tout cela a une logique que je vais vous expliquer. L'avantage de \vim est qu'il est généralement logique. Quand vous avez compris la logique, tout vous semble limpide et tomber sous le sens.
+Tout ça pour ça me direz-vous, et vous avez bien raison. Et encore, on n'a même pas encore vu comment le sauvegarder. Mais tout cela a une logique que je vais vous expliquer. L'avantage de \vim est qu'il est généralement logique. Quand vous avez compris la logique, tout vous semble limpide et tomber sous le sens.
 
 Par défaut, \vim est lancé dans un mode que l'on appelle le mode \emph{Normal}. C'est à dire que ce mode n'est pas fait pour écrire du texte (ça, ça sera le mode \emph{Insertion}) mais juste pour se déplacer et manipuler du texte. C'est la présence de ces deux différents modes (il y en a d'autres mais ce n'est pas le sujet pour l'instant) qui fait toute la puissance de \vim. Il vous faudra un certain temps pour vous rendre compte de cette puissance par vous-même, alors faites-moi juste confiance pour l'instant.
 
@@ -95,7 +91,7 @@ L'ultime changement serait d'utiliser une disposition de clavier encore plus eff
 \newpage
 \section{La configuration par défaut : indispensable}
 
-\newthought{Passons aux choses sérieuses}, c'est-à-dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \vimrc\sidenote{Ce fichier doit se trouver dans votre répertoire d'accueil. \emph{/home/votre\_user/.vimrc} sous Linux, \emph{/Users/votre\_user/.vimrc} sous Mac Os X ou plus généralement \emph{\textasciitilde{}/.vimrc}. Sous Windows vous pouvez créer un fichier nommé \emph{\_vimrc} qui doit se situer dans votre répertoire \emph{\%HOME\%} qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au dessus" de votre répertoire \emph{Mes Documents}. Plus d'infos sur Wikipedia \url{http://en.wikipedia.org/wiki/Home\_directory\#Default\_Home\_Directory\_per\_Operating\_System}} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
+\newthought{Passons aux choses sérieuses}, c'est-à-dire comment rendre \vim un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut \vimrc\sidenote{Ce fichier doit se trouver dans votre répertoire d'accueil. \emph{/home/votre\_user/.vimrc} sous Linux, \emph{/Users/votre\_user/.vimrc} sous Mac OS X ou plus généralement \emph{\textasciitilde{}/.vimrc}. Sous Windows vous pouvez créer un fichier nommé \emph{\_vimrc} qui doit se situer dans votre répertoire \emph{\%HOME\%} qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au dessus" de votre répertoire \emph{Mes Documents}. Plus d'infos sur Wikipedia \url{http://en.wikipedia.org/wiki/Home\_directory\#Default\_Home\_Directory\_per\_Operating\_System}} en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
 
 J'ai commenté chacune des lignes du fichier directement dans le code. Rien de sorcier ici, on se demande juste pourquoi tout cela n'est pas inclus par défaut.
 
@@ -105,7 +101,11 @@ J'ai commenté chacune des lignes du fichier directement dans le code. Rien de s
     \label{code:first-config}
 \end{listing}
 
-J'ai mis en ligne ce fichier de configuration directement sur \emph{Github}. Vous pouvez le télécharger ou le copier directement à partir d'ici : \url{http://www.vimebook.com/link/fr/firstconfig}. Il devrait aussi faire partie du package que vous avez téléchargé.
+Pour ceux qui ont fait un copier/coller, il ne vous reste plus qu'à sauvegarder votre fichier nouvellement créé. Nous voulons le placer à la racine de votre compte utilisateur, c'est à dire l'enregistrer sous \hlred{\Verb|\textasciitilde{}/.vimrc|}. Sous Mac OS X et Linux, \hlred{\Verb|\textasciitilde{}|} désigne le répertoire d'accueil de l'utilisateur courant. Attention, les fichiers commençant par un \hlred{.} sont des fichiers cachés sous Linux et Mac OS X, ne vous étonnez donc pas de ne pas le voir par défaut dans votre navigateur de fichiers.
+
+Pour les utilisateurs de la souris, il suffira de se servir du menu \Verb|Fichier (ou File)| puis \Verb|Sauvegarder sous (ou Save as)| et de l'enregistrer dans le répertoire d'accueil de l'utilisateur courant sous le nom de \hlred{\Verb|.vimrc|}. Pour ceux qui veulent déjà utiliser le clavier, il vous suffira, après avoir appuyé sur \ttesc pour repasser en mode \emph{Normal}, de taper \vimcmd{:sav ~/.vimrc}. Pour sauvegarder vos prochaines modifications, utilisez le menu avec la souris ou tapez en mode \emph{Normal} \vimcmd{:w}.
+
+J'ai mis en ligne ce fichier de configuration directement sur \emph{Github}. Vous pouvez le télécharger ou le copier directement à partir d'ici : \url{http://www.vimebook.com/link/fr/firstconfig}.
 
 Vous devriez avoir un \vim qui ressemble à celui sur la figure \ref{fig:first-config}. Notez les numéros de ligne sur la gauche ainsi que la position du curseur en bas à droite.
 
