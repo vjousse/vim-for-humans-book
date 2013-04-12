@@ -6,21 +6,14 @@ Flo :
 ==========================================
 
 Thomas Belin :
-- Nécessité de NerdTree au début vu qu'on l'utilise pas du tout ? Peut-être mettre les plugins au début ou carrément enlever the NerdTree
 - quand tu parle du mode de déplacement hjkl, pourquoi ne pas citer les sites web qui implémentent ce mode  (dans ceux que je connais: Gmail, Google, Google Reader, Jira, 9gag)
-"Sinon pour les tous petits détails que j'ai rencontrés : 
-- les images d'exemple sont très peu lisible. (par exemple on ne vois pas facilement la différence entre "Figure 13: Vim prêt pour le copier/coller." et "Figure 12: Vim en mode insertion.") ;
 
 
 ==========================================
 
 Clément Delmas :
-- Page 22 : Le lien vers le fichier de config (http://github.com/vjousse/vim-for-humans/fr/firstconfig/) donne sur une 404
-Le bon lien serait : https://github.com/vjousse/vim-for-humans/blob/master/firstconfig/vimrc
 - Page 29 : Une fois NerdTree installé, la commande :NERDTree n'a pas fonctionné.
 Par contre, j'ai ajouté l'activation automatique, j'ai redémarré MacVim et le plugin a fonctionné.
-- Ah et sinon, pour l'activation de Pathogen, j'ai mis beaucoup de temps à comprendre qu'il fallait l'activer au début du fichier,
-et non à la fin (et donc j'ai un peu ramé à ce niveau là). D'ailleurs, ça a sûrement joué au niveau de NerdTree (ou pas, je ne saurais pas te dire)...
 
 ==========================================
 
@@ -29,8 +22,6 @@ Yann Moisan :
 plein de solution pour ouvrir un fichier sans plugin : vim fic1 fic2 ou :e
 
 Amha, je parlerais des raccourcis comme crtl i/o et ctrl n/p
-Amha, le problème de présenter les plugins aux débutants est qu'ils utilisent des plugins pour faire des choses offertes nativement …
-Practical Vim débute en indiquant que pour tirer parti de Vim, il faut apprendre le touch typing : je trouve cette mise en garde assez pertinente.
 
 2 ressources que j'aime beaucoup :
 http://vimgolf.com/
