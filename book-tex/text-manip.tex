@@ -11,13 +11,13 @@ Nous allons donc voir dans ce chapitre comment utiliser \vim à bon escient (vou
 \section{Se déplacer par l'exemple : Essayer de copier / coller}\label{sec:se-deplacer}
 
 
-Nous avons déjà vu dans la section «\nameref{sec:modeinsertion}» comment passer du mode insertion (pour saisir du texte) au mode normal (\emph{a priori} pour l'instant, vous ne savez pas trop à quoi sert ce mode). En appuyant sur \tti votre curseur passe en mode insertion (lorsque vous êtes en mode normal) et en appuyant sur \ttesc il repasse dans le mode normal. Bon bah on est bien Tintin. Et maintenant ? 
+Nous avons déjà vu dans la section \og \nameref{sec:modeinsertion} \fg{} comment passer du mode insertion (pour saisir du texte) au mode normal (\emph{a priori} pour l'instant, vous ne savez pas trop à quoi sert ce mode). En appuyant sur \tti votre curseur passe en mode insertion (lorsque vous êtes en mode normal) et en appuyant sur \ttesc il repasse dans le mode normal. Bon bah on est bien Tintin. Et maintenant ? 
 
 \subsection{Préambule}
 
 Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur \ttshift) pour sélectionner du texte et vous allez dans le \Verb|menu Édition| puis \Verb|Copier|. Et ensuite \Verb|menu Édition| puis \Verb|Coller|. Bah tiens, essayez pour voir.
 
-Si vous avez suivi la section «\nameref{sec:modes}» traitant de la position idéale pour vos mains, vous savez que vous avez fait une ou plusieurs choses que vous devriez vous interdire :
+Si vous avez suivi la section \og \nameref{sec:modes} \fg{} traitant de la position idéale pour vos mains, vous savez que vous avez fait une ou plusieurs choses que vous devriez vous interdire :
 
 
 \begin{itemize}
@@ -30,10 +30,10 @@ Alors certes ce n'est pas grave en soi, mais c'est \textbf{inefficace} (se servi
 
 \subsection{Se passer de la souris}
 
-Si vous lisez ces lignes c'est que vous avez répondu « oui », allons-y gaiement alors ! Nous allons tout d'abord commencer par nous passer de la souris. La prochaine étape sera de se passer des touches directionnelles, mais chaque chose en son temps.
+Si vous lisez ces lignes c'est que vous avez répondu \og oui \fg, allons-y gaiement alors ! Nous allons tout d'abord commencer par nous passer de la souris. La prochaine étape sera de se passer des touches directionnelles, mais chaque chose en son temps.
 
 
-\newthought{Pour réaliser un copier/coller} avec \vim tout se passe en mode « normal ». Pour savoir dans quel mode vous vous trouvez, vous avez juste à regarder en bas à gauche de votre \vim. La figure \ref{fig:insert} vous montre \vim en mode « insertion » par exemple. Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur \ttesc\footnote{Si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre \ttesc, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans «\nameref{sec:esc}».}.
+\newthought{Pour réaliser un copier/coller} avec \vim tout se passe en mode \og normal \fg. Pour savoir dans quel mode vous vous trouvez, vous avez juste à regarder en bas à gauche de votre \vim. La figure \ref{fig:insert} vous montre \vim en mode \og insertion \fg{} par exemple. Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur \ttesc\footnote{Si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre \ttesc, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans \og \nameref{sec:esc} \fg.}.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-insert.png}
@@ -41,7 +41,7 @@ Si vous lisez ces lignes c'est que vous avez répondu « oui », allons-y gaieme
   \label{fig:insert}
 \end{figure}
 
-Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre \vim. Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient que c'était impossible, alors ils l'ont fait. ». Votre \vim devrait ressembler à celui de la figure \ref{fig:vim-twain}. Notez l'absence d'affichage d'un quelconque mode en bas à gauche.
+Admettons donc que vous êtes en mode \og normal \fg{} et que vous avez un peu de texte de saisi dans votre \vim. Par exemple, cette chouette citation de Mark Twain : \og Ils ne savaient que c'était impossible, alors ils l'ont fait. \fg{}. Votre \vim devrait ressembler à celui de la figure \ref{fig:vim-twain}. Notez l'absence d'affichage d'un quelconque mode en bas à gauche.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-twain.png}
@@ -49,9 +49,9 @@ Admettons donc que vous êtes en mode « normal » et que vous avez un peu de te
   \label{fig:vim-twain}
 \end{figure}
 
-La façon la plus naturelle\footnote{Mais pas la plus efficace, nous verrons cela un peu plus loin.} de copier/coller le mot « impossible » va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur \ttv (pour passer en mode « visuel »), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur \tty\footnote{La touche \ty étant utilisée comme raccourci du mot \emph{yank} en anglais.}. Vous avez copié votre premier mot.
+La façon la plus naturelle\footnote{Mais pas la plus efficace, nous verrons cela un peu plus loin.} de copier/coller le mot \og impossible \fg{} va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur \ttv (pour passer en mode \og visuel \fg), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur \tty\footnote{La touche \ty étant utilisée comme raccourci du mot \emph{yank} en anglais.}. Vous avez copié votre premier mot.
 
-Déplacez vous ensuite à la fin de la phrase (toujours en mode « normal ») puis appuyez sur \ttp\footnote{Raccourci du mot \emph{paste} cette fois ci.}. Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure \ref{fig:vim-paste}.
+Déplacez vous ensuite à la fin de la phrase (toujours en mode \og normal \fg) puis appuyez sur \ttp\footnote{Raccourci du mot \emph{paste} cette fois ci.}. Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure \ref{fig:vim-paste}.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{vim-paste.png}
@@ -59,14 +59,14 @@ Déplacez vous ensuite à la fin de la phrase (toujours en mode « normal ») pu
   \label{fig:vim-paste}
 \end{figure}
 
-On se rend donc compte ici que \vim se sert de l'astuce des modes (et notamment du mode « normal » pour les déplacements) afin de ne pas avoir à se servir de la souris.
+On se rend donc compte ici que \vim se sert de l'astuce des modes (et notamment du mode \og normal \fg{} pour les déplacements) afin de ne pas avoir à se servir de la souris.
 À partir du moment où vous aurez pris l'habitude de passer rapidement d'un mode à l'autre (et pour cela se passer de \ttesc va devenir indispensable), utiliser la souris vous apparaîtra comme une perte de temps, mais pour cela il va falloir pratiquer un peu bien sûr.
 
 
 \section{Se passer des touches directionnelles}\label{sec:se-passer-touches-dir}
 
 Nous y voilà. Encore plus que de se priver de la souris, se priver des touches directionnelles est la chose à faire si l'on veut utiliser \vim, pour de vrai. \vim va vous permettre de faire tout plus rapidement et plus intuitivement à la seule condition de le faire sans les touches directionnelles.
-Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main certes, mais ça va aussi vous forcer à passer en mode « normal » pour réaliser vos déplacements et vos mouvements de texte. Il n'y a qu'à ce moment là\footnote{Un peu douloureux au début il est vrai.} que vous commencerez à vraiment tirer parti de \vim.
+Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main certes, mais ça va aussi vous forcer à passer en mode \og normal \fg{} pour réaliser vos déplacements et vos mouvements de texte. Il n'y a qu'à ce moment là\footnote{Un peu douloureux au début il est vrai.} que vous commencerez à vraiment tirer parti de \vim.
 
 Pour cette section, je vais vous expliquer comment vous déplacer sans utiliser les touches directionnelles. Puis, une fois que vous aurez une vague idée de comment faire, je vous donnerai le code à mettre dans votre \vimrc pour désactiver les touches directionnelles complètement. Car oui, il n'y a que comme ça que vous y arriverez (en tout cas il n'y a que comme ça que j'y suis arrivé).
 
@@ -83,11 +83,11 @@ En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un carac
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{hjkl.png}
-  \caption{Les « touches directionnelles » de \vim en mode normal.}
+  \caption{Les \og touches directionnelles \fg{} de \vim en mode normal.}
   \label{fig:vim-hjkl}
 \end{figure}
 
-Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien\footnote{Vous trouverez le clavier sur lequel \emph{Vi} a été conçu dan la section «\nameref{sec:esc}», vous comprendrez ainsi le pourquoi du comment.}.
+Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien\footnote{Vous trouverez le clavier sur lequel \emph{Vi} a été conçu dan la section \og \nameref{sec:esc} \fg, vous comprendrez ainsi le pourquoi du comment.}.
 
 À noter qu'à force, on se sert de moins en moins des déplacements gauche/droite d'un caractère. On va leur préférer les déplacements de mot en mot, de paragraphe en paragraphe ou les déplacements grâce à des recherches. Quelques exemples de déplacements "rapides" que j'utilise :
 
@@ -163,11 +163,11 @@ Ou encore l'infographie de la figure \ref{fig:vim-cheat-sheet}\footnote{Téléch
   \label{fig:vim-cheat-sheet}
 \end{figure}
 
-N'oubliez pas que le but ici est de gagner en rapidité en ne bougeant quasi plus ses mains de la rangée de repos, et en utilisant le plus possible le « mode normal ». Au boulot !
+N'oubliez pas que le but ici est de gagner en rapidité en ne bougeant quasi plus ses mains de la rangée de repos, et en utilisant le plus possible le \og mode normal \fg. Au boulot !
 
 \section{Se passer de la touche Échap}\label{sec:esc}
 
-Utiliser \ttesc pour sortir du mode « insertion » semble être une hérésie tellement elle est difficilement accessible. Il faut déplacer entièrement la main gauche pour y accéder ou alors se torturer le petit doigt.
+Utiliser \ttesc pour sortir du mode \og insertion \fg{} semble être une hérésie tellement elle est difficilement accessible. Il faut déplacer entièrement la main gauche pour y accéder ou alors se torturer le petit doigt.
 
 Pour comprendre pourquoi \ttesc est utilisée par défaut, il faut faire un bon de quelques années en arrière, pour se retrouver en face du clavier sur lequel \emph{Vi} a été développé. Vous pouvez voir sur la photo \ref{fig:vim-keyboard} que \ttesc était très facilement accessible. Vous pouvez aussi noter l'emplacement des touches directionnelles. Malheureusement depuis, cela a bien changé.
 
@@ -222,13 +222,13 @@ Maintenant que nous savons nous déplacer en mode normal, il est temps de voir c
 Dans \nameref{sec:se-passer-touches-dir} nous avons vu qu'il suffisait d'utiliser \ttw pour se déplacer au début du mot suivant. Nous allons essayer de combiner cela avec quelques nouvelles touches du mode normal :
 
 \begin{itemize}
-    \item \ttd\xspace est utilisée pour « supprimer »
-    \item \ttc\xspace est utilisée pour « supprimer et passer en mode insertion »
+    \item \ttd\xspace est utilisée pour \og supprimer \fg
+    \item \ttc\xspace est utilisée pour \og supprimer et passer en mode insertion \fg
 \end{itemize}
 
-À noter que ce qui est supprimé est placé dans le presse-papier en même temps (le « supprimer » se comporte par défaut comme un « couper »).
+À noter que ce qui est supprimé est placé dans le presse-papier en même temps (le \og supprimer \fg{} se comporte par défaut comme un \og couper \fg{}).
 
-La particularité de ces touches, c'est qu'elles attendent ensuite un « ordre de déplacement » pour savoir quoi supprimer. Il va donc falloir les combiner avec les déplacements que nous avons déjà vus dans \nameref{sec:se-passer-touches-dir}.
+La particularité de ces touches, c'est qu'elles attendent ensuite un \og ordre de déplacement \fg{} pour savoir quoi supprimer. Il va donc falloir les combiner avec les déplacements que nous avons déjà vus dans \nameref{sec:se-passer-touches-dir}.
 
 Cela donnera par exemple :
 
@@ -302,7 +302,7 @@ La plupart des mouvements peuvent être préfixés par un nombre multiplicateur.
 
 \section{Rechercher / Se déplacer rapidement}
 
-Maintenant que nous connaissons les commandes de base pour éditer du texte avec \vim, voyons voir comment nous déplacer plus rapidement dans notre document. Nous avons déjà évoqué les touches \tw, \tb, \that et \tdollar qui nous permettent respectivement de se déplacer à la fin d'un mot, au début d'un mot, au début d'une ligne et la fin d'une ligne. Tout d'abord, voyons voir comment « scroller » sans la souris. À noter que toutes ces commandes se font en mode « normal ».
+Maintenant que nous connaissons les commandes de base pour éditer du texte avec \vim, voyons voir comment nous déplacer plus rapidement dans notre document. Nous avons déjà évoqué les touches \tw, \tb, \that et \tdollar qui nous permettent respectivement de se déplacer à la fin d'un mot, au début d'un mot, au début d'une ligne et la fin d'une ligne. Tout d'abord, voyons voir comment \og scroller \fg{} sans la souris. À noter que toutes ces commandes se font en mode \og normal \fg.
 
 \subsection{Sauts de page}
 
@@ -329,7 +329,7 @@ Vous pouvez aussi :
 
 \subsection{Les marqueurs}
 
-Lorsque je me déplace dans un fichier, j'aime bien pouvoir revenir à certains endroits. Par exemple lorsque je me rends au début du fichier alors que j'étais en train de travailler au milieu de celui-ci, j'aime bien pouvoir revenir directement où je travaillais. Heureusement, \vim a tout prévu pour cela grâce à l'utilisation de \textbf{marqueurs}. Les marqueurs sont tout simplement des « marque-pages » qui permettent à votre curseur de se retrouver à la position où vous aviez mis votre marqueur.
+Lorsque je me déplace dans un fichier, j'aime bien pouvoir revenir à certains endroits. Par exemple lorsque je me rends au début du fichier alors que j'étais en train de travailler au milieu de celui-ci, j'aime bien pouvoir revenir directement où je travaillais. Heureusement, \vim a tout prévu pour cela grâce à l'utilisation de \textbf{marqueurs}. Les marqueurs sont tout simplement des \og marque-pages \fg{} qui permettent à votre curseur de se retrouver à la position où vous aviez mis votre marqueur.
 
 Un marqueur se pose en tapant \tm\ta. Pour déplacer votre curseur à la position du marqueur tapez \tapos\ta. Vous pouvez placez plusieurs marqueurs en changeant \ta par n'importe quelle lettre de l'alphabet (on appelle cela des registres en langage \vim). Pour placer un autre marqueur vous pouvez par exemple utiliser la lettre \td. Grâce à \tm\td\xspace vous placerez le marqueur et à \tapos\td\xspace vous vous y rendrez.
 
@@ -362,7 +362,7 @@ Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseu
 
 Je vous en ai déjà parlé lors de l'explication sur le Copier / Coller, mais comme je sais que certains d'entre vous sont tête en l'air, je vous fais un petit rappel ici.
 
-Lorsque vous êtes en mode "normal" appuyez sur \ttv pour passer en mode "visuel". Vous pourrez alors sélectionner des caractères ou des lignes entières grâce aux différentes façon de vous déplacer que vous venez d'apprendre. Vous pourrez ensuite copier le texte sélectionné avec \tty\xspace puis le coller avec \ttp. Pour le couper il vous faudra utiliser \ttd.
+Lorsque vous êtes en mode \og normal \fg{} appuyez sur \ttv pour passer en mode "visuel". Vous pourrez alors sélectionner des caractères ou des lignes entières grâce aux différentes façon de vous déplacer que vous venez d'apprendre. Vous pourrez ensuite copier le texte sélectionné avec \tty\xspace puis le coller avec \ttp. Pour le couper il vous faudra utiliser \ttd.
 
 En mode normal vous pourrez utiliser \ttV pour sélectionner lignes par lignes. Et bien sûr, utiliser \ttesc ou \vimcmd{;;} pour revenir au mode normal.
 

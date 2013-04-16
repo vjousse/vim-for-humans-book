@@ -2,7 +2,7 @@
 
 \newthought{Ça peut paraître étonnant} comme approche, mais c'est pour moi la première chose à faire : rendre \vim utilisable par un humain lambda. Si tout le monde semble s'accorder sur le fait que \vim est un \textbf{éditeur très puissant}, tout le monde pourra aussi s'accorder sur le fait que de base, il est totalement \textbf{imbitable}. Soyons honnête, sans une configuration par défaut minimale, utiliser \vim est \textbf{contre-productif}. 
 
-C'est à mon avis le premier obstacle à surmonter avant toute autre chose. C'est ce que les autres éditeurs « à la mode » comme TextMate, Sublime Text, Notepad++ ou NetBeans proposent, c'est à dire un environnement à minima utilisable tel quel, même si l'on n'en exploite pas la totalité.
+C'est à mon avis le premier obstacle à surmonter avant toute autre chose. C'est ce que les autres éditeurs \og à la mode \fg{} comme TextMate, Sublime Text, Notepad++ ou NetBeans proposent, c'est à dire un environnement à minima utilisable tel quel, même si l'on n'en exploite pas la totalité.
 
 Voici donc ce qui manque à un \vim nu (et ce qui est, de mon point de vue, une \textbf{cause d'abandon pour beaucoup} d'entre vous) :
 
@@ -81,7 +81,7 @@ Par défaut, on passe du mode \emph{insertion} au mode \emph{normal} en appuyant
 
 Pour passer du mode \emph{normal} au mode \emph{insertion}, on peut par exemple appuyer sur \tti. On apprendra par la suite qu'il existe d'autres moyens de faire. Par exemple pour rentrer en mode insertion tout en créant une nouvelle ligne en dessous de la ligne courante (peu importe où se trouve votre curseur sur la ligne), on utilisera \tto en mode \emph{normal}.
 
-J'y reviendrai plus tard dans «\nameref{sec:se-deplacer}» mais si vous n'êtes pas prêt, à terme, à ne plus utiliser votre souris et les flèches directionnelles pour éditer du texte, je vous recommanderais presque d'arrêter votre apprentissage maintenant. C'est aussi simple que cela. \vim révèle tout sa puissance quand il est utilisé sans souris et en bougeant le moins possible les mains.
+J'y reviendrai plus tard dans \og \nameref{sec:se-deplacer} \fg{} mais si vous n'êtes pas prêt, à terme, à ne plus utiliser votre souris et les flèches directionnelles pour éditer du texte, je vous recommanderais presque d'arrêter votre apprentissage maintenant. C'est aussi simple que cela. \vim révèle tout sa puissance quand il est utilisé sans souris et en bougeant le moins possible les mains.
 
 \newthought{Si vous voulez pousser la démarche} encore plus loin, vous pouvez aussi vous procurer un clavier orthogonal \emph{TypeMatrix}\sidenote{\url{http://www.typematrix.com/}}. C'est ce que j'utilise personnellement, et mes doigts m'en remercient tous les jours.
 
@@ -219,7 +219,7 @@ Nous y voilà, nous avons un \vim à peu près utilisable avec de jolies couleur
 
 \subsection{Gestionnaire de plugins: Pathogen}
 
-\emph{Pathogen}\sidenote{\url{https://github.com/tpope/vim-pathogen/}} est le genre de plugin typique que vous découvrez après avoir commencé à configurer votre \vim et qui génère ce type de réaction : « Ah si j'avais su j'aurais directement commencé avec ». Ça tombe bien, c'est ce que nous allons faire.
+\emph{Pathogen}\sidenote{\url{https://github.com/tpope/vim-pathogen/}} est le genre de plugin typique que vous découvrez après avoir commencé à configurer votre \vim et qui génère ce type de réaction : \og Ah si j'avais su j'aurais directement commencé avec \fg. Ça tombe bien, c'est ce que nous allons faire.
 
 Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans \vim. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en \emph{*.vim}) dans des sous-répertoires de votre répertoire de configuration \emph{.vim}. On a déjà d'ailleurs commencé à y créer un sous-répertoire \Verb|colors| qui contient notre "plugin" de coloration Solarized.
 
