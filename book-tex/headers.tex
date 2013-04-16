@@ -8,7 +8,7 @@
 % Book metadata
 \title{Vim pour les humains\thanks{Merci à la communauté Vim.}}
 \author[Vincent Jousse]{Vincent\ Jousse}
-\publisher{Vincent Jousse}
+\publisher{Coding For Craft}
 
 %%
 % If they're installed, use Bergamo and Chantilly from www.fontsite.com.
@@ -253,6 +253,19 @@
 \newcommand{\vimrc}{\emph{.vimrc}\xspace}
 \newcommand{\dotvim}{\emph{.vim/}\xspace}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\makeatletter% so we can use @ symbols in macro names
+\newcommand{\myfancyhf}{%
+\fancyhead{}% clear previous contents of running heads/feet
+%\fancyhead{} % clear all footer fields
+\fancyhead[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyhead[RE,LO]{\emph{Vim pour les humains — \url{http://vimebook.com}}} % other info in "inner" position of footer line
+
+}
+\g@addto@macro{\frontmatter}{\myfancyhf}% calls \myfancyhf any time \frontmatter is called
+\g@addto@macro{\mainmatter}{\myfancyhf}% likewise for \mainmatter \makeatother% restores the original meaning of @
 
 % Generates the index
 \usepackage{makeidx}
