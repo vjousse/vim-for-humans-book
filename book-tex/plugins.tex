@@ -73,7 +73,7 @@ Il faut donc choisir une touche \tleader. Par défaut, \vim utilise \textbacksla
 Une fois la modification effectuée et prise en compte (en redémarrant \vim ou en tapant \vimcmd{:so \~{}/.vimrc} ou \vimcmd{:so \$MYVIMRC} en mode normal), vous devriez être en mesure de taper \vimshortcut{,lr} et d'avoir le même style de résultat que sur la figure \ref{fig:vim-lusty}.
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-lusty.png}
+  \includegraphics[width=\linewidth]{graphics/vim-lusty.png}
   \caption{\vim avec Lusty Explorer d'activé en bas.}
   \label{fig:vim-lusty}
 \end{figure}
@@ -85,7 +85,7 @@ Vous pouvez constater sur la figure \ref{fig:vim-lusty} qu'il y a deux parties �
 \emph{Lusty Explorer} utilise une fonctionnalité de \emph{Fuzzy matching} qui va vous permettre de ne taper qu'une partie d'un nom de fichier pour le sélectionner. Dans mon exemple, si, dans la fenêtre de \emph{Lusty}, je saisi \Verb|.vimi| il va me sélectionner le fichier \Verb|.viminfo| sans que j'ai à lui spécifier le nom entier, je n'aurais ensuite plus qu'à appuyer sur \ttenter pour ouvrir le fichier dans \vim. La figure \ref{fig:vim-lusty-fuzzy} vous montre l'exemple en question.
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-lusty-fuzzy.png}
+  \includegraphics[width=\linewidth]{graphics/vim-lusty-fuzzy.png}
   \caption{Lusty Explorer et le Fuzzy matching.}
   \label{fig:vim-lusty-fuzzy}
 \end{figure}
@@ -157,7 +157,7 @@ Ack recherchera alors à partir du répertoire où se trouve votre fichier coura
 Le plugin Ack vous affichera les résultats dans une fenêtre que l'on appelle \emph{Quickfix Window}, cf image \ref{fig:vim-ack-quickfix}.
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-ack-quickfix.png}
+  \includegraphics[width=\linewidth]{graphics/vim-ack-quickfix.png}
   \caption{\vim avec la fenêtre Quickfix de Ack.}
   \label{fig:vim-ack-quickfix}
 \end{figure}
@@ -240,7 +240,7 @@ Nous n'avons plus qu'à ajouter un raccourci dans notre \vimrc pour invoquer Ctr
 La figure \ref{fig:vim-ctrlp} vous montre CtrlP en action. Il vous suffit de l'invoquer avec \vimcmd{,c} et de taper le début du fichier que vous recherchez. Quand le fichier voulu sera sélectionné en premier, il ne vous restera plus qu'à appuyer sur \ttenter pour l'ouvrir.
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{vim-ctrlp.png}
+  \includegraphics[width=\linewidth]{graphics/vim-ctrlp.png}
   \caption{\vim avec CtrlP de lancé.}
   \label{fig:vim-ctrlp}
 \end{figure}

@@ -7,7 +7,7 @@ C'est à mon avis le premier obstacle à surmonter avant toute autre chose. C'es
 Voici donc ce qui manque à un \vim nu (et ce qui est, de mon point de vue, une \textbf{cause d'abandon pour beaucoup} d'entre vous) :
 
 \begin{marginfigure}%
-  \includegraphics[width=\linewidth]{solarized-yinyang.png}
+  \includegraphics[width=\linewidth]{graphics/solarized-yinyang.png}
   \caption{Le thème \emph{Solarized} en sombre et en clair. \url{http://ethanschoonover.com/solarized}}
   \label{fig:solarized}
 \end{marginfigure}
@@ -30,7 +30,7 @@ Vous devrez certainement commencer par installer une version de \vim. Si vous ut
 Au lancement de \vim, vous devriez avoir un texte d'accueil vous encourageant à aider les pauvres enfants en Ouganda. Ce texte disparaitra dès que nous allons saisir des caractères dans \vim. Nous allons commencer par entrer un commentaire dans l'en-tête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur \tti (le curseur devrait changer d'aspect). Le texte d'accueil par défaut de \vim devrait avoir disparu et vous devriez avoir une page blanche qui ressemble plus ou moins à la figure \ref{fig:vim-new}. 
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-new.png}
+  \includegraphics[width=\linewidth]{graphics/vim-new.png}
   \caption{Nouveau fichier vide.}
   \label{fig:vim-new}
 \end{figure}
@@ -48,7 +48,7 @@ Vous devriez maintenant pouvoir entrer le commentaire ci-dessous\sidenote{Si vou
 Vous aurez remarqué que les commentaires en \emph{VimL} (le langage de configuration de \vim) commencent par un \Verb|"|. Appuyez ensuite sur \ttesc pour revenir au mode par défaut (le mode normal) de \vim. Et voilà le travail, cf figure \ref{fig:vim-first-comment}.
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-first-comment.png}
+  \includegraphics[width=\linewidth]{graphics/vim-first-comment.png}
   \caption{Mon premier commentaire.}
   \label{fig:vim-first-comment}
 \end{figure}
@@ -70,7 +70,7 @@ Vous oubliez aussi le mouvement de votre main droite vers les touches directionn
 Qu'est-ce que vous avez le droit de faire dans tout ça ? Pas grand chose, si ce n'est garder vos mains sur la position de repos comme le montre la figure \ref{fig:hand-position}. Vous trouverez d'ailleurs sur la plupart des claviers des marques sur les touches F et J, c'est pour vous donner un repère tactile de la position où doivent se trouver vos index dans la position de repos.
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{hand-position.png}
+  \includegraphics[width=\linewidth]{graphics/hand-position.png}
   \caption{Position de repos, clavier QWERTY. \emph{Illustration par Cy21 - CC-BY-SA-3.0 (\url{www.creativecommons.org/licenses/by-sa/3.0}) ou GFDL (\url{www.gnu.org/copyleft/fdl.html}), via Wikimedia Commons \url{http://commons.wikimedia.org/wiki/File:Typing-home-keys-hand-position.svg}}}
   \label{fig:hand-position}
 \end{figure}
@@ -110,7 +110,7 @@ J'ai mis en ligne ce fichier de configuration directement sur \emph{Github}. Vou
 Vous devriez avoir un \vim qui ressemble à celui sur la figure \ref{fig:first-config}. Notez les numéros de ligne sur la gauche ainsi que la position du curseur en bas à droite.
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-first-config.png}
+  \includegraphics[width=\linewidth]{graphics/vim-first-config.png}
   \caption{\vim après votre première configuration.}
   \label{fig:first-config}
 \end{figure}
@@ -140,7 +140,7 @@ Vous devriez avoir un \vim qui ressemble à celui de la figure \ref{fig:syntax-h
 \vimscmd{:so} étant un raccourci pour \vimscmd{:source}.}. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-syntax-hl.png}
+  \includegraphics[width=\linewidth]{graphics/vim-syntax-hl.png}
   \caption{Coloration syntaxique par défaut.}
   \label{fig:syntax-hl}
 \end{figure}
@@ -151,7 +151,7 @@ Pour l'installer, commencez tout d'abord par créer un répertoire nommé \Verb|
 
 \begin{figure}%
   \center
-  \includegraphics[width=0.3\linewidth]{solarized-tree.png}
+  \includegraphics[width=0.3\linewidth]{graphics/solarized-tree.png}
   \caption{Le contenu du répertoire .vim avec Solarized.}
   \label{fig:solarized-tree}
 \end{figure}
@@ -171,13 +171,13 @@ colorscheme solarized
 Les images \ref{fig:vim-solarized-dark} et \ref{fig:vim-solarized-light} vous donnent un aperçu des deux variantes (ma préférence allant à la variante sombre soit dit en re-passant).
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-solarized-dark.png}
+  \includegraphics[width=\linewidth]{graphics/vim-solarized-dark.png}
   \caption{Le thème \emph{Solarized} sombre.}
   \label{fig:vim-solarized-dark}
 \end{figure}
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-solarized-light.png}
+  \includegraphics[width=\linewidth]{graphics/vim-solarized-light.png}
   \caption{Le thème \emph{Solarized} clair.}
   \label{fig:vim-solarized-light}
 \end{figure}
@@ -228,7 +228,7 @@ Le problème avec cette approche c'est que les différents plugins ne sont pas i
 C'est là que \emph{Pathogen} arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. La figure \ref{fig:pathogen-tree} vous donne un exemple de répertoire \Verb|.vim| avant et après l'utilisation de \emph{Pathogen}. Certes la version avec \emph{Pathogen} contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite\sidenote{Et vous pourrez au passage très facilement utiliser \emph{git} pour gérer chacun de vos plugins comme des submodules, ce qu'il est impossible de réaliser sinon.}.
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{pathogen-tree.png}
+  \includegraphics[width=\linewidth]{graphics/pathogen-tree.png}
   \caption{\emph{.vim} avant et après Pathogen.}
   \label{fig:pathogen-tree}
 \end{figure}
@@ -342,7 +342,7 @@ Rien de particulier ensuite, \emph{The NERD Tree} vous affiche l'arborescence du
 Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur \ttm\xspace lorsque vous êtes dans \emph{The NERD Tree}. Pour passer de la fenêtre de \emph{NERD Tree} à la fenêtre d'édition de votre fichier au clavier, appuyez sur \hlred{Ctrl + w} puis \hlred{w}\sidenote{La touche \hlred{\emph{Control}} (Ctrl) et tout en la laissant appuyée la touche \hlred{w}. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur \hlred{w}.}. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres \vim (il n'est pas spécifique à \emph{The NERD Tree}).
 
 \begin{figure}%
-  \includegraphics[width=\linewidth]{vim-nerdtree.png}
+  \includegraphics[width=\linewidth]{graphics/vim-nerdtree.png}
   \caption{\emph{.vim} avec \emph{The NERD Tree} d'activé.}
   \label{fig:vim-nerdtree}
 \end{figure}
