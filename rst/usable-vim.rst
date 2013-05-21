@@ -40,9 +40,13 @@ Au lancement de |vim|, vous devriez avoir un texte d'accueil vous encourageant �
 
 .. image:: ../book-tex/graphics/vim-new.png
 
-Vous devriez maintenant pouvoir entrer le commentaire ci-dessous. 
+**À noter** : si vous ne savez pas trop ce que vous avez fait et que |vim| vous affiche des trucs en rouge en bas à gauche ou ne semble pas réagir comme il faut quand vous appuyez sur |tti|, appuyez plusieurs fois sur |ttesc|, cela devrait vous remettre au mode par défaut de |vim|, le mode *Normal*.
 
-**À noter** : si vous ne savez pas trop ce que vous avez fait et que |vim| vous affiche des trucs en rouge en bas à gauche ou ne semble pas réagir comme il faut quand vous appuyez sur |tti|, appuyez plusieurs fois sur |ttesc|, cela devrait vous remettre au mode par défaut de |vim|, le mode *Normal*.::
+Vous devriez maintenant pouvoir entrer `le commentaire ci-dessous`_. 
+
+.. _le commentaire ci-dessous:
+
+::
 
     " VIM Configuration - Vincent Jousse
 
