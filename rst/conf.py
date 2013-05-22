@@ -89,10 +89,15 @@ highlight_language = 'vim'
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
+rst_prolog = u"""
+.. role:: vimcmd
+"""
+
 rst_epilog = u"""
 .. |vim| replace:: *Vim*
 .. |vimrc| replace:: *~/.vimrc*
 .. |tti| replace:: la touche i
+.. |tto| replace:: la touche o
 .. |ttesc| replace:: la touche Esc (Échap)
 """
 
