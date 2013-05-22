@@ -116,222 +116,180 @@ Pour les utilisateurs de la souris, il suffira de se servir du menu `Fichier (ou
 
 J'ai mis en ligne ce fichier de configuration directement sur *Github*. Vous pouvez le télécharger ou le copier directement à partir d'ici : http://vimebook.com/link/fr/firstconfig.
 
-Vous devriez avoir un |vim| qui ressemble à celui sur la figure \ref{fig:first-config}. Notez les numéros de ligne sur la gauche ainsi que la position du curseur en bas à droite.
+Vous devriez avoir un |vim| qui ressemble à celui sur la figure \ref{fig:first-config}. 
+Voici à quoi devrait ressembler |vim| `après votre première configuration`_.
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vim-first-config.png}
-  \caption{|vim| après votre première configuration.}
-  \label{fig:first-config}
-\end{figure}
+
+.. _après votre première configuration:
+
+.. figure:: ../book-tex/graphics/vim-first-config.png
+
+   |vim| après votre première configuration.
+
+Notez les numéros de ligne sur la gauche ainsi que la position du curseur en bas à droite.
 
 Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au suivant !
 
-\section{Que la couleur soit !}
+Que la couleur soit !
+=====================
 
-Tout d'abord il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration |vim|rc.
+Tout d'abord il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration |vimrc|.::
 
-\begin{listing}[H]
-\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
-" Active la coloration syntaxique
-syntax enable
-" Active les comportements specifiques aux types de fichiers comme
-" la syntaxe et l'indentation
-filetype on
-filetype plugin on
-filetype indent on
-\end{minted}
-  \caption{Activation de la coloration syntaxique.}
-  \label{lst:syntax-hl}
-\end{listing}
+    " Active la coloration syntaxique
+    syntax enable
+    " Active les comportements specifiques aux types de fichiers comme
+    " la syntaxe et l'indentation
+    filetype on
+    filetype plugin on
+    filetype indent on
 
-Vous devriez avoir un |vim| qui ressemble à celui de la figure \ref{fig:syntax-hl}\sidenote[][-5\baselineskip]{Pour l'instant, le plus facile pour que les modifications apportées à votre |vim|rc soient prises en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la |vim| de suite, en mode normal tapez |vim|scmd{:so \textasciitilde/.vimrc} ou |vim|scmd{:so \$MYVIMRC}.
+Vous devriez avoir un |vim| qui ressemble à celui de la figure ci-dessous. 
 
-|vim|scmd{:so} étant un raccourci pour |vim|scmd{:source}.}. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vim-syntax-hl.png}
-  \caption{Coloration syntaxique par défaut.}
-  \label{fig:syntax-hl}
-\end{figure}
+.. figure:: ../book-tex/graphics/vim-syntax-hl.png
+
+   Coloration syntaxique par défaut.
+
+Pour l'instant, le plus facile pour que les modifications apportées à votre |vimrc| soient prises en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la |vim| de suite, en mode normal tapez :vimcmd:`:so \textasciitilde/.vimrc` ou :vimcmd:`:so \$MYVIMRC`.
+
+:vimcmd:`:so` étant un raccourci pour :vimcmd:`:source`. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
 
 Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème *Solarized* http://ethanschoonover.com/solarized (avec fond clair ou foncé, ça dépendra de vous).
 
-Pour l'installer, commencez tout d'abord par créer un répertoire nommé \Verb|.vim|\sidenote{Ce répertoire s'appelle \Verb|vimfiles| sous Windows. À chaque fois que je ferai référence au répertoire \Verb|.vim| ça sera en fait \Verb|vimfiles| pour les Windowsiens} au même endroit que votre |vim|rc\sidenote{Dans votre répertoire utilisateur donc.}. Dans ce répertoire \Verb|.vim|, créez un sous-répertoire nommé \Verb|colors|. Téléchargez ensuite le fichier du thème *Solarized* https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim\sidenote{ou copiez celui qui vous a été fourni avec le téléchargement de ce livre} (c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire \Verb|vim/colors/| fraîchement créé. Votre répertoire \Verb|.vim| devrait ressembler à celui de la figure \ref{fig:solarized-tree}.
+Pour l'installer, commencez tout d'abord par créer un répertoire nommé `.vim` au même endroit que votre |vimrc| (dans votre répertoire utilisateur donc). À noter que ce répertoire s'appelle `vimfiles` sous Windows. À chaque fois que je ferai référence au répertoire `.vim` ça sera en fait `vimfiles` pour les Windowsiens. Dans ce répertoire `.vim`, créez un sous-répertoire nommé `colors`. Téléchargez ensuite le fichier du thème *Solarized* https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim (c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire `vim/colors/` fraîchement créé. Votre répertoire `.vim` devrait ressembler à celui de la figure ci-dessous.
 
-\begin{figure}%
-  \center
-  \includegraphics[width=0.3\linewidth]{graphics/solarized-tree.png}
-  \caption{Le contenu du répertoire .vim avec Solarized.}
-  \label{fig:solarized-tree}
-\end{figure}
+.. figure:: ../book-tex/graphics/solarized-tree.png
 
-Activez ensuite le thème Solarized dans votre |vim|rc comme le montre le code dans le listing \ref{lst:solarized}. Pour tester le thème clair, remplacez \Verb|dark| par \Verb|light| (au niveau de la définition de la propriété \Verb|background|).
+   Le contenu du répertoire .vim avec Solarized.
 
-\begin{listing}[H]
-\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
-" Utilise la version sombre de Solarized
-set background=dark
-colorscheme solarized
-\end{minted}
-  \caption{Activation de la coloration syntaxique.}
-  \label{lst:solarized}
-\end{listing}
+Activez ensuite le thème Solarized dans votre |vimrc| comme le montre le code ci-dessous.::
 
-Les images \ref{fig:vim-solarized-dark} et \ref{fig:vim-solarized-light} vous donnent un aperçu des deux variantes (ma préférence allant à la variante sombre soit dit en re-passant).
+    " Utilise la version sombre de Solarized
+    set background=dark
+    colorscheme solarized
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vim-solarized-dark.png}
-  \caption{Le thème *Solarized* sombre.}
-  \label{fig:vim-solarized-dark}
-\end{figure}
+Pour tester le thème clair, remplacez `dark` par `light` (au niveau de la définition de la propriété `background`).
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vim-solarized-light.png}
-  \caption{Le thème *Solarized* clair.}
-  \label{fig:vim-solarized-light}
-\end{figure}
+Ci-dessous un aperçu des deux variantes (ma préférence allant à la variante sombre soit dit en re-passant).
+
+.. figure:: ../book-tex/graphics/vim-solarized-dark.png
+
+   Le thème *Solarized* sombre.
+
+
+.. figure:: ../book-tex/graphics/vim-solarized-light.png
+
+   Le thème *Solarized* clair.
+
 
 Un bonus (si vous n'utilisez pas |vim| directement dans votre terminal) serait de choisir une police de caractères qui vous convient un peu mieux. C'est bien sûr facultatif, mais je présume que certains d'entre vous sont des esthètes aguerris.
 
-Si vous êtes sous Mac OS X je vous conseille la police \Verb|Monaco| qui est assez conviviale. Rajoutez les lignes suivantes à votre |vim|rc pour l'utiliser :
+Si vous êtes sous Mac OS X je vous conseille la police `Monaco` qui est assez conviviale. Rajoutez les lignes suivantes à votre |vimrc| pour l'utiliser : ::
 
-\begin{listing}[H]
-\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
-set guifont=Monaco:h13
-set antialias
-\end{minted}
-  \caption{Utilisation de la police Monaco sous Mac Os X.}
-  \label{lst:monaco}
-\end{listing}
+    set guifont=Monaco:h13
+    set antialias
 
-Vous pouvez bien sûr changer le \Verb|h13| par \Verb|h12| si vous voulez une police plus petite (ou par \Verb|h14| si vous en voulez une plus grande).
+Vous pouvez bien sûr changer le `h13` par `h12` si vous voulez une police plus petite (ou par `h14` si vous en voulez une plus grande).
 
-Sinon sous Linux j'utilise la police \Verb|DejaVu Sans Mono| que je trouve plutôt sympathique :
+Sinon sous Linux j'utilise la police `DejaVu Sans Mono` que je trouve plutôt sympathique : ::
 
-\begin{listing}[H]
-\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{vim}
-set guifont=DejaVu\ Sans\ Mono\ 10
-set antialias
-\end{minted}
-  \caption{Utilisation de la police DejaVuSansMono sous Linux.}
-  \label{lst:dejavusansmono}
-\end{listing}
+    set guifont=DejaVu\ Sans\ Mono\ 10
+    set antialias
 
-Vous pouvez là aussi bien sûr changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez en mode normal |vim|cmd{:set guifont:*}.
+Vous pouvez là aussi bien sûr changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez en mode normal :vimcmd:`:set guifont:*`.
 
 Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne http://vimebook.com/link/fr/syntaxhlconfig. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de |vim|.
 
 
-\section{L'explorateur de fichiers : notre premier plugin}
+L'explorateur de fichiers : notre premier plugin
+================================================
 
-Nous y voilà, nous avons un |vim| à peu près utilisable avec de jolies couleurs. Maintenant, il faudrait être capable d'ouvrir des fichiers autrement qu'en faisant \Verb|Fichier (File) -> Ouvrir (Open)|. Ça va être une bonne occasion pour installer notre premier plugin (ce n'est pas comme si nous avions d'autres choix de toute façon). Nous allons procéder ici en deux étapes, tout d'abord installer un gestionnaire de plugins pour éviter que ça devienne trop le bazar dans vos plugins, puis installer le plugin adéquat pour explorer un répertoire de fichiers.
+Nous y voilà, nous avons un |vim| à peu près utilisable avec de jolies couleurs. Maintenant, il faudrait être capable d'ouvrir des fichiers autrement qu'en faisant `Fichier (File) -> Ouvrir (Open)`. Ça va être une bonne occasion pour installer notre premier plugin (ce n'est pas comme si nous avions d'autres choix de toute façon). Nous allons procéder ici en deux étapes, tout d'abord installer un gestionnaire de plugins pour éviter que ça devienne trop le bazar dans vos plugins, puis installer le plugin adéquat pour explorer un répertoire de fichiers.
 
-\subsection{Gestionnaire de plugins: Pathogen}
+Gestionnaire de plugins: Pathogen
+---------------------------------
 
-*Pathogen*\sidenote{https://github.com/tpope/vim-pathogen/} est le genre de plugin typique que vous découvrez après avoir commencé à configurer votre |vim| et qui génère ce type de réaction : « Ah si j'avais su j'aurais directement commencé avec ». Ça tombe bien, c'est ce que nous allons faire.
+*Pathogen* (https://github.com/tpope/vim-pathogen/) est le genre de plugin typique que vous découvrez après avoir commencé à configurer votre |vim| et qui génère ce type de réaction : « Ah si j'avais su j'aurais directement commencé avec ». Ça tombe bien, c'est ce que nous allons faire.
 
-Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans |vim|. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en *\*.vim*) dans des sous-répertoires de votre répertoire de configuration *.vim*. On a déjà d'ailleurs commencé à y créer un sous-répertoire \Verb|colors| qui contient notre "plugin" de coloration Solarized.
+Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans |vim|. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en *\*.vim*) dans des sous-répertoires de votre répertoire de configuration *.vim*. On a déjà d'ailleurs commencé à y créer un sous-répertoire `colors` qui contient notre "plugin" de coloration Solarized.
 
 Le problème avec cette approche c'est que les différents plugins ne sont pas isolés (vous allez devoir copier leurs fichiers dans les différents sous-répertoires) et que vous allez donc vous retrouver avec des fichiers un peu partout sans savoir à qui ils appartiennent. Autant vous dire qu'une fois que vous voulez désinstaller ou mettre à jour un plugin, c'est vite l'enfer pour savoir quels sont ses fichiers.
 
-C'est là que *Pathogen* arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. La figure \ref{fig:pathogen-tree} vous donne un exemple de répertoire \Verb|.vim| avant et après l'utilisation de *Pathogen*. Certes la version avec *Pathogen* contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite\sidenote{Et vous pourrez au passage très facilement utiliser *git* pour gérer chacun de vos plugins comme des submodules, ce qu'il est impossible de réaliser sinon.}.
+C'est là que *Pathogen* arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. Voici un exemple de répertoire `.vim` avant et après l'utilisation de *Pathogen*. 
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/pathogen-tree.png}
-  \caption{*.vim* avant et après Pathogen.}
-  \label{fig:pathogen-tree}
-\end{figure}
+.. figure:: ../book-tex/graphics/pathogen-tree.png
 
-Commençons par installer *Pathogen*. Créez un répertoire nommé \Verb|autoload| dans votre répertoire \Verb|.vim| et copiez y \Verb|pathogen.vim| que vous pouvez télécharger ici : https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim (ou qui vous a été fourni avec ce PDF). Pour les utilisateurs Unix, le listing \ref{code:pathogen-install} explique comment l'installer\sidenote{Si vous n'avez pas \Verb|{\footnotesize curl}| vous pouvez aussi utiliser \scmd{wget -O -}}.
+   *.vim* avant et après Pathogen.
 
-\begin{listing}[H]
-\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
-# Creation du repertoire autoload
-mkdir -p ~/.vim/autoload 
+Certes la version avec *Pathogen* contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite. Vous pourrez au passage très facilement utiliser *git* pour gérer chacun de vos plugins comme des submodules, ce qui peut s'avérer très pratique.
 
-# Telechargement et installation de pathogen
-curl -so ~/.vim/autoload/pathogen.vim \
-    https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-\end{minted}
-  \caption{Installation de pathogen.}
-  \label{code:pathogen-install}
-\end{listing}
+Commençons par installer *Pathogen*. Créez un répertoire nommé `autoload` dans votre répertoire `.vim` et copiez y `pathogen.vim` que vous pouvez télécharger ici : https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim. Pour les utilisateurs Unix, le listing qui suit explique comment l'installer. Si vous n'avez pas `curl` vous pouvez aussi utiliser `wget -O -`.
 
-Nous installerons ensuite nos plugins directement dans le répertoire \Verb|.vim/bundle| que vous allez vous empresser de créer, cf. le listing \ref{code:pathogen-bundle}.
+.. code-block:: bash
 
-\begin{listing}[H]
-\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
-# Creation du repertoire bundle
-mkdir -p ~/.vim/bundle
-\end{minted}
-  \caption{Création du répertoire d'installation des plugins.}
-  \label{code:pathogen-bundle}
-\end{listing}
+    # Creation du repertoire autoload
+    mkdir -p ~/.vim/autoload 
 
-Il ne vous reste plus qu'à activer pathogen dans votre |vim|rc et le tour est joué. Nous placerons le code listé dans 
-\ref{code:pathogen} au début du fichier |vim|rc, directement après la ligne \Verb|set nocompatible|. Il est impératif de placer le code **au début** de votre fichier |vim|rc, sinon ça ne marchera pas.
+    # Telechargement et installation de pathogen
+    curl -so ~/.vim/autoload/pathogen.vim \
+        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
-\begin{listing}[H]
+Nous installerons ensuite nos plugins directement dans le répertoire `.vim/bundle` que vous allez vous empresser de créer de cette manière :
 
-\begin{minted}[bgcolor=bg]{vim}
-" Activation de pathogen
-call pathogen#infect()
-\end{minted}
-\caption{Activation du plugin pathogen.}
-\label{code:pathogen}
-\end{listing}
+.. code-block:: bash
 
-Puisque charité bien ordonnée commence par soi-même, nous allons ranger notre petit plugin *Solarized* en utilisant *Pathogen*. Il nous suffit de créer un répertoire \Verb|solarized| dans notre répertoire \Verb|bundle| fraîchement créé\sidenote{Vous pouvez l'appeler comme vous le souhaitez, tout sous-répertoire du répertoire \Verb|{\footnotesize bundle}| sera considéré comme un répertoire de plugin.}. Nous déplaçons ensuite le répertoire \Verb|colors| dans le répertoire \Verb|solarized| (cf. le listing \ref{code:solarized-bundle}).
+    # Creation du repertoire bundle
+    mkdir -p ~/.vim/bundle
 
-\begin{listing}[H]
-\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
-# Creation du repertoire pour solarized
-mkdir ~/.vim/bundle/solarized
-# Et hop un peu de rangement
-mv ~/.vim/colors ~/.vim/bundle/solarized
-\end{minted}
-  \caption{Utilisation de solarized via pathogen.}
-  \label{code:solarized-bundle}
-\end{listing}
+Il ne vous reste plus qu'à activer pathogen dans votre |vimrc| et le tour est joué. Nous placerons le code listé ci-dessous au début du fichier |vimrc|, directement après la ligne `set nocompatible`. Il est impératif de placer le code **au début** de votre fichier |vimrc|, sinon ça ne marchera pas.::
 
-Actuellement, Pathogen reste encore le gestionnaire de plugins |vim| le plus utilisé. Mais depuis peu, un challenger est arrivé, il s'appelle Vundle https://github.com/gmarik/vundle. J'ai choisi de vous présenter Pathogen car c'est de lui que vous entendrez parler le plus, mais sachez que Vundle est aussi une alternative intéressante : il est compatible avec Pathogen et il gère les versions et les mises à jours de vos plugins directement depuis internet. Pour ceux qui connaissent Ruby, c'est le Bundler \sidenote{http://gembundler.com/} pour |vim|.
+    " Activation de pathogen
+    call pathogen#infect()
+
+Puisque charité bien ordonnée commence par soi-même, nous allons ranger notre petit plugin *Solarized* en utilisant *Pathogen*. Il nous suffit de créer un répertoire `solarized` dans notre répertoire `bundle` fraîchement créé. Vous pouvez l'appeler comme vous le souhaitez, tout sous-répertoire du répertoire `bundle` sera considéré comme un répertoire de plugin. Nous déplaçons ensuite le répertoire `colors` dans le répertoire `solarized` comme ceci :
+
+.. code-block:: bash
+
+    # Creation du repertoire pour solarized
+    mkdir ~/.vim/bundle/solarized
+    # Et hop un peu de rangement
+    mv ~/.vim/colors ~/.vim/bundle/solarized
+
+Actuellement, Pathogen reste encore le gestionnaire de plugins |vim| le plus utilisé. Mais depuis peu, un challenger est arrivé, il s'appelle Vundle https://github.com/gmarik/vundle. J'ai choisi de vous présenter Pathogen car c'est de lui que vous entendrez le plus parler, mais sachez que Vundle est aussi une alternative intéressante : il est compatible avec Pathogen et il gère les versions et les mises à jours de vos plugins directement depuis internet. Pour ceux qui connaissent Ruby, c'est le Bundler (http://gembundler.com/) pour |vim|.
 
 
 Voilà notre |vim| est presque prêt pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet. C'est ici que *The NERD Tree* entre en lice.
 
-\subsection{Explorateur de fichiers : The NERD Tree}
-\label{ssec:nerdtree}
+Explorateur de fichiers : The NERD Tree
+---------------------------------------
+
 The NERD Tree est un plugin permettant d'afficher visuellement une arborescence de fichiers directement dans la partie gauche (par défaut) de votre |vim|, à la *TextMate*, *Sublime Text* ou encore *Eclipse/NetBeans*. Ce plugin n'est pas essentiel si vous souhaitez tout contrôler au clavier (je ne l'utilise plus moi-même), mais est assez pratique lorsque l'on débute avec |vim|.
 
 L'alternative que nous verrons plus tard au chapitre \nameref{plugins} est d'utiliser les plugin *Ctrl-p* ou *Command-t* pour trouver des fichiers et les plugins *LustyExplorer* et *LustyJuggler* pour naviguer entre les fichiers. En effet, devoir visualiser l'arborescence pour trouver un fichier est toujours plus lent que de trouver le fichier à partir de son nom par exemple. The NERD Tree vous permettra donc d'obtenir un |vim| se comportant comme un éditeur classique avec un explorateur de fichiers sur lequel vous pourrez cliquer.
 
 Nous allons tout d'abord préparer *Pathogen* pour installer les différents fichiers de *The NERD Tree*.
 
-\begin{listing}[H]
-\begin{minted}[bgcolor=bg, fontsize=\footnotesize]{sh}
-# Creation du repertoire pour The NERD Tree
-mkdir ~/.vim/bundle/nerdtree
-\end{minted}
-  \caption{Création du répertoire pour The NERD Tree.}
-  \label{code:nerdtree-bundle}
-\end{listing}
+.. code-block:: bash
+
+    # Creation du repertoire pour The NERD Tree
+    mkdir ~/.vim/bundle/nerdtree
 
 Téléchargez ensuite le dernier *.zip* disponible sur la page du plugin http://www.vim.org/scripts/script.php?script_id=1658. À l'heure où j'écris ces lignes, la dernière version disponible est la version 4.2.0 que vous pouvez télécharger à cette adresse : http://www.vim.org/scripts/download_script.php?src_id=17123.
 
-Ouvrez le fichier zip et placez son contenu dans le répertoire \Verb|~/.vim/bundle/nerdtree| que nous venons de créer. Vous devriez avoir une arborescence ressemblant à celle ci-dessous pour votre répertoire \Verb|nerdtree| :
+Ouvrez le fichier zip et placez son contenu dans le répertoire ``~/.vim/bundle/nerdtree`` que nous venons de créer. Vous devriez avoir une arborescence ressemblant à celle ci-dessous pour votre répertoire ``nerdtree`` :
 
-\begin{verbatim}
-nerdtree
-|-- doc
-|   `-- NERD_tree.txt
-|-- nerdtree_plugin
-|   |-- exec_menuitem.vim
-|   `-- fs_menu.vim
-|-- plugin
-|   `-- NERD_tree.vim
-`-- syntax
-    `-- nerdtree.vim
-\end{verbatim}
+.. code-block:: html
+
+    nerdtree
+    |-- doc
+    |   `-- NERD_tree.txt
+    |-- nerdtree_plugin
+    |   |-- exec_menuitem.vim
+    |   `-- fs_menu.vim
+    |-- plugin
+    |   `-- NERD_tree.vim
+    `-- syntax
+        `-- nerdtree.vim
 
 Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant |vim|cmd{:NERDTree} en mode normal. Si vous préférez activer *The NERD Tree* à chaque fois que vous ouvrez votre |vim|, ajoutez ces lignes dans votre |vim|rc:
 
@@ -344,7 +302,7 @@ autocmd vimenter * NERDTree
 \label{code:nerdtreee}
 \end{listing}
 
-C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (\hlred{\Verb|vimenter|}), peu importe le type de fichier (\hlred{\Verb|*|}), lancer *The NERD Tree* (\hlred{\Verb|NERDTree|}).
+C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (\hlred{`vimenter`}), peu importe le type de fichier (\hlred{`*`}), lancer *The NERD Tree* (\hlred{`NERDTree`}).
 
 Rien de particulier ensuite, *The NERD Tree* vous affiche l'arborescence du répertoire où vous avez lancé |vim|, comme vous le montre la figure \ref{fig:vim-nerdtree}. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. 
 
