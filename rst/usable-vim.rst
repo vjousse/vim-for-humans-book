@@ -10,7 +10,7 @@ Voici donc ce qui manque à un |vim| nu (et ce qui est, de mon point de vue, une
 
 
 **Configuration par défaut** 
-    |vim| est configurable grâce à un fichier nommé |vim|rc, qui est bien entendu vide par défaut. La première étape va être d'écrire ou de se procurer un fichier |vim|rc avec une configuration minimale.
+    |vim| est configurable grâce à un fichier nommé |vimrc|, qui est bien entendu vide par défaut. La première étape va être d'écrire ou de se procurer un fichier |vimrc| avec une configuration minimale.
 
 **Coloration syntaxique**
     De base, |vim| est tout blanc et tout moche. On va utiliser le thème *Solarized* (http://ethanschoonover.com/solarized). Si votre but est d'être efficace, c'est le meilleur thème disponible actuellement (tout éditeur de texte confondu). La belle image qui suit vous donne une idée des deux looks disponibles (clair ou sombre). Pour ma part j'utilise le thème sombre. 
@@ -291,31 +291,25 @@ Ouvrez le fichier zip et placez son contenu dans le répertoire ``~/.vim/bundle/
     `-- syntax
         `-- nerdtree.vim
 
-Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant |vim|cmd{:NERDTree} en mode normal. Si vous préférez activer *The NERD Tree* à chaque fois que vous ouvrez votre |vim|, ajoutez ces lignes dans votre |vim|rc:
+Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant :vimcmd:`:NERDTree` en mode normal. Si vous préférez activer *The NERD Tree* à chaque fois que vous ouvrez votre |vim|, ajoutez ces lignes dans votre |vimrc|: ::
 
-\begin{listing}[H]
-\begin{minted}[bgcolor=bg]{vim}
-" Activation de NERDTree au lancement de vim
-autocmd vimenter * NERDTree
-\end{minted}
-\caption{Activation de NERDTree au lancement de |vim|.}
-\label{code:nerdtreee}
-\end{listing}
+    " Activation de NERDTree au lancement de vim
+    autocmd vimenter * NERDTree
 
-C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (\hlred{`vimenter`}), peu importe le type de fichier (\hlred{`*`}), lancer *The NERD Tree* (\hlred{`NERDTree`}).
+C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (``vimenter``), peu importe le type de fichier (``*``), lancer *The NERD Tree* (``NERDTree``).
 
-Rien de particulier ensuite, *The NERD Tree* vous affiche l'arborescence du répertoire où vous avez lancé |vim|, comme vous le montre la figure \ref{fig:vim-nerdtree}. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. 
+Rien de particulier ensuite, *The NERD Tree* vous affiche l'arborescence du répertoire où vous avez lancé |vim|, comme vous le montre la capture d'écran ci-dessous. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. 
 
-Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur \ttm\xspace lorsque vous êtes dans *The NERD Tree*. Pour passer de la fenêtre de *NERD Tree* à la fenêtre d'édition de votre fichier au clavier, appuyez sur \hlred{Ctrl + w} puis \hlred{w}\sidenote{La touche \hlred{*Control*} (Ctrl) et tout en la laissant appuyée la touche \hlred{w}. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur \hlred{w}.}. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres |vim| (il n'est pas spécifique à *The NERD Tree*).
+.. figure:: ../book-tex/graphics/vim-nerdtree.png
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vim-nerdtree.png}
-  \caption{*.vim* avec *The NERD Tree* d'activé.}
-  \label{fig:vim-nerdtree}
-\end{figure}
+   |vim| avec *The NERD Tree* d'activé.
 
-\section{Nous voilà fin prêts}
+Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur |ttm| lorsque vous êtes dans *The NERD Tree*. Pour passer de la fenêtre de *NERD Tree* à la fenêtre d'édition de votre fichier au clavier, appuyez sur ``Ctrl + w`` puis ``w``. C'est à dire la touche ``Control (Ctrl)`` et tout en la laissant appuyée la touche ``w``. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur ``w``. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres |vim| (il n'est pas spécifique à *The NERD Tree*).
+
+
+Nous voilà fin prêts
+====================
 
 Voilà, vous avez fait le plus dur. Enfin presque. Nous venons de couvrir ce qui manque cruellement à |vim| : une configuration par défaut acceptable. Je ne dis pas que c'est la panacée pour l'instant, mais ça devrait vous permettre d'avoir un |vim| utilisable comme n'importe quel autre éditeur de texte dont vous ne connaissez pas encore toutes les possibilités. Je vous recommande à ce stade de commencer à l'utiliser dans votre vie quotidienne. N'hésitez pas à user et à abuser de la souris et des différents menus qui sont à votre disposition. Le but ici étant de réduire l'impact de l'utilisation de |vim| sur votre travail quotidien. Ce n'est pas encore le temps de briller en société. Vous apprendrez les raccourcis clavier au fur et à mesure, et ça ne fait pas de vous un utilisateur de |vim| de seconde zone. Il faut bien commencer un jour.
 
-Nous allons maintenant aborder ce qui fait l'unicité de |vim| : sa gestion des modes et des commandes pour manipuler le texte. La balle est dans votre camp maintenant : ou vous êtes prêt à changer vos habitudes et à passer à un autre niveau d'efficacité, ou alors n'utiliser |vim| que comme un bloc-notes amélioré vous convient\footnote{Dans ce cas là, vous pouvez vous arrêter là.}. C'est vous qui voyez !
+Nous allons maintenant aborder ce qui fait l'unicité de |vim| : sa gestion des modes et des commandes pour manipuler le texte. La balle est dans votre camp maintenant : ou vous êtes prêt à changer vos habitudes et à passer à un autre niveau d'efficacité, ou alors n'utiliser |vim| que comme un bloc-notes amélioré vous convient (dans ce cas là, vous pouvez vous arrêter là). C'est vous qui voyez !
