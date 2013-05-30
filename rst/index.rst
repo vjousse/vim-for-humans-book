@@ -13,6 +13,7 @@ Contents:
 
    introduction
    usable-vim
+   text-manip
 
 
 

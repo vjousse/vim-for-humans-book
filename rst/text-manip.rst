@@ -4,18 +4,20 @@ L'outil de manipulation de texte rêvé
 
 Alors oui, pour ceux qui se demandent, je fais des rêves bizarres, mais bon chacun a ses petites tares cachées. Et rêver d'un outil qui améliore ma vie quotidienne en tant que codeur (ou écrivain, ou formateur, ou …) n'est pas si étrange que ça.
 
-Ce qui fait et fera encore le succès de |vim| est sa capacité à **faciliter les manipulations de texte**. Certes il va vous proposer des fonctionnalités propres à chaque tâche que vous effectuerez \footnote{Souvent par l'intermédiaire de plugins.} comme la validation syntaxique de code, la correction orthographique, … Mais à la fin, c'est toujours à écrire/corriger/manipuler/se déplacer dans du texte que vous passerez la majeure partie de votre temps. 
+Ce qui fait et fera encore le succès de |vim| est sa capacité à **faciliter les manipulations de texte**. Certes il va vous proposer des fonctionnalités propres à chaque tâche que vous effectuerez (souvent par l'intermédiaire de plugins) comme la validation syntaxique de code, la correction orthographique, … Mais à la fin, c'est toujours à écrire/corriger/manipuler/se déplacer dans du texte que vous passerez la majeure partie de votre temps. 
 
 C'est là que l'approche de |vim| est différente d'IDE comme Eclipse / Netbeans / PhpStorm et consorts. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, |vim| adopte l'approche opposée : vous serez **très efficace** à manipuler/écrire du texte quel qu'il soit et vous pourrez enrichir |vim| avec des fonctionnalités propres à votre langage de programmation via des plugins.
 
-Nous allons donc voir dans ce chapitre comment utiliser |vim| à bon escient (vous allez commencer à oublier votre souris) et quelle est la logique derrière tous ces enchaînements de commandes qui paraissent barbares au non-initié. Vous devriez pouvoir, à la fin de ce chapitre, **vous passer de votre souris** pour éditer/manipuler le contenu d'un fichier\footnote{En tout cas, vous devriez vous forcer à le faire en apprenant |vim|, ce n'est pas si dur que ça, et c'est ce qui fait la différence entre |vim| et les autres : le tout clavier.}.
+Nous allons donc voir dans ce chapitre comment utiliser |vim| à bon escient (vous allez commencer à oublier votre souris) et quelle est la logique derrière tous ces enchaînements de commandes qui paraissent barbares au non-initié. Vous devriez pouvoir, à la fin de ce chapitre, **vous passer de votre souris** pour éditer/manipuler le contenu d'un fichier. En tout cas, vous devriez vous forcer à le faire en apprenant |vim|, ce n'est pas si dur que ça, et c'est ce qui fait la différence entre |vim| et les autres : le tout clavier.
 
-\section{Se déplacer par l'exemple : Essayer de copier / coller}\label{sec:se-deplacer}
+Se déplacer par l'exemple : Essayer de copier / coller
+======================================================
 
 
 Nous avons déjà vu dans la section « \nameref{sec:modeinsertion} » comment passer du mode insertion (pour saisir du texte) au mode normal (*a priori* pour l'instant, vous ne savez pas trop à quoi sert ce mode). En appuyant sur |tti| votre curseur passe en mode insertion (lorsque vous êtes en mode normal) et en appuyant sur |ttesc| il repasse dans le mode normal. Bon bah on est bien Tintin. Et maintenant ? 
 
-\subsection{Préambule}
+Préambule
+---------
 
 Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur \ttshift) pour sélectionner du texte et vous allez dans le ``menu Édition`` puis ``Copier``. Et ensuite ``menu Édition`` puis ``Coller``. Bah tiens, essayez pour voir.
 
