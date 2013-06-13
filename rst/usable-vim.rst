@@ -27,6 +27,7 @@ Ce chapitre est indispensable si vous n'avez que peu d'expérience (voire pas du
 
 En revanche, si vous êtes déjà familier avec |vim| et n'utilisez déjà plus la souris, vous pouvez sagement sauter ce chapitre (soyez sûr tout de même de donner sa chance au thème *Solarized*).
 
+.. _modeinsertion:
 
 Préambule indispensable : le mode insertion
 ===========================================
