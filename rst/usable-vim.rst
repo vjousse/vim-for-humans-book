@@ -64,6 +64,8 @@ Par défaut, |vim| est lancé dans un mode que l'on appelle le mode *Normal*. C'
 
 Si vous vous demandez pourquoi ces modes, pourquoi on semble se compliquer la vie (on se la simplifie en fait) et en quel honneur, dans le mode par défaut, il n'est même pas possible d'insérer du texte, lisez attentivement la section qui suit.
 
+.. _modes:
+
 Les modes : d'où |vim| tire sa puissance
 ========================================
 

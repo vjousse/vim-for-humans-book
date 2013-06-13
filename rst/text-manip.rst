@@ -22,23 +22,22 @@ Préambule
 
 Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur \ttshift) pour sélectionner du texte et vous allez dans le ``menu Édition`` puis ``Copier``. Et ensuite ``menu Édition`` puis ``Coller``. Bah tiens, essayez pour voir.
 
-Si vous avez suivi la section « \nameref{sec:modes} » traitant de la position idéale pour vos mains, vous savez que vous avez fait une ou plusieurs choses que vous devriez vous interdire :
+Si vous avez suivi la section « :ref:`modes` » traitant de la position idéale pour vos mains, vous savez que vous avez fait une ou plusieurs choses que vous devriez vous interdire :
 
 
-\begin{itemize}
-    \item Vous avez utilisé votre souris
-    \item Vous avez déplacé grandement votre main droite de sa position de repos, pour aller atteindre les flèches directionnelles qui sont très mal placées sur un clavier
-\end{itemize}
+- Vous avez utilisé votre souris
+- Vous avez déplacé grandement votre main droite de sa position de repos, pour aller atteindre les flèches directionnelles qui sont très mal placées sur un clavier
 
 
 Alors certes ce n'est pas grave en soi, mais c'est **inefficace** (se servir de la souris ou déplacer votre main droite vers les touches directionnelles est très lent) et **nuisible** pour vos petites mains. Ceci est votre dernière chance : si vous n'êtes pas prêt à vous forcer à ne pas le faire, **|vim| n'est pas fait pour vous**. |vim| est parfait pour ne pas utiliser la souris et pour ne pas bouger vos mains (ou presque). Ne pas se forcer à le faire, c'est ne pas tirer partie de tout le potentiel de |vim|, et à un moment ou un autre, **vous le quitterez pour un éditeur** qui aura été pensé pour être utilisé à la souris. Alors, on continue ?
 
-\subsection{Se passer de la souris}
+Se passer de la souris
+----------------------
 
 Si vous lisez ces lignes c'est que vous avez répondu « oui », allons-y gaiement alors ! Nous allons tout d'abord commencer par nous passer de la souris. La prochaine étape sera de se passer des touches directionnelles, mais chaque chose en son temps.
 
 
-\newthought{Pour réaliser un copier/coller} avec |vim| tout se passe en mode « normal ». Pour savoir dans quel mode vous vous trouvez, vous avez juste à regarder en bas à gauche de votre |vim|. La figure \ref{fig:insert} vous montre |vim| en mode « insertion » par exemple. Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur |ttesc|\footnote{Si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre |ttesc|, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans « \nameref{sec:esc} ».}.
+Pour réaliser un copier/coller avec |vim| tout se passe en mode « normal ». Pour savoir dans quel mode vous vous trouvez, vous avez juste à regarder en bas à gauche de votre |vim|. La figure \ref{fig:insert} vous montre |vim| en mode « insertion » par exemple. Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur |ttesc|\footnote{Si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre |ttesc|, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans « \nameref{sec:esc} ».}.
 
 \begin{figure}%
   \includegraphics[width=\linewidth]{graphics/vim-insert.png}
