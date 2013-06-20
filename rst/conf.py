@@ -98,7 +98,10 @@ rst_epilog = u"""
 .. |vimrc| replace:: *~/.vimrc*
 .. |tti| replace:: la touche i
 .. |tto| replace:: la touche o
+.. |ttp| replace:: la touche p
 .. |ttm| replace:: la touche m
+.. |ttv| replace:: la touche v
+.. |tty| replace:: la touche y
 .. |ttesc| replace:: la touche Esc (Échap)
 """
 

@@ -37,37 +37,39 @@ Se passer de la souris
 Si vous lisez ces lignes c'est que vous avez répondu « oui », allons-y gaiement alors ! Nous allons tout d'abord commencer par nous passer de la souris. La prochaine étape sera de se passer des touches directionnelles, mais chaque chose en son temps.
 
 
-Pour réaliser un copier/coller avec |vim| tout se passe en mode « normal ». Pour savoir dans quel mode vous vous trouvez, vous avez juste à regarder en bas à gauche de votre |vim|. La figure \ref{fig:insert} vous montre |vim| en mode « insertion » par exemple. Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur |ttesc|\footnote{Si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre |ttesc|, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans « \nameref{sec:esc} ».}.
+Pour réaliser un copier/coller avec |vim| tout se passe en mode « normal ». Pour savoir dans quel mode vous vous trouvez, vous avez juste à regarder en bas à gauche de votre |vim|. La `figure ci-dessous`_ vous montre |vim| en mode « insertion » par exemple. 
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vim-insert.png}
-  \caption{|vim| en mode insertion.}
-  \label{fig:insert}
-\end{figure}
+.. _figure ci-dessous: `mode insert`_
 
-Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre |vim|. Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient que c'était impossible, alors ils l'ont fait. ». Votre |vim| devrait ressembler à celui de la figure \ref{fig:vim-twain}. Notez l'absence d'affichage d'un quelconque mode en bas à gauche.
+.. _mode insert:
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vim-twain.png}
-  \caption{|vim| prêt pour le copier/coller.}
-  \label{fig:vim-twain}
-\end{figure}
+.. image:: ../book-tex/graphics/vim-insert.png
 
-La façon la plus naturelle\footnote{Mais pas la plus efficace, nous verrons cela un peu plus loin.} de copier/coller le mot « impossible » va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur \ttv (pour passer en mode « visuel »), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur |tty|\footnote{La touche \ty étant utilisée comme raccourci du mot *yank* en anglais.}. Vous avez copié votre premier mot.
 
-Déplacez vous ensuite à la fin de la phrase (toujours en mode « normal ») puis appuyez sur \ttp\footnote{Raccourci du mot *paste* cette fois ci.}. Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure \ref{fig:vim-paste}.
+Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur |ttesc|\footnote{Si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre |ttesc|, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans « :ref:`secesc` ».}.
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vim-paste.png}
-  \caption{|vim| après le copier/coller.}
-  \label{fig:vim-paste}
-\end{figure}
+
+Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre |vim|. Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient que c'était impossible, alors ils l'ont fait. ». Votre |vim| devrait ressembler à celui de la figure ci-dessous. Notez l'absence d'affichage d'un quelconque mode en bas à gauche.
+
+.. _twain:
+
+.. image:: ../book-tex/graphics/vim-twain.png
+
+La façon la plus naturelle (mais pas la plus efficace, nous verrons cela un peu plus loin) de copier/coller le mot « impossible » va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur |ttv| (pour passer en mode « visuel »), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur |tty| (|tty| étant utilisée comme raccourci du mot *yank* en anglais). Vous avez copié votre premier mot.
+
+Déplacez vous ensuite à la fin de la phrase (toujours en mode « normal ») puis appuyez sur |ttp| (raccourci du mot *paste* cette fois ci). Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure qui suit.
+
+.. _vim-paste:
+
+.. image:: ../book-tex/graphics/vim-paste.png
 
 On se rend donc compte ici que |vim| se sert de l'astuce des modes (et notamment du mode « normal » pour les déplacements) afin de ne pas avoir à se servir de la souris.
 À partir du moment où vous aurez pris l'habitude de passer rapidement d'un mode à l'autre (et pour cela se passer de |ttesc| va devenir indispensable), utiliser la souris vous apparaîtra comme une perte de temps, mais pour cela il va falloir pratiquer un peu bien sûr.
 
+.. _secse-passer-touches-dir:
 
-\section{Se passer des touches directionnelles}\label{sec:se-passer-touches-dir}
+Se passer des touches directionnelles
+-------------------------------------
 
 Nous y voilà. Encore plus que de se priver de la souris, se priver des touches directionnelles est la chose à faire si l'on veut utiliser |vim|, pour de vrai. |vim| va vous permettre de faire tout plus rapidement et plus intuitivement à la seule condition de le faire sans les touches directionnelles.
 Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main certes, mais ça va aussi vous forcer à passer en mode « normal » pour réaliser vos déplacements et vos mouvements de texte. Il n'y a qu'à ce moment là\footnote{Un peu douloureux au début il est vrai.} que vous commencerez à vraiment tirer parti de |vim|.
@@ -169,7 +171,10 @@ Ou encore l'infographie de la figure \ref{fig:vim-cheat-sheet}\footnote{Téléch
 
 N'oubliez pas que le but ici est de gagner en rapidité en ne bougeant quasi plus ses mains de la rangée de repos, et en utilisant le plus possible le « mode normal ». Au boulot !
 
-\section{Se passer de la touche Échap}\label{sec:esc}
+.. _secesc:
+
+Se passer de la touche Échap
+============================
 
 Utiliser |ttesc| pour sortir du mode « insertion » semble être une hérésie tellement elle est difficilement accessible. Il faut déplacer entièrement la main gauche pour y accéder ou alors se torturer le petit doigt.
 
