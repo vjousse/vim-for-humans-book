@@ -92,7 +92,7 @@ En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un carac
 
 .. image:: ../book-tex/graphics/hjkl.png
 
-Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien\footnote{Vous trouverez le clavier sur lequel *Vi* a été conçu dan la section « \nameref{sec:esc} », vous comprendrez ainsi le pourquoi du comment.}.
+Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien. Vous trouverez le clavier sur lequel *Vi* a été conçu dans la section « :ref:`secesc` », vous comprendrez ainsi le pourquoi du comment.
 
 À noter qu'à force, on se sert de moins en moins des déplacements gauche/droite d'un caractère. On va leur préférer les déplacements de mot en mot, de paragraphe en paragraphe ou les déplacements grâce à des recherches. Quelques exemples de déplacements "rapides" que j'utilise :
 
@@ -126,38 +126,30 @@ Arrêtons-nous un peu là dessus. Au risque d'insister lourdement, mais la clé 
 
 Vous trouverez des sites entiers vous détaillant les différentes commandes possibles, les différentes combinaisons, j'en passe et des meilleures. Vous les apprendrez puis les oublierez (ou pas, en fonction de si elles vous sont vraiment utiles). Si vous avez un seul effort à faire c'est celui de se passer des touches directionnelles et donc de vous forcer à utiliser le mode normal. Le reste tombera sous le sens.
 
-Voici l'ultime configuration qu'il vous faudra mettre dans votre |vimrc| pour atteindre le Saint Graal : désactiver les touches directionnelles.
+Voici l'ultime configuration qu'il vous faudra mettre dans votre |vimrc| pour atteindre le Saint Graal : désactiver les touches directionnelles.::
 
-\begin{listing}[H]
-
-    \begin{minted}[bgcolor=bg, gobble=8]{vim}
-        " Desactiver les touches directionnelles
-        map <up> <nop>
-        map <down> <nop>
-        map <left> <nop>
-        map <right> <nop>
-        imap <up> <nop>
-        imap <down> <nop>
-        imap <left> <nop>
-        imap <right> <nop>
-    \end{minted}
-    \caption{Désactiver les touches directionnelles.}
-    \label{code:touches-directionnelles}
-\end{listing}
+    " Désactiver les touches directionnelles
+    map <up> <nop>
+    map <down> <nop>
+    map <left> <nop>
+    map <right> <nop>
+    imap <up> <nop>
+    imap <down> <nop>
+    imap <left> <nop>
+    imap <right> <nop>
 
 Nous y voilà. Croyez-moi, vous allez souffrir un peu au début. Pour moi, ça n'a pas duré plus de deux jours. Ensuite vous aurez oublié. Si vous n'êtes pas prêt à galérer un peu pendant deux jours pour améliorer votre efficacité à vie, que faites-vous ici !
 
-Je ne vous donnerai pas d'autres détails sur toutes les touches possibles pour vous déplacer, d'autres ressources le font déjà bien mieux que moi. Je vais en revanche vous apprendre dans \nameref{sec:combine-move} comment les utiliser à bon escient.
+Je ne vous donnerai pas d'autres détails sur toutes les touches possibles pour vous déplacer, d'autres ressources le font déjà bien mieux que moi. Je vais en revanche vous apprendre dans :ref:`combine-move` comment les utiliser à bon escient.
 
 On peut notamment citer le livre gratuit "A byte of |vim|" traduit en français et disponible à l'adresse suivante : http://swaroopch.com/notes/Vim_fr/.
 
-Ou encore l'infographie de la figure \ref{fig:vim-cheat-sheet}\footnote{Téléchargeable sur http://www.nathael.org/} qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
+Ou encore l'infographie de la figure ci-dessous (téléchargeable sur http://www.nathael.org/) qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vi-vim-cheat-sheet.png}
-  \caption{Les touches |vim|.}
-  \label{fig:vim-cheat-sheet}
-\end{figure}
+.. _cheat-sheet:
+
+.. image:: ../book-tex/graphics/vi-vim-cheat-sheet.png
+
 
 N'oubliez pas que le but ici est de gagner en rapidité en ne bougeant quasi plus ses mains de la rangée de repos, et en utilisant le plus possible le « mode normal ». Au boulot !
 
@@ -168,53 +160,39 @@ Se passer de la touche Échap
 
 Utiliser |ttesc| pour sortir du mode « insertion » semble être une hérésie tellement elle est difficilement accessible. Il faut déplacer entièrement la main gauche pour y accéder ou alors se torturer le petit doigt.
 
-Pour comprendre pourquoi |ttesc| est utilisée par défaut, il faut faire un bon de quelques années en arrière, pour se retrouver en face du clavier sur lequel *Vi* a été développé. Vous pouvez voir sur la photo \ref{fig:vim-keyboard} que |ttesc| était très facilement accessible. Vous pouvez aussi noter l'emplacement des touches directionnelles. Malheureusement depuis, cela a bien changé.
+Pour comprendre pourquoi |ttesc| est utilisée par défaut, il faut faire un bon de quelques années en arrière, pour se retrouver en face du clavier sur lequel *Vi* a été développé. Vous pouvez voir sur la photo ci-dessous que |ttesc| était très facilement accessible. Vous pouvez aussi noter l'emplacement des touches directionnelles. Malheureusement depuis, cela a bien changé.
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/lsi-adm3a-full-keyboard.jpg}
-  \caption{Le clavier sur lequel *Vi* a été réalisé.}
-  \label{fig:vim-keyboard}
-\end{figure}
+.. _vi-keyboard:
 
-L'étape ultime (après avoir réussi à se passer des touches directionnelles) est donc de rapprocher |ttesc| de vos petits doigts. Il y a plusieurs solutions pour cela, mais celle que je vous recommande si vous avez un clavier avec une disposition française est la suivante (dans votre |vimrc|) :
+.. image:: ../book-tex/graphics/lsi-adm3a-full-keyboard.jpg
 
-\begin{listing}[H]
+L'étape ultime (après avoir réussi à se passer des touches directionnelles) est donc de rapprocher |ttesc| de vos petits doigts. Il y a plusieurs solutions pour cela, mais celle que je vous recommande si vous avez un clavier avec une disposition française est la suivante (dans votre |vimrc|) :::
 
-    \begin{minted}[bgcolor=bg, gobble=8]{vim}
-        " Les ; sons rarement utilise l'un a la suite de l'autre
-        :imap ;; <Esc>
-    \end{minted}
-    \caption{Taper deux fois sur ; pour quitter le mode normal.}
-    \label{code:avoid-esc}
-\end{listing}
+    " Les ; sons rarement utilisés l'un à la suite de l'autre
+    :imap ;; <Esc>
 
-Lorsque vous êtes en mode insertion, il vous suffit d'appuyer deux fois sur \ttsemicolon pour retourner au mode normal. \ttsemicolon ne vous demande pas de bouger votre main de la rangée de repos et on l'utilise rarement deux fois de suite (et si c'est le cas, il suffit d'attendre un peu avant de taper le deuxième \tsemicolon), c'est donc le parfait candidat.
+Lorsque vous êtes en mode insertion, il vous suffit d'appuyer deux fois sur |ttsemicolon| pour retourner au mode normal. |ttsemicolon| ne vous demande pas de bouger votre main de la rangée de repos et on l'utilise rarement deux fois de suite (et si c'est le cas, il suffit d'attendre un peu avant de taper le deuxième |tsemicolon|), c'est donc le parfait candidat.
 
-Voici d'autres solutions possibles (cf http://vim.wikia.com/wiki/Avoid_the_escape_key):
+Voici d'autres solutions possibles (cf http://vim.wikia.com/wiki/Avoid_the_escape_key):::
 
-\begin{listing}[H]
-    \begin{minted}[bgcolor=bg, gobble=8]{vim}
+    :imap jj <Esc>
 
-        :imap jj <Esc>
+    :imap jk <Esc>
 
-        :imap jk <Esc>
+    :imap ii <Esc>
 
-        :imap ii <Esc>
+    :imap ` <Esc>
 
-        :imap ` <Esc>
+    " Shift-Espace (peut ne pas marcher sur votre système).
+    :imap <S-Space> <Esc>
 
-        " Shift-Espace (peut ne pas marcher sur votre systeme).
-        :imap <S-Space> <Esc>
+    " Sous Linux avec gvim Vim en console, vous pouvez utiliser Alt-Space.
+    :imap <M-Space> <Esc>
 
-        " Sous Linux avec gvim Vim en console, vous pouvez utiliser Alt-Space.
-        :imap <M-Space> <Esc>
-    \end{minted}
-    \caption{D'autres combinaisons de touches possibles pour quitter le mode normal.}
-    \label{code:avoid-esc-alt}
-\end{listing}
+.. _combine-move:
 
-\section{Combiner des touches/déplacements}
-\label{sec:combine-move}
+Combiner des touches/déplacements
+=================================
 
 Maintenant que nous savons nous déplacer en mode normal, il est temps de voir comment réaliser d'autres opérations. Nous avons déjà vu le copier/coller au chapitre \nameref{sec:se-deplacer}, nous allons maintenant voir comment supprimer/éditer plus facilement.
 

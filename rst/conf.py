@@ -120,6 +120,7 @@ rst_epilog = u"""
 .. |ttv| replace:: la touche v
 .. |tty| replace:: la touche y
 .. |ttesc| replace:: la touche Esc (Échap)
+.. |ttsemicolon| replace:: la touche ;
 """
 
 
