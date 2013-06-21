@@ -94,33 +94,63 @@ rst_prolog = u"""
 """
 
 rst_epilog = u"""
-.. |vim| replace:: *Vim*
-.. |vimrc| replace:: *~/.vimrc*
-.. |that| replace:: ^
-.. |tdollar| replace:: $
-.. |tzero| replace:: 0
-.. |ta| replace:: a
-.. |tA| replace:: A
-.. |tb| replace:: b
-.. |te| replace:: e
-.. |ti| replace:: i
-.. |tI| replace:: I
-.. |to| replace:: o
-.. |tO| replace:: O
-.. |tr| replace:: r
-.. |tw| replace:: w
-.. |tth| replace:: la touche h
-.. |tti| replace:: la touche i
-.. |ttj| replace:: la touche j
-.. |ttk| replace:: la touche k
-.. |ttl| replace:: la touche l
-.. |tto| replace:: la touche o
-.. |ttp| replace:: la touche p
-.. |ttm| replace:: la touche m
-.. |ttv| replace:: la touche v
-.. |tty| replace:: la touche y
-.. |ttesc| replace:: la touche Esc (Échap)
-.. |ttsemicolon| replace:: la touche ;
+.. |vim| replace:: ``*Vim*``
+.. |vimrc| replace:: ``*~/.vimrc*``
+.. |that| replace:: ``^``
+.. |tdollar| replace:: ``$``
+.. |tzero| replace:: ``0``
+.. |tesc| replace:: ``Esc (Échap)``
+.. |tsemicolon| replace:: ``;``
+.. |tcolon| replace:: ``:``
+.. |tctrl| replace:: ``Control``
+.. |ta| replace:: ``a``
+.. |tA| replace:: ``A``
+.. |tb| replace:: ``b``
+.. |tc| replace:: ``c``
+.. |td| replace:: ``d``
+.. |tdtd| replace:: ``dd``
+.. |te| replace:: ``e``
+.. |tf| replace:: ``f``
+.. |tG| replace:: ``G``
+.. |tgtg| replace:: ``gg``
+.. |th| replace:: ``h``
+.. |ti| replace:: ``i``
+.. |tI| replace:: ``I``
+.. |tj| replace:: ``j``
+.. |tk| replace:: ``k``
+.. |tl| replace:: ``l``
+.. |tm| replace:: ``m``
+.. |to| replace:: ``o``
+.. |tO| replace:: ``O``
+.. |tp| replace:: ``p``
+.. |tr| replace:: ``r``
+.. |tv| replace:: ``v``
+.. |tv| replace:: ``v``
+.. |tw| replace:: ``w``
+.. |tx| replace:: ``x``
+.. |tX| replace:: ``X``
+.. |ty| replace:: ``y``
+.. |tyty| replace:: ``yy``
+.. |ttc| replace:: la touche |tc|
+.. |ttd| replace:: la touche |td|
+.. |tth| replace:: la touche |th|
+.. |tti| replace:: la touche |ti|
+.. |ttj| replace:: la touche |tj|
+.. |ttk| replace:: la touche |tk|
+.. |ttl| replace:: la touche |tl|
+.. |tto| replace:: la touche |to|
+.. |ttp| replace:: la touche |tp|
+.. |ttP| replace:: la touche |tP|
+.. |ttm| replace:: la touche |tm|
+.. |ttv| replace:: la touche |tv|
+.. |ttx| replace:: la touche |tx|
+.. |tty| replace:: la touche |ty|
+.. |ttw| replace:: la touche |tw|
+.. |ttesc| replace:: la touche |tesc|
+.. |ttsemicolon| replace:: la touche |tsemicolon|
+.. |ttdollar| replace:: la touche |tdollar|
+.. |tthat| replace:: la touche |that|
+.. |ttctrl| replace:: la touche |tctrl|
 """
 
 

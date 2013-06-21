@@ -10,6 +10,7 @@ C'est là que l'approche de |vim| est différente d'IDE comme Eclipse / Netbeans
 
 Nous allons donc voir dans ce chapitre comment utiliser |vim| à bon escient (vous allez commencer à oublier votre souris) et quelle est la logique derrière tous ces enchaînements de commandes qui paraissent barbares au non-initié. Vous devriez pouvoir, à la fin de ce chapitre, **vous passer de votre souris** pour éditer/manipuler le contenu d'un fichier. En tout cas, vous devriez vous forcer à le faire en apprenant |vim|, ce n'est pas si dur que ça, et c'est ce qui fait la différence entre |vim| et les autres : le tout clavier.
 
+.. _se-deplacer:
 
 Se déplacer par l'exemple : Essayer de copier / coller
 ======================================================
@@ -194,117 +195,87 @@ Voici d'autres solutions possibles (cf http://vim.wikia.com/wiki/Avoid_the_escap
 Combiner des touches/déplacements
 =================================
 
-Maintenant que nous savons nous déplacer en mode normal, il est temps de voir comment réaliser d'autres opérations. Nous avons déjà vu le copier/coller au chapitre \nameref{sec:se-deplacer}, nous allons maintenant voir comment supprimer/éditer plus facilement.
+Maintenant que nous savons nous déplacer en mode normal, il est temps de voir comment réaliser d'autres opérations. Nous avons déjà vu le copier/coller au chapitre :ref:`se-deplacer`, nous allons maintenant voir comment supprimer/éditer plus facilement.
 
-Dans \nameref{sec:se-passer-touches-dir} nous avons vu qu'il suffisait d'utiliser \ttw pour se déplacer au début du mot suivant. Nous allons essayer de combiner cela avec quelques nouvelles touches du mode normal :
+Dans :ref:`secse-passer-touches-dir` nous avons vu qu'il suffisait d'utiliser |ttw| pour se déplacer au début du mot suivant. Nous allons essayer de combiner cela avec quelques nouvelles touches du mode normal :
 
-\begin{itemize}
-    \item \ttd est utilisée pour « supprimer »
-    \item \ttc est utilisée pour « supprimer et passer en mode insertion »
-\end{itemize}
+* |ttd| est utilisée pour « supprimer »
+* |ttc| est utilisée pour « supprimer et passer en mode insertion »
 
 À noter que ce qui est supprimé est placé dans le presse-papier en même temps (le « supprimer » se comporte par défaut comme un « couper »).
 
-La particularité de ces touches, c'est qu'elles attendent ensuite un « ordre de déplacement » pour savoir quoi supprimer. Il va donc falloir les combiner avec les déplacements que nous avons déjà vus dans \nameref{sec:se-passer-touches-dir}.
+La particularité de ces touches, c'est qu'elles attendent ensuite un « ordre de déplacement » pour savoir quoi supprimer. Il va donc falloir les combiner avec les déplacements que nous avons déjà vus dans :ref:`secse-passer-touches-dir`.
 
 Cela donnera par exemple :
 
 
-\bigskip
-\begin{tabular}[H]{|c|c|}
-  \hline
-  Action & Résultat \\
-  \hline
-  \ttd puis \ttw & supprime les caractères jusqu'au prochain mot \\
-  \ttc puis \ttw & supprime les caractères jusqu'au prochain mot et passera en mode insertion \\
-  \ttd puis \ttdollar & supprime tout jusqu'à la fin de la ligne \\
-  \ttd puis \tthat & supprime tout jusqu'au début de la ligne \\
-  \hline
-\end{tabular}
-\bigskip
+======================= ============================================================================
+Action                  Résultat
+======================= ============================================================================
+|ttd| puis |ttw|        supprime les caractères jusqu'au prochain mot
+|ttc| puis |ttw|        supprime les caractères jusqu'au prochain mot et passera en mode insertion
+|ttd| puis |ttdollar|   supprime tout jusqu'à la fin de la ligne
+|ttd| puis |tthat|      supprime tout jusqu'au début de la ligne
+======================= ============================================================================
 
 Vous pouvez aussi utiliser cela pour copier :
 
+======================= =============================================================
+Action                   Résultat
+======================= =============================================================
+|tty| puis |ttw|        copie les caractères jusqu'au prochain mot
+|tty| puis |ttdollar|   copie tout jusqu'à la fin de la ligne
+|tty| puis |tthat|      copie tout jusqu'au premier caractère non blanc de la ligne
+======================= =============================================================
 
-\bigskip
-\begin{tabular}[H]{|c|c|}
-  \hline
-  Action & Résultat \\
-  \hline
-
-  |tty| puis \ttw & copie les caractères jusqu'au prochain mot \\
-  |tty| puis \ttdollar & copie tout jusqu'à la fin de la ligne \\
-  |tty| puis \tthat & copie tout jusqu'au premier caractère non blanc de la ligne \\
-  \hline
-\end{tabular}
-\bigskip
-
-Il ne vous restera qu'a appuyer sur \ttp pour coller ce que vous voulez où vous voulez. Par défaut \ttp colle le texte après la position courante du curseur. Si vous voulez coller avant la position du curseur, utilisez \ttP.
-\bigskip
+Il ne vous restera qu'a appuyer sur |ttp| pour coller ce que vous voulez où vous voulez. Par défaut |ttp| colle le texte après la position courante du curseur. Si vous voulez coller avant la position du curseur, utilisez |ttP|.
 
 Il arrive de temps en temps de vouloir aussi supprimer du texte (non sans blague !), voici quelques commandes utiles pour cela :
 
-
-\bigskip
-\begin{tabular}[H]{|c|c|}
-  \hline
-  Action & Résultat \\
-  \hline
-
-  \td\td & efface la ligne courante et la place dans le presse-papier \\
-  \tx & efface le caractère sous le curseur \\
-  \tX & efface le caractère avant le curseur \\
-  \hline
-\end{tabular}
-
-\bigskip
+========= ============
+Action    Résultat
+========= ============
+|tdtd|    efface la ligne courante et la place dans le presse-papier
+|tx|      efface le caractère sous le curseur
+|tX|      efface le caractère avant le curseur
+========= ============
 
 La plupart des mouvements peuvent être préfixés par un nombre multiplicateur. Voici quelques exemples :
 
-\bigskip
-\begin{tabular}[H]{|c|c|}
-  \hline
-  Action & Résultat \\
-  \hline
-
-  ``2``\td\td & efface deux lignes \\
-  ``3``\tx & efface 3 caractères vers l'avant du curseur \\
-  ``3``\tX & efface 3 caractères vers l'arrière du curseur \\
-  ``2``\ty\ty & copie 2 lignes dans le presse-papier\\
-  ``5``\tj & se déplace de 5 lignes vers le bas\\
-  \hline
-\end{tabular}
-\bigskip
+================= ============
+Action            Résultat
+================= ============
+``2``\ |td|\ |td| efface deux lignes
+``3``\ |tx|       efface 3 caractères vers l'avant du curseur
+``3``\ |tX|       efface 3 caractères vers l'arrière du curseur
+``2``\ |ty|\ |ty| copie 2 lignes dans le presse-papier
+``5``\ |tj|       se déplace de 5 lignes vers le bas
+================= ============
 
 
-\section{Rechercher / Se déplacer rapidement}
+Rechercher / Se déplacer rapidement
+===================================
 
-Maintenant que nous connaissons les commandes de base pour éditer du texte avec |vim|, voyons voir comment nous déplacer plus rapidement dans notre document. Nous avons déjà évoqué les touches \tw, \tb, \that et \tdollar qui nous permettent respectivement de se déplacer à la fin d'un mot, au début d'un mot, au début d'une ligne et la fin d'une ligne. Tout d'abord, voyons voir comment « scroller » sans la souris. À noter que toutes ces commandes se font en mode « normal ».
+Maintenant que nous connaissons les commandes de base pour éditer du texte avec |vim|, voyons voir comment nous déplacer plus rapidement dans notre document. Nous avons déjà évoqué les touches |tw|, |tb|, |that| et |tdollar| qui nous permettent respectivement de se déplacer à la fin d'un mot, au début d'un mot, au début d'une ligne et la fin d'une ligne. Tout d'abord, voyons voir comment « scroller » sans la souris. À noter que toutes ces commandes se font en mode « normal ».
 
-\subsection{Sauts de page}
+Sauts de page
+-------------
 
 Pour faire défiler les pages, il faut utiliser :
 
-\bigskip
-
-\begin{itemize}
-    \item \tctrl + \tf pour passer à la page suivante (\tf pour forward)
-    \item \tctrl + \tb pour passer à la page précédente (\tb pour backward)
-\end{itemize}
-
-\bigskip
+* |tctrl| + |tf| pour passer à la page suivante (|tf| pour forward)
+* |tctrl| + |tb| pour passer à la page précédente (|tb| pour backward)
 
 Ces raccourcis vont vous permettre d'avancer rapidement dans votre document. 
 
 Vous pouvez aussi :
 
-\begin{itemize}
-    \item Vous rendre au début du fichier en tapant \tg\tg
-    \item Vous rendre à la fin du fichier en tapant \tG
-    \item Vous rendre à la ligne 23 en tapant \tcolon``23``
-\end{itemize}
+* Vous rendre au début du fichier en tapant |tgtg|
+* Vous rendre à la fin du fichier en tapant |tG|
+* Vous rendre à la ligne 23 en tapant |tcolon|\ ``23``
 
-\subsection{Les marqueurs}
+Les marqueurs
+-------------
 
 Lorsque je me déplace dans un fichier, j'aime bien pouvoir revenir à certains endroits. Par exemple lorsque je me rends au début du fichier alors que j'étais en train de travailler au milieu de celui-ci, j'aime bien pouvoir revenir directement où je travaillais. Heureusement, |vim| a tout prévu pour cela grâce à l'utilisation de **marqueurs**. Les marqueurs sont tout simplement des « marque-pages » qui permettent à votre curseur de se retrouver à la position où vous aviez mis votre marqueur.
 
