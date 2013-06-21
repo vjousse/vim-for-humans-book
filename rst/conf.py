@@ -96,7 +96,24 @@ rst_prolog = u"""
 rst_epilog = u"""
 .. |vim| replace:: *Vim*
 .. |vimrc| replace:: *~/.vimrc*
+.. |that| replace:: ^
+.. |tdollar| replace:: $
+.. |tzero| replace:: 0
+.. |ta| replace:: a
+.. |tA| replace:: A
+.. |tb| replace:: b
+.. |te| replace:: e
+.. |ti| replace:: i
+.. |tI| replace:: I
+.. |to| replace:: o
+.. |tO| replace:: O
+.. |tr| replace:: r
+.. |tw| replace:: w
+.. |tth| replace:: la touche h
 .. |tti| replace:: la touche i
+.. |ttj| replace:: la touche j
+.. |ttk| replace:: la touche k
+.. |ttl| replace:: la touche l
 .. |tto| replace:: la touche o
 .. |ttp| replace:: la touche p
 .. |ttm| replace:: la touche m

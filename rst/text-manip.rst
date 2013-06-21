@@ -69,7 +69,7 @@ On se rend donc compte ici que |vim| se sert de l'astuce des modes (et notamment
 .. _secse-passer-touches-dir:
 
 Se passer des touches directionnelles
--------------------------------------
+=====================================
 
 Nous y voilà. Encore plus que de se priver de la souris, se priver des touches directionnelles est la chose à faire si l'on veut utiliser |vim|, pour de vrai. |vim| va vous permettre de faire tout plus rapidement et plus intuitivement à la seule condition de le faire sans les touches directionnelles.
 Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main certes, mais ça va aussi vous forcer à passer en mode « normal » pour réaliser vos déplacements et vos mouvements de texte. Il n'y a qu'à ce moment là\footnote{Un peu douloureux au début il est vrai.} que vous commencerez à vraiment tirer parti de |vim|.
@@ -77,60 +77,50 @@ Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main cert
 Pour cette section, je vais vous expliquer comment vous déplacer sans utiliser les touches directionnelles. Puis, une fois que vous aurez une vague idée de comment faire, je vous donnerai le code à mettre dans votre |vimrc| pour désactiver les touches directionnelles complètement. Car oui, il n'y a que comme ça que vous y arriverez (en tout cas il n'y a que comme ça que j'y suis arrivé).
 
 
-\subsection{Se déplacer sans les touches directionnelles}
+Se déplacer sans les touches directionnelles
+--------------------------------------------
 
 En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un caractère :
-\begin{itemize}
-    \item \tth pour aller **à gauche**
-    \item \ttj pour aller **en bas**
-    \item \ttk pour aller **en haut**
-    \item \ttl pour aller **à droite**
-\end{itemize}
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/hjkl.png}
-  \caption{Les « touches directionnelles » de |vim| en mode normal.}
-  \label{fig:vim-hjkl}
-\end{figure}
+* |tth| pour aller **à gauche**
+* |ttj| pour aller **en bas**
+* |ttk| pour aller **en haut**
+* |ttl| pour aller **à droite**
+
+
+.. _hjkl:
+
+.. image:: ../book-tex/graphics/hjkl.png
 
 Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien\footnote{Vous trouverez le clavier sur lequel *Vi* a été conçu dan la section « \nameref{sec:esc} », vous comprendrez ainsi le pourquoi du comment.}.
 
 À noter qu'à force, on se sert de moins en moins des déplacements gauche/droite d'un caractère. On va leur préférer les déplacements de mot en mot, de paragraphe en paragraphe ou les déplacements grâce à des recherches. Quelques exemples de déplacements "rapides" que j'utilise :
 
-\bigskip
+========== ===============================================
+Touche     Déplacement
+========== ===============================================
+|te|       **à la fin du mot courant**
+|tb|       **au début du mot courant**
+|tw|       **au début du mot suivant**
+|that|     **au premier caractère non blanc de la ligne**
+|tdollar|  **à la fin de la ligne**
+|tzero|    **au début de la ligne**
+========== ===============================================
 
-\begin{tabular}[H]{|c|c|}
-  \hline
-  Touche & Déplacement \\
-  \hline
-  \te & **à la fin du mot courant** \\
-  \tb & **au début du mot courant** \\
-  \tw & **au début du mot suivant** \\
-  \that & **au premier caractère non blanc de la ligne** \\
-  \tdollar & **à la fin de la ligne** \\
-  \tzero & **au début de la ligne** \\
-  \hline
-\end{tabular}
-
-\bigskip
 
 Vous avez ici le minimum pour vous déplacer en mode normal. Il existe aussi des commandes vous permettant de vous déplacer puis de rentrer en mode insertion directement, elles sont très pratiques car elles vont vous permettre d'économiser quelques touches. En voici quelques unes que j'utilise à peu près tout le temps :
 
-\bigskip
-\begin{tabular}[H]{|c|c|}
-  \hline
-  Touche & Action \\
-  \hline
-  \ti & se place en mode insertion **avant l'emplacement du curseur** \\
-  \ta & se place en mode insertion **après l'emplacement du curseur** \\
-  \tI & se place en mode insertion **au début de la ligne** \\
-  \tA & se place en mode insertion **à la fin de la ligne** \\
-  \kto & insère une nouvelle ligne **en dessous de la ligne courante** \\
-  \tO & insère une nouvelle ligne **au dessus de la ligne courante** \\
-  \tr & **remplace les caractères** sous le curseur \\
-  \hline
-\end{tabular}
-\bigskip
+======== ================================================================
+Touche   Action
+======== ================================================================
+|ti|     se place en mode insertion **avant l'emplacement du curseur**
+|ta|     se place en mode insertion **après l'emplacement du curseur**
+|tI|     se place en mode insertion **au début de la ligne**
+|tA|     se place en mode insertion **à la fin de la ligne**
+|to|     insère une nouvelle ligne **en dessous de la ligne courante**
+|tO|     insère une nouvelle ligne **au dessus de la ligne courante**
+|tr|     **remplace les caractères** sous le curseur
+======== ================================================================
 
 Arrêtons-nous un peu là dessus. Au risque d'insister lourdement, mais la clé de l'utilisation de |vim| vient de ce que nous venons de voir dans ce chapitre, ni plus, ni moins. Il y a une chose que vous avez à vous forcer à faire, c'est **d'utiliser les touches hjkl** pour les déplacements. Si vous y arrivez, vous apprendrez tout le reste au fur et à mesure.
 
