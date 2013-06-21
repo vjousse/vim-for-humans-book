@@ -94,8 +94,8 @@ rst_prolog = u"""
 """
 
 rst_epilog = u"""
-.. |vim| replace:: ``*Vim*``
-.. |vimrc| replace:: ``*~/.vimrc*``
+.. |vim| replace:: *Vim*
+.. |vimrc| replace:: ``~/.vimrc``
 .. |that| replace:: ``^``
 .. |tdollar| replace:: ``$``
 .. |tzero| replace:: ``0``
@@ -103,6 +103,11 @@ rst_epilog = u"""
 .. |tsemicolon| replace:: ``;``
 .. |tcolon| replace:: ``:``
 .. |tctrl| replace:: ``Control``
+.. |tapos| replace:: ``'``
+.. |tslash| replace:: ``\\``
+.. |tenter| replace:: ``Entrée``
+.. |tstar| replace:: ``*``
+.. |tsharp| replace:: ``#``
 .. |ta| replace:: ``a``
 .. |tA| replace:: ``A``
 .. |tb| replace:: ``b``
@@ -120,11 +125,12 @@ rst_epilog = u"""
 .. |tk| replace:: ``k``
 .. |tl| replace:: ``l``
 .. |tm| replace:: ``m``
+.. |tn| replace:: ``n``
+.. |tN| replace:: ``N``
 .. |to| replace:: ``o``
 .. |tO| replace:: ``O``
 .. |tp| replace:: ``p``
 .. |tr| replace:: ``r``
-.. |tv| replace:: ``v``
 .. |tv| replace:: ``v``
 .. |tw| replace:: ``w``
 .. |tx| replace:: ``x``
@@ -138,6 +144,8 @@ rst_epilog = u"""
 .. |ttj| replace:: la touche |tj|
 .. |ttk| replace:: la touche |tk|
 .. |ttl| replace:: la touche |tl|
+.. |ttn| replace:: la touche |tn|
+.. |ttN| replace:: la touche |tN|
 .. |tto| replace:: la touche |to|
 .. |ttp| replace:: la touche |tp|
 .. |ttP| replace:: la touche |tP|
@@ -146,11 +154,15 @@ rst_epilog = u"""
 .. |ttx| replace:: la touche |tx|
 .. |tty| replace:: la touche |ty|
 .. |ttw| replace:: la touche |tw|
+.. |ttsharp| replace:: la touche |tsharp|
+.. |ttstar| replace:: la touche |tstar|
 .. |ttesc| replace:: la touche |tesc|
 .. |ttsemicolon| replace:: la touche |tsemicolon|
 .. |ttdollar| replace:: la touche |tdollar|
 .. |tthat| replace:: la touche |that|
 .. |ttctrl| replace:: la touche |tctrl|
+.. |ttslash| replace:: la touche |tslash|
+.. |ttenter| replace:: la touche |tenter|
 """
 
 

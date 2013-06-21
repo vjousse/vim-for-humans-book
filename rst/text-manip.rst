@@ -279,66 +279,55 @@ Les marqueurs
 
 Lorsque je me déplace dans un fichier, j'aime bien pouvoir revenir à certains endroits. Par exemple lorsque je me rends au début du fichier alors que j'étais en train de travailler au milieu de celui-ci, j'aime bien pouvoir revenir directement où je travaillais. Heureusement, |vim| a tout prévu pour cela grâce à l'utilisation de **marqueurs**. Les marqueurs sont tout simplement des « marque-pages » qui permettent à votre curseur de se retrouver à la position où vous aviez mis votre marqueur.
 
-Un marqueur se pose en tapant \tm\ta. Pour déplacer votre curseur à la position du marqueur tapez \tapos\ta. Vous pouvez placez plusieurs marqueurs en changeant \ta par n'importe quelle lettre de l'alphabet (on appelle cela des registres en langage |vim|). Pour placer un autre marqueur vous pouvez par exemple utiliser la lettre \td. Grâce à \tm\td vous placerez le marqueur et à \tapos\td vous vous y rendrez.
+Un marqueur se pose en tapant |tm|\ |ta|. Pour déplacer votre curseur à la position du marqueur tapez |tapos|\ |ta|. Vous pouvez placez plusieurs marqueurs en changeant |ta| par n'importe quelle lettre de l'alphabet (on appelle cela des registres en langage |vim|). Pour placer un autre marqueur vous pouvez par exemple utiliser la lettre |td|. Grâce à |tm|\ |td| vous placerez le marqueur et à |tapos|\ |td| vous vous y rendrez.
 
-\subsection{La recherche}
+La recherche
+------------
 
-En mode normal, vous pouvez lancez une recherche en utilisant \ttslash suivi du texte que vous souhaitez rechercher puis de \ttenter. Grâce à notre configuration de |vim| vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse. Vous pouvez vous déplacer à la prochaine occurrence de la recherche grâce à \ttn. Pour vous déplacer à la précédente utilisez \ttN.
+En mode normal, vous pouvez lancez une recherche en utilisant |ttslash| suivi du texte que vous souhaitez rechercher puis de |ttenter|. Grâce à notre configuration de |vim| vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse. Vous pouvez vous déplacer à la prochaine occurrence de la recherche grâce à |ttn|. Pour vous déplacer à la précédente utilisez |ttN|.
 
-Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela :
+Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela :::
 
-\begin{listing}[H]
+    " -- Recherche
+    set ignorecase            " Ignore la casse lors d'une recherche
+    set smartcase             " Si une recherche contient une majuscule,
+                                " re-active la sensibilite a la casse
+    set incsearch             " Surligne les resultats de recherche pendant la
+                                " saisie
+    set hlsearch              " Surligne les resultats de recherche
 
-    \begin{minted}[bgcolor=bg, gobble=8]{vim}
-        " -- Recherche
-        set ignorecase            " Ignore la casse lors d'une recherche
-        set smartcase             " Si une recherche contient une majuscule,
-                                  " re-active la sensibilite a la casse
-        set incsearch             " Surligne les resultats de recherche pendant la
-                                  " saisie
-        set hlsearch              " Surligne les resultats de recherche
-    \end{minted}
-    \caption{Configuration de la recherche avec |vim|.}
-    \label{code:search-config}
-\end{listing}
+Attention par défaut, la recherche utilise les expressions régulières POSIX. Si vous souhaitez rechercher des caractères habituellement utilisés dans les expressions régulières (comme [ ] ^{ } $ /) n'oubliez pas de les préfixer par \\.
 
-Attention par défaut, la recherche utilise les expressions régulières POSIX. Si vous souhaitez rechercher des caractères habituellement utilisés dans les expressions régulières (comme [ ] \^{ } \$ /) n'oubliez pas de les préfixer par \textbackslash.
+Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à |ttstar|. Utiliser |ttstar| fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez |ttsharp|.
 
-Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à \ttstar. Utiliser \ttstar fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez \ttsharp.
-
-\section{Le mode visuel}
+Le mode visuel
+==============
 
 Je vous en ai déjà parlé lors de l'explication sur le Copier / Coller, mais comme je sais que certains d'entre vous sont tête en l'air, je vous fais un petit rappel ici.
 
-Lorsque vous êtes en mode « normal » appuyez sur \ttv pour passer en mode "visuel". Vous pourrez alors sélectionner des caractères ou des lignes entières grâce aux différentes façon de vous déplacer que vous venez d'apprendre. Vous pourrez ensuite copier le texte sélectionné avec |tty| puis le coller avec \ttp. Pour le couper il vous faudra utiliser \ttd.
+Lorsque vous êtes en mode « normal » appuyez sur |ttv| pour passer en mode "visuel". Vous pourrez alors sélectionner des caractères ou des lignes entières grâce aux différentes façon de vous déplacer que vous venez d'apprendre. Vous pourrez ensuite copier le texte sélectionné avec |tty| puis le coller avec |ttp|. Pour le couper il vous faudra utiliser |ttd|.
 
-En mode normal vous pourrez utiliser \ttV pour sélectionner lignes par lignes. Et bien sûr, utiliser |ttesc| ou :vimcmd:`;;` pour revenir au mode normal.
+En mode normal vous pourrez utiliser |ttV| pour sélectionner lignes par lignes. Et bien sûr, utiliser |ttesc| ou :vimcmd:`;;` pour revenir au mode normal.
 
-\section{À vous de jouer}
+À vous de jouer
+===============
 
 Vous devriez maintenant être capable de n'utiliser que le clavier pour les opérations de manipulation de texte et d'édition. Je n'ai fait que survoler la puissance de |vim| ici, mais ça devrait être suffisant pour survivre. Je vous ai donné ici le strict nécessaire, mais ce strict nécessaire vous permet déjà de profiter de |vim| et du plaisir de ne plus utiliser la souris.
 
 À vous maintenant de lire les nombreuses ressources disponibles sur internet vous décrivant tous les mouvements possibles et imaginables. Je ne manquerai d'ailleurs pas de compléter ce guide avec des articles sur le site internet qui lui est dédié http://vimebook.com.
 
-\bigskip
 Voici une liste de ressources qui pourraient vous être utiles, malheureusement les ressources en français sont assez rares :
 
-\begin{itemize}
-    \item A byte of |vim| en français http://www.swaroopch.com/notes/vim_fr/
-    \item Un petit pense bête sympathique de différents raccourcis clavier http://www.tuteurs.ens.fr/unix/editeurs/vim.html
-    \item Un wiki non officiel francophone (un peu fouillis soit dit en passant) : www.vim-fr.org/
-    \item Les vidéos Peepcode en anglais mais vraiment superbement réalisées : https://peepcode.com/products/smash-into-vim-i et https://peepcode.com/products/smash-into-vim-ii
-    \item Le blog de Derek Wyatt's en anglais http://www.derekwyatt.org/vim/vim-tutorial-videos/
-\end{itemize}
+* A byte of |vim| en français http://www.swaroopch.com/notes/vim_fr/
+* Un petit pense bête sympathique de différents raccourcis clavier http://www.tuteurs.ens.fr/unix/editeurs/vim.html
+* Un wiki non officiel francophone (un peu fouillis soit dit en passant) : www.vim-fr.org/
+* Les vidéos Peepcode en anglais mais vraiment superbement réalisées : https://peepcode.com/products/smash-into-vim-i et https://peepcode.com/products/smash-into-vim-ii
+* Le blog de Derek Wyatt's en anglais http://www.derekwyatt.org/vim/vim-tutorial-videos/
 
-\bigskip
 Histoire de réveilleur l'enfant qui est en vous, je vous conseille vivement d'aller vous amuser avec http://vim-adventures.com/. C'est un jeu de rôle en ligne qui a pour but de vous apprendre à manipuler |vim| ! Je vous ai mis un petit aperçu dans l'image numéro \ref{fig:vim-adventures}.
 
-\begin{figure}%
-  \includegraphics[width=\linewidth]{graphics/vim-adventures.png}
-  \caption{Vim adventures, une façon ludique d'apprendre |vim|.}
-  \label{fig:vim-adventures}
-\end{figure}
+.. _vim-adventures:
 
+.. image:: ../book-tex/graphics/vim-adventures.png
 
 Nous allons maintenant passer à la vitesse supérieure : l'utilisation de plugins, ou comment rendre |vim| incontournable.
