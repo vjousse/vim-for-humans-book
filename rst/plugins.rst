@@ -168,55 +168,46 @@ Non ce n'est pas pareil que Ack, relisez bien le titre. Ici nous n'allons pas ch
 
 Comme d'habitude nous allons commencer par installer le plugin. Une fois n'est pas coutume, le plugin dispose d'une page dédiée plutôt bien réalisée que vous trouverez ici : http://kien.github.com/ctrlp.vim/. Scrollez tout en bas pour télécharger la dernière version en "Direct Downloads". Pour les paresseux, voici un lien direct : http://github.com/kien/ctrlp.vim/zipball/master. Décompressez l'archive dan votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
 
-\begin{verbatim}
+.. code-block:: html
 
-bundle
-|
-…
-|-- ctrlp
-|   |-- autoload
-|   |   |-- ctrlp
-|   |   |   |-- bookmarkdir.vim
-|   |   |   |-- buffertag.vim
-|   |   |   |-- changes.vim
-|   |   |   |-- dir.vim
-|   |   |   |-- line.vim
-|   |   |   |-- mixed.vim
-|   |   |   |-- mrufiles.vim
-|   |   |   |-- quickfix.vim
-|   |   |   |-- rtscript.vim
-|   |   |   |-- tag.vim
-|   |   |   |-- undo.vim
-|   |   |   `-- utils.vim
-|   |   `-- ctrlp.vim
-|   |-- doc
-|   |   `-- ctrlp.txt
-|   |-- plugin
-|   |   `-- ctrlp.vim
-|   `-- readme.md
-…
-\end{verbatim}
+    bundle
+    |
+    …
+    |-- ctrlp
+    |   |-- autoload
+    |   |   |-- ctrlp
+    |   |   |   |-- bookmarkdir.vim
+    |   |   |   |-- buffertag.vim
+    |   |   |   |-- changes.vim
+    |   |   |   |-- dir.vim
+    |   |   |   |-- line.vim
+    |   |   |   |-- mixed.vim
+    |   |   |   |-- mrufiles.vim
+    |   |   |   |-- quickfix.vim
+    |   |   |   |-- rtscript.vim
+    |   |   |   |-- tag.vim
+    |   |   |   |-- undo.vim
+    |   |   |   `-- utils.vim
+    |   |   `-- ctrlp.vim
+    |   |-- doc
+    |   |   `-- ctrlp.txt
+    |   |-- plugin
+    |   |   `-- ctrlp.vim
+    |   `-- readme.md
+    …
 
-Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant |vim| ou en tapant :vimcmd:`:source \~{`/.vimrc} en mode normal.
+Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant |vim| ou en tapant :vimcmd:`:source ~/.vimrc` en mode normal.
 
-Nous n'avons plus qu'à ajouter un raccourci dans notre |vimrc| pour invoquer CtrlP comme le montre le listing \ref{code:ctrlp}. Dans mon cas j'ai choisi :vimcmd:`,c`, mais vous pouvez choisir ce que vous voulez.
+Nous n'avons plus qu'à ajouter un raccourci dans notre |vimrc| pour invoquer CtrlP comme le montre le listing ci-dessous. Dans mon cas j'ai choisi ``,c``, mais vous pouvez choisir ce que vous voulez.::
 
-\begin{listing}[H]
+    let g:ctrlp_map = '<leader>c'
 
-    \begin{minted}[bgcolor=bg, gobble=8]{vim}
-        let g:ctrlp_map = '<leader>c'
-    \end{minted}
-    \caption{Configuration du raccourci pour activer CtrlP.}
-    \label{code:ctrlp}
-\end{listing}
+Voici CtrlP en action. 
 
-La figure \ref{fig:vim-ctrlp} vous montre CtrlP en action. Il vous suffit de l'invoquer avec :vimcmd:`,c` et de taper le début du fichier que vous recherchez. Quand le fichier voulu sera sélectionné en premier, il ne vous restera plus qu'à appuyer sur |ttenter| pour l'ouvrir.
+.. image:: ../book-tex/graphics/vim-ctrlp.png
 
-\begin{figure}
-  \includegraphics[width=\linewidth]{graphics/vim-ctrlp.png}
-  \caption{|vim| avec CtrlP de lancé.}
-  \label{fig:vim-ctrlp}
-\end{figure}
+Il vous suffit de l'invoquer avec ``,c`` et de taper le début du fichier que vous recherchez. Quand le fichier voulu sera sélectionné en premier, il ne vous restera plus qu'à appuyer sur |ttenter| pour l'ouvrir.
+
 
 À noter que CtrlP peut aussi être utilisé pour naviguer entre les fichiers ouverts (comme Lusty). Mais à l'usage, je le trouve moins pratique que Lusty. Vous pouvez aussi vous en servir pour naviguer automatiquement dans votre code en "suivant" vos fonctions grâce aux tags (comme on peut le faire dans Eclipse). C'est un trop vaste sujet pour être traité dans ce guide, mais si ça vous intéresse vous pouvez déjà consulter cet article de blog sur le sujet : http://andrew-stewart.ca/2012/10/31/vim-ctags (en anglais).
 
@@ -226,16 +217,10 @@ Les plugins avancés
 J'aurais pu faire un livre entier qui recense les plugins |vim|, mais je pense que l'intérêt aurait été assez limité. Je ne vais donc pas vous décrire plus en détails d'autres plugins. En revanche je vous donne ci-dessous une liste de plugins qui pourraient vous intéresser. Cette liste est issue d'un sondage que j'avais effectué sur Twitter demandant à mes followers quels étaient les plugins |vim| indispensables selon eux. La voici :
 
 
-\begin{itemize}
 
-    \item **neocomplcache**. C'est un plugin de complétion automatique. Il peut compléter les noms de fichiers, les attributs du langage que vous utilisez, les snippets et encore bien d'autres choses. Le repo Github : https://github.com/Shougo/neocomplcache.
+* **neocomplcache**. C'est un plugin de complétion automatique. Il peut compléter les noms de fichiers, les attributs du langage que vous utilisez, les snippets et encore bien d'autres choses. Le repo Github : https://github.com/Shougo/neocomplcache.
+* **surround**. Ce plugin permet de gérer (changer, ajouter, supprimer) tout ce qui « entoure » : les parenthèses, les crochets, les guillemets … Par exemple vous pourrez en une combinaison de touches changer "Hello world!" en 'Hello world!' ou <q>Hello world!</q>. Le repo Github : https://github.com/tpope/vim-surround.
+* **fugitive**. Si vous travaillez sur du code source vous utilisez forcément un gestionnaire de version de code source. Si ce n'est pas le cas vous pouvez aller vous cacher. Sinon si vous utilisez Git, Le plugin fugitive est pour vous. Il permet de gérer git directement dans |vim|. Le repo Github :  https://github.com/tpope/vim-fugitive
+* **syntastic**. Syntastic vérifie pour vous la syntaxe de votre code source. Il va, comme peut le faire Eclipse par exemple, vous afficher vos erreurs de syntaxe directement dans |vim|. Peut vous faire gagner en temps certain si vous éditez souvent du code. Le repo Github est par ici : https://github.com/scrooloose/syntastic
+* **ctags + ctrlp**. Ctags est un petit programme externe qui va parcourir votre code source et qui va ensuite vous permettre de « suivre » vos fonctions dans votre code source. Très pratique pour naviguer dans votre code source. Utilisé conjointement avec **ctrlp** décrit plus haut, il s'avère vite indispensable. Tout est expliqué ici : http://andrew-stewart.ca/2012/10/31/vim-ctags.
 
-    \item **surround**. Ce plugin permet de gérer (changer, ajouter, supprimer) tout ce qui « entoure » : les parenthèses, les crochets, les guillemets … Par exemple vous pourrez en une combinaison de touches changer "Hello world!" en 'Hello world!' ou <q>Hello world!</q>. Le repo Github : https://github.com/tpope/vim-surround.
-
-    \item **fugitive**. Si vous travaillez sur du code source vous utilisez forcément un gestionnaire de version de code source. Si ce n'est pas le cas vous pouvez aller vous cacher. Sinon si vous utilisez Git, Le plugin fugitive est pour vous. Il permet de gérer git directement dans |vim|. Le repo Github :  https://github.com/tpope/vim-fugitive
-
-    \item **syntastic**. Syntastic vérifie pour vous la syntaxe de votre code source. Il va, comme peut le faire Eclipse par exemple, vous afficher vos erreurs de syntaxe directement dans |vim|. Peut vous faire gagner en temps certain si vous éditez souvent du code. Le repo Github est par ici : https://github.com/scrooloose/syntastic
-
-    \item **ctags + ctrlp**. Ctags est un petit programme externe qui va parcourir votre code source et qui va ensuite vous permettre de « suivre » vos fonctions dans votre code source. Très pratique pour naviguer dans votre code source. Utilisé conjointement avec **ctrlp** décrit plus haut, il s'avère vite indispensable. Tout est expliqué ici : http://andrew-stewart.ca/2012/10/31/vim-ctags.
-
-\end{itemize}
