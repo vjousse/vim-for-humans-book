@@ -15,6 +15,7 @@ Contents:
    usable-vim
    text-manip
    plugins
+   examples
 
 
 

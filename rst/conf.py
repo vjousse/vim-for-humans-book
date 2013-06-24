@@ -132,6 +132,7 @@ rst_epilog = u"""
 .. |to| replace:: ``o``
 .. |tO| replace:: ``O``
 .. |tp| replace:: ``p``
+.. |tu| replace:: ``u``
 .. |tr| replace:: ``r``
 .. |tv| replace:: ``v``
 .. |tw| replace:: ``w``
@@ -141,6 +142,7 @@ rst_epilog = u"""
 .. |tyty| replace:: ``yy``
 .. |ttc| replace:: la touche |tc|
 .. |ttd| replace:: la touche |td|
+.. |tte| replace:: la touche |te|
 .. |tth| replace:: la touche |th|
 .. |tti| replace:: la touche |ti|
 .. |ttj| replace:: la touche |tj|
@@ -152,6 +154,8 @@ rst_epilog = u"""
 .. |ttp| replace:: la touche |tp|
 .. |ttP| replace:: la touche |tP|
 .. |ttm| replace:: la touche |tm|
+.. |ttu| replace:: la touche |tu|
+.. |ttr| replace:: la touche |tr|
 .. |ttv| replace:: la touche |tv|
 .. |ttx| replace:: la touche |tx|
 .. |tty| replace:: la touche |ty|
