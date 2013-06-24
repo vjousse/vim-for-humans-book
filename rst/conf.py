@@ -108,6 +108,8 @@ rst_epilog = u"""
 .. |tenter| replace:: ``Entrée``
 .. |tstar| replace:: ``*``
 .. |tsharp| replace:: ``#``
+.. |tleader| replace:: ``<Leader>``
+.. |tcomma| replace:: ``,``
 .. |ta| replace:: ``a``
 .. |tA| replace:: ``A``
 .. |tb| replace:: ``b``

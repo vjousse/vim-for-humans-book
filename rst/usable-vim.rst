@@ -263,6 +263,8 @@ Actuellement, Pathogen reste encore le gestionnaire de plugins |vim| le plus uti
 
 Voilà notre |vim| est presque prêt pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet. C'est ici que *The NERD Tree* entre en lice.
 
+.. _secnerdtree:
+
 Explorateur de fichiers : The NERD Tree
 ---------------------------------------
 

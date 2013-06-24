@@ -13,4 +13,5 @@ s/\\xspace//g
 s/\\ttesc/|ttesc|/g
 s/\\tti/|tti|/g
 s/\\tty/|tty|/g
+s/\\\(t[^ .,!?]*\)/|\1|/g
 s/\\hlred{\([^}]*\)}/\1/g
