@@ -77,7 +77,7 @@ Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou
 
 .. image:: ../book-tex/graphics/vim-lusty.png
 
-Je vous conseille maintenant de désactiver *The Nerd Tree* (en commentant la ligne au dessus du *mapleader* comme je l'ai fait dans la figure \ref{fig:vim-lusty-fuzzy}), il ne vous servira plus à grand chose, *Lusty Explorer* le remplace à merveille.
+Je vous conseille maintenant de désactiver *The Nerd Tree* (en commentant la ligne au dessus du *mapleader* comme je l'ai fait dans la figure suivante, il ne vous servira plus à grand chose, *Lusty Explorer* le remplace à merveille.
 
 Vous pouvez constater sur `la capture d'écran de lusty`_ qu'il y a deux parties à *Lusty Explorer*. La partie basse vous indique le répertoire que vous êtes en train d'explorer et la partie haute liste le contenu de ce répertoire. En surbrillance se trouve l'élément couramment sélectionné. Dans le cas de `la capture d'écran de lusty`_ c'est le répertoire ``.vim/`` en jaune  (la couleur pourra être différente en fonction de votre thème).
 
@@ -140,7 +140,7 @@ Ack recherchera alors à partir du répertoire où se trouve votre fichier coura
 * ``,ja`` avec votre curseur sur un mot recherchera ce mot.
 
 
-Le plugin Ack vous affichera les résultats dans une fenêtre que l'on appelle *Quickfix Window*, cf image \ref{fig:vim-ack-quickfix}.
+Le plugin Ack vous affichera les résultats dans une fenêtre que l'on appelle *Quickfix Window*, cf image suivante.
 
 .. image:: ../book-tex/graphics/vim-ack-quickfix.png
 
