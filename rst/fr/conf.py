@@ -184,11 +184,11 @@ html_theme = 'default'
 #html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
-#html_theme_path = []
+html_theme_path = ['_themes']
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = "Vim pour les humains"
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -334,6 +334,7 @@ epub_title = 'Vim pour les humains'
 epub_author = 'Vincent Jousse'
 epub_publisher = 'Vincent Jousse'
 epub_copyright = '2013, Vincent Jousse'
+epub_theme = 'epub2'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
