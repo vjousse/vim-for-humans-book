@@ -77,7 +77,7 @@ Résultat attendu                                                Action
 **Se déplacer à la ligne 42**                                   ``:42``
 **Se déplacer au début du fichier**                             ``gg`` ou ``:0``
 **Se déplacer à la fin du fichier**                             ``GG`` ou ``:$``
-**Se déplacer à la fin de la ligne**                            ``\$``
+**Se déplacer à la fin de la ligne**                            ``$``
 **Se déplacer au premier caractère non vide de la ligne**       ``^``
 **Se déplacer au début de la ligne**                            ``0``
 **Descendre d'une page**                                        ``Ctrl+f``

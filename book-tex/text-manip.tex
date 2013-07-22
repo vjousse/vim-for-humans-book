@@ -182,10 +182,11 @@ L'étape ultime (après avoir réussi à se passer des touches directionnelles) 
 \begin{listing}[H]
 
     \begin{minted}[bgcolor=bg, gobble=8]{vim}
-        " Les ; sons rarement utilise l'un a la suite de l'autre
+        " Les ; sont rarement utilises l'un a la suite de l'autre
         :imap ;; <Esc>
+        :map ;; <Esc>
     \end{minted}
-    \caption{Taper deux fois sur \hlred{;} pour quitter le mode normal.}
+    \caption{Taper deux fois sur \hlred{;} pour quitter le mode insertion ou le mode visuel.}
     \label{code:avoid-esc}
 \end{listing}
 

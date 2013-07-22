@@ -29,7 +29,7 @@ Rendez-vous sur l'url du script http://www.vim.org/scripts/script.php?script_id=
         |   `-- plugin
         |       `-- lusty-explorer.vim
 
-Si vous avez suivi tout ce que l'on a fait depuis le début votre répertoire \dotvim, il devrait maintenant ressembler à cela :
+Si vous avez suivi tout ce que l'on a fait depuis le début votre répertoire ``.vim/``, il devrait maintenant ressembler à cela :
 
 .. code-block:: html
 
@@ -69,7 +69,7 @@ Il faut donc choisir une touche |tleader|. Par défaut, |vim| utilise ``\`` comm
 
     let mapleader = ","
 
-Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou en tapant :vimcmd:`:so ~/.vimrc` ou :vimcmd:`:so \$MYVIMRC` en mode normal), vous devriez être en mesure de taper ``,lr`` et d'avoir le même style de résultat que sur la figure ci-dessous.
+Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou en tapant :vimcmd:`:so ~/.vimrc` ou :vimcmd:`:so $MYVIMRC` en mode normal), vous devriez être en mesure de taper ``,lr`` et d'avoir le même style de résultat que sur la figure ci-dessous.
 
 .. _la capture d'écran de lusty: lusty_
 
