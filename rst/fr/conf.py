@@ -105,6 +105,7 @@ rst_epilog = u"""
 .. |tctrl| replace:: ``Control``
 .. |tapos| replace:: ``'``
 .. |tslash| replace:: ``\\``
+.. |tshift| replace:: ``Shift``
 .. |tenter| replace:: ``Entrée``
 .. |tstar| replace:: ``*``
 .. |tsharp| replace:: ``#``
@@ -161,6 +162,7 @@ rst_epilog = u"""
 .. |tty| replace:: la touche |ty|
 .. |ttw| replace:: la touche |tw|
 .. |ttsharp| replace:: la touche |tsharp|
+.. |ttshift| replace:: la touche |tshift|
 .. |ttstar| replace:: la touche |tstar|
 .. |ttesc| replace:: la touche |tesc|
 .. |ttsemicolon| replace:: la touche |tsemicolon|
@@ -176,7 +178,7 @@ rst_epilog = u"""
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'custom'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -217,6 +219,7 @@ html_static_path = ['_static']
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
+html_nosidebar = True
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
