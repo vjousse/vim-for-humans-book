@@ -16,7 +16,7 @@ When you need to write or to code, you have to choose a text editor, and a very 
 **For everything** 
     They allow you to edit everything and anything. When you'll use another programming language, or another markup language, you'll not have to change your editor. Of course, this book was written using |vim| (and the `ReST Markup <http://sphinx-doc.org/rest.html>`_).
 
-Et pourtant, ces éditeurs de texte restent difficiles à apprendre. Non pas qu'ils soient plus compliqués qu'autre chose, non pas que vous ne soyez pas à la hauteur, mais plutôt à cause d'un manque de pédagogie des différentes documentations.
+Yet, these text editors are difficult to learn. Not that they are harder than anything else, not that you can't handle it, but rather because there is no smart way out there to learn them for now. So, here we go.
 
 Ce livre a pour but de pallier ce manque en vous guidant tout au long de votre découverte de |vim|. Je laisse *Emacs* à ceux qui savent (pour un bref comparatif c'est ici : http://fr.wikipedia.org/wiki/Guerre_d'\%C3\%A9diteurs. Les goûts et les couleurs …). Il ne prétend pas être un guide exhaustif, vous pouvez essayer *A Byte of vim* pour celà : http://www.swaroopch.org/notes/Vim. En revanche, il prétend diminuer la marche à franchir pour s'habituer à |vim|. À mon sens, le plus compliqué avec |vim|, c'est de ne pas se décourager de suite et de trouver une méthode qui vous permette de l'apprendre au fur et à mesure. Nous avons tous un travail à effectuer au quotidien, et perdre toute sa productivité à cause d'un changement d'éditeur de texte n'est pas envisageable.
 
