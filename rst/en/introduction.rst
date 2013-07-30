@@ -57,34 +57,34 @@ For example, your are a:
 
 Trust me, I am doing/did all this 5 roles, and my best investment has always been, by far, |vim|.
 
-Ce que vous apprendrez (entre autres choses)
-============================================
+What you will be learning
+=========================
 
-- Comment utiliser |vim| comme un éditeur « normal » d'abord (vous savez, ceux qui permettent d'ouvrir des fichiers, de cliquer avec la souris, qui ont une coloration syntaxique ...). En somme, la démystification de |vim| qui vous permettra d'aller plus loin.
-- Comment passer de l'édition de texte classique à la puissance de |vim|, petit à petit (c'est là que l'addiction commence).
-- Comment vous passer de la souris et pourquoi c'est la meilleure chose qu'il puisse vous arriver quand vous programmez/tapez du texte.
-- Comment vous pouvez facilement déduire les raccourcis claviers avec quelques règles simples.
+- How to use |vim| as an "usual" editor first (you know, the type of text editors having syntax highlighting, allowing you to open files, to click using the mouse, …). In short, the demystification of |vim| that will allow you to go further.
+- How to move from classical text editon to the power of |vim|, baby step by baby step (it's where the addiction begins).
+- How to do without the mouse and why it's the best thing that can happen to you when you're programming/writing text.
+- How you can easily deduce keyboard shortcuts with some simple rules.
 
-Si je devais le résumer en une phrase : puisque vous vous considérez comme **un artiste, passez du temps à apprendre** comment utiliser l'outil qui vous permet de vous exprimer, une bonne fois pour toute.
+To sum up: as you consider yourself a craftsman, act like one. Learn how to use your tool, once and for all.
 
-Ce que vous n'apprendrez pas (entre autres choses)
-==================================================
+What you will not be learning
+=============================
 
-- Vous n'apprendrez pas comment installer/configurer |vim| pour Windows. Pas que ce ne soit pas faisable, mais je n'ai que très peu de connaissances de Windows. Ça viendra peut-être, mais pas tout de suite. On couvrira ici Linux/Unix (et par extension Mac OS X).
-- Vous n'apprendrez pas comment utiliser *Vi* (notez l'absence du "m"). Je vais vous apprendre à être productif pour coder/produire du texte avec |vim|, pas à faire le beau devant les copains avec *Vi* (|vim| est suffisant pour cela de toute façon). Pour ceux qui ne suivent pas, *Vi* est "l'ancêtre de |vim| (qui veut dire *Vi* - *IMproved*, *Vi* amélioré)" et est installé par défaut sur tous les Unix (même sur votre Mac OS X).
-- Vous n'apprendrez pas à connaitre les entrailles de |vim| par cœur : ce n'est pas une référence, mais un guide utile et pragmatique.
-- Vous n'apprendrez pas comment modifier votre |vim| parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème *Solarized* (http://ethanschoonover.com/solarized), il est parfait pour travailler.
+- You'll not be learning how to install and to configure |vim| for Windows. It's doable, but I have very limited knowledge about Windows. It may happen, but not yet. Only Linux/Unix will be discussed (and by extension Mac OS X).
+- You'll not be learning how to use *Vi* (notice the lack of "*m*"). I'll only teach you how to be productive writing text with |vim|, I'll not teach you how to impress your friends with *Vi* (and anyway, |vim| is enough for that). For those who don't get what I'm talking about, *Vi* is the "ancestor of |vim| (which stands for *Vi* - *IMproved*)" and is installed by default on all Unix-like systems (even on Mac OS X).
+- You'll not be learning to know |vim| by heart: this book is not a reference it's a pragmatic smart way to learn |vim|.
+- You'll not learn how to pimp the colors of your |vim|: I'll use the `Solarized <http://ethanschoonover.com/solarized>`_ theme, it's the best theme for your eyes.
 
-Le plus dur, c'est de commencer
-===============================
+The hardest part is to get started
+==================================
 
-Alors, prêt pour l'aventure ? Prêt à sacrifier une heure pour débuter avec |vim|, une semaine pour devenir familier avec la bête, et le reste de votre vie pour vous féliciter de votre choix ? Alors c'est parti ! Enfin presque, il faut qu'on parle avant.
+So, your are ready for the adventure? Ready to sacrifice one hour to start using |vim|, one week to be familiar with it, and the rest of your life to be happy with your choice? So here we go! Well, almost, we need to talk a little bit before.
 
-|vim| fait partie de ces outils avec lesquels vous allez galérer au début. Le but de ce guide est de vous mettre le pied à l'étrier et de diminuer la hauteur de la marche à franchir. Mais soyez conscients que vous mettre à |vim| va vous demander de la volonté et quelques efforts. Comme on dit souvent, on n'a rien sans rien. Voici la méthode que je vous recommande pour apprivoiser la bête :
+With |vim| you'll have to struggle. No matter how big your willpower is, you will struggle. Be prepared. The goal of this guide is to diminish this struggle as much as possible, but be aware that you will struggle anyway. No pain, no gain. Here is the method I recommend to tame the beast:
 
-- Essayez de faire entrer |vim| dans vos habitudes. Suivez le premier chapitre de ce guide jusqu'à la partie concernant l'explorateur de fichiers utilisable à la souris *The NERD Tree*. Ensuite, vous pourrez utiliser |vim| comme un Notepad++ ou un TextMate ou un Sublime Text. Vous n'utiliserez que 1% des capacités de |vim| mais peu importe. Ce qui est important, c'est de le faire entrer dans votre quotidien.
-- Gardez une feuille avec les principaux raccourcis imprimée à côté de vous. Le but ce n'est pas de les apprendre par cœur, mais c'est de les avoir à portée de main quand vous vous demanderez « mais il y a certainement une façon plus efficace de faire cela ».
-- Gardez la foi. Au début vous resterez un sceptique quant à l'utilité de tout réapprendre avec |vim|. Et puis un jour vous aurez un déclic et vous vous demanderez pourquoi tous vos logiciels ne peuvent pas se contrôler avec les commandes de |vim|.
-- Gardez à l'esprit que c'est un investissement pour vos 20 prochaines années, et c'est bien connu, un investissement ce n'est pas complètement rentable de suite.
+- Try to make using |vim| a habit. Be sure to follow this guide until the chapter about *The NERD Tree* (the file explorer). Then you'll be able to use |vim| as you would do with Notepad++, Textmate or Sublime Text for example. You'll be using only 1% of the capacities of |vim|, but whatever. What really matters is to use |vim| on a daily basis.
+- Be sure to have a printed sheet with all the main |vim| shortcuts near you. The goal here is not to learn them by heart, but only to have somewhere to look when you'll ask yourself: "it surely exists a better way to do this".
+- Keep the faith. At the beginning you'll be sceptical regarding the usefulness of learning everything from scratch with |vim|. And then, one day, you'll have a "a ha!" moment. You'll be asking yourself why all the softwares your are using can't be controlled using |vim| shortcuts.
+- Keep in mind that it's an investment for your next 20 years. And everybody knows that investment are rarely profitable immediately.
 
-Trêve de bavardage, passons aux choses sérieuses. Go go go !
+So, enough talking, let's get started!
