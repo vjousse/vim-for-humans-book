@@ -16,46 +16,46 @@ When you need to write or to code, you have to choose a text editor, and a very 
 **For everything** 
     They allow you to edit everything and anything. When you'll use another programming language, or another markup language, you'll not have to change your editor. Of course, this book was written using |vim| (and the `ReST Markup <http://sphinx-doc.org/rest.html>`_).
 
-Yet, these text editors are difficult to learn. Not that they are harder than anything else, not that you can't handle it, but rather because there is no smart way out there to learn them for now. So, here we go.
+Yet, these text editors are difficult to learn. Not that they are harder than anything else, not that you can't handle it, but rather because there is no smart way out there to learn them for now. So, here we are.
 
-Ce livre a pour but de pallier ce manque en vous guidant tout au long de votre découverte de |vim|. Je laisse *Emacs* à ceux qui savent (pour un bref comparatif c'est ici : http://fr.wikipedia.org/wiki/Guerre_d'\%C3\%A9diteurs. Les goûts et les couleurs …). Il ne prétend pas être un guide exhaustif, vous pouvez essayer *A Byte of vim* pour celà : http://www.swaroopch.org/notes/Vim. En revanche, il prétend diminuer la marche à franchir pour s'habituer à |vim|. À mon sens, le plus compliqué avec |vim|, c'est de ne pas se décourager de suite et de trouver une méthode qui vous permette de l'apprendre au fur et à mesure. Nous avons tous un travail à effectuer au quotidien, et perdre toute sa productivité à cause d'un changement d'éditeur de texte n'est pas envisageable.
+The goal of this book is to address this gap by guiding you through your discovery of |vim|. I'll put *Emacs* aside from now and I'll focus on |vim|. If you want to know more about this **Editor war**, be sure to check the `Wikipedia page <http://en.wikipedia.org/wiki/Editor_war>`_. This book doesn't claim to be a reference book about |vim|. They are already a lot of good references on the subject like `A byte of Vim <http://swaroopch.com/notes/vim/>`_. However, it claims to reduce the entry barrier to get used to |vim|. To me, the hardest thing to do when learning |vim| is not to discourage away and find a method allowing use to learn it step by step. We all have to get things done with our text editor on a daily basis, that's why loosing all your productivity when switching to |vim| is not possible
 
-Vous trouverez beaucoup de personnes pour vous dire « mais tu n'as qu'à t'y mettre pour de bon », « tu verras après ça va aller mieux », certes, mais vous devez toujours être productif au jour le jour, ça ne change rien au problème. L'approche de ce livre est la suivante :
+I'm sure you'll find a lot of person who will say to you: "Just do it cold turkey", "you'll see, it's hard at the beginning, but time will help". Sure. But you still have to be productive on a daily basis, the problem remains. The approach of this book is the following:
 
-- Disposer d'un |vim| un temps soit peu moderne : coloration syntaxique et jolies couleurs.
-- Pouvoir utiliser |vim| comme n'importe quel autre éditeur de texte : éditer facilement du code et naviguer entre les fichiers en utilisant la souris.
-- Apprendre des raccourcis clavier et se passer de la souris au fur et à mesure.
-- Installer un *best-of* des plugins pour commencer à tirer partie de la puissance de |vim|.
+- Have a modern |vim|: syntax highlighting and nice colors.
+- Use |vim| as any other text editor: easily edit code and switch between files using the mouse.
+- Learn keyboard shortcuts and go without the mouse step by step.
+- Install the *best* plugins to start using |vim| to its full potential.
 
-À partir du point numéro 2, vous pourrez déjà utiliser |vim| au quotidien sans perdre énormément de productivité. Et c'est là que la différence se fait : si vous pouvez intégrer |vim| dans votre quotidien c'est gagné. Vous aurez ensuite toute votre vie pour connaître tous les raccourcis clavier.
+Starting from bullet number 2, you'll already be able to use |vim| on a daily basis without loosing a lot of your productivity. It's were the magic will happen: if you can integrate |vim| in your daily habits, you won. You'll then have the rest of your life to learn all the shortcuts and the tip and tricks of |vim|.
 
-Vous aussi vous en avez marre d'attendre la release de TextMate 2 (à noter que depuis l'écriture de ce livre, le code de TextMate 2 a été publié sous licence GPL : https://github.com/textmate/textmate) ? D'essayer le n-ième éditeur à la mode et de devoir tout réapprendre et ce jusqu'à la prochaine mode ? De devoir changer d'éditeur quand vous passez de votre Mac, à votre Windows, à votre Linux ? Alors vous aussi, rejoignez la communauté des gens heureux de leur éditeur de texte. **Le changement, c'est maintenant** !
+You're tired of trying a new editor each year? You're tired of having to relearn everything from scratch every time? You're tired to have to change your editor when you're using your Mac, Windows or Linux? So, just stop it, and join the community of people happy with their text editor!
 
-Pour qui ?
-==========
+For who?
+========
 
-Toute personne étant amenée à produire du texte (code, livre, rapports, présentations, ...) de manière régulière. Les développeurs sont bien sûr une cible privilégiée, mais pas uniquement.
+Every guy having to produce text (code, book, reports, slideshows, …) regularly. Developers are of course concerned, but it's not only about them.
 
-Par exemple vous êtes :
+For example, your are a:
 
-**Étudiant**
-    Si vous voulez faire bien sur un CV, c'est un must. C'est en effet un gage de sérieux de voir qu'un étudiant a pris sur son temps personnel pour apprendre |vim|. De plus, vous aurez un outil unique pour écrire tout ce que vous avez à écrire (et que vous pourrez réutiliser tout au long de votre carrière) : vos rapports en LaTeX, vos présentations, votre code (si vous avez besoin d'OpenOffice ou de Word pour écrire vos rapports, il est temps de changer d'outil et d'utiliser LaTeX, Markdown ou reStructuredText).
+**Student**
+    If you want to impress your future boss with your resume, it's a must. It's a proof of seriousness to see that a student took the time to learn |vim| on its own. Moreover, you'll have a unique tool to write all what you'll have to write (and that you'll be able to use for the rest of your career): your LaTeX reports, your slideshows, your code (if you need Word or LibreOffice to write you reports, it's time to use `LaTeX <http://en.wikipedia.org/wiki/LaTeX>`_, `Markdown <http://en.wikipedia.org/wiki/Markdown>`_ or `reStructuredText <http://en.wikipedia.org/wiki/ReStructuredText>`_).
 
-    Petit conseil d'ami, pour vos présentations, n'hésitez pas à utiliser un outil comme *impress.js* : http://bartaz.github.com/impress.js. Basé sur du HTML/JS/CSS, je vous le recommande grandement pour des présentations originales et basées sur des technologies non propriétaires. Il existe aussi *reveal.js* (http://lab.hakim.se/reveal-js/) et son éditeur en ligne *slid.es* (http://slid.es/).
+    Friendly advice: for your slideshows, don't hesitate to use something like `impress.js <http://bartaz.github.com/impress.js>`_. It's using HTML/JS/CSS and I highly recommend that you use it to do awesome presentations based on non-proprietary technologies. You can have a look at `reveal.js <http://lab.hakim.se/reveal-js/>`_ too, and its online editor `slide.es <http://slid.es/>`_.
 
-**Enseignant** 
-    Il est temps de montrer l'exemple et d'apprendre à vos étudiants à bien utiliser un des outils qui leur servira à vie, bien plus qu'un quelconque langage de programmation.
+**Teacher** 
+    It's time to set an example for your student and to learn them one of the tool the will use during their entire life. A lot more than any other programming language.
 
-**Codeur** 
-    Investir dans votre outil de tous les jours est indispensable. Quitte à apprendre des raccourcis claviers, autant le faire de manière utile. Si cet investissement est encore rentable dans 10 ans, c'est ce que l'on pourrait appeler l'investissement parfait, c'est |vim|.
+**Coder** 
+    To invest time in your daily tool is something essential. You'll anyway have to learn keyboard shortcuts, so you'd better do it for something useful. If this investment is style profitable 10 years from now, it's the perfect investment, it's |vim|.
 
-**Administrateur système Unix**
-    Si vous utilisez *Emacs* vous êtes pardonnable. Si vous utilisez nano/pico je ne peux plus rien pour vous, sinon il est grand temps de s'y mettre les gars. Administrer un système Unix à distance est un des cas d'utilisation parfait pour |vim| (un éditeur de texte surpuissant ne nécessitant pas d'interface graphique).
+**System and network administrator**
+    If you're using *Emacs*, then I can forgive you. If you are using nano/pico, there is nothing I can do for you, otherwise, it's time to get some job done guys! To remotely administrate a Unix system is the perfect use case for |vim| (a powerful text editor without the need of a graphical interface).
 
-**Écrivain** 
-    Si vous écrivez en markdown/reStructuredText/WikiMarkup ou en LaTeX, |vim| vous fera gagner beaucoup de temps. Vous ne pourrez plus repasser à un autre éditeur, ou vous voudrez le "Vimifier" à tout prix.
+**Writer** 
+    If your are writing using Markdown/reStructuredText/WikiMarkup or LaTeX, |vim| will save you a lot of time. You'll not be able to go back to another editor after it, or you'll want to *Vimify* it at all costs.
 
-Faites moi confiance, je suis passé et repassé par ces 5 rôles, mon meilleur investissement a toujours été |vim|, et de loin.
+Trust me, I am doing/did all this 5 roles, and my best investment has always been, by far, |vim|.
 
 Ce que vous apprendrez (entre autres choses)
 ============================================
