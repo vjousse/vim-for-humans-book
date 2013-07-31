@@ -99,14 +99,14 @@ rst_epilog = u"""
 .. |that| replace:: ``^``
 .. |tdollar| replace:: ``$``
 .. |tzero| replace:: ``0``
-.. |tesc| replace:: ``Esc (Échap)``
+.. |tesc| replace:: ``Esc``
 .. |tsemicolon| replace:: ``;``
 .. |tcolon| replace:: ``:``
 .. |tctrl| replace:: ``Control``
 .. |tapos| replace:: ``'``
 .. |tslash| replace:: ``\\``
 .. |tshift| replace:: ``Shift``
-.. |tenter| replace:: ``Entrée``
+.. |tenter| replace:: ``Enter``
 .. |tstar| replace:: ``*``
 .. |tsharp| replace:: ``#``
 .. |tleader| replace:: ``<Leader>``
@@ -141,36 +141,36 @@ rst_epilog = u"""
 .. |tX| replace:: ``X``
 .. |ty| replace:: ``y``
 .. |tyty| replace:: ``yy``
-.. |ttc| replace:: la touche |tc|
-.. |ttd| replace:: la touche |td|
-.. |tte| replace:: la touche |te|
-.. |tth| replace:: la touche |th|
-.. |tti| replace:: la touche |ti|
-.. |ttj| replace:: la touche |tj|
-.. |ttk| replace:: la touche |tk|
-.. |ttl| replace:: la touche |tl|
-.. |ttn| replace:: la touche |tn|
-.. |ttN| replace:: la touche |tN|
-.. |tto| replace:: la touche |to|
-.. |ttp| replace:: la touche |tp|
-.. |ttP| replace:: la touche |tP|
-.. |ttm| replace:: la touche |tm|
-.. |ttu| replace:: la touche |tu|
-.. |ttr| replace:: la touche |tr|
-.. |ttv| replace:: la touche |tv|
-.. |ttx| replace:: la touche |tx|
-.. |tty| replace:: la touche |ty|
-.. |ttw| replace:: la touche |tw|
-.. |ttsharp| replace:: la touche |tsharp|
-.. |ttshift| replace:: la touche |tshift|
-.. |ttstar| replace:: la touche |tstar|
-.. |ttesc| replace:: la touche |tesc|
-.. |ttsemicolon| replace:: la touche |tsemicolon|
-.. |ttdollar| replace:: la touche |tdollar|
-.. |tthat| replace:: la touche |that|
-.. |ttctrl| replace:: la touche |tctrl|
-.. |ttslash| replace:: la touche |tslash|
-.. |ttenter| replace:: la touche |tenter|
+.. |ttc| replace:: the |tc| key
+.. |ttd| replace:: the |td| key
+.. |tte| replace:: the |te| key
+.. |tth| replace:: the |th| key
+.. |tti| replace:: the |ti| key
+.. |ttj| replace:: the |tj| key
+.. |ttk| replace:: the |tk| key
+.. |ttl| replace:: the |tl| key
+.. |ttn| replace:: the |tn| key
+.. |ttN| replace:: the |tN| key
+.. |tto| replace:: the |to| key
+.. |ttp| replace:: the |tp| key
+.. |ttP| replace:: the |tP| key
+.. |ttm| replace:: the |tm| key
+.. |ttu| replace:: the |tu| key
+.. |ttr| replace:: the |tr| key
+.. |ttv| replace:: the |tv| key
+.. |ttx| replace:: the |tx| key
+.. |tty| replace:: the |ty| key
+.. |ttw| replace:: the |tw| key
+.. |ttsharp| replace:: the |tsharp| key
+.. |ttshift| replace:: the |tshift| key
+.. |ttstar| replace:: the |tstar| key
+.. |ttesc| replace:: the |tesc| key
+.. |ttsemicolon| replace:: the |tsemicolon| key
+.. |ttdollar| replace:: the |tdollar| key
+.. |tthat| replace:: the |that| key
+.. |ttctrl| replace:: the |tctrl| key
+.. |ttslash| replace:: the |tslash| key
+.. |ttenter| replace:: the |tenter| key
 """
 
 
