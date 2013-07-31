@@ -29,15 +29,22 @@ However, if your are already familiar with |vim| and don't use the mouse anymore
 
 .. _modeinsertion:
 
-Préambule indispensable : le mode insertion
-===========================================
+Essential preamble: the insert mode
+===================================
 
-Prenons le pari de créer le fichier |vimrc| avec |vim| lui-même. Comme je vous le disais, le plus tôt vous commencerez, le mieux ce sera.
-Vous devrez certainement commencer par installer une version de |vim|. Si vous utilisez un Mac, essayez MacVim (http://code.google.com/p/macvim/) sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système « Unix » vous devriez sûrement avoir gVim à votre disposition (ou tout du moins facilement installable grâce à votre gestionnaire de logiciels). Pour Windows, il semblerait y avoir une version disponible sur le site officiel de |vim| (http://www.vim.org/download.php), mais je ne l'ai pas testée.
+Let's be totally crazy. We will try to create the |vimrc| configuration file with |vim| itself. As I said earlier, the sooner you start to use |vim|, the better. I told you it would be totally crazy.
 
-Au lancement de |vim|, vous devriez avoir un texte d'accueil vous encourageant à aider les pauvres enfants en Ouganda. Ce texte disparaitra dès que nous allons saisir des caractères dans |vim|. Nous allons commencer par entrer un commentaire dans l'en-tête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur |tti| (le curseur devrait changer d'aspect). Le texte d'accueil par défaut de |vim| devrait avoir disparu et vous devriez avoir `une page blanche`_ qui ressemble plus ou moins à la figure ci-dessous.
+The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <http://code.google.com/p/macvim/>`_ a try, it's the best |vim| port for Mac without any doubt. If your are using GNU/Linux or any other "Unix-like" system, you should have *gVim* available, or at least easily installable using your package management system. For Windows, it seems that there is a version available on the official |vim| website (http://www.vim.org/download.php), but I did not test it.
 
-.. _une page blanche:
+When you will start |vim|, you should see a welcome text asking you to help poor children in Uganda. 
+
+.. image:: ../book-tex/graphics/vim-uganda.png
+
+This text will disappear as soon as we will be writing text in |vim|. 
+
+We will start by adding a comment in the header of the file to specify the author of the document (should be you). To be able to type text, the first thing to do will be to press |tti| (the cursor should have changed). The welcome text should have disappeared and you should have `a blank page`_ looking like the image below:
+
+.. _a blank page:
 
 .. image:: ../book-tex/graphics/vim-new.png
 
