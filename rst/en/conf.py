@@ -91,6 +91,8 @@ highlight_language = 'vim'
 
 rst_prolog = u"""
 .. role:: vimcmd
+.. role:: viml(code)
+   :language: vim
 """
 
 rst_epilog = u"""
