@@ -114,7 +114,7 @@ You have to place this file in your home directory. It should be */home/your_use
 
 I've directly commented all the lines in the code itself. Nothing fancy here, you should just be asking yourself why all of this is not available by default.
 
-.. include:: ../../vim-for-humans/firstconfig/vimrc
+.. include:: ../../vim-for-humans/en/firstconfig/vimrc
    :code:
 
 
