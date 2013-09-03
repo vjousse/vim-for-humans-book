@@ -104,12 +104,12 @@ If you want to go further, you can buy an orthogonal keyboard like `TypeMatrix <
 The ultimate change would be to switch your keyboard layout to a more efficient one like `Colemak <http://colemak.com/>`_. But it's another story.
 
 
-The life saver default configuration
+The lifesaver default configuration
 ====================================
 
 Let's get serious, let's try to have a usable |vim|. We will start by editing the default configuration file |vimrc| and by entering default values that any sane guy would love to find in it.
 
-You have to place this file in your home directory. It should be */home/your_user/.vimrc* if your are using Linux, */Users/your_user/.vimrc* if your are using Mac OS X. Generally speaking, it should be in you home directory under *~/.vimrc*. If you are using Windows, you can create a file named *_vimrc* that you have to put in your *%HOME%* directory. This directory is obviously not the same across the different Windows versions. Usually, it the directory just before your directory *My Documents*. More information is `available on Wikipedia <http://en.wikipedia.org/wiki/Home_directory#Default_Home_Directory_per_Operating_System>`_ if you want.
+You have to place this file in your home directory. It should be */home/your_user/.vimrc* if your are using Linux, */Users/your_user/.vimrc* if your are using Mac OS X. Generally speaking, it should be in you home directory under *~/.vimrc*. If you are using Windows, you can create a file named *_vimrc* that you have to put in your *%HOME%* directory. This directory is obviously not the same across the different Windows versions. Usually, it's the directory just before your directory *My Documents*. More information is `available on Wikipedia <http://en.wikipedia.org/wiki/Home_directory#Default_Home_Directory_per_Operating_System>`_ if you want.
 
 
 I've directly commented all the lines in the code itself. Nothing fancy here, you should just be asking yourself why all of this is not available by default.
@@ -118,24 +118,23 @@ I've directly commented all the lines in the code itself. Nothing fancy here, yo
    :code:
 
 
-Pour ceux qui ont fait un copier/coller, il ne vous reste plus qu'à sauvegarder votre fichier nouvellement créé. Nous voulons le placer à la racine de votre compte utilisateur, c'est à dire l'enregistrer sous `~/.vimrc`. Sous Mac OS X et Linux, *~* désigne le répertoire d'accueil de l'utilisateur courant. Attention, les fichiers commençant par un ``.`` sont des fichiers cachés sous Linux et Mac OS X, ne vous étonnez donc pas de ne pas le voir par défaut dans votre navigateur de fichiers.
+For those who did a copy/paste (and you should be one of those), you just have to save your newly created file. We want to put it in our home directory, so you have to save it as `~/.vimrc`. When using Mac OS X and Linux, *~* is the home directory of the current user. But be careful, when using Linux and Mac OS X the files starting with a ``.`` are hidden files. So don't be surprised to not see by default your `~/.vimrc` in your file explorer.
 
-Pour les utilisateurs de la souris, il suffira de se servir du menu `Fichier (ou File)` puis `Sauvegarder sous (ou Save as)` et de l'enregistrer dans le répertoire d'accueil de l'utilisateur courant sous le nom de `.vimrc`. Pour ceux qui veulent déjà utiliser le clavier, il vous suffira, après avoir appuyé sur |ttesc| pour repasser en mode *Normal*, de taper :vimcmd:`:sav ~/.vimrc`. Pour sauvegarder vos prochaines modifications, utilisez le menu avec la souris ou tapez en mode *Normal* :vimcmd:`:w`.
+For people using the mouse, you will just have to use the `File` menu and then the `Save as` one. Save the file under the name `.vimrc` in your home directory. For those who want to use the keyboard you will just have to type :vimcmd:`:sav ~/.vimrc` (be sure to be in the *Normal* mode by pressing |ttesc| before). To save your further modifications, just use the menus with the mouse or type :vimcmd:`:w` when in *Normal* mode.
 
-J'ai mis en ligne ce fichier de configuration directement sur *Github*. Vous pouvez le télécharger ou le copier directement à partir d'ici : http://vimebook.com/link/fr/firstconfig.
+I have uploaded this configuration file directly on *Github*. You can download or copy/paste it directly from: http://vimebook.com/link/en/firstconfig.
 
-Voici à quoi devrait ressembler |vim| `après votre première configuration`_.
+Below is a screenshot of |vim| `after your first configuration`_.
 
-
-.. _après votre première configuration:
+.. _after your first configuration:
 
 .. figure:: ../book-tex/graphics/vim-first-config.png
 
-   |vim| après votre première configuration.
+   |vim| after your first configuration.
 
-Notez les numéros de ligne sur la gauche ainsi que la position du curseur en bas à droite.
+Notice the line numbers on the left and the position (coordinates) of the cursor at the bottom right.
 
-Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au suivant !
+Well, it's a good start, but we now need some colors. Let's go!
 
 Que la couleur soit !
 =====================
