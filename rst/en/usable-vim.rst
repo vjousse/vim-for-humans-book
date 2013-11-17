@@ -36,9 +36,9 @@ Let's be totally crazy. We will try to create the |vimrc| configuration file wit
 
 The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <http://code.google.com/p/macvim/>`_ a try, it's the best |vim| port for Mac without any doubt. If your are using GNU/Linux or any other "Unix-like" system, you should have *gVim* available, or at least easily installable using your package management system. For Windows, it seems that there is a version available on the official |vim| website (http://www.vim.org/download.php), but I did not test it.
 
-When you will start |vim|, you should see a welcome text asking you to help poor children in Uganda. 
+When you will start |vim|, you should see a welcome text asking you to help poor children in Uganda (or something along the lines). 
 
-.. image:: ../book-tex/graphics/vim-uganda.png
+.. image:: ../book-tex/graphics/en/vim-uganda.png
 
 This text will disappear as soon as we will be writing text in |vim|. 
 
@@ -46,7 +46,7 @@ We will start by adding a comment in the header of the file to specify the autho
 
 .. _a blank page:
 
-.. image:: ../book-tex/graphics/vim-new.png
+.. image:: ../book-tex/graphics/en/vim-new.png
 
 **On a side note**: if you don't really understand what you did and |vim| is displaying red messages at the bottom left or doesn't seem to react as it should when your pressing |tti|, don't panic. Pressing multiples times on |ttesc| (two times should be enough) should bring |vim| to its default mode, the *Normal mode*. Then it should behave as you would expect again.
 
@@ -60,7 +60,7 @@ You should know be able to write down `the comment below`_:
 
 You will have noticed that comments in *VimL* (the name of the |vim| programing language) start with a :viml:`"`. Then press |ttesc| to come back to the default mode (the normal mode) of |vim|. That's all, you are done. Here is a screenshot of what your |vim| should look like now:
 
-.. image:: ../book-tex/graphics/vim-first-comment.png
+.. image:: ../book-tex/graphics/en/vim-first-comment.png
 
 I can already hear you: all that fuss for what? Well, yes. And you even don't know how to save a file. But all these things are logical that I'm gonna explain to you. One of the advantages of |vim| is that, usually, it is logical. Once you will have understood the logic behind it, all will be crystal clear for you (at least I hope).
 
@@ -124,17 +124,17 @@ For people using the mouse, you will just have to use the `File` menu and then t
 
 I have uploaded this configuration file directly on *Github*. You can download or copy/paste it directly from: http://vimebook.com/link/en/firstconfig.
 
-Below is a screenshot of |vim| `after your first configuration`_.
+Below is a screenshot of |vim| (macvim) `after your first configuration`_.
 
 .. _after your first configuration:
 
-.. figure:: ../book-tex/graphics/vim-first-config.png
+.. figure:: ../book-tex/graphics/en/vim-first-config.png
 
    |vim| after your first configuration.
 
 Notice the line numbers on the left and the position (coordinates) of the cursor at the bottom right.
 
-Well, it's a good start, but we now need some colors. Let's go!
+Well, it's a good start, but we now need more colors. Let's go!
 
 Que la couleur soit !
 =====================
