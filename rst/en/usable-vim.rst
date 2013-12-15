@@ -107,7 +107,7 @@ The ultimate change would be to switch your keyboard layout to a more efficient 
 The lifesaver default configuration
 ====================================
 
-Let's get serious, let's try to have a usable |vim|. We will start by editing the default configuration file |vimrc| and by entering default values that any sane guy would love to find in it.
+Let's get serious and try to have a usable |vim|. We will start by editing the default configuration file |vimrc| and by entering default values that any sane guy would love to find in it.
 
 You have to place this file in your home directory. It should be */home/your_user/.vimrc* if your are using Linux, */Users/your_user/.vimrc* if your are using Mac OS X. Generally speaking, it should be in you home directory under *~/.vimrc*. If you are using Windows, you can create a file named *_vimrc* that you have to put in your *%HOME%* directory. This directory is obviously not the same across the different Windows versions. Usually, it's the directory just before your directory *My Documents*. More information is `available on Wikipedia <http://en.wikipedia.org/wiki/Home_directory#Default_Home_Directory_per_Operating_System>`_ if you want.
 
@@ -136,75 +136,74 @@ Notice the line numbers on the left and the position (coordinates) of the cursor
 
 Well, it's a good start, but we now need more colors. Let's go!
 
-Que la couleur soit !
-=====================
+And now, the color!
+===================
 
-Tout d'abord il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration |vimrc|.::
+First, we need to enable syntax highlighting in the configuration file. Add these lines at the end of your |vimrc| configuration file::
 
-    " Active la coloration syntaxique
+    " Enable syntax highlighting
     syntax enable
-    " Active les comportements specifiques aux types de fichiers comme
-    " la syntaxe et l'indentation
+    " Enable file specific behavior like syntax highlighting and indentation
     filetype on
     filetype plugin on
     filetype indent on
 
-Vous devriez avoir un |vim| qui ressemble à celui de la figure ci-dessous. 
+You should have a |vim| looking like the picture below.
 
 
 .. figure:: ../book-tex/graphics/vim-syntax-hl.png
 
-   Coloration syntaxique par défaut.
+   Default syntax highlighting.
 
-Pour l'instant, le plus facile pour que les modifications apportées à votre |vimrc| soient prises en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la |vim| de suite, en mode normal tapez :vimcmd:`:so ~/.vimrc` ou :vimcmd:`:so $MYVIMRC`.
+For the time being, the easiest way to test the modifications you made to your |vimrc| file is to restart |vim|. If you want to use |vim| like a boss right now, you can type in normal mode :vimcmd:`:so ~/.vimrc` or :vimcmd:`:so $MYVIMRC`. It will reload the configuration without the need to restart |vim|. :vimcmd:`:so` being a shortcut for vimcmd:`:source`. 
 
-:vimcmd:`:so` étant un raccourci pour :vimcmd:`:source`. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
+This is a good first step, it's time to turn to the use of a theme.
 
-Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème *Solarized* http://ethanschoonover.com/solarized (avec fond clair ou foncé, ça dépendra de vous).
+Themes will allow you to have a nicer |vim| than the default one. A theme will change the background color of |vim| and the colors used for the syntax highlighting. As I said earlier, we will use the *Solarized* theme http://ethanschoonover.com/solarized (with dark or light background, it will be up to you).
 
-Pour l'installer, commencez tout d'abord par créer un répertoire nommé `.vim` au même endroit que votre |vimrc| (dans votre répertoire utilisateur donc). À noter que ce répertoire s'appelle `vimfiles` sous Windows. À chaque fois que je ferai référence au répertoire `.vim` ça sera en fait `vimfiles` pour les Windowsiens. Dans ce répertoire `.vim`, créez un sous-répertoire nommé `colors`. Téléchargez ensuite le fichier du thème *Solarized* https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim (c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire `vim/colors/` fraîchement créé. Votre répertoire `.vim` devrait ressembler à celui de la figure ci-dessous.
+To install it, you will first need to create a directory called `.vim` in the same directory than your |vimrc| (that is to say, in your home directory). Note that when using Windows, the `.vim` directory is called `vimfiles`. Each time I'll be speaking of the `.vim` directory, it will be the `vimfiles` directory for people using Windows. In this `.vim` directory, create a sub directory named `colors`. Then, download the *Solarized* theme file https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim (it's the same file for the light and the dark version) and copy it in your `vim/colors/` directory. You `.vim` directory should look like the picture below.
 
 .. figure:: ../book-tex/graphics/solarized-tree.png
 
-   Le contenu du répertoire .vim avec Solarized.
+   Content of the .vim directory with Solarized.
 
-Activez ensuite le thème Solarized dans votre |vimrc| comme le montre le code ci-dessous.::
+Then enable the Solarized theme in your |vimrc| like shown in the code below.::
 
-    " Utilise la version sombre de Solarized
+    " Use the dark version of Solarized
     set background=dark
     colorscheme solarized
 
-Pour tester le thème clair, remplacez `dark` par `light` (au niveau de la définition de la propriété `background`).
+To test the light theme, you just have to change `dark` with `light` (for the `background` property).
 
-Ci-dessous un aperçu des deux variantes (ma préférence allant à la variante sombre soit dit en re-passant).
+Here is a preview of the two versions (personally, I prefer the dark one).
 
 .. figure:: ../book-tex/graphics/vim-solarized-dark.png
 
-   Le thème *Solarized* sombre.
+   The dark  *Solarized* theme.
 
 
 .. figure:: ../book-tex/graphics/vim-solarized-light.png
 
-   Le thème *Solarized* clair.
+   The light  *Solarized* theme.
 
 
-Un bonus (si vous n'utilisez pas |vim| directement dans votre terminal) serait de choisir une police de caractères qui vous convient un peu mieux. C'est bien sûr facultatif, mais je présume que certains d'entre vous sont des esthètes aguerris.
+A bonus (if you don't use |vim| directly in your terminal) would be to choose a font that suits your needs a little bit better. This is of course optional, but I suppose that some of you are sensible to such things.
 
-Si vous êtes sous Mac OS X je vous conseille la police `Monaco` qui est assez conviviale. Rajoutez les lignes suivantes à votre |vimrc| pour l'utiliser : ::
+If your are using Mac OS X, I recommend the `Monaco` font that is quite friendly. Add the following lines to your |vimrc| to use it: ::
 
     set guifont=Monaco:h13
     set antialias
 
-Vous pouvez bien sûr changer le `h13` par `h12` si vous voulez une police plus petite (ou par `h14` si vous en voulez une plus grande).
+You can of course change `h13` with `h12` if you want a smaller font (or with `h14` if you want a bigger one).
 
-Sinon sous Linux j'utilise la police `DejaVu Sans Mono` que je trouve plutôt sympathique : ::
+Under Linux I am using the `DejaVu Sans Mono` font: ::
 
     set guifont=DejaVu\ Sans\ Mono\ 10
     set antialias
 
-Vous pouvez là aussi bien sûr changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez en mode normal :vimcmd:`:set guifont:*`.
+You can of course change the font size as you want. To have the list of all the available fonts for your system type :vimcmd:`:set guifont:*` in normal mode.
 
-Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne http://vimebook.com/link/fr/syntaxhlconfig. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de |vim|.
+You will find the full version of the configuration file for this chapter online http://vimebook.com/link/en/syntaxhlconfig. I will not spend more time talking about the fonts as it's dependant of your operating system and not of |vim|.
 
 
 L'explorateur de fichiers : notre premier plugin
