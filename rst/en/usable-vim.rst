@@ -34,7 +34,7 @@ Essential preamble: the insert mode
 
 Let's be totally crazy. We will try to create the |vimrc| configuration file with |vim| itself. As I said earlier, the sooner you start to use |vim|, the better. I told you it would be totally crazy.
 
-The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <http://code.google.com/p/macvim/>`_ a try, it's the best |vim| port for Mac without any doubt. If your are using GNU/Linux or any other "Unix-like" system, you should have *gVim* available, or at least easily installable using your package management system. For Windows, it seems that there is a version available on the official |vim| website (http://www.vim.org/download.php), but I did not test it.
+The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <http://code.google.com/p/macvim/>`_ a try, it's the best |vim| port for Mac without any doubt. If your are using GNU/Linux or any other "Unix-like" system, you should have *gVim* available, or at least easily installable using your package management system. Be sure to install the __full__ version (ie. with ruby and lua support). For ubuntu, the package is called `vim-nox`. For Mac OS X, MacVim has already all what you need builtin. For Windows, it seems that there is a version available on the official |vim| website (http://www.vim.org/download.php), but I did not test it.
 
 When you will start |vim|, you should see a welcome text asking you to help poor children in Uganda (or something along the lines). 
 
@@ -206,15 +206,15 @@ You can of course change the font size as you want. To have the list of all the 
 You will find the full version of the configuration file for this chapter online http://vimebook.com/link/en/syntaxhlconfig. I will not spend more time talking about the fonts as it's dependant of your operating system and not of |vim|.
 
 
-L'explorateur de fichiers : notre premier plugin
-================================================
+Our first plugin: the file explorer
+===================================
 
-Nous y voilà, nous avons un |vim| à peu près utilisable avec de jolies couleurs. Maintenant, il faudrait être capable d'ouvrir des fichiers autrement qu'en faisant `Fichier (File) -> Ouvrir (Open)`. Ça va être une bonne occasion pour installer notre premier plugin (ce n'est pas comme si nous avions d'autres choix de toute façon). Nous allons procéder ici en deux étapes, tout d'abord installer un gestionnaire de plugins pour éviter que ça devienne trop le bazar dans vos plugins, puis installer le plugin adéquat pour explorer un répertoire de fichiers.
+Here we go, we have a nice |vim| that we can actually use with pretty colors. It's a good firt step, but now, it would be cool to be able to open files without having to do `File -> Open` using the menu bar. This is the perfect opportunity to install our first plugin: a file explorer. We will use a two-step approach here: first we will install a plugin manager and then we will install the plugin using this plugin manager. By default |vim| doesn't come with a plugin manager and, believe me, if you don't install one your |.vim| directory will soon be a real mess. So let's get started.
 
-Gestionnaire de plugins: Pathogen
----------------------------------
+Plugin manager: Pathogen
+------------------------
 
-*Pathogen* (https://github.com/tpope/vim-pathogen/) est le genre de plugin typique que vous découvrez après avoir commencé à configurer votre |vim| et qui génère ce type de réaction : « Ah si j'avais su j'aurais directement commencé avec ». Ça tombe bien, c'est ce que nous allons faire.
+*Pathogen* (https://github.com/tpope/vim-pathogen/) is typically the kind of plugin that you discover after having already configured your |vim|. And then you ask yourself: « Why did I not start this way? ». Fortunately, I have a good news for you: it's the way we will be using here.
 
 Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans |vim|. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en *\*.vim*) dans des sous-répertoires de votre répertoire de configuration *.vim*. On a déjà d'ailleurs commencé à y créer un sous-répertoire `colors` qui contient notre "plugin" de coloration Solarized.
 
