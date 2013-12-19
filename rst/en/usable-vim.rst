@@ -214,17 +214,17 @@ Here we go, we have a nice |vim| that we can actually use with pretty colors. It
 Plugin manager: Pathogen
 ------------------------
 
-*Pathogen* (https://github.com/tpope/vim-pathogen/) is typically the kind of plugin that you discover after having already configured your |vim|. And then you ask yourself: « Why did I not start this way? ». Fortunately, I have a good news for you: it's the way we will be using here.
+*Pathogen* (https://github.com/tpope/vim-pathogen/) is typically the kind of plugin that you discover after having already configured your |vim|. And then you ask yourself: « Why did I not start this way? ». Fortunately, I have a good news for you: we will start the right way.
 
-Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans |vim|. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en *\*.vim*) dans des sous-répertoires de votre répertoire de configuration *.vim*. On a déjà d'ailleurs commencé à y créer un sous-répertoire `colors` qui contient notre "plugin" de coloration Solarized.
+First of all, let's start with a little explanation about how to install plugins using |vim|. Plugins are installed by copying files (most of the time with the *\*.vim* extension) in subdirectories of your |.vim| directory. By the way, We've already created a subdirectory called `colors` that contains our first coloration plugin using the Solarize theme.
 
-Le problème avec cette approche c'est que les différents plugins ne sont pas isolés (vous allez devoir copier leurs fichiers dans les différents sous-répertoires) et que vous allez donc vous retrouver avec des fichiers un peu partout sans savoir à qui ils appartiennent. Autant vous dire qu'une fois que vous voulez désinstaller ou mettre à jour un plugin, c'est vite l'enfer pour savoir quels sont ses fichiers.
+The main problem with this approach is that the plugins are not isolated. So you will have to copy files from different plugins in the same directory and you will soon not be able to know from what plugin a file is coming from. No need to say that when you will want to remove or update a plugin, it will be a nightmare to know where the files are located.
 
-C'est là que *Pathogen* arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. Voici un exemple de répertoire `.vim` avant et après l'utilisation de *Pathogen*. 
+That's why *Pathogen* is especially useful, it will allow each plugin to be located in a separate directory. Here is an example of a |.vim| directory before and after the usage of *Pathogen*:
 
 .. figure:: ../book-tex/graphics/pathogen-tree.png
 
-   *.vim* avant et après Pathogen.
+   |.vim| before and after Pathogen
 
 Certes la version avec *Pathogen* contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite. Vous pourrez au passage très facilement utiliser *git* pour gérer chacun de vos plugins comme des submodules, ce qui peut s'avérer très pratique.
 
