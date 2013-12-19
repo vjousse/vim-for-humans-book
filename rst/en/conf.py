@@ -98,6 +98,7 @@ rst_prolog = u"""
 rst_epilog = u"""
 .. |vim| replace:: *Vim*
 .. |vimrc| replace:: ``~/.vimrc``
+.. |.vim| replace:: *~/.vim*
 .. |that| replace:: ``^``
 .. |tdollar| replace:: ``$``
 .. |tzero| replace:: ``0``
