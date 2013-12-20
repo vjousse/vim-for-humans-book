@@ -226,59 +226,59 @@ That's why *Pathogen* is especially useful, it will allow each plugin to be loca
 
    |.vim| before and after Pathogen
 
-Certes la version avec *Pathogen* contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite. Vous pourrez au passage très facilement utiliser *git* pour gérer chacun de vos plugins comme des submodules, ce qui peut s'avérer très pratique.
+You are totally right if you find that the version with *Pathogen* is using more directories. But believe me, those directories will save your life later. You will be able to easily remove and update plugins and you will be able to use *git* (or any other SCM software) to manage your plugins / submodules / dependencies.
 
-Commençons par installer *Pathogen*. Créez un répertoire nommé `autoload` dans votre répertoire `.vim` et copiez y `pathogen.vim` que vous pouvez télécharger ici : https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim. Pour les utilisateurs Unix, le listing qui suit explique comment l'installer. Si vous n'avez pas `curl` vous pouvez aussi utiliser `wget -O -`.
+Let's start by installing *Pathogen*. Create a directory called `autoload` in your |.vim| directory. Download `pathogen.vim` ( https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim ) and copy it to your `autoload` directory. For the Unix/Mac OS X/Linux user, here is how to install it (if you don't have `curl`, you can use `wget -O -` instead:
 
 .. code-block:: bash
 
-    # Creation du repertoire autoload
+    # Create the autoload directory
     mkdir -p ~/.vim/autoload 
 
-    # Telechargement et installation de pathogen
+    # Download and install Pathogen
     curl -so ~/.vim/autoload/pathogen.vim \
         https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
-Nous installerons ensuite nos plugins directement dans le répertoire `.vim/bundle` que vous allez vous empresser de créer de cette manière :
+From now on, we will install our plugins directly in the `.vim/bundle` directory that you will create right now:
 
 .. code-block:: bash
 
-    # Creation du repertoire bundle
+    # Create the bundle directory used by Pathogen
     mkdir -p ~/.vim/bundle
 
-Il ne vous reste plus qu'à activer pathogen dans votre |vimrc| et le tour est joué. Nous placerons le code listé ci-dessous au début du fichier |vimrc|, directement après la ligne `set nocompatible`. Il est impératif de placer le code **au début** de votre fichier |vimrc|, sinon ça ne marchera pas.::
 
-    " Activation de pathogen
+All you have to do is to activate *Pathogen* in your |vimrc| file and voila. We will put the following lines at the very beginning of the |vimrc| file, right after the `set nocompatible` line. It is mandatory to put the code at the **beginning** of your |vimrc| file, otherwise it will not work.::
+
+    " Activate pathogen
     call pathogen#infect()
 
-Puisque charité bien ordonnée commence par soi-même, nous allons ranger notre petit plugin *Solarized* en utilisant *Pathogen*. Il nous suffit de créer un répertoire `solarized` dans notre répertoire `bundle` fraîchement créé. Vous pouvez l'appeler comme vous le souhaitez, tout sous-répertoire du répertoire `bundle` sera considéré comme un répertoire de plugin. Nous déplaçons ensuite le répertoire `colors` dans le répertoire `solarized` comme ceci :
+Since charity begins at home, we will tidy up our install by using *Pathogen* with our *Solarized* plugin. We just have to create a directory called `solarized` in your newly created `.vim/bundle` directory. You could name it as you want as any subdirectory of the `bundle` directory will be considered as a plugin directory. Then, we will move our previously created `colors` directory in the `solarized` directory as follow:
 
 .. code-block:: bash
 
-    # Creation du repertoire pour solarized
+    # Create the plugin directory for solarized
     mkdir ~/.vim/bundle/solarized
-    # Et hop un peu de rangement
+    # Move solarized to the bundle dir
     mv ~/.vim/colors ~/.vim/bundle/solarized
 
-Actuellement, Pathogen reste encore le gestionnaire de plugins |vim| le plus utilisé. Mais depuis peu, un challenger est arrivé, il s'appelle Vundle https://github.com/gmarik/vundle. J'ai choisi de vous présenter Pathogen car c'est de lui que vous entendrez le plus parler, mais sachez que Vundle est aussi une alternative intéressante : il est compatible avec Pathogen et il gère les versions et les mises à jours de vos plugins directement depuis internet. Pour ceux qui connaissent Ruby, c'est le Bundler (http://gembundler.com/) pour |vim|.
+Currently, *Pathogen* is still the most used plugin manager for |vim|. But recently, a new challenger has arrived, it's called Vundle https://github.com/gmarik/vundle. I chose to use *Pathogen* here because it's the one you will hear about the most often. But you have to know that Vundle is an interesting alternative: it's compatible with Pathogen and you can manage your plugins directly from internet (from github, the vim website, …). For those familiar with Ruby, it's Bundler (http://gembundler.com) for |vim|.
 
-
-Voilà notre |vim| est presque prêt pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet. C'est ici que *The NERD Tree* entre en lice.
+Our |vim| is almost ready to be used on a daily basis. We are just missing an handy way to explore the files of a project. We will use *The NERD Tree* for that.
 
 .. _secnerdtree:
 
-Explorateur de fichiers : The NERD Tree
----------------------------------------
+The NERD Tree: a file explorer
+------------------------------
 
-The NERD Tree est un plugin permettant d'afficher visuellement une arborescence de fichiers directement dans la partie gauche (par défaut) de votre |vim|, à la *TextMate*, *Sublime Text* ou encore *Eclipse/NetBeans*. Ce plugin n'est pas essentiel si vous souhaitez tout contrôler au clavier (je ne l'utilise plus moi-même), mais est assez pratique lorsque l'on débute avec |vim|.
+The NERD Tree is a plugin that will allow you to display your directory and file tree directly in |vim|, just like in *TextMate*, *Sublime Text* or *Eclipse/NetBeans*. This is not a mandatory plugin if you want to control everything using the keyboard (I don't use it anymore myself), but it's very handy when you are starting with |vim|.
 
-L'alternative que nous verrons plus tard au chapitre :ref:`plugins` est d'utiliser les plugin *Ctrl-p* ou *Command-t* pour trouver des fichiers et les plugins *LustyExplorer* et *LustyJuggler* pour naviguer entre les fichiers. En effet, devoir visualiser l'arborescence pour trouver un fichier est toujours plus lent que de trouver le fichier à partir de son nom par exemple. The NERD Tree vous permettra donc d'obtenir un |vim| se comportant comme un éditeur classique avec un explorateur de fichiers sur lequel vous pourrez cliquer.
+The other solution that we will see in the :ref:`plugins` chapter will be to use the *Ctrl-p* or *Command-t* plugins to find files and to use the *LustyExplorer* and *LustyJuggler* plugins to navigate between the files. Indeed, having to visualize the whole file tree to find a file is a lot slower than to find a file by its name. In the meantime, The NERD Tree will allow us to use |vim| with a *normal* file explorer where you can click with the mouse.
 
-Nous allons tout d'abord préparer *Pathogen* pour installer les différents fichiers de *The NERD Tree*.
+First, we will prepare *Pathogen* in order to install all the files needed by *The NERD Tree*.
 
 .. code-block:: bash
 
-    # Creation du repertoire pour The NERD Tree
+    # Create the directory for The NERD Tree
     mkdir ~/.vim/bundle/nerdtree
 
 Téléchargez ensuite le dernier *.zip* disponible sur la page du plugin http://www.vim.org/scripts/script.php?script_id=1658. À l'heure où j'écris ces lignes, la dernière version disponible est la version 4.2.0 que vous pouvez télécharger à cette adresse : http://www.vim.org/scripts/download_script.php?src_id=17123.
