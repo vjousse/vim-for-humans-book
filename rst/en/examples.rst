@@ -59,6 +59,7 @@ Résultat attendu                                    Action                     
 **Sauvegarder sous / ouvre**                        :vimcmd:`:sav nomdefichier.txt`      Sauvegarde sous et ouvre nomdefichier.txt
 **Quitter sans sauvegarder (forcer à quitter)**     :vimcmd:`:q!`
 **Sauvegarder et quitter**                          :vimcmd:`:wq`                        wq pour write and quit
+**Sauvegarder en tant que root**                    :vimcmd:`:w !sudo tee %`             
 =================================================== ==================================== ============
 
 Déplacements
