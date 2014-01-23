@@ -6,11 +6,11 @@ I confess, I have some weird dreams. But hey, maybe my dreams are not as weird a
 
 The success of |vim| is due to its ability to **ease the text manipulations**. Certainly, it will provide you with functionalities dedicated to specific tasks (often via plugins) as syntax highlighting, spell checking, … but in the end, it's always to write/fix/handle/move text that you spend most of your time.
 
-This is where the difference lies between |vim| and the IDE like Eclipse/Netbeans/PhpStorm and others. Such IDE will put the focus on the particularities of your programming language while providing basic text manipulation functionalities. |vim| takes the opposite approach: you will by default be **very effective** to manipulate/write text no matter what kind of text and when you will need it, you will be able to enrich |vim| with plugins specific to your needs and programming languages.
+This is where the difference lies between |vim| and the IDE like Eclipse/Netbeans/PhpStorm and others. Such IDE will put the focus on the particularities of your programming language while providing basic text manipulation functionalities. |vim| takes the opposite approach: you will by default be **very effective** to manipulate/write text no matter what kind of text. But then, when you will feel the need, you will be able to enrich |vim| with plugins specific to your needs and programming languages.
 
-Nous allons donc voir dans ce chapitre comment utiliser |vim| à bon escient (vous allez commencer à oublier votre souris) et quelle est la logique derrière tous ces enchaînements de commandes qui paraissent barbares au non-initié. Vous devriez pouvoir, à la fin de ce chapitre, **vous passer de votre souris** pour éditer/manipuler le contenu d'un fichier. En tout cas, vous devriez vous forcer à le faire en apprenant |vim|, ce n'est pas si dur que ça, et c'est ce qui fait la différence entre |vim| et les autres : le tout clavier.
+This chapter will cover how to use |vim| the right way (you will begin to forget your mouse) and what is the logic behind all these obscure commands. By the end of this chapter, you should be able to **not use your mouse anymore** to edit/handle text. Anyway, you should force yourself when learning |vim|, it's not that hard to only use the keyboard, and that's what will make a huge diffrence.
 
-.. _se-deplacer:
+.. _moving:
 
 Se déplacer par l'exemple : Essayer de copier / coller
 ======================================================
