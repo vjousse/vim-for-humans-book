@@ -27,7 +27,7 @@ This chapter is mandatory if you have very few (or not at all) experience with |
 However, if your are already familiar with |vim| and don't use the mouse anymore, you can skip this chapter. But be sure to give *Solarized* a try, you would be missing something otherwise.
 
 
-.. _modeinsertion:
+.. _insertmode:
 
 Essential preamble: the insert mode
 ===================================

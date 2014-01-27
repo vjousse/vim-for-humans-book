@@ -8,32 +8,29 @@ The success of |vim| is due to its ability to **ease the text manipulations**. C
 
 This is where the difference lies between |vim| and the IDE like Eclipse/Netbeans/PhpStorm and others. Such IDE will put the focus on the particularities of your programming language while providing basic text manipulation functionalities. |vim| takes the opposite approach: you will by default be **very effective** to manipulate/write text no matter what kind of text. But then, when you will feel the need, you will be able to enrich |vim| with plugins specific to your needs and programming languages.
 
-This chapter will cover how to use |vim| the right way (you will begin to forget your mouse) and what is the logic behind all these obscure commands. By the end of this chapter, you should be able to **not use your mouse anymore** to edit/handle text. Anyway, you should force yourself when learning |vim|, it's not that hard to only use the keyboard, and that's what will make a huge diffrence.
+This chapter will cover how to use |vim| the right way (you will begin to forget your mouse) and what is the logic behind all these obscure commands. By the end of this chapter, you should be able to **not use your mouse anymore** to edit/handle text. In any case, you should force yourself when learning |vim|, it's not that hard to only use the keyboard, and it will make a huge diffrence in your day to day life.
 
 .. _moving:
 
-Se déplacer par l'exemple : Essayer de copier / coller
-======================================================
+Learning how to move: the copy/paste use case
+=============================================
 
+We have already seen in the ":ref:`insertmode`" section how to switch between the insert mode (to write text) and the normal mode (for the moment, you should not totally get what is the purpose of this mode). When you press |tti| your cursor will switch to the insert mode (when you are already in the normal mode) and when you press |ttesc| it will switch back to the normal mode. Well, that's cool. And now, what else?
 
-Nous avons déjà vu dans la section « :ref:`modeinsertion` » comment passer du mode insertion (pour saisir du texte) au mode normal (*a priori* pour l'instant, vous ne savez pas trop à quoi sert ce mode). En appuyant sur |tti| votre curseur passe en mode insertion (lorsque vous êtes en mode normal) et en appuyant sur |ttesc| il repasse dans le mode normal. Bon bah on est bien Tintin. Et maintenant ? 
+Preamble
+--------
 
-Préambule
----------
+Now is the time to learn our first text manipulation: the famous copy/paste. I can already hear some of you saying that it is useless: you already know how to do that. You switch to the insert mode, you use your mouse (or you move using the directional keys while holding |ttshift|) to select some text. Then you go to the ``edit`` menu and you select ``copy``. Then, ``edit`` menu and ``paste``. Well, why not.
 
-Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur |ttshift|) pour sélectionner du texte et vous allez dans le ``menu Édition`` puis ``Copier``. Et ensuite ``menu Édition`` puis ``Coller``. Bah tiens, essayez pour voir.
+But if you have understood the ":ref:`modes`" section about the ideal position of your hands on the keyboard, you should know that you did things your are not supposed to do:
 
-Si vous avez suivi la section « :ref:`modes` » traitant de la position idéale pour vos mains, vous savez que vous avez fait une ou plusieurs choses que vous devriez vous interdire :
+- You have used your your mouse
+- You have moved your right hand a lot from its rest position, to press the directional keys that are far away from your fingers
 
+Certainly, it doesn't really matter, but it's totally ineffective (using your mouse or moving your right hand toward the directional keys is very slow) and harmful for your little hands. This is your last chance: if you are not ready to force yourself to not do it, **|vim| is not for you**. |vim| does a perfect job at keeping your hands on the keyboard and at forgetting your mouse. If you don't do it, you will not be using |vim| to its fullest. And, one day or another, **you will quit for another editor** that was made to be used with a mouse. So, should we proceed?
 
-- Vous avez utilisé votre souris
-- Vous avez déplacé grandement votre main droite de sa position de repos, pour aller atteindre les flèches directionnelles qui sont très mal placées sur un clavier
-
-
-Alors certes ce n'est pas grave en soi, mais c'est **inefficace** (se servir de la souris ou déplacer votre main droite vers les touches directionnelles est très lent) et **nuisible** pour vos petites mains. Ceci est votre dernière chance : si vous n'êtes pas prêt à vous forcer à ne pas le faire, **|vim| n'est pas fait pour vous**. |vim| est parfait pour ne pas utiliser la souris et pour ne pas bouger vos mains (ou presque). Ne pas se forcer à le faire, c'est ne pas tirer partie de tout le potentiel de |vim|, et à un moment ou un autre, **vous le quitterez pour un éditeur** qui aura été pensé pour être utilisé à la souris. Alors, on continue ?
-
-Se passer de la souris
-----------------------
+Forget the mouse
+----------------
 
 Si vous lisez ces lignes c'est que vous avez répondu « oui », allons-y gaiement alors ! Nous allons tout d'abord commencer par nous passer de la souris. La prochaine étape sera de se passer des touches directionnelles, mais chaque chose en son temps.
 
