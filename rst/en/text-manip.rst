@@ -27,17 +27,16 @@ But if you have understood the ":ref:`modes`" section about the ideal position o
 - You have used your your mouse
 - You have moved your right hand a lot from its rest position, to press the directional keys that are far away from your fingers
 
-Certainly, it doesn't really matter, but it's totally ineffective (using your mouse or moving your right hand toward the directional keys is very slow) and harmful for your little hands. This is your last chance: if you are not ready to force yourself to not do it, **|vim| is not for you**. |vim| does a perfect job at keeping your hands on the keyboard and at forgetting your mouse. If you don't do it, you will not be using |vim| to its fullest. And, one day or another, **you will quit for another editor** that was made to be used with a mouse. So, should we proceed?
+Certainly, it doesn't really matter, but it's totally ineffective (using your mouse or moving your right hand toward the directional keys is very slow) and harmful for your little hands. This is your last chance: if you are not ready to force yourself to not do it, **|vim| is not for you**. |vim| does a perfect job at keeping your hands on the keyboard and at forgetting your mouse. If you don't do it, you will not be using |vim| to its fullest. And, one day or another, **you will quit for another editor** that was made to be used with a mouse. So, should we continue?
 
 Forget the mouse
 ----------------
 
-Si vous lisez ces lignes c'est que vous avez répondu « oui », allons-y gaiement alors ! Nous allons tout d'abord commencer par nous passer de la souris. La prochaine étape sera de se passer des touches directionnelles, mais chaque chose en son temps.
+If you are reading thoses lines it means that you answered "yes" to the question above, so let's go! Our first step will be to get rid of the mouse. Then we will do the same with directional keys, but first things first.
 
+To copy/past using |vim|, you will have to switch to the "normal" mode (the default one when you open |vim|). To know what the current mode is, just have a look at the bottom left of your |vim|. You can see |vim| in "insert" mode in `the figure below`.
 
-Pour réaliser un copier/coller avec |vim| tout se passe en mode « normal ». Pour savoir dans quel mode vous vous trouvez, vous avez juste à regarder en bas à gauche de votre |vim|. La `figure ci-dessous`_ vous montre |vim| en mode « insertion » par exemple. 
-
-.. _figure ci-dessous: `mode insert`_
+.. _the figure below: `mode insert`_
 
 .. _mode insert:
 
