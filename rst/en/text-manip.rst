@@ -43,30 +43,29 @@ To copy/past using |vim|, you will have to switch to the "normal" mode (the defa
 .. image:: ../book-tex/graphics/vim-insert.png
 
 
-Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur |ttesc|. À noter que si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre |ttesc|, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans « :ref:`secesc` ».
+When there is nothing displayed at the bottom left, it's because you are currently in "normal" mode. In order to quit a mode to return to the normal one, you just have to press |ttesc|. You may already have noticed that pressing |ttesc| is a pain for your fingers. No worries, it's just a temporary thing, I will explain why in the ":ref:`secesc`" section.
 
-
-Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre |vim|. Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient que c'était impossible, alors ils l'ont fait. ». Votre |vim| devrait ressembler à celui de la figure ci-dessous. Notez l'absence d'affichage d'un quelconque mode en bas à gauche.
+Let's say that you are currently in the "normal" mode and that you already have some text in you |vim|. For example, it could be this beautiful quote from Mark Twain: "They did not know it was impossible, so they did it.". Your |vim| should like the one in the figure below. Notice that there is nothing displayed at the bottom left.
 
 .. _twain:
 
 .. image:: ../book-tex/graphics/vim-twain.png
 
-La façon la plus naturelle (mais pas la plus efficace, nous verrons cela un peu plus loin) de copier/coller le mot « impossible » va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur |ttv| (pour passer en mode « visuel »), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur |tty| (|tty| étant utilisée comme raccourci du mot *yank* en anglais). Vous avez copié votre premier mot.
+The most intuitive way (but not the most efficient, we will see why a little bit later) to copy/paste the "impossible" word is to move the cursor at the first letter of the word using the directional keys, to press |ttv| (to switch to the "visual" mode), to move to the last letter of the word (you should have the word "impossible" highlighted) and then to press |tty| (|tty| stands for *yank*). You've just copied your first word using |vim|. Hooray!
 
-Déplacez vous ensuite à la fin de la phrase (toujours en mode « normal ») puis appuyez sur |ttp| (raccourci du mot *paste* cette fois ci). Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure qui suit.
+Then, move to the end of the sentence (in "normal" mode) and press |ttp| (|ttp| standing for *paste*). The word should now be pasted at the end, and you should have something like the figure below.
 
 .. _vim-paste:
 
 .. image:: ../book-tex/graphics/vim-paste.png
 
-On se rend donc compte ici que |vim| se sert de l'astuce des modes (et notamment du mode « normal » pour les déplacements) afin de ne pas avoir à se servir de la souris.
-À partir du moment où vous aurez pris l'habitude de passer rapidement d'un mode à l'autre (et pour cela se passer de |ttesc| va devenir indispensable), utiliser la souris vous apparaîtra comme une perte de temps, mais pour cela il va falloir pratiquer un peu bien sûr.
+We can see that |vim| is using the mode switching trick (including the "normal" mode for moving) in order to not have to use the mouse.
+When you will be used to switch quickly from one mode to another (and in order to do so, going without |ttesc| will be mandatory), using the mouse will appear like a pure waste of time. But obviously, you will first need to train yourself.
 
 .. _secse-passer-touches-dir:
 
-Se passer des touches directionnelles
-=====================================
+Forgetting the directional keys
+===============================
 
 Nous y voilà. Encore plus que de se priver de la souris, se priver des touches directionnelles est la chose à faire si l'on veut utiliser |vim|, pour de vrai. |vim| va vous permettre de faire tout plus rapidement et plus intuitivement à la seule condition de le faire sans les touches directionnelles.
 Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main certes, mais ça va aussi vous forcer à passer en mode « normal » pour réaliser vos déplacements et vos mouvements de texte. Il n'y a qu'à ce moment là (un peu douloureux au début il est vrai) que vous commencerez à vraiment tirer parti de |vim|.
