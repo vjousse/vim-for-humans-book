@@ -67,11 +67,9 @@ When you will be used to switch quickly from one mode to another (and in order t
 Forgetting the directional keys
 ===============================
 
-Nous y voilà. Encore plus que de se priver de la souris, se priver des touches directionnelles est la chose à faire si l'on veut utiliser |vim|, pour de vrai. |vim| va vous permettre de faire tout plus rapidement et plus intuitivement à la seule condition de le faire sans les touches directionnelles.
-Cela va vous permettre comme je l'ai déjà dit de ne pas bouger votre main certes, mais ça va aussi vous forcer à passer en mode « normal » pour réaliser vos déplacements et vos mouvements de texte. Il n'y a qu'à ce moment là (un peu douloureux au début il est vrai) que vous commencerez à vraiment tirer parti de |vim|.
+Here we are. Even if forgetting the mouse is a first good step, the real goal when using |vim| is to forget the directional keys too. You will be faster and better when using |vim| on the sole condition that you don't use the directional keys anymore. It will indeed force you to keep your hands on the home row and you will have to switch to the normal mode to move around. This is a prerequisite to use |vim| at its fullest.
 
-Pour cette section, je vais vous expliquer comment vous déplacer sans utiliser les touches directionnelles. Puis, une fois que vous aurez une vague idée de comment faire, je vous donnerai le code à mettre dans votre |vimrc| pour désactiver les touches directionnelles complètement. Car oui, il n'y a que comme ça que vous y arriverez (en tout cas il n'y a que comme ça que j'y suis arrivé).
-
+During this section, I will explain how to move without using the directional keys. Then, when you will know how to do it, I will give you the code that you need to put in your |vimrc| to totally disable the directional keys. It was the only way I found to force me to not use the directional keys anymore.
 
 Se déplacer sans les touches directionnelles
 --------------------------------------------
