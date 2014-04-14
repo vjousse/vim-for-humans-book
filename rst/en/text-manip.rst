@@ -69,37 +69,37 @@ Forgetting the directional keys
 
 Here we are. Even if forgetting the mouse is a first good step, the real goal when using |vim| is to forget the directional keys too. You will be faster and better when using |vim| on the sole condition that you don't use the directional keys anymore. It will indeed force you to keep your hands on the home row and you will have to switch to the normal mode to move around. This is a prerequisite to use |vim| at its fullest.
 
-During this section, I will explain how to move without using the directional keys. Then, when you will know how to do it, I will give you the code that you need to put in your |vimrc| to totally disable the directional keys. It was the only way I found to force me to not use the directional keys anymore.
+In this section, I will explain how to move without using the directional keys. Then, when you will know how to do it, I will give you the code that you need to put in your |vimrc| to totally disable the directional keys. It was the only way I found to force me to not use the directional keys anymore.
 
-Se déplacer sans les touches directionnelles
---------------------------------------------
+Moving without using the directional keys
+-----------------------------------------
 
-En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un caractère :
+When in normal mode, 4 keys will allow you to move your cursor:
 
-* |tth| pour aller **à gauche**
-* |ttj| pour aller **en bas**
-* |ttk| pour aller **en haut**
-* |ttl| pour aller **à droite**
+* |tth| to move to the **left**
+* |ttj| to move to the **bottom**
+* |ttk| to move to the **top**
+* |ttl| to move to the **right**
 
 
 .. _hjkl:
 
 .. image:: ../book-tex/graphics/hjkl.png
 
-Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien. Vous trouverez le clavier sur lequel *Vi* a été conçu dans la section « :ref:`secesc` », vous comprendrez ainsi le pourquoi du comment.
+As you can notice, thoses keys are located on the home row so that you don't have to move your hands. Your index has two moves (left and bottom) while your auricular doesn't have any. You will see that it's not a problem, it's even a feature: your index is stronger than your auricular. By checking the keyboard that was used to develop *Vi* in the ":ref:`secesc`" section, you will understand why.
 
-À noter qu'à force, on se sert de moins en moins des déplacements gauche/droite d'un caractère. On va leur préférer les déplacements de mot en mot, de paragraphe en paragraphe ou les déplacements grâce à des recherches. Quelques exemples de déplacements "rapides" que j'utilise :
+On a side note, once you will be used to |vim|, you will note use the left and right moves a lot. You will primarily move the cursor word by word, paragraph by paragraph or by using the search function. Here are some "fast moves" that I otfen use:
 
-========== ===============================================
-Touche     Déplacement
-========== ===============================================
-|te|       **à la fin du mot courant**
-|tb|       **au début du mot courant**
-|tw|       **au début du mot suivant**
-|that|     **au premier caractère non blanc de la ligne**
-|tdollar|  **à la fin de la ligne**
-|tzero|    **au début de la ligne**
-========== ===============================================
+========== =================================================
+Key        Move
+========== =================================================
+|te|       **to the end of the current word**
+|tb|       **to the beginning of the current word**
+|tw|       **to the beginning of the next word**
+|that|     **to the first non white character of the line**
+|tdollar|  **to the end of the line**
+|tzero|    **to the start of the line**
+========== =================================================
 
 
 Vous avez ici le minimum pour vous déplacer en mode normal. Il existe aussi des commandes vous permettant de vous déplacer puis de rentrer en mode insertion directement, elles sont très pratiques car elles vont vous permettre d'économiser quelques touches. En voici quelques unes que j'utilise à peu près tout le temps :
