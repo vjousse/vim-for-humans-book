@@ -101,28 +101,27 @@ Key        Move
 |tzero|    **to the start of the line**
 ========== =================================================
 
-
-Vous avez ici le minimum pour vous déplacer en mode normal. Il existe aussi des commandes vous permettant de vous déplacer puis de rentrer en mode insertion directement, elles sont très pratiques car elles vont vous permettre d'économiser quelques touches. En voici quelques unes que j'utilise à peu près tout le temps :
+This is the mininum to move your hands in normal mode. They are also commands allowing you to first move and then to enter the insert mode directly. They are very handy because the will allow you to save a few keystrokes. Here are some that I often use:
 
 ======== ================================================================
-Touche   Action
+Key      Action
 ======== ================================================================
-|ti|     se place en mode insertion **avant l'emplacement du curseur**
-|ta|     se place en mode insertion **après l'emplacement du curseur**
-|tI|     se place en mode insertion **au début de la ligne**
-|tA|     se place en mode insertion **à la fin de la ligne**
-|to|     insère une nouvelle ligne **en dessous de la ligne courante**
-|tO|     insère une nouvelle ligne **au dessus de la ligne courante**
-|tr|     **remplace les caractères** sous le curseur
+|ti|     enter insert mode just **before the cursor**
+|ta|     enter insert mode just **after the cursor**
+|tI|     enter insert mode **at the beginning of the line**
+|tA|     enter insert mode **at the end of the line**
+|to|     insert a new line **below the current line**
+|tO|     insert a new line **above the current line**
+|tr|     **replace the character** under the cursor by a new one
 ======== ================================================================
 
-Arrêtons-nous un peu là dessus. Au risque d'insister lourdement, mais la clé de l'utilisation de |vim| vient de ce que nous venons de voir dans ce chapitre, ni plus, ni moins. Il y a une chose que vous avez à vous forcer à faire, c'est **d'utiliser les touches hjkl** pour les déplacements. Si vous y arrivez, vous apprendrez tout le reste au fur et à mesure.
+Let's discuss that a little bit. The secret of |vim| relies in this chapter. There is one thing that you have to do when learning |vim|: **use the hjkl keys** to move. If you can manage to do that, you will learn everything else on the go.
 
-Vous trouverez des sites entiers vous détaillant les différentes commandes possibles, les différentes combinaisons, j'en passe et des meilleures. Vous les apprendrez puis les oublierez (ou pas, en fonction de si elles vous sont vraiment utiles). Si vous avez un seul effort à faire c'est celui de se passer des touches directionnelles et donc de vous forcer à utiliser le mode normal. Le reste tombera sous le sens.
+You'll find a lot of websites with all the possible commands, combinations and so on. You will learn and forgot them (depending on how useful they are to you). If you have a single effort to do: it is to use the directional keys and thus to force you to use the normal mode. Everything else will then be perfectly obvious.
 
-Voici l'ultime configuration qu'il vous faudra mettre dans votre |vimrc| pour atteindre le Saint Graal : désactiver les touches directionnelles.::
+Here is the ultimate configuration that you will need to put in your |vimrc| to achieve your goal: disabling the directional keys: ::
 
-    " Désactiver les touches directionnelles
+    " Disabling the directional keys
     map <up> <nop>
     map <down> <nop>
     map <left> <nop>
@@ -132,25 +131,24 @@ Voici l'ultime configuration qu'il vous faudra mettre dans votre |vimrc| pour at
     imap <left> <nop>
     imap <right> <nop>
 
-Nous y voilà. Croyez-moi, vous allez souffrir un peu au début. Pour moi, ça n'a pas duré plus de deux jours. Ensuite vous aurez oublié. Si vous n'êtes pas prêt à galérer un peu pendant deux jours pour améliorer votre efficacité à vie, que faites-vous ici !
+Here we are. Believe me, this will be a little bit hard at the beginning. It was the case for me during the first two days. But then, you just forgot and deal with it. Anyway, if you are not ready to struggle for two days in order to learn |vim| properly: what are you doing here?!
 
-Je ne vous donnerai pas d'autres détails sur toutes les touches possibles pour vous déplacer, d'autres ressources le font déjà bien mieux que moi. Je vais en revanche vous apprendre dans :ref:`combine-move` comment les utiliser à bon escient.
+I  will not go into details on all the possibles keys to move inside |vim|, other resources are doing a better job at it. It's the case of "A byte of |vim|" that you can freely download here: http://www.swaroopch.com/notes/vim/. But on the other hand, you will learn in :ref:`combine-move` how to use them wisely.
 
-On peut notamment citer le livre gratuit "A byte of |vim|" traduit en français et disponible à l'adresse suivante : http://swaroopch.com/notes/Vim_fr/.
-
-Ou encore l'infographie de la figure ci-dessous (téléchargeable sur http://www.nathael.org/) qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
+Here is an handy graphical cheat sheet that you can download on http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html. I would recommend you to print it and to put it on your desktop: it helps a lot at the beginning.
 
 .. _cheat-sheet:
 
-.. image:: ../book-tex/graphics/vi-vim-cheat-sheet.png
+.. image:: ./graphics/vi-vim-cheat-sheet.gif
 
 
 N'oubliez pas que le but ici est de gagner en rapidité en ne bougeant quasi plus ses mains de la rangée de repos, et en utilisant le plus possible le « mode normal ». Au boulot !
+Keep in mind that the main goal here is to increase your speed while keeping your hands on the "home row" and using the "normal mode". Get down to work!
 
 .. _secesc:
 
-Se passer de la touche Échap
-============================
+Doing without the Esc key
+==========================
 
 Utiliser |ttesc| pour sortir du mode « insertion » semble être une hérésie tellement elle est difficilement accessible. Il faut déplacer entièrement la main gauche pour y accéder ou alors se torturer le petit doigt.
 
