@@ -142,7 +142,6 @@ Here is an handy graphical cheat sheet that you can download on http://www.viemu
 .. image:: ./graphics/vi-vim-cheat-sheet.gif
 
 
-N'oubliez pas que le but ici est de gagner en rapidité en ne bougeant quasi plus ses mains de la rangée de repos, et en utilisant le plus possible le « mode normal ». Au boulot !
 Keep in mind that the main goal here is to increase your speed while keeping your hands on the "home row" and using the "normal mode". Get down to work!
 
 .. _secesc:
@@ -150,37 +149,35 @@ Keep in mind that the main goal here is to increase your speed while keeping you
 Doing without the Esc key
 ==========================
 
-Utiliser |ttesc| pour sortir du mode « insertion » semble être une hérésie tellement elle est difficilement accessible. Il faut déplacer entièrement la main gauche pour y accéder ou alors se torturer le petit doigt.
+Let's be honest: having to use |ttesc| to exit the "insert mode" seems to be totally counterproductive. The key is very far from the home row, you have to move your full left hand to reach it and you have to torture your little finger to press it.
 
-Pour comprendre pourquoi |ttesc| est utilisée par défaut, il faut faire un bon de quelques années en arrière, pour se retrouver en face du clavier sur lequel *Vi* a été développé. Vous pouvez voir sur la photo ci-dessous que |ttesc| était très facilement accessible. Vous pouvez aussi noter l'emplacement des touches directionnelles. Malheureusement depuis, cela a bien changé.
+To understand why |ttesc| is used by default to exit the "insert mode", we have to go back in time a little bit. We need to find the keyboard used to program *Vi*. You can see on the picture below that |ttesc| was very easy to reach. You can notice that the directional keys were on the home row, on the famous h, j, k, l keys. But unfortunately, it's not the case anymore, so we will have to do some changes to the default configuration.
 
 .. _vi-keyboard:
 
 .. image:: ../book-tex/graphics/lsi-adm3a-full-keyboard.jpg
 
-L'étape ultime (après avoir réussi à se passer des touches directionnelles) est donc de rapprocher |ttesc| de vos petits doigts. Il y a plusieurs solutions pour cela, mais celle que je vous recommande si vous avez un clavier avec une disposition française est la suivante (dans votre |vimrc|) :::
+So we agree that we need another key to exit the insert mode. There are many solutions, here are some possibilities that you can try in your |vimrc|: ::
 
-    " Les ; sont rarement utilisés l'un à la suite de l'autre
-    :imap ;; <Esc>
-    :map ;; <Esc>
-
-Lorsque vous êtes en mode insertion, il vous suffit d'appuyer deux fois sur |ttsemicolon| pour retourner au mode normal. |ttsemicolon| ne vous demande pas de bouger votre main de la rangée de repos et on l'utilise rarement deux fois de suite (et si c'est le cas, il suffit d'attendre un peu avant de taper le deuxième |tsemicolon|), c'est donc le parfait candidat.
-
-Voici d'autres solutions possibles (cf http://vim.wikia.com/wiki/Avoid_the_escape_key):::
-
+    " Press the j 2 times in row
     :imap jj <Esc>
 
+    " Press the j key followed by the k one
     :imap jk <Esc>
 
+    " Press the i 2 times in row
     :imap ii <Esc>
 
     :imap ` <Esc>
 
-    " Shift-Espace (peut ne pas marcher sur votre système).
+    " Shift-Space
     :imap <S-Space> <Esc>
 
-    " Sous Linux avec gvim Vim en console, vous pouvez utiliser Alt-Space.
+    " Alt-Space.
     :imap <M-Space> <Esc>
+    
+
+You can have a look at the discussion here if you want more information: http://vim.wikia.com/wiki/Avoid_the_escape_key.
 
 .. _combine-move:
 
