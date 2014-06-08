@@ -199,22 +199,22 @@ Here are some examples:
 
 
 ======================= ============================================================================
-Action                  Résultat
+Action                  Result
 ======================= ============================================================================
-|ttd| puis |ttw|        supprime les caractères jusqu'au prochain mot
-|ttc| puis |ttw|        supprime les caractères jusqu'au prochain mot et passera en mode insertion
-|ttd| puis |ttdollar|   supprime tout jusqu'à la fin de la ligne
-|ttd| puis |tthat|      supprime tout jusqu'au début de la ligne
+|ttd| then |ttw|        deletes all the characters until the next word
+|ttc| then |ttw|        deletes all the characters until the next word and switch to the "insert mode"
+|ttd| then |ttdollar|   delete everything until the end of the line
+|ttd| then |tthat|      delete everything until the start of the line
 ======================= ============================================================================
 
-Vous pouvez aussi utiliser cela pour copier :
+To copy, you can use:
 
 ======================= =============================================================
-Action                   Résultat
+Action                   Result
 ======================= =============================================================
-|tty| puis |ttw|        copie les caractères jusqu'au prochain mot
-|tty| puis |ttdollar|   copie tout jusqu'à la fin de la ligne
-|tty| puis |tthat|      copie tout jusqu'au premier caractère non blanc de la ligne
+|tty| then |ttw|        copy the characters until the next word
+|tty| then |ttdollar|   copy everything until the end of the line
+|tty| then |tthat|      copy everything until the first non blank character of the line
 ======================= =============================================================
 
 Il ne vous restera qu'a appuyer sur |ttp| pour coller ce que vous voulez où vous voulez. Par défaut |ttp| colle le texte après la position courante du curseur. Si vous voulez coller avant la position du curseur, utilisez |ttP|.
