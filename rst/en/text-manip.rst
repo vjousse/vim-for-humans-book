@@ -217,28 +217,28 @@ Action                   Result
 |tty| then |tthat|      copy everything until the first non blank character of the line
 ======================= =============================================================
 
-Il ne vous restera qu'a appuyer sur |ttp| pour coller ce que vous voulez où vous voulez. Par défaut |ttp| colle le texte après la position courante du curseur. Si vous voulez coller avant la position du curseur, utilisez |ttP|.
+All you have to do next is to press |ttp| to paste the text you copied above. By default, |ttp| will paste the text after the current position of the cursor. If you want to paste before the position of the cursor, use |ttP|.
 
-Il arrive de temps en temps de vouloir aussi supprimer du texte (non sans blague !), voici quelques commandes utiles pour cela :
+From time to time, you may also want to be able to delete some text… ;) Here are some useful commands to do so:
 
 ========= ============
-Action    Résultat
+Action    Result
 ========= ============
-|tdtd|    efface la ligne courante et la place dans le presse-papier
-|tx|      efface le caractère sous le curseur
-|tX|      efface le caractère avant le curseur
+|tdtd|    delete the current line and put it in the clipboard
+|tx|      delete the character under the cursor
+|tX|      delete the character before the cursor
 ========= ============
 
-La plupart des mouvements peuvent être préfixés par un nombre multiplicateur. Voici quelques exemples :
+Most of the moves can be prefixed by a multiplier number. Here are some examples:
 
 ================= ============
-Action            Résultat
+Action            Result
 ================= ============
-``2``\ |td|\ |td| efface deux lignes
-``3``\ |tx|       efface 3 caractères vers l'avant du curseur
-``3``\ |tX|       efface 3 caractères vers l'arrière du curseur
-``2``\ |ty|\ |ty| copie 2 lignes dans le presse-papier
-``5``\ |tj|       se déplace de 5 lignes vers le bas
+``2``\ |td|\ |td| delete 2 lines
+``3``\ |tx|       delete 3 characters forward
+``3``\ |tX|       delete 3 characters backward
+``2``\ |ty|\ |ty| copy 2 lines in the clipboard
+``5``\ |tj|       move 5 lines downward
 ================= ============
 
 
