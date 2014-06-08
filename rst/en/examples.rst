@@ -24,7 +24,7 @@ Si vous souhaitez que |vim| sauvegarde sous *monfichier.txt* et ouvre ensuite ce
 Comment copier/couper coller ?
 ------------------------------
 
-Celle là est facile, j'y ai déjà consacré un chapitre, cf. :ref:`se-deplacer`. 
+Celle là est facile, j'y ai déjà consacré un chapitre, cf. :ref:`moving`. 
 
 En résumé :
 

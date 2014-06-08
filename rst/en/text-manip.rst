@@ -62,7 +62,7 @@ Then, move to the end of the sentence (in "normal" mode) and press |ttp| (|ttp| 
 We can see that |vim| is using the mode switching trick (including the "normal" mode for moving) in order to not have to use the mouse.
 When you will be used to switch quickly from one mode to another (and in order to do so, going without |ttesc| will be mandatory), using the mouse will appear like a pure waste of time. But obviously, you will first need to train yourself.
 
-.. _secse-passer-touches-dir:
+.. _forgetting-the-directional-keys:
 
 Forgetting the directional keys
 ===============================
@@ -181,21 +181,21 @@ You can have a look at the discussion here if you want more information: http://
 
 .. _combine-move:
 
-Combiner des touches/déplacements
-=================================
+Combining keys and moves
+========================
 
-Maintenant que nous savons nous déplacer en mode normal, il est temps de voir comment réaliser d'autres opérations. Nous avons déjà vu le copier/coller au chapitre :ref:`se-deplacer`, nous allons maintenant voir comment supprimer/éditer plus facilement.
+Now that we are able to move properly by using the normal mode, it's time to see how to perform other useful operations. We have already seen how to copy/past in the :ref:`moving` chapter, we will now have a look at how to delete/edit more easily.
 
-Dans :ref:`secse-passer-touches-dir` nous avons vu qu'il suffisait d'utiliser |ttw| pour se déplacer au début du mot suivant. Nous allons essayer de combiner cela avec quelques nouvelles touches du mode normal :
+In :ref:`forgetting-the-directional-keys` we saw that if we want to move to the start of the next word we just have to use |ttw|. We will combine that with some new keys of the "normal mode":
 
-* |ttd| est utilisée pour « supprimer »
-* |ttc| est utilisée pour « supprimer et passer en mode insertion »
+* |ttd| is used to "delete"
+* |ttc| is used to "delete and switch to insert mode"
 
-À noter que ce qui est supprimé est placé dans le presse-papier en même temps (le « supprimer » se comporte par défaut comme un « couper »).
+Something good to know: by default, everything that is deleted is placed in the clipboard. The delete is behaving like a cut.
 
-La particularité de ces touches, c'est qu'elles attendent ensuite un « ordre de déplacement » pour savoir quoi supprimer. Il va donc falloir les combiner avec les déplacements que nous avons déjà vus dans :ref:`secse-passer-touches-dir`.
+The particularity of these keys is that they are waiting for a "move order" to know what should be deleted. So you will need to provide one of the keys that we discussed in the :ref:`forgetting-the-directional-keys` chapter.
 
-Cela donnera par exemple :
+Here are some examples:
 
 
 ======================= ============================================================================
