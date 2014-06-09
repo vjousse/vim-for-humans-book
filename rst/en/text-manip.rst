@@ -242,33 +242,33 @@ Action            Result
 ================= ============
 
 
-Rechercher / Se déplacer rapidement
-===================================
+Search / Move quickly
+=====================
 
-Maintenant que nous connaissons les commandes de base pour éditer du texte avec |vim|, voyons voir comment nous déplacer plus rapidement dans notre document. Nous avons déjà évoqué les touches |tw|, |tb|, |that| et |tdollar| qui nous permettent respectivement de se déplacer à la fin d'un mot, au début d'un mot, au début d'une ligne et la fin d'une ligne. Tout d'abord, voyons voir comment « scroller » sans la souris. À noter que toutes ces commandes se font en mode « normal ».
+Now that we know the basic commands for editing text with |vim|, let's see how we can move faster in our document. We have already mentioned  the |tw|, |tb|, |that| and |tdollar| keys that allow us to respectively move at the end of a word, at the beginning of a word, at the beginning of a line and at the end of a line. First, let's see how to "scroll" without using the mouse. Note that all these commands are for the "normal mode".
 
-Sauts de page
--------------
+Scrolling pages
+---------------
 
-Pour faire défiler les pages, il faut utiliser :
+To scroll page by page, you must use:
 
-* |tctrl| + |tf| pour passer à la page suivante (|tf| pour forward)
-* |tctrl| + |tb| pour passer à la page précédente (|tb| pour backward)
+* |tctrl| + |tf| to move to the next page (|tf| = forward)
+* |tctrl| + |tb| to move to the previous page (|tb| = backward)
 
-Ces raccourcis vont vous permettre d'avancer rapidement dans votre document. 
+These shortcuts will allow you to move quickly in your document.
 
-Vous pouvez aussi :
+You can also:
 
-* Vous rendre au début du fichier en tapant |tgtg|
-* Vous rendre à la fin du fichier en tapant |tG|
-* Vous rendre à la ligne 23 en tapant |tcolon|\ ``23``
+* Move to the top of the file by typing |tgtg|
+* Move to the end of the file by typing |tG|
+* Move to the line number 23 by typing |tcolon|\ ``23``
 
-Les marqueurs
--------------
+Marks
+-----
 
-Lorsque je me déplace dans un fichier, j'aime bien pouvoir revenir à certains endroits. Par exemple lorsque je me rends au début du fichier alors que j'étais en train de travailler au milieu de celui-ci, j'aime bien pouvoir revenir directement où je travaillais. Heureusement, |vim| a tout prévu pour cela grâce à l'utilisation de **marqueurs**. Les marqueurs sont tout simplement des « marque-pages » qui permettent à votre curseur de se retrouver à la position où vous aviez mis votre marqueur.
+When I'm moving inside a file, I often need to go back to some previous points. For example, when I go to the beginning of the file while I was working in the middle of it, I like to come back directly to where I was working before moving to the beginning. Fortunately, |vim| has everything for it through the use of **markers**. Markers are simply "bookmarks" that allow you to move quickly through the file.
 
-Un marqueur se pose en tapant |tm|\ |ta|. Pour déplacer votre curseur à la position du marqueur tapez |tapos|\ |ta|. Vous pouvez placez plusieurs marqueurs en changeant |ta| par n'importe quelle lettre de l'alphabet (on appelle cela des registres en langage |vim|). Pour placer un autre marqueur vous pouvez par exemple utiliser la lettre |td|. Grâce à |tm|\ |td| vous placerez le marqueur et à |tapos|\ |td| vous vous y rendrez.
+You can put a marker by pressing |tm|\ |ta|. To move your cursor to the position of the marker, just press |tapos|\ |ta|. You can place as many marker as you want by changing |ta| with any letter of the alphabet (this is called register in |vim|'s language). To place another marker you can for example use the letter |td|. Thanks to |tm|\ |td| you will put the marker and with |tapos|\ |td| you will move to the position of the marker.
 
 La recherche
 ------------
