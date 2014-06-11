@@ -198,24 +198,24 @@ The particularity of these keys is that they are waiting for a "move order" to k
 Here are some examples:
 
 
-======================= ============================================================================
-Action                  Result
-======================= ============================================================================
-|ttd| then |ttw|        deletes all the characters until the next word
-|ttc| then |ttw|        deletes all the characters until the next word and switch to the "insert mode"
-|ttd| then |ttdollar|   delete everything until the end of the line
-|ttd| then |tthat|      delete everything until the start of the line
-======================= ============================================================================
+============================ ============================================================================
+Action                       Result
+============================ ============================================================================
+|ttd| then |ttw|             deletes all the characters until the next word
+|ttc| then |ttw|             deletes all the characters until the next word and switch to the "insert mode"
+|ttd| then |ttdollar|        delete everything until the end of the line
+|ttd| then |tthat|           delete everything until the start of the line
+============================ ============================================================================
 
 To copy, you can use:
 
-======================= =============================================================
-Action                   Result
-======================= =============================================================
-|tty| then |ttw|        copy the characters until the next word
-|tty| then |ttdollar|   copy everything until the end of the line
-|tty| then |tthat|      copy everything until the first non blank character of the line
-======================= =============================================================
+============================= =============================================================
+Action                        Result
+============================= =============================================================
+|tty| then |ttw|              copy the characters until the next word
+|tty| then |ttdollar|         copy everything until the end of the line
+|tty| then |tthat|            copy everything until the first non blank character of the line
+============================= =============================================================
 
 All you have to do next is to press |ttp| to paste the text you copied above. By default, |ttp| will paste the text after the current position of the cursor. If you want to paste before the position of the cursor, use |ttP|.
 
@@ -270,53 +270,53 @@ When I'm moving inside a file, I often need to go back to some previous points. 
 
 You can put a marker by pressing |tm|\ |ta|. To move your cursor to the position of the marker, just press |tapos|\ |ta|. You can place as many marker as you want by changing |ta| with any letter of the alphabet (this is called register in |vim|'s language). To place another marker you can for example use the letter |td|. Thanks to |tm|\ |td| you will put the marker and with |tapos|\ |td| you will move to the position of the marker.
 
-La recherche
-------------
+Search
+------
 
-En mode normal, vous pouvez lancez une recherche en utilisant |ttslash| suivi du texte que vous souhaitez rechercher puis de |ttenter|. Grâce à notre configuration de |vim| vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse. Vous pouvez vous déplacer à la prochaine occurrence de la recherche grâce à |ttn|. Pour vous déplacer à la précédente utilisez |ttN|.
+In "normal mode", you can start a search by using |ttslash| followed by the text you want to search and |ttenter|. Thanks to our |vim| configuration you should see your search occurrences highlighted at the same time as you type. By default, the search is not case sensitive (no difference between upper and lower case). However, as soon as you will type a capital, the search will become case sensitive. You can move forward to the next search result thanks to |ttn|. To move backward, use |ttN|.
 
-Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela :::
 
-    " -- Recherche
-    set ignorecase            " Ignore la casse lors d'une recherche
-    set smartcase             " Si une recherche contient une majuscule,
-                                " re-active la sensibilite a la casse
-    set incsearch             " Surligne les resultats de recherche pendant la
-                                " saisie
-    set hlsearch              " Surligne les resultats de recherche
+As a reminder, here are the corresponding lines of your configuration: ::
 
-Attention par défaut, la recherche utilise les expressions régulières POSIX. Si vous souhaitez rechercher des caractères habituellement utilisés dans les expressions régulières (comme [ ] ^{ } $ /) n'oubliez pas de les préfixer par \\.
+    " -- Search
+    set ignorecase            " Ignore case when searching
+    set smartcase             " If there is an uppercase in your search term
+                              " search case sensitive again
+    set incsearch             " Highlight search results when typing
+    set hlsearch              " Highlight search results
 
-Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à |ttstar|. Utiliser |ttstar| fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez |ttsharp|.
+Be careful, by default, the search is using POSIX regular expressions. If you want to search for characters commonly used in regular expressions (like [ ] ^{ } $ /) do not forget to prefix them with \\.
 
-Le mode visuel
-==============
+You can also search for the word that is directly under your cursor through |ttstar|. |ttstar| will search forward, |ttsharp| will search backward.
 
-Je vous en ai déjà parlé lors de l'explication sur le Copier / Coller, mais comme je sais que certains d'entre vous sont tête en l'air, je vous fais un petit rappel ici.
+Visual mode
+===========
 
-Lorsque vous êtes en mode « normal » appuyez sur |ttv| pour passer en mode "visuel". Vous pourrez alors sélectionner des caractères ou des lignes entières grâce aux différentes façon de vous déplacer que vous venez d'apprendre. Vous pourrez ensuite copier le texte sélectionné avec |tty| puis le coller avec |ttp|. Pour le couper il vous faudra utiliser |ttd|.
+I have already mentioned the "visual mode" when explaining how to Copy/Paste, but I will do a little reminder here, just in case.
 
-En mode normal vous pourrez utiliser |ttV| pour sélectionner lignes par lignes. Et bien sûr, utiliser |ttesc| ou :vimcmd:`;;` pour revenir au mode normal.
+When you are in "normal mode", press |ttv| to switch to the "visual mode". You will then be able to select individual characters or entier lines thanks to the various ways of moving that you just learned above. You can then copy the selected text with |tty| and paste it with |ttp|. To cut it just use |ttd| instead of |tty|.
 
-À vous de jouer
+In "normal mode" you will be able to use |ttV| to select line per line. And of course, use |ttesc| or :vimcmd:`;;` to switch back to "normal mode".
+
+It's your turn!
 ===============
 
-Vous devriez maintenant être capable de n'utiliser que le clavier pour les opérations de manipulation de texte et d'édition. Je n'ai fait que survoler la puissance de |vim| ici, mais ça devrait être suffisant pour survivre. Je vous ai donné ici le strict nécessaire, mais ce strict nécessaire vous permet déjà de profiter de |vim| et du plaisir de ne plus utiliser la souris.
+You should now be able to only use the keyboard to manipulate and edit text in |vim|. I only skimmed over the power of |vim| here, but it should be enough to survive. I have given you the bare minimum here, but this minimum should allow you to enjoy |vim| and to not use the mouse anymore.
 
-À vous maintenant de lire les nombreuses ressources disponibles sur internet vous décrivant tous les mouvements possibles et imaginables. Je ne manquerai d'ailleurs pas de compléter ce guide avec des articles sur le site internet qui lui est dédié http://vimebook.com.
+It's now your turn to read all the many resources available on the Internet describing all the possible moves and combinations.
 
-Voici une liste de ressources qui pourraient vous être utiles, malheureusement les ressources en français sont assez rares :
+Here is a list of resources that could be useful to you:
 
-* A byte of |vim| en français http://www.swaroopch.com/notes/vim_fr/
-* Un petit pense bête sympathique de différents raccourcis clavier http://www.tuteurs.ens.fr/unix/editeurs/vim.html
-* Un wiki non officiel francophone (un peu fouillis soit dit en passant) : www.vim-fr.org/
-* Les vidéos Peepcode en anglais mais vraiment superbement réalisées : https://peepcode.com/products/smash-into-vim-i et https://peepcode.com/products/smash-into-vim-ii
-* Le blog de Derek Wyatt's en anglais http://www.derekwyatt.org/vim/vim-tutorial-videos/
+* A byte of |vim| http://www.swaroopch.com/notes/vim/en 
+* A beautiful Wiki : http://vim.wikia.com/wiki/Vim_Tips_Wiki
+* Videos from Peepcode : https://peepcode.com/products/smash-into-vim-i and https://peepcode.com/products/smash-into-vim-ii
+* Derek Wyatt's blog http://www.derekwyatt.org/vim/vim-tutorial-videos/
 
-Histoire de réveilleur l'enfant qui est en vous, je vous conseille vivement d'aller vous amuser avec http://vim-adventures.com/. C'est un jeu de rôle en ligne qui a pour but de vous apprendre à manipuler |vim| ! Voici un petit aperçu :
+
+To awaken the child in you, I urge you to go have fun with http://vim-adventures.com/. This is a role playing online game that aims to teach you to master |vim|! Here is an overview:
 
 .. _vim-adventures:
 
 .. image:: ../book-tex/graphics/vim-adventures.png
 
-Nous allons maintenant passer à la vitesse supérieure : l'utilisation de plugins, ou comment rendre |vim| incontournable.
+Now we will go to the next level: the use of plugins, or how to make |vim| inescapable.
