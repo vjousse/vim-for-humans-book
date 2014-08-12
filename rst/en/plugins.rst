@@ -1,19 +1,21 @@
 .. _plugins:
 
-**************************
-Les plugins indispensables
-**************************
+*****************
+Essential plugins
+*****************
 
-Soyons clair, |vim| sans ses plugins, c'est comme Milan sans Rémo (© François Corbier - Sans ma barbe - http://www.bide-et-musique.com/song/149.html) : ça ne rime à rien. C'est grâce aux plugins que |vim| va pouvoir pleinement exprimer toute sa puissance et vous élever à un autre niveau de productivité. Vous n'avez pas besoin d'en avoir des mille et des cents, mais quelques uns savamment choisis devraient faire l'affaire.
+Let's be clear, using |vim| without plugins is almost useless. It's the usage of plugins that will allow you to boost your productivity. You don't need a lot of them, but you need the good ones.
 
-Qu'on ne se méprenne pas, |vim| peut bien sûr s'utiliser sans plugins. Il peut d'ailleurs s'avérer utile de savoir faire les manipulations de base sans avoir besoin d'installer de plugin, car c'est souvent le cas sur des serveurs : il n'y a aucun plugin d'installé. Dans ce cas là, savoir ouvrir, sauvegarder sous, passer d'un fichier à l'autre avec les commandes de |vim| par défaut peut vous sauver la mise. En revanche, dans votre travail quotidien de rédaction ou de code, les plugins sont indispensables pour pleinement tirer partie de |vim|.
+|vim| can of course be used without any plugin and it can be useful to know how to use it without the need to install additional plugins. Indeed, on most servers, you will have zero plugin installed. That's why, knowing how to open and save a file, knowing how to switch between files just by using default commands is very useful. However, for your writing or coding needs, plugins are mandatory.
 
 .. _seclusty:
 
-Naviguer sur le disque et entre les fichiers : *Lusty Explorer*
-===============================================================
+Managing and switching between files : *Lusty Explorer*
+=======================================================
 
-Nous avons déjà vu NerdTree dans :ref:`secnerdtree` qui permettait d'avoir un explorateur de projet dans une fenêtre latérale de |vim|. Le problème de ce plugin est qu'il n'est pas fait pour être utilisé au clavier. Certes vous pouvez utiliser le clavier, mais il ne sera pas aussi efficace que les plugins pensés uniquement pour une utilisation au clavier.
+We've already talk about NerdTree in :ref:`secnerdtree`, we saw that thanks to it, we can have a project explorer in a sidebar. One of the problems of this plugin is that it was not designed to be used with the keyboard. You can for sure use the keyboard, but it will not be as efficient as a plugin developed with keyboard usage in mind.
+
+The first plugin that I install when I have to use |vim| is *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). This plugin will allow you to navigate between the files on you hard disk in order to open files without using the mouse.
 
 Personnellement, le premier plugin que j'installe partout où j'ai à utiliser |vim|, c'est *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. Il va aussi permettre de naviguer rapidement entre vos différents fichiers déjà ouverts (vos buffers en jargon |vim|). Commençons par l'installer.
 

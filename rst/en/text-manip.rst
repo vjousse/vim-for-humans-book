@@ -319,4 +319,4 @@ To awaken the child in you, I urge you to go have fun with http://vim-adventures
 
 .. image:: ../book-tex/graphics/vim-adventures.png
 
-Now we will go to the next level: the use of plugins, or how to make |vim| inescapable.
+Now we will go to the next level: the use of plugins, or how to make |vim| indispensable.
