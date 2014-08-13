@@ -95,7 +95,7 @@ Vous pouvez constater sur `la capture d'écran de lusty`_ qu'il y a deux parties
 * |tctrl| + |tw| pour descendre au répertoire parent
 * |tctrl| + |te| crée un nouveau fichier vide (non sauvegardé sur le disque) avec le nom spécifié actuellement dans *Lusty Explorer*. Vous n'aurez plus qu'à utiliser :vimcmd:`:w` pour écrire le contenu du fichier sur le disque.
 
-*Lusty Explorer* s'utilise donc pour deux choses : naviguer sur votre système de fichiers avec ``,lr`` et ``,lf``, et naviguer entre vos fichiers ouverts (buffers) avec ``'lb``. Personnellement j'utilise moins la recherche dans les buffers avec ``,lg``, à vous de tester et de vous faire votre propre opinion.
+*Lusty Explorer* s'utilise donc pour deux choses : naviguer sur votre système de fichiers avec ``,lr`` et ``,lf``, et naviguer entre vos fichiers ouverts (buffers) avec ``,lb``. Personnellement j'utilise moins la recherche dans les buffers avec ``,lg``, à vous de tester et de vous faire votre propre opinion.
 
 Je vous conseille en guise de test d'ouvrir plusieurs fichiers avec ``,lr`` ou ``,lf``. Ensuite, entraînez-vous à naviguer entre ces différents fichiers ouverts en même temps à l'aide de ``,lb``. C'est une des combinaisons que j'utilise le plus au quotidien.
 
