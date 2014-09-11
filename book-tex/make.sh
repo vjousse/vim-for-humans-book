@@ -1,2 +1,3 @@
 pdflatex -shell-escape vim-pour-les-humains.tex
-evince vim-pour-les-humains.pdf
+pdflatex -shell-escape vim-pour-les-humains.tex
+open vim-pour-les-humains.pdf
