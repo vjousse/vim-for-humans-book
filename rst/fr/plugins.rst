@@ -110,7 +110,7 @@ Lorsque l'on édite un fichier appartenant à un projet plus gros contenant lui 
 
 Pour Debian/Ubuntu : ``sudo apt-get install ack-grep``. Pour Mac Os X vous allez avoir besoin de Homebrew (http://mxcl.github.com/homebrew/) en utilisant ``brew install ack``. Pour les utilisateurs de MacPorts ça sera avec la commande ``sudo port install p5-app-ack``. Pour Windows installez Strawberry Perl (http://strawberryperl.com/) et dans le shell de commandes exécutez ``C:\>cpan App::Ack``. Vous devriez ensuite pouvoir utiliser la commande **ack** dans votre terminal de commandes en lieu et place de **grep**.
 
-Rendez-vous sur la page du plugin ack (http://www.vim.org/scripts/script.php?script_id=2572) et téléchargez la dernière version (à l'heure où j'écris ces lignes c'est la version 0.3.1). Décompressez l'archive dan votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
+Rendez-vous sur la page du plugin ack (http://www.vim.org/scripts/script.php?script_id=2572) et téléchargez la dernière version (à l'heure où j'écris ces lignes c'est la version 0.3.1). Décompressez l'archive dans votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
 
 .. code-block:: html
 

@@ -97,7 +97,7 @@ J'y reviendrai plus tard dans « :ref:`se-deplacer` » mais si vous n'êtes pas
 
 Si vous voulez pousser la démarche encore plus loin, vous pouvez aussi vous procurer un clavier orthogonal *TypeMatrix* (http://www.typematrix.com/). C'est ce que j'utilise personnellement, et mes doigts m'en remercient tous les jours.
 
-L'ultime changement serait d'utiliser une disposition de clavier encore plus efficace comme le *bépo* pour quasi doubler sa vitesse de frappe au clavier. Pour les plus curieux d'entre vous, j'explique la démarche sur mon blog : http://vincent.jousse.org/comment-doubler-sa-vitesse-de-frappe-au-clavier/.
+L'ultime changement serait d'utiliser une disposition de clavier encore plus efficace comme le *bépo* pour quasi doubler sa vitesse de frappe au clavier. Pour les plus curieux d'entre vous, j'explique la démarche sur mon blog : http://viserlalune.com/blog/comment-doubler-sa-vitesse-de-frappe-au-clavier/
 
 
 La configuration par défaut : indispensable
