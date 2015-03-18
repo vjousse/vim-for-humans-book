@@ -146,7 +146,7 @@ Le plugin Ack vous affichera les résultats dans une fenêtre que l'on appelle *
 
 Voici quelques commandes disponibles dans cette fenêtre :
 
-* **o** : ouvrir (idem que <Entrée>
+* **o** : ouvrir (idem que <Entrée>)
 * **go** : voir un aperçu (ouvre le fichier mais mantient le focus sur les résultats de ack.vim)
 * **t** : ouvrir dans un nouvel onglet
 * **T** : ouvrir dans un nouvel onglet en arrière plan
