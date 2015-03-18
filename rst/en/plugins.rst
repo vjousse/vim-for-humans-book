@@ -102,16 +102,16 @@ In order to get familiar with *Lusty Explorer* you should try to open multiple f
 
 This plugin it totally mandatory and is adding a lot of value to |vim|: not using the mouse to open files. Be sure to take the time to learn how to use it, it's a great time investment.
 
-Recherche dans les fichiers sur le disque : *Ack*
-=================================================
+Searching files on disk: *Ack*
+==============================
 
-Lorsque l'on édite un fichier appartenant à un projet plus gros contenant lui même beaucoup de fichiers, il arrive souvent de vouloir rechercher une occurrence d'une chaîne de caractères dans tous les fichiers du projet. Pour ce faire, |vim| dispose d'un plugin permettant d'utiliser *Ack* pour faire cette recherche.
+At some point, you will need to search for a particular pattern inside your codebase. |vim| can help help you to do so with a plugin that uses *Ack* under the hood.
 
-*Ack* (http://betterthangrep.com/) est un programme écrit en *perl* qui remplace avantageusement le bon vieux *grep* pour effectuer des recherches dans des fichiers. Il a en revanche un désavantage par rapport à *grep* : il est rarement installé par défaut. Nous allons donc commencer par installer *Ack* avant de pouvoir aller plus loin. Cela va bien sûr dépendre de la plateforme sur laquelle vous utilisez |vim|, vous pourrez trouver différentes instructions en fonction de votre plateforme sur la page du plugin : http://github.com/mileszs/ack.vim#installation.
+*Ack* (http://betterthangrep.com/) is a program written in *perl* that replaces the good old *grep* to search inside files. It's *grep*, but better. But it has one little disadvantage : it's hardly installed by default. So, as you may have guessed, the first thing to do will be to install it. As it depends on the OS you are running, you will have to refer to the installation instructions to know how to intall it for your particular case: http://github.com/mileszs/ack.vim#installation.
 
-Pour Debian/Ubuntu : ``sudo apt-get install ack-grep``. Pour Mac Os X vous allez avoir besoin de Homebrew (http://mxcl.github.com/homebrew/) en utilisant ``brew install ack``. Pour les utilisateurs de MacPorts ça sera avec la commande ``sudo port install p5-app-ack``. Pour Windows installez Strawberry Perl (http://strawberryperl.com/) et dans le shell de commandes exécutez ``C:\>cpan App::Ack``. Vous devriez ensuite pouvoir utiliser la commande **ack** dans votre terminal de commandes en lieu et place de **grep**.
+For Debian/Ubuntu: ``sudo apt-get install ack-grep``. For Mac OS X, first you will need Homebrew (http://mxcl.github.com/homebrew/) and then you will need to open a terminal and to type ``brew install ack``. For people using MacPorts the command will be: ``sudo port install p5-app-ack``. For Windows, install Strawberry Perl (http://strawberryperl.com/) and in a command shell execute ``C:\>cpan App::Ack``. You should now be able to use the **ack** command in your terminal instead of **grep**.
 
-Rendez-vous sur la page du plugin ack (http://www.vim.org/scripts/script.php?script_id=2572) et téléchargez la dernière version (à l'heure où j'écris ces lignes c'est la version 0.3.1). Décompressez l'archive dan votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
+Now, we're ready for the big thing. Go to the ack plugin page (http://www.vim.org/scripts/script.php?script_id=2572) and download the last version (at the moment, it's the 0.3.1 version). Uncompress it in your ``~/.vim/bundle/`` directory so that you have a structure like the one below:
 
 .. code-block:: html
 
@@ -123,42 +123,41 @@ Rendez-vous sur la page du plugin ack (http://www.vim.org/scripts/script.php?scr
     |       `-- ack.vim
     …
 
-Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant |vim| ou en tapant :vimcmd:`:source ~/.vimrc` en mode normal.
+As always, be sure that your modifications are taken into account by restarting |vim| or by entering :vimcmd:`:source ~/.vimrc` while in normal mode.
 
-Il va ensuite falloir ajouter quelques lignes à notre fichier |vimrc| pour faciliter d'utilisation du plugin :::
+Then we will need to add some lines to our |vimrc| file to ease the use of the plugin :::
 
-        " Paramètres par défaut pour ack
+        " Default params for ack
         let g:ackprg="ack -H --nocolor --nogroup --column"
-        " Place un marqueur et cherche
+        " Add a mark and search
         nmap <leader>j mA:Ack<space>
-        " Place un marqueur et cherche le mot sous le curseur
+        " Add a mark and search for the word under the cursor
         nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
         nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
 
-Ack recherchera alors à partir du répertoire où se trouve votre fichier couramment ouvert. Vous pouvez faire quelques tests si vous le souhaitez (en supposant que votre touche |tleader| est la touche |tcomma| :
+Ack will start the search from the directory of the file currently opened. Here are some examples (supposing that your |tleader| key is the |tcomma| key):
 
-* ``,j`` *toto* : recherchera *toto* à partir du répertoire du fichier courant,
-* ``,ja`` avec votre curseur sur un mot recherchera ce mot.
+* ``,j`` *toto* : will search for *toto* starting from the directory of the current file,
+* ``,ja`` with your cursor on a word will search for this word.
 
 
-Le plugin Ack vous affichera les résultats dans une fenêtre que l'on appelle *Quickfix Window*, cf image suivante.
+The results will be displayed in a window called the *Quickfix Window*, as you can see below.
 
 .. image:: ../book-tex/graphics/vim-ack-quickfix.png
 
-Voici quelques commandes disponibles dans cette fenêtre :
+Here are some commands available inside this window:
 
-* **o** : ouvrir (idem que <Entrée>
-* **go** : voir un aperçu (ouvre le fichier mais mantient le focus sur les résultats de ack.vim)
-* **t** : ouvrir dans un nouvel onglet
-* **T** : ouvrir dans un nouvel onglet en arrière plan
-* **h** : ouvrir en séparant la fenêtre horizontalement
-* **v** : ouvrir en séparant la fenêtre verticalement
-* **q** : fermer la fenêtre quickfix
+* **o** : open (same as <Enter>)
+* **go** : preview display (open the file but keep the focus on the ack.vim results)
+* **t** : open in a new tab
+* **T** : open in a new background tab
+* **h** : open and split the window horizontally
+* **v** : open and split the window vertically
+* **q** : close the quickfix window
 
-À noter que par défaut Ack ne recherche que dans les fichiers qu'il reconnait comme pertinents (il ne fera pas de recherche dans les fichiers temporaires, les fichiers des gestionnaires de version, etc.). Si vous souhaitez que Ack recherche dans tous les fichiers indépendamment de leur type, vous devez spécifier l'option ``-u`` comme ceci dans votre |vimrc| :::
+By default, Ack doesn't search in files that are not relevant. For example, it will not search in temp files or in files used by your favorite revision control system. If you want Ack to search into any file, independantly of its type, you need to specify the ``-u`` option in your |vimrc| :::
 
-
-    " Paramètres par défaut pour ack
+    " Default params for Ack
     let g:ackprg="ack -H -u --nocolor --nogroup --column"
 
 
