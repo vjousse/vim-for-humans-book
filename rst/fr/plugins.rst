@@ -166,7 +166,7 @@ Recherche de fichiers sur le disque : Ctrlp
 
 Non ce n'est pas pareil que Ack, relisez bien le titre. Ici nous n'allons pas chercher dans les fichiers, mais nous allons plutôt chercher des fichiers à ouvrir avec |vim|. Ça peut s'avérer très utile lorsque vous avez à travailler sur des projets où les fichiers sont éparpillés dans un grand nombre de répertoires.
 
-Comme d'habitude nous allons commencer par installer le plugin. Une fois n'est pas coutume, le plugin dispose d'une page dédiée plutôt bien réalisée que vous trouverez ici : http://kien.github.com/ctrlp.vim/. Scrollez tout en bas pour télécharger la dernière version en "Direct Downloads". Pour les paresseux, voici un lien direct : http://github.com/kien/ctrlp.vim/zipball/master. Décompressez l'archive dan votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
+Comme d'habitude nous allons commencer par installer le plugin. Une fois n'est pas coutume, le plugin dispose d'une page dédiée plutôt bien réalisée que vous trouverez ici : http://kien.github.com/ctrlp.vim/. Scrollez tout en bas pour télécharger la dernière version en "Direct Downloads". Pour les paresseux, voici un lien direct : http://github.com/kien/ctrlp.vim/zipball/master. Décompressez l'archive dans votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
 
 .. code-block:: html
 
