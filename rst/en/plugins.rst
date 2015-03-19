@@ -161,12 +161,12 @@ By default, Ack doesn't search in files that are not relevant. For example, it w
     let g:ackprg="ack -H -u --nocolor --nogroup --column"
 
 
-Recherche de fichiers sur le disque : Ctrlp
-===========================================
+Searching files on disk: Ctrlp
+==============================
 
-Non ce n'est pas pareil que Ack, relisez bien le titre. Ici nous n'allons pas chercher dans les fichiers, mais nous allons plutôt chercher des fichiers à ouvrir avec |vim|. Ça peut s'avérer très utile lorsque vous avez à travailler sur des projets où les fichiers sont éparpillés dans un grand nombre de répertoires.
+Here we will not search inside files like we did with Ack. We will rather search for files to open with |vim|. It can be very handy when you're working on a project where files are everywhere in the directory tree.
 
-Comme d'habitude nous allons commencer par installer le plugin. Une fois n'est pas coutume, le plugin dispose d'une page dédiée plutôt bien réalisée que vous trouverez ici : http://kien.github.com/ctrlp.vim/. Scrollez tout en bas pour télécharger la dernière version en "Direct Downloads". Pour les paresseux, voici un lien direct : http://github.com/kien/ctrlp.vim/zipball/master. Décompressez l'archive dan votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
+As always, we will start by installing the plugin. For once, this plugin has a dedicated page that you will find here: http://kien.github.com/ctrlp.vim/. Scroll to the bottom to download the latest version in the "Direct Downloads" section. For the lazy, here is the direct link: http://github.com/kien/ctrlp.vim/zipball/master. Uncompress the archive in your ``~/.vim/bundle/`` directory, so that you get something like that:
 
 .. code-block:: html
 
@@ -196,23 +196,23 @@ Comme d'habitude nous allons commencer par installer le plugin. Une fois n'est p
     |   `-- readme.md
     …
 
-Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant |vim| ou en tapant :vimcmd:`:source ~/.vimrc` en mode normal.
+As always, be sure that your modifications are taken into account by restarting |vim| or by entering :vimcmd:`:source ~/.vimrc` while in normal mode.
 
-Nous n'avons plus qu'à ajouter un raccourci dans notre |vimrc| pour invoquer CtrlP comme le montre le listing ci-dessous. Dans mon cas j'ai choisi ``,c``, mais vous pouvez choisir ce que vous voulez.::
+Now we need to add the shortcut to our |vimrc| to invoke CtrlP like in the listing below. Personnaly, I've chosen ``,c``, but you can choose whatever you want.::
 
     let g:ctrlp_map = '<leader>c'
 
-Voici CtrlP en action. 
+Here is CtrlP in action.
 
 .. image:: ../book-tex/graphics/vim-ctrlp.png
 
-Il vous suffit de l'invoquer avec ``,c`` et de taper le début du fichier que vous recherchez. Quand le fichier voulu sera sélectionné en premier, il ne vous restera plus qu'à appuyer sur |ttenter| pour l'ouvrir.
+Launch it with ``,c`` and then type the name of the file you want to search. When the searched file will be selected first, you will just have to press |ttenter| to open it.
+
+CtrlP can be use to navigate through the opened files (like Lusty), but I find Lusty handier for that. You can also use to navigate directly through your code by "following" your functions thanks to something called the tags (like you can do when using Eclipse). It's a topic too big for the scope of this book, but if you're interested you can read this blog article on the topic: http://andrew-stewart.ca/2012/10/31/vim-ctags.
 
 
-À noter que CtrlP peut aussi être utilisé pour naviguer entre les fichiers ouverts (comme Lusty). Mais à l'usage, je le trouve moins pratique que Lusty. Vous pouvez aussi vous en servir pour naviguer automatiquement dans votre code en "suivant" vos fonctions grâce aux tags (comme on peut le faire dans Eclipse). C'est un trop vaste sujet pour être traité dans ce guide, mais si ça vous intéresse vous pouvez déjà consulter cet article de blog sur le sujet : http://andrew-stewart.ca/2012/10/31/vim-ctags (en anglais).
-
-Les plugins avancés
-===================
+Advanced plugins
+================
 
 J'aurais pu faire un livre entier qui recense les plugins |vim|, mais je pense que l'intérêt aurait été assez limité. Je ne vais donc pas vous décrire plus en détails d'autres plugins. En revanche je vous donne ci-dessous une liste de plugins qui pourraient vous intéresser. Cette liste est issue d'un sondage que j'avais effectué sur Twitter demandant à mes followers quels étaient les plugins |vim| indispensables selon eux. La voici :
 
