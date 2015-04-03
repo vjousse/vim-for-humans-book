@@ -1,37 +1,37 @@
-**********************
-Pense-bête et exemples
-**********************
+*********************
+Cheatsheet & examples
+*********************
 
-Nous venons de faire un tour d'horizon de tout ce qui est nécessaire pour bien commencer dans la vie avec |vim|. Tout cela devrait être suffisant pour pouvoir l'utiliser au quotidien. C'est le secret de la réussite avec |vim| : réussir à l'encrer dans nos habitudes journalières. Une fois que cela est fait, le reste devrait couler de source.
+So here we go, we now have everything needed to make a good start with |vim|. It should be enough to use it on a daily basis. It's the most important thing to do if you want to successfully use |vim|: developing the habit of using it everyday. Once you'll have this habit, everything should seem natural to you.
 
-Cette dernière partie est là pour vous donner un endroit de référence où vous pourrez revenir comme bon vous semble lorsque vous serez un peu perdu sur comment faire telle ou telle chose avec |vim|. Ce chapitre est composé de deux parties. La première est un ensemble de questions réponses qui couvre les principaux problèmes que les débutants rencontrent lorsqu'ils commencent. Le but est de répondre aux questions du type : « rha mais comment on fait ça, c'était pourtant si simple avec mon ancien éditeur ». La seconde partie est une liste (non exhaustive) des commandes |vim| les plus utiles dont vous pourrez vous servir comme pense-bête. Allez hop, au boulot.
+The aim of this chapter is to provide you with a reference for the most common things you'll have to do with |vim| so that, when you are lost, you know where to search for help. This chapters contains two parts. The first one is a set of Q/A covering the most common problems that newbies are facing. The goal is to answer this kind of question: "f**k, how can I do this, it was so simple with my old editor". The second is a non-exhaustive list of the most useful |vim| commands.
 
-Questions / réponses
-====================
+Questions / Answers
+===================
 
-Comment quitter |vim| ?
------------------------
+How to quit |vim|?
+------------------
 
-La première chose à faire est de se mettre en mode normal. Grosso modo, excitez-vous sur |ttesc| ou |ttsemicolon| en fonction de votre configuration et vous devriez vous retrouver en mode normal. Ensuite tapez :vimcmd:`:q` pour quitter. Il y a de grandes chances que |vim| ne vous laisse pas faire. Si vous avez des modifications non enregistrées par exemple, il ne voudra pas quitter. Vous pouvez annuler les modification en le forçant à quitter grâce à l'utilisation de :vimcmd:`!` comme ceci : :vimcmd:`:q!`. Vous pouvez aussi enregistrer vos modifications puis quitter comme ceci : :vimcmd:`:wq`.
+First you need to be sure to be in normal mode. If you don't know how to be sure that you are in normal mode, just press |ttesc| or |ttsemicolon| (depending on your configuration) multiple times and you should be in normal mode. Then, type :vimcmd:`:q` to exit |vim|. The problem is that most of the times, |vim| will no let you quit like that. For example, if you have unsaved changes, it will not let you quit. You can cancel your modifications by using :vimcmd:`!` like that: :vimcmd:`:q!`. You can also save your modifications and save like that: :vimcmd:`:wq`.
 
-Comment sauvegarder sous ?
---------------------------
+How to save as?
+---------------
 
-En mode normal, si vous tapez :vimcmd:`:w`, |vim| par défaut sauvegarde vos modifications dans le fichier courant. Si vous souhaitez utiliser un autre nom de fichier pour « sauvegarder sous », vous avez juste à lui spécifier le nom du fichier après :vimcmd:`w` comme ceci : :vimcmd:`:w monfichier.txt`. |vim| sauvegardera alors votre fichier sous le nom *monfichier.txt*. En revanche |vim| n'ouvrira pas *monfichier.txt*, il restera sur votre précédent fichier.
+In normal mode, if you type :vimcmd:`:w`, |vim| will by default save your modifications into the current file. If you want to use another filename to "save as", you just need to specify it after :vimcmd:`w` like that: :vimcmd:`:w myfile.txt`. |vim| will save your file under the name *myfile.txt*. On the other hand, |vim| will not open *myfile.txt*, it will stay on the previous file.
 
-Si vous souhaitez que |vim| sauvegarde sous *monfichier.txt* et ouvre ensuite ce fichier dans le tampon courant, vous devrez utiliser :vimcmd:`:sav monfichier.txt`.
+If you want |vim| to save under the filename *myfile.txt* and then open the file in the current buffer, you will have to use :vimcmd:`:sav myfile.txt`.
 
-Comment copier/couper coller ?
-------------------------------
+How to copy/cut paste?
+----------------------
 
-Celle là est facile, j'y ai déjà consacré un chapitre, cf. :ref:`moving`. 
+This one is easy, there is already a full chapter on it, cf. :ref:`moving`.
 
-En résumé :
+In short:
 
-* Passez en mode visuel avec |ttv|,
-* Sélectionnez ce que vous voulez copier en vous déplaçant,
-* Copiez avec |tty| ou couper avec |ttx| ou |ttd|,
-* Collez après l'emplacement du curseur avec |ttp| ou avant l'emplacement du curseur avec |ttP|.
+* Switch to visual mode with |ttv|,
+* Select the text you want to copy by moving the cursor,
+* Copy using |tty| or cut using |ttx| or |ttd|,
+* Paste after the cursor using |ttp| or before using |ttP|.
 
 Comment créer un nouveau fichier ?
 ----------------------------------
