@@ -12,7 +12,7 @@ Questions / réponses
 Comment quitter |vim| ?
 -----------------------
 
-La première chose à faire est de se mettre en mode normal. Grosso modo, excitez-vous sur |ttesc| ou |ttsemicolon| en fonction de votre configuration et vous devriez vous retrouver en mode normal. Ensuite tapez :vimcmd:`:q` pour quitter. Il y a de grandes chances que |vim| ne vous laisse pas faire. Si vous avez des modifications non enregistrées par exemple, il ne voudra pas quitter. Vous pouvez annuler les modification en le forçant à quitter grâce à l'utilisation de :vimcmd:`!` comme ceci : :vimcmd:`:q!`. Vous pouvez aussi enregistrer vos modifications puis quitter comme ceci : :vimcmd:`:wq`.
+La première chose à faire est de se mettre en mode normal. Grosso modo, excitez-vous sur |ttesc| ou |ttsemicolon| en fonction de votre configuration et vous devriez vous retrouver en mode normal. Ensuite tapez :vimcmd:`:q` pour quitter. Il y a de grandes chances que |vim| ne vous laisse pas faire. Si vous avez des modifications non enregistrées par exemple, il ne voudra pas quitter. Vous pouvez annuler les modifications en le forçant à quitter grâce à l'utilisation de :vimcmd:`!` comme ceci : :vimcmd:`:q!`. Vous pouvez aussi enregistrer vos modifications puis quitter comme ceci : :vimcmd:`:wq`.
 
 Comment sauvegarder sous ?
 --------------------------
