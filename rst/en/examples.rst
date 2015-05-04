@@ -33,104 +33,105 @@ In short:
 * Copy using |tty| or cut using |ttx| or |ttd|,
 * Paste after the cursor using |ttp| or before using |ttP|.
 
-Comment créer un nouveau fichier ?
-----------------------------------
+How to create a new file?
+-------------------------
 
-La façon traditionnelle de faire est de taper, en mode normal, :vimcmd:`:e monfichier.txt` pour ouvrir un tampon (buffer) vide. Ensuite, sauvegardez votre tampon grâce à :vimcmd:`:w`. Il sera sauvegardé sous le nom ``monfichier.txt`` dans le répertoire courant.
 
-Vous pouvez aussi utiliser Lusty Explorer (cf. :ref:`seclusty`) pour ce faire. Lancez le grâce à ``,lr`` ou ``,lf``, tapez le nom du fichier que vous souhaitez créer puis appuyez sur |ttctrl| puis en même temps |tte|. Vous pouvez ensuite le sauvegarder de la même manière que ci-dessus.
+The traditional way to create a file is to type, in normal mode, :vimcmd:`:e myfile.txt` to open an empty buffer. Then, save your buffer using :vimcmd:`:w`. Il will be saved as ``myfile.txt`` in the current directory.
 
-Annuler / Refaire
------------------
+You can also use Lusty Explorer (cf. :ref:`seclusty`). To do so, launch it using ``,lr`` or ``,lf`` (supposing that your leader key is ``,``), type the name of the file you want to create and then press |ttctrl| and |tte| at the same time. You can then save as above.
 
-Pour annuler il suffit d'utiliser |ttu| en mode normal. Pour annuler le annuler (donc refaire) maintenez |ttctrl| appuyée puis |ttr|.
+Undo/redo
+---------
 
-Pense-bête
-==========
+To undo, just press |ttu| while in normal mode. To undo your undo (and so, to redo) press |ttctrl| and |ttr| at the same time.
 
-Fichiers
---------
+Reminders
+=========
+
+Files
+-----
 
 =================================================== ==================================== ============
-Résultat attendu                                    Action                               Commentaire
+Expected result                                     Action                               Comments
 =================================================== ==================================== ============
-**Sauvegarder**                                     :vimcmd:`:w` & (w pour write)
-**Sauvegarder sous**                                :vimcmd:`:w nomdefichier.txt`        Sauvegarde sous nomdefichier.txt mais n'ouvre pas nomdefichier.txt
-**Sauvegarder sous / ouvre**                        :vimcmd:`:sav nomdefichier.txt`      Sauvegarde sous et ouvre nomdefichier.txt
-**Quitter sans sauvegarder (forcer à quitter)**     :vimcmd:`:q!`
-**Sauvegarder et quitter**                          :vimcmd:`:wq`                        wq pour write and quit
-**Sauvegarder en tant que root**                    :vimcmd:`:w !sudo tee %`             
+**Save**                                            :vimcmd:`:w`
+**Save as**                                         :vimcmd:`:w filename.txt`            Save as filename.txt but don't open filename.txt
+**Save as / open**                                  :vimcmd:`:sav filename.txt`          Save as and open filename.txt
+**Quit without saving (force quit)**                :vimcmd:`:q!`
+**Save and quit**                                   :vimcmd:`:wq`                        
+**Save as root**                                    :vimcmd:`:w !sudo tee %`             
 =================================================== ==================================== ============
 
-Déplacements
+Moves
+-----
+
+=============================================================== ===========
+Expected result                                                 Action
+=============================================================== ===========
+**Move one character left**                                     ``h``
+**Move one line down**                                          ``j``
+**Move one line up**                                            ``k``
+**Move one character right**                                    ``l``
+**Move to the end of the word**                                 ``e``
+**Move to the beginning of the word**                           ``b``
+**Move to the beginning of the next word**                      ``w``
+**Move to line 42**                                             ``:42``
+**Move to the beginning of the file**                           ``gg`` or ``:0``
+**Move to the end of the file**                                 ``GG`` or ``:$``
+**Move to the end of the line**                                 ``$``
+**Move to the first non empty character of the line**           ``^``
+**Move to the beginning of the line**                           ``0``
+**Move one page down**                                          ``Ctrl+f``
+**Move one page up**                                            ``Ctrl+b``
+**Move to the first line of the screen**                        ``H``
+**Move to the middle of the screen**                            ``M``
+**Move to the last line of the screen**                         ``L``
+=============================================================== ===========
+
+Text editing
 ------------
 
-=============================================================== ===========
-Résultat attendu                                                Action
-=============================================================== ===========
-**Se déplacer d'un caractère à gauche**                         ``h``
-**Se déplacer d'un caractère en bas**                           ``j``
-**Se déplacer d'un caractère en haut**                          ``k``
-**Se déplacer d'un caractère à droite**                         ``l``
-**Se déplacer à la fin d'un mot**                               ``e``
-**Se déplacer au début d'un mot**                               ``b``
-**Se déplacer au début du mot suivant**                         ``w``
-**Se déplacer à la ligne 42**                                   ``:42``
-**Se déplacer au début du fichier**                             ``gg`` ou ``:0``
-**Se déplacer à la fin du fichier**                             ``GG`` ou ``:$``
-**Se déplacer à la fin de la ligne**                            ``$``
-**Se déplacer au premier caractère non vide de la ligne**       ``^``
-**Se déplacer au début de la ligne**                            ``0``
-**Descendre d'une page**                                        ``Ctrl+f``
-**Monter d'une page**                                           ``Ctrl+b``
-**Se déplacer à la première ligne de l'écran**                  ``H``
-**Se déplacer au milieu de l'écran**                            ``M``
-**Se déplacer à la dernière ligne de l'écran**                  ``L``
-=============================================================== ===========
-
-Édition de texte
-----------------
-
 =============================================================================== =========== ========================
-Résultat attendu                                                                Action      Commentaire
+Expected result                                                                 Action      Comments
 =============================================================================== =========== ========================
-**Insérer avant le curseur**                                                    ``i`` 
-**Insérer avant le premier caractère non vide de la ligne**                     ``I`` 
-**Insérer après le curseur**                                                    ``a`` 
-**Insérer à la fin de la ligne**                                                ``A`` 
-**Insérer une nouvelle ligne en dessous**                                       ``o`` 
-**Insérer une nouvelle ligne au dessus**                                        ``O`` 
-**Remplace le reste de la ligne**                                               ``C`` 
-**Remplace un seul caractère (et reste en mode normal)**                        ``r`` 
-**Supprime le caractère après le curseur (comme la touche suppr.)**             ``x`` 
-**Supprime le caractère avant le curseur (comme la touche backspace)**          ``X`` 
-**Supprime la ligne courante**                                                  ``dd`` 
-**Copie la ligne courante**                                                     ``yy`` 
-**Colle après le curseur. Si c'est une ligne, colle la ligne en dessous.**      ``p`` 
-**Colle avant le curseur. Si c'est une ligne, colle la ligne au dessus.**       ``P`` 
-**Intervertit la case des caractères (majuscules / minuscules)**                ``~``       Marche en mode visuel
-**Déplace le texte vers la droite (indentation)**                               ``>``       Marche en mode visuel 
-**Déplace le texte vers la gauche**                                             ``<``       Marche en mode visuel 
-**En mode visuel, supprime la sélection**                                       ``d``       Mode visuel 
-**En mode visuel, remplace la sélection**                                       ``c``       Mode visuel 
-**En mode visuel, copie la sélection**                                          ``y``       Mode visuel 
-**Annuler (Undo)**                                                              ``u`` 
-**Refaire (Redo)**                                                              ``Ctrl+r``
+**Insert before the cursor**                                                    ``i``       Normal mode
+**Insert before the first non empty character of the line**                     ``I``       Normal mode 
+**Insert after the cursor**                                                     ``a``       Normal mode 
+**Insert at the end of the line**                                               ``A``       Normal mode 
+**Insert a new line below**                                                     ``o``       Normal mode 
+**Insert a new line above**                                                     ``O``       Normal mode 
+**Replace everything after the cursor**                                         ``C``       Normal mode 
+**Replace one character (and stay in normal mode)**                             ``r``       Normal mode 
+**Delete the character after the cursor (like the del. key)**                   ``x``       Normal mode
+**Delete the character before the cursor (like the backspace key)**             ``X``       Normal mode
+**Delete the current line**                                                     ``dd``      Normal mode
+**Copy the current line**                                                       ``yy``      Normal mode
+**Paste after the cursor. If it's line, paste the line below.**                 ``p``       Normal mode
+**Paste before the cursor. If it's line, paste the line above**                 ``P``       Normal mode 
+**Switch the case (upper/lower)**                                               ``~``       Visual mode
+**Move the text to the right (indent)**                                         ``>``       Visual mode
+**Move the text to the left**                                                   ``<``       Visual mode
+**In visual mode, delete the selected text**                                    ``d``       Visual mode
+**In visual mode, replace the selected text**                                   ``c``       Visual mode
+**In visual mode, copy the selected text**                                      ``y``       Visual mode
+**Undo**                                                                        ``u``       Normal mode 
+**Redo**                                                                        ``Ctrl+r``  Normal mode
 =============================================================================== =========== ========================
 
-Chercher et/ou remplacer
-------------------------
+Search and/or replace
+---------------------
 
 =================================================================== ======================= =================================
-Résultat attendu                                                    Action                  Commentaire
+Expected result                                                     Action                  Comments
 =================================================================== ======================= =================================
-**Rechercher**                                                      ``/*toto``              Cherche la chaîne de caractères *toto* à partir de l'emplacement courant du curseur 
-**Suivant**                                                         ``n``                   Affiche le prochain résultat de recherche
-**Précédent**                                                       ``N``                   Affiche le précédent résultat de recherche
-**Remplacer sur la ligne courante**                                 ``:s/toto/titi``        Remplace toto par titi sur la ligne courante (une fois)
-**Remplacer tout sur la ligne courante**                            ``:s/toto/titi/g``      Remplace toto par titi sur la ligne courante (pour toutes les occurrences de toto)
-**Remplacer dans toutes les lignes**                                ``:%s/toto/titi``       Remplace toto par titi sur toutes les lignes du fichier (une fois par ligne)
-**Remplacer tout dans toutes les lignes**                           ``:%s/toto/titi/g``     Remplace toto par titi sur toutes les lignes du ficher (pour toutes les occurrences de toto par ligne)
-**Remplacer sur la ligne courante en ignorant la casse**            ``:s/toto/titi/i``      Remplace toto par titi sur la ligne courante (une fois)
-**Remplacer tout sur la ligne courante en ignorant la casse**       ``:s/toto/titi/gi``     Remplace toto par titi sur la ligne courante (pour toutes les occurrences de toto)
+**Search**                                                          ``/*toto``              Search the *toto* string starting at the current cursor position
+**Next**                                                            ``n``                   Go to the next search result
+**Previous**                                                        ``N``                   Go to the previous search result
+**Replace on the current line (once)**                              ``:s/toto/titi``        Replace toto by titi on the current line (once)
+**Replace on the current line (multiple)**                          ``:s/toto/titi/g``      Replace toto by titi on the current line (for all occurences of toto)
+**Replace on all the lines (once)**                                 ``:%s/toto/titi``       Replace toto by titi on all the lines of the file (once per line)
+**Replace on all the lines (multiple)**                             ``:%s/toto/titi/g``     Replace toto by titi on all the lines of the file (for all occurences of toto)
+**Replace on the current line, case insensitive (once)**            ``:s/toto/titi/i``      Replace toto by titi on the current line, case insensitive (once)
+**Replace on the current line, case insensitive (multiple)**        ``:s/toto/titi/gi``     Replace toto by titi on the current line, case insensitive (for all occurences of toto)
 =================================================================== ======================= =================================
