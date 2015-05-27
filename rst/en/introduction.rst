@@ -5,7 +5,7 @@ Introduction
 When you need to write or to code, you have to choose a text editor, and a very good one. They are many text editors available out there, but very few of them are more than 40 years old. It's the case of *Emacs* (http://www.gnu.org/software/emacs/), *Vi* and its improved successor |vim| (http://www.vim.org). They were created in the 70's and are still used a lot nowadays. You may have already noticed that it's not thanks to the beauty of their website or the efficiency of their communication. Here are some **reasons for their success**:
 
 **Forever** 
-    You learn them once and you use them forever. In a world where the languages and technologies are constantly changing, it's a real chance to be able to invest for the long term.
+    You learn them once and you use them forever. In a world where languages and technologies are constantly changing, it's a real chance to be able to invest on the long term.
 
 **Everywhere**
     They are available for each and every possible platform : Mac Os X, Windows, GNU/Linux, BSD, … and it's always been the case.
@@ -14,20 +14,20 @@ When you need to write or to code, you have to choose a text editor, and a very 
     Thanks to their features (like the extensive use of the keyboard), you can edit and write text as fast as your thoughts.
 
 **For everything** 
-    They allow you to edit everything and anything. When you'll use another programming language, or another markup language, you'll not have to change your editor. Of course, this book was written using |vim| (and the `ReST Markup <http://sphinx-doc.org/rest.html>`_).
+    They allow you to edit everything and anything. When you'll use another programming language, or another markup language, you'll not have to change your editor. Of course, this book has been written using |vim| (and the `ReST Markup <http://sphinx-doc.org/rest.html>`_).
 
 Yet, these text editors are difficult to learn. Not that they are harder than anything else, not that you can't handle it, but rather because there is no smart way out there to learn them for now. So, here we are.
 
-The goal of this book is to address this gap by guiding you through your discovery of |vim|. I'll put *Emacs* aside from now and I'll focus on |vim|. If you want to know more about this **Editor war**, be sure to check the `Wikipedia page <http://en.wikipedia.org/wiki/Editor_war>`_. This book doesn't claim to be a reference book about |vim|. They are already a lot of good references on the subject like `A byte of Vim <http://swaroopch.com/notes/vim/>`_. However, it claims to reduce the entry barrier to get used to |vim|. To me, the hardest thing to do when learning |vim| is not to discourage away and find a method allowing use to learn it step by step. We all have to get things done with our text editor on a daily basis, that's why loosing all your productivity when switching to |vim| is not possible
+The aim of this book is to address this gap by guiding you through your discovery of |vim|. I'll put *Emacs* aside from now and I'll focus on |vim|. If you want to know more about this **Editor war**, be sure to check the `Wikipedia page <http://en.wikipedia.org/wiki/Editor_war>`_. This book doesn't claim to be a reference book about |vim|. They are already a lot of good references on the subject like `A byte of Vim <http://swaroopch.com/notes/vim/>`_. However, it claims to reduce the entry barrier to get used to |vim|. To me, the hardest thing to do when learning |vim| is not to discourage away and find a method allowing use to learn it step by step. We all have to get things done with our text editor on a daily basis, that's why loosing all your productivity when switching to |vim| is not possible
 
-I'm sure you'll find a lot of person who will say to you: "Just do it cold turkey", "you'll see, it's hard at the beginning, but time will help". Sure. But you still have to be productive on a daily basis, the problem remains. The approach of this book is the following:
+I'm sure you'll find a lot of persons who will tell you: "Just do it cold turkey", "you'll see, it's hard at the beginning, but time will help". Sure. But you still have to be productive on a daily basis, the problem remains. The approach of this book is the following:
 
 - Have a modern |vim|: syntax highlighting and nice colors.
 - Use |vim| as any other text editor: easily edit code and switch between files using the mouse.
 - Learn keyboard shortcuts and go without the mouse step by step.
 - Install the *best* plugins to start using |vim| to its full potential.
 
-Starting from bullet number 2, you'll already be able to use |vim| on a daily basis without loosing a lot of your productivity. It's were the magic will happen: if you can integrate |vim| in your daily habits, you won. You'll then have the rest of your life to learn all the shortcuts and the tip and tricks of |vim|.
+Starting from bullet number 2, you'll already be able to use |vim| on a daily basis without losing a lot of productivity. It's where the magic will happen: if you can integrate |vim| in your daily habits, you have won. You'll then have the rest of your life to learn all the shortcuts and the tip and tricks of |vim|.
 
 You're tired of trying a new editor each year? You're tired of having to relearn everything from scratch every time? You're tired to have to change your editor when you're using your Mac, Windows or Linux? So, just stop it, and join the community of people happy with their text editor!
 
@@ -50,18 +50,18 @@ For example, your are a:
     To invest time in your daily tool is something essential. You'll anyway have to learn keyboard shortcuts, so you'd better do it for something useful. If this investment is style profitable 10 years from now, it's the perfect investment, it's |vim|.
 
 **System and network administrator**
-    If you're using *Emacs*, then I can forgive you. If you are using nano/pico, there is nothing I can do for you, otherwise, it's time to get some job done guys! To remotely administrate a Unix system is the perfect use case for |vim| (a powerful text editor without the need of a graphical interface).
+    If you use *Emacs*, then I can forgive you. If you use nano/pico, there is nothing I can do for you, otherwise, it's time to get some job done guys! To remotely administrate a Unix system is the perfect use case for |vim| (a powerful text editor without the need of a graphical interface).
 
 **Writer** 
-    If your are writing using Markdown/reStructuredText/WikiMarkup or LaTeX, |vim| will save you a lot of time. You'll not be able to go back to another editor after it, or you'll want to *Vimify* it at all costs.
+    If you write using Markdown/reStructuredText/WikiMarkup or LaTeX, |vim| will save you a lot of time. You'll not be able to go back to another editor after it, or you'll want to *Vimify* it at all costs.
 
-Trust me, I am doing/did all this 5 roles, and my best investment has always been, by far, |vim|.
+Trust me, I have done and still do all these 5 roles, and my best investment has always been, by far, |vim|.
 
 What you will be learning
 =========================
 
 - How to use |vim| as an "usual" editor first (you know, the type of text editors having syntax highlighting, allowing you to open files, to click using the mouse, …). In short, the demystification of |vim| that will allow you to go further.
-- How to move from classical text editon to the power of |vim|, baby step by baby step (it's where the addiction begins).
+- How to move from classical text editon to the power of |vim|, baby step by baby step (it's where addiction begins).
 - How to do without the mouse and why it's the best thing that can happen to you when you're programming/writing text.
 - How you can easily deduce keyboard shortcuts with some simple rules.
 
