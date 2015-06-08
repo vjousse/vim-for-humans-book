@@ -280,7 +280,7 @@ Les marqueurs
 
 Lorsque je me déplace dans un fichier, j'aime bien pouvoir revenir à certains endroits. Par exemple lorsque je me rends au début du fichier alors que j'étais en train de travailler au milieu de celui-ci, j'aime bien pouvoir revenir directement où je travaillais. Heureusement, |vim| a tout prévu pour cela grâce à l'utilisation de **marqueurs**. Les marqueurs sont tout simplement des « marque-pages » qui permettent à votre curseur de se retrouver à la position où vous aviez mis votre marqueur.
 
-Un marqueur se pose en tapant |tm|\ |ta|. Pour déplacer votre curseur à la position du marqueur tapez |tapos|\ |ta|. Vous pouvez placez plusieurs marqueurs en changeant |ta| par n'importe quelle lettre de l'alphabet (on appelle cela des registres en langage |vim|). Pour placer un autre marqueur vous pouvez par exemple utiliser la lettre |td|. Grâce à |tm|\ |td| vous placerez le marqueur et à |tapos|\ |td| vous vous y rendrez.
+Un marqueur se pose en tapant |tm|\ |ta|. Pour déplacer votre curseur à la position du marqueur tapez |tapos|\ |ta|. Vous pouvez placer plusieurs marqueurs en changeant |ta| par n'importe quelle lettre de l'alphabet (on appelle cela des registres en langage |vim|). Pour placer un autre marqueur vous pouvez par exemple utiliser la lettre |td|. Grâce à |tm|\ |td| vous placerez le marqueur et à |tapos|\ |td| vous vous y rendrez.
 
 La recherche
 ------------
