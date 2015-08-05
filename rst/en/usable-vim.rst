@@ -2,7 +2,7 @@
 Having a usable |vim|
 *********************
 
-This is maybe a surprising approach for you, but for me, the first thing to do is to have a |vim| usable by a normal human being. It seems that everybody agrees that |vim| is a very **powerful editor**. And I think that you will agree too if I say that, by default, |vim| is totally unusable. Let's be honest, without a decent minimal configuration, using |vim| is **counterproductive**.
+This may be a surprising approach for you, but for me, the first thing to do is to have a |vim| usable by a normal human being. It seems that everybody agrees that |vim| is a very **powerful editor**. And I think that you will agree too if I say that, by default, |vim| is totally unusable. Let's be honest, without a decent minimal configuration, using |vim| is **counterproductive**.
 
 In my humble opinion, it's the first obstacle to tackle before anything else. This is what all the trendy editors like TextMate, Sublime Text, Notepad++ or Netbeans are proposing: a default environment usable as it is, even if we don't use its full potential for now.
 
@@ -24,7 +24,7 @@ Here is what a default |vim| is missing (and why **most of people are giving up*
 
 This chapter is mandatory if you have very few (or not at all) experience with |vim|. By the end of the chapter, you will have a |vim| usable on a daily basis. It should be enough to then be able to learn it gradually. Because, of course, there is no magic, you will have to practice to be able to learn |vim|, the sooner, the better.
 
-However, if your are already familiar with |vim| and don't use the mouse anymore, you can skip this chapter. But be sure to give *Solarized* a try, you would be missing something otherwise.
+However, if you are already familiar with |vim| and don't use the mouse anymore, you can skip this chapter. But be sure to give *Solarized* a try, you would be missing something otherwise.
 
 
 .. _insertmode:
@@ -34,7 +34,7 @@ Essential preamble: the insert mode
 
 Let's be totally crazy. We will try to create the |vimrc| configuration file with |vim| itself. As I said earlier, the sooner you start to use |vim|, the better. I told you it would be totally crazy.
 
-The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <http://code.google.com/p/macvim/>`_ a try, it's the best |vim| port for Mac without any doubt. If your are using GNU/Linux or any other "Unix-like" system, you should have *gVim* available, or at least easily installable using your package management system. Be sure to install the __full__ version (ie. with ruby and lua support). For ubuntu, the package is called `vim-nox`. For Mac OS X, MacVim has already all what you need builtin. For Windows, it seems that there is a version available on the official |vim| website (http://www.vim.org/download.php), but I did not test it.
+The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <http://code.google.com/p/macvim/>`_ a try, it's the best |vim| port for Mac without any doubt. If your are using GNU/Linux or any other "Unix-like" system, you should have *gVim* available, or at least easily installable using your package management system. Be sure to install the __full__ version (ie. with ruby and lua support). For ubuntu, the package is called `vim-nox`. For Mac OS X, MacVim has already all what you need builtin. For Windows, it seems that there is a version available on the official |vim| website (http://www.vim.org/download.php), but I havn't tested it.
 
 When you will start |vim|, you should see a welcome text asking you to help poor children in Uganda (or something along the lines). 
 
@@ -48,7 +48,7 @@ We will start by adding a comment in the header of the file to specify the autho
 
 .. image:: ../book-tex/graphics/en/vim-new.png
 
-**On a side note**: if you don't really understand what you did and |vim| is displaying red messages at the bottom left or doesn't seem to react as it should when your pressing |tti|, don't panic. Pressing multiples times on |ttesc| (two times should be enough) should bring |vim| to its default mode, the *Normal mode*. Then it should behave as you would expect again.
+**On a side note**: if you don't really understand what you have done and |vim| is displaying red messages at the bottom left or doesn't seem to react as it should when you press |tti|, don't panic. Pressing multiples times on |ttesc| (two times should be enough) should bring |vim| to its default mode, the *Normal mode*. Then it should behave as you would expect again.
 
 You should know be able to write down `the comment below`_:
 
@@ -62,7 +62,7 @@ You will have noticed that comments in *VimL* (the name of the |vim| programing 
 
 .. image:: ../book-tex/graphics/en/vim-first-comment.png
 
-I can already hear you: all that fuss for what? Well, yes. And you even don't know how to save a file. But all these things are logical that I'm gonna explain to you. One of the advantages of |vim| is that, usually, it is logical. Once you will have understood the logic behind it, all will be crystal clear for you (at least I hope).
+I can already hear you: all that fuss for that? Well, yes. And you even don't know how to save a file. But all these things are logical that I'm gonna explain to you. One of the advantages of |vim| is that, usually, it is logical. Once you will have understood the logic behind it, all will be crystal clear for you (at least I hope so).
 
 By default, when you start |vim|, you are presented with its default mode. This mode is called the *Normal mode*. The purpose of this mode is not to write text (for that, you will have the *Insert mode*), but only to move the cursor and to manipulate text. The power of |vim| is coming from the combination of these two modes (other modes exist, but it's not the topic for now). You will need some time and some practice to realize the power it's giving to you, so you will just need to trust me in the meantime.
 
@@ -73,7 +73,7 @@ If you are asking yourself why those modes, why by default we can't even write d
 Modes: the powerful |vim| secrets
 =================================
 
-I suppose you will agree if I say that, if you want to learn |vim|, it's to be more efficient when writing/manipulating text or code. To be more efficient when writing text, there is not many solutions. There is only one actually: you need to move your hands as less as you can (even not at all) and only move your fingers.
+I suppose you will agree if I say that, if you want to learn |vim|, it's to be more efficient when writing/manipulating text or code. To be more efficient when writing text, there are not many solutions. There is only one actually: you need to move your hands as less as you can (even not at all) and only move your fingers.
 
 To do so, of course, you will need to do without your mouse. In addition to being slow, the move keyboard -> mouse and then mouse -> keyboard is really bad for your articulations. It's often the cause of musculoskeletal disorders. Maybe you are still young and don't know what I'm talking about. But believe me, you will have such problems one day or another (often sooner than what you think). If your are in front of your computer all day long, don't neglect those possible troubles, you may regret it someday. `According to Wikipedia <http://en.wikipedia.org/wiki/Musculoskeletal_disorder>`_, it's actually the most common professional disease.
 
@@ -93,11 +93,11 @@ You will also find on each keyboard some marks on the letters F and J, the goal 
 
 Trying to move as less as possible the hands from the keyboard is the reason for having a *normal* mode and an *insert* mode in |vim|. When switching from one to the other, the keys under your fingers will sometimes allow you to move the cursor and to manipulate text: copy/paste, deletion, … (it's the normal mode), sometimes they will allow you to select some text (it's the *visual mode*) and sometimes to insert some text (it's the *insert* mode). And of course, all of that is possible without the extensive use of keys combinations like *Ctrl + key* that are very bad for your fingers (*Emacs*, this on is for you).
 
-By default, we can switch from the *insert* mode to the *normal* mode by pressing |ttesc|, but it will be one of the first things we will change: |ttesc| is to far from your fingers on actual keyboards.
+By default, we can switch from the *insert* mode to the *normal* mode by pressing |ttesc|, but it will be one of the first things we will change: |ttesc| is to far from your fingers on current keyboards.
 
 To switch from *normal* mode to *insert* mode, we can for example press |tti|. We will later learn that there are other ways to do so too. For example, to enter the *insert* mode and to then create a new line below the current one (no matter where is your cursor on the line), we will use |tto| while in *normal* mode.
 
-I will talk again about this subject later in ":ref:`moving`", but if your are not ready, at some point, to do without your mouse and the directional keys to edit text, I would recommend you to stop learning |vim| right now. It's as simple as that. You can leverage the full power of |vim| only by getting rid of the mouse and by moving your hand as little as possible.
+I will talk again about this subject later in ":ref:`moving`", but if you are not ready, at some point, to do without your mouse and the directional keys to edit text, I would recommend you to stop learning |vim| right now. It's as simple as that. You can leverage the full power of |vim| only by getting rid of the mouse and by moving your hand as little as possible.
 
 If you want to go further, you can buy an orthogonal keyboard like `TypeMatrix <http://www.typematrix.com>`_. It's the keyboard I'm currently using, and my fingers are thanking me everyday.
 
@@ -118,7 +118,7 @@ I've directly commented all the lines in the code itself. Nothing fancy here, yo
    :code:
 
 
-For those who did a copy/paste (and you should be one of those), you just have to save your newly created file. We want to put it in our home directory, so you have to save it as `~/.vimrc`. When using Mac OS X and Linux, *~* is the home directory of the current user. But be careful, when using Linux and Mac OS X the files starting with a ``.`` are hidden files. So don't be surprised to not see by default your `~/.vimrc` in your file explorer.
+For those who have done a copy/paste (and you should be one of those), you just have to save your newly created file. We want to put it in our home directory, so you have to save it as `~/.vimrc`. When using Mac OS X and Linux, *~* is the home directory of the current user. But be careful, when using Linux and Mac OS X the files starting with a ``.`` are hidden files. So don't be surprised to not see by default your `~/.vimrc` in your file explorer.
 
 For people using the mouse, you will just have to use the `File` menu and then the `Save as` one. Save the file under the name `.vimrc` in your home directory. For those who want to use the keyboard you will just have to type :vimcmd:`:sav ~/.vimrc` (be sure to be in the *Normal* mode by pressing |ttesc| before). To save your further modifications, just use the menus with the mouse or type :vimcmd:`:w` when in *Normal* mode.
 
@@ -209,7 +209,7 @@ You will find the full version of the configuration file for this chapter online
 Our first plugin: the file explorer
 ===================================
 
-Here we go, we have a nice |vim| that we can actually use with pretty colors. It's a good firt step, but now, it would be cool to be able to open files without having to do `File -> Open` using the menu bar. This is the perfect opportunity to install our first plugin: a file explorer. We will use a two-step approach here: first we will install a plugin manager and then we will install the plugin using this plugin manager. By default |vim| doesn't come with a plugin manager and, believe me, if you don't install one your |.vim| directory will soon be a real mess. So let's get started.
+Here we go, we have a nice |vim| that we can actually use with pretty colors. It's a good first step, but now, it would be cool to be able to open files without having to do `File -> Open` using the menu bar. This is the perfect opportunity to install our first plugin: a file explorer. We will use a two-step approach here: first we will install a plugin manager and then we will install the plugin using this plugin manager. By default |vim| doesn't come with a plugin manager and, believe me, if you don't install one your |.vim| directory will soon be a real mess. So let's get started.
 
 Plugin manager: Pathogen
 ------------------------
@@ -261,7 +261,7 @@ Since charity begins at home, we will tidy up our install by using *Pathogen* wi
     # Move solarized to the bundle dir
     mv ~/.vim/colors ~/.vim/bundle/solarized
 
-Currently, *Pathogen* is still the most used plugin manager for |vim|. But recently, a new challenger has arrived, it's called Vundle https://github.com/gmarik/vundle. I chose to use *Pathogen* here because it's the one you will hear about the most often. But you have to know that Vundle is an interesting alternative: it's compatible with Pathogen and you can manage your plugins directly from internet (from github, the vim website, …). For those familiar with Ruby, it's Bundler (http://gembundler.com) for |vim|.
+Currently, *Pathogen* is still the most used plugin manager for |vim|. But recently, a new challenger has arrived, it's called Vundle https://github.com/gmarik/vundle. I have chosen to use *Pathogen* here because it's the one you will hear about the most often. But you have to know that Vundle is an interesting alternative: it's compatible with Pathogen and you can manage your plugins directly from internet (from github, the vim website, …). For those familiar with Ruby, it's Bundler (http://gembundler.com) for |vim|.
 
 Our |vim| is almost ready to be used on a daily basis. We are just missing an handy way to explore the files of a project. We will use *The NERD Tree* for that.
 
@@ -318,6 +318,6 @@ You can also run commands (create, copy a file) by typing |ttm| when you are ins
 Here we go
 ==========
 
-Now, you've done the hardest part. Well, almost. We've just covered what is sorely lacking in |vim|: a sensible default configuration. I'm not saying that you now have the best editor out there, but at least, you should be able to use |vim| as any other *normal* text editor that you do not yet know all the possibilities. I recommend, at this stage, to start to use |vim| in your everyday life. Feel free to use the mouse and the menus for now. The primary goal here is to reduce the negative impact that |vim| could have on your daily productivity, if not configured properly. You will gradually learn the keyboard shortcuts when the time will come.
+Now, you've done the hardest part. Well, almost. We've just covered what is sorely lacking in |vim|: a sensible default configuration. I'm not saying that you now have the best editor out there, but at least, you should be able to use |vim| as any other *normal* text editor that you do not yet know all the possibilities. I recommend, at this stage, to start using |vim| in your everyday life. Feel free to use the mouse and the menus for now. The primary goal here is to reduce the negative impact that |vim| could have on your daily productivity, if not configured properly. You will gradually learn the keyboard shortcuts when the time will come.
 
-We will now discuss what make the uniqueness of |vim|: the way modes are handle and the commands to manipulate text. The ball is in your court now: either you are willing to change your habits and move to another level of efficiency with |vim|, or else using |vim| as an improved notebook is right for you (in this case, you can stop there). It's up to you !
+We will now discuss what makes the uniqueness of |vim|: the way modes are handled and the shortcuts to manipulate text. The ball is in your court now: either you are willing to change your habits and move to another level of efficiency with |vim|, or else using |vim| as an improved notebook is right for you (in this case, you can stop there). It's up to you !
