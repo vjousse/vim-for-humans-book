@@ -2,7 +2,7 @@
 The text editor you've always dreamed of
 ****************************************
 
-I confess, I have some weird dreams. But hey, maybe my dreams are not as weird as they seem: dreaming of a tool that can improve all the professionals areas of my life as a coder, writer, teacher, …  doesn't seem so weird after all.
+I confess, I have some weird dreams. But hey, maybe my dreams are not as weird as they seem: dreaming of a tool that can improve all the professional areas of my life as a coder, writer, teacher, …  doesn't seem that weird after all.
 
 The success of |vim| is due to its ability to **ease the text manipulations**. Certainly, it will provide you with functionalities dedicated to specific tasks (often via plugins) as syntax highlighting, spell checking, … but in the end, it's always to write/fix/handle/move text that you spend most of your time.
 
@@ -22,17 +22,17 @@ Preamble
 
 Now is the time to learn our first text manipulation: the famous copy/paste. I can already hear some of you saying that it is useless: you already know how to do that. You switch to the insert mode, you use your mouse (or you move using the directional keys while holding |ttshift|) to select some text. Then you go to the ``edit`` menu and you select ``copy``. Then, ``edit`` menu and ``paste``. Well, why not.
 
-But if you have understood the ":ref:`modes`" section about the ideal position of your hands on the keyboard, you should know that you did things your are not supposed to do:
+But if you have understood the ":ref:`modes`" section about the ideal position of your hands on the keyboard, you should know that you did things you were not supposed to do:
 
-- You have used your your mouse
-- You have moved your right hand a lot from its rest position, to press the directional keys that are far away from your fingers
+- You used your mouse
+- You moved your right hand a lot from its rest position, to press the directional keys that are far away from your fingers
 
 Certainly, it doesn't really matter, but it's totally ineffective (using your mouse or moving your right hand toward the directional keys is very slow) and harmful for your little hands. This is your last chance: if you are not ready to force yourself to not do it, **|vim| is not for you**. |vim| does a perfect job at keeping your hands on the keyboard and at forgetting your mouse. If you don't do it, you will not be using |vim| to its fullest. And, one day or another, **you will quit for another editor** that was made to be used with a mouse. So, should we continue?
 
 Forget the mouse
 ----------------
 
-If you are reading thoses lines it means that you answered "yes" to the question above, so let's go! Our first step will be to get rid of the mouse. Then we will do the same with directional keys, but first things first.
+If you are reading thoses lines it means that you have answered "yes" to the question above, so let's go! Our first step will be to get rid of the mouse. Then we will do the same with directional keys, but first things first.
 
 To copy/past using |vim|, you will have to switch to the "normal" mode (the default one when you open |vim|). To know what the current mode is, just have a look at the bottom left of your |vim|. You can see |vim| in "insert" mode in `the figure below`.
 
@@ -59,7 +59,7 @@ Then, move to the end of the sentence (in "normal" mode) and press |ttp| (|ttp| 
 
 .. image:: ../book-tex/graphics/vim-paste.png
 
-We can see that |vim| is using the mode switching trick (including the "normal" mode for moving) in order to not have to use the mouse.
+We can see that |vim| uses the mode switching trick (including the "normal" mode for moving) in order to not have to use the mouse.
 When you will be used to switch quickly from one mode to another (and in order to do so, going without |ttesc| will be mandatory), using the mouse will appear like a pure waste of time. But obviously, you will first need to train yourself.
 
 .. _forgetting-the-directional-keys:
@@ -86,9 +86,9 @@ When in normal mode, 4 keys will allow you to move your cursor:
 
 .. image:: ../book-tex/graphics/hjkl.png
 
-As you can notice, thoses keys are located on the home row so that you don't have to move your hands. Your index has two moves (left and bottom) while your auricular doesn't have any. You will see that it's not a problem, it's even a feature: your index is stronger than your auricular. By checking the keyboard that was used to develop *Vi* in the ":ref:`secesc`" section, you will understand why.
+As you can notice, those keys are located on the home row so that you don't have to move your hands. Your index has two moves (left and bottom) while your auricular doesn't have any. You will see that it's not a problem, it's even a feature: your index is stronger than your auricular. By checking the keyboard that was used to develop *Vi* in the ":ref:`secesc`" section, you will understand why.
 
-On a side note, once you will be used to |vim|, you will note use the left and right moves a lot. You will primarily move the cursor word by word, paragraph by paragraph or by using the search function. Here are some "fast moves" that I otfen use:
+On a side note, once you will be used to |vim|, you will not use the left and right moves a lot. You will primarily move the cursor word by word, paragraph by paragraph or by using the search function. Here are some "fast moves" that I otfen use:
 
 ========== =================================================
 Key        Move
@@ -101,7 +101,7 @@ Key        Move
 |tzero|    **to the start of the line**
 ========== =================================================
 
-This is the mininum to move your hands in normal mode. They are also commands allowing you to first move and then to enter the insert mode directly. They are very handy because the will allow you to save a few keystrokes. Here are some that I often use:
+This is the mininum to move your hands in normal mode. They are also commands allowing you to first move and then to enter the insert mode directly. They are very handy because they will allow you to save a few keystrokes. Here are some that I often use:
 
 ======== ================================================================
 Key      Action
@@ -131,9 +131,9 @@ Here is the ultimate configuration that you will need to put in your |vimrc| to 
     imap <left> <nop>
     imap <right> <nop>
 
-Here we are. Believe me, this will be a little bit hard at the beginning. It was the case for me during the first two days. But then, you just forgot and deal with it. Anyway, if you are not ready to struggle for two days in order to learn |vim| properly: what are you doing here?!
+Here we are. Believe me, this will be a little bit hard at the beginning. It was the case for me during the first two days. But then, you just forget and deal with it. Anyway, if you are not ready to struggle for two days in order to learn |vim| properly: what are you doing here?!
 
-I  will not go into details on all the possibles keys to move inside |vim|, other resources are doing a better job at it. It's the case of "A byte of |vim|" that you can freely download here: http://www.swaroopch.com/notes/vim/. But on the other hand, you will learn in :ref:`combine-move` how to use them wisely.
+I  will not go into details on all the possible keys to move inside |vim|, other resources do a better job at it. It's the case of "A byte of |vim|" that you can freely download here: http://www.swaroopch.com/notes/vim/. But on the other hand, you will learn in :ref:`combine-move` how to use them wisely.
 
 Here is an handy graphical cheat sheet that you can download on http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html. I would recommend you to print it and to put it on your desktop: it helps a lot at the beginning.
 
@@ -186,14 +186,14 @@ Combining keys and moves
 
 Now that we are able to move properly by using the normal mode, it's time to see how to perform other useful operations. We have already seen how to copy/past in the :ref:`moving` chapter, we will now have a look at how to delete/edit more easily.
 
-In :ref:`forgetting-the-directional-keys` we saw that if we want to move to the start of the next word we just have to use |ttw|. We will combine that with some new keys of the "normal mode":
+In :ref:`forgetting-the-directional-keys` we have seen that if we want to move to the start of the next word we just have to use |ttw|. We will combine that with some new keys of the "normal mode":
 
 * |ttd| is used to "delete"
 * |ttc| is used to "delete and switch to insert mode"
 
 Something good to know: by default, everything that is deleted is placed in the clipboard. The delete is behaving like a cut.
 
-The particularity of these keys is that they are waiting for a "move order" to know what should be deleted. So you will need to provide one of the keys that we discussed in the :ref:`forgetting-the-directional-keys` chapter.
+The particularity of these keys is that they are waiting for a "move order" to know what should be deleted. So you will need to provide one of the keys that we have discussed in the :ref:`forgetting-the-directional-keys` chapter.
 
 Here are some examples:
 
@@ -217,7 +217,7 @@ Action                        Result
 |tty| then |tthat|            copy everything until the first non blank character of the line
 ============================= =============================================================
 
-All you have to do next is to press |ttp| to paste the text you copied above. By default, |ttp| will paste the text after the current position of the cursor. If you want to paste before the position of the cursor, use |ttP|.
+All you have to do next is to press |ttp| to paste the text you have copied above. By default, |ttp| will paste the text after the current position of the cursor. If you want to paste before the position of the cursor, use |ttP|.
 
 From time to time, you may also want to be able to delete some text… ;) Here are some useful commands to do so:
 
@@ -266,9 +266,9 @@ You can also:
 Marks
 -----
 
-When I'm moving inside a file, I often need to go back to some previous points. For example, when I go to the beginning of the file while I was working in the middle of it, I like to come back directly to where I was working before moving to the beginning. Fortunately, |vim| has everything for it through the use of **markers**. Markers are simply "bookmarks" that allow you to move quickly through the file.
+When I'm moving inside a file, I often need to go back to some previous points. For example, when I go to the beginning of the file while I am working in the middle of it, I like to come back directly to where I was working before moving to the beginning. Fortunately, |vim| has everything for it through the use of **markers**. Markers are simply "bookmarks" that allow you to move quickly through the file.
 
-You can put a marker by pressing |tm|\ |ta|. To move your cursor to the position of the marker, just press |tapos|\ |ta|. You can place as many marker as you want by changing |ta| with any letter of the alphabet (this is called register in |vim|'s language). To place another marker you can for example use the letter |td|. Thanks to |tm|\ |td| you will put the marker and with |tapos|\ |td| you will move to the position of the marker.
+You can put a marker by pressing |tm|\ |ta|. To move your cursor to the position of the marker, just press |tapos|\ |ta|. You can place as many markers as you want by changing |ta| with any letter of the alphabet (this is called register in |vim|'s language). To place another marker you can for example use the letter |td|. Thanks to |tm|\ |td| you will put the marker and with |tapos|\ |td| you will move to the position of the marker.
 
 Search
 ------
@@ -301,7 +301,7 @@ In "normal mode" you will be able to use |ttV| to select line per line. And of c
 It's your turn!
 ===============
 
-You should now be able to only use the keyboard to manipulate and edit text in |vim|. I only skimmed over the power of |vim| here, but it should be enough to survive. I have given you the bare minimum here, but this minimum should allow you to enjoy |vim| and to not use the mouse anymore.
+You should now be able to only use the keyboard to manipulate and edit text in |vim|. I have only skimmed over the power of |vim| here, but it should be enough to survive. I have given you the bare minimum here, but this minimum should allow you to enjoy |vim| and to not use the mouse anymore.
 
 It's now your turn to read all the many resources available on the Internet describing all the possible moves and combinations.
 

@@ -6,14 +6,14 @@ Essential plugins
 
 Let's be clear, using |vim| without plugins is almost useless. It's the usage of plugins that will allow you to boost your productivity. You don't need a lot of them, but you need the good ones.
 
-|vim| can of course be used without any plugin and it can be useful to know how to use it without the need to install additional plugins. Indeed, on most servers, you will have zero plugin installed. That's why, knowing how to open and save a file, knowing how to switch between files just by using default commands is very useful. However, for your writing or coding needs, plugins are mandatory.
+|vim| can of course be used without any plugin and it can be useful to know how to use it without needing to install additional plugins. Indeed, on most servers, you will have zero plugin installed. That's why, knowing how to open and save a file, knowing how to switch between files just by using default commands is very useful. However, for your writing or coding needs, plugins are mandatory.
 
 .. _seclusty:
 
 Managing and switching between files : *Lusty Explorer*
 =======================================================
 
-We've already talked about NerdTree in :ref:`secnerdtree`, we saw that thanks to it, we can have a project explorer in a sidebar. One of the problems of this plugin is that it was not designed to be used with the keyboard. You can for sure use the keyboard, but it will not be as efficient as a plugin developed with keyboard usage in mind.
+We've already talked about NerdTree in :ref:`secnerdtree`, we have seen that thanks to it, we can have a project explorer in a sidebar. One of the problems of this plugin is that it was not designed to be used with the keyboard. You can for sure use the keyboard, but it will not be as efficient as a plugin developed with keyboard usage in mind.
 
 The first plugin that I install when I have to use |vim| is *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). This plugin will allow you to navigate between the files on you hard drive in order to open files without using the mouse. Moreover, it will allow you to easily switch between you opened files, called buffers in |vim| terms. Let's install it.
 
@@ -29,7 +29,7 @@ First, download the latest version of the script here: http://www.vim.org/script
         |   `-- plugin
         |       `-- lusty-explorer.vim
 
-If you did everything right since the beginning, your ``.vim/`` directory should now look like this:
+If you have done everything right since the beginning, your ``.vim/`` directory should now look like this:
 
 .. code-block:: html
 
@@ -78,11 +78,11 @@ Once the modification made and taken into account by |vim| (by restarting |vim| 
 
 .. image:: ../book-tex/graphics/vim-lusty.png
 
-The next thing to do is to deactivate *The Nerd Tree* by commenting the corresponding line like I did on the screenshot above. It will not be useful anymore as *Lusty Explorer* is a better replacement when using the keyboard.
+The next thing to do is to deactivate *The Nerd Tree* by commenting the corresponding line like I have done on the screenshot above. It will not be useful anymore as *Lusty Explorer* is a better replacement when using the keyboard.
 
-You can see on the `lusty`_ screenshot that *Lusty Explorer* is made of two parts. The bottom part is about the current directory you're exploring and the top part is the content of this directory. The current item is highligthed. For example, on the `lusty`_ screenshot above, the current itemis the ``.vim/`` directory, highligthed in yellow (the color could be different, it depends on your theme).
+You can see on the `lusty`_ screenshot that *Lusty Explorer* is made of two parts. The bottom part is about the current directory you're exploring and the top part is the content of this directory. The current item is highligthed. For example, on the `lusty`_ screenshot above, the current item is the ``.vim/`` directory, highligthed in yellow (the color could be different, it depends on your theme).
 
-*Lusty Explorer* uses something called *Fuzzy matching* that will allow you to type only a small part of the file you want to select. This part can be anything: the begining of the filename, the middle, the end or just letters composing the file to select. In the example above, if I enter ``.vimi`` in the *Lusty* window, ``.viminfo`` will be selected without the need to specify the full name. Then I just need to press |ttenter| to open the corresponding file in |vim|. You can see this particular example in the screenshot above.
+*Lusty Explorer* uses something called *Fuzzy matching* that will allow you to type only a small part of the file you want to select. This part can be everything: the begining of the filename, the middle, the end or just letters composing the file to select. In the example above, if I enter ``.vimi`` in the *Lusty* window, ``.viminfo`` will be selected without needing to specify the full name. Then I just need to press |ttenter| to open the corresponding file in |vim|. You can see this particular example in the screenshot above.
 
 .. _fuzzy:
 
@@ -100,7 +100,7 @@ So *Lusty Explorer* can be used for two things: navigate your filesystem with `
 
 In order to get familiar with *Lusty Explorer* you should try to open multiple files with ``,lr`` or ``,lf``. Then, try to switch between the opened files with the help of ``,lb``. This is the combination I'm using the most on a day to day basis.
 
-This plugin it totally mandatory and is adding a lot of value to |vim|: not using the mouse to open files. Be sure to take the time to learn how to use it, it's a great time investment.
+This plugin is totally mandatory and adds a lot of value to |vim|: not using the mouse to open files. Be sure to take the time to learn how to use it, it's a great time investment.
 
 Searching files on disk: *Ack*
 ==============================
@@ -166,7 +166,7 @@ Searching files on disk: Ctrlp
 
 Here we will not search inside files like we did with Ack. We will rather search for files to open with |vim|. It can be very handy when you're working on a project where files are everywhere in the directory tree.
 
-As always, we will start by installing the plugin. For once, this plugin has a dedicated page that you will find here: http://kien.github.com/ctrlp.vim/. Scroll to the bottom to download the latest version in the "Direct Downloads" section. For the lazy, here is the direct link: http://github.com/kien/ctrlp.vim/zipball/master. Uncompress the archive in your ``~/.vim/bundle/`` directory, so that you get something like that:
+As always, we will start by installing the plugin. For once, this plugin has a dedicated page that you will find here: http://kien.github.com/ctrlp.vim/. Scroll to the bottom to download the latest version in the "Direct Downloads" section. For the laziest, here is the direct link: http://github.com/kien/ctrlp.vim/zipball/master. Uncompress the archive in your ``~/.vim/bundle/`` directory, so that you get something like that:
 
 .. code-block:: html
 
@@ -208,7 +208,7 @@ Here is CtrlP in action.
 
 Launch it with ``,c`` and then type the name of the file you want to search. When the searched file will be selected first, you will just have to press |ttenter| to open it.
 
-CtrlP can be use to navigate through the opened files (like Lusty), but I find Lusty handier for that. You can also use to navigate directly through your code by "following" your functions thanks to something called the tags (like you can do when using Eclipse). It's a topic too big for the scope of this book, but if you're interested you can read this blog article on the topic: http://andrew-stewart.ca/2012/10/31/vim-ctags.
+CtrlP can be used for navigating through the opened files (like Lusty), but I find Lusty handier for that. You can also use to navigate directly through your code by "following" your functions thanks to something called the tags (like you can do when using Eclipse). It's a too big topic for the scope of this book, but if you're interested you can read this blog article on the topic: http://andrew-stewart.ca/2012/10/31/vim-ctags.
 
 
 Advanced plugins
@@ -218,6 +218,6 @@ Writing an entire book about the |vim| plugin is for sure something doable, but 
 
 * **neocomplcache**. It's an automatic completion plugin. It can autocomplete file names, language attributes, snippets and a lot more. The Github repo: https://github.com/Shougo/neocomplcache
 * **surround**. With this plugin, you can manage (change, add, delete) everything that "surrounds": parenthesis, brackets, quotes, … For example, you will be able to change "Hello world!" with 'Hello world!' or <q>Hello world!</q> with a simple key combination. The Github repo: https://github.com/tpope/vim-surround
-* **fugitive**. If your working with source code, you have to use a version control system. If it's not the case, you can go hide yourself. Otherwise, if you're using Git, fugitive was made for you. It allows you to manage your git command directly inside |vim|. The Github reop:  https://github.com/tpope/vim-fugitive
+* **fugitive**. If you work with source code, you have to use a version control system. If it's not the case, you can go hide yourself. Otherwise, if you're using Git, fugitive was made for you. It allows you to manage your git command directly inside |vim|. The Github reop:  https://github.com/tpope/vim-fugitive
 * **syntastic**. Syntastic will check the syntax of your source code. It will, like Eclipse does it for exemple, directly display your syntax errors in your |vim|. It can be a time saver if you edit a lot of code. Github repo : https://github.com/scrooloose/syntastic
 * **ctags + ctrlp**. Ctags is a small external program that will parse your source code and allow you to "follow" your functions calls through your source code. Very useful to navigate into your source code. Used with **ctrlp** described above, it will soon become a must. Everything is explained here: http://andrew-stewart.ca/2012/10/31/vim-ctags.
