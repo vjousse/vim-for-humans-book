@@ -139,8 +139,7 @@ Here is an handy graphical cheat sheet that you can download on http://www.viemu
 
 .. _cheat-sheet:
 
-.. image:: ./graphics/vi-vim-cheat-sheet.gif
-
+.. image:: ../book-tex/graphics/vi-vim-cheat-sheet.png
 
 Keep in mind that the main goal here is to increase your speed while keeping your hands on the "home row" and using the "normal mode". Get down to work!
 

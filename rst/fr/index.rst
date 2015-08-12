@@ -37,7 +37,7 @@ Tables des matières
 ===================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    introduction
    usable-vim
