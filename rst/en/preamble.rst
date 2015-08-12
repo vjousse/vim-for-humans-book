@@ -28,3 +28,8 @@ I'm releasing the book under the `Creative Commons Attribution 4.0 Internationa 
 
 .. image:: ../img/by.png
 
+Thanks
+------
+
+A big thank to my lovely sister Sandra for her reviews!
+
