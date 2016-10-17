@@ -1,5 +1,7 @@
 # Vim for humans
 
+Website code availabre here: https://github.com/vjousse/vim-for-humans-website
+
 ## Install
 
 Be sure to create a symlink named 'vim-for-humans' in the project directory. This symlink should point to a directory where you've cloned [code examples](https://github.com/vjousse/vim-for-humans).
