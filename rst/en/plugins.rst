@@ -76,7 +76,7 @@ Once the modification made and taken into account by |vim| (by restarting |vim| 
 
 .. _lusty:
 
-.. image:: ../book-tex/graphics/vim-lusty.png
+.. image:: ../../book-tex/graphics/vim-lusty.png
 
 The next thing to do is to deactivate *The Nerd Tree* by commenting the corresponding line like I have done on the screenshot above. It will not be useful anymore as *Lusty Explorer* is a better replacement when using the keyboard.
 
@@ -86,7 +86,7 @@ You can see on the `lusty`_ screenshot that *Lusty Explorer* is made of two part
 
 .. _fuzzy:
 
-.. image:: ../book-tex/graphics/vim-lusty-fuzzy.png
+.. image:: ../../book-tex/graphics/vim-lusty-fuzzy.png
 
 
 Here are some handy handy shortcuts of *Lusty Explorer*:
@@ -143,7 +143,7 @@ Ack will start the search from the directory of the file currently opened. Here 
 
 The results will be displayed in a window called the *Quickfix Window*, as you can see below.
 
-.. image:: ../book-tex/graphics/vim-ack-quickfix.png
+.. image:: ../../book-tex/graphics/vim-ack-quickfix.png
 
 Here are some commands available inside this window:
 
@@ -204,7 +204,7 @@ Now we need to add the shortcut to our |vimrc| to invoke CtrlP like in the listi
 
 Here is CtrlP in action.
 
-.. image:: ../book-tex/graphics/vim-ctrlp.png
+.. image:: ../../book-tex/graphics/vim-ctrlp.png
 
 Launch it with ``,c`` and then type the name of the file you want to search. When the searched file will be selected first, you will just have to press |ttenter| to open it.
 
