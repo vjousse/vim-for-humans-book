@@ -16,7 +16,7 @@ Here is what a default |vim| is missing (and why **most of people are giving up*
 
     |solarized|
 
-.. |solarized| image:: ../book-tex/graphics/solarized-yinyang-mini.png
+.. |solarized| image:: ../../book-tex/graphics/solarized-yinyang-mini.png
 
 **File explorer**
     If your are using |vim| along with a graphical interface (I suppose it's the case for 99% of you) you will by default have a ``File`` menu available. This menu should allow you to open a file. It's, for sure, a good start. But having a file explorer a la Netbeans or Textmate can be very handy. To mimic the same behavior, we will be using `The NERD Tree <http://www.vim.org/scripts/script.php?script_id=1658>`_. Be aware that, once you will have read this guide, you will not need the mouse anymore.
@@ -38,7 +38,7 @@ The first thing to do will certainly be to install a |vim| version for your oper
 
 When you will start |vim|, you should see a welcome text asking you to help poor children in Uganda (or something along the lines). 
 
-.. image:: ../book-tex/graphics/en/vim-uganda.png
+.. image:: ../../book-tex/graphics/en/vim-uganda.png
 
 This text will disappear as soon as we will be writing text in |vim|. 
 
@@ -46,7 +46,7 @@ We will start by adding a comment in the header of the file to specify the autho
 
 .. _a blank page:
 
-.. image:: ../book-tex/graphics/en/vim-new.png
+.. image:: ../../book-tex/graphics/en/vim-new.png
 
 **On a side note**: if you don't really understand what you have done and |vim| is displaying red messages at the bottom left or doesn't seem to react as it should when you press |tti|, don't panic. Pressing multiples times on |ttesc| (two times should be enough) should bring |vim| to its default mode, the *Normal mode*. Then it should behave as you would expect again.
 
@@ -60,7 +60,7 @@ You should know be able to write down `the comment below`_:
 
 You will have noticed that comments in *VimL* (the name of the |vim| programing language) start with a :viml:`"`. Then press |ttesc| to come back to the default mode (the normal mode) of |vim|. That's all, you are done. Here is a screenshot of what your |vim| should look like now:
 
-.. image:: ../book-tex/graphics/en/vim-first-comment.png
+.. image:: ../../book-tex/graphics/en/vim-first-comment.png
 
 I can already hear you: all that fuss for that? Well, yes. And you even don't know how to save a file. But all these things are logical that I'm gonna explain to you. One of the advantages of |vim| is that, usually, it is logical. Once you will have understood the logic behind it, all will be crystal clear for you (at least I hope so).
 
@@ -83,7 +83,7 @@ So what do you have the right to do? Not a lot to be honest (but it's for your o
 
 .. _as you can see on the picture below:
 
-.. figure:: ../book-tex/graphics/hand-position.png
+.. figure:: ../../book-tex/graphics/hand-position.png
    
    Home row, QWERTY keyboard
 
@@ -128,7 +128,7 @@ Below is a screenshot of |vim| (macvim) `after your first configuration`_.
 
 .. _after your first configuration:
 
-.. figure:: ../book-tex/graphics/en/vim-first-config.png
+.. figure:: ../../book-tex/graphics/en/vim-first-config.png
 
    |vim| after your first configuration.
 
@@ -151,7 +151,7 @@ First, we need to enable syntax highlighting in the configuration file. Add thes
 You should have a |vim| looking like the picture below.
 
 
-.. figure:: ../book-tex/graphics/vim-syntax-hl.png
+.. figure:: ../../book-tex/graphics/vim-syntax-hl.png
 
    Default syntax highlighting.
 
@@ -163,7 +163,7 @@ Themes will allow you to have a nicer |vim| than the default one. A theme will c
 
 To install it, you will first need to create a directory called `.vim` in the same directory than your |vimrc| (that is to say, in your home directory). Note that when using Windows, the `.vim` directory is called `vimfiles`. Each time I'll be speaking of the `.vim` directory, it will be the `vimfiles` directory for people using Windows. In this `.vim` directory, create a sub directory named `colors`. Then, download the *Solarized* theme file https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim (it's the same file for the light and the dark version) and copy it in your `vim/colors/` directory. You `.vim` directory should look like the picture below.
 
-.. figure:: ../book-tex/graphics/solarized-tree.png
+.. figure:: ../../book-tex/graphics/solarized-tree.png
 
    Content of the .vim directory with Solarized.
 
@@ -177,12 +177,12 @@ To test the light theme, you just have to change `dark` with `light` (for the `b
 
 Here is a preview of the two versions (personally, I prefer the dark one).
 
-.. figure:: ../book-tex/graphics/vim-solarized-dark.png
+.. figure:: ../../book-tex/graphics/vim-solarized-dark.png
 
    The dark  *Solarized* theme.
 
 
-.. figure:: ../book-tex/graphics/vim-solarized-light.png
+.. figure:: ../../book-tex/graphics/vim-solarized-light.png
 
    The light  *Solarized* theme.
 
@@ -222,7 +222,7 @@ The main problem with this approach is that the plugins are not isolated. So you
 
 That's why *Pathogen* is especially useful, it will allow each plugin to be located in a separate directory. Here is an example of a |.vim| directory before and after the usage of *Pathogen*:
 
-.. figure:: ../book-tex/graphics/pathogen-tree.png
+.. figure:: ../../book-tex/graphics/pathogen-tree.png
 
    |.vim| before and after Pathogen
 
@@ -308,7 +308,7 @@ I have to admit that this command is a little bit obscure. Actually it means: ev
 
 Nothing special then, *The NERD Tree* will display the tree of the directory where you've launched |vim| as you can see on the picture below. You can use your mouse and/or your keyboard to move inside *The NERD Tree*.
 
-.. figure:: ../book-tex/graphics/vim-nerdtree.png
+.. figure:: ../../book-tex/graphics/vim-nerdtree.png
 
    |vim| with *The NERD Tree*.
 

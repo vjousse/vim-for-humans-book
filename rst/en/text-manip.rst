@@ -40,7 +40,7 @@ To copy/past using |vim|, you will have to switch to the "normal" mode (the defa
 
 .. _mode insert:
 
-.. image:: ../book-tex/graphics/vim-insert.png
+.. image:: ../../book-tex/graphics/vim-insert.png
 
 
 When there is nothing displayed at the bottom left, it's because you are currently in "normal" mode. In order to quit a mode to return to the normal one, you just have to press |ttesc|. You may already have noticed that pressing |ttesc| is a pain for your fingers. No worries, it's just a temporary thing, I will explain why in the ":ref:`secesc`" section.
@@ -49,7 +49,7 @@ Let's say that you are currently in the "normal" mode and that you already have 
 
 .. _twain:
 
-.. image:: ../book-tex/graphics/vim-twain.png
+.. image:: ../../book-tex/graphics/vim-twain.png
 
 The most intuitive way (but not the most efficient, we will see why a little bit later) to copy/paste the "impossible" word is to move the cursor at the first letter of the word using the directional keys, to press |ttv| (to switch to the "visual" mode), to move to the last letter of the word (you should have the word "impossible" highlighted) and then to press |tty| (|tty| stands for *yank*). You've just copied your first word using |vim|. Hooray!
 
@@ -57,7 +57,7 @@ Then, move to the end of the sentence (in "normal" mode) and press |ttp| (|ttp| 
 
 .. _vim-paste:
 
-.. image:: ../book-tex/graphics/vim-paste.png
+.. image:: ../../book-tex/graphics/vim-paste.png
 
 We can see that |vim| uses the mode switching trick (including the "normal" mode for moving) in order to not have to use the mouse.
 When you will be used to switch quickly from one mode to another (and in order to do so, going without |ttesc| will be mandatory), using the mouse will appear like a pure waste of time. But obviously, you will first need to train yourself.
@@ -84,7 +84,7 @@ When in normal mode, 4 keys will allow you to move your cursor:
 
 .. _hjkl:
 
-.. image:: ../book-tex/graphics/hjkl.png
+.. image:: ../../book-tex/graphics/hjkl.png
 
 As you can notice, those keys are located on the home row so that you don't have to move your hands. Your index has two moves (left and bottom) while your auricular doesn't have any. You will see that it's not a problem, it's even a feature: your index is stronger than your auricular. By checking the keyboard that was used to develop *Vi* in the ":ref:`secesc`" section, you will understand why.
 
@@ -139,7 +139,7 @@ Here is an handy graphical cheat sheet that you can download on http://www.viemu
 
 .. _cheat-sheet:
 
-.. image:: ../book-tex/graphics/vi-vim-cheat-sheet.png
+.. image:: ../../book-tex/graphics/vi-vim-cheat-sheet.png
 
 Keep in mind that the main goal here is to increase your speed while keeping your hands on the "home row" and using the "normal mode". Get down to work!
 
@@ -154,7 +154,7 @@ To understand why |ttesc| is used by default to exit the "insert mode", we have 
 
 .. _vi-keyboard:
 
-.. image:: ../book-tex/graphics/lsi-adm3a-full-keyboard.jpg
+.. image:: ../../book-tex/graphics/lsi-adm3a-full-keyboard.jpg
 
 So we agree that we need another key to exit the insert mode. There are many solutions, here are some possibilities that you can try in your |vimrc|: ::
 
@@ -316,6 +316,6 @@ To awaken the child in you, I urge you to go have fun with http://vim-adventures
 
 .. _vim-adventures:
 
-.. image:: ../book-tex/graphics/vim-adventures.png
+.. image:: ../../book-tex/graphics/vim-adventures.png
 
 Now we will go to the next level: the use of plugins, or how to make |vim| indispensable.
