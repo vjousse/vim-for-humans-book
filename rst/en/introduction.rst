@@ -18,9 +18,9 @@ When you need to write or to code, you have to choose a text editor, and a very 
 
 Yet, these text editors are difficult to learn. Not that they are harder than anything else, not that you can't handle it, but rather because there is no smart way out there to learn them for now. So, here we are.
 
-The aim of this book is to address this gap by guiding you through your discovery of |vim|. I'll put *Emacs* aside from now and I'll focus on |vim|. If you want to know more about this **Editor war**, be sure to check the `Wikipedia page <http://en.wikipedia.org/wiki/Editor_war>`_. This book doesn't claim to be a reference book about |vim|. They are already a lot of good references on the subject like `A byte of Vim <http://swaroopch.com/notes/vim/>`_. However, it claims to reduce the entry barrier to get used to |vim|. To me, the hardest thing to do when learning |vim| is not to discourage away and find a method allowing use to learn it step by step. We all have to get things done with our text editor on a daily basis, that's why loosing all your productivity when switching to |vim| is not possible
+The aim of this book is to address this gap by guiding you through your discovery of |vim|. I'll put *Emacs* aside from now and I'll focus on |vim|. If you want to know more about this **Editor war**, be sure to check the `Wikipedia page <http://en.wikipedia.org/wiki/Editor_war>`_. This book doesn't claim to be a reference book about |vim|. There are already a lot of good references on the subject like `A byte of Vim <http://swaroopch.com/notes/vim/>`_. However, it claims to reduce the entry barrier to get used to |vim|. In my opinion, the most difficult thing about learning |vim| is not getting discouraged and finding a way to use it while learning it step by step. We all have to get things done with our text editor on a daily basis, that's why losing all your productivity when switching to |vim| is not possible
 
-I'm sure you'll find a lot of persons who will tell you: "Just do it cold turkey", "you'll see, it's hard at the beginning, but time will help". Sure. But you still have to be productive on a daily basis, the problem remains. The approach of this book is the following:
+I'm sure you'll find a lot of people who will tell you: "Just do it cold turkey", "You'll see, it's hard at the beginning, but time will help". True, but you’ll still have the problem of trying to remain productive on a daily basis. The approach of this book is the following:
 
 - Have a modern |vim|: syntax highlighting and nice colors.
 - Use |vim| as any other text editor: easily edit code and switch between files using the mouse.
@@ -29,14 +29,14 @@ I'm sure you'll find a lot of persons who will tell you: "Just do it cold turkey
 
 Starting from bullet number 2, you'll already be able to use |vim| on a daily basis without losing a lot of productivity. It's where the magic will happen: if you can integrate |vim| in your daily habits, you have won. You'll then have the rest of your life to learn all the shortcuts and the tip and tricks of |vim|.
 
-You're tired of trying a new editor each year? You're tired of having to relearn everything from scratch every time? You're tired to have to change your editor when you're using your Mac, Windows or Linux? So, just stop it, and join the community of people happy with their text editor!
+You're tired of trying a new editor each year? You're tired of having to relearn everything from scratch every time? You're tired having to change your editor when you're using your Mac, Windows or Linux? So, just stop it, and join the community of people happy with their text editor!
 
 For who?
 ========
 
 Every guy having to produce text (code, book, reports, slideshows, …) regularly. Developers are of course concerned, but it's not only about them.
 
-For example, your are a:
+For example, you are a:
 
 **Student**
     If you want to impress your future boss with your resume, it's a must. It's a proof of seriousness to see that a student took the time to learn |vim| on its own. Moreover, you'll have a unique tool to write all what you'll have to write (and that you'll be able to use for the rest of your career): your LaTeX reports, your slideshows, your code (if you need Word or LibreOffice to write you reports, it's time to use `LaTeX <http://en.wikipedia.org/wiki/LaTeX>`_, `Markdown <http://en.wikipedia.org/wiki/Markdown>`_ or `reStructuredText <http://en.wikipedia.org/wiki/ReStructuredText>`_).
@@ -44,13 +44,13 @@ For example, your are a:
     Friendly advice: for your slideshows, don't hesitate to use something like `impress.js <http://bartaz.github.com/impress.js>`_. It's using HTML/JS/CSS and I highly recommend that you use it to do awesome presentations based on non-proprietary technologies. You can have a look at `reveal.js <http://lab.hakim.se/reveal-js/>`_ too, and its online editor `slide.es <http://slid.es/>`_.
 
 **Teacher** 
-    It's time to set an example for your student and to learn them one of the tool the will use during their entire life. A lot more than any other programming language.
+    It's time to set an example for your student and to teach them a tool they will use during their entire life. A lot more than any other programming language.
 
 **Coder** 
-    To invest time in your daily tool is something essential. You'll anyway have to learn keyboard shortcuts, so you'd better do it for something useful. If this investment is style profitable 10 years from now, it's the perfect investment, it's |vim|.
+    To invest time in your daily tool is something essential. You'll anyway have to learn keyboard shortcuts, so you'd better do it for something useful. If this investment is still profitable 10 years from now, it's the perfect investment, it's |vim|.
 
 **System and network administrator**
-    If you use *Emacs*, then I can forgive you. If you use nano/pico, there is nothing I can do for you, otherwise, it's time to get some job done guys! To remotely administrate a Unix system is the perfect use case for |vim| (a powerful text editor without the need of a graphical interface).
+    If you use *Emacs*, then I can forgive you. If you use nano/pico, there is nothing I can do for you, otherwise, it's time to get some work done guys! To remotely administrate a Unix system is the perfect use case for |vim| (a powerful text editor without the need of a graphical interface).
 
 **Writer** 
     If you write using Markdown/reStructuredText/WikiMarkup or LaTeX, |vim| will save you a lot of time. You'll not be able to go back to another editor after it, or you'll want to *Vimify* it at all costs.
