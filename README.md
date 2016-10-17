@@ -1,6 +1,6 @@
 # Vim for humans
 
-Website code availabre here: https://github.com/vjousse/vim-for-humans-website
+Website code available here: https://github.com/vjousse/vim-for-humans-website
 
 ## Install
 
