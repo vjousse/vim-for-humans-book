@@ -62,7 +62,7 @@ You will have noticed that comments in *VimL* (the name of the |vim| programing 
 
 .. image:: ../../book-tex/graphics/en/vim-first-comment.png
 
-I can already hear you: all that fuss for that? Well, yes. And you even don't know how to save a file. But all these things are logical that I'm gonna explain to you. One of the advantages of |vim| is that, usually, it is logical. Once you will have understood the logic behind it, all will be crystal clear for you (at least I hope so).
+I can already hear you: all that fuss for that? Well, yes. And you don't even know how to save a file. But all these things are logical that I'm gonna explain to you. One of the advantages of |vim| is that, usually, it is logical. Once you understand the logic behind it, all will be crystal clear for you (at least I hope so).
 
 By default, when you start |vim|, you are presented with its default mode. This mode is called the *Normal mode*. The purpose of this mode is not to write text (for that, you will have the *Insert mode*), but only to move the cursor and to manipulate text. The power of |vim| is coming from the combination of these two modes (other modes exist, but it's not the topic for now). You will need some time and some practice to realize the power it's giving to you, so you will just need to trust me in the meantime.
 
@@ -73,9 +73,9 @@ If you are asking yourself why those modes, why by default we can't even write d
 Modes: the powerful |vim| secrets
 =================================
 
-I suppose you will agree if I say that, if you want to learn |vim|, it's to be more efficient when writing/manipulating text or code. To be more efficient when writing text, there are not many solutions. There is only one actually: you need to move your hands as less as you can (even not at all) and only move your fingers.
+I suppose you will agree if I say that, the reason you want to learn |vim| is to be more efficient when writing/manipulating text or code. To be more efficient when writing text, there are not many solutions. There is only one actually: you need to move your hands as little as you can (even not at all) and only move your fingers.
 
-To do so, of course, you will need to do without your mouse. In addition to being slow, the move keyboard -> mouse and then mouse -> keyboard is really bad for your articulations. It's often the cause of musculoskeletal disorders. Maybe you are still young and don't know what I'm talking about. But believe me, you will have such problems one day or another (often sooner than what you think). If your are in front of your computer all day long, don't neglect those possible troubles, you may regret it someday. `According to Wikipedia <http://en.wikipedia.org/wiki/Musculoskeletal_disorder>`_, it's actually the most common professional disease.
+To do so, of course, you will need to do without your mouse. In addition to being slow, the move keyboard -> mouse and then mouse -> keyboard is really bad for your joints. It's often the cause of musculoskeletal disorders. Maybe you are still young and don't know what I'm talking about. But believe me, you will have such problems one day or another (often sooner than what you think). If your are in front of your computer all day long, don't neglect those possible troubles, you may regret it someday. `According to Wikipedia <http://en.wikipedia.org/wiki/Musculoskeletal_disorder>`_, it's actually the most common professional disease.
 
 You will need to forget the move of your right hand toward the directional keys (left/right/bottom/top) too. It's a waste of time and it's completely unneeded with |vim|.
 
