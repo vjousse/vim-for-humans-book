@@ -22,7 +22,7 @@ You will need some prerequisites to be able to compile the LaTeX source code:
 
 ## Compile
 
-After the dependencies have been installed, create the dist directory via `mkdir dist` then run `makedist.sh` script to start compiling. The compilation fails be sure to check the content of the script and try running each command one after another.
+After the dependencies have been installed, run `makedist.sh` script to start compiling. If the compilation fails, be sure to check the content of the script and try running each command one after another.
 
 ## Enjoy
 
