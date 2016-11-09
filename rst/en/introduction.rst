@@ -34,7 +34,7 @@ You're tired of trying a new editor each year? You're tired of having to relearn
 For who?
 ========
 
-Every guy having to produce text (code, book, reports, slideshows, …) regularly. Developers are of course concerned, but it's not only about them.
+Every person having to produce text (code, book, reports, slideshows, …) regularly. Developers are of course concerned, but it's not only about them.
 
 For example, you are a:
 
@@ -50,7 +50,7 @@ For example, you are a:
     To invest time in your daily tool is something essential. You'll anyway have to learn keyboard shortcuts, so you'd better do it for something useful. If this investment is still profitable 10 years from now, it's the perfect investment, it's |vim|.
 
 **System and network administrator**
-    If you use *Emacs*, then I can forgive you. If you use nano/pico, there is nothing I can do for you, otherwise, it's time to get some work done guys! To remotely administrate a Unix system is the perfect use case for |vim| (a powerful text editor without the need of a graphical interface).
+    If you use *Emacs*, then I can forgive you. If you use nano/pico, there is nothing I can do for you, otherwise, it's time to get some work done folks! To remotely administrate a Unix system is the perfect use case for |vim| (a powerful text editor without the need of a graphical interface).
 
 **Writer** 
     If you write using Markdown/reStructuredText/WikiMarkup or LaTeX, |vim| will save you a lot of time. You'll not be able to go back to another editor after it, or you'll want to *Vimify* it at all costs.

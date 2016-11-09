@@ -34,7 +34,7 @@ Essential preamble: the insert mode
 
 Let's be totally crazy. We will try to create the |vimrc| configuration file with |vim| itself. As I said earlier, the sooner you start to use |vim|, the better. I told you it would be totally crazy.
 
-The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <http://code.google.com/p/macvim/>`_ a try, it's the best |vim| port for Mac without any doubt. If your are using GNU/Linux or any other "Unix-like" system, you should have *gVim* available, or at least easily installable using your package management system. Be sure to install the __full__ version (ie. with ruby and lua support). For ubuntu, the package is called `vim-nox`. For Mac OS X, MacVim has already all what you need builtin. For Windows, it seems that there is a version available on the official |vim| website (http://www.vim.org/download.php), but I havn't tested it.
+The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <http://code.google.com/p/macvim/>`_ a try, it's the best |vim| port for Mac without any doubt. If your are using GNU/Linux or any other "Unix-like" system, you should have *gVim* available, or at least easily installable using your package management system. Be sure to install the __full__ version (ie. with ruby and lua support). For ubuntu, the package is called `vim-nox`. For Mac OS X, MacVim has already all what you need builtin. For Windows, it seems that there is a version available on the official |vim| website (http://www.vim.org/download.php), but I haven't tested it.
 
 When you will start |vim|, you should see a welcome text asking you to help poor children in Uganda (or something along the lines). 
 
@@ -107,7 +107,7 @@ The ultimate change would be to switch your keyboard layout to a more efficient 
 The lifesaver default configuration
 ====================================
 
-Let's get serious and try to have a usable |vim|. We will start by editing the default configuration file |vimrc| and by entering default values that any sane guy would love to find in it.
+Let's get serious and try to have a usable |vim|. We will start by editing the default configuration file |vimrc| and by entering default values that any sane person would love to find in it.
 
 You have to place this file in your home directory. It should be */home/your_user/.vimrc* if your are using Linux, */Users/your_user/.vimrc* if your are using Mac OS X. Generally speaking, it should be in you home directory under *~/.vimrc*. If you are using Windows, you can create a file named *_vimrc* that you have to put in your *%HOME%* directory. This directory is obviously not the same across the different Windows versions. Usually, it's the directory just before your directory *My Documents*. More information is `available on Wikipedia <http://en.wikipedia.org/wiki/Home_directory#Default_Home_Directory_per_Operating_System>`_ if you want.
 
