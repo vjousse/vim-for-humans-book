@@ -107,7 +107,7 @@ rst_epilog = u"""
 .. |tcolon| replace:: ``:``
 .. |tctrl| replace:: ``Control``
 .. |tapos| replace:: ``'``
-.. |tslash| replace:: ``\\``
+.. |tslash| replace:: ``/``
 .. |tshift| replace:: ``Shift``
 .. |tenter| replace:: ``Enter``
 .. |tstar| replace:: ``*``
