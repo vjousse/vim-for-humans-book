@@ -145,7 +145,7 @@ Je ne vous donnerai pas d'autres détails sur toutes les touches possibles pour 
 
 On peut notamment citer le livre gratuit "A byte of |vim|" traduit en français et disponible à l'adresse suivante : http://swaroopch.com/notes/Vim_fr/.
 
-Ou encore l'infographie de la figure ci-dessous (téléchargeable sur http://www.nathael.org/) qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
+Ou encore l'infographie de la figure ci-dessous (téléchargeable sur http://www.nathael.org/Data/vi-vim-cheat-sheet.svg) qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
 
 .. _cheat-sheet:
 
