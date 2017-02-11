@@ -44,7 +44,7 @@ For example, you are a:
     Friendly advice: for your slideshows, don't hesitate to use something like `impress.js <http://bartaz.github.com/impress.js>`_. It's using HTML/JS/CSS and I highly recommend that you use it to do awesome presentations based on non-proprietary technologies. You can have a look at `reveal.js <http://lab.hakim.se/reveal-js/>`_ too, and its online editor `slide.es <http://slid.es/>`_.
 
 **Teacher** 
-    It's time to set an example for your student and to teach them a tool they will use during their entire life. A lot more than any other programming language.
+    It's time to set an example for your students and to teach them a tool they will use during their entire life. A lot more than any other programming language.
 
 **Coder** 
     To invest time in your daily tool is something essential. You'll anyway have to learn keyboard shortcuts, so you'd better do it for something useful. If this investment is still profitable 10 years from now, it's the perfect investment, it's |vim|.
@@ -61,7 +61,7 @@ What you will be learning
 =========================
 
 - How to use |vim| as an "usual" editor first (you know, the type of text editors having syntax highlighting, allowing you to open files, to click using the mouse, …). In short, the demystification of |vim| that will allow you to go further.
-- How to move from classical text editon to the power of |vim|, baby step by baby step (it's where addiction begins).
+- How to move from classical text edition to the power of |vim|, baby step by baby step (it's where addiction begins).
 - How to do without the mouse and why it's the best thing that can happen to you when you're programming/writing text.
 - How you can easily deduce keyboard shortcuts with some simple rules.
 
