@@ -4,20 +4,20 @@
 Essential plugins
 *****************
 
-Let's be clear, using |vim| without plugins is almost useless. It's the usage of plugins that will allow you to boost your productivity. You don't need a lot of them, but you need the good ones.
+Let's be clear, using |vim| without plugins is almost useless. It's the usage of plugins that will allow you to boost your productivity. You don't need a lot of them, but you do need the good ones.
 
-|vim| can of course be used without any plugin and it can be useful to know how to use it without needing to install additional plugins. Indeed, on most servers, you will have zero plugin installed. That's why, knowing how to open and save a file, knowing how to switch between files just by using default commands is very useful. However, for your writing or coding needs, plugins are mandatory.
+Of course, |vim| can be used without any plugins and it can be useful to know how to use it without needing to install anything. Indeed, on most servers, you will have zero plugins installed. That's why knowing how to open and save a file and knowing how to switch between files just by using default commands is very useful. However, for your writing or coding needs, plugins are mandatory.
 
 .. _seclusty:
 
 Managing and switching between files : *Lusty Explorer*
 =======================================================
 
-We've already talked about NerdTree in :ref:`secnerdtree`, we have seen that thanks to it, we can have a project explorer in a sidebar. One of the problems of this plugin is that it was not designed to be used with the keyboard. You can for sure use the keyboard, but it will not be as efficient as a plugin developed with keyboard usage in mind.
+We've already talked about NerdTree in :ref:`secnerdtree` and we have seen that thanks to it, we can have a project explorer in a sidebar. One of the problems of this plugin is that it was not designed to be used with the keyboard. You can still use the keyboard, but it will not be as efficient as a plugin developed with keyboard usage in mind.
 
-The first plugin that I install when I have to use |vim| is *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). This plugin will allow you to navigate between the files on you hard drive in order to open files without using the mouse. Moreover, it will allow you to easily switch between you opened files, called buffers in |vim| terms. Let's install it.
+The first plugin that I install when I have to use |vim| is *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). This plugin will allow you to navigate between the files on you hard drive in order to open files without using the mouse. Moreover, it will allow you to easily switch between you opened files, called buffers in |vim| terms.
 
-First, download the latest version of the script here: http://www.vim.org/scripts/script.php?script_id=1890 (it's currently the 4.3 http://www.vim.org/scripts/download_script.php?src_id=17529). Then put it in your ``.vim/`` folder. It should look like this:
+To install it, first download the latest version of the script here: http://www.vim.org/scripts/script.php?script_id=1890. At the time of writing, it's on version 4.3: http://www.vim.org/scripts/download_script.php?src_id=17529). Once installed, put it in your ``.vim/`` folder. It should look like this:
 
 .. code-block:: html
 
@@ -66,11 +66,11 @@ Let's see how to use it. If we take a look at the documentation, here is what we
 
 We can see that the documentation is referring to a key named |tleader| that you need to combine with keys like *lf*, *lr*, *lb* et *lg*. The |tleader| key is a special key that we need to define in our |vimrc|. Almost each plugin will need this special key to be defined, so we will use it a lot. This is a good way to avoid collisions with the default shortcuts of |vim|.
 
-So, we need to choose a key to be our |tleader| key. By default, |vim| uses ``\`` as a |tleader| key. I don't know about you, but for me this is not handy at all. I don't love to use my little finger too much. So I always replace the default |tleader| key with the |tcomma| key. You can of course choose another key, but lot of people are using |tcomma|: it's up to you. To tell it to |vim|, you will need to add a line in your |vimrc| as follow: ::
+So, we need to choose a key to be our |tleader| key. By default, |vim| uses ``\`` as a |tleader| key. I don't know about you, but for me this is not handy at all. I don't love to use my little finger too much. So I always replace the default |tleader| key with the |tcomma| key. You can of course choose another key, but lot of people are using |tcomma|: it's up to you. To tell it to |vim|, you will need to add a line in your |vimrc| as follows: ::
 
     let mapleader = ","
 
-Once the modification made and taken into account by |vim| (by restarting |vim| or by typing :vimcmd:`:so ~/.vimrc` or :vimcmd:`:so $MYVIMRC` in normal mode), you should be able to do ``,lr`` (if you choosed ``,`` as your |tleader| key) and you should see something like the picture below in your |vim|.
+Ensure that the modification has been made and taken into account by |vim|. This can be done by restarting |vim|, or by typing :vimcmd:`:so ~/.vimrc` or :vimcmd:`:so $MYVIMRC` in normal mode. Once this is done, you should be able to do ``,lr`` (if you choose ``,`` as your |tleader| key) and you should see something like the picture below in your |vim|.
 
 .. _la capture d'écran de lusty: lusty_
 
@@ -100,16 +100,16 @@ So *Lusty Explorer* can be used for two things: navigate your filesystem with `
 
 In order to get familiar with *Lusty Explorer* you should try to open multiple files with ``,lr`` or ``,lf``. Then, try to switch between the opened files with the help of ``,lb``. This is the combination I'm using the most on a day to day basis.
 
-This plugin is totally mandatory and adds a lot of value to |vim|: not using the mouse to open files. Be sure to take the time to learn how to use it, it's a great time investment.
+This plugin is totally mandatory and adds a lot of value to |vim| as it allows you to avoid using the mouse to open files. Be sure to take the time to learn how to use it, it's a great time investment.
 
 Searching files on disk: *Ack*
 ==============================
 
 At some point, you will need to search for a particular pattern inside your codebase. |vim| can help help you to do so with a plugin that uses *Ack* under the hood.
 
-*Ack* (http://betterthangrep.com/) is a program written in *perl* that replaces the good old *grep* to search inside files. It's *grep*, but better. But it has one little disadvantage : it's hardly installed by default. So, as you may have guessed, the first thing to do will be to install it. As it depends on the OS you are running, you will have to refer to the installation instructions to know how to intall it for your particular case: http://github.com/mileszs/ack.vim#installation.
+*Ack* (http://betterthangrep.com/) is a program written in *perl* that replaces the good old *grep* to search inside files. It's *grep*, but better. However, it has one little disadvantage: OS's rarely have it installed by default. So, as you may have guessed, the first thing to do will be to install it. As it depends on the OS you are running, you will have to refer to the installation instructions to know how to intall it for your particular case: http://github.com/mileszs/ack.vim#installation.
 
-For Debian/Ubuntu: ``sudo apt-get install ack-grep``. For Mac OS X, first you will need Homebrew (http://mxcl.github.com/homebrew/) and then you will need to open a terminal and to type ``brew install ack``. For people using MacPorts the command will be: ``sudo port install p5-app-ack``. For Windows, install Strawberry Perl (http://strawberryperl.com/) and in a command shell execute ``C:\>cpan App::Ack``. You should now be able to use the **ack** command in your terminal instead of **grep**.
+For Debian/Ubuntu, run: ``sudo apt-get install ack-grep``. For Mac OS X, first you will need Homebrew (http://mxcl.github.com/homebrew/). Then, you will need to open a terminal and type ``brew install ack``. For people using MacPorts the command will be: ``sudo port install p5-app-ack``. For Windows, install Strawberry Perl (http://strawberryperl.com/) and in a command shell execute ``C:\>cpan App::Ack``. You should now be able to use the **ack** command in your terminal instead of **grep**.
 
 Now, we're ready for the big thing. Go to the ack plugin page (http://www.vim.org/scripts/script.php?script_id=2572) and download the last version (at the moment, it's the 0.3.1 version). Uncompress it in your ``~/.vim/bundle/`` directory so that you have a structure like the one below:
 
@@ -135,7 +135,7 @@ Then we will need to add some lines to our |vimrc| file to ease the use of the p
         nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
         nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
 
-Ack will start the search from the directory of the file currently opened. Here are some examples (supposing that your |tleader| key is the |tcomma| key):
+Ack will start the search from the directory of the file currently opened. Here are some examples (assuming that your |tleader| key is the |tcomma| key):
 
 * ``,j`` *toto* : will search for *toto* starting from the directory of the current file,
 * ``,ja`` with your cursor on a word will search for this word.
@@ -164,9 +164,9 @@ By default, Ack doesn't search in files that are not relevant. For example, it w
 Searching files on disk: Ctrlp
 ==============================
 
-Here we will not search inside files like we did with Ack. We will rather search for files to open with |vim|. It can be very handy when you're working on a project where files are everywhere in the directory tree.
+Here we will not search inside files like we did with Ack. Instead, we will search for files to open with |vim|. This can be very handy when you're working on a project where files are everywhere in the directory tree.
 
-As always, we will start by installing the plugin. For once, this plugin has a dedicated page that you will find here: http://kien.github.com/ctrlp.vim/. Scroll to the bottom to download the latest version in the "Direct Downloads" section. For the laziest, here is the direct link: http://github.com/kien/ctrlp.vim/zipball/master. Uncompress the archive in your ``~/.vim/bundle/`` directory, so that you get something like that:
+As always, we will start by installing the plugin. For once, this plugin has a dedicated page that you will find here: http://kien.github.com/ctrlp.vim/. Scroll to the bottom to download the latest version in the "Direct Downloads" section. For the laziest, here is the direct link: http://github.com/kien/ctrlp.vim/zipball/master. Uncompress the archive in your ``~/.vim/bundle/`` directory, so that you get something like this:
 
 .. code-block:: html
 
@@ -214,10 +214,10 @@ CtrlP can be used for navigating through the opened files (like Lusty), but I fi
 Advanced plugins
 ================
 
-Writing an entire book about the |vim| plugin is for sure something doable, but I have to admit that I don't have enough courage. So, I will stop here with the plugins thing. However, below is a list of some plugins that may interest you. This list comes from a poll I did on Twitter asking my followers what were the most useful |vim| plugins to them. Here it is:
+Writing an entire book about the |vim| plugin is definitely something doable, but I have to admit that I don't have enough courage. So, I will stop here with the plugins thing. However, below is a list of some plugins that may interest you. This list comes from a poll I did on Twitter asking my followers what were the most useful |vim| plugins to them. Here it is:
 
-* **neocomplcache**. It's an automatic completion plugin. It can autocomplete file names, language attributes, snippets and a lot more. The Github repo: https://github.com/Shougo/neocomplcache
-* **surround**. With this plugin, you can manage (change, add, delete) everything that "surrounds": parenthesis, brackets, quotes, … For example, you will be able to change "Hello world!" with 'Hello world!' or <q>Hello world!</q> with a simple key combination. The Github repo: https://github.com/tpope/vim-surround
-* **fugitive**. If you work with source code, you have to use a version control system. If it's not the case, you can go hide yourself. Otherwise, if you're using Git, fugitive was made for you. It allows you to manage your git command directly inside |vim|. The Github reop:  https://github.com/tpope/vim-fugitive
-* **syntastic**. Syntastic will check the syntax of your source code. It will, like Eclipse does it for exemple, directly display your syntax errors in your |vim|. It can be a time saver if you edit a lot of code. Github repo : https://github.com/scrooloose/syntastic
+* **neocomplcache**. An automatic completion plugin. It can autocomplete file names, language attributes, snippets and a lot more. The Github repo: https://github.com/Shougo/neocomplcache
+* **surround**. With this plugin, you can manage (change, add, delete) everything that "surrounds": parenthesis, brackets, quotes, etc. For example, you will be able to change "Hello world!" with 'Hello world!' or <q>Hello world!</q> with a simple key combination. The Github repo: https://github.com/tpope/vim-surround
+* **fugitive**. If you work with source code, you have to use a version control system. If it's not the case, you can go flog yourself. Otherwise, if you're using Git, fugitive was made for you. It allows you to manage your git command directly inside |vim|. The Github repo can be found here:  https://github.com/tpope/vim-fugitive
+* **syntastic**. Syntastic will check the syntax of your source code. It will directly display your syntax errors in your |vim|, much like, for example, Eclipse. It can be a time saver if you edit a lot of code. The Github repo can be found here: https://github.com/scrooloose/syntastic
 * **ctags + ctrlp**. Ctags is a small external program that will parse your source code and allow you to "follow" your functions calls through your source code. Very useful to navigate into your source code. Used with **ctrlp** described above, it will soon become a must. Everything is explained here: http://andrew-stewart.ca/2012/10/31/vim-ctags.
