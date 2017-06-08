@@ -4,27 +4,27 @@ Cheatsheet & examples
 
 So here we go, we now have everything needed to make a good start with |vim|. It should be enough to use it on a daily basis. It's the most important thing to do if you want to successfully use |vim|: developing the habit of using it everyday. Once you'll have this habit, everything should seem natural to you.
 
-The aim of this chapter is to provide you with a reference for the most common things you'll have to do with |vim| so that, when you are lost, you know where to search for help. This chapters contains two parts. The first one is a set of Q/A covering the most common problems that newbies are facing. The goal is to answer this kind of question: "f**k, how can I do this, it was so simple with my old editor". The second is a non-exhaustive list of the most useful |vim| commands.
+The aim of this chapter is to provide you with a reference for the most common things you'll have to do with |vim| so that, when you are lost, you know where to search for help. This chapter contains two parts. The first one is a set of Q/A covering the most common problems that beginners face. The goal is to answer the question of "f**k, how can I do this, it was so simple with my old editor". The second is a non-exhaustive list of the most useful |vim| commands.
 
 Questions / Answers
 ===================
 
-How to quit |vim|?
-------------------
+How do I  quit |vim|?
+---------------------
 
-First you need to be sure to be in normal mode. If you don't know how to be sure that you are in normal mode, just press |ttesc| or |ttsemicolon| (depending on your configuration) multiple times and you should be in normal mode. Then, type :vimcmd:`:q` to exit |vim|. The problem is that most of the times, |vim| will no let you quit like that. For example, if you have unsaved changes, it will not let you quit. You can cancel your modifications by using :vimcmd:`!` like that: :vimcmd:`:q!`. You can also save your modifications and save like that: :vimcmd:`:wq`.
+First you need to be in normal mode. If you don't know if you are in normal mode, just press |ttesc| or |ttsemicolon| (depending on your configuration) multiple times. This should bring you to normal mode. Then, type :vimcmd:`:q` to exit |vim|. The problem is that most of the time, |vim| will not let you quit immediately. For example, if you have unsaved changes, |vim|  will not let you quit. You can cancel your modifications by using :vimcmd:`!` like this: :vimcmd:`:q!`. You can also save your modifications and save like this: :vimcmd:`:wq`.
 
-How to save as?
----------------
+How do I 'save as'?
+-------------------
 
-In normal mode, if you type :vimcmd:`:w`, |vim| will by default save your modifications into the current file. If you want to use another filename to "save as", you just need to specify it after :vimcmd:`w` like that: :vimcmd:`:w myfile.txt`. |vim| will save your file under the name *myfile.txt*. On the other hand, |vim| will not open *myfile.txt*, it will stay on the previous file.
+In normal mode, if you type :vimcmd:`:w`, |vim| will by default save your modifications into the current file. If you want to use another filename to "save as", you just need to specify it after :vimcmd:`w` like this: :vimcmd:`:w myfile.txt`. |vim| will save your file under the name *myfile.txt*. However, be aware that |vim| will not open *myfile.txt*, it will stay on the previous file.
 
 If you want |vim| to save under the filename *myfile.txt* and then open the file in the current buffer, you will have to use :vimcmd:`:sav myfile.txt`.
 
-How to copy/cut paste?
-----------------------
+How do I copy/cut and paste?
+----------------------------
 
-This one is easy, there is already a full chapter on it, cf. :ref:`moving`.
+This one is easy, and there is already a full chapter on it: :ref:`moving`.
 
 In short:
 
@@ -33,16 +33,16 @@ In short:
 * Copy using |tty| or cut using |ttx| or |ttd|,
 * Paste after the cursor using |ttp| or before using |ttP|.
 
-How to create a new file?
--------------------------
+How do I create a new file?
+---------------------------
 
 
 The traditional way to create a file is to type, in normal mode, :vimcmd:`:e myfile.txt` to open an empty buffer. Then, save your buffer using :vimcmd:`:w`. Il will be saved as ``myfile.txt`` in the current directory.
 
 You can also use Lusty Explorer (cf. :ref:`seclusty`). To do so, launch it using ``,lr`` or ``,lf`` (supposing that your leader key is ``,``), type the name of the file you want to create and then press |ttctrl| and |tte| at the same time. You can then save as above.
 
-Undo/redo
----------
+How do I undo/redo?
+-------------------
 
 To undo, just press |ttu| while in normal mode. To undo your undo (and so, to redo) press |ttctrl| and |ttr| at the same time.
 
@@ -63,8 +63,8 @@ Expected result                                     Action                      
 **Save as root**                                    :vimcmd:`:w !sudo tee %`             
 =================================================== ==================================== ============
 
-Moves
------
+Movement
+--------
 
 =============================================================== ===========
 Expected result                                                 Action
