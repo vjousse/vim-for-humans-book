@@ -136,6 +136,7 @@ rst_epilog = u"""
 .. |to| replace:: ``o``
 .. |tO| replace:: ``O``
 .. |tp| replace:: ``p``
+.. |tP| replace:: ``P``
 .. |tu| replace:: ``u``
 .. |tr| replace:: ``r``
 .. |tv| replace:: ``v``
