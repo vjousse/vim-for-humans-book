@@ -19,6 +19,7 @@ mkdir $ts
 cd ..
 cp book-tex/vim-pour-les-humains.pdf dist/$ts
 cp rst/fr/_build/epub/Vimpourleshumains.epub dist/$ts/vim-pour-les-humains.epub
+cp rst/fr/_build/epub/Vimpourleshumains.pdf dist/$ts/vim-pour-les-humains-rst.pdf
 cp rst/en/_build/epub/Vimforhumans.epub dist/$ts/vim-for-humans.epub
 cp rst/en/_build/latex/Vimforhumans.pdf dist/$ts/vim-for-humans.pdf
 cd dist/$ts
