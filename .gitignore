@@ -1,7 +1,6 @@
 *.aux
 *.bbl
 *.blg
-*.def
 *.ind
 *.idx
 *.lof
@@ -15,3 +14,4 @@ vim-essentiel.pdf
 vim-pour-les-humains.pdf
 _build/
 dist/
+book-tex/_minted*
