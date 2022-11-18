@@ -28,7 +28,7 @@ cd dist/$ts
 kindlegen vim-pour-les-humains.epub
 kindlegen vim-for-humans.epub
 
-# Zip 
+# Zip
 cd ..
 rm -rf vimpourleshumains/
 rm vimpourleshumains.zip
