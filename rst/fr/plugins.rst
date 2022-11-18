@@ -75,7 +75,7 @@ Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou
 
 .. _lusty:
 
-.. image:: ../book-tex/graphics/vim-lusty.png
+.. image:: ../../book-tex/graphics/vim-lusty.png
 
 Je vous conseille maintenant de désactiver *The Nerd Tree* (en commentant la ligne au dessus du *mapleader* comme je l'ai fait dans la figure suivante, il ne vous servira plus à grand chose, *Lusty Explorer* le remplace à merveille.
 
@@ -85,7 +85,7 @@ Vous pouvez constater sur `la capture d'écran de lusty`_ qu'il y a deux parties
 
 .. _fuzzy:
 
-.. image:: ../book-tex/graphics/vim-lusty-fuzzy.png
+.. image:: ../../book-tex/graphics/vim-lusty-fuzzy.png
 
 
 *Lusty Explorer* dispose en plus de quelques raccourcis bien pratiques pour utiliser le navigateur de fichiers :
@@ -142,7 +142,7 @@ Ack recherchera alors à partir du répertoire où se trouve votre fichier coura
 
 Le plugin Ack vous affichera les résultats dans une fenêtre que l'on appelle *Quickfix Window*, cf image suivante.
 
-.. image:: ../book-tex/graphics/vim-ack-quickfix.png
+.. image:: ../../book-tex/graphics/vim-ack-quickfix.png
 
 Voici quelques commandes disponibles dans cette fenêtre :
 
@@ -204,7 +204,7 @@ Nous n'avons plus qu'à ajouter un raccourci dans notre |vimrc| pour invoquer Ct
 
 Voici CtrlP en action. 
 
-.. image:: ../book-tex/graphics/vim-ctrlp.png
+.. image:: ../../book-tex/graphics/vim-ctrlp.png
 
 Il vous suffit de l'invoquer avec ``,c`` et de taper le début du fichier que vous recherchez. Quand le fichier voulu sera sélectionné en premier, il ne vous restera plus qu'à appuyer sur |ttenter| pour l'ouvrir.
 

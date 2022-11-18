@@ -17,7 +17,7 @@ Voici donc ce qui manque à un |vim| nu (et ce qui est, de mon point de vue, une
     
     |solarized|
 
-.. |solarized| image:: ../book-tex/graphics/solarized-yinyang-mini.png
+.. |solarized| image:: ../../book-tex/graphics/solarized-yinyang-mini.png
 
 **Explorateur de fichiers**
     Si vous utilisez |vim| avec une interface graphique (ce qui est le cas de 99% d'entre vous je suppose) vous avez par défaut un menu ``Fichier`` vous permettant d'ouvrir un fichier. C'est certes un bon début, mais avoir à disposition un explorateur de projet à la NetBeans ou à la TextMate peut s'avérer très pratique. Pour obtenir le même comportement, nous utiliserons *NERD tree* (http://www.vim.org/scripts/script.php?script_id=1658). À savoir qu'à la fin de ce guide, vous n'aurez plus besoin de la souris (et donc des menus et autres boutons).
@@ -39,7 +39,7 @@ Au lancement de |vim|, vous devriez avoir un texte d'accueil vous encourageant �
 
 .. _une page blanche:
 
-.. image:: ../book-tex/graphics/vim-new.png
+.. image:: ../../book-tex/graphics/vim-new.png
 
 **À noter** : si vous ne savez pas trop ce que vous avez fait et que |vim| vous affiche des trucs en rouge en bas à gauche ou ne semble pas réagir comme il faut quand vous appuyez sur |tti|, appuyez plusieurs fois sur |ttesc|, cela devrait vous remettre au mode par défaut de |vim|, le mode *Normal*.
 
@@ -55,7 +55,7 @@ Vous aurez remarqué que les commentaires en *VimL* (le langage de configuration
 
 .. _la copie d'écran de Vim avec votre joli commentaire:
 
-.. image:: ../book-tex/graphics/vim-first-comment.png
+.. image:: ../../book-tex/graphics/vim-first-comment.png
 
 Tout ça pour ça me direz-vous, et vous avez bien raison. Et encore, on n'a même pas encore vu comment le sauvegarder. Mais tout cela a une logique que je vais vous expliquer. L'avantage de |vim| est qu'il est généralement logique. Quand vous avez compris la logique, tout vous semble limpide et tomber sous le sens.
 
@@ -79,7 +79,7 @@ Qu'est-ce que vous avez le droit de faire dans tout ça ? Pas grand chose, si ce
 
 .. _l'image ci-dessous avec la position idéale des mains:
 
-.. figure:: ../book-tex/graphics/hand-position.png
+.. figure:: ../../book-tex/graphics/hand-position.png
    
    Position de repos, clavier QWERTY.
 
@@ -124,7 +124,7 @@ Voici à quoi devrait ressembler |vim| `après votre première configuration`_.
 
 .. _après votre première configuration:
 
-.. figure:: ../book-tex/graphics/vim-first-config.png
+.. figure:: ../../book-tex/graphics/vim-first-config.png
 
    |vim| après votre première configuration.
 
@@ -148,7 +148,7 @@ Tout d'abord il faut commencer par activer la coloration syntaxique du code dans
 Vous devriez avoir un |vim| qui ressemble à celui de la figure ci-dessous. 
 
 
-.. figure:: ../book-tex/graphics/vim-syntax-hl.png
+.. figure:: ../../book-tex/graphics/vim-syntax-hl.png
 
    Coloration syntaxique par défaut.
 
@@ -160,7 +160,7 @@ Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en c
 
 Pour l'installer, commencez tout d'abord par créer un répertoire nommé `.vim` au même endroit que votre |vimrc| (dans votre répertoire utilisateur donc). À noter que ce répertoire s'appelle `vimfiles` sous Windows. À chaque fois que je ferai référence au répertoire `.vim` ça sera en fait `vimfiles` pour les Windowsiens. Dans ce répertoire `.vim`, créez un sous-répertoire nommé `colors`. Téléchargez ensuite le fichier du thème *Solarized* https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim (c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire `vim/colors/` fraîchement créé. Votre répertoire `.vim` devrait ressembler à celui de la figure ci-dessous.
 
-.. figure:: ../book-tex/graphics/solarized-tree.png
+.. figure:: ../../book-tex/graphics/solarized-tree.png
 
    Le contenu du répertoire .vim avec Solarized.
 
@@ -174,12 +174,12 @@ Pour tester le thème clair, remplacez `dark` par `light` (au niveau de la défi
 
 Ci-dessous un aperçu des deux variantes (ma préférence allant à la variante sombre soit dit en re-passant).
 
-.. figure:: ../book-tex/graphics/vim-solarized-dark.png
+.. figure:: ../../book-tex/graphics/vim-solarized-dark.png
 
    Le thème *Solarized* sombre.
 
 
-.. figure:: ../book-tex/graphics/vim-solarized-light.png
+.. figure:: ../../book-tex/graphics/vim-solarized-light.png
 
    Le thème *Solarized* clair.
 
@@ -219,7 +219,7 @@ Le problème avec cette approche c'est que les différents plugins ne sont pas i
 
 C'est là que *Pathogen* arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. Voici un exemple de répertoire `.vim` avant et après l'utilisation de *Pathogen*. 
 
-.. figure:: ../book-tex/graphics/pathogen-tree.png
+.. figure:: ../../book-tex/graphics/pathogen-tree.png
 
    *.vim* avant et après Pathogen.
 
@@ -303,7 +303,7 @@ C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bo
 
 Rien de particulier ensuite, *The NERD Tree* vous affiche l'arborescence du répertoire où vous avez lancé |vim|, comme vous le montre la capture d'écran ci-dessous. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. 
 
-.. figure:: ../book-tex/graphics/vim-nerdtree.png
+.. figure:: ../../book-tex/graphics/vim-nerdtree.png
 
    |vim| avec *The NERD Tree* d'activé.
 

@@ -44,7 +44,7 @@ Pour réaliser un copier/coller avec |vim| tout se passe en mode « normal ».
 
 .. _mode insert:
 
-.. image:: ../book-tex/graphics/vim-insert.png
+.. image:: ../../book-tex/graphics/vim-insert.png
 
 
 Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur |ttesc|. À noter que si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre |ttesc|, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans « :ref:`secesc` ».
@@ -54,7 +54,7 @@ Admettons donc que vous êtes en mode « normal » et que vous avez un peu de 
 
 .. _twain:
 
-.. image:: ../book-tex/graphics/vim-twain.png
+.. image:: ../../book-tex/graphics/vim-twain.png
 
 La façon la plus naturelle (mais pas la plus efficace, nous verrons cela un peu plus loin) de copier/coller le mot « impossible » va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur |ttv| (pour passer en mode « visuel »), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur |tty| (|tty| étant utilisée comme raccourci du mot *yank* en anglais). Vous avez copié votre premier mot.
 
@@ -62,7 +62,7 @@ Déplacez vous ensuite à la fin de la phrase (toujours en mode « normal ») 
 
 .. _vim-paste:
 
-.. image:: ../book-tex/graphics/vim-paste.png
+.. image:: ../../book-tex/graphics/vim-paste.png
 
 On se rend donc compte ici que |vim| se sert de l'astuce des modes (et notamment du mode « normal » pour les déplacements) afin de ne pas avoir à se servir de la souris.
 À partir du moment où vous aurez pris l'habitude de passer rapidement d'un mode à l'autre (et pour cela se passer de |ttesc| va devenir indispensable), utiliser la souris vous apparaîtra comme une perte de temps, mais pour cela il va falloir pratiquer un peu bien sûr.
@@ -91,7 +91,7 @@ En mode normal, 4 touches vont vous permettre de déplacer le curseur d'un carac
 
 .. _hjkl:
 
-.. image:: ../book-tex/graphics/hjkl.png
+.. image:: ../../book-tex/graphics/hjkl.png
 
 Vous pouvez remarquer que ces touches sont placées sur la rangée de repos de manière à déplacer vos doigts le moins possible. En essayant de placer vos doigts pour atteindre ces lettres vous devriez vous rendre compte que l'index a deux déplacements (gauche et bas) alors que l'auriculaire n'en a pas. Vous verrez qu'on s'y fait assez rapidement et que l'index étant plus fort que l'auriculaire, ça tombe plutôt bien. Vous trouverez le clavier sur lequel *Vi* a été conçu dans la section « :ref:`secesc` », vous comprendrez ainsi le pourquoi du comment.
 
@@ -149,7 +149,7 @@ Ou encore l'infographie de la figure ci-dessous (téléchargeable sur http://www
 
 .. _cheat-sheet:
 
-.. image:: ../book-tex/graphics/vi-vim-cheat-sheet.png
+.. image:: ../../book-tex/graphics/vi-vim-cheat-sheet.png
 
 
 N'oubliez pas que le but ici est de gagner en rapidité en ne bougeant quasi plus ses mains de la rangée de repos, et en utilisant le plus possible le « mode normal ». Au boulot !
@@ -165,7 +165,7 @@ Pour comprendre pourquoi |ttesc| est utilisée par défaut, il faut faire un bon
 
 .. _vi-keyboard:
 
-.. image:: ../book-tex/graphics/lsi-adm3a-full-keyboard.jpg
+.. image:: ../../book-tex/graphics/lsi-adm3a-full-keyboard.jpg
 
 L'étape ultime (après avoir réussi à se passer des touches directionnelles) est donc de rapprocher |ttesc| de vos petits doigts. Il y a plusieurs solutions pour cela, mais celle que je vous recommande si vous avez un clavier avec une disposition française est la suivante (dans votre |vimrc|) :::
 
@@ -329,6 +329,6 @@ Histoire de réveiller l'enfant qui est en vous, je vous conseille vivement d'al
 
 .. _vim-adventures:
 
-.. image:: ../book-tex/graphics/vim-adventures.png
+.. image:: ../../book-tex/graphics/vim-adventures.png
 
 Nous allons maintenant passer à la vitesse supérieure : l'utilisation de plugins, ou comment rendre |vim| incontournable.
