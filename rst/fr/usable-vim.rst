@@ -233,8 +233,7 @@ Commençons par installer *Pathogen*. Créez un répertoire nommé `autoload` da
     mkdir -p ~/.vim/autoload 
 
     # Telechargement et installation de pathogen
-    curl -so ~/.vim/autoload/pathogen.vim \
-        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 Nous installerons ensuite nos plugins directement dans le répertoire `.vim/bundle` que vous allez vous empresser de créer de cette manière :
 
