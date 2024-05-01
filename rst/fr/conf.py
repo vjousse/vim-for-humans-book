@@ -40,11 +40,14 @@ highlight_language = "vim"
 
 rst_prolog = """
 .. role:: vimcmd
+.. role:: viml(code)
+   :language: vim
 """
 
 rst_epilog = """
 .. |vim| replace:: *Vim*
 .. |vimrc| replace:: ``~/.vimrc``
+.. |.vim| replace:: *~/.vim*
 .. |that| replace:: ``^``
 .. |tdollar| replace:: ``$``
 .. |tzero| replace:: ``0``
