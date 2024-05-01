@@ -13,12 +13,11 @@ You will need some prerequisites to be able to compile the LaTeX source code:
 - [Sphinx](http://sphinx-doc.org/) to generate the epub file.
 - [kindlegen](http://www.amazon.com/gp/feature.html?docId=1000765211) to generate the .mobi file.
 
-### Gentoo
+### Archlinux
 
-* dev-python/sphinx[latex]
-* dev-python/pygments
-* app-text/texlive
-* kindlegen package not available.
+    yay -S python-sphinx python-pygments kindlegen
+
+Use [instructions from the official website for TeX Live](https://tug.org/texlive/quickinstall.html)
 
 ## Compile
 
