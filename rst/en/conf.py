@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Vim pour les humains"
+project = "Vim for humans"
 copyright = "2024, Vincent Jousse"
 author = "Vincent Jousse"
 
