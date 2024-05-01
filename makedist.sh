@@ -1,17 +1,27 @@
 # Create dist/ if necessary
 mkdir -p dist
 
-# Create French Directory
+# Generate french epub from rst content
 cd rst/fr
 make clean
 make epub
+make latexpdf
 
-# Create English Directory
+# Generate english epub and pdf from rst content
 cd ../en
 make clean
 make epub
 make latexpdf
-cd ../../dist
+
+cd ../../book-tex
+
+# We need to run it twice for the images to appear
+# Don't ask me why 🤓
+pdflatex -shell-escape vim-pour-les-humains.tex
+pdflatex -shell-escape vim-pour-les-humains.tex
+
+
+cd ../dist
 
 # Make Distribution
 ts=`date +%s`
@@ -21,7 +31,7 @@ mkdir $ts/en
 cd ..
 cp book-tex/vim-pour-les-humains.pdf dist/$ts/fr
 cp rst/fr/_build/epub/Vimpourleshumains.epub dist/$ts/fr/vim-pour-les-humains.epub
-cp rst/fr/_build/epub/Vimpourleshumains.pdf dist/$ts/fr/vim-pour-les-humains-rst.pdf
+cp rst/fr/_build/latex/vimpourleshumains.pdf dist/$ts/fr/vim-pour-les-humains-rst.pdf
 cp rst/en/_build/epub/Vimforhumans.epub dist/$ts/en/vim-for-humans.epub
 cp rst/en/_build/latex/Vimforhumans.pdf dist/$ts/en/vim-for-humans.pdf
 cd dist/$ts
@@ -36,6 +46,6 @@ cd ..
 # Zip
 cd ..
 rm -rf vimpourleshumains/
-rm vimpourleshumains.zip
+rm -f vimpourleshumains.zip
 cp -rf $ts vimpourleshumains
 zip -r vimpourleshumains.zip vimpourleshumains
