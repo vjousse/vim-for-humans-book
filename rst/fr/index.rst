@@ -10,7 +10,7 @@ Vim pour les humains
 
 
 Livre payant, mais prix libre
-============================
+=============================
 
 Qu'est-ce que ça veut dire au juste ? Je suis persuadé que la culture et l'éducation devraient être accessibles à tous. Forcer les personnes à payer un prix que je décide à l'avance placerait forcément une barrière à la lecture du livre. C'est pourquoi je vous laisse choisir votre prix.
 
