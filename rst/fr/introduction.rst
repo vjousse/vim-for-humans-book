@@ -35,7 +35,11 @@ Vous aussi vous en avez marre d'attendre la release de TextMate 2 (à noter que 
 Et Neovim ?
 ===========
 
-Petit aparté au sujet de Neovim https://neovim.io/ (si vous ne savez pas ce que c'est, vous pouvez sauter cette partie).
+Petit aparté au sujet de *Neovim* https://neovim.io/ (si vous ne savez pas ce que c'est, vous pouvez sauter cette partie). J'ai pris le parti de me concentrer uniquement sur |vim| dans ce livre afin de ne pas frustrer les personnes ne pouvant utiliser que |vim|.
+
+Si vous êtes un utilisateur de *Neovim*, tout ce qui est dans ce livre reste valable, *Neovim* étant compatible avec |vim|. Qui plus est, les modes, les manipulations de texte, et tout ce qui ne concerne pas les plugins est commun à |vim| et à *Neovim* : les apprendre pour |vim| ou pour *Neovim* ne fait aucune différence. Vous pouvez d'ailleurs suivre ce livre en utilisant *Neovim* à la place de |vim| sans aucun souci.
+
+La particularité de *Neovim* réside dans le fait qu'il est plus activement maintenu que |vim| et entre autres qu'il utilise le langage de programmation **Lua** pour la gestion des plugins. Cela a pour conséquence que les plugins écrits pour *Neovim* ne sont pas compatibles avec |vim| (l'inverse n'étant pas vrai, les plugins écrits pour |vim| sont compatibles avec *Neovim*). Une partie de la communauté de |vim| est passée à *Neovim* et les plugins pour *Neovim* fleurissent bien plus vite que ceux pour |vim|. Pour le but de ce livre, cela ne fera pas de différence et vous pouvez le suivre sans aucun problème avec |vim| ou *Neovim*. Je ferai sûrement d'autres contenus spécifiques à *Neovim* dans le futur.
 
 Pour qui ?
 ==========
@@ -79,7 +83,13 @@ Ce que vous n'apprendrez pas (entre autres choses)
 - Vous n'apprendrez pas comment installer/configurer |vim| pour Windows. Pas que ce ne soit pas faisable, mais je n'ai que très peu de connaissances de Windows. Ça viendra peut-être, mais pas tout de suite. On couvrira ici Linux/Unix (et par extension Mac OS X).
 - Vous n'apprendrez pas comment utiliser *Vi* (notez l'absence du "m"). Je vais vous apprendre à être productif pour coder/produire du texte avec |vim|, pas à faire le beau devant les copains avec *Vi* (|vim| est suffisant pour cela de toute façon). Pour ceux qui ne suivent pas, *Vi* est "l'ancêtre de |vim| (qui veut dire *Vi* - *IMproved*, *Vi* amélioré)" et est installé par défaut sur tous les Unix (même sur votre Mac OS X).
 - Vous n'apprendrez pas à connaitre les entrailles de |vim| par cœur : ce n'est pas une référence, mais un guide utile et pragmatique.
-- Vous n'apprendrez pas comment modifier votre |vim| parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème *Solarized* (http://ethanschoonover.com/solarized), il est parfait pour travailler.
+- Vous n'apprendrez pas comment modifier votre |vim| parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème *Dracula* (https://draculatheme.com/) qui a la bonne idée d'être disponible pour beaucoup d'applications.
+
+
+.. _capture d'écran de Vim avec le thème Dracula:
+
+.. image:: ../../book-tex/graphics/screenshot-dracula.png
+
 
 Le plus dur, c'est de commencer
 ===============================
