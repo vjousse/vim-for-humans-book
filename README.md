@@ -12,6 +12,7 @@ You will need some prerequisites to be able to compile the LaTeX source code:
 - [Pygments](http://pygments.org/), it's used for syntax highlighting using the mint LaTeX package.
 - [Sphinx](http://sphinx-doc.org/) to generate the epub file.
 - [kindlegen](http://www.amazon.com/gp/feature.html?docId=1000765211) to generate the .mobi file.
+- [sphinx-autobuild](https://github.com/sphinx-doc/sphinx-autobuild) if you want to start a webserver with hot reload in `rst/fr` with `make livehtml`
 
 ### Archlinux
 
