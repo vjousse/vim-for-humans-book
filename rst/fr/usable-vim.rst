@@ -4,7 +4,7 @@ Rendre |vim| utilisable
 
 Ça peut paraître étonnant comme approche, mais c'est pour moi la première chose à faire : rendre |vim| utilisable par un humain lambda. Si tout le monde semble s'accorder sur le fait que |vim| est un **éditeur très puissant**, tout le monde pourra aussi s'accorder sur le fait que de base, il est totalement **imbitable**. Soyons honnête, sans une configuration par défaut minimale, utiliser |vim| est **contre-productif**. 
 
-C'est à mon avis le premier obstacle à surmonter avant toute autre chose. C'est ce que les autres éditeurs « à la mode » comme TextMate, Sublime Text, Notepad++ ou NetBeans proposent, c'est à dire un environnement à minima utilisable tel quel, même si l'on n'en exploite pas la totalité.
+C'est à mon avis le premier obstacle à surmonter avant toute autre chose. C'est ce que les autres éditeurs « à la mode » comme VSCode, TextMate, Sublime Text, Notepad++ ou NetBeans proposent, c'est à dire un environnement à minima utilisable tel quel, même si l'on n'en exploite pas la totalité.
 
 Voici donc ce qui manque à un |vim| nu (et ce qui est, de mon point de vue, une **cause d'abandon pour beaucoup** d'entre vous) :
 
@@ -13,43 +13,44 @@ Voici donc ce qui manque à un |vim| nu (et ce qui est, de mon point de vue, une
     |vim| est configurable grâce à un fichier nommé |vimrc|, qui est bien entendu vide par défaut. La première étape va être d'écrire ou de se procurer un fichier |vimrc| avec une configuration minimale.
 
 **Coloration syntaxique**
-    De base, |vim| est tout blanc et tout moche. On va utiliser le thème *Solarized* (http://ethanschoonover.com/solarized). Si votre but est d'être efficace, c'est le meilleur thème disponible actuellement (tout éditeur de texte confondu). La belle image qui suit vous donne une idée des deux looks disponibles (clair ou sombre). Pour ma part j'utilise le thème sombre. 
-    
-    |solarized|
-
-.. |solarized| image:: ../../book-tex/graphics/solarized-yinyang-mini.png
+    De base, |vim| est tout blanc et tout moche. Nous allons donc utiliser le thème *Catppucin* (https://github.com/catppuccin/vim) pour le rendre un peu plus joli.
 
 **Explorateur de fichiers**
-    Si vous utilisez |vim| avec une interface graphique (ce qui est le cas de 99% d'entre vous je suppose) vous avez par défaut un menu ``Fichier`` vous permettant d'ouvrir un fichier. C'est certes un bon début, mais avoir à disposition un explorateur de projet à la NetBeans ou à la TextMate peut s'avérer très pratique. Pour obtenir le même comportement, nous utiliserons *NERD tree* (http://www.vim.org/scripts/script.php?script_id=1658). À savoir qu'à la fin de ce guide, vous n'aurez plus besoin de la souris (et donc des menus et autres boutons).
+    Si vous utilisez |vim| avec une interface graphique (ce qui est le cas de 99% d'entre vous je suppose) vous avez par défaut un menu ``Fichier`` vous permettant d'ouvrir un fichier. C'est certes un bon début, mais avoir à disposition un explorateur de projet à la NetBeans ou à la TextMate peut s'avérer très pratique. Pour obtenir le même comportement, nous utiliserons *NERD tree* (https://github.com/preservim/nerdtree). À savoir qu'à la fin de ce guide, vous n'aurez plus besoin de la souris (et donc des menus et autres boutons).
 
 
 Ce chapitre est indispensable si vous n'avez que peu d'expérience (voire pas du tout) avec |vim|. À la fin de ce chapitre, vous aurez un |vim| dont vous pourrez commencer à vous servir pour vos tâches de tous les jours. Cela devrait être suffisant pour vous permettre d'apprendre le reste petit à petit. Car il n'y a pas de secret, il vous faudra pratiquer pour apprendre |vim|. Autant commencer de suite et le moins douloureusement possible.
 
-En revanche, si vous êtes déjà familier avec |vim| et n'utilisez déjà plus la souris, vous pouvez sagement sauter ce chapitre (soyez sûr tout de même de donner sa chance au thème *Solarized*).
+En revanche, si vous êtes déjà familier avec |vim| et n'utilisez déjà plus la souris, vous pouvez sagement sauter ce chapitre (soyez sûr tout de même de donner sa chance au thème *Catppucin*).
 
 .. _modeinsertion:
 
 Préambule indispensable : le mode insertion
 ===========================================
 
-Prenons le pari de créer le fichier |vimrc| avec |vim| lui-même. Comme je vous le disais, le plus tôt vous commencerez, le mieux ce sera.
-Vous devrez certainement commencer par installer une version de |vim|. Si vous utilisez un Mac, essayez MacVim (http://code.google.com/p/macvim/) sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système « Unix » vous devriez sûrement avoir gVim à votre disposition (ou tout du moins facilement installable grâce à votre gestionnaire de logiciels). Faites attention à bien installer la version __complète__ de vim, notamment avec le support de Ruby et de Lua dont nous aurons besoin par la suite. Pour Ubuntu, le package s'appelle `vim-nox`. Pour Mac OS X, la question ne se pose pas, MacVim inclut déjà tout ce qu'il faut. Pour Windows, il semblerait y avoir une version disponible sur le site officiel de |vim| (http://www.vim.org/download.php), mais je ne l'ai pas testée.
+Prenons le pari de créer le fichier |vimrc| avec |vim| lui-même. Comme je vous le disais, lus tôt vous commencerez, mieux ce sera.
+Vous devrez certainement commencer par installer une version de |vim|. Si vous utilisez un Mac, essayez MacVim (http://code.google.com/p/macvim/) sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système « Unix » vous devriez sûrement avoir la commande *vim* à disposition dans votre terminal. Vous pouvez aussi utiliser l'interface graphique *gVim* qui devrait être facilement installable grâce à votre gestionnaire de logiciels, pour Ubuntu le paquet correspondant est `vim-gnome`. Faites attention à bien installer la version **complète** de vim, notamment avec le support de Ruby et de Lua dont nous aurons besoin par la suite. Pour Ubuntu, le paquet sembler s'appeller `vim`. Pour Mac OS X, la question ne se pose pas, MacVim inclut déjà tout ce qu'il faut. Pour Windows, il semblerait y avoir une version disponible sur le site officiel de |vim| (http://www.vim.org/download.php), mais je ne l'ai pas testée.
 
-Au lancement de |vim|, vous devriez avoir un texte d'accueil vous encourageant à aider les pauvres enfants en Ouganda. Ce texte disparaitra dès que nous allons saisir des caractères dans |vim|. Nous allons commencer par entrer un commentaire dans l'en-tête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur |tti| (le curseur devrait changer d'aspect). Le texte d'accueil par défaut de |vim| devrait avoir disparu et vous devriez avoir `une page blanche`_ qui ressemble plus ou moins à la figure ci-dessous.
+**Pour ma part**, j'utilise *vim* directement en ligne de commande, sous Archlinux, dans un terminal `kitty <https://sw.kovidgoyal.net/kitty/>`_ avec la police Nerd Fonts `FiraCode Nerd Font <https://www.nerdfonts.com/font-downloads>`_. C'est avec cette configuration que les capture d'écran de ce livre sont réalisées.
 
-.. _une page blanche:
+Au lancement de |vim|, vous devriez avoir un texte d'accueil vous encourageant à aider les pauvres enfants en Ouganda. Ce texte disparaitra dès que nous allons saisir des caractères dans |vim|. Nous allons commencer par entrer un commentaire dans l'en-tête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur |tti|. Vous devriez avoir `une page`_ qui ressemble plus ou moins à la figure ci-dessous, notez bien le ``--INSERT--`` en bas à gauche qui nous indique que nous sommes en mode insertion (le mode où nous pouvons saisir du texte). Pour information, le thème de mon terminal est un thème sombre, il est donc possible que pour l'instant, les couleurs de votre |vim| soient différentes.
+
+À l'écriture de ces lignes, la version de |vim| que j'utilise est la ``9.1.380``.
+
+
+.. _une page:
 
 .. image:: ../../book-tex/graphics/vim-new.png
 
 **À noter** : si vous ne savez pas trop ce que vous avez fait et que |vim| vous affiche des trucs en rouge en bas à gauche ou ne semble pas réagir comme il faut quand vous appuyez sur |tti|, appuyez plusieurs fois sur |ttesc|, cela devrait vous remettre au mode par défaut de |vim|, le mode *Normal*.
 
-Vous devriez maintenant pouvoir entrer `le commentaire ci-dessous`_. 
+Vous devriez maintenant pouvoir entrer `le commentaire ci-dessous`_ (je vous laisse évidemment changer mon nom par le votre 🤓).
 
 .. _le commentaire ci-dessous:
 
-::
+.. code-block:: vim
 
-    " VIM Configuration - Vincent Jousse
+  " VIM Configuration - Vincent Jousse
 
 Vous aurez remarqué que les commentaires en *VimL* (le langage de configuration de |vim|) commencent par un `"`. Appuyez ensuite sur |ttesc| pour revenir au mode par défaut (le mode normal) de |vim|. Et voilà le travail, comme vous pouvez le voir sur `la copie d'écran de Vim avec votre joli commentaire`_.
 
@@ -97,7 +98,7 @@ J'y reviendrai plus tard dans « :ref:`se-deplacer` » mais si vous n'êtes pas
 
 Si vous voulez pousser la démarche encore plus loin, vous pouvez aussi vous procurer un clavier orthogonal *TypeMatrix* (http://www.typematrix.com/). C'est ce que j'utilise personnellement, et mes doigts m'en remercient tous les jours.
 
-L'ultime changement serait d'utiliser une disposition de clavier encore plus efficace comme le *bépo* pour quasi doubler sa vitesse de frappe au clavier. Pour les plus curieux d'entre vous, j'explique la démarche sur mon blog : http://viserlalune.com/blog/comment-doubler-sa-vitesse-de-frappe-au-clavier/
+L'ultime changement serait d'utiliser une disposition de clavier encore plus efficace comme le *bépo* pour quasi doubler sa vitesse de frappe au clavier. Pour les plus curieux d'entre vous, j'explique la démarche sur mon blog : https://vincent.jousse.org/blog/fr/comment-doubler-sa-vitesse-de-frappe-au-clavier/
 
 
 La configuration par défaut : indispensable
@@ -109,13 +110,13 @@ Ce fichier doit se trouver dans votre répertoire d'accueil. */home/votre_user/.
 
 J'ai commenté chacune des lignes du fichier directement dans le code. Rien de sorcier ici, on se demande juste pourquoi tout cela n'est pas inclus par défaut.
 
-.. include:: ../../vim-for-humans/firstconfig/vimrc
-   :code:
+.. literalinclude:: ../../vim-for-humans/firstconfig/vimrc
+  :language: vim
 
 
-Pour ceux qui ont fait un copier/coller, il ne vous reste plus qu'à sauvegarder votre fichier nouvellement créé. Nous voulons le placer à la racine de votre compte utilisateur, c'est à dire l'enregistrer sous `~/.vimrc`. Sous Mac OS X et Linux, *~* désigne le répertoire d'accueil de l'utilisateur courant. Attention, les fichiers commençant par un ``.`` sont des fichiers cachés sous Linux et Mac OS X, ne vous étonnez donc pas de ne pas le voir par défaut dans votre navigateur de fichiers.
+Pour ceux qui ont fait un copier/coller, il ne vous reste plus qu'à sauvegarder votre fichier nouvellement créé. Nous voulons le placer à la racine de votre compte utilisateur, c'est à dire l'enregistrer sous `~/.vimrc`. Sous Mac OS X et Linux, ``~`` désigne le répertoire d'accueil de l'utilisateur courant. Attention, les fichiers commençant par un ``.`` sont des fichiers cachés sous Linux et Mac OS X, ne vous étonnez donc pas de ne pas le voir par défaut dans votre navigateur de fichiers.
 
-Pour les utilisateurs de la souris, il suffira de se servir du menu `Fichier (ou File)` puis `Sauvegarder sous (ou Save as)` et de l'enregistrer dans le répertoire d'accueil de l'utilisateur courant sous le nom de `.vimrc`. Pour ceux qui veulent déjà utiliser le clavier, il vous suffira, après avoir appuyé sur |ttesc| pour repasser en mode *Normal*, de taper :vimcmd:`:sav ~/.vimrc`. Pour sauvegarder vos prochaines modifications, utilisez le menu avec la souris ou tapez en mode *Normal* :vimcmd:`:w`.
+Pour le sauvegarder avec |vim|, il vous suffira, après avoir appuyé sur |ttesc| pour repasser en mode *Normal*, de taper ``:w ~/.vimrc``. Pour sauvegarder vos prochaines modifications tapez en mode *Normal* ``:w``.
 
 J'ai mis en ligne ce fichier de configuration directement sur *Github*. Vous pouvez le télécharger ou le copier directement à partir d'ici : http://vimebook.com/link/fr/firstconfig.
 
@@ -128,14 +129,16 @@ Voici à quoi devrait ressembler |vim| `après votre première configuration`_.
 
    |vim| après votre première configuration.
 
-Notez les numéros de ligne sur la gauche ainsi que la position du curseur en bas à droite.
+Notez l'ajout des numéros de ligne sur la gauche.
 
 Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au suivant !
 
 Que la couleur soit !
 =====================
 
-Tout d'abord il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration |vimrc|.::
+Tout d'abord il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration |vimrc|.
+
+.. code-block:: vim
 
     " Active la coloration syntaxique
     syntax enable
@@ -152,53 +155,57 @@ Vous devriez avoir un |vim| qui ressemble à celui de la figure ci-dessous.
 
    Coloration syntaxique par défaut.
 
-Pour l'instant, le plus facile pour que les modifications apportées à votre |vimrc| soient prises en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la |vim| de suite, en mode normal tapez :vimcmd:`:so ~/.vimrc` ou :vimcmd:`:so $MYVIMRC`.
+Pour l'instant, le plus facile pour que les modifications apportées à votre |vimrc| soient prises en compte, c'est de le fermer et de le ré-ouvrir. Si vous voulez vraiment vous la jouer à la |vim| de suite, en mode normal tapez ``:so ~/.vimrc`` ou ``:so $MYVIMRC``.
 
-:vimcmd:`:so` étant un raccourci pour :vimcmd:`:source`. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
+``:so`` étant un raccourci pour ``:source``. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
 
-Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème *Solarized* http://ethanschoonover.com/solarized (avec fond clair ou foncé, ça dépendra de vous).
+Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème `Catppuccin <https://github.com/catppuccin/vim>`_ (avec fond clair ou foncé, ça dépendra de vos préférences).
 
-Pour l'installer, commencez tout d'abord par créer un répertoire nommé `.vim` au même endroit que votre |vimrc| (dans votre répertoire utilisateur donc). À noter que ce répertoire s'appelle `vimfiles` sous Windows. À chaque fois que je ferai référence au répertoire `.vim` ça sera en fait `vimfiles` pour les Windowsiens. Dans ce répertoire `.vim`, créez un sous-répertoire nommé `colors`. Téléchargez ensuite le fichier du thème *Solarized* https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim (c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire `vim/colors/` fraîchement créé. Votre répertoire `.vim` devrait ressembler à celui de la figure ci-dessous.
+Pour l'installer, commencez tout d'abord par créer un répertoire nommé `.vim` au même endroit que votre |vimrc| (dans votre répertoire utilisateur donc). À noter que ce répertoire s'appelle `vimfiles` sous Windows. À chaque fois que je ferai référence au répertoire `.vim` ça sera en fait `vimfiles` pour les Windowsiens. Dans ce répertoire `.vim`, créez un sous-répertoire nommé `colors`. Téléchargez ensuite le fichier du thème *Catppuccin* de votre choix qui se trouve ici https://github.com/catppuccin/vim/tree/main/colors. Vu que j'aime bien les thèmes sombres, je vais choisir la variante *mocha* en téléchargant ce fichier https://raw.githubusercontent.com/catppuccin/vim/main/colors/catppuccin_mocha.vim et le copier dans le répertoire `vim/colors/` fraîchement créé.
 
-.. figure:: ../../book-tex/graphics/solarized-tree.png
+Sous Linux vous pouvez faire tout ça via les commandes suivantes :
 
-   Le contenu du répertoire .vim avec Solarized.
+.. code-block:: bash
 
-Activez ensuite le thème Solarized dans votre |vimrc| comme le montre le code ci-dessous.::
+    mkdir -p ~/.vim/colors
+    wget -P ~/.vim/colors https://raw.githubusercontent.com/catppuccin/vim/main/colors/catppuccin_mocha.vim
 
-    " Utilise la version sombre de Solarized
-    set background=dark
-    colorscheme solarized
+Votre répertoire `.vim` devrait ressembler à celui de la figure ci-dessous.
 
-Pour tester le thème clair, remplacez `dark` par `light` (au niveau de la définition de la propriété `background`).
+.. figure:: ../../book-tex/graphics/catppuccin-tree.png
 
-Ci-dessous un aperçu des deux variantes (ma préférence allant à la variante sombre soit dit en re-passant).
+   Le contenu du répertoire .vim avec *Catppuccin*.
 
-.. figure:: ../../book-tex/graphics/vim-solarized-dark.png
+Activez ensuite le thème *Catppuccin* dans votre |vimrc| comme le montre le code ci-dessous.::
 
-   Le thème *Solarized* sombre.
+    " Active les couleurs 24-bits dans le terminal
+    set termguicolors
+    " Utilise la déclinaison mocha du thème catppuccin
+    colorscheme catppuccin_mocha
 
+Voilà à quoi devrait ressembler votre |vim| :
 
-.. figure:: ../../book-tex/graphics/vim-solarized-light.png
+.. figure:: ../../book-tex/graphics/vim-catppuccin-mocha-vimrc.png
 
-   Le thème *Solarized* clair.
+   Le thème *Cattpuccin* mocha.
+
 
 
 Un bonus (si vous n'utilisez pas |vim| directement dans votre terminal) serait de choisir une police de caractères qui vous convient un peu mieux. C'est bien sûr facultatif, mais je présume que certains d'entre vous sont des esthètes aguerris.
 
-Si vous êtes sous Mac OS X je vous conseille la police `Monaco` qui est assez conviviale. Rajoutez les lignes suivantes à votre |vimrc| pour l'utiliser : ::
+Si vous êtes sous Mac OS X je vous conseille la police `Monaco` qui est assez conviviale. Rajoutez les lignes suivantes à votre |vimrc| pour l'utiliser : ::
 
     set guifont=Monaco:h13
     set antialias
 
 Vous pouvez bien sûr changer le `h13` par `h12` si vous voulez une police plus petite (ou par `h14` si vous en voulez une plus grande).
 
-Sinon sous Linux j'utilise la police `DejaVu Sans Mono` que je trouve plutôt sympathique : ::
+Sinon sous Linux j'utilise la police `DejaVu Sans Mono` que je trouve plutôt sympathique : ::
 
     set guifont=DejaVu\ Sans\ Mono\ 10
     set antialias
 
-Vous pouvez là aussi bien sûr changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez en mode normal :vimcmd:`:set guifont:*`.
+Vous pouvez là aussi bien sûr changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez en mode normal ``:set guifont:*``.
 
 Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne http://vimebook.com/link/fr/syntaxhlconfig. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de |vim|.
 

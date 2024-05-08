@@ -83,17 +83,17 @@ Ce que vous n'apprendrez pas (entre autres choses)
 - Vous n'apprendrez pas comment installer/configurer |vim| pour Windows. Pas que ce ne soit pas faisable, mais je n'ai que très peu de connaissances de Windows. Ça viendra peut-être, mais pas tout de suite. On couvrira ici Linux/Unix (et par extension Mac OS X).
 - Vous n'apprendrez pas comment utiliser *Vi* (notez l'absence du "m"). Je vais vous apprendre à être productif pour coder/produire du texte avec |vim|, pas à faire le beau devant les copains avec *Vi* (|vim| est suffisant pour cela de toute façon). Pour ceux qui ne suivent pas, *Vi* est "l'ancêtre de |vim| (qui veut dire *Vi* - *IMproved*, *Vi* amélioré)" et est installé par défaut sur tous les Unix (même sur votre Mac OS X).
 - Vous n'apprendrez pas à connaitre les entrailles de |vim| par cœur : ce n'est pas une référence, mais un guide utile et pragmatique.
-- Vous n'apprendrez pas comment modifier votre |vim| parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème *catpuccin* (https://github.com/catppuccin/vim) qui se décline en plusieurs couleurs.
+- Vous n'apprendrez pas comment modifier votre |vim| parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème *catppuccin* (https://github.com/catppuccin/vim) qui se décline en plusieurs couleurs.
 
-.. _différentes couleurs du thème Catpuccin:
+.. _différentes couleurs du thème Catppuccin:
 
-.. image:: ../../book-tex/graphics/catpuccin.png
+.. image:: ../../book-tex/graphics/catppuccin.png
 
 Voilà ce que la variante *Mocha* donne sur le fichier utilisé pour générer ce livre :
 
-.. _capture d'écran de Vim avec le thème Catpuccin Mocha:
+.. _capture d'écran de Vim avec le thème Catppuccin Mocha:
 
-.. image:: ../../book-tex/graphics/vim-catpuccin-mocha.png
+.. image:: ../../book-tex/graphics/vim-catppuccin-mocha.png
 
 D'autre alternatives existent comme *Dracula* (https://draculatheme.com/) qui a la bonne idée d'être disponible pour beaucoup d'applications ou encore solarized (https://github.com/ericbn/vim-solarized).
 
