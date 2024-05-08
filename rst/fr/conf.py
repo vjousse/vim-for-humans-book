@@ -125,3 +125,21 @@ rst_epilog = """
 .. |ttslash| replace:: la touche |tslash|
 .. |ttenter| replace:: la touche |tenter|
 """
+
+latex_engine = "lualatex"
+latex_additional_files = ["_templates/vimforhumans.sty"]
+
+latex_elements = {
+    # Always use A4 paper.
+    "papersize": "a4paper",
+    # Make sure to use babel instead of polyglossia.
+    "babel": r"\usepackage{babel}",
+    # Uniformization of chapter style, disable Sphinx default.
+    "fncychap": "",
+    # Use names for colors.
+    "passoptionstopackages": r"\PassOptionsToPackage{svgnames,table}{xcolor}",
+    # Clear default font config.
+    "fontpkg": "",
+    # Add custom preamble after 'hyperref' and 'sphinx'.
+    "preamble": r"\usepackage{vimforhumans}",
+}
