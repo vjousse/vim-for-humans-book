@@ -116,7 +116,7 @@ J'ai commenté chacune des lignes du fichier directement dans le code. Rien de s
 
 Pour ceux qui ont fait un copier/coller, il ne vous reste plus qu'à sauvegarder votre fichier nouvellement créé. Nous voulons le placer à la racine de votre compte utilisateur, c'est à dire l'enregistrer sous `~/.vimrc`. Sous Mac OS X et Linux, ``~`` désigne le répertoire d'accueil de l'utilisateur courant. Attention, les fichiers commençant par un ``.`` sont des fichiers cachés sous Linux et Mac OS X, ne vous étonnez donc pas de ne pas le voir par défaut dans votre navigateur de fichiers.
 
-Pour le sauvegarder avec |vim|, il vous suffira, après avoir appuyé sur |ttesc| pour repasser en mode *Normal*, de taper ``:w ~/.vimrc``. Pour sauvegarder vos prochaines modifications tapez en mode *Normal* ``:w``.
+Pour le sauvegarder avec |vim|, il vous suffira, après avoir appuyé sur |ttesc| pour repasser en mode *Normal*, de taper ``:w ~/.vimrc``. Pour sauvegarder vos prochaines modifications tapez en mode *Normal* ``:w``. Pour sauvegarder et quitter ``:wq ~/.vimrc``. Pour quitter ``:q`` et pour quitter sans sauvegarder (forcer à quitter) ``:q!``.
 
 J'ai mis en ligne ce fichier de configuration directement sur *Github*. Vous pouvez le télécharger ou le copier directement à partir d'ici : http://vimebook.com/link/fr/firstconfig.
 
@@ -213,57 +213,62 @@ Vous trouverez une version complète du fichier de configuration pour ce chapitr
 L'explorateur de fichiers : notre premier plugin
 ================================================
 
-Nous y voilà, nous avons un |vim| à peu près utilisable avec de jolies couleurs. Maintenant, il faudrait être capable d'ouvrir des fichiers autrement qu'en faisant `Fichier (File) -> Ouvrir (Open)`. Ça va être une bonne occasion pour installer notre premier plugin (ce n'est pas comme si nous avions d'autres choix de toute façon). Nous allons procéder ici en deux étapes, tout d'abord installer un gestionnaire de plugins pour éviter que ça devienne trop le bazar dans vos plugins, puis installer le plugin adéquat pour explorer un répertoire de fichiers.
+Nous y voilà, nous avons un |vim| à peu près utilisable avec de jolies couleurs. Maintenant, il faudrait être capable d'ouvrir des fichiers, ça pourrait être pratique ! Ça va être une bonne occasion pour installer notre premier plugin. Nous allons procéder ici en deux étapes, tout d'abord installer un gestionnaire de plugins pour éviter que ça devienne trop le bazar dans vos plugins, puis installer le plugin adéquat pour explorer un répertoire de fichiers.
 
-Gestionnaire de plugins: Pathogen
+Gestionnaire de plugins: vim-plug
 ---------------------------------
 
-*Pathogen* (https://github.com/tpope/vim-pathogen/) est le genre de plugin typique que vous découvrez après avoir commencé à configurer votre |vim| et qui génère ce type de réaction : « Ah si j'avais su j'aurais directement commencé avec ». Ça tombe bien, c'est ce que nous allons faire.
+`vim-plug <https://github.com/junegunn/vim-plug>`_ est le genre de plugin typique que vous découvrez après avoir commencé à configurer votre |vim| et qui génère ce type de réaction : « *Ah si j'avais su j'aurais directement commencé avec* ». Ça tombe bien, c'est ce que nous allons faire.
 
-Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans |vim|. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en *\*.vim*) dans des sous-répertoires de votre répertoire de configuration *.vim*. On a déjà d'ailleurs commencé à y créer un sous-répertoire `colors` qui contient notre "plugin" de coloration Solarized.
+Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans |vim|. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en *\*.vim*) dans des sous-répertoires de votre répertoire de configuration *.vim*. On a déjà d'ailleurs commencé à y créer un sous-répertoire `colors` qui contient notre "plugin" de coloration `catppuccin`.
 
 Le problème avec cette approche c'est que les différents plugins ne sont pas isolés (vous allez devoir copier leurs fichiers dans les différents sous-répertoires) et que vous allez donc vous retrouver avec des fichiers un peu partout sans savoir à qui ils appartiennent. Autant vous dire qu'une fois que vous voulez désinstaller ou mettre à jour un plugin, c'est vite l'enfer pour savoir quels sont ses fichiers.
 
-C'est là que *Pathogen* arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. Voici un exemple de répertoire `.vim` avant et après l'utilisation de *Pathogen*. 
+C'est là que *vim-plug* arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. Voici ce que donnerait le répertoire `.vim` d'une installation fictive de |vim| avant et après l'utilisation de *vim-plug*. 
 
-.. figure:: ../../book-tex/graphics/pathogen-tree.png
+.. figure:: ../../book-tex/graphics/vim-plug-tree.png
 
-   *.vim* avant et après Pathogen.
+   *.vim* avant et après `vim-plug`.
 
-Certes la version avec *Pathogen* contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite. Vous pourrez au passage très facilement utiliser *git* pour gérer chacun de vos plugins comme des submodules, ce qui peut s'avérer très pratique.
+Certes la version avec *vim-plug* contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite.
 
-Commençons par installer *Pathogen*. Créez un répertoire nommé `autoload` dans votre répertoire `.vim` et copiez y `pathogen.vim` que vous pouvez télécharger ici : https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim. Pour les utilisateurs Unix, le listing qui suit explique comment l'installer. Si vous n'avez pas `curl` vous pouvez aussi utiliser `wget -O -`.
-
-.. code-block:: bash
-
-    # Creation du repertoire autoload
-    mkdir -p ~/.vim/autoload 
-
-    # Telechargement et installation de pathogen
-    curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-Nous installerons ensuite nos plugins directement dans le répertoire `.vim/bundle` que vous allez vous empresser de créer de cette manière :
+Commençons par installer *vim-plug*. Créez un répertoire nommé `autoload` dans votre répertoire `.vim` et copiez y `plug.vim` que vous pouvez télécharger ici : https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim. Pour les utilisateurs Unix, la commande qui suit permet de l'installer automatiquement :
 
 .. code-block:: bash
 
-    # Creation du repertoire bundle
-    mkdir -p ~/.vim/bundle
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-Il ne vous reste plus qu'à activer pathogen dans votre |vimrc| et le tour est joué. Nous placerons le code listé ci-dessous au début du fichier |vimrc|, directement après la ligne `set nocompatible`. Il est impératif de placer le code **au début** de votre fichier |vimrc|, sinon ça ne marchera pas.::
+Il nous faut maintenant activer *vim-plug* dans notre |vimrc| et le tour est joué. Nous placerons le code listé ci-dessous au début du fichier |vimrc|, directement après la ligne `set nocompatible`. Il est impératif de placer le code **au début** de votre fichier |vimrc| au risque que tout ne fonctionne pas comme souhaité. ::
 
-    " Activation de pathogen
-    call pathogen#infect()
+    " Activation de vim-plug
+    call plug#begin()
 
-Puisque charité bien ordonnée commence par soi-même, nous allons ranger notre petit plugin *Solarized* en utilisant *Pathogen*. Il nous suffit de créer un répertoire `solarized` dans notre répertoire `bundle` fraîchement créé. Vous pouvez l'appeler comme vous le souhaitez, tout sous-répertoire du répertoire `bundle` sera considéré comme un répertoire de plugin. Nous déplaçons ensuite le répertoire `colors` dans le répertoire `solarized` comme ceci :
+    " Nous mettrons nos plugins ici
+
+    call plug#end()
+
+Puisque charité bien ordonnée commence par soi-même, nous allons utiliser `vim-plug` pour gérer **catppuccin** au lieu de l'installer à la main comme on a pu le faire. Commençons par supprimer le répertoire colors que nous avons créé précédemment où nous avions placé *catppuccin* :
 
 .. code-block:: bash
 
-    # Creation du repertoire pour solarized
-    mkdir ~/.vim/bundle/solarized
-    # Et hop un peu de rangement
-    mv ~/.vim/colors ~/.vim/bundle/solarized
+    # Suppression du répertoire colors
+    rm -rf ~/.vim/colors
 
-Actuellement, Pathogen reste encore le gestionnaire de plugins |vim| le plus utilisé. Mais depuis peu, un challenger est arrivé, il s'appelle Vundle https://github.com/gmarik/vundle. J'ai choisi de vous présenter Pathogen car c'est de lui que vous entendrez le plus parler, mais sachez que Vundle est aussi une alternative intéressante : il est compatible avec Pathogen et il gère les versions et les mises à jours de vos plugins directement depuis internet. Pour ceux qui connaissent Ruby, c'est le Bundler (http://gembundler.com/) pour |vim|.
+
+Modifions ensuite notre fichier ``~/.vimrc`` pour y ajouter **catppuccin** comme plugin. ::
+
+    " Activation de vim-plug
+    call plug#begin()
+
+    " Nous mettrons nos plugins ici
+
+    " Installation de catppuccin
+    Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+
+    call plug#end()
+
+Sauvegardez et quittez en utilisant en mode normal ``:wq``. Relancez |vim| pluis, tapez ``:PlugInstall`` pour installer notre nouveau plugin. Au prochain chargement de |vim|, vous devriez avoir retrouvé vos couleurs.
 
 
 Voilà notre |vim| est presque prêt pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet. C'est ici que *The NERD Tree* entre en lice.
