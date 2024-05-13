@@ -268,63 +268,83 @@ Modifions ensuite notre fichier ``~/.vimrc`` pour y ajouter **catppuccin** comme
 
     call plug#end()
 
-Sauvegardez et quittez en utilisant en mode normal ``:wq``. Relancez |vim| pluis, tapez ``:PlugInstall`` pour installer notre nouveau plugin. Au prochain chargement de |vim|, vous devriez avoir retrouvé vos couleurs.
+Sauvegardez et quittez en utilisant en mode normal ``:wq``. Relancez |vim| pluis, tapez ``:PlugInstall`` pour installer notre nouveau plugin (appuyez sur |ttq| pour quitter la fenêtre d'installation). Au prochain chargement de |vim|, vous devriez avoir retrouvé vos couleurs.
 
 
 Voilà notre |vim| est presque prêt pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet. C'est ici que *The NERD Tree* entre en lice.
 
 .. _secnerdtree:
 
-Explorateur de fichiers : The NERD Tree
----------------------------------------
+Explorateur de fichiers : vim-fern
+----------------------------------
 
-The NERD Tree est un plugin permettant d'afficher visuellement une arborescence de fichiers directement dans la partie gauche (par défaut) de votre |vim|, à la *TextMate*, *Sublime Text* ou encore *Eclipse/NetBeans*. Ce plugin n'est pas essentiel si vous souhaitez tout contrôler au clavier (je ne l'utilise plus moi-même), mais est assez pratique lorsque l'on débute avec |vim|.
+*vim-fern* est un plugin permettant d'afficher visuellement une arborescence de fichiers directement dans la partie gauche (par défaut) de votre |vim|, à la *VSCode*, *Sublime Text* ou encore *Eclipse/NetBeans*. Ce plugin n'est pas essentiel si vous souhaitez tout contrôler au clavier (je ne l'utilise plus moi-même), mais est assez pratique lorsque l'on débute avec |vim|.
 
-L'alternative que nous verrons plus tard au chapitre :ref:`plugins` est d'utiliser les plugin *Ctrl-p* ou *Command-t* pour trouver des fichiers et les plugins *LustyExplorer* et *LustyJuggler* pour naviguer entre les fichiers. En effet, devoir visualiser l'arborescence pour trouver un fichier est toujours plus lent que de trouver le fichier à partir de son nom par exemple. The NERD Tree vous permettra donc d'obtenir un |vim| se comportant comme un éditeur classique avec un explorateur de fichiers sur lequel vous pourrez cliquer.
+@TODO: Vérifier si on va toujours utiliser LustExplorer
+L'alternative que nous verrons plus tard au chapitre :ref:`plugins` est d'utiliser un plugin comme *LeaderF* pour trouver des fichiers et les plugins *LustyExplorer* et *LustyJuggler* pour naviguer entre les fichiers. En effet, devoir visualiser l'arborescence pour trouver un fichier est toujours plus lent que de trouver le fichier à partir de son nom par exemple. *vim-fern* vous permettra donc d'obtenir un |vim| se comportant comme un éditeur classique avec un explorateur de fichiers sur lequel vous pourrez cliquer.
 
-Nous allons tout d'abord préparer *Pathogen* pour installer les différents fichiers de *The NERD Tree*.
+Nous allons tout d'abord installer *vim-fern* à l'aide de *vim-plug* comme précédemment puis activer l'utilisation de la souris dans le terminal. ::
 
-.. code-block:: bash
+    " Activation de vim-plug
+    call plug#begin()
 
-    # Creation du repertoire pour The NERD Tree
-    mkdir ~/.vim/bundle/nerdtree
+    " Nous mettrons nos plugins ici
 
-Téléchargez ensuite le dernier *.zip* disponible sur la page du plugin http://www.vim.org/scripts/script.php?script_id=1658. À l'heure où j'écris ces lignes, la dernière version disponible est la version 4.2.0 que vous pouvez télécharger à cette adresse : http://www.vim.org/scripts/download_script.php?src_id=17123.
+    " Installation de catppuccin
+    Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
-Ouvrez le fichier zip et placez son contenu dans le répertoire ``~/.vim/bundle/nerdtree`` que nous venons de créer. Vous devriez avoir une arborescence ressemblant à celle ci-dessous pour votre répertoire ``nerdtree`` :
+    " Installation de vim-fern
+    Plug 'lambdalisue/fern.vim'
 
-.. code-block:: html
+    call plug#end()
 
-    nerdtree
-    |-- doc
-    |   `-- NERD_tree.txt
-    |-- nerdtree_plugin
-    |   |-- exec_menuitem.vim
-    |   `-- fs_menu.vim
-    |-- plugin
-    |   `-- NERD_tree.vim
-    `-- syntax
-        `-- nerdtree.vim
 
-Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant :vimcmd:`:NERDTree` en mode normal. Si vous préférez activer *The NERD Tree* à chaque fois que vous ouvrez votre |vim|, ajoutez ces lignes dans votre |vimrc|: ::
+    " -- Activation de la souris
+    set mouse=a
 
-    " Activation de NERDTree au lancement de vim
-    autocmd vimenter * NERDTree
+Rechargez votre `vimrc` avec la commande suivante : ``:source $MYVIMRC`` (ou sauvegardez, quittez et réouvrez |vim| comme précédemment) puis installez le nouveau plugin grâce à ``:PlugInstall`` (appuyez sur |ttq| pour quitter la fenêtre d'installation).
 
-C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (``vimenter``), peu importe le type de fichier (``*``), lancer *The NERD Tree* (``NERDTree``).
 
-Rien de particulier ensuite, *The NERD Tree* vous affiche l'arborescence du répertoire où vous avez lancé |vim|, comme vous le montre la capture d'écran ci-dessous. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. 
+Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant :vimcmd:`:Fern . -drawer` en mode normal. Si vous préférez activer *vim-fern* à chaque fois que vous ouvrez votre |vim|, ajoutez ces lignes à la fin de votre |vimrc|: ::
 
-.. figure:: ../../book-tex/graphics/vim-nerdtree.png
+    " Activation de vim-fern au lancement de vim
+    augroup FernGroup
+      autocmd! *
+      autocmd VimEnter * ++nested Fern . -drawer
+    augroup END
 
-   |vim| avec *The NERD Tree* d'activé.
+C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (``VimEnter``), peu importe le type de fichier (``*``), lancer *Fern* dans le répertoire courant ``.`` en mode ``drawer`` sur le côté (``Fern . -drawer``).
 
-Vous pouvez aussi effectuer des commandes (créer, copier des fichiers) en appuyant sur |ttm| lorsque vous êtes dans *The NERD Tree*. Pour passer de la fenêtre de *NERD Tree* à la fenêtre d'édition de votre fichier au clavier, appuyez sur ``Ctrl + w`` puis ``w``. C'est à dire la touche ``Control (Ctrl)`` et tout en la laissant appuyée la touche ``w``. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur ``w``. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres |vim| (il n'est pas spécifique à *The NERD Tree*).
+Pour activer l'ouverture des répertoires et des fichiers au clic de la souris, remplacez le code ci-dessus par : ::
+
+    " -- Activation de la souris dans vim
+    set mouse=a
+
+    augroup FernGroup
+      autocmd! *
+      autocmd FileType fern call s:init_fern()
+
+      autocmd VimEnter * ++nested Fern . -drawer
+    augroup END
+
+    function! s:init_fern() abort
+      nmap <buffer> <LeftRelease> <Plug>(fern-action-open-or-expand)
+    endfunction
+
+Rien de particulier ensuite, *vim-fern* vous affiche l'arborescence du répertoire où vous avez lancé |vim|, comme vous le montre la capture d'écran ci-dessous. Vous pouvez utiliser la souris et/ou le clavier pour vous déplacer. À noter que |ttj| vous permet de descendre, |ttk| de remonter, |ttl| de déplier le contenu d'un répertoire ou d'ouvrir le contenu d'un fichier et |tth| de le replier. À noter qui si vous avez appuyé sur |ttenter| sur un répertoire, `vim-fern` ne vous affichera plus que le contenu de ce répertoire, il vous suffit d'appuyer sur |ttreturn| pour retourner au répertoire parent.
+
+.. figure:: ../../book-tex/graphics/vim-fern.png
+
+   |vim| avec *vim-fern* d'activé.
+
+Vous pouvez aussi effectuer diverses commandes (créer, copier des fichiers) mais nous ne rentrerons pas en détail dans ces commandes ici. Vous pouvez toujours appuyer sur |ttquestion| dans la fenêtre de `vim-fern` pour avoir un aperçu des commandes ou vous rendre sur le `site officiel de vim-fern <https://github.com/lambdalisue/vim-fern>`_.
+
+Pour passer de la fenêtre de *vim-fern* à la fenêtre d'édition de votre fichier au clavier, appuyez sur ``Ctrl + w`` puis ``w``. C'est à dire la touche ``Control (Ctrl)`` et tout en la laissant appuyée la touche ``w``. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur ``w``. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres |vim| (il n'est pas spécifique à *vim-fern*).
 
 
 Nous voilà fin prêts
 ====================
 
-Voilà, vous avez fait le plus dur. Enfin presque. Nous venons de couvrir ce qui manque cruellement à |vim| : une configuration par défaut acceptable. Je ne dis pas que c'est la panacée pour l'instant, mais ça devrait vous permettre d'avoir un |vim| utilisable comme n'importe quel autre éditeur de texte dont vous ne connaissez pas encore toutes les possibilités. Je vous recommande à ce stade de commencer à l'utiliser dans votre vie quotidienne. N'hésitez pas à user et à abuser de la souris et des différents menus qui sont à votre disposition. Le but ici étant de réduire l'impact de l'utilisation de |vim| sur votre travail quotidien. Ce n'est pas encore le temps de briller en société. Vous apprendrez les raccourcis clavier au fur et à mesure, et ça ne fait pas de vous un utilisateur de |vim| de seconde zone. Il faut bien commencer un jour.
+Voilà, vous avez fait le plus dur. Enfin presque. Nous venons de couvrir ce qui manque cruellement à |vim| : une configuration par défaut acceptable. Je ne dis pas que c'est la panacée pour l'instant, mais ça devrait vous permettre d'avoir un |vim| utilisable comme n'importe quel autre éditeur de texte dont vous ne connaissez pas encore toutes les possibilités. Je vous recommande à ce stade de commencer à l'utiliser dans votre vie quotidienne. N'hésitez pas à user et à abuser de la souris pour l'instant. Le but ici étant de réduire l'impact de l'utilisation de |vim| sur votre travail quotidien. Ce n'est pas encore le temps de briller en société. Vous apprendrez les raccourcis clavier au fur et à mesure, et ça ne fait pas de vous un utilisateur de |vim| de seconde zone. Il faut bien commencer un jour.
 
 Nous allons maintenant aborder ce qui fait l'unicité de |vim| : sa gestion des modes et des commandes pour manipuler le texte. La balle est dans votre camp maintenant : ou vous êtes prêt à changer vos habitudes et à passer à un autre niveau d'efficacité, ou alors n'utiliser |vim| que comme un bloc-notes amélioré vous convient (dans ce cas là, vous pouvez vous arrêter là). C'est vous qui voyez !

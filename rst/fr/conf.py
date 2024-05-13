@@ -64,6 +64,7 @@ rst_epilog = """
 .. |tsharp| replace:: ``#``
 .. |tleader| replace:: ``<Leader>``
 .. |tcomma| replace:: ``,``
+.. |tquestion| replace:: ``?``
 .. |ta| replace:: ``a``
 .. |tA| replace:: ``A``
 .. |tb| replace:: ``b``
@@ -87,6 +88,7 @@ rst_epilog = """
 .. |tO| replace:: ``O``
 .. |tp| replace:: ``p``
 .. |tP| replace:: ``P``
+.. |tq| replace:: ``q``
 .. |tu| replace:: ``u``
 .. |tr| replace:: ``r``
 .. |tv| replace:: ``v``
@@ -95,6 +97,8 @@ rst_epilog = """
 .. |tX| replace:: ``X``
 .. |ty| replace:: ``y``
 .. |tyty| replace:: ``yy``
+.. |ttenter| replace:: ``la touche Entrée``
+.. |ttreturn| replace:: ``la touche Retour``
 .. |ttc| replace:: la touche |tc|
 .. |ttd| replace:: la touche |td|
 .. |tte| replace:: la touche |te|
@@ -108,6 +112,7 @@ rst_epilog = """
 .. |tto| replace:: la touche |to|
 .. |ttp| replace:: la touche |tp|
 .. |ttP| replace:: la touche |tP|
+.. |ttq| replace:: la touche |tq|
 .. |ttm| replace:: la touche |tm|
 .. |ttu| replace:: la touche |tu|
 .. |ttr| replace:: la touche |tr|
@@ -125,6 +130,7 @@ rst_epilog = """
 .. |ttctrl| replace:: la touche |tctrl|
 .. |ttslash| replace:: la touche |tslash|
 .. |ttenter| replace:: la touche |tenter|
+.. |ttquestion| replace:: la touche |tquestion|
 """
 
 latex_engine = "lualatex"
