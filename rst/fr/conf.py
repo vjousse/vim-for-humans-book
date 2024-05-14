@@ -97,7 +97,6 @@ rst_epilog = """
 .. |tX| replace:: ``X``
 .. |ty| replace:: ``y``
 .. |tyty| replace:: ``yy``
-.. |ttenter| replace:: ``la touche Entrée``
 .. |ttreturn| replace:: ``la touche Retour``
 .. |ttc| replace:: la touche |tc|
 .. |ttd| replace:: la touche |td|

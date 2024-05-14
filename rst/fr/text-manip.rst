@@ -2,11 +2,11 @@
 L'outil de manipulation de texte rêvé
 *************************************
 
-Alors oui, pour ceux qui se demandent, je fais des rêves bizarres, mais bon chacun a ses petites tares cachées. Et rêver d'un outil qui améliore ma vie quotidienne en tant que codeur (ou écrivain, ou formateur, ou …) n'est pas si étrange que ça.
+Alors oui, pour ceux qui se demandent, je fais des rêves bizarres, mais bon, chacun a ses petites tares cachées. Et rêver d'un outil qui améliore ma vie quotidienne en tant que codeur (ou écrivain, ou formateur, ou …) n'est pas si étrange que ça.
 
 Ce qui fait et fera encore le succès de |vim| est sa capacité à **faciliter les manipulations de texte**. Certes il va vous proposer des fonctionnalités propres à chaque tâche que vous effectuerez (souvent par l'intermédiaire de plugins) comme la validation syntaxique de code, la correction orthographique, … Mais à la fin, c'est toujours à écrire/corriger/manipuler/se déplacer dans du texte que vous passerez la majeure partie de votre temps. 
 
-C'est là que l'approche de |vim| est différente d'IDE comme Eclipse / Netbeans / PhpStorm et consorts. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, |vim| adopte l'approche opposée : vous serez **très efficace** à manipuler/écrire du texte quel qu'il soit et vous pourrez enrichir |vim| avec des fonctionnalités propres à votre langage de programmation via des plugins.
+C'est là que l'approche de |vim| est différente d'IDE comme VSCode / Eclipse / Netbeans / PhpStorm et consorts. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, |vim| adopte l'approche opposée : vous serez **très efficace** à manipuler/écrire du texte quel qu'il soit et vous pourrez enrichir |vim| avec des fonctionnalités propres à votre langage de programmation via des plugins.
 
 Nous allons donc voir dans ce chapitre comment utiliser |vim| à bon escient (vous allez commencer à oublier votre souris) et quelle est la logique derrière tous ces enchaînements de commandes qui paraissent barbares au non-initié. Vous devriez pouvoir, à la fin de ce chapitre, **vous passer de votre souris** pour éditer/manipuler le contenu d'un fichier. En tout cas, vous devriez vous forcer à le faire en apprenant |vim|, ce n'est pas si dur que ça, et c'est ce qui fait la différence entre |vim| et les autres : le tout clavier.
 
@@ -21,7 +21,7 @@ Nous avons déjà vu dans la section « :ref:`modeinsertion` » comment passer 
 Préambule
 ---------
 
-Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur |ttshift|) pour sélectionner du texte et vous allez dans le ``menu Édition`` puis ``Copier``. Et ensuite ``menu Édition`` puis ``Coller``. Bah tiens, essayez pour voir.
+Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur |ttshift|) pour sélectionner du texte et vous allez dans le ``menu Édition`` de votre terminal puis ``Copier``. Et ensuite ``menu Édition`` puis ``Coller``. Bah tiens, essayez pour voir.
 
 Si vous avez suivi la section « :ref:`modes` » traitant de la position idéale pour vos mains, vous savez que vous avez fait une ou plusieurs choses que vous devriez vous interdire :
 
@@ -30,7 +30,7 @@ Si vous avez suivi la section « :ref:`modes` » traitant de la position idéal
 - Vous avez déplacé grandement votre main droite de sa position de repos, pour aller atteindre les flèches directionnelles qui sont très mal placées sur un clavier
 
 
-Alors certes ce n'est pas grave en soi, mais c'est **inefficace** (se servir de la souris ou déplacer votre main droite vers les touches directionnelles est très lent) et **nuisible** pour vos petites mains. Ceci est votre dernière chance : si vous n'êtes pas prêt à vous forcer à ne pas le faire, **|vim| n'est pas fait pour vous**. |vim| est parfait pour ne pas utiliser la souris et pour ne pas bouger vos mains (ou presque). Ne pas se forcer à le faire, c'est ne pas tirer partie de tout le potentiel de |vim|, et à un moment ou un autre, **vous le quitterez pour un éditeur** qui aura été pensé pour être utilisé à la souris. Alors, on continue ?
+Alors certes ce n'est pas grave en soi, mais c'est **inefficace** (se servir de la souris ou déplacer votre main droite vers les touches directionnelles est très lent) et **nuisible** pour vos petites mains. Ceci est votre dernière chance : si vous n'êtes pas prêt à vous forcer à ne pas le faire, **Vim n'est pas fait pour vous**. |vim| est parfait pour ne pas utiliser la souris et pour ne pas bouger vos mains (ou presque). Ne pas se forcer à le faire, c'est ne pas tirer partie de tout le potentiel de |vim|, et à un moment ou un autre, **vous le quitterez pour un éditeur** qui aura été pensé pour être utilisé à la souris. Alors, on continue ?
 
 Se passer de la souris
 ----------------------
