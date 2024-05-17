@@ -50,15 +50,15 @@ Pour réaliser un copier/coller avec |vim| tout se passe en mode « normal ».
 Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur |ttesc|. À noter que si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre |ttesc|, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans « :ref:`secesc` ».
 
 
-Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre |vim|. Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient que c'était impossible, alors ils l'ont fait. ». Votre |vim| devrait ressembler à celui de la figure ci-dessous. Notez l'absence d'affichage d'un quelconque mode en bas à gauche.
+Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre |vim| (inséré par vous même grâce à un passage par le mode insertion avec |tti| puis retour au mode normal avec |ttesc|). Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient que c'était impossible, alors ils l'ont fait. ». Votre |vim| devrait ressembler à celui de la figure ci-dessous. Notez l'absence d'affichage d'un quelconque mode en bas à gauche, c'est donc que l'on est en mode *normal*.
 
 .. _twain:
 
 .. image:: ../../book-tex/graphics/vim-twain.png
 
-La façon la plus naturelle (mais pas la plus efficace, nous verrons cela un peu plus loin) de copier/coller le mot « impossible » va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur |ttv| (pour passer en mode « visuel »), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur |tty| (|tty| étant utilisée comme raccourci du mot *yank* en anglais). Vous avez copié votre premier mot.
+La façon la plus naturelle (mais pas la plus efficace, nous verrons cela un peu plus loin) de copier/coller le mot « impossible » va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur |ttv| (pour passer en mode « visuel »), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur |tty| (|tty| étant utilisée comme raccourci du mot *yank* en anglais qui veut dire *extraire*). Vous avez copié votre premier mot.
 
-Déplacez vous ensuite à la fin de la phrase (toujours en mode « normal ») puis appuyez sur |ttp| (raccourci du mot *paste* cette fois ci). Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure qui suit.
+Déplacez vous ensuite à la fin de la phrase avec les flèches (toujours en mode « normal ») puis appuyez sur |ttp| (raccourci du mot *paste* cette fois-ci pour *coller*). Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure qui suit.
 
 .. _vim-paste:
 
@@ -127,7 +127,7 @@ Arrêtons-nous un peu là dessus. Au risque d'insister lourdement, mais la clé 
 
 Vous trouverez des sites entiers vous détaillant les différentes commandes possibles, les différentes combinaisons, j'en passe et des meilleures. Vous les apprendrez puis les oublierez (ou pas, en fonction de si elles vous sont vraiment utiles). Si vous avez un seul effort à faire c'est celui de se passer des touches directionnelles et donc de vous forcer à utiliser le mode normal. Le reste tombera sous le sens.
 
-Voici l'ultime configuration qu'il vous faudra mettre dans votre |vimrc| pour atteindre le Saint Graal : désactiver les touches directionnelles.::
+Voici l'ultime configuration qu'il vous faudra mettre dans votre |vimrc| pour atteindre le Saint Graal : désactiver les touches directionnelles. ::
 
     " Désactiver les touches directionnelles
     map <up> <nop>
@@ -143,9 +143,9 @@ Nous y voilà. Croyez-moi, vous allez souffrir un peu au début. Pour moi, ça n
 
 Je ne vous donnerai pas d'autres détails sur toutes les touches possibles pour vous déplacer, d'autres ressources le font déjà bien mieux que moi. Je vais en revanche vous apprendre dans :ref:`combine-move` comment les utiliser à bon escient.
 
-On peut notamment citer le livre gratuit "A byte of |vim|" traduit en français et disponible à l'adresse suivante : http://swaroopch.com/notes/Vim_fr/.
+On peut notamment citer le livre gratuit "A byte of |vim|" disponible à l'adresse suivante : https://vim.swaroopch.com/ (malheureusement sa traduction en français a disparu depuis la première version de ce livre).
 
-Ou encore l'infographie de la figure ci-dessous (téléchargeable sur http://www.nathael.org/Data/vi-vim-cheat-sheet.svg) qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
+Ou encore l'infographie de la figure ci-dessous (téléchargeable sur https://github.com/vjousse/vim-for-humans-book/blob/master/book-tex/graphics/vi-vim-cheat-sheet.png) qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
 
 .. _cheat-sheet:
 
@@ -287,7 +287,7 @@ La recherche
 
 En mode normal, vous pouvez lancez une recherche en utilisant |ttslash| suivi du texte que vous souhaitez rechercher puis de |ttenter|. Grâce à notre configuration de |vim| vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse. Vous pouvez vous déplacer à la prochaine occurrence de la recherche grâce à |ttn|. Pour vous déplacer à la précédente utilisez |ttN|.
 
-Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela :::
+Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela : ::
 
     " -- Recherche
     set ignorecase            " Ignore la casse lors d'une recherche
@@ -297,9 +297,9 @@ Pour rappel, voici les lignes de votre fichier de configuration qui permettent d
                                 " saisie
     set hlsearch              " Surligne les resultats de recherche
 
-Attention par défaut, la recherche utilise les expressions régulières POSIX. Si vous souhaitez rechercher des caractères habituellement utilisés dans les expressions régulières (comme [ ] ^{ } $ /) n'oubliez pas de les préfixer par \\.
+Attention par défaut, la recherche utilise les expressions régulières POSIX. Si vous souhaitez rechercher des caractères habituellement utilisés dans les expressions régulières (comme ``[ ] ^{ } $ /``) n'oubliez pas de les préfixer par ``\``.
 
-Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à |ttstar|. Utiliser |ttstar| fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez |ttsharp|.
+Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à |ttstar|. Utiliser |ttstar| fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez |ttsharp|. Pour annuler une recherche, en mode normal, tapez ``:noh``.
 
 Le mode visuel
 ==============
@@ -315,15 +315,18 @@ En mode normal vous pourrez utiliser |ttV| pour sélectionner lignes par lignes.
 
 Vous devriez maintenant être capable de n'utiliser que le clavier pour les opérations de manipulation de texte et d'édition. Je n'ai fait que survoler la puissance de |vim| ici, mais ça devrait être suffisant pour survivre. Je vous ai donné ici le strict nécessaire, mais ce strict nécessaire vous permet déjà de profiter de |vim| et du plaisir de ne plus utiliser la souris.
 
-À vous maintenant de lire les nombreuses ressources disponibles sur internet vous décrivant tous les mouvements possibles et imaginables. Je ne manquerai d'ailleurs pas de compléter ce guide avec des articles sur le site internet qui lui est dédié http://vimebook.com.
+À vous maintenant de lire les nombreuses ressources disponibles sur internet vous décrivant tous les mouvements possibles et imaginables.
 
 Voici une liste de ressources qui pourraient vous être utiles, malheureusement les ressources en français sont assez rares :
 
-* A byte of |vim| en français http://www.swaroopch.com/notes/vim_fr/
-* Un petit pense bête sympathique de différents raccourcis clavier http://www.tuteurs.ens.fr/unix/editeurs/vim.html
-* Un wiki non officiel francophone (un peu fouillis soit dit en passant) : www.vim-fr.org/
-* Les vidéos Peepcode en anglais mais vraiment superbement réalisées : https://peepcode.com/products/smash-into-vim-i et https://peepcode.com/products/smash-into-vim-ii
-* Le blog de Derek Wyatt's en anglais http://www.derekwyatt.org/vim/vim-tutorial-videos/
+* Le site de ce livre https://www.vimebook.com
+* A byte of |vim| https://vim.swaroopch.com/
+* Un petit pense bête sympathique de différents raccourcis clavier https://tuteurs.ens.fr/unix/editeurs/vim.html
+* Un site avec plein de pense-bêtes pour les raccourcis https://vim.rtorr.com/
+* Les vidéos d'Andrew Stewart en anglais mais vraiment superbement réalisées : https://www.pluralsight.com/courses/smash-into-vim
+* Le blog de Derek Wyatt's en anglais http://derekwyatt.org/vim/tutorials/
+* Le livre « Learning to play Vim » en anglais https://themouseless.dev/vim/
+* Le site « vim-hero » avec un tutorial interactif très bien fait https://www.vim-hero.com/
 
 Histoire de réveiller l'enfant qui est en vous, je vous conseille vivement d'aller vous amuser avec http://vim-adventures.com/. C'est un jeu de rôle en ligne qui a pour but de vous apprendre à manipuler |vim| ! Voici un petit aperçu :
 

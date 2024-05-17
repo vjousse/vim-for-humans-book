@@ -57,7 +57,7 @@ rst_epilog = """
 .. |tcolon| replace:: ``:``
 .. |tctrl| replace:: ``Control``
 .. |tapos| replace:: ``'``
-.. |tslash| replace:: ``\\``
+.. |tslash| replace:: ``/``
 .. |tshift| replace:: ``Shift``
 .. |tenter| replace:: ``Entrée``
 .. |tstar| replace:: ``*``
@@ -92,6 +92,7 @@ rst_epilog = """
 .. |tu| replace:: ``u``
 .. |tr| replace:: ``r``
 .. |tv| replace:: ``v``
+.. |tV| replace:: ``V``
 .. |tw| replace:: ``w``
 .. |tx| replace:: ``x``
 .. |tX| replace:: ``X``
@@ -116,6 +117,7 @@ rst_epilog = """
 .. |ttu| replace:: la touche |tu|
 .. |ttr| replace:: la touche |tr|
 .. |ttv| replace:: la touche |tv|
+.. |ttV| replace:: la touche |tV|
 .. |ttx| replace:: la touche |tx|
 .. |tty| replace:: la touche |ty|
 .. |ttw| replace:: la touche |tw|

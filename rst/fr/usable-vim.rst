@@ -305,15 +305,15 @@ Nous allons tout d'abord installer *vim-fern* à l'aide de *vim-plug* comme pré
 Rechargez votre `vimrc` avec la commande suivante : ``:source $MYVIMRC`` (ou sauvegardez, quittez et réouvrez |vim| comme précédemment) puis installez le nouveau plugin grâce à ``:PlugInstall`` (appuyez sur |ttq| pour quitter la fenêtre d'installation).
 
 
-Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant :vimcmd:`:Fern . -drawer` en mode normal. Si vous préférez activer *vim-fern* à chaque fois que vous ouvrez votre |vim|, ajoutez ces lignes à la fin de votre |vimrc|: ::
+Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant :vimcmd:`:Fern . -drawer -stay` en mode normal. Si vous préférez activer *vim-fern* à chaque fois que vous ouvrez votre |vim|, ajoutez ces lignes à la fin de votre |vimrc|: ::
 
     " Activation de vim-fern au lancement de vim
     augroup FernGroup
       autocmd! *
-      autocmd VimEnter * ++nested Fern . -drawer
+      autocmd VimEnter * ++nested Fern . -drawer -stay
     augroup END
 
-C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (``VimEnter``), peu importe le type de fichier (``*``), lancer *Fern* dans le répertoire courant ``.`` en mode ``drawer`` sur le côté (``Fern . -drawer``).
+C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (``VimEnter``), peu importe le type de fichier (``*``), lancer *Fern* dans le répertoire courant ``.`` en mode ``drawer`` sur le côté et en gardant ``stay`` le focus sur la fenêtre actuelle (``Fern . -drawer -stay``).
 
 Pour activer l'ouverture des répertoires et des fichiers au clic de la souris, remplacez le code ci-dessus par : ::
 
@@ -324,7 +324,7 @@ Pour activer l'ouverture des répertoires et des fichiers au clic de la souris, 
       autocmd! *
       autocmd FileType fern call s:init_fern()
 
-      autocmd VimEnter * ++nested Fern . -drawer
+      autocmd VimEnter * ++nested Fern . -drawer -stay
     augroup END
 
     function! s:init_fern() abort
