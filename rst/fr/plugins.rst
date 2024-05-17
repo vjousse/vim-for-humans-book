@@ -13,48 +13,17 @@ Qu'on ne se méprenne pas, |vim| peut bien sûr s'utiliser sans plugins. Il peut
 Naviguer sur le disque et entre les fichiers : *Lusty Explorer*
 ===============================================================
 
-Nous avons déjà vu NerdTree dans :ref:`secnerdtree` qui permettait d'avoir un explorateur de projet dans une fenêtre latérale de |vim|. Le problème de ce plugin est qu'il n'est pas fait pour être utilisé au clavier. Certes vous pouvez utiliser le clavier, mais il ne sera pas aussi efficace que les plugins pensés uniquement pour une utilisation au clavier.
+Nous avons déjà vu `vim-fern` dans :ref:`secvimfern` qui permettait d'avoir un explorateur de projet dans une fenêtre latérale de |vim|. Le problème de ce plugin est qu'il n'est pas fait pour être utilisé au clavier. Certes vous pouvez utiliser le clavier, mais il ne sera pas aussi efficace que les plugins pensés uniquement pour une utilisation au clavier.
 
-Personnellement, le premier plugin que j'installe partout où j'ai à utiliser |vim|, c'est *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. Il va aussi permettre de naviguer rapidement entre vos différents fichiers déjà ouverts (vos buffers en jargon |vim|). Commençons par l'installer.
+Personnellement, le premier plugin que j'installe partout où j'ai à utiliser |vim|, c'est *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. Il va aussi permettre de naviguer rapidement entre vos différents fichiers déjà ouverts (vos buffers en jargon |vim|). Commençons par l'installer via *vim-plug*. Comme d'habitude, ajoutez la ligne ci-dessous à la suite des plugins déjà listés dans votre |vimrc| :
 
-Rendez-vous sur l'url du script http://www.vim.org/scripts/script.php?script_id=1890 et téléchargez la dernière version (c'est actuellement la 4.3, http://www.vim.org/scripts/download_script.php?src_id=17529). Faites ensuite le nécessaire dans votre répertoire ``.vim/`` pour qu'il ressemble à la structure ci-dessous :
 
-.. code-block:: html
+.. code-block::
 
-    .vim
-    |-- autoload
-    |   `-- pathogen.vim
-    `-- bundle
-        |-- lusty-explorer
-        |   `-- plugin
-        |       `-- lusty-explorer.vim
+    " Installation de Lusty Explorer
+    Plug 'sjbach/lusty'
 
-Si vous avez suivi tout ce que l'on a fait depuis le début votre répertoire ``.vim/``, il devrait maintenant ressembler à cela :
-
-.. code-block:: html
-
-    .vim
-    |-- autoload
-    |   `-- pathogen.vim
-    `-- bundle
-        |-- lusty-explorer
-        |   `-- plugin
-        |       `-- lusty-explorer.vim
-        |-- nerdtree
-        |   |-- doc
-        |   |   `-- NERD_tree.txt
-        |   |-- nerdtree_plugin
-        |   |   |-- exec_menuitem.vim
-        |   |   `-- fs_menu.vim
-        |   |-- plugin
-        |   |   `-- NERD_tree.vim
-        |   `-- syntax
-        |       `-- nerdtree.vim
-        `-- solarized
-            `-- colors
-                `-- solarized.vim
-
-Reste à voir comment l'utiliser. Si l'on se réfère à la documentation, voilà ce que l'on trouve (traduit en français) :
+Reste maintenant à voir comment l'utiliser. Si l'on se réfère à la documentation, voilà ce que l'on trouve (traduit en français) :
 
 .. code-block:: html
 
@@ -65,11 +34,11 @@ Reste à voir comment l'utiliser. Si l'on se réfère à la documentation, voil�
 
 On voit qu'il est fait mention d'une touche nommée |tleader| qu'il faut ensuite faire suivre d'autres touches comme *lf*, *lr*, *lb* et *lg*. Cette touche |tleader| est une touche spéciale que l'on définit dans son fichier |vimrc|. Elle sera énormément utilisée par tous les plugins, beaucoup des commandes de ces derniers commenceront par la touche |tleader|. C'est un moyen d'éviter les collisions avec les raccourcis par défaut de |vim|.
 
-Il faut donc choisir une touche |tleader|. Par défaut, |vim| utilise ``\`` comme touche |tleader|. Sur nos claviers francophones c'est une très mauvaise idée d'utiliser cette touche car elle n'est pas pratique du tout. La plupart des utilisateurs de |vim| la remplace par la touche |tcomma|. Elle est directement accessible sous l'index de la main droite ce qui en fait une parfaite candidate. Pour spécifier cela à |vim| il va falloir rajouter une ligne dans votre fichier |vimrc|, à savoir :::
+Il faut donc choisir une touche |tleader|. Par défaut, |vim| utilise ``\`` comme touche |tleader|. Sur nos claviers francophones c'est une très mauvaise idée d'utiliser cette touche car elle n'est pas pratique du tout. La plupart des utilisateurs de |vim| la remplace par la touche |tcomma|. Elle est directement accessible sous l'index de la main droite ce qui en fait une parfaite candidate. Pour spécifier cela à |vim| il va falloir rajouter une ligne dans votre fichier |vimrc|, à savoir : ::
 
     let mapleader = ","
 
-Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou en tapant :vimcmd:`:so ~/.vimrc` ou :vimcmd:`:so $MYVIMRC` en mode normal), vous devriez être en mesure de taper ``,lr`` et d'avoir le même style de résultat que sur la figure ci-dessous.
+Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou en tapant ``:so ~/.vimrc`` ou ``:so $MYVIMRC`` en mode normal), vous devriez être en mesure de taper ``,lr`` et d'avoir le même style de résultat que sur la figure ci-dessous (notez l'affichage du contenu de votre dossier actuel en bas à gauche).
 
 .. _la capture d'écran de lusty: lusty_
 
@@ -77,11 +46,9 @@ Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou
 
 .. image:: ../../book-tex/graphics/vim-lusty.png
 
-Je vous conseille maintenant de désactiver *The Nerd Tree* (en commentant la ligne au dessus du *mapleader* comme je l'ai fait dans la figure suivante, il ne vous servira plus à grand chose, *Lusty Explorer* le remplace à merveille.
+Vous pouvez constater sur `la capture d'écran de lusty`_ qu'il y a deux parties à *Lusty Explorer*. La partie basse vous indique le répertoire que vous êtes en train d'explorer et la partie haute liste le contenu de ce répertoire. En surbrillance se trouve l'élément couramment sélectionné. Dans le cas de `la capture d'écran de lusty`_ c'est le répertoire ``.autoload/`` en jaune  (la couleur pourra être différente en fonction de votre thème).
 
-Vous pouvez constater sur `la capture d'écran de lusty`_ qu'il y a deux parties à *Lusty Explorer*. La partie basse vous indique le répertoire que vous êtes en train d'explorer et la partie haute liste le contenu de ce répertoire. En surbrillance se trouve l'élément couramment sélectionné. Dans le cas de `la capture d'écran de lusty`_ c'est le répertoire ``.vim/`` en jaune  (la couleur pourra être différente en fonction de votre thème).
-
-*Lusty Explorer* utilise une fonctionnalité de *Fuzzy matching* qui va vous permettre de ne taper qu'une partie d'un nom de fichier pour le sélectionner. Dans mon exemple, si, dans la fenêtre de *Lusty*, je saisi ``.vimi`` il va me sélectionner le fichier ``.viminfo`` sans que j'ai à lui spécifier le nom entier, je n'aurais ensuite plus qu'à appuyer sur |ttenter| pour ouvrir le fichier dans |vim|. La figure suivante vous montre l'exemple en question.
+*Lusty Explorer* utilise une fonctionnalité de *Fuzzy matching* qui va vous permettre de ne taper qu'une partie d'un nom de fichier ou de répertoire pour le sélectionner. Dans mon exemple, si, dans la fenêtre de *Lusty*, je saisi ``pl`` il va me sélectionner le répertoire ``plugged/`` sans que j'ai à lui spécifier le nom entier, je n'aurai ensuite plus qu'à appuyer sur |ttenter| pour ouvrir le fichier dans |vim|. La figure suivante vous montre l'exemple en question.
 
 .. _fuzzy:
 
@@ -93,7 +60,7 @@ Vous pouvez constater sur `la capture d'écran de lusty`_ qu'il y a deux parties
 * |tctrl| + |tn| pour sélectionner le fichier/répertoire suivant
 * |tctrl| + |tp| pour sélectionner le fichier/répertoire précédent
 * |tctrl| + |tw| pour descendre au répertoire parent
-* |tctrl| + |te| crée un nouveau fichier vide (non sauvegardé sur le disque) avec le nom spécifié actuellement dans *Lusty Explorer*. Vous n'aurez plus qu'à utiliser :vimcmd:`:w` pour écrire le contenu du fichier sur le disque.
+* |tctrl| + |te| crée un nouveau fichier vide (non sauvegardé sur le disque) avec le nom spécifié actuellement dans *Lusty Explorer*. Vous n'aurez plus qu'à utiliser ``:w`` pour écrire le contenu du fichier sur le disque.
 
 *Lusty Explorer* s'utilise donc pour deux choses : naviguer sur votre système de fichiers avec ``,lr`` et ``,lf``, et naviguer entre vos fichiers ouverts (buffers) avec ``,lb``. Personnellement j'utilise moins la recherche dans les buffers avec ``,lg``, à vous de tester et de vous faire votre propre opinion.
 

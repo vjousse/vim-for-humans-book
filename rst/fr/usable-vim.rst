@@ -12,8 +12,13 @@ Voici donc ce qui manque à un |vim| nu (et ce qui est, de mon point de vue, une
 **Configuration par défaut** 
     |vim| est configurable grâce à un fichier nommé |vimrc|, qui est bien entendu vide par défaut. La première étape va être d'écrire ou de se procurer un fichier |vimrc| avec une configuration minimale.
 
+
 **Coloration syntaxique**
-    De base, |vim| est tout blanc et tout moche. Nous allons donc utiliser le thème *Catppucin* (https://github.com/catppuccin/vim) pour le rendre un peu plus joli.
+    De base, |vim| est tout blanc et tout moche. On va utiliser le thème *Solarized* (http://ethanschoonover.com/solarized). Si votre but est d'être efficace, c'est le meilleur thème disponible actuellement (tout éditeur de texte confondu). La belle image qui suit vous donne une idée des deux looks disponibles (clair ou sombre). Pour ma part j'utilise le thème sombre.
+
+    |solarized|
+
+.. |solarized| image:: ../../book-tex/graphics/solarized-vim.png
 
 **Explorateur de fichiers**
     Si vous utilisez |vim| avec une interface graphique (ce qui est le cas de 99% d'entre vous je suppose) vous avez par défaut un menu ``Fichier`` vous permettant d'ouvrir un fichier. C'est certes un bon début, mais avoir à disposition un explorateur de projet à la NetBeans ou à la TextMate peut s'avérer très pratique. Pour obtenir le même comportement, nous utiliserons *NERD tree* (https://github.com/preservim/nerdtree). À savoir qu'à la fin de ce guide, vous n'aurez plus besoin de la souris (et donc des menus et autres boutons).
@@ -21,7 +26,7 @@ Voici donc ce qui manque à un |vim| nu (et ce qui est, de mon point de vue, une
 
 Ce chapitre est indispensable si vous n'avez que peu d'expérience (voire pas du tout) avec |vim|. À la fin de ce chapitre, vous aurez un |vim| dont vous pourrez commencer à vous servir pour vos tâches de tous les jours. Cela devrait être suffisant pour vous permettre d'apprendre le reste petit à petit. Car il n'y a pas de secret, il vous faudra pratiquer pour apprendre |vim|. Autant commencer de suite et le moins douloureusement possible.
 
-En revanche, si vous êtes déjà familier avec |vim| et n'utilisez déjà plus la souris, vous pouvez sagement sauter ce chapitre (soyez sûr tout de même de donner sa chance au thème *Catppucin*).
+En revanche, si vous êtes déjà familier avec |vim| et n'utilisez déjà plus la souris, vous pouvez sagement sauter ce chapitre (soyez sûr tout de même de donner sa chance au thème *Solarized*).
 
 .. _modeinsertion:
 
@@ -29,7 +34,7 @@ Préambule indispensable : le mode insertion
 ===========================================
 
 Prenons le pari de créer le fichier |vimrc| avec |vim| lui-même. Comme je vous le disais, lus tôt vous commencerez, mieux ce sera.
-Vous devrez certainement commencer par installer une version de |vim|. Si vous utilisez un Mac, essayez MacVim (http://code.google.com/p/macvim/) sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système « Unix » vous devriez sûrement avoir la commande *vim* à disposition dans votre terminal. Vous pouvez aussi utiliser l'interface graphique *gVim* qui devrait être facilement installable grâce à votre gestionnaire de logiciels, pour Ubuntu le paquet correspondant est `vim-gnome`. Faites attention à bien installer la version **complète** de vim, notamment avec le support de Ruby et de Lua dont nous aurons besoin par la suite. Pour Ubuntu, le paquet sembler s'appeller `vim`. Pour Mac OS X, la question ne se pose pas, MacVim inclut déjà tout ce qu'il faut. Pour Windows, il semblerait y avoir une version disponible sur le site officiel de |vim| (http://www.vim.org/download.php), mais je ne l'ai pas testée.
+Vous devrez certainement commencer par installer une version de |vim|. Si vous utilisez un Mac, essayez MacVim (https://macvim.org/) sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système « Unix » vous devriez sûrement avoir la commande *vim* à disposition dans votre terminal. Vous pouvez aussi utiliser l'interface graphique *gVim* qui devrait être facilement installable grâce à votre gestionnaire de logiciels, pour Ubuntu le paquet correspondant est `vim-gnome`. Faites attention à bien installer la version **complète** de vim, notamment avec le support de Ruby et de Lua dont nous aurons besoin par la suite. Pour Ubuntu, le paquet sembler s'appeller `vim`. Pour Mac OS X, la question ne se pose pas, MacVim inclut déjà tout ce qu'il faut. Pour Windows, il semblerait y avoir une version disponible sur le site officiel de |vim| (http://www.vim.org/download.php), mais je ne l'ai pas testée.
 
 **Pour ma part**, j'utilise *vim* directement en ligne de commande, sous Archlinux, dans un terminal `kitty <https://sw.kovidgoyal.net/kitty/>`_ avec la police Nerd Fonts `FiraCode Nerd Font <https://www.nerdfonts.com/font-downloads>`_. C'est avec cette configuration que les capture d'écran de ce livre sont réalisées.
 
@@ -159,36 +164,52 @@ Pour l'instant, le plus facile pour que les modifications apportées à votre |v
 
 ``:so`` étant un raccourci pour ``:source``. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
 
-Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème `Catppuccin <https://github.com/catppuccin/vim>`_ (avec fond clair ou foncé, ça dépendra de vos préférences).
+Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème *Solarized* [#solarized]_ http://ethanschoonover.com/solarized (avec fond clair ou foncé, ça dépendra de vous). 
 
-Pour l'installer, commencez tout d'abord par créer un répertoire nommé `.vim` au même endroit que votre |vimrc| (dans votre répertoire utilisateur donc). À noter que ce répertoire s'appelle `vimfiles` sous Windows. À chaque fois que je ferai référence au répertoire `.vim` ça sera en fait `vimfiles` pour les Windowsiens. Dans ce répertoire `.vim`, créez un sous-répertoire nommé `colors`. Téléchargez ensuite le fichier du thème *Catppuccin* de votre choix qui se trouve ici https://github.com/catppuccin/vim/tree/main/colors. Vu que j'aime bien les thèmes sombres, je vais choisir la variante *mocha* en téléchargant ce fichier https://raw.githubusercontent.com/catppuccin/vim/main/colors/catppuccin_mocha.vim et le copier dans le répertoire `vim/colors/` fraîchement créé.
+.. [#solarized] À noter que nous utiliserons une version modernisée de *Solarized* pour vim et non l'originale disponible sur le site de l'auteur. Cette version plus récente va notamment lui permettre de fonctionner correctement sur les terminaux modernes. On l'installera à partir de ce fork https://github.com/ericbn/vim-solarized.
+
+https://raw.githubusercontent.com/ericbn/vim-solarized/master/colors/solarized.vim
+
+
+Pour l'installer, commencez tout d'abord par créer un répertoire nommé `.vim` au même endroit que votre |vimrc| (dans votre répertoire utilisateur donc). À noter que ce répertoire s'appelle `vimfiles` sous Windows. À chaque fois que je ferai référence au répertoire `.vim` ça sera en fait `vimfiles` pour les Windowsiens. Dans ce répertoire `.vim`, créez un sous-répertoire nommé `colors`. Téléchargez ensuite le fichier du thème *Solarized* https://raw.githubusercontent.com/ericbn/vim-solarized/master/colors/solarized.vim (c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire `vim/colors/` fraîchement créé.
+
 
 Sous Linux vous pouvez faire tout ça via les commandes suivantes :
 
 .. code-block:: bash
 
     mkdir -p ~/.vim/colors
-    wget -P ~/.vim/colors https://raw.githubusercontent.com/catppuccin/vim/main/colors/catppuccin_mocha.vim
+    wget -P ~/.vim/colors https://raw.githubusercontent.com/ericbn/vim-solarized/master/colors/solarized.vim
 
-Votre répertoire `.vim` devrait ressembler à celui de la figure ci-dessous.
+Votre répertoire `.vim` devrait ressembler à cela :
 
-.. figure:: ../../book-tex/graphics/catppuccin-tree.png
+.. code-block:: bash
 
-   Le contenu du répertoire .vim avec *Catppuccin*.
+    .vim
+    └── colors
+        └── solarized.vim
 
-Activez ensuite le thème *Catppuccin* dans votre |vimrc| comme le montre le code ci-dessous.::
 
+Activez ensuite le thème Solarized dans votre |vimrc| comme le montre le code ci-dessous.::
+
+    " Utilise la version sombre de Solarized
+    set background=dark
     " Active les couleurs 24-bits dans le terminal
     set termguicolors
-    " Utilise la déclinaison mocha du thème catppuccin
-    colorscheme catppuccin_mocha
+    colorscheme solarized
 
-Voilà à quoi devrait ressembler votre |vim| :
+Pour tester le thème clair, remplacez `dark` par `light` (au niveau de la définition de la propriété `background`).
 
-.. figure:: ../../book-tex/graphics/vim-catppuccin-mocha-vimrc.png
+Ci-dessous un aperçu des deux variantes (ma préférence allant à la variante sombre soit dit en re-passant).
 
-   Le thème *Cattpuccin* mocha.
+.. figure:: ../../book-tex/graphics/vim-solarized-dark.png
 
+   Le thème *Solarized* sombre.
+
+
+.. figure:: ../../book-tex/graphics/vim-solarized-light.png
+
+   Le thème *Solarized* clair.
 
 
 Un bonus (si vous n'utilisez pas |vim| directement dans votre terminal) serait de choisir une police de caractères qui vous convient un peu mieux. C'est bien sûr facultatif, mais je présume que certains d'entre vous sont des esthètes aguerris.
@@ -220,17 +241,47 @@ Gestionnaire de plugins: vim-plug
 
 `vim-plug <https://github.com/junegunn/vim-plug>`_ est le genre de plugin typique que vous découvrez après avoir commencé à configurer votre |vim| et qui génère ce type de réaction : « *Ah si j'avais su j'aurais directement commencé avec* ». Ça tombe bien, c'est ce que nous allons faire.
 
-Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans |vim|. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en *\*.vim*) dans des sous-répertoires de votre répertoire de configuration *.vim*. On a déjà d'ailleurs commencé à y créer un sous-répertoire `colors` qui contient notre "plugin" de coloration `catppuccin`.
+Tout d'abord, petite explication sur la manière d'installer et de configurer des plugins dans |vim|. Ils s'installent en copiant les fichiers adéquats (la plupart du temps avec une extension en *\*.vim*) dans des sous-répertoires de votre répertoire de configuration *.vim*. On a déjà d'ailleurs commencé à y créer un sous-répertoire `colors` qui contient notre "plugin" de coloration `solarized`.
 
 Le problème avec cette approche c'est que les différents plugins ne sont pas isolés (vous allez devoir copier leurs fichiers dans les différents sous-répertoires) et que vous allez donc vous retrouver avec des fichiers un peu partout sans savoir à qui ils appartiennent. Autant vous dire qu'une fois que vous voulez désinstaller ou mettre à jour un plugin, c'est vite l'enfer pour savoir quels sont ses fichiers.
 
 C'est là que *vim-plug* arrive à la rescousse, il va vous permettre d'installer chaque plugin dans un sous-répertoire rien que pour lui. Voici ce que donnerait le répertoire `.vim` d'une installation fictive de |vim| avant et après l'utilisation de *vim-plug*. 
 
-.. figure:: ../../book-tex/graphics/vim-plug-tree.png
 
-   *.vim* avant et après `vim-plug`.
+.. code-block:: bash
+    :caption: .vim avant l'utilisation de *vim-plug*
 
-Certes la version avec *vim-plug* contient plus de sous-répertoires, mais croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite.
+    .vim-
+    ├── autoload
+    │   └── phpcomplete.vim
+    ├── colors
+    │   └── solarized.vim
+    └── syntax
+        ├── php.vim
+        └── sql.vim
+
+
+.. code-block:: bash
+    :caption: .vim après l'utilisation de *vim-plug*
+
+    .vim
+    ├── autoload
+    │   └── plug.vim
+    └── plugged
+        ├── solarized
+        │   └── colors
+        │       └── solarized.vim
+        ├── php
+        │   ├── autoload
+        │   │   └── phpcomplete.vim
+        │   ├── syntax
+        │   │   └── php.vim
+        │   └── autoload
+        └── sql
+            └── syntax
+                └── sql.vim
+
+Certes la version avec *vim-plug* contient plus de sous-répertoires mais chaque plugin est isolé dans son propre répertoir. Croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite.
 
 Commençons par installer *vim-plug*. Créez un répertoire nommé `autoload` dans votre répertoire `.vim` et copiez y `plug.vim` que vous pouvez télécharger ici : https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim. Pour les utilisateurs Unix, la commande qui suit permet de l'installer automatiquement :
 
@@ -248,7 +299,7 @@ Il nous faut maintenant activer *vim-plug* dans notre |vimrc| et le tour est jou
 
     call plug#end()
 
-Puisque charité bien ordonnée commence par soi-même, nous allons utiliser `vim-plug` pour gérer **catppuccin** au lieu de l'installer à la main comme on a pu le faire. Commençons par supprimer le répertoire colors que nous avons créé précédemment où nous avions placé *catppuccin* :
+Puisque charité bien ordonnée commence par soi-même, nous allons utiliser `vim-plug` pour gérer **solarized** au lieu de l'installer à la main comme nous l'avons fait précédemment. Commençons par supprimer le répertoire ``colors`` que nous avons créé précédemment où nous avions placé *solarized* :
 
 .. code-block:: bash
 
@@ -256,15 +307,15 @@ Puisque charité bien ordonnée commence par soi-même, nous allons utiliser `vi
     rm -rf ~/.vim/colors
 
 
-Modifions ensuite notre fichier ``~/.vimrc`` pour y ajouter **catppuccin** comme plugin. ::
+Modifions ensuite notre fichier ``~/.vimrc`` pour y ajouter **solarized** comme plugin (|vim| devrait se plaindre qu'il ne peut pas trouver le thème *solarized*, vous pouvez ignorer l'erreur, nous allons justement l'installer). ::
 
     " Activation de vim-plug
     call plug#begin()
 
     " Nous mettrons nos plugins ici
 
-    " Installation de catppuccin
-    Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+    " Installation de solarized
+    Plug 'ericbn/vim-solarized'
 
     call plug#end()
 
@@ -273,7 +324,7 @@ Sauvegardez et quittez en utilisant en mode normal ``:wq``. Relancez |vim| pluis
 
 Voilà notre |vim| est presque prêt pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet. C'est ici que *The NERD Tree* entre en lice.
 
-.. _secnerdtree:
+.. _secvimfern:
 
 Explorateur de fichiers : vim-fern
 ----------------------------------
@@ -290,8 +341,8 @@ Nous allons tout d'abord installer *vim-fern* à l'aide de *vim-plug* comme pré
 
     " Nous mettrons nos plugins ici
 
-    " Installation de catppuccin
-    Plug 'catppuccin/vim', { 'as': 'catppuccin' }
+    " Installation de solarized
+    Plug 'ericbn/vim-solarized'
 
     " Installation de vim-fern
     Plug 'lambdalisue/fern.vim'
