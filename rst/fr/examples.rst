@@ -12,14 +12,14 @@ Questions / réponses
 Comment quitter |vim| ?
 -----------------------
 
-La première chose à faire est de se mettre en mode normal. Grosso modo, excitez-vous sur |ttesc| ou |ttsemicolon| en fonction de votre configuration et vous devriez vous retrouver en mode normal. Ensuite tapez :vimcmd:`:q` pour quitter. Il y a de grandes chances que |vim| ne vous laisse pas faire. Si vous avez des modifications non enregistrées par exemple, il ne voudra pas quitter. Vous pouvez annuler les modifications en le forçant à quitter grâce à l'utilisation de :vimcmd:`!` comme ceci : :vimcmd:`:q!`. Vous pouvez aussi enregistrer vos modifications puis quitter comme ceci : :vimcmd:`:wq`.
+La première chose à faire est de se mettre en mode normal. Grosso modo, excitez-vous sur |ttesc| ou |ttsemicolon| en fonction de votre configuration et vous devriez vous retrouver en mode normal. Ensuite tapez ``:q`` pour quitter. Il y a de grandes chances que |vim| ne vous laisse pas faire. Si vous avez des modifications non enregistrées par exemple, il ne voudra pas quitter. Vous pouvez annuler les modifications en le forçant à quitter grâce à l'utilisation de ``!`` comme ceci : ``:q!``. Vous pouvez aussi enregistrer vos modifications puis quitter comme ceci : ``:wq``.
 
 Comment sauvegarder sous ?
 --------------------------
 
-En mode normal, si vous tapez :vimcmd:`:w`, |vim| par défaut sauvegarde vos modifications dans le fichier courant. Si vous souhaitez utiliser un autre nom de fichier pour « sauvegarder sous », vous avez juste à lui spécifier le nom du fichier après :vimcmd:`w` comme ceci : :vimcmd:`:w monfichier.txt`. |vim| sauvegardera alors votre fichier sous le nom *monfichier.txt*. En revanche |vim| n'ouvrira pas *monfichier.txt*, il restera sur votre précédent fichier.
+En mode normal, si vous tapez ``:w``, |vim| par défaut sauvegarde vos modifications dans le fichier courant. Si vous souhaitez utiliser un autre nom de fichier pour « sauvegarder sous », vous avez juste à lui spécifier le nom du fichier après ``w`` comme ceci : ``:w monfichier.txt``. |vim| sauvegardera alors votre fichier sous le nom *monfichier.txt*. En revanche |vim| n'ouvrira pas *monfichier.txt*, il restera sur votre précédent fichier.
 
-Si vous souhaitez que |vim| sauvegarde sous *monfichier.txt* et ouvre ensuite ce fichier dans le tampon courant, vous devrez utiliser :vimcmd:`:sav monfichier.txt`.
+Si vous souhaitez que |vim| sauvegarde sous *monfichier.txt* et ouvre ensuite ce fichier dans le tampon courant, vous devrez utiliser ``:sav monfichier.txt``.
 
 Comment copier/couper coller ?
 ------------------------------
@@ -36,7 +36,7 @@ En résumé :
 Comment créer un nouveau fichier ?
 ----------------------------------
 
-La façon traditionnelle de faire est de taper, en mode normal, :vimcmd:`:e monfichier.txt` pour ouvrir un tampon (buffer) vide. Ensuite, sauvegardez votre tampon grâce à :vimcmd:`:w`. Il sera sauvegardé sous le nom ``monfichier.txt`` dans le répertoire courant.
+La façon traditionnelle de faire est de taper, en mode normal, ``:e monfichier.txt`` pour ouvrir un tampon (buffer) vide. Ensuite, sauvegardez votre tampon grâce à ``:w``. Il sera sauvegardé sous le nom ``monfichier.txt`` dans le répertoire courant.
 
 Vous pouvez aussi utiliser Lusty Explorer (cf. :ref:`seclusty`) pour ce faire. Lancez le grâce à ``,lr`` ou ``,lf``, tapez le nom du fichier que vous souhaitez créer puis appuyez sur |ttctrl| puis en même temps |tte|. Vous pouvez ensuite le sauvegarder de la même manière que ci-dessus.
 
@@ -54,11 +54,11 @@ Fichiers
 =================================================== ==================================== ============
 Résultat attendu                                    Action                               Commentaire
 =================================================== ==================================== ============
-**Sauvegarder**                                     :vimcmd:`:w` & (w pour write)
-**Sauvegarder sous**                                :vimcmd:`:w nomdefichier.txt`        Sauvegarde sous nomdefichier.txt mais n'ouvre pas nomdefichier.txt
-**Sauvegarder sous / ouvre**                        :vimcmd:`:sav nomdefichier.txt`      Sauvegarde sous et ouvre nomdefichier.txt
-**Quitter sans sauvegarder (forcer à quitter)**     :vimcmd:`:q!`
-**Sauvegarder et quitter**                          :vimcmd:`:wq`                        wq pour write and quit
+**Sauvegarder**                                     ``:w``                               w pour write (écrire)
+**Sauvegarder sous**                                ``:w nomdefichier.txt``              Sauvegarde sous nomdefichier.txt mais n'ouvre pas nomdefichier.txt
+**Sauvegarder sous / ouvre**                        ``:sav nomdefichier.txt``            Sauvegarde sous et ouvre nomdefichier.txt
+**Quitter sans sauvegarder (forcer à quitter)**     ``:q!``
+**Sauvegarder et quitter**                          ``:wq``                              wq pour write (écrire) and quit (quitter)
 =================================================== ==================================== ============
 
 Déplacements
@@ -107,7 +107,7 @@ Résultat attendu                                                               
 **Copie la ligne courante**                                                     ``yy`` 
 **Colle après le curseur. Si c'est une ligne, colle la ligne en dessous.**      ``p`` 
 **Colle avant le curseur. Si c'est une ligne, colle la ligne au dessus.**       ``P`` 
-**Intervertit la case des caractères (majuscules / minuscules)**                ``~``       Marche en mode visuel
+**Intervertit la casse des caractères (majuscules / minuscules)**               ``~``       Marche en mode visuel
 **Déplace le texte vers la droite (indentation)**                               ``>``       Marche en mode visuel 
 **Déplace le texte vers la gauche**                                             ``<``       Marche en mode visuel 
 **En mode visuel, supprime la sélection**                                       ``d``       Mode visuel 
