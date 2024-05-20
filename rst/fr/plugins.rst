@@ -68,126 +68,84 @@ Je vous conseille en guise de test d'ouvrir plusieurs fichiers avec ``,lr`` ou `
 
 Ce plugin est indispensable et ajoute à lui seul énormément de valeur à |vim| : se passer de la souris pour ouvrir des fichiers. Prenez donc le temps nécessaire pour l'apprendre correctement, c'est un investissement qui vaut le coup.
 
-Recherche dans les fichiers sur le disque : *Ack*
-=================================================
+Recherche de fichiers, de chaînes de caractères et d'un peu tout : *fzf*
+========================================================================
 
-Lorsque l'on édite un fichier appartenant à un projet plus gros contenant lui même beaucoup de fichiers, il arrive souvent de vouloir rechercher une occurrence d'une chaîne de caractères dans tous les fichiers du projet. Pour ce faire, |vim| dispose d'un plugin permettant d'utiliser *Ack* pour faire cette recherche.
+Dans le monde informatique il existe un moyen très efficace pour rechercher des choses dont on connait « à peut prêt » le nom, on appelle ça le **Fuzzy Matching** (*recherche approximative* ou *recherche floue* en français, cf https://fr.wikipedia.org/wiki/Recherche_approximative). Cette technique va nous permettre de trouver des fichiers dont on connait une partie du nom, ou alors une partie du répertoire parent et une partie du nom par exemple. Elle va aussi nous permettre de faire la même chose pour le contenu des fichiers : pas besoin d'être très précis (majuscules, minuscules, accents, etc) le **Fuzzy Matching** nous retournera ce qui se rapproche le plus du terme que l'on recherche.
 
-*Ack* (http://betterthangrep.com/) est un programme écrit en *perl* qui remplace avantageusement le bon vieux *grep* pour effectuer des recherches dans des fichiers. Il a en revanche un désavantage par rapport à *grep* : il est rarement installé par défaut. Nous allons donc commencer par installer *Ack* avant de pouvoir aller plus loin. Cela va bien sûr dépendre de la plateforme sur laquelle vous utilisez |vim|, vous pourrez trouver différentes instructions en fonction de votre plateforme sur la page du plugin : http://github.com/mileszs/ack.vim#installation.
+`fzf <https://github.com/junegunn/fzf>`_ est la référence dans le domaine : il permet de faire du **Fuzzy Matching** un peu partout et notamment avec vim (ça tombe bien hein 🤓) !
 
-Pour Debian/Ubuntu : ``sudo apt-get install ack-grep``. Pour Mac Os X vous allez avoir besoin de Homebrew (http://mxcl.github.com/homebrew/) en utilisant ``brew install ack``. Pour les utilisateurs de MacPorts ça sera avec la commande ``sudo port install p5-app-ack``. Pour Windows installez Strawberry Perl (http://strawberryperl.com/) et dans le shell de commandes exécutez ``C:\>cpan App::Ack``. Vous devriez ensuite pouvoir utiliser la commande **ack** dans votre terminal de commandes en lieu et place de **grep**.
+Installation de *fzf*
+---------------------
 
-Rendez-vous sur la page du plugin ack (http://www.vim.org/scripts/script.php?script_id=2572) et téléchargez la dernière version (à l'heure où j'écris ces lignes c'est la version 0.3.1). Décompressez l'archive dans votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
-
-.. code-block:: html
-
-    bundle
-    |-- ack
-    |   |-- doc
-    |   |   `-- ack.txt
-    |   `-- plugin
-    |       `-- ack.vim
-    …
-
-Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant |vim| ou en tapant :vimcmd:`:source ~/.vimrc` en mode normal.
-
-Il va ensuite falloir ajouter quelques lignes à notre fichier |vimrc| pour faciliter d'utilisation du plugin :::
-
-        " Paramètres par défaut pour ack
-        let g:ackprg="ack -H --nocolor --nogroup --column"
-        " Place un marqueur et cherche
-        nmap <leader>j mA:Ack<space>
-        " Place un marqueur et cherche le mot sous le curseur
-        nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
-        nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
-
-Ack recherchera alors à partir du répertoire où se trouve votre fichier couramment ouvert. Vous pouvez faire quelques tests si vous le souhaitez (en supposant que votre touche |tleader| est la touche |tcomma| :
-
-* ``,j`` *toto* : recherchera *toto* à partir du répertoire du fichier courant,
-* ``,ja`` avec votre curseur sur un mot recherchera ce mot.
+Ajoutez ces deux lignes à vos plugins dans votre |vimrc| pour installer *fzf* et le plugin |vim| correspondant : ::
 
 
-Le plugin Ack vous affichera les résultats dans une fenêtre que l'on appelle *Quickfix Window*, cf image suivante.
+    " Installation de fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
-.. image:: ../../book-tex/graphics/vim-ack-quickfix.png
-
-Voici quelques commandes disponibles dans cette fenêtre :
-
-* **o** : ouvrir (idem que <Entrée>)
-* **go** : voir un aperçu (ouvre le fichier mais mantient le focus sur les résultats de ack.vim)
-* **t** : ouvrir dans un nouvel onglet
-* **T** : ouvrir dans un nouvel onglet en arrière plan
-* **h** : ouvrir en séparant la fenêtre horizontalement
-* **v** : ouvrir en séparant la fenêtre verticalement
-* **q** : fermer la fenêtre quickfix
-
-À noter que par défaut Ack ne recherche que dans les fichiers qu'il reconnait comme pertinents (il ne fera pas de recherche dans les fichiers temporaires, les fichiers des gestionnaires de version, etc.). Si vous souhaitez que Ack recherche dans tous les fichiers indépendamment de leur type, vous devez spécifier l'option ``-u`` comme ceci dans votre |vimrc| :::
+Puis ajoutez ces mappings plus bas dans votre fichier (n'importe où après le ``call plug#end()``) : ::
 
 
-    " Paramètres par défaut pour ack
-    let g:ackprg="ack -H -u --nocolor --nogroup --column"
+    " On recherche dans les fichiers du répertoire courant
+    nmap <silent> <Leader>ff :Files<CR>
+    " On recherche dans les buffers ouverts
+    nmap <silent> <Leader>fb :Buffers<CR>
+    " On recherche dans le contenu des fichiers
+    nmap <silent> <Leader>fr :Rg<CR>
+
+Comme d'habitude, pour prendre en compte ces modifications, tapez ``:so ~/.vimrc`` ou ``:so $MYVIMRC`` en mode normal puis ``:PlugInstall`` pour installer les deux plugins.
+
+Recherche de fichiers par nom
+-----------------------------
+
+Tapez ``,ff`` en mode normal (ou ``:Files``) et vous devriez voir une fenêtre similaire à la capture d'écran suivante s'ouvrir : fzf-files_
+
+.. _fzf-files:
+
+.. image:: ../../book-tex/graphics/vim-fzf-files.png
+
+En fonction d'où vous avez ouvert votre |vim|, les résultats seront bien sûr différents. Je l'ai pour ma part ouvert dans le répertoire ``.vim``. Vous pouvez noter que j'ai juste tapé `REAmd` et qu'il a automatiquement trouvé tous les fichiers nommées `README.md`. Il a même mis en surbrillance dans les noms de fichiers ce qui a permis de faire la correspondance, dans notre cas le `REA` au début du nom du fichier puis le `md` dans l'extension du fichier.
+
+Vous pouvez naviguer dans les résultats de recherche avec les raccourcis |vim| par défaut, à savoir ``Ctrl-k`` pour bouger la sélection d'une ligne au dessus et ``Ctrl-j`` pour bouger la sélection d'une ligne en dessous. Il suffira ensuite d'appuyer sur |ttenter| pour ouvrir le fichier sélectionné. Vous noterez l'aperçu du fichier à droite de la fenêtre qui s'est ouverte. Vous pouvez naviguer dans cet aperçu grâce à ``Shift-haut`` et ``Shift-bas`` (eh oui, pas de raccourci |vim| pour cette fonction !)
+
+Recherche de chaînes de caractères dans les fichiers
+----------------------------------------------------
+
+Pour rechercher dans les fichiers nous allons utiliser un outil nommé `rg` (pour `ripgrep`). Assurez-vous donc de l'avoir installé, les instructions sont disponibles sur le `github de rg <https://github.com/BurntSushi/ripgrep#installation>`_. Si vous ne connaissez pas `ripgrep`, il est grand temps de remplacer votre traditionnel `grep` par `rg` : il est beaucoup plus performant et globalement bien mieux fichu.
+
+Une fois `rg` installé, tapez ``,fr`` en mode normal (ou ``:Rg``) et vous devriez voir une fenêtre similaire à :ref:`la capture d'écran suivante<fzf-rg>` s'ouvrir :
+
+.. _fzf-rg:
+
+.. image:: ../../book-tex/graphics/vim-fzf-rg.png
+
+Dans mon exemple, *fzf* a trouvé le texte *config* au sein du fichier ``README-VIM.md`` dans le titre ``### Configuration``.
+
+Recherche dans les noms de buffers
+----------------------------------
+
+Tapez ``,fb`` en mode normal (ou ``:Buffers``) et vous devriez voir une fenêtre similaire à :ref:`la capture d'écran suivante<fzf-buffers>` s'ouvrir :
 
 
-Recherche de fichiers sur le disque : Ctrlp
-===========================================
+.. _fzf-buffers:
 
-Non ce n'est pas pareil que Ack, relisez bien le titre. Ici nous n'allons pas chercher dans les fichiers, mais nous allons plutôt chercher des fichiers à ouvrir avec |vim|. Ça peut s'avérer très utile lorsque vous avez à travailler sur des projets où les fichiers sont éparpillés dans un grand nombre de répertoires.
-
-Comme d'habitude nous allons commencer par installer le plugin. Une fois n'est pas coutume, le plugin dispose d'une page dédiée plutôt bien réalisée que vous trouverez ici : http://kien.github.com/ctrlp.vim/. Scrollez tout en bas pour télécharger la dernière version en "Direct Downloads". Pour les paresseux, voici un lien direct : http://github.com/kien/ctrlp.vim/zipball/master. Décompressez l'archive dans votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
-
-.. code-block:: html
-
-    bundle
-    |
-    …
-    |-- ctrlp
-    |   |-- autoload
-    |   |   |-- ctrlp
-    |   |   |   |-- bookmarkdir.vim
-    |   |   |   |-- buffertag.vim
-    |   |   |   |-- changes.vim
-    |   |   |   |-- dir.vim
-    |   |   |   |-- line.vim
-    |   |   |   |-- mixed.vim
-    |   |   |   |-- mrufiles.vim
-    |   |   |   |-- quickfix.vim
-    |   |   |   |-- rtscript.vim
-    |   |   |   |-- tag.vim
-    |   |   |   |-- undo.vim
-    |   |   |   `-- utils.vim
-    |   |   `-- ctrlp.vim
-    |   |-- doc
-    |   |   `-- ctrlp.txt
-    |   |-- plugin
-    |   |   `-- ctrlp.vim
-    |   `-- readme.md
-    …
-
-Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant |vim| ou en tapant :vimcmd:`:source ~/.vimrc` en mode normal.
-
-Nous n'avons plus qu'à ajouter un raccourci dans notre |vimrc| pour invoquer CtrlP comme le montre le listing ci-dessous. Dans mon cas j'ai choisi ``,c``, mais vous pouvez choisir ce que vous voulez.::
-
-    let g:ctrlp_map = '<leader>c'
-
-Voici CtrlP en action. 
-
-.. image:: ../../book-tex/graphics/vim-ctrlp.png
-
-Il vous suffit de l'invoquer avec ``,c`` et de taper le début du fichier que vous recherchez. Quand le fichier voulu sera sélectionné en premier, il ne vous restera plus qu'à appuyer sur |ttenter| pour l'ouvrir.
+.. image:: ../../book-tex/graphics/vim-fzf-buffers.png
 
 
-À noter que CtrlP peut aussi être utilisé pour naviguer entre les fichiers ouverts (comme Lusty). Mais à l'usage, je le trouve moins pratique que Lusty. Vous pouvez aussi vous en servir pour naviguer automatiquement dans votre code en "suivant" vos fonctions grâce aux tags (comme on peut le faire dans Eclipse). C'est un trop vaste sujet pour être traité dans ce guide, mais si ça vous intéresse vous pouvez déjà consulter cet article de blog sur le sujet : http://andrew-stewart.ca/2012/10/31/vim-ctags (en anglais).
+Vous noterez que j'avais pour ma part 3 fichiers (buffers) ouvertse et vous aurez remarqué que cette fonctionnalité est similaire à celle déjà présente dans `LustyExplorer`. À vous de choisir celle que vous préférez !
+
 
 Les plugins avancés
 ===================
 
-J'aurais pu faire un livre entier qui recense les plugins |vim|, mais je pense que l'intérêt aurait été assez limité. Je ne vais donc pas vous décrire plus en détails d'autres plugins. En revanche je vous donne ci-dessous une liste de plugins qui pourraient vous intéresser. Cette liste est issue d'un sondage que j'avais effectué sur Twitter demandant à mes followers quels étaient les plugins |vim| indispensables selon eux. La voici :
+J'aurais pu faire un livre entier qui recense les plugins |vim|, mais je pense que l'intérêt aurait été assez limité. Je ne vais donc pas vous décrire plus en détails d'autres plugins, ceux que je vous ai présentés jusqu'ici devraient vous suffir pour utiliser |vim| de manière efficace ! En revanche je vous donne ci-dessous une liste de plugins qui pourraient vous intéresser. Cette liste est issue d'un sondage que j'avais effectué sur Twitter demandant à mes followers quels étaient les plugins |vim| indispensables selon eux. La voici :
 
 
 
-* **neocomplcache**. C'est un plugin de complétion automatique. Il peut compléter les noms de fichiers, les attributs du langage que vous utilisez, les snippets et encore bien d'autres choses. Le repo Github : https://github.com/Shougo/neocomplcache.
+* **coc.vim**. C'est un plugin qui va transformer votre |vim| en IDE complet à la VSCode : auto-complétion des fonctions, des classes, « allez à la définition », etc. Même si la tendance est à utiliser des `plugins plus simples qui s'intègrent avec des LSP (Language Server Protocol) directement <https://github.com/prabirshrestha/vim-lsp>`_, *coc.vim* a l'avantage d'être complet, testé et de s'appuyer sur les configurations similaires à VSCode. Il a aussi le désavantage d'utiliser javascript. Le repo Github : https://github.com/neoclide/coc.nvim.
 * **surround**. Ce plugin permet de gérer (changer, ajouter, supprimer) tout ce qui « entoure » : les parenthèses, les crochets, les guillemets … Par exemple vous pourrez en une combinaison de touches changer "Hello world!" en 'Hello world!' ou <q>Hello world!</q>. Le repo Github : https://github.com/tpope/vim-surround.
 * **fugitive**. Si vous travaillez sur du code source vous utilisez forcément un gestionnaire de version de code source. Si ce n'est pas le cas vous pouvez aller vous cacher. Sinon si vous utilisez Git, Le plugin fugitive est pour vous. Il permet de gérer git directement dans |vim|. Le repo Github :  https://github.com/tpope/vim-fugitive
-* **syntastic**. Syntastic vérifie pour vous la syntaxe de votre code source. Il va, comme peut le faire Eclipse par exemple, vous afficher vos erreurs de syntaxe directement dans |vim|. Peut vous faire gagner en temps certain si vous éditez souvent du code. Le repo Github est par ici : https://github.com/scrooloose/syntastic
-* **ctags + ctrlp**. Ctags est un petit programme externe qui va parcourir votre code source et qui va ensuite vous permettre de « suivre » vos fonctions dans votre code source. Très pratique pour naviguer dans votre code source. Utilisé conjointement avec **ctrlp** décrit plus haut, il s'avère vite indispensable. Tout est expliqué ici : http://andrew-stewart.ca/2012/10/31/vim-ctags.
+* **ALE**. ALE vérifie pour vous la syntaxe de votre code source. Il va, comme peut le faire VSCode par exemple, vous afficher vos erreurs de syntaxe directement dans |vim|. Peut vous faire gagner un temps certain si vous éditez souvent du code. Si vous voulez l'utiliser avec *coc.vim*, assurez vous de mettre ``"diagnostic.displayByAle": true`` dans votre ``:CocConfig`` `comme mentionné dans le dépôt Github <https://github.com/dense-analysis/ale?tab=readme-ov-file#cocnvim>`_ de ALE. Le repo Github est par ici : https://github.com/dense-analysis/ale
 
