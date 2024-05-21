@@ -32,8 +32,14 @@ language = "fr"
 html_theme = "alabaster"
 html_static_path = ["_static"]
 
+# These paths are either relative to html_static_path
+# or fully qualified paths (eg. https://...)
+html_css_files = [
+    "css/custom.css",
+]
+
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = "one-dark"
+pygments_style = "solarized-light"
 
 highlight_language = "vim"
 
@@ -150,5 +156,5 @@ latex_elements = {
     "fontpkg": "",
     # Add custom preamble after 'hyperref' and 'sphinx'.
     "preamble": r"\usepackage{vimforhumans}",
-    "sphinxsetup": "verbatimwithframe=false, VerbatimColor={RGB}{40,44,52}",
+    "sphinxsetup": "verbatimwithframe=false, VerbatimColor={RGB}{253,246,227}",
 }
