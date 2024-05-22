@@ -1,6 +1,7 @@
 # Vim for humans
 
 Website code available here: https://github.com/vjousse/vim-for-humans-website
+`vimrc` config examples available here: https://github.com/vjousse/vim-for-humans
 
 ## Install
 
