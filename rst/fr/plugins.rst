@@ -36,6 +36,7 @@ On voit qu'il est fait mention d'une touche nommée |tleader| qu'il faut ensuite
 
 Il faut donc choisir une touche |tleader|. Par défaut, |vim| utilise ``\`` comme touche |tleader|. Sur nos claviers francophones c'est une très mauvaise idée d'utiliser cette touche car elle n'est pas pratique du tout. La plupart des utilisateurs de |vim| la remplace par la touche |tcomma|. Elle est directement accessible sous l'index de la main droite ce qui en fait une parfaite candidate. Pour spécifier cela à |vim| il va falloir rajouter une ligne dans votre fichier |vimrc|, à savoir : ::
 
+    " Utilisation de , comme touche <Leader>
     let mapleader = ","
 
 Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou en tapant ``:so ~/.vimrc`` ou ``:so $MYVIMRC`` en mode normal), vous devriez être en mesure de taper ``,lr`` et d'avoir le même style de résultat que sur la figure ci-dessous (notez l'affichage du contenu de votre dossier actuel en bas à gauche).
@@ -80,14 +81,13 @@ Installation de *fzf*
 
 Ajoutez ces deux lignes à vos plugins dans votre |vimrc| pour installer *fzf* et le plugin |vim| correspondant : ::
 
-
     " Installation de fzf
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
 
 Puis ajoutez ces mappings plus bas dans votre fichier (n'importe où après le ``call plug#end()``) : ::
 
-
+    " -- Mappings FZF
     " On recherche dans les fichiers du répertoire courant
     nmap <silent> <Leader>ff :Files<CR>
     " On recherche dans les buffers ouverts
@@ -136,6 +136,7 @@ Tapez ``,fb`` en mode normal (ou ``:Buffers``) et vous devriez voir une fenêtre
 
 Vous noterez que j'avais pour ma part 3 fichiers (buffers) ouvertse et vous aurez remarqué que cette fonctionnalité est similaire à celle déjà présente dans `LustyExplorer`. À vous de choisir celle que vous préférez !
 
+Vous trouverez une version complète du fichier de configuration en ligne ici http://vimebook.com/link/v2/fr/full.
 
 Les plugins avancés
 ===================

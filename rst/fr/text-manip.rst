@@ -129,7 +129,7 @@ Vous trouverez des sites entiers vous détaillant les différentes commandes pos
 
 Voici l'ultime configuration qu'il vous faudra mettre dans votre |vimrc| pour atteindre le Saint Graal : désactiver les touches directionnelles. ::
 
-    " Désactiver les touches directionnelles
+    " Désactivation des touches directionnelles
     map <up> <nop>
     map <down> <nop>
     map <left> <nop>
@@ -169,6 +169,7 @@ Pour comprendre pourquoi |ttesc| est utilisée par défaut, il faut faire un bon
 
 L'étape ultime (après avoir réussi à se passer des touches directionnelles) est donc de rapprocher |ttesc| de vos petits doigts. Il y a plusieurs solutions pour cela, mais celle que je vous recommande si vous avez un clavier avec une disposition française est la suivante (dans votre |vimrc|) :::
 
+    " On attribue ;; à la touche <Esc>
     " Les ; sont rarement utilisés l'un à la suite de l'autre
     :imap ;; <Esc>
     :map ;; <Esc>
@@ -312,6 +313,8 @@ En mode normal vous pourrez utiliser |ttV| pour sélectionner lignes par lignes.
 
 À vous de jouer
 ===============
+
+Vous trouverez une version complète du fichier de configuration à ce stade en ligne ici http://vimebook.com/link/v2/fr/text-manip.
 
 Vous devriez maintenant être capable de n'utiliser que le clavier pour les opérations de manipulation de texte et d'édition. Je n'ai fait que survoler la puissance de |vim| ici, mais ça devrait être suffisant pour survivre. Je vous ai donné ici le strict nécessaire, mais ce strict nécessaire vous permet déjà de profiter de |vim| et du plaisir de ne plus utiliser la souris.
 

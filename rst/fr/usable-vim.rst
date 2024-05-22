@@ -123,7 +123,7 @@ Pour ceux qui ont fait un copier/coller, il ne vous reste plus qu'à sauvegarder
 
 Pour le sauvegarder avec |vim|, il vous suffira, après avoir appuyé sur |ttesc| pour repasser en mode *Normal*, de taper ``:w ~/.vimrc``. Pour sauvegarder vos prochaines modifications tapez en mode *Normal* ``:w``. Pour sauvegarder et quitter ``:wq ~/.vimrc``. Pour quitter ``:q`` et pour quitter sans sauvegarder (forcer à quitter) ``:q!``.
 
-J'ai mis en ligne ce fichier de configuration directement sur *Github*. Vous pouvez le télécharger ou le copier directement à partir d'ici : http://vimebook.com/link/fr/firstconfig.
+J'ai mis en ligne ce fichier de configuration directement sur *Github*. Vous pouvez le télécharger ou le copier directement à partir d'ici : http://vimebook.com/link/v2/fr/firstconfig.
 
 Voici à quoi devrait ressembler |vim| `après votre première configuration`_.
 
@@ -228,7 +228,7 @@ Sinon sous Linux j'utilise la police `DejaVu Sans Mono` que je trouve plutôt sy
 
 Vous pouvez là aussi bien sûr changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez en mode normal ``:set guifont:*``.
 
-Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne http://vimebook.com/link/fr/syntaxhlconfig. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de |vim|.
+Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne http://vimebook.com/link/v2/fr/syntaxhlconfig. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de |vim|.
 
 
 L'explorateur de fichiers : notre premier plugin
@@ -356,7 +356,7 @@ Nous allons tout d'abord installer *vim-fern* à l'aide de *vim-plug* comme pré
 Rechargez votre `vimrc` avec la commande suivante : ``:source $MYVIMRC`` (ou sauvegardez, quittez et réouvrez |vim| comme précédemment) puis installez le nouveau plugin grâce à ``:PlugInstall`` (appuyez sur |ttq| pour quitter la fenêtre d'installation).
 
 
-Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant :vimcmd:`:Fern . -drawer -stay` en mode normal. Si vous préférez activer *vim-fern* à chaque fois que vous ouvrez votre |vim|, ajoutez ces lignes à la fin de votre |vimrc|: ::
+Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en tapant ``:Fern . -drawer -stay`` en mode normal. Si vous préférez activer *vim-fern* à chaque fois que vous ouvrez votre |vim|, ajoutez ces lignes à la fin de votre |vimrc|: ::
 
     " Activation de vim-fern au lancement de vim
     augroup FernGroup
@@ -367,9 +367,6 @@ Il va ensuite falloir activer le plugin. Vous pouvez le faire manuellement en ta
 C'est, j'en conviens, une commande un peu barbare qui pourrait se traduire en bon vieux français par : à chaque ouverture de vim (``VimEnter``), peu importe le type de fichier (``*``), lancer *Fern* dans le répertoire courant ``.`` en mode ``drawer`` sur le côté et en gardant ``stay`` le focus sur la fenêtre actuelle (``Fern . -drawer -stay``).
 
 Pour activer l'ouverture des répertoires et des fichiers au clic de la souris, remplacez le code ci-dessus par : ::
-
-    " -- Activation de la souris dans vim
-    set mouse=a
 
     augroup FernGroup
       autocmd! *
@@ -391,6 +388,8 @@ Rien de particulier ensuite, *vim-fern* vous affiche l'arborescence du répertoi
 Vous pouvez aussi effectuer diverses commandes (créer, copier des fichiers) mais nous ne rentrerons pas en détail dans ces commandes ici. Vous pouvez toujours appuyer sur |ttquestion| dans la fenêtre de `vim-fern` pour avoir un aperçu des commandes ou vous rendre sur le `site officiel de vim-fern <https://github.com/lambdalisue/vim-fern>`_.
 
 Pour passer de la fenêtre de *vim-fern* à la fenêtre d'édition de votre fichier au clavier, appuyez sur ``Ctrl + w`` puis ``w``. C'est à dire la touche ``Control (Ctrl)`` et tout en la laissant appuyée la touche ``w``. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur ``w``. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres |vim| (il n'est pas spécifique à *vim-fern*).
+
+Le fichier complet de votre |vimrc| à ce stade est disponible à cette adresse : http://vimebook.com/link/v2/fr/vim-plug
 
 
 Nous voilà fin prêts
