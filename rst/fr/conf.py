@@ -143,6 +143,23 @@ rst_epilog = """
 latex_engine = "lualatex"
 latex_additional_files = ["_templates/vimforhumans.sty"]
 
+
+# See https://tex.stackexchange.com/questions/616277/how-to-set-an-inline-tcbox-height-to-a-fixed-height-1em
+latex_custom = r"""
+\usepackage{vimforhumans}
+\usepackage[most]{tcolorbox}
+\makeatletter
+\newcommand\mystrut{\rule[0pt]{0pt}{0.6em}}
+\tcbset{on line,
+        boxsep=0pt, left=2pt,right=2pt,top=1pt,bottom=1pt,
+        colframe=white,colback=gray!20, fontupper={\ttfamily\mystrut}
+        }
+\let\OldSphinxcode\sphinxcode
+\renewcommand{\sphinxcode}[1]{\OldSphinxcode{\tcbox{#1}}}
+\makeatother
+"""
+
+
 latex_elements = {
     # Always use A4 paper.
     "papersize": "a4paper",
@@ -155,6 +172,6 @@ latex_elements = {
     # Clear default font config.
     "fontpkg": "",
     # Add custom preamble after 'hyperref' and 'sphinx'.
-    "preamble": r"\usepackage{vimforhumans}",
-    "sphinxsetup": "verbatimwithframe=false, VerbatimColor={RGB}{253,246,227}",
+    "preamble": latex_custom,
+    "sphinxsetup": "verbatimwithframe=true, VerbatimColor={RGB}{253,246,227}",
 }
