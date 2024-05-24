@@ -1,0 +1,15 @@
+% https://github.com/club-1/docs/blob/9c175ccd2dc4810d1dd4f9f0968128029bd5d3a2/_templates/club1.sty#L8-L18
+% Paquet LaTeX permettant de customiser le rendu du PDF.
+\ProvidesPackage{vimforhumans}[2024/05/08 LaTeX customizations for Vim for humans]
+
+% Définition de TwemojiMozilla comme police de substitution
+% pour pouvoir l'utiliser lorsque des caractères sont introuvables,
+% notamment lorsqu'il s'agit d'emojis.
+\directlua{
+	luaotfload.add_fallback("emoji", {"[TwemojiMozilla.ttf]:mode=harf"})
+}
+% Définition des polices du document,
+% en spécifiant la police de substitution.
+\setmainfont{LatinModernRoman}[RawFeature={fallback=emoji},SmallCapsFont={* Caps}]
+\setsansfont{LatinModernSans}[RawFeature={fallback=emoji}]
+\setmonofont{DejaVuSansMono}[RawFeature={fallback=emoji},Scale=0.8]

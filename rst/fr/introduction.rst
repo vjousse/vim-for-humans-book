@@ -2,23 +2,23 @@
 Introduction
 ************
 
-Lorsque le besoin d'écrire ou de coder se fait se sentir, le choix d'un éditeur de texte est primordial. Il en existe énormément sur le "marché", mais peu d'entre eux peuvent se targuer d'environ 40 ans d'existence. C'est le cas d'*Emacs* (http://www.gnu.org/software/emacs/), de *Vi* et de son "successeur amélioré" |vim| (http://www.vim.org/). Ils ont été créés dans les années 70 et sont toujours très utilisés actuellement. Comme vous avez sans doute pu le voir, ce n'est pas grâce à la beauté de leur site internet ou à l'efficacité de leur communication. Voici quelques **raisons de leur succès** :
+Lorsque le besoin d'écrire ou de coder se fait se sentir, le choix d'un éditeur de texte est primordial. Il en existe énormément sur le "marché", mais peu d'entre eux peuvent se targuer d'environ 40 ans d'existence. C'est le cas d\'*Emacs*\  (http://www.gnu.org/software/emacs/), de *Vi* et de son "successeur amélioré" |vim| (http://www.vim.org/). Ils ont été créés dans les années 70 et sont toujours très utilisés actuellement. Comme vous avez sans doute pu le voir, ce n'est pas grâce à la beauté de leur site internet ou à l'efficacité de leur communication (même si je dois avouer que le site d\'*Emacs*\  a fait des efforts depuis la première version de ce livre). Voici quelques **raisons de leur succès** :
 
-**Pour la vie** 
+**Ils s'apprennent pour la vie** 
     Ils s'apprennent une fois et s'utilisent pour toujours. Dans un monde où les technologies/langages changent tout le temps, c'est une aubaine de pouvoir investir sur du long terme.
 
-**Partout**
+**Ils sont utilisables partout**
     Ils sont disponibles sur toutes les plateformes possibles et imaginables (et l'ont toujours été).
 
-**Augmentent votre vitesse d'édition de texte** 
+**Ils augmentent votre vitesse d'édition de texte** 
     Grâce à leurs particularités (notamment l'utilisation du clavier), ils permettent d'éditer du texte très rapidement.
 
-**Couteaux suisses** 
+**Ce sont de vrais couteaux suisses** 
     Ils permettent d'éditer tout et n'importe quoi. Quand vous changerez de langage de programmation, vous n'aurez pas à changer d'éditeur. À noter que ce livre a bien sûr été écrit avec |vim|.
 
 Et pourtant, ces éditeurs de texte restent difficiles à apprendre. Non pas qu'ils soient plus compliqués qu'autre chose, non pas que vous ne soyez pas à la hauteur, mais plutôt à cause d'un manque de pédagogie des différentes documentations.
 
-Ce livre a pour but de pallier ce manque en vous guidant tout au long de votre découverte de |vim|. Je laisse *Emacs* à ceux qui savent (pour un bref comparatif c'est ici : http://fr.wikipedia.org/wiki/Guerre_d'\%C3\%A9diteurs. Les goûts et les couleurs …). Il ne prétend pas être un guide exhaustif, vous pouvez essayer *A Byte of vim* pour celà : http://www.swaroopch.org/notes/Vim. En revanche, il prétend diminuer la marche à franchir pour s'habituer à |vim|. À mon sens, le plus compliqué avec |vim|, c'est de ne pas se décourager de suite et de trouver une méthode qui vous permette de l'apprendre au fur et à mesure. Nous avons tous un travail à effectuer au quotidien, et perdre toute sa productivité à cause d'un changement d'éditeur de texte n'est pas envisageable.
+Ce livre a pour but de pallier ce manque en vous guidant tout au long de votre découverte de |vim|. Je laisse *Emacs* à ceux qui savent (pour un bref comparatif c'est ici : http://fr.wikipedia.org/wiki/Guerre_d'\%C3\%A9diteurs. Les goûts et les couleurs …). Il ne prétend pas être un guide exhaustif, vous pouvez essayer *A Byte of vim* (en anglais) pour celà : https://vim.swaroopch.com/. En revanche, il prétend diminuer la marche à franchir pour s'habituer à |vim|. À mon sens, le plus compliqué avec |vim|, c'est de ne pas se décourager de suite et de trouver une méthode qui vous permette de l'apprendre au fur et à mesure. Nous avons tous un travail à effectuer au quotidien, et perdre toute sa productivité à cause d'un changement d'éditeur de texte n'est pas envisageable.
 
 Vous trouverez beaucoup de personnes pour vous dire « mais tu n'as qu'à t'y mettre pour de bon », « tu verras après ça va aller mieux », certes, mais vous devez toujours être productif au jour le jour, ça ne change rien au problème. L'approche de ce livre est la suivante :
 
@@ -29,7 +29,17 @@ Vous trouverez beaucoup de personnes pour vous dire « mais tu n'as qu'à t'y m
 
 À partir du point numéro 2, vous pourrez déjà utiliser |vim| au quotidien sans perdre énormément de productivité. Et c'est là que la différence se fait : si vous pouvez intégrer |vim| dans votre quotidien c'est gagné. Vous aurez ensuite toute votre vie pour connaître tous les raccourcis clavier.
 
-Vous aussi vous en avez marre d'attendre la release de TextMate 2 (à noter que depuis l'écriture de ce livre, le code de TextMate 2 a été publié sous licence GPL : https://github.com/textmate/textmate) ? D'essayer le n-ième éditeur à la mode et de devoir tout réapprendre et ce jusqu'à la prochaine mode ? De devoir changer d'éditeur quand vous passez de votre Mac, à votre Windows, à votre Linux ? Alors vous aussi, rejoignez la communauté des gens heureux de leur éditeur de texte. **Le changement, c'est maintenant** !
+Vous aussi vous en avez marre d'attendre la release de TextMate 2 (à noter que depuis l'écriture de ce livre, le code de TextMate 2 a été publié sous licence GPL : https://github.com/textmate/textmate) ? D'essayer le n-ième éditeur à la mode et de devoir tout réapprendre et ce jusqu'à la prochaine mode ? De devoir changer d'éditeur quand vous passez de votre Mac, à votre Windows, à votre Linux ? De ne pas pouvoir utiliser VSCode sur votre serveur ou de le trouver trop lourd ? Alors vous aussi, rejoignez la communauté des gens heureux de leur éditeur de texte. **Le changement, c'est maintenant** !
+
+
+Et Neovim ?
+===========
+
+Petit aparté au sujet de *Neovim* https://neovim.io/ (si vous ne savez pas ce que c'est, vous pouvez sauter cette partie). J'ai pris le parti de me concentrer uniquement sur |vim| dans ce livre afin de ne pas frustrer les personnes ne pouvant utiliser que |vim|.
+
+Si vous êtes un utilisateur de *Neovim*, tout ce qui est dans ce livre reste valable, *Neovim* étant compatible avec |vim|. Qui plus est, les modes, les manipulations de texte, et tout ce qui ne concerne pas les plugins est commun à |vim| et à *Neovim* : les apprendre pour |vim| ou pour *Neovim* ne fait aucune différence. Vous pouvez d'ailleurs suivre ce livre en utilisant *Neovim* à la place de |vim| sans aucun souci.
+
+La particularité de *Neovim* réside dans le fait qu'il est plus activement maintenu que |vim| et entre autres qu'il utilise le langage de programmation **Lua** pour la gestion des plugins. Cela a pour conséquence que les plugins écrits pour *Neovim* ne sont pas compatibles avec |vim| (l'inverse n'étant pas vrai, les plugins écrits pour |vim| sont compatibles avec *Neovim*). Une partie de la communauté de |vim| est passée à *Neovim* et les plugins pour *Neovim* fleurissent bien plus vite que ceux pour |vim|. Pour le but de ce livre, cela ne fera pas de différence et vous pouvez le suivre sans aucun problème avec |vim| ou *Neovim*. Je ferai sûrement d'autres contenus spécifiques à *Neovim* dans le futur.
 
 Pour qui ?
 ==========
@@ -74,6 +84,7 @@ Ce que vous n'apprendrez pas (entre autres choses)
 - Vous n'apprendrez pas comment utiliser *Vi* (notez l'absence du "m"). Je vais vous apprendre à être productif pour coder/produire du texte avec |vim|, pas à faire le beau devant les copains avec *Vi* (|vim| est suffisant pour cela de toute façon). Pour ceux qui ne suivent pas, *Vi* est "l'ancêtre de |vim| (qui veut dire *Vi* - *IMproved*, *Vi* amélioré)" et est installé par défaut sur tous les Unix (même sur votre Mac OS X).
 - Vous n'apprendrez pas à connaitre les entrailles de |vim| par cœur : ce n'est pas une référence, mais un guide utile et pragmatique.
 - Vous n'apprendrez pas comment modifier votre |vim| parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème *Solarized* (http://ethanschoonover.com/solarized), il est parfait pour travailler.
+
 
 Le plus dur, c'est de commencer
 ===============================

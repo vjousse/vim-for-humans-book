@@ -2,11 +2,11 @@
 L'outil de manipulation de texte rêvé
 *************************************
 
-Alors oui, pour ceux qui se demandent, je fais des rêves bizarres, mais bon chacun a ses petites tares cachées. Et rêver d'un outil qui améliore ma vie quotidienne en tant que codeur (ou écrivain, ou formateur, ou …) n'est pas si étrange que ça.
+Alors oui, pour ceux qui se demandent, je fais des rêves bizarres, mais bon, chacun a ses petites tares cachées. Et rêver d'un outil qui améliore ma vie quotidienne en tant que codeur (ou écrivain, ou formateur, ou …) n'est pas si étrange que ça.
 
 Ce qui fait et fera encore le succès de |vim| est sa capacité à **faciliter les manipulations de texte**. Certes il va vous proposer des fonctionnalités propres à chaque tâche que vous effectuerez (souvent par l'intermédiaire de plugins) comme la validation syntaxique de code, la correction orthographique, … Mais à la fin, c'est toujours à écrire/corriger/manipuler/se déplacer dans du texte que vous passerez la majeure partie de votre temps. 
 
-C'est là que l'approche de |vim| est différente d'IDE comme Eclipse / Netbeans / PhpStorm et consorts. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, |vim| adopte l'approche opposée : vous serez **très efficace** à manipuler/écrire du texte quel qu'il soit et vous pourrez enrichir |vim| avec des fonctionnalités propres à votre langage de programmation via des plugins.
+C'est là que l'approche de |vim| est différente d'IDE comme VSCode / Eclipse / Netbeans / PhpStorm et consorts. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, |vim| adopte l'approche opposée : vous serez **très efficace** à manipuler/écrire du texte quel qu'il soit et vous pourrez enrichir |vim| avec des fonctionnalités propres à votre langage de programmation via des plugins.
 
 Nous allons donc voir dans ce chapitre comment utiliser |vim| à bon escient (vous allez commencer à oublier votre souris) et quelle est la logique derrière tous ces enchaînements de commandes qui paraissent barbares au non-initié. Vous devriez pouvoir, à la fin de ce chapitre, **vous passer de votre souris** pour éditer/manipuler le contenu d'un fichier. En tout cas, vous devriez vous forcer à le faire en apprenant |vim|, ce n'est pas si dur que ça, et c'est ce qui fait la différence entre |vim| et les autres : le tout clavier.
 
@@ -21,7 +21,7 @@ Nous avons déjà vu dans la section « :ref:`modeinsertion` » comment passer 
 Préambule
 ---------
 
-Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur |ttshift|) pour sélectionner du texte et vous allez dans le ``menu Édition`` puis ``Copier``. Et ensuite ``menu Édition`` puis ``Coller``. Bah tiens, essayez pour voir.
+Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur |ttshift|) pour sélectionner du texte et vous allez dans le ``menu Édition`` de votre terminal puis ``Copier``. Et ensuite ``menu Édition`` puis ``Coller``. Bah tiens, essayez pour voir.
 
 Si vous avez suivi la section « :ref:`modes` » traitant de la position idéale pour vos mains, vous savez que vous avez fait une ou plusieurs choses que vous devriez vous interdire :
 
@@ -30,7 +30,7 @@ Si vous avez suivi la section « :ref:`modes` » traitant de la position idéal
 - Vous avez déplacé grandement votre main droite de sa position de repos, pour aller atteindre les flèches directionnelles qui sont très mal placées sur un clavier
 
 
-Alors certes ce n'est pas grave en soi, mais c'est **inefficace** (se servir de la souris ou déplacer votre main droite vers les touches directionnelles est très lent) et **nuisible** pour vos petites mains. Ceci est votre dernière chance : si vous n'êtes pas prêt à vous forcer à ne pas le faire, **|vim| n'est pas fait pour vous**. |vim| est parfait pour ne pas utiliser la souris et pour ne pas bouger vos mains (ou presque). Ne pas se forcer à le faire, c'est ne pas tirer partie de tout le potentiel de |vim|, et à un moment ou un autre, **vous le quitterez pour un éditeur** qui aura été pensé pour être utilisé à la souris. Alors, on continue ?
+Alors certes ce n'est pas grave en soi, mais c'est **inefficace** (se servir de la souris ou déplacer votre main droite vers les touches directionnelles est très lent) et **nuisible** pour vos petites mains. Ceci est votre dernière chance : si vous n'êtes pas prêt à vous forcer à ne pas le faire, **Vim n'est pas fait pour vous**. |vim| est parfait pour ne pas utiliser la souris et pour ne pas bouger vos mains (ou presque). Ne pas se forcer à le faire, c'est ne pas tirer partie de tout le potentiel de |vim|, et à un moment ou un autre, **vous le quitterez pour un éditeur** qui aura été pensé pour être utilisé à la souris. Alors, on continue ?
 
 Se passer de la souris
 ----------------------
@@ -50,15 +50,15 @@ Pour réaliser un copier/coller avec |vim| tout se passe en mode « normal ».
 Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur |ttesc|. À noter que si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre |ttesc|, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans « :ref:`secesc` ».
 
 
-Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre |vim|. Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient que c'était impossible, alors ils l'ont fait. ». Votre |vim| devrait ressembler à celui de la figure ci-dessous. Notez l'absence d'affichage d'un quelconque mode en bas à gauche.
+Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre |vim| (inséré par vous même grâce à un passage par le mode insertion avec |tti| puis retour au mode normal avec |ttesc|). Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient que c'était impossible, alors ils l'ont fait. ». Votre |vim| devrait ressembler à celui de la figure ci-dessous. Notez l'absence d'affichage d'un quelconque mode en bas à gauche, c'est donc que l'on est en mode *normal*.
 
 .. _twain:
 
 .. image:: ../../book-tex/graphics/vim-twain.png
 
-La façon la plus naturelle (mais pas la plus efficace, nous verrons cela un peu plus loin) de copier/coller le mot « impossible » va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur |ttv| (pour passer en mode « visuel »), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur |tty| (|tty| étant utilisée comme raccourci du mot *yank* en anglais). Vous avez copié votre premier mot.
+La façon la plus naturelle (mais pas la plus efficace, nous verrons cela un peu plus loin) de copier/coller le mot « impossible » va être de se déplacer sur la première lettre du mot avec les touches directionnelles, d'appuyer sur |ttv| (pour passer en mode « visuel »), de se déplacer sur la dernière lettre (vous devriez avoir le mot sélectionné, en surbrillance) puis d'appuyer sur |tty| (|tty| étant utilisée comme raccourci du mot *yank* en anglais qui veut dire *extraire*). Vous avez copié votre premier mot.
 
-Déplacez vous ensuite à la fin de la phrase (toujours en mode « normal ») puis appuyez sur |ttp| (raccourci du mot *paste* cette fois ci). Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure qui suit.
+Déplacez vous ensuite à la fin de la phrase avec les flèches (toujours en mode « normal ») puis appuyez sur |ttp| (raccourci du mot *paste* cette fois-ci pour *coller*). Le mot devrait avoir été collé à la fin, et vous devriez avoir le même rendu que la figure qui suit.
 
 .. _vim-paste:
 
@@ -127,9 +127,9 @@ Arrêtons-nous un peu là dessus. Au risque d'insister lourdement, mais la clé 
 
 Vous trouverez des sites entiers vous détaillant les différentes commandes possibles, les différentes combinaisons, j'en passe et des meilleures. Vous les apprendrez puis les oublierez (ou pas, en fonction de si elles vous sont vraiment utiles). Si vous avez un seul effort à faire c'est celui de se passer des touches directionnelles et donc de vous forcer à utiliser le mode normal. Le reste tombera sous le sens.
 
-Voici l'ultime configuration qu'il vous faudra mettre dans votre |vimrc| pour atteindre le Saint Graal : désactiver les touches directionnelles.::
+Voici l'ultime configuration qu'il vous faudra mettre dans votre |vimrc| pour atteindre le Saint Graal : désactiver les touches directionnelles. ::
 
-    " Désactiver les touches directionnelles
+    " Désactivation des touches directionnelles
     map <up> <nop>
     map <down> <nop>
     map <left> <nop>
@@ -143,9 +143,9 @@ Nous y voilà. Croyez-moi, vous allez souffrir un peu au début. Pour moi, ça n
 
 Je ne vous donnerai pas d'autres détails sur toutes les touches possibles pour vous déplacer, d'autres ressources le font déjà bien mieux que moi. Je vais en revanche vous apprendre dans :ref:`combine-move` comment les utiliser à bon escient.
 
-On peut notamment citer le livre gratuit "A byte of |vim|" traduit en français et disponible à l'adresse suivante : http://swaroopch.com/notes/Vim_fr/.
+On peut notamment citer le livre gratuit "A byte of |vim|" disponible à l'adresse suivante : https://vim.swaroopch.com/ (malheureusement sa traduction en français a disparu depuis la première version de ce livre).
 
-Ou encore l'infographie de la figure ci-dessous (téléchargeable sur http://www.nathael.org/Data/vi-vim-cheat-sheet.svg) qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
+Ou encore l'infographie de la figure ci-dessous (téléchargeable sur https://github.com/vjousse/vim-for-humans-book/blob/master/book-tex/graphics/vi-vim-cheat-sheet.png) qui donne un aperçu des différents mouvements pour chacune des touches d'un clavier français.
 
 .. _cheat-sheet:
 
@@ -169,6 +169,7 @@ Pour comprendre pourquoi |ttesc| est utilisée par défaut, il faut faire un bon
 
 L'étape ultime (après avoir réussi à se passer des touches directionnelles) est donc de rapprocher |ttesc| de vos petits doigts. Il y a plusieurs solutions pour cela, mais celle que je vous recommande si vous avez un clavier avec une disposition française est la suivante (dans votre |vimrc|) :::
 
+    " On attribue ;; à la touche <Esc>
     " Les ; sont rarement utilisés l'un à la suite de l'autre
     :imap ;; <Esc>
     :map ;; <Esc>
@@ -287,7 +288,7 @@ La recherche
 
 En mode normal, vous pouvez lancez une recherche en utilisant |ttslash| suivi du texte que vous souhaitez rechercher puis de |ttenter|. Grâce à notre configuration de |vim| vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse. Vous pouvez vous déplacer à la prochaine occurrence de la recherche grâce à |ttn|. Pour vous déplacer à la précédente utilisez |ttN|.
 
-Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela :::
+Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela : ::
 
     " -- Recherche
     set ignorecase            " Ignore la casse lors d'une recherche
@@ -297,9 +298,9 @@ Pour rappel, voici les lignes de votre fichier de configuration qui permettent d
                                 " saisie
     set hlsearch              " Surligne les resultats de recherche
 
-Attention par défaut, la recherche utilise les expressions régulières POSIX. Si vous souhaitez rechercher des caractères habituellement utilisés dans les expressions régulières (comme [ ] ^{ } $ /) n'oubliez pas de les préfixer par \\.
+Attention par défaut, la recherche utilise les expressions régulières POSIX. Si vous souhaitez rechercher des caractères habituellement utilisés dans les expressions régulières (comme ``[ ] ^{ } $ /``) n'oubliez pas de les préfixer par ``\``.
 
-Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à |ttstar|. Utiliser |ttstar| fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez |ttsharp|.
+Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseur grâce à |ttstar|. Utiliser |ttstar| fera une recherche vers l'avant. Pour faire une recherche vers l'arrière, utilisez |ttsharp|. Pour annuler une recherche, en mode normal, tapez ``:noh``.
 
 Le mode visuel
 ==============
@@ -313,17 +314,22 @@ En mode normal vous pourrez utiliser |ttV| pour sélectionner lignes par lignes.
 À vous de jouer
 ===============
 
+Vous trouverez une version complète du fichier de configuration à ce stade en ligne ici http://vimebook.com/link/v2/fr/text-manip.
+
 Vous devriez maintenant être capable de n'utiliser que le clavier pour les opérations de manipulation de texte et d'édition. Je n'ai fait que survoler la puissance de |vim| ici, mais ça devrait être suffisant pour survivre. Je vous ai donné ici le strict nécessaire, mais ce strict nécessaire vous permet déjà de profiter de |vim| et du plaisir de ne plus utiliser la souris.
 
-À vous maintenant de lire les nombreuses ressources disponibles sur internet vous décrivant tous les mouvements possibles et imaginables. Je ne manquerai d'ailleurs pas de compléter ce guide avec des articles sur le site internet qui lui est dédié http://vimebook.com.
+À vous maintenant de lire les nombreuses ressources disponibles sur internet vous décrivant tous les mouvements possibles et imaginables.
 
 Voici une liste de ressources qui pourraient vous être utiles, malheureusement les ressources en français sont assez rares :
 
-* A byte of |vim| en français http://www.swaroopch.com/notes/vim_fr/
-* Un petit pense bête sympathique de différents raccourcis clavier http://www.tuteurs.ens.fr/unix/editeurs/vim.html
-* Un wiki non officiel francophone (un peu fouillis soit dit en passant) : www.vim-fr.org/
-* Les vidéos Peepcode en anglais mais vraiment superbement réalisées : https://peepcode.com/products/smash-into-vim-i et https://peepcode.com/products/smash-into-vim-ii
-* Le blog de Derek Wyatt's en anglais http://www.derekwyatt.org/vim/vim-tutorial-videos/
+* Le site de ce livre https://www.vimebook.com
+* A byte of |vim| https://vim.swaroopch.com/
+* Un petit pense bête sympathique de différents raccourcis clavier https://tuteurs.ens.fr/unix/editeurs/vim.html
+* Un site avec plein de pense-bêtes pour les raccourcis https://vim.rtorr.com/
+* Les vidéos d'Andrew Stewart en anglais mais vraiment superbement réalisées : https://www.pluralsight.com/courses/smash-into-vim
+* Le blog de Derek Wyatt's en anglais http://derekwyatt.org/vim/tutorials/
+* Le livre « Learning to play Vim » en anglais https://themouseless.dev/vim/
+* Le site « vim-hero » avec un tutorial interactif très bien fait https://www.vim-hero.com/
 
 Histoire de réveiller l'enfant qui est en vous, je vous conseille vivement d'aller vous amuser avec http://vim-adventures.com/. C'est un jeu de rôle en ligne qui a pour but de vous apprendre à manipuler |vim| ! Voici un petit aperçu :
 

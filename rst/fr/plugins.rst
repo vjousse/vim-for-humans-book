@@ -13,48 +13,17 @@ Qu'on ne se méprenne pas, |vim| peut bien sûr s'utiliser sans plugins. Il peut
 Naviguer sur le disque et entre les fichiers : *Lusty Explorer*
 ===============================================================
 
-Nous avons déjà vu NerdTree dans :ref:`secnerdtree` qui permettait d'avoir un explorateur de projet dans une fenêtre latérale de |vim|. Le problème de ce plugin est qu'il n'est pas fait pour être utilisé au clavier. Certes vous pouvez utiliser le clavier, mais il ne sera pas aussi efficace que les plugins pensés uniquement pour une utilisation au clavier.
+Nous avons déjà vu `vim-fern` dans :ref:`secvimfern` qui permettait d'avoir un explorateur de projet dans une fenêtre latérale de |vim|. Le problème de ce plugin est qu'il n'est pas fait pour être utilisé au clavier. Certes vous pouvez utiliser le clavier, mais il ne sera pas aussi efficace que les plugins pensés uniquement pour une utilisation au clavier.
 
-Personnellement, le premier plugin que j'installe partout où j'ai à utiliser |vim|, c'est *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. Il va aussi permettre de naviguer rapidement entre vos différents fichiers déjà ouverts (vos buffers en jargon |vim|). Commençons par l'installer.
+Personnellement, le premier plugin que j'installe partout où j'ai à utiliser |vim|, c'est *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). Ce plugin va vous permettre de naviguer sur votre disque dur pour ouvrir facilement des fichiers en se passant de la souris. Il va aussi permettre de naviguer rapidement entre vos différents fichiers déjà ouverts (vos buffers en jargon |vim|). Commençons par l'installer via *vim-plug*. Comme d'habitude, ajoutez la ligne ci-dessous à la suite des plugins déjà listés dans votre |vimrc| :
 
-Rendez-vous sur l'url du script http://www.vim.org/scripts/script.php?script_id=1890 et téléchargez la dernière version (c'est actuellement la 4.3, http://www.vim.org/scripts/download_script.php?src_id=17529). Faites ensuite le nécessaire dans votre répertoire ``.vim/`` pour qu'il ressemble à la structure ci-dessous :
 
-.. code-block:: html
+.. code-block::
 
-    .vim
-    |-- autoload
-    |   `-- pathogen.vim
-    `-- bundle
-        |-- lusty-explorer
-        |   `-- plugin
-        |       `-- lusty-explorer.vim
+    " Installation de Lusty Explorer
+    Plug 'sjbach/lusty'
 
-Si vous avez suivi tout ce que l'on a fait depuis le début votre répertoire ``.vim/``, il devrait maintenant ressembler à cela :
-
-.. code-block:: html
-
-    .vim
-    |-- autoload
-    |   `-- pathogen.vim
-    `-- bundle
-        |-- lusty-explorer
-        |   `-- plugin
-        |       `-- lusty-explorer.vim
-        |-- nerdtree
-        |   |-- doc
-        |   |   `-- NERD_tree.txt
-        |   |-- nerdtree_plugin
-        |   |   |-- exec_menuitem.vim
-        |   |   `-- fs_menu.vim
-        |   |-- plugin
-        |   |   `-- NERD_tree.vim
-        |   `-- syntax
-        |       `-- nerdtree.vim
-        `-- solarized
-            `-- colors
-                `-- solarized.vim
-
-Reste à voir comment l'utiliser. Si l'on se réfère à la documentation, voilà ce que l'on trouve (traduit en français) :
+Reste maintenant à voir comment l'utiliser. Si l'on se réfère à la documentation, voilà ce que l'on trouve (traduit en français) :
 
 .. code-block:: html
 
@@ -65,11 +34,12 @@ Reste à voir comment l'utiliser. Si l'on se réfère à la documentation, voil�
 
 On voit qu'il est fait mention d'une touche nommée |tleader| qu'il faut ensuite faire suivre d'autres touches comme *lf*, *lr*, *lb* et *lg*. Cette touche |tleader| est une touche spéciale que l'on définit dans son fichier |vimrc|. Elle sera énormément utilisée par tous les plugins, beaucoup des commandes de ces derniers commenceront par la touche |tleader|. C'est un moyen d'éviter les collisions avec les raccourcis par défaut de |vim|.
 
-Il faut donc choisir une touche |tleader|. Par défaut, |vim| utilise ``\`` comme touche |tleader|. Sur nos claviers francophones c'est une très mauvaise idée d'utiliser cette touche car elle n'est pas pratique du tout. La plupart des utilisateurs de |vim| la remplace par la touche |tcomma|. Elle est directement accessible sous l'index de la main droite ce qui en fait une parfaite candidate. Pour spécifier cela à |vim| il va falloir rajouter une ligne dans votre fichier |vimrc|, à savoir :::
+Il faut donc choisir une touche |tleader|. Par défaut, |vim| utilise ``\`` comme touche |tleader|. Sur nos claviers francophones c'est une très mauvaise idée d'utiliser cette touche car elle n'est pas pratique du tout. La plupart des utilisateurs de |vim| la remplace par la touche |tcomma|. Elle est directement accessible sous l'index de la main droite ce qui en fait une parfaite candidate. Pour spécifier cela à |vim| il va falloir rajouter une ligne dans votre fichier |vimrc|, à savoir : ::
 
+    " Utilisation de , comme touche <Leader>
     let mapleader = ","
 
-Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou en tapant :vimcmd:`:so ~/.vimrc` ou :vimcmd:`:so $MYVIMRC` en mode normal), vous devriez être en mesure de taper ``,lr`` et d'avoir le même style de résultat que sur la figure ci-dessous.
+Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou en tapant ``:so ~/.vimrc`` ou ``:so $MYVIMRC`` en mode normal), vous devriez être en mesure de taper ``,lr`` et d'avoir le même style de résultat que sur la figure ci-dessous (notez l'affichage du contenu de votre dossier actuel en bas à gauche).
 
 .. _la capture d'écran de lusty: lusty_
 
@@ -77,11 +47,9 @@ Une fois la modification effectuée et prise en compte (en redémarrant |vim| ou
 
 .. image:: ../../book-tex/graphics/vim-lusty.png
 
-Je vous conseille maintenant de désactiver *The Nerd Tree* (en commentant la ligne au dessus du *mapleader* comme je l'ai fait dans la figure suivante, il ne vous servira plus à grand chose, *Lusty Explorer* le remplace à merveille.
+Vous pouvez constater sur `la capture d'écran de lusty`_ qu'il y a deux parties à *Lusty Explorer*. La partie basse vous indique le répertoire que vous êtes en train d'explorer et la partie haute liste le contenu de ce répertoire. En surbrillance se trouve l'élément couramment sélectionné. Dans le cas de `la capture d'écran de lusty`_ c'est le répertoire ``.autoload/`` en jaune  (la couleur pourra être différente en fonction de votre thème).
 
-Vous pouvez constater sur `la capture d'écran de lusty`_ qu'il y a deux parties à *Lusty Explorer*. La partie basse vous indique le répertoire que vous êtes en train d'explorer et la partie haute liste le contenu de ce répertoire. En surbrillance se trouve l'élément couramment sélectionné. Dans le cas de `la capture d'écran de lusty`_ c'est le répertoire ``.vim/`` en jaune  (la couleur pourra être différente en fonction de votre thème).
-
-*Lusty Explorer* utilise une fonctionnalité de *Fuzzy matching* qui va vous permettre de ne taper qu'une partie d'un nom de fichier pour le sélectionner. Dans mon exemple, si, dans la fenêtre de *Lusty*, je saisi ``.vimi`` il va me sélectionner le fichier ``.viminfo`` sans que j'ai à lui spécifier le nom entier, je n'aurais ensuite plus qu'à appuyer sur |ttenter| pour ouvrir le fichier dans |vim|. La figure suivante vous montre l'exemple en question.
+*Lusty Explorer* utilise une fonctionnalité de *Fuzzy matching* qui va vous permettre de ne taper qu'une partie d'un nom de fichier ou de répertoire pour le sélectionner. Dans mon exemple, si, dans la fenêtre de *Lusty*, je saisi ``pl`` il va me sélectionner le répertoire ``plugged/`` sans que j'ai à lui spécifier le nom entier, je n'aurai ensuite plus qu'à appuyer sur |ttenter| pour ouvrir le fichier dans |vim|. La figure suivante vous montre l'exemple en question.
 
 .. _fuzzy:
 
@@ -93,7 +61,7 @@ Vous pouvez constater sur `la capture d'écran de lusty`_ qu'il y a deux parties
 * |tctrl| + |tn| pour sélectionner le fichier/répertoire suivant
 * |tctrl| + |tp| pour sélectionner le fichier/répertoire précédent
 * |tctrl| + |tw| pour descendre au répertoire parent
-* |tctrl| + |te| crée un nouveau fichier vide (non sauvegardé sur le disque) avec le nom spécifié actuellement dans *Lusty Explorer*. Vous n'aurez plus qu'à utiliser :vimcmd:`:w` pour écrire le contenu du fichier sur le disque.
+* |tctrl| + |te| crée un nouveau fichier vide (non sauvegardé sur le disque) avec le nom spécifié actuellement dans *Lusty Explorer*. Vous n'aurez plus qu'à utiliser ``:w`` pour écrire le contenu du fichier sur le disque.
 
 *Lusty Explorer* s'utilise donc pour deux choses : naviguer sur votre système de fichiers avec ``,lr`` et ``,lf``, et naviguer entre vos fichiers ouverts (buffers) avec ``,lb``. Personnellement j'utilise moins la recherche dans les buffers avec ``,lg``, à vous de tester et de vous faire votre propre opinion.
 
@@ -101,126 +69,84 @@ Je vous conseille en guise de test d'ouvrir plusieurs fichiers avec ``,lr`` ou `
 
 Ce plugin est indispensable et ajoute à lui seul énormément de valeur à |vim| : se passer de la souris pour ouvrir des fichiers. Prenez donc le temps nécessaire pour l'apprendre correctement, c'est un investissement qui vaut le coup.
 
-Recherche dans les fichiers sur le disque : *Ack*
-=================================================
+Recherche de fichiers, de chaînes de caractères et d'un peu tout : *fzf*
+========================================================================
 
-Lorsque l'on édite un fichier appartenant à un projet plus gros contenant lui même beaucoup de fichiers, il arrive souvent de vouloir rechercher une occurrence d'une chaîne de caractères dans tous les fichiers du projet. Pour ce faire, |vim| dispose d'un plugin permettant d'utiliser *Ack* pour faire cette recherche.
+Dans le monde informatique il existe un moyen très efficace pour rechercher des choses dont on connait « à peut prêt » le nom, on appelle ça le **Fuzzy Matching** (*recherche approximative* ou *recherche floue* en français, cf https://fr.wikipedia.org/wiki/Recherche_approximative). Cette technique va nous permettre de trouver des fichiers dont on connait une partie du nom, ou alors une partie du répertoire parent et une partie du nom par exemple. Elle va aussi nous permettre de faire la même chose pour le contenu des fichiers : pas besoin d'être très précis (majuscules, minuscules, accents, etc) le **Fuzzy Matching** nous retournera ce qui se rapproche le plus du terme que l'on recherche.
 
-*Ack* (http://betterthangrep.com/) est un programme écrit en *perl* qui remplace avantageusement le bon vieux *grep* pour effectuer des recherches dans des fichiers. Il a en revanche un désavantage par rapport à *grep* : il est rarement installé par défaut. Nous allons donc commencer par installer *Ack* avant de pouvoir aller plus loin. Cela va bien sûr dépendre de la plateforme sur laquelle vous utilisez |vim|, vous pourrez trouver différentes instructions en fonction de votre plateforme sur la page du plugin : http://github.com/mileszs/ack.vim#installation.
+`fzf <https://github.com/junegunn/fzf>`_ est la référence dans le domaine : il permet de faire du **Fuzzy Matching** un peu partout et notamment avec vim (ça tombe bien hein 🤓) !
 
-Pour Debian/Ubuntu : ``sudo apt-get install ack-grep``. Pour Mac Os X vous allez avoir besoin de Homebrew (http://mxcl.github.com/homebrew/) en utilisant ``brew install ack``. Pour les utilisateurs de MacPorts ça sera avec la commande ``sudo port install p5-app-ack``. Pour Windows installez Strawberry Perl (http://strawberryperl.com/) et dans le shell de commandes exécutez ``C:\>cpan App::Ack``. Vous devriez ensuite pouvoir utiliser la commande **ack** dans votre terminal de commandes en lieu et place de **grep**.
+Installation de *fzf*
+---------------------
 
-Rendez-vous sur la page du plugin ack (http://www.vim.org/scripts/script.php?script_id=2572) et téléchargez la dernière version (à l'heure où j'écris ces lignes c'est la version 0.3.1). Décompressez l'archive dans votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
+Ajoutez ces deux lignes à vos plugins dans votre |vimrc| pour installer *fzf* et le plugin |vim| correspondant : ::
 
-.. code-block:: html
+    " Installation de fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
-    bundle
-    |-- ack
-    |   |-- doc
-    |   |   `-- ack.txt
-    |   `-- plugin
-    |       `-- ack.vim
-    …
+Puis ajoutez ces mappings plus bas dans votre fichier (n'importe où après le ``call plug#end()``) : ::
 
-Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant |vim| ou en tapant :vimcmd:`:source ~/.vimrc` en mode normal.
+    " -- Mappings FZF
+    " On recherche dans les fichiers du répertoire courant
+    nmap <silent> <Leader>ff :Files<CR>
+    " On recherche dans les buffers ouverts
+    nmap <silent> <Leader>fb :Buffers<CR>
+    " On recherche dans le contenu des fichiers
+    nmap <silent> <Leader>fr :Rg<CR>
 
-Il va ensuite falloir ajouter quelques lignes à notre fichier |vimrc| pour faciliter d'utilisation du plugin :::
+Comme d'habitude, pour prendre en compte ces modifications, tapez ``:so ~/.vimrc`` ou ``:so $MYVIMRC`` en mode normal puis ``:PlugInstall`` pour installer les deux plugins.
 
-        " Paramètres par défaut pour ack
-        let g:ackprg="ack -H --nocolor --nogroup --column"
-        " Place un marqueur et cherche
-        nmap <leader>j mA:Ack<space>
-        " Place un marqueur et cherche le mot sous le curseur
-        nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
-        nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
+Recherche de fichiers par nom
+-----------------------------
 
-Ack recherchera alors à partir du répertoire où se trouve votre fichier couramment ouvert. Vous pouvez faire quelques tests si vous le souhaitez (en supposant que votre touche |tleader| est la touche |tcomma| :
+Tapez ``,ff`` en mode normal (ou ``:Files``) et vous devriez voir une fenêtre similaire à la capture d'écran suivante s'ouvrir : fzf-files_
 
-* ``,j`` *toto* : recherchera *toto* à partir du répertoire du fichier courant,
-* ``,ja`` avec votre curseur sur un mot recherchera ce mot.
+.. _fzf-files:
 
+.. image:: ../../book-tex/graphics/vim-fzf-files.png
 
-Le plugin Ack vous affichera les résultats dans une fenêtre que l'on appelle *Quickfix Window*, cf image suivante.
+En fonction d'où vous avez ouvert votre |vim|, les résultats seront bien sûr différents. Je l'ai pour ma part ouvert dans le répertoire ``.vim``. Vous pouvez noter que j'ai juste tapé `REAmd` et qu'il a automatiquement trouvé tous les fichiers nommées `README.md`. Il a même mis en surbrillance dans les noms de fichiers ce qui a permis de faire la correspondance, dans notre cas le `REA` au début du nom du fichier puis le `md` dans l'extension du fichier.
 
-.. image:: ../../book-tex/graphics/vim-ack-quickfix.png
+Vous pouvez naviguer dans les résultats de recherche avec les raccourcis |vim| par défaut, à savoir ``Ctrl-k`` pour bouger la sélection d'une ligne au dessus et ``Ctrl-j`` pour bouger la sélection d'une ligne en dessous. Il suffira ensuite d'appuyer sur |ttenter| pour ouvrir le fichier sélectionné. Vous noterez l'aperçu du fichier à droite de la fenêtre qui s'est ouverte. Vous pouvez naviguer dans cet aperçu grâce à ``Shift-haut`` et ``Shift-bas`` (eh oui, pas de raccourci |vim| pour cette fonction !)
 
-Voici quelques commandes disponibles dans cette fenêtre :
+Recherche de chaînes de caractères dans les fichiers
+----------------------------------------------------
 
-* **o** : ouvrir (idem que <Entrée>)
-* **go** : voir un aperçu (ouvre le fichier mais mantient le focus sur les résultats de ack.vim)
-* **t** : ouvrir dans un nouvel onglet
-* **T** : ouvrir dans un nouvel onglet en arrière plan
-* **h** : ouvrir en séparant la fenêtre horizontalement
-* **v** : ouvrir en séparant la fenêtre verticalement
-* **q** : fermer la fenêtre quickfix
+Pour rechercher dans les fichiers nous allons utiliser un outil nommé `rg` (pour `ripgrep`). Assurez-vous donc de l'avoir installé, les instructions sont disponibles sur le `github de rg <https://github.com/BurntSushi/ripgrep#installation>`_. Si vous ne connaissez pas `ripgrep`, il est grand temps de remplacer votre traditionnel `grep` par `rg` : il est beaucoup plus performant et globalement bien mieux fichu.
 
-À noter que par défaut Ack ne recherche que dans les fichiers qu'il reconnait comme pertinents (il ne fera pas de recherche dans les fichiers temporaires, les fichiers des gestionnaires de version, etc.). Si vous souhaitez que Ack recherche dans tous les fichiers indépendamment de leur type, vous devez spécifier l'option ``-u`` comme ceci dans votre |vimrc| :::
+Une fois `rg` installé, tapez ``,fr`` en mode normal (ou ``:Rg``) et vous devriez voir une fenêtre similaire à :ref:`la capture d'écran suivante<fzf-rg>` s'ouvrir :
 
+.. _fzf-rg:
 
-    " Paramètres par défaut pour ack
-    let g:ackprg="ack -H -u --nocolor --nogroup --column"
+.. image:: ../../book-tex/graphics/vim-fzf-rg.png
 
+Dans mon exemple, *fzf* a trouvé le texte *config* au sein du fichier ``README-VIM.md`` dans le titre ``### Configuration``.
 
-Recherche de fichiers sur le disque : Ctrlp
-===========================================
+Recherche dans les noms de buffers
+----------------------------------
 
-Non ce n'est pas pareil que Ack, relisez bien le titre. Ici nous n'allons pas chercher dans les fichiers, mais nous allons plutôt chercher des fichiers à ouvrir avec |vim|. Ça peut s'avérer très utile lorsque vous avez à travailler sur des projets où les fichiers sont éparpillés dans un grand nombre de répertoires.
-
-Comme d'habitude nous allons commencer par installer le plugin. Une fois n'est pas coutume, le plugin dispose d'une page dédiée plutôt bien réalisée que vous trouverez ici : http://kien.github.com/ctrlp.vim/. Scrollez tout en bas pour télécharger la dernière version en "Direct Downloads". Pour les paresseux, voici un lien direct : http://github.com/kien/ctrlp.vim/zipball/master. Décompressez l'archive dans votre répertoire ``~/.vim/bundle/``, de manière à obtenir une structure de ce type :
-
-.. code-block:: html
-
-    bundle
-    |
-    …
-    |-- ctrlp
-    |   |-- autoload
-    |   |   |-- ctrlp
-    |   |   |   |-- bookmarkdir.vim
-    |   |   |   |-- buffertag.vim
-    |   |   |   |-- changes.vim
-    |   |   |   |-- dir.vim
-    |   |   |   |-- line.vim
-    |   |   |   |-- mixed.vim
-    |   |   |   |-- mrufiles.vim
-    |   |   |   |-- quickfix.vim
-    |   |   |   |-- rtscript.vim
-    |   |   |   |-- tag.vim
-    |   |   |   |-- undo.vim
-    |   |   |   `-- utils.vim
-    |   |   `-- ctrlp.vim
-    |   |-- doc
-    |   |   `-- ctrlp.txt
-    |   |-- plugin
-    |   |   `-- ctrlp.vim
-    |   `-- readme.md
-    …
-
-Comme d'habitude assurez-vous que vos modifications sont bien prises en compte en redémarrant |vim| ou en tapant :vimcmd:`:source ~/.vimrc` en mode normal.
-
-Nous n'avons plus qu'à ajouter un raccourci dans notre |vimrc| pour invoquer CtrlP comme le montre le listing ci-dessous. Dans mon cas j'ai choisi ``,c``, mais vous pouvez choisir ce que vous voulez.::
-
-    let g:ctrlp_map = '<leader>c'
-
-Voici CtrlP en action. 
-
-.. image:: ../../book-tex/graphics/vim-ctrlp.png
-
-Il vous suffit de l'invoquer avec ``,c`` et de taper le début du fichier que vous recherchez. Quand le fichier voulu sera sélectionné en premier, il ne vous restera plus qu'à appuyer sur |ttenter| pour l'ouvrir.
+Tapez ``,fb`` en mode normal (ou ``:Buffers``) et vous devriez voir une fenêtre similaire à :ref:`la capture d'écran suivante<fzf-buffers>` s'ouvrir :
 
 
-À noter que CtrlP peut aussi être utilisé pour naviguer entre les fichiers ouverts (comme Lusty). Mais à l'usage, je le trouve moins pratique que Lusty. Vous pouvez aussi vous en servir pour naviguer automatiquement dans votre code en "suivant" vos fonctions grâce aux tags (comme on peut le faire dans Eclipse). C'est un trop vaste sujet pour être traité dans ce guide, mais si ça vous intéresse vous pouvez déjà consulter cet article de blog sur le sujet : http://andrew-stewart.ca/2012/10/31/vim-ctags (en anglais).
+.. _fzf-buffers:
+
+.. image:: ../../book-tex/graphics/vim-fzf-buffers.png
+
+
+Vous noterez que j'avais pour ma part 3 fichiers (buffers) ouvertse et vous aurez remarqué que cette fonctionnalité est similaire à celle déjà présente dans `LustyExplorer`. À vous de choisir celle que vous préférez !
+
+Vous trouverez une version complète du fichier de configuration en ligne ici http://vimebook.com/link/v2/fr/full.
 
 Les plugins avancés
 ===================
 
-J'aurais pu faire un livre entier qui recense les plugins |vim|, mais je pense que l'intérêt aurait été assez limité. Je ne vais donc pas vous décrire plus en détails d'autres plugins. En revanche je vous donne ci-dessous une liste de plugins qui pourraient vous intéresser. Cette liste est issue d'un sondage que j'avais effectué sur Twitter demandant à mes followers quels étaient les plugins |vim| indispensables selon eux. La voici :
+J'aurais pu faire un livre entier qui recense les plugins |vim|, mais je pense que l'intérêt aurait été assez limité. Je ne vais donc pas vous décrire plus en détails d'autres plugins, ceux que je vous ai présentés jusqu'ici devraient vous suffir pour utiliser |vim| de manière efficace ! En revanche je vous donne ci-dessous une liste de plugins qui pourraient vous intéresser. Cette liste est issue d'un sondage que j'avais effectué sur Twitter demandant à mes followers quels étaient les plugins |vim| indispensables selon eux. La voici :
 
 
 
-* **neocomplcache**. C'est un plugin de complétion automatique. Il peut compléter les noms de fichiers, les attributs du langage que vous utilisez, les snippets et encore bien d'autres choses. Le repo Github : https://github.com/Shougo/neocomplcache.
+* **coc.vim**. C'est un plugin qui va transformer votre |vim| en IDE complet à la VSCode : auto-complétion des fonctions, des classes, « allez à la définition », etc. Même si la tendance est à utiliser des `plugins plus simples qui s'intègrent avec des LSP (Language Server Protocol) directement <https://github.com/prabirshrestha/vim-lsp>`_, *coc.vim* a l'avantage d'être complet, testé et de s'appuyer sur les configurations similaires à VSCode. Il a aussi le désavantage d'utiliser javascript. Le repo Github : https://github.com/neoclide/coc.nvim.
 * **surround**. Ce plugin permet de gérer (changer, ajouter, supprimer) tout ce qui « entoure » : les parenthèses, les crochets, les guillemets … Par exemple vous pourrez en une combinaison de touches changer "Hello world!" en 'Hello world!' ou <q>Hello world!</q>. Le repo Github : https://github.com/tpope/vim-surround.
 * **fugitive**. Si vous travaillez sur du code source vous utilisez forcément un gestionnaire de version de code source. Si ce n'est pas le cas vous pouvez aller vous cacher. Sinon si vous utilisez Git, Le plugin fugitive est pour vous. Il permet de gérer git directement dans |vim|. Le repo Github :  https://github.com/tpope/vim-fugitive
-* **syntastic**. Syntastic vérifie pour vous la syntaxe de votre code source. Il va, comme peut le faire Eclipse par exemple, vous afficher vos erreurs de syntaxe directement dans |vim|. Peut vous faire gagner en temps certain si vous éditez souvent du code. Le repo Github est par ici : https://github.com/scrooloose/syntastic
-* **ctags + ctrlp**. Ctags est un petit programme externe qui va parcourir votre code source et qui va ensuite vous permettre de « suivre » vos fonctions dans votre code source. Très pratique pour naviguer dans votre code source. Utilisé conjointement avec **ctrlp** décrit plus haut, il s'avère vite indispensable. Tout est expliqué ici : http://andrew-stewart.ca/2012/10/31/vim-ctags.
+* **ALE**. ALE vérifie pour vous la syntaxe de votre code source. Il va, comme peut le faire VSCode par exemple, vous afficher vos erreurs de syntaxe directement dans |vim|. Peut vous faire gagner un temps certain si vous éditez souvent du code. Si vous voulez l'utiliser avec *coc.vim*, assurez vous de mettre ``"diagnostic.displayByAle": true`` dans votre ``:CocConfig`` `comme mentionné dans le dépôt Github <https://github.com/dense-analysis/ale?tab=readme-ov-file#cocnvim>`_ de ALE. Le repo Github est par ici : https://github.com/dense-analysis/ale
 
