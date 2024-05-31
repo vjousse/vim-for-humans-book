@@ -6,7 +6,7 @@ I confess, I have some weird dreams. But hey, maybe my dreams are not as weird a
 
 The success of |vim| is due to its ability to **ease the text manipulations**. Certainly, it will provide you with functionalities dedicated to specific tasks (often via plugins) as syntax highlighting, spell checking, and so on, but in the end, it's always writing/fixing/handling/moving text that takes most of your time.
 
-This is where the difference lies between |vim| and IDEs like Eclipse/Netbeans/PhpStorm and others. Such an IDE will put the focus on the particularities of your programming language while providing basic text manipulation functionalities. |vim| takes the opposite approach: you will by default be **very effective** at manipulating/writing text, no matter what kind of text. But then, when you feel the need, you will be able to enrich |vim| with plugins specific to your needs and programming languages.
+This is where the difference lies between |vim| and IDEs like VSCode/Eclipse/Netbeans/PhpStorm and others. Such an IDE will put the focus on the particularities of your programming language while providing basic text manipulation functionalities. |vim| takes the opposite approach: you will by default be **very effective** at manipulating/writing text, no matter what kind of text. But then, when you feel the need, you will be able to enrich |vim| with plugins specific to your needs and programming languages.
 
 This chapter will cover how to use |vim| the right way (you will begin to forget your mouse) and the logic behind all these obscure commands. By the end of this chapter, you should be able to **completely avoid using your mouse** to edit/handle text. In any case, you should force yourself not to use the mouse when learning |vim|. It's not that hard to only use the keyboard, and it will make a huge diffrence in your day to day life.
 
@@ -20,14 +20,14 @@ We have already seen in the ":ref:`insertmode`" section how to switch between th
 Preamble
 --------
 
-Now is the time to learn our first text manipulation: the famous copy/paste. I can already hear some of you saying that it is useless: you already know how to do that. You switch to the insert mode, you use your mouse (or you move using the directional keys while holding |ttshift|) to select some text. Then you go to the ``edit`` menu and you select ``copy``. Then, ``edit`` menu and ``paste``. That works, so why not do that?
+Now is the time to learn our first text manipulation: the famous copy/paste. I can already hear some of you saying that it is useless: you already know how to do that. You switch to the insert mode, you use your mouse (or you move using the directional keys while holding |ttshift|) to select some text. Then you go to the ``edit`` menu of your terminal and you select ``copy``. Then, ``edit`` menu and ``paste``. That works, so why not do that?
 
 If you have understood the ":ref:`modes`" section about the ideal position of your hands on the keyboard, you should know that you did things you are not supposed to do:
 
 - You used your mouse
 - You moved your right hand a lot from its rest position, to press the directional keys that are far away from your fingers
 
-Of course, it doesn't really matter, but it's totally ineffective (using your mouse or moving your right hand toward the directional keys is very slow) and harmful for your hands. This is your last chance: if you are not ready to force yourself to not do it, **|vim| is not for you**. |vim| does a perfect job at keeping your hands on the keyboard and at keeping you away from your mouse. If you don't do it, you will not be using |vim| to its fullest. And, one day or another, **you will quit for another editor** that was made to be used with a mouse. So, should we continue?
+Of course, it doesn't really matter, but it's totally ineffective (using your mouse or moving your right hand toward the directional keys is very slow) and harmful for your hands. This is your last chance: if you are not ready to force yourself to not do it, **Vim is not for you**. |vim| does a perfect job at keeping your hands on the keyboard and at keeping you away from your mouse. If you don't do it, you will not be using |vim| to its fullest. And, one day or another, **you will quit for another editor** that was made to be used with a mouse. So, should we continue?
 
 Forget the mouse
 ----------------
@@ -40,24 +40,24 @@ To copy/paste using |vim|, you will have to switch to the "normal" mode (the def
 
 .. _mode insert:
 
-.. image:: ../../book-tex/graphics/vim-insert.png
+.. image:: graphics/vim-insert.png
 
 
 When there is nothing displayed at the bottom left, it's because you are currently in "normal" mode. In order to quit a mode to return to the normal one, you just have to press |ttesc|. You may already have noticed that pressing |ttesc| is a pain for your fingers. Don't worry, this is just temporary. I will explain why in the ":ref:`secesc`" section.
 
-Let's say that you are currently in the "normal" mode and that you already have some text in you |vim|. For example, it could be this beautiful quote from Mark Twain: "They did not know it was impossible, so they did it.". Your |vim| should like the one in the figure below. Notice that there is nothing displayed at the bottom left.
+Let's say that you are currently in the "normal" mode and that you already have some text in you |vim| (inserted by yourself by switching to insert mode with |tti| then back to normal mode with |ttesc|). For example, it could be this beautiful quote from Mark Twain: "They did not know it was impossible, so they did it.". Your |vim| should like the one in the figure below. Notice that there is nothing displayed at the bottom left, it means we are in *normaal* mode.
 
 .. _twain:
 
-.. image:: ../../book-tex/graphics/vim-twain.png
+.. image:: graphics/vim-twain.png
 
 The most intuitive way (but not the most efficient, we will see why a little bit later) to copy/paste the "impossible" word is to move the cursor at the first letter of the word using the directional keys, to press |ttv| (to switch to the "visual" mode), to move to the last letter of the word (you should have the word "impossible" highlighted) and then to press |tty| (|tty| stands for *yank*). You've just copied your first word using |vim|. Hooray!
 
-Then, move to the end of the sentence (in "normal" mode) and press |ttp| (|ttp| standing for *paste*). The word should now be pasted at the end, and you should have something like the figure below.
+Then, move to the end of the sentence using the arrow keys (in *normal* mode) and press |ttp| (|ttp| standing for *paste*). The word should now be pasted at the end, and you should have something like the figure below.
 
 .. _vim-paste:
 
-.. image:: ../../book-tex/graphics/vim-paste.png
+.. image:: graphics/vim-paste.png
 
 We can see that |vim| uses the mode switching trick (including the "normal" mode for moving) in order to not have to use the mouse.
 When you will be used to switch quickly from one mode to another (and in order to do so, going without |ttesc| will be mandatory), using the mouse will appear like a pure waste of time. But obviously, you will first need to train yourself.
@@ -133,13 +133,13 @@ Here is the ultimate configuration that you will need to put in your |vimrc| to 
 
 Here we are. Believe me, this will be a little bit hard at the beginning. It was the case for me during the first two days. But then, you just forget about it and get used to it. Besides, if you are not ready to struggle for two days in order to learn |vim| properly, then what are you doing here?!
 
-I  will not go into details on all the possible keys to move inside |vim|, other resources do a better job at it. "A byte of |vim|" is a good resource that you can freely download here: http://www.swaroopch.com/notes/vim/. Of course, you will also learn in :ref:`combine-move` how to use the keys wisely.
+I  will not go into details on all the possible keys to move inside |vim|, other resources do a better job at it. "A byte of |vim|" is a good resource that you can freely download here: https://vim.swaroopch.com/. Of course, you will also learn in :ref:`combine-move` how to use the keys wisely.
 
 Here is an handy graphical cheat sheet that you can download on http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html. I recommend that you to print it and put it on your desktop: it helps a lot at the beginning.
 
 .. _cheat-sheet:
 
-.. image:: ../../book-tex/graphics/vi-vim-cheat-sheet.png
+.. image:: graphics/vi-vim-cheat-sheet.png
 
 Keep in mind that the main goal here is to increase your speed while keeping your hands on the "home row" and using the "normal mode". Get down to work!
 
@@ -154,9 +154,11 @@ To understand why |ttesc| is used by default to exit the "insert mode", we have 
 
 .. _vi-keyboard:
 
-.. image:: ../../book-tex/graphics/lsi-adm3a-full-keyboard.jpg
+.. image:: graphics/lsi-adm3a-full-keyboard.jpg
 
-So we agree that we need another key to exit the insert mode. There are many solutions, here are some possibilities that you can try in your |vimrc|: ::
+So we agree that we need another key to exit the insert mode. There are many solutions, here are some possibilities that you can try in your |vimrc|:
+
+.. code-block:: vim
 
     " Press the j 2 times in row
     :imap jj <Esc>
@@ -176,7 +178,7 @@ So we agree that we need another key to exit the insert mode. There are many sol
     :imap <M-Space> <Esc>
     
 
-You can have a look at the discussion here if you want more information: http://vim.wikia.com/wiki/Avoid_the_escape_key.
+You can have a look at the discussion here if you want more information: https://vim.fandom.com/wiki/Avoid_the_escape_key.
 
 .. _combine-move:
 
@@ -284,7 +286,7 @@ As a reminder, here are the corresponding lines of your configuration: ::
     set incsearch             " Highlight search results when typing
     set hlsearch              " Highlight search results
 
-Be careful, by default, the search is using POSIX regular expressions. If you want to search for characters commonly used in regular expressions (like [ ] ^{ } $ /) do not forget to prefix them with \\.
+Be careful, by default, the search is using POSIX regular expressions. If you want to search for characters commonly used in regular expressions (like ``[ ] ^{ } $ /``) do not forget to prefix them with ``\``.
 
 You can also search for the word that is directly under your cursor through |ttstar|. |ttstar| will search forward, |ttsharp| will search backward.
 
@@ -300,22 +302,27 @@ In "normal mode" you will be able to use |ttV| to select line per line. And of c
 It's your turn!
 ===============
 
+A complete version of the configuration file is available online at http://vimebook.com/link/v2/en/text-manip.
+
 You should now be able to only use the keyboard to manipulate and edit text in |vim|. I have only skimmed over the power of |vim| here, but it should be enough to survive. I have given you the bare minimum here, but this minimum should allow you to enjoy |vim| and to not use the mouse anymore.
 
 It's now your turn to read all the many resources available on the Internet describing all the possible moves and combinations.
 
 Here is a list of resources that could be useful to you:
 
-* A byte of |vim| http://www.swaroopch.com/notes/vim/en 
-* A beautiful Wiki : http://vim.wikia.com/wiki/Vim_Tips_Wiki
-* Videos from Peepcode : https://peepcode.com/products/smash-into-vim-i and https://peepcode.com/products/smash-into-vim-ii
-* Derek Wyatt's blog http://www.derekwyatt.org/vim/vim-tutorial-videos/
+* The website of this book: https://vimebook.com
+* A byte of |vim|: https://vim.swaroopch.com/
+* A beautiful Wiki: https://vim.fandom.com/wiki/Vim_Tips_Wiki
+* Videos from Andrew Stewart: https://www.pluralsight.com/courses/smash-into-vim
+* Derek Wyatt's blog http://derekwyatt.org/vim/tutorials/
+* The book « Learning to play Vim » https://themouseless.dev/vim/
+* The website « vim-hero » with an interactive tutorial https://www.vim-hero.com/
+* Vim Cheat Sheet with a lot of shortcuts https://vim.rtorr.com/
 
-
-To awaken the child in you, I urge you to go have fun with http://vim-adventures.com/. This is a role playing online game that aims to teach you to master |vim|! Here is an overview:
+To awaken the child in you, I urge you to go have fun with https://vim-adventures.com/. This is a role playing online game that aims to teach you to master |vim|! Here is an overview:
 
 .. _vim-adventures:
 
-.. image:: ../../book-tex/graphics/vim-adventures.png
+.. image:: graphics/vim-adventures.png
 
-Now we will go to the next level: the use of plugins, or how to make |vim| indispensable.
+Now we're moving up a gear: using plugins, or how to make |vim| a must-have.
