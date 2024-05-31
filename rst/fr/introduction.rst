@@ -2,7 +2,7 @@
 Introduction
 ************
 
-Lorsque le besoin d'écrire ou de coder se fait se sentir, le choix d'un éditeur de texte est primordial. Il en existe énormément sur le "marché", mais peu d'entre eux peuvent se targuer d'environ 40 ans d'existence. C'est le cas d\'*Emacs*\  (http://www.gnu.org/software/emacs/), de *Vi* et de son "successeur amélioré" |vim| (http://www.vim.org/). Ils ont été créés dans les années 70 et sont toujours très utilisés actuellement. Comme vous avez sans doute pu le voir, ce n'est pas grâce à la beauté de leur site internet ou à l'efficacité de leur communication (même si je dois avouer que le site d\'*Emacs*\  a fait des efforts depuis la première version de ce livre). Voici quelques **raisons de leur succès** :
+Lorsque le besoin d'écrire ou de coder se fait se sentir, le choix d'un éditeur de texte est primordial. Il en existe énormément sur le "marché", mais peu d'entre eux peuvent se targuer d'environ 40 ans d'existence. C'est le cas d\'*Emacs*\  (https://www.gnu.org/software/emacs/), de *Vi* et de son "successeur amélioré" |vim| (https://www.vim.org/). Ils ont été créés dans les années 70 et sont toujours très utilisés actuellement. Comme vous avez sans doute pu le voir, ce n'est pas grâce à la beauté de leur site internet ou à l'efficacité de leur communication (même si je dois avouer que le site d\'*Emacs*\  a fait des efforts depuis la première version de ce livre). Voici quelques **raisons de leur succès** :
 
 **Ils s'apprennent pour la vie** 
     Ils s'apprennent une fois et s'utilisent pour toujours. Dans un monde où les technologies/langages changent tout le temps, c'est une aubaine de pouvoir investir sur du long terme.
@@ -49,7 +49,7 @@ Toute personne étant amenée à produire du texte (code, livre, rapports, prés
 Par exemple vous êtes :
 
 **Étudiant**
-    Si vous voulez faire bien sur un CV, c'est un must. C'est en effet un gage de sérieux de voir qu'un étudiant a pris sur son temps personnel pour apprendre |vim|. De plus, vous aurez un outil unique pour écrire tout ce que vous avez à écrire (et que vous pourrez réutiliser tout au long de votre carrière) : vos rapports en LaTeX, vos présentations, votre code (si vous avez besoin d'OpenOffice ou de Word pour écrire vos rapports, il est temps de changer d'outil et d'utiliser LaTeX, Markdown ou reStructuredText).
+    Si vous voulez faire bien sur un CV, c'est un must. C'est en effet un gage de sérieux de voir qu'un étudiant a pris sur son temps personnel pour apprendre |vim|. De plus, vous aurez un outil unique pour écrire tout ce que vous avez à écrire (et que vous pourrez réutiliser tout au long de votre carrière) : vos rapports en LaTeX, vos présentations, votre code (si vous avez besoin d'OpenOffice ou de Word pour écrire vos rapports, il est temps de changer d'outil et d'utiliser `LaTeX <https://fr.wikipedia.org/wiki/LaTeX>`_, `Markdown <https://fr.wikipedia.org/wiki/Markdown>`_ ou `reStructuredText <https://fr.wikipedia.org/wiki/ReStructuredText>`_).
 
     Petit conseil d'ami, pour vos présentations, n'hésitez pas à utiliser un outil comme *impress.js* : https://github.com/impress/impress.js. Basé sur du HTML/JS/CSS, je vous le recommande grandement pour des présentations originales et basées sur des technologies non propriétaires. Il existe aussi *reveal.js* (https://lab.hakim.se/reveal-js/) et son éditeur en ligne *slid.es* (https://slid.es/).
 
@@ -83,7 +83,7 @@ Ce que vous n'apprendrez pas (entre autres choses)
 - Vous n'apprendrez pas comment installer/configurer |vim| pour Windows. Pas que ce ne soit pas faisable, mais je n'ai que très peu de connaissances de Windows. Ça viendra peut-être, mais pas tout de suite. On couvrira ici Linux/Unix (et par extension Mac OS X).
 - Vous n'apprendrez pas comment utiliser *Vi* (notez l'absence du "m"). Je vais vous apprendre à être productif pour coder/produire du texte avec |vim|, pas à faire le beau devant les copains avec *Vi* (|vim| est suffisant pour cela de toute façon). Pour ceux qui ne suivent pas, *Vi* est "l'ancêtre de |vim| (qui veut dire *Vi* - *IMproved*, *Vi* amélioré)" et est installé par défaut sur tous les Unix (même sur votre Mac OS X).
 - Vous n'apprendrez pas à connaitre les entrailles de |vim| par cœur : ce n'est pas une référence, mais un guide utile et pragmatique.
-- Vous n'apprendrez pas comment modifier votre |vim| parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème *Solarized* (http://ethanschoonover.com/solarized), il est parfait pour travailler.
+- Vous n'apprendrez pas comment modifier votre |vim| parce que vous préférez le rouge au bleu : je vous ferai utiliser le thème *Solarized* (https://ethanschoonover.com/solarized), il est parfait pour travailler.
 
 
 Le plus dur, c'est de commencer
