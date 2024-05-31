@@ -2,7 +2,7 @@
 Introduction
 ************
 
-When you need to write or to code, you have to choose a text editor, and a very good one. They are many text editors available out there, but very few of them are more than 40 years old. It's the case of *Emacs* (http://www.gnu.org/software/emacs/), *Vi*, and its improved successor |vim| (http://www.vim.org). They were created in the 70's and are still used a lot nowadays. You may have already noticed that it's not thanks to the beauty of their website or the efficiency of their communication. Here are some **reasons for their success**:
+When you need to write or to code, you have to choose a text editor, and a very good one. They are many text editors available out there, but very few of them are more than 40 years old. It's the case of *Emacs* (https://www.gnu.org/software/emacs/), *Vi*, and its improved successor |vim| (https://www.vim.org). They were created in the 70's and are still used a lot nowadays. You may have already noticed that it's not thanks to the beauty of their website or the efficiency of their communication (although I must admit that the *Emacs* site has made efforts since the first version of this book). Here are some **reasons for their success**:
 
 **Forever** 
     You learn them once and you use them forever. In a world where languages and technologies are constantly changing, learning vim is a real chance to invest in a skill you'll be able to use forever.
@@ -14,11 +14,11 @@ When you need to write or to code, you have to choose a text editor, and a very 
     Thanks to their features (like the extensive use of the keyboard), you can edit and write text as fast as your thoughts.
 
 **For everything** 
-    They allow you to edit everything and anything. When you'll use another programming language, or another markup language, you won't have to change your editor. Of course, this book has been written using |vim| (and the `ReST Markup <http://sphinx-doc.org/rest.html>`_).
+    They allow you to edit everything and anything. When you'll use another programming language, or another markup language, you won't have to change your editor. Of course, this book has been written using |vim| (and the `ReST Markup <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_).
 
 Yet, these text editors are difficult to learn. Not that they are harder than anything else, not that you can't handle it, but rather because there is no smart way out there to learn them for now. So, here we are.
 
-The aim of this book is to address this gap by guiding you through your discovery of |vim|. I'll put *Emacs* aside from now and I'll focus on |vim|. If you want to know more about this **Editor war**, be sure to check the `Wikipedia page <http://en.wikipedia.org/wiki/Editor_war>`_. This book doesn't claim to be a reference book about |vim|. There are already a lot of good references on the subject like `A byte of Vim <https://vim.swaroopch.com/>`_. However, it claims to reduce the entry barrier to get used to |vim|. In my opinion, the most difficult thing about learning |vim| is not getting discouraged while finding a way to use it, learning |vim| step by step. We all have to get things done with our text editor on a daily basis, that's why losing all your productivity when switching to |vim| is not an option.
+The aim of this book is to address this gap by guiding you through your discovery of |vim|. I'll put *Emacs* aside from now and I'll focus on |vim|. If you want to know more about this **Editor war**, be sure to check the `Wikipedia page <https://en.wikipedia.org/wiki/Editor_war>`_. This book doesn't claim to be a reference book about |vim|. There are already a lot of good references on the subject like `A byte of Vim <https://vim.swaroopch.com/>`_. However, it claims to reduce the entry barrier to get used to |vim|. In my opinion, the most difficult thing about learning |vim| is not getting discouraged while finding a way to use it, learning |vim| step by step. We all have to get things done with our text editor on a daily basis, that's why losing all your productivity when switching to |vim| is not an option.
 
 I'm sure you'll find a lot of people who will tell you: "Just do it cold turkey", "You'll see, it's hard at the beginning, but time will help". True, but you’ll still have the problem of trying to remain productive on a daily basis. The approach of this book is the following:
 
@@ -30,6 +30,16 @@ I'm sure you'll find a lot of people who will tell you: "Just do it cold turkey"
 Starting from bullet number 2, you'll already be able to use |vim| on a daily basis without losing a lot of productivity. It's where the magic will happen: if you can integrate |vim| in your daily habits, you have won. You'll then have the rest of your life to learn all the shortcuts and the tip and tricks of |vim|.
 
 You're tired of trying a new editor each year? You're tired of having to relearn everything from scratch every time? You're tired having to change your editor when you're using your Mac, Windows or Linux? So, just stop it, and join the community of people happy with their text editor!
+
+What about Neovim?
+==================
+
+A quick aside about *Neovim* https://neovim.io/ (if you don't know what it is, you can skip this part). I've decided to concentrate solely on |vim| in this book so as not to frustrate people who can only use |vim|.
+
+If you're a *Neovim* user, everything in this book is still valid, as *Neovim* is compatible with |vim|. What's more, modes, text manipulations and everything else that doesn't concern plugins is common to both |vim| and *Neovim*: learning them for |vim| or for *Neovim* makes no difference. In fact, you can follow this book using *Neovim* instead of |vim| without any problems.
+
+The special feature of *Neovim* is that it is more actively maintained than |vim| and, among other things, uses the **Lua** programming language for plugin management. As a result, plugins written for *Neovim* are not compatible with |vim| (the reverse is not true: plugins written for |vim| are compatible with *Neovim*). Part of the |vim| community has switched to *Neovim*, and plugins for *Neovim* are flourishing much faster than those for |vim|. For the purpose of this book, this won't make any difference and you can follow it without any problem with |vim| or *Neovim*. I may be making more *Neovim*-specific content in the future.
+
 
 For who?
 ========
