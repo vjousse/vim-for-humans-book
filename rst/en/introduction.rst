@@ -2,7 +2,7 @@
 Introduction
 ************
 
-When you need to write or to code, you have to choose a text editor, and a very good one. They are many text editors available out there, but very few of them are more than 40 years old. It's the case of *Emacs* (http://www.gnu.org/software/emacs/), *Vi*, and its improved successor |vim| (http://www.vim.org). They were created in the 70's and are still used a lot nowadays. You may have already noticed that it's not thanks to the beauty of their website or the efficiency of their communication. Here are some **reasons for their success**:
+When you need to write or to code, you have to choose a text editor, and a very good one. They are many text editors available out there, but very few of them are more than 40 years old. It's the case of *Emacs* (https://www.gnu.org/software/emacs/), *Vi*, and its improved successor |vim| (https://www.vim.org). They were created in the 70's and are still used a lot nowadays. You may have already noticed that it's not thanks to the beauty of their website or the efficiency of their communication (although I must admit that the *Emacs* site has made efforts since the first version of this book). Here are some **reasons for their success**:
 
 **Forever** 
     You learn them once and you use them forever. In a world where languages and technologies are constantly changing, learning vim is a real chance to invest in a skill you'll be able to use forever.
@@ -14,11 +14,11 @@ When you need to write or to code, you have to choose a text editor, and a very 
     Thanks to their features (like the extensive use of the keyboard), you can edit and write text as fast as your thoughts.
 
 **For everything** 
-    They allow you to edit everything and anything. When you'll use another programming language, or another markup language, you won't have to change your editor. Of course, this book has been written using |vim| (and the `ReST Markup <http://sphinx-doc.org/rest.html>`_).
+    They allow you to edit everything and anything. When you'll use another programming language, or another markup language, you won't have to change your editor. Of course, this book has been written using |vim| (and the `ReST Markup <https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html>`_).
 
 Yet, these text editors are difficult to learn. Not that they are harder than anything else, not that you can't handle it, but rather because there is no smart way out there to learn them for now. So, here we are.
 
-The aim of this book is to address this gap by guiding you through your discovery of |vim|. I'll put *Emacs* aside from now and I'll focus on |vim|. If you want to know more about this **Editor war**, be sure to check the `Wikipedia page <http://en.wikipedia.org/wiki/Editor_war>`_. This book doesn't claim to be a reference book about |vim|. There are already a lot of good references on the subject like `A byte of Vim <https://vim.swaroopch.com/>`_. However, it claims to reduce the entry barrier to get used to |vim|. In my opinion, the most difficult thing about learning |vim| is not getting discouraged while finding a way to use it, learning |vim| step by step. We all have to get things done with our text editor on a daily basis, that's why losing all your productivity when switching to |vim| is not an option.
+The aim of this book is to address this gap by guiding you through your discovery of |vim|. I'll put *Emacs* aside from now and I'll focus on |vim|. If you want to know more about this **Editor war**, be sure to check the `Wikipedia page <https://en.wikipedia.org/wiki/Editor_war>`_. This book doesn't claim to be a reference book about |vim|. There are already a lot of good references on the subject like `A byte of Vim <https://vim.swaroopch.com/>`_. However, it claims to reduce the entry barrier to get used to |vim|. In my opinion, the most difficult thing about learning |vim| is not getting discouraged while finding a way to use it, learning |vim| step by step. We all have to get things done with our text editor on a daily basis, that's why losing all your productivity when switching to |vim| is not an option.
 
 I'm sure you'll find a lot of people who will tell you: "Just do it cold turkey", "You'll see, it's hard at the beginning, but time will help". True, but you’ll still have the problem of trying to remain productive on a daily basis. The approach of this book is the following:
 
@@ -31,6 +31,16 @@ Starting from bullet number 2, you'll already be able to use |vim| on a daily ba
 
 You're tired of trying a new editor each year? You're tired of having to relearn everything from scratch every time? You're tired having to change your editor when you're using your Mac, Windows or Linux? So, just stop it, and join the community of people happy with their text editor!
 
+What about Neovim?
+==================
+
+A quick aside about *Neovim* https://neovim.io/ (if you don't know what it is, you can skip this part). I've decided to concentrate solely on |vim| in this book so as not to frustrate people who can only use |vim|.
+
+If you're a *Neovim* user, everything in this book is still valid, as *Neovim* is compatible with |vim|. What's more, modes, text manipulations and everything else that doesn't concern plugins is common to both |vim| and *Neovim*: learning them for |vim| or for *Neovim* makes no difference. In fact, you can follow this book using *Neovim* instead of |vim| without any problems.
+
+The special feature of *Neovim* is that it is more actively maintained than |vim| and, among other things, uses the **Lua** programming language for plugin management. As a result, plugins written for *Neovim* are not compatible with |vim| (the reverse is not true: plugins written for |vim| are compatible with *Neovim*). Part of the |vim| community has switched to *Neovim*, and plugins for *Neovim* are flourishing much faster than those for |vim|. For the purpose of this book, this won't make any difference and you can follow it without any problem with |vim| or *Neovim*. I may be making more *Neovim*-specific content in the future.
+
+
 For who?
 ========
 
@@ -39,9 +49,9 @@ Every person having to produce text (code, book, reports, slideshows, …) regul
 For example, if you are a:
 
 **Student**
-    If you want to impress your future boss with your resume, it's a must. It's a proof of seriousness to see that a student took the time to learn |vim| on his or her own. Moreover, you'll have a unique tool to write all what you'll have to write (and that you'll be able to use for the rest of your career): your LaTeX reports, your slideshows, your code (if you need Word or LibreOffice to write you reports, it's time to use `LaTeX <http://en.wikipedia.org/wiki/LaTeX>`_, `Markdown <http://en.wikipedia.org/wiki/Markdown>`_ or `reStructuredText <http://en.wikipedia.org/wiki/ReStructuredText>`_).
+    If you want to impress your future boss with your resume, it's a must. It's a proof of seriousness to see that a student took the time to learn |vim| on his or her own. Moreover, you'll have a unique tool to write all what you'll have to write (and that you'll be able to use for the rest of your career): your LaTeX reports, your slideshows, your code (if you need Word or LibreOffice to write you reports, it's time to use `LaTeX <https://en.wikipedia.org/wiki/LaTeX>`_, `Markdown <https://en.wikipedia.org/wiki/Markdown>`_ or `reStructuredText <https://en.wikipedia.org/wiki/ReStructuredText>`_).
 
-    Friendly advice: for your slideshows, don't hesitate to use something like `impress.js <http://bartaz.github.com/impress.js>`_. It's using HTML/JS/CSS and I highly recommend that you use it to do awesome presentations based on non-proprietary technologies. You can have a look at `reveal.js <http://lab.hakim.se/reveal-js/>`_ too, and its online editor `slide.es <http://slid.es/>`_.
+    Friendly advice: for your slideshows, don't hesitate to use something like `impress.js <https://github.com/impress/impress.js>`_. It's using HTML/JS/CSS and I highly recommend that you use it to do awesome presentations based on non-proprietary technologies. You can have a look at `reveal.js <https://lab.hakim.se/reveal-js/>`_ too, and its online editor `slide.es <https://slid.es/>`_.
 
 **Teacher** 
     It's time to set an example for your students and to teach them a tool they will use during their entire life. |Vim| is something they'll be able to use a lot more than any programming language.
@@ -73,7 +83,7 @@ What you will not be learning
 - You will not be learning how to install and to configure |vim| for Windows. It's doable, but I have very limited knowledge about Windows. It may happen, but not yet. Only Linux/Unix will be discussed (and by extension Mac OS X).
 - You will not be learning how to use *Vi* (notice the lack of "*m*"). I'll only teach you how to be productive writing text with |vim|, I won't be teachng you how to impress your friends with *Vi* (and anyway, |vim| is enough for that). For those who don't get what I'm talking about, *Vi* is the "ancestor of |vim| (which stands for *Vi* - *IMproved*)" and is installed by default on all Unix-like systems (even on Mac OS X).
 - You will not be learning to know |vim| by heart: this book is not a reference it's a pragmatic smart way to learn |vim|.
-- You will not learn how to pimp the colors of your |vim|, although I will go over how to change your theme. I'll use the `Solarized <http://ethanschoonover.com/solarized>`_ theme, it's the best theme for your eyes.
+- You will not learn how to pimp the colors of your |vim|, although I will go over how to change your theme. I'll use the `Solarized <https://ethanschoonover.com/solarized>`_ theme, it's the best theme for your eyes.
 
 The hardest part is to get started
 ==================================

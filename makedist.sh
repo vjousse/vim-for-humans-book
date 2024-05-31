@@ -24,7 +24,7 @@ cd ..
 cp rst/fr/_build/epub/Vimpourleshumains.epub dist/$ts/fr/vim-pour-les-humains.epub
 cp rst/fr/_build/latex/vimpourleshumains.pdf dist/$ts/fr/vim-pour-les-humains.pdf
 cp rst/en/_build/epub/Vimforhumans.epub dist/$ts/en/vim-for-humans.epub
-cp rst/en/_build/latex/Vimforhumans.pdf dist/$ts/en/vim-for-humans.pdf
+cp rst/en/_build/latex/vimforhumans.pdf dist/$ts/en/vim-for-humans.pdf
 cd dist/$ts
 
 # Create Kindle Versions

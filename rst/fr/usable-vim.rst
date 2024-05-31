@@ -14,7 +14,7 @@ Voici donc ce qui manque à un |vim| nu (et ce qui est, de mon point de vue, une
 
 
 **Coloration syntaxique**
-    De base, |vim| est tout blanc et tout moche. On va utiliser le thème *Solarized* (http://ethanschoonover.com/solarized). Si votre but est d'être efficace, c'est le meilleur thème disponible actuellement (tout éditeur de texte confondu). La belle image qui suit vous donne une idée des deux looks disponibles (clair ou sombre). Pour ma part j'utilise le thème sombre.
+    De base, |vim| est tout blanc et tout moche. On va utiliser le thème *Solarized* (https://ethanschoonover.com/solarized). Si votre but est d'être efficace, c'est le meilleur thème disponible actuellement (tout éditeur de texte confondu). La belle image qui suit vous donne une idée des deux looks disponibles (clair ou sombre). Pour ma part j'utilise le thème sombre.
 
     |solarized|
 
@@ -33,8 +33,8 @@ En revanche, si vous êtes déjà familier avec |vim| et n'utilisez déjà plus 
 Préambule indispensable : le mode insertion
 ===========================================
 
-Prenons le pari de créer le fichier |vimrc| avec |vim| lui-même. Comme je vous le disais, lus tôt vous commencerez, mieux ce sera.
-Vous devrez certainement commencer par installer une version de |vim|. Si vous utilisez un Mac, essayez MacVim (https://macvim.org/) sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système « Unix » vous devriez sûrement avoir la commande *vim* à disposition dans votre terminal. Vous pouvez aussi utiliser l'interface graphique *gVim* qui devrait être facilement installable grâce à votre gestionnaire de logiciels, pour Ubuntu le paquet correspondant est `vim-gnome`. Faites attention à bien installer la version **complète** de vim, notamment avec le support de Ruby et de Lua dont nous aurons besoin par la suite. Pour Ubuntu, le paquet sembler s'appeller `vim`. Pour Mac OS X, la question ne se pose pas, MacVim inclut déjà tout ce qu'il faut. Pour Windows, il semblerait y avoir une version disponible sur le site officiel de |vim| (http://www.vim.org/download.php), mais je ne l'ai pas testée.
+Prenons le pari de créer le fichier |vimrc| avec |vim| lui-même. Comme je vous le disais, plus tôt vous commencerez, mieux ce sera.
+Vous devrez certainement commencer par installer une version de |vim|. Si vous utilisez un Mac, essayez MacVim (https://macvim.org/) sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système « Unix » vous devriez sûrement avoir la commande *vim* à disposition dans votre terminal. Vous pouvez aussi utiliser l'interface graphique *gVim* qui devrait être facilement installable grâce à votre gestionnaire de logiciels, pour Ubuntu le paquet correspondant est `vim-gnome`. Faites attention à bien installer la version **complète** de vim, notamment avec le support de Ruby et de Lua dont nous aurons besoin par la suite. Pour Ubuntu, le paquet sembler s'appeller `vim`. Pour Mac OS X, la question ne se pose pas, MacVim inclut déjà tout ce qu'il faut. Pour Windows, il semblerait y avoir une version disponible sur le site officiel de |vim| (https://www.vim.org/download.php), mais je ne l'ai pas testée.
 
 **Pour ma part**, j'utilise *vim* directement en ligne de commande, sous Archlinux, dans un terminal `kitty <https://sw.kovidgoyal.net/kitty/>`_ avec la police Nerd Fonts `FiraCode Nerd Font <https://www.nerdfonts.com/font-downloads>`_. C'est avec cette configuration que les capture d'écran de ce livre sont réalisées.
 
@@ -57,7 +57,7 @@ Vous devriez maintenant pouvoir entrer `le commentaire ci-dessous`_ (je vous lai
 
   " VIM Configuration - Vincent Jousse
 
-Vous aurez remarqué que les commentaires en *VimL* (le langage de configuration de |vim|) commencent par un `"`. Appuyez ensuite sur |ttesc| pour revenir au mode par défaut (le mode normal) de |vim|. Et voilà le travail, comme vous pouvez le voir sur `la copie d'écran de Vim avec votre joli commentaire`_.
+Vous aurez remarqué que les commentaires en *VimL* (le langage de configuration de |vim|) commencent par un :viml:`"`. Appuyez ensuite sur |ttesc| pour revenir au mode par défaut (le mode normal) de |vim|. Et voilà le travail, comme vous pouvez le voir sur `la copie d'écran de Vim avec votre joli commentaire`_.
 
 .. _la copie d'écran de Vim avec votre joli commentaire:
 
@@ -89,7 +89,7 @@ Qu'est-ce que vous avez le droit de faire dans tout ça ? Pas grand chose, si ce
    
    Position de repos, clavier QWERTY.
 
-   *Illustration par Cy21 - CC-BY-SA-3.0 (http://www.creativecommons.org/licenses/by-sa/3.0*) ou GFDL (http://www.gnu.org/copyleft/fdl.html, via Wikimedia Commons http://commons.wikimedia.org/wiki/File:Typing-home-keys-hand-position.svg
+   Illustration par Cy21 - `CC-BY-SA-3.0 <https://www.creativecommons.org/licenses/by-sa/3.0>`_ ou `GFDL <https://www.gnu.org/copyleft/fdl.html>`_, via `Wikimedia Commons <https://commons.wikimedia.org/wiki/File:Typing-home-keys-hand-position.svg>`_
 
 Vous trouverez d'ailleurs sur la plupart des claviers des marques sur les touches F et J, c'est pour vous donner un repère tactile de la position où doivent se trouver vos index dans la position de repos.
 
@@ -111,7 +111,7 @@ La configuration par défaut : indispensable
 
 Passons aux choses sérieuses, c'est-à-dire comment rendre |vim| un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut |vimrc| en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
 
-Ce fichier doit se trouver dans votre répertoire d'accueil. */home/votre_user/.vimrc* sous Linux, */Users/votre_user/.vimrc* sous Mac OS X ou plus généralement *~/.vimrc*. Sous Windows vous pouvez créer un fichier nommé *_vimrc* qui doit se situer dans votre répertoire *%HOME%* qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au-dessus" de votre répertoire *Mes Documents*. Plus d'infos sur Wikipedia http://en.wikipedia.org/wiki/Home_directory#Default_Home_Directory_per_Operating_System.
+Ce fichier doit se trouver dans votre répertoire d'accueil. */home/votre_user/.vimrc* sous Linux, */Users/votre_user/.vimrc* sous Mac OS X ou plus généralement *~/.vimrc*. Sous Windows vous pouvez créer un fichier nommé *_vimrc* qui doit se situer dans votre répertoire *%HOME%* qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au-dessus" de votre répertoire *Mes Documents*. Plus d'infos sur Wikipedia https://en.wikipedia.org/wiki/Home_directory#Default_Home_Directory_per_Operating_System.
 
 J'ai commenté chacune des lignes du fichier directement dans le code. Rien de sorcier ici, on se demande juste pourquoi tout cela n'est pas inclus par défaut.
 
@@ -155,7 +155,7 @@ Pour ceux qui ont fait un copier/coller, il ne vous reste plus qu'à sauvegarder
 
 Pour le sauvegarder avec |vim|, il vous suffira, après avoir appuyé sur |ttesc| pour repasser en mode *Normal*, de taper ``:w ~/.vimrc``. Pour sauvegarder vos prochaines modifications tapez en mode *Normal* ``:w``. Pour sauvegarder et quitter ``:wq ~/.vimrc``. Pour quitter ``:q`` et pour quitter sans sauvegarder (forcer à quitter) ``:q!``.
 
-J'ai mis en ligne ce fichier de configuration directement sur *Github*. Vous pouvez le télécharger ou le copier directement à partir d'ici : http://vimebook.com/link/v2/fr/firstconfig.
+J'ai mis en ligne ce fichier de configuration directement sur *Github*. Vous pouvez le télécharger ou le copier directement à partir d'ici : https://vimebook.com/link/v2/fr/firstconfig.
 
 Voici à quoi devrait ressembler |vim| `après votre première configuration`_.
 
@@ -196,7 +196,7 @@ Pour l'instant, le plus facile pour que les modifications apportées à votre |v
 
 ``:so`` étant un raccourci pour ``:source``. C'est une bonne première étape, passons maintenant à l'utilisation d'un thème.
 
-Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème *Solarized* [#solarized]_ http://ethanschoonover.com/solarized (avec fond clair ou foncé, ça dépendra de vous). 
+Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en changeant généralement la couleur de fond ainsi que les couleurs par défaut pour le code. Comme je l'ai mentionné plus haut, nous allons utiliser le thème *Solarized* [#solarized]_ https://ethanschoonover.com/solarized (avec fond clair ou foncé, ça dépendra de vous). 
 
 .. [#solarized] À noter que nous utiliserons une version modernisée de *Solarized* pour vim et non l'originale disponible sur le site de l'auteur. Cette version plus récente va notamment lui permettre de fonctionner correctement sur les terminaux modernes. On l'installera à partir de ce fork https://github.com/ericbn/vim-solarized.
 
@@ -222,7 +222,9 @@ Votre répertoire `.vim` devrait ressembler à cela :
         └── solarized.vim
 
 
-Activez ensuite le thème Solarized dans votre |vimrc| comme le montre le code ci-dessous.::
+Activez ensuite le thème Solarized dans votre |vimrc| comme le montre le code ci-dessous.
+
+.. code-block:: vim
 
     " Utilise la version sombre de Solarized
     set background=dark
@@ -260,7 +262,7 @@ Sinon sous Linux j'utilise la police `DejaVu Sans Mono` que je trouve plutôt sy
 
 Vous pouvez là aussi bien sûr changer la taille de la police si vous le souhaitez. Pour avoir la liste des polices disponibles tapez en mode normal ``:set guifont:*``.
 
-Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne http://vimebook.com/link/v2/fr/syntaxhlconfig. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de |vim|.
+Vous trouverez une version complète du fichier de configuration pour ce chapitre en ligne https://vimebook.com/link/v2/fr/syntaxhlconfig. Je ne m'attarderai pas plus sur les polices, c'est assez dépendant de votre système d'exploitation, et un peu moins de |vim|.
 
 
 L'explorateur de fichiers : notre premier plugin
@@ -313,7 +315,7 @@ C'est là que *vim-plug* arrive à la rescousse, il va vous permettre d'installe
             └── syntax
                 └── sql.vim
 
-Certes la version avec *vim-plug* contient plus de sous-répertoires mais chaque plugin est isolé dans son propre répertoir. Croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite.
+Certes la version avec *vim-plug* contient plus de sous-répertoires mais chaque plugin est isolé dans son propre répertoire. Croyez-moi sur parole, ce rangement va vous éviter bien des ennuis par la suite.
 
 Commençons par installer *vim-plug*. Créez un répertoire nommé `autoload` dans votre répertoire `.vim` et copiez y `plug.vim` que vous pouvez télécharger ici : https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim. Pour les utilisateurs Unix, la commande qui suit permet de l'installer automatiquement :
 
@@ -421,7 +423,7 @@ Vous pouvez aussi effectuer diverses commandes (créer, copier des fichiers) mai
 
 Pour passer de la fenêtre de *vim-fern* à la fenêtre d'édition de votre fichier au clavier, appuyez sur ``Ctrl + w`` puis ``w``. C'est à dire la touche ``Control (Ctrl)`` et tout en la laissant appuyée la touche ``w``. Vous pouvez ensuite tout lâcher pour appuyer une nouvelle fois sur ``w``. Ce raccourci clavier sera d'ailleurs toujours valable pour naviguer entre vos différentes fenêtres |vim| (il n'est pas spécifique à *vim-fern*).
 
-Le fichier complet de votre |vimrc| à ce stade est disponible à cette adresse : http://vimebook.com/link/v2/fr/vim-plug
+Le fichier complet de votre |vimrc| à ce stade est disponible à cette adresse : https://vimebook.com/link/v2/fr/vim-plug
 
 
 Nous voilà fin prêts

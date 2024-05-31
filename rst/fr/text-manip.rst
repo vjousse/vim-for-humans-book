@@ -176,7 +176,7 @@ L'étape ultime (après avoir réussi à se passer des touches directionnelles) 
 
 Lorsque vous êtes en mode insertion, il vous suffit d'appuyer deux fois sur |ttsemicolon| pour retourner au mode normal. |ttsemicolon| ne vous demande pas de bouger votre main de la rangée de repos et on l'utilise rarement deux fois de suite (et si c'est le cas, il suffit d'attendre un peu avant de taper le deuxième |tsemicolon|), c'est donc le parfait candidat.
 
-Voici d'autres solutions possibles (cf http://vim.wikia.com/wiki/Avoid_the_escape_key):::
+Voici d'autres solutions possibles (cf https://vim.fandom.com/wiki/Avoid_the_escape_key):::
 
     :imap jj <Esc>
 
@@ -314,7 +314,7 @@ En mode normal vous pourrez utiliser |ttV| pour sélectionner lignes par lignes.
 À vous de jouer
 ===============
 
-Vous trouverez une version complète du fichier de configuration à ce stade en ligne ici http://vimebook.com/link/v2/fr/text-manip.
+Vous trouverez une version complète du fichier de configuration à ce stade en ligne ici https://vimebook.com/link/v2/fr/text-manip.
 
 Vous devriez maintenant être capable de n'utiliser que le clavier pour les opérations de manipulation de texte et d'édition. Je n'ai fait que survoler la puissance de |vim| ici, mais ça devrait être suffisant pour survivre. Je vous ai donné ici le strict nécessaire, mais ce strict nécessaire vous permet déjà de profiter de |vim| et du plaisir de ne plus utiliser la souris.
 
@@ -331,7 +331,7 @@ Voici une liste de ressources qui pourraient vous être utiles, malheureusement 
 * Le livre « Learning to play Vim » en anglais https://themouseless.dev/vim/
 * Le site « vim-hero » avec un tutorial interactif très bien fait https://www.vim-hero.com/
 
-Histoire de réveiller l'enfant qui est en vous, je vous conseille vivement d'aller vous amuser avec http://vim-adventures.com/. C'est un jeu de rôle en ligne qui a pour but de vous apprendre à manipuler |vim| ! Voici un petit aperçu :
+Histoire de réveiller l'enfant qui est en vous, je vous conseille vivement d'aller vous amuser avec https://vim-adventures.com/. C'est un jeu de rôle en ligne qui a pour but de vous apprendre à manipuler |vim| ! Voici un petit aperçu :
 
 .. _vim-adventures:
 
