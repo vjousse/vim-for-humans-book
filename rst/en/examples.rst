@@ -12,14 +12,14 @@ Questions / Answers
 How do I  quit |vim|?
 ---------------------
 
-First you need to be in normal mode. If you don't know if you are in normal mode, just press |ttesc| or |ttsemicolon| (depending on your configuration) multiple times. This should bring you to normal mode. Then, type :vimcmd:`:q` to exit |vim|. The problem is that most of the time, |vim| will not let you quit immediately. For example, if you have unsaved changes, |vim|  will not let you quit. You can cancel your modifications by using :vimcmd:`!` like this: :vimcmd:`:q!`. You can also save your modifications and save like this: :vimcmd:`:wq`.
+First you need to be in normal mode. If you don't know if you are in normal mode, just press |ttesc| or |ttsemicolon| (depending on your configuration) multiple times. This should bring you to normal mode. Then, type ``:q`` to exit |vim|. The problem is that most of the time, |vim| will not let you quit immediately. For example, if you have unsaved changes, |vim|  will not let you quit. You can cancel your modifications by using ``!`` like this: ``:q!``. You can also save your modifications and save like this: ``:wq``.
 
-How do I 'save as'?
+How do I "save as"?
 -------------------
 
-In normal mode, if you type :vimcmd:`:w`, |vim| will by default save your modifications into the current file. If you want to use another filename to "save as", you just need to specify it after :vimcmd:`w` like this: :vimcmd:`:w myfile.txt`. |vim| will save your file under the name *myfile.txt*. However, be aware that |vim| will not open *myfile.txt*, it will stay on the previous file.
+In normal mode, if you type ``:w``, |vim| will by default save your modifications into the current file. If you want to use another filename to "save as", you just need to specify it after ``w`` like this: ``:w myfile.txt``. |vim| will save your file under the name *myfile.txt*. However, be aware that |vim| will not open *myfile.txt*, it will stay on the previous file.
 
-If you want |vim| to save under the filename *myfile.txt* and then open the file in the current buffer, you will have to use :vimcmd:`:sav myfile.txt`.
+If you want |vim| to save under the filename *myfile.txt* and then open the file in the current buffer, you will have to use ``:sav myfile.txt``.
 
 How do I copy/cut and paste?
 ----------------------------
@@ -37,7 +37,7 @@ How do I create a new file?
 ---------------------------
 
 
-The traditional way to create a file is to type, in normal mode, :vimcmd:`:e myfile.txt` to open an empty buffer. Then, save your buffer using :vimcmd:`:w`. Il will be saved as ``myfile.txt`` in the current directory.
+The traditional way to create a file is to type, in normal mode, ``:e myfile.txt`` to open an empty buffer. Then, save your buffer using ``:w``. Il will be saved as ``myfile.txt`` in the current directory.
 
 You can also use Lusty Explorer (cf. :ref:`seclusty`). To do so, launch it using ``,lr`` or ``,lf`` (supposing that your leader key is ``,``), type the name of the file you want to create and then press |ttctrl| and |tte| at the same time. You can then save as above.
 
@@ -55,12 +55,12 @@ Files
 =================================================== ==================================== ============
 Expected result                                     Action                               Comments
 =================================================== ==================================== ============
-**Save**                                            :vimcmd:`:w`
-**Save as**                                         :vimcmd:`:w filename.txt`            Save as filename.txt but don't open filename.txt
-**Save as / open**                                  :vimcmd:`:sav filename.txt`          Save as and open filename.txt
-**Quit without saving (force quit)**                :vimcmd:`:q!`
-**Save and quit**                                   :vimcmd:`:wq`                        
-**Save as root**                                    :vimcmd:`:w !sudo tee %`             
+**Save**                                            ``:w``
+**Save as**                                         ``:w filename.txt``                  Save as filename.txt but don't open filename.txt
+**Save as / open**                                  ``:sav filename.txt``                Save as and open filename.txt
+**Quit without saving (force quit)**                ``:q!``
+**Save and quit**                                   ``:wq``                        
+**Save as root**                                    ``:w !sudo tee %``             
 =================================================== ==================================== ============
 
 Movement
