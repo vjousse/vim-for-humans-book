@@ -302,7 +302,7 @@ In "normal mode" you will be able to use |ttV| to select line per line. And of c
 It's your turn!
 ===============
 
-A complete version of the configuration file is available online at http://vimebook.com/link/v2/en/text-manip.
+A complete version of the configuration file is available online at https://vimebook.com/link/v2/en/text-manip.
 
 You should now be able to only use the keyboard to manipulate and edit text in |vim|. I have only skimmed over the power of |vim| here, but it should be enough to survive. I have given you the bare minimum here, but this minimum should allow you to enjoy |vim| and to not use the mouse anymore.
 

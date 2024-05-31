@@ -49,9 +49,9 @@ Every person having to produce text (code, book, reports, slideshows, …) regul
 For example, if you are a:
 
 **Student**
-    If you want to impress your future boss with your resume, it's a must. It's a proof of seriousness to see that a student took the time to learn |vim| on his or her own. Moreover, you'll have a unique tool to write all what you'll have to write (and that you'll be able to use for the rest of your career): your LaTeX reports, your slideshows, your code (if you need Word or LibreOffice to write you reports, it's time to use `LaTeX <http://en.wikipedia.org/wiki/LaTeX>`_, `Markdown <http://en.wikipedia.org/wiki/Markdown>`_ or `reStructuredText <http://en.wikipedia.org/wiki/ReStructuredText>`_).
+    If you want to impress your future boss with your resume, it's a must. It's a proof of seriousness to see that a student took the time to learn |vim| on his or her own. Moreover, you'll have a unique tool to write all what you'll have to write (and that you'll be able to use for the rest of your career): your LaTeX reports, your slideshows, your code (if you need Word or LibreOffice to write you reports, it's time to use `LaTeX <https://en.wikipedia.org/wiki/LaTeX>`_, `Markdown <https://en.wikipedia.org/wiki/Markdown>`_ or `reStructuredText <https://en.wikipedia.org/wiki/ReStructuredText>`_).
 
-    Friendly advice: for your slideshows, don't hesitate to use something like `impress.js <http://bartaz.github.com/impress.js>`_. It's using HTML/JS/CSS and I highly recommend that you use it to do awesome presentations based on non-proprietary technologies. You can have a look at `reveal.js <http://lab.hakim.se/reveal-js/>`_ too, and its online editor `slide.es <http://slid.es/>`_.
+    Friendly advice: for your slideshows, don't hesitate to use something like `impress.js <https://github.com/impress/impress.js>`_. It's using HTML/JS/CSS and I highly recommend that you use it to do awesome presentations based on non-proprietary technologies. You can have a look at `reveal.js <https://lab.hakim.se/reveal-js/>`_ too, and its online editor `slide.es <https://slid.es/>`_.
 
 **Teacher** 
     It's time to set an example for your students and to teach them a tool they will use during their entire life. |Vim| is something they'll be able to use a lot more than any programming language.
@@ -83,7 +83,7 @@ What you will not be learning
 - You will not be learning how to install and to configure |vim| for Windows. It's doable, but I have very limited knowledge about Windows. It may happen, but not yet. Only Linux/Unix will be discussed (and by extension Mac OS X).
 - You will not be learning how to use *Vi* (notice the lack of "*m*"). I'll only teach you how to be productive writing text with |vim|, I won't be teachng you how to impress your friends with *Vi* (and anyway, |vim| is enough for that). For those who don't get what I'm talking about, *Vi* is the "ancestor of |vim| (which stands for *Vi* - *IMproved*)" and is installed by default on all Unix-like systems (even on Mac OS X).
 - You will not be learning to know |vim| by heart: this book is not a reference it's a pragmatic smart way to learn |vim|.
-- You will not learn how to pimp the colors of your |vim|, although I will go over how to change your theme. I'll use the `Solarized <http://ethanschoonover.com/solarized>`_ theme, it's the best theme for your eyes.
+- You will not learn how to pimp the colors of your |vim|, although I will go over how to change your theme. I'll use the `Solarized <https://ethanschoonover.com/solarized>`_ theme, it's the best theme for your eyes.
 
 The hardest part is to get started
 ==================================

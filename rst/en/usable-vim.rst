@@ -12,7 +12,7 @@ Here is what a default |vim| is missing (and why **most of people are giving up*
     You can configure |vim| thanks to a file named |vimrc|. This file is, obviously, totally empty by default. The first thing to do will be to have a |vimrc| file with a minimal configuration.
 
 **Syntax highlighting**
-    By default, |vim| is white and ugly. To fix that, we will use the `Solarized theme <http://sethanschoonover.com/solarized>`_. If your goal is to be efficient, it's the best theme available out there (across all text editors), period. The beautiful image below will give you an idea of what it looks like (with the dark and the light theme). Personally, I'm using the dark theme.
+    By default, |vim| is white and ugly. To fix that, we will use the `Solarized theme <https://sethanschoonover.com/solarized>`_. If your goal is to be efficient, it's the best theme available out there (across all text editors), period. The beautiful image below will give you an idea of what it looks like (with the dark and the light theme). Personally, I'm using the dark theme.
 
     |solarized|
 
@@ -34,7 +34,7 @@ Essential preamble: the insert mode
 
 Let's be totally crazy. We will try to create the |vimrc| configuration file with |vim| itself. As I said earlier, the sooner you start to use |vim|, the better. I told you it would be totally crazy!
 
-The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <https://macvim.org/>`_ a try, it's the best |vim| port for Mac without a doubt. If you are using GNU/Linux or any other "Unix-like" system, you should have the command *vim* or *gVim* available directly from your terminal, or at least easily installable using your package management system (for Ubuntu, the package is called `vim-gnome`). Be sure to install the __full__ version (ie. with ruby and lua support). For Mac OS X, MacVim has already all what you need builtin. For Windows, it seems that there is a version available on the official |vim| website (http://www.vim.org/download.php), but I haven't tested it.
+The first thing to do will certainly be to install a |vim| version for your operating system. If you are using a Mac, give `MacVim <https://macvim.org/>`_ a try, it's the best |vim| port for Mac without a doubt. If you are using GNU/Linux or any other "Unix-like" system, you should have the command *vim* or *gVim* available directly from your terminal, or at least easily installable using your package management system (for Ubuntu, the package is called `vim-gnome`). Be sure to install the __full__ version (ie. with ruby and lua support). For Mac OS X, MacVim has already all what you need builtin. For Windows, it seems that there is a version available on the official |vim| website (https://www.vim.org/download.php), but I haven't tested it.
 
 
 **Personally**, I use *vim* directly on the command line, under Archlinux, in a terminal `kitty <https://sw.kovidgoyal.net/kitty/>`_ with the Nerd Fonts `FiraCode Nerd Font <https://www.nerdfonts.com/font-downloads>`_. This is the configuration used for the screenshots in this book.
@@ -149,7 +149,7 @@ For those who have done a copy/paste, you just have to save your newly created f
 
 To save it with Vim, after pressing |ttesc| to return to *Normal mode*, simply type ``:w ~/.vimrc``. To save your next changes, type ``:w`` in *Normal mode*. To save and exit ``:wq ~/.vimrc``. To exit ``:q`` and to exit without saving (force exit) ``:q!``.
 
-I have uploaded this configuration file directly on *Github*. You can download or copy/paste it directly from:  http://vimebook.com/link/v2/en/firstconfig.
+I have uploaded this configuration file directly on *Github*. You can download or copy/paste it directly from:  https://vimebook.com/link/v2/en/firstconfig.
 
 This is what |vim| should look like `after your first configuration`_.
 
@@ -189,7 +189,7 @@ For the time being, the easiest way to test the modifications you made to your |
 
 This is a good first step, but now it's time to start using a theme.
 
-Themes will allow you to have a nicer |vim| than the default one. A theme will change the background color of |vim| and the colors used for the syntax highlighting. As I said earlier, we will use the *Solarized* theme [#solarized]_ http://ethanschoonover.com/solarized (with dark or light background, it will be up to you).
+Themes will allow you to have a nicer |vim| than the default one. A theme will change the background color of |vim| and the colors used for the syntax highlighting. As I said earlier, we will use the *Solarized* theme [#solarized]_ https://ethanschoonover.com/solarized (with dark or light background, it will be up to you).
 
 
 .. [#solarized] Please note that we'll be using a modernized version of *Solarized* for vim and not the original version available on the author's site. This more recent version will enable it to run correctly on modern terminals. We'll install it from this fork https://github.com/ericbn/vim-solarized.
@@ -254,7 +254,7 @@ Under Linux I am using the `DejaVu Sans Mono` font:
 
 You can of course change the font size as you wish. To have the list of all the available fonts for your system type ``:set guifont:*`` in normal mode.
 
-You will find the full version of the configuration file for this chapter online http://vimebook.com/link/v2/en/syntaxhlconfig. I will not spend more time talking about the fonts as it's dependant of your operating system and not of |vim|.
+You will find the full version of the configuration file for this chapter online https://vimebook.com/link/v2/en/syntaxhlconfig. I will not spend more time talking about the fonts as it's dependant of your operating system and not of |vim|.
 
 
 Our first plugin: the file explorer
@@ -427,7 +427,7 @@ You can also perform various commands (create, copy files), but we won't go into
 
 To switch between the *vim-fern* window and your file window with your keyboard, use ``Ctrl + w`` and then ``w``. That is to say, hold the ``Control (Ctrl)`` key and at the same time press the ``w`` key. You can then release everything and press ``w`` again. This shortcut is valid to switch between any |vim| window (it's not a shortcut specific to *vim-fern*).
 
-The complete file of your |vimrc| at this stage is available at this address: http://vimebook.com/link/v2/en/vim-plug
+The complete file of your |vimrc| at this stage is available at this address: https://vimebook.com/link/v2/en/vim-plug
 
 
 Here we go

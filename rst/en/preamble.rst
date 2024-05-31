@@ -17,14 +17,14 @@ Whatever you give, it will be a motivation for me to write more books like this 
 
 If you give in money, 20% of the earnings are donated to Framasoft, an association promoting free software.
 
-You can give on the official website http://vimebook.com/en
+You can give on the official website https://vimebook.com/en
 
 Thanks for listening, and have fun!
 
 Free license
 ------------
 
-I'm releasing the book under the `Creative Commons Attribution 4.0 Internationa lLicence  <https://creativecommons.org/licenses/by/4.0/>`_. So, you can do (almost) whatever you want with this ebook.
+I'm releasing the book under the `Creative Commons Attribution 4.0 International Licence  <https://creativecommons.org/licenses/by/4.0/>`_. So, you can do (almost) whatever you want with this ebook.
 
 .. image:: ../img/by.png
 

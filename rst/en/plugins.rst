@@ -15,7 +15,7 @@ Managing and switching between files : *Lusty Explorer*
 
 We've already talked about *vim-fern* in :ref:`secvimfern` and we have seen that thanks to it, we can have a project explorer in a sidebar. One of the problems of this plugin is that it was not designed to be used with the keyboard. You can still use the keyboard, but it will not be as efficient as a plugin developed with keyboard usage in mind.
 
-The first plugin that I install when I have to use |vim| is *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). This plugin will allow you to navigate between the files on you hard drive in order to open files without using the mouse. Moreover, it will allow you to easily switch between you opened files, called buffers in |vim| terms. Let's start by installing it via *vim-plug*. As usual, add the line below to the plugins already listed in your |vimrc|:
+The first plugin that I install when I have to use |vim| is *Lusty Explorer* (https://www.vim.org/scripts/script.php?script_id=1890). This plugin will allow you to navigate between the files on you hard drive in order to open files without using the mouse. Moreover, it will allow you to easily switch between you opened files, called buffers in |vim| terms. Let's start by installing it via *vim-plug*. As usual, add the line below to the plugins already listed in your |vimrc|:
 
 .. code-block:: vim
 
@@ -97,7 +97,7 @@ Then add these mappings further down in your file (anywhere after the ``call plu
     " Search in open buffers
     nmap <silent> <Leader>fb :Buffers<CR>
     " We search the contents of files
-    nmap <silent> <Leader>en :Rg<CR>
+    nmap <silent> <Leader>fr :Rg<CR>
 
 As usual, to take these changes into account, type ``:so ~/.vimrc`` or ``:so $MYVIMRC`` in normal mode, then ``:PlugInstall`` to install the two plugins.
 
@@ -140,7 +140,7 @@ Type ``,fb`` in normal mode (or ``:Buffers``) and you should see a window simila
 
 You'll note that I had 3 files (buffers) open, and you'll have noticed that this feature is similar to the one already present in `LustyExplorer`. The choice is yours!
 
-A full version of the configuration file is available online at http://vimebook.com/link/v2/en/full.
+A full version of the configuration file is available online at https://vimebook.com/link/v2/en/full.
 
 
 Advanced plugins
