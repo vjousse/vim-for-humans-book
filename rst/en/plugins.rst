@@ -13,46 +13,14 @@ Of course, |vim| can be used without any plugins and it can be useful to know ho
 Managing and switching between files : *Lusty Explorer*
 =======================================================
 
-We've already talked about NerdTree in :ref:`secnerdtree` and we have seen that thanks to it, we can have a project explorer in a sidebar. One of the problems of this plugin is that it was not designed to be used with the keyboard. You can still use the keyboard, but it will not be as efficient as a plugin developed with keyboard usage in mind.
+We've already talked about *vim-fern* in :ref:`secvimfern` and we have seen that thanks to it, we can have a project explorer in a sidebar. One of the problems of this plugin is that it was not designed to be used with the keyboard. You can still use the keyboard, but it will not be as efficient as a plugin developed with keyboard usage in mind.
 
-The first plugin that I install when I have to use |vim| is *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). This plugin will allow you to navigate between the files on you hard drive in order to open files without using the mouse. Moreover, it will allow you to easily switch between you opened files, called buffers in |vim| terms.
+The first plugin that I install when I have to use |vim| is *Lusty Explorer* (http://www.vim.org/scripts/script.php?script_id=1890). This plugin will allow you to navigate between the files on you hard drive in order to open files without using the mouse. Moreover, it will allow you to easily switch between you opened files, called buffers in |vim| terms. Let's start by installing it via *vim-plug*. As usual, add the line below to the plugins already listed in your |vimrc|:
 
-To install it, first download the latest version of the script here: http://www.vim.org/scripts/script.php?script_id=1890. At the time of writing, it's on version 4.3: http://www.vim.org/scripts/download_script.php?src_id=17529). Once installed, put it in your ``.vim/`` folder. It should look like this:
+.. code-block:: vim
 
-.. code-block:: html
-
-    .vim
-    |-- autoload
-    |   `-- pathogen.vim
-    `-- bundle
-        |-- lusty-explorer
-        |   `-- plugin
-        |       `-- lusty-explorer.vim
-
-If you have done everything right since the beginning, your ``.vim/`` directory should now look like this:
-
-.. code-block:: html
-
-    .vim
-    |-- autoload
-    |   `-- pathogen.vim
-    `-- bundle
-        |-- lusty-explorer
-        |   `-- plugin
-        |       `-- lusty-explorer.vim
-        |-- nerdtree
-        |   |-- doc
-        |   |   `-- NERD_tree.txt
-        |   |-- nerdtree_plugin
-        |   |   |-- exec_menuitem.vim
-        |   |   `-- fs_menu.vim
-        |   |-- plugin
-        |   |   `-- NERD_tree.vim
-        |   `-- syntax
-        |       `-- nerdtree.vim
-        `-- solarized
-            `-- colors
-                `-- solarized.vim
+    " Install Lusty Explorer
+    Plug 'sjbach/lusty'
 
 Let's see how to use it. If we take a look at the documentation, here is what we find:
 
@@ -66,27 +34,28 @@ Let's see how to use it. If we take a look at the documentation, here is what we
 
 We can see that the documentation is referring to a key named |tleader| that you need to combine with keys like *lf*, *lr*, *lb* et *lg*. The |tleader| key is a special key that we need to define in our |vimrc|. Almost each plugin will need this special key to be defined, so we will use it a lot. This is a good way to avoid collisions with the default shortcuts of |vim|.
 
-So, we need to choose a key to be our |tleader| key. By default, |vim| uses ``\`` as a |tleader| key. I don't know about you, but for me this is not handy at all. I don't love to use my little finger too much. So I always replace the default |tleader| key with the |tcomma| key. You can of course choose another key, but lot of people are using |tcomma|: it's up to you. To tell it to |vim|, you will need to add a line in your |vimrc| as follows: ::
+So, we need to choose a key to be our |tleader| key. By default, |vim| uses ``\`` as a |tleader| key. I don't know about you, but for me this is not handy at all. I don't love to use my little finger too much. So I always replace the default |tleader| key with the |tcomma| key. You can of course choose another key, but lot of people are using |tcomma|: it's up to you. To tell it to |vim|, you will need to add a line in your |vimrc| as follows:
 
+.. code-block:: vim
+    
+    " Use , as the mapleader key
     let mapleader = ","
 
-Ensure that the modification has been made and taken into account by |vim|. This can be done by restarting |vim|, or by typing :vimcmd:`:so ~/.vimrc` or :vimcmd:`:so $MYVIMRC` in normal mode. Once this is done, you should be able to do ``,lr`` (if you choose ``,`` as your |tleader| key) and you should see something like the picture below in your |vim|.
+Ensure that the modification has been made and taken into account by |vim|. This can be done by restarting |vim|, or by typing ``:so ~/.vimrc`` or ``:so $MYVIMRC`` in normal mode. Once this is done, you should be able to do ``,lr`` (if you choose ``,`` as your |tleader| key) and you should see something like the picture below in your |vim| (note the display of the contents of your current folder at bottom left).
 
 .. _la capture d'écran de lusty: lusty_
 
 .. _lusty:
 
-.. image:: ../../book-tex/graphics/vim-lusty.png
+.. image:: graphics/vim-lusty.png
 
-The next thing to do is to deactivate *The Nerd Tree* by commenting the corresponding line like I have done on the screenshot above. It will not be useful anymore as *Lusty Explorer* is a better replacement when using the keyboard.
+You can see on the `lusty`_ screenshot that *Lusty Explorer* is made of two parts. The bottom part is about the current directory you're exploring and the top part is the content of this directory. The current item is highligthed. For example, on the `lusty`_ screenshot above, the current item is the ``.autoload/`` directory, highligthed in yellow (the color could be different, it depends on your theme).
 
-You can see on the `lusty`_ screenshot that *Lusty Explorer* is made of two parts. The bottom part is about the current directory you're exploring and the top part is the content of this directory. The current item is highligthed. For example, on the `lusty`_ screenshot above, the current item is the ``.vim/`` directory, highligthed in yellow (the color could be different, it depends on your theme).
-
-*Lusty Explorer* uses something called *Fuzzy matching* that will allow you to type only a small part of the file you want to select. This part can be everything: the begining of the filename, the middle, the end or just letters composing the file to select. In the example above, if I enter ``.vimi`` in the *Lusty* window, ``.viminfo`` will be selected without needing to specify the full name. Then I just need to press |ttenter| to open the corresponding file in |vim|. You can see this particular example in the screenshot above.
+*Lusty Explorer* uses something called *Fuzzy matching* that will allow you to type only a small part of the file or directory you want to select. This part can be everything: the begining of the filename, the middle, the end or just letters composing the file to select. In the example above, if I enter ``pl`` in the *Lusty* window, ``plugged/`` will be selected without needing to specify the full name. Then I just need to press |ttenter| to open the corresponding file in |vim|. You can see this particular example in the screenshot below.
 
 .. _fuzzy:
 
-.. image:: ../../book-tex/graphics/vim-lusty-fuzzy.png
+.. image:: graphics/vim-lusty-fuzzy.png
 
 
 Here are some handy handy shortcuts of *Lusty Explorer*:
@@ -94,7 +63,7 @@ Here are some handy handy shortcuts of *Lusty Explorer*:
 * |tctrl| + |tn| select the next file/directory
 * |tctrl| + |tp| select the previous file/directory
 * |tctrl| + |tw| go the the parent directory
-* |tctrl| + |te| create a new empty file (unsaved) with the current name entered in *Lusty Explorer*. If you want to save the file, you just have to use :vimcmd:`:w`.
+* |tctrl| + |te| create a new empty file (unsaved) with the current name entered in *Lusty Explorer*. If you want to save the file, you just have to use ``:w``.
 
 So *Lusty Explorer* can be used for two things: navigate your filesystem with ``,lr`` and ``,lf``, and switch between your opened files (buffers) with ``,lb``. Personally, I don't use the ``,lg`` keys a lot to search in the buffers, but it's up to you.
 
@@ -102,113 +71,76 @@ In order to get familiar with *Lusty Explorer* you should try to open multiple f
 
 This plugin is totally mandatory and adds a lot of value to |vim| as it allows you to avoid using the mouse to open files. Be sure to take the time to learn how to use it, it's a great time investment.
 
-Searching files on disk: *Ack*
-==============================
+Search for files, strings and more: *fzf*
+=========================================
 
-At some point, you will need to search for a particular pattern inside your codebase. |vim| can help help you to do so with a plugin that uses *Ack* under the hood.
+In the IT world, there's a very effective way of finding things whose names we know “just about”. It's called **Fuzzy Matching** (see https://en.wikipedia.org/wiki/Approximate_string_matching). This technique enables us to find files for which we know part of the name, or part of the parent directory and part of the name, for example. It will also enable us to do the same for file contents: no need to be very precise (uppercase, lowercase, accents, etc.), **Fuzzy Matching** will return whatever is closest to the term we're looking for.
 
-*Ack* (http://betterthangrep.com/) is a program written in *perl* that replaces the good old *grep* to search inside files. It's *grep*, but better. However, it has one little disadvantage: OS's rarely have it installed by default. So, as you may have guessed, the first thing to do will be to install it. As it depends on the OS you are running, you will have to refer to the installation instructions to know how to intall it for your particular case: http://github.com/mileszs/ack.vim#installation.
+`fzf <https://github.com/junegunn/fzf>`_ is the reference in the field: it allows you to do **Fuzzy Matching** just about anywhere, and especially with vim (good timing, eh 🤓)!
 
-For Debian/Ubuntu, run: ``sudo apt-get install ack-grep``. For Mac OS X, first you will need Homebrew (http://mxcl.github.com/homebrew/). Then, you will need to open a terminal and type ``brew install ack``. For people using MacPorts the command will be: ``sudo port install p5-app-ack``. For Windows, install Strawberry Perl (http://strawberryperl.com/) and in a command shell execute ``C:\>cpan App::Ack``. You should now be able to use the **ack** command in your terminal instead of **grep**.
+Installing *fzf*
+---------------------
 
-Now, we're ready for the big thing. Go to the ack plugin page (http://www.vim.org/scripts/script.php?script_id=2572) and download the last version (at the moment, it's the 0.3.1 version). Uncompress it in your ``~/.vim/bundle/`` directory so that you have a structure like the one below:
+Add these two lines to your plugins in your |vimrc| to install *fzf* and the corresponding |vim| plugin :::
 
-.. code-block:: html
+    " Install fzf
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
-    bundle
-    |-- ack
-    |   |-- doc
-    |   |   `-- ack.txt
-    |   `-- plugin
-    |       `-- ack.vim
-    …
+Then add these mappings further down in your file (anywhere after the ``call plug#end()``):
 
-As always, be sure that your modifications are taken into account by restarting |vim| or by entering :vimcmd:`:source ~/.vimrc` while in normal mode.
+.. code-block:: vim
 
-Then we will need to add some lines to our |vimrc| file to ease the use of the plugin :::
+    ""-- FZF mappings
+    " We search the files in the current directory
+    nmap <silent> <Leader>ff :Files<CR>
+    " Search in open buffers
+    nmap <silent> <Leader>fb :Buffers<CR>
+    " We search the contents of files
+    nmap <silent> <Leader>en :Rg<CR>
 
-        " Default params for ack
-        let g:ackprg="ack -H --nocolor --nogroup --column"
-        " Add a mark and search
-        nmap <leader>j mA:Ack<space>
-        " Add a mark and search for the word under the cursor
-        nmap <leader>ja mA:Ack "<C-r>=expand("<cword>")<cr>"
-        nmap <leader>jA mA:Ack "<C-r>=expand("<cWORD>")<cr>"
+As usual, to take these changes into account, type ``:so ~/.vimrc`` or ``:so $MYVIMRC`` in normal mode, then ``:PlugInstall`` to install the two plugins.
 
-Ack will start the search from the directory of the file currently opened. Here are some examples (assuming that your |tleader| key is the |tcomma| key):
+Search files by name
+--------------------
 
-* ``,j`` *toto* : will search for *toto* starting from the directory of the current file,
-* ``,ja`` with your cursor on a word will search for this word.
+Type ``,ff`` in normal mode (or ``:Files``) and you should see a window similar to the following screenshot: fzf-files_
+
+.. _fzf-files:
+
+.. image:: graphics/vim-fzf-files.png
+
+Depending on where you opened your |vim|, the results will of course be different. I opened it in the ``.vim`` directory. You may notice that I just typed `REAmd` and it automatically found all files named `README.md`. It even highlighted the filenames to make the match, in our case the `REA` at the beginning of the filename and then the `md` in the file extension.
+
+You can navigate the search results with the default |vim| shortcuts, namely ``Ctrl-k`` to move the selection one line above and ``Ctrl-j`` to move the selection one line below. Then simply press |ttenter| to open the selected file. Note the file preview to the right of the opened window. You can navigate through this preview using ``Shift-up`` and ``Shift-down`` (yes, there's no |vim| shortcut for this function!).
+
+Searching for strings in files
+------------------------------
+
+To search files, we're going to use a tool called `rg` (for `ripgrep`). Make sure you have it installed - instructions are available on rg's `github <https://github.com/BurntSushi/ripgrep#installation>`_. If you're not familiar with `ripgrep`, it's high time you replaced your traditional `grep` with `rg`: it's much more powerful and much better overall.
+
+Once `rg` is installed, type ``,fr`` in normal mode (or ``:Rg``) and you should see a window similar to :ref:`the following screenshot<fzf-rg>` open :
+
+.. _fzf-rg:
+
+.. image:: graphics/vim-fzf-rg.png
+
+In my example, *fzf* found the text *config* within the file ``README-VIM.md`` under the heading ``### Configuration``.
+
+Search in buffer names
+----------------------
+
+Type ``,fb`` in normal mode (or ``:Buffers``) and you should see a window similar to :ref:`the following screenshot<fzf-buffers>` open :
 
 
-The results will be displayed in a window called the *Quickfix Window*, as you can see below.
+.. _fzf-buffers:
 
-.. image:: ../../book-tex/graphics/vim-ack-quickfix.png
-
-Here are some commands available inside this window:
-
-* **o** : open (same as <Enter>)
-* **go** : preview display (open the file but keep the focus on the ack.vim results)
-* **t** : open in a new tab
-* **T** : open in a new background tab
-* **h** : open and split the window horizontally
-* **v** : open and split the window vertically
-* **q** : close the quickfix window
-
-By default, Ack doesn't search in files that are not relevant. For example, it will not search in temp files or in files used by your favorite revision control system. If you want Ack to search into any file, independantly of its type, you need to specify the ``-u`` option in your |vimrc| :::
-
-    " Default params for Ack
-    let g:ackprg="ack -H -u --nocolor --nogroup --column"
+.. image:: graphics/vim-fzf-buffers.png
 
 
-Searching files on disk: Ctrlp
-==============================
+You'll note that I had 3 files (buffers) open, and you'll have noticed that this feature is similar to the one already present in `LustyExplorer`. The choice is yours!
 
-Here we will not search inside files like we did with Ack. Instead, we will search for files to open with |vim|. This can be very handy when you're working on a project where files are everywhere in the directory tree.
-
-As always, we will start by installing the plugin. For once, this plugin has a dedicated page that you will find here: http://kien.github.com/ctrlp.vim/. Scroll to the bottom to download the latest version in the "Direct Downloads" section. For the laziest, here is the direct link: http://github.com/kien/ctrlp.vim/zipball/master. Uncompress the archive in your ``~/.vim/bundle/`` directory, so that you get something like this:
-
-.. code-block:: html
-
-    bundle
-    |
-    …
-    |-- ctrlp
-    |   |-- autoload
-    |   |   |-- ctrlp
-    |   |   |   |-- bookmarkdir.vim
-    |   |   |   |-- buffertag.vim
-    |   |   |   |-- changes.vim
-    |   |   |   |-- dir.vim
-    |   |   |   |-- line.vim
-    |   |   |   |-- mixed.vim
-    |   |   |   |-- mrufiles.vim
-    |   |   |   |-- quickfix.vim
-    |   |   |   |-- rtscript.vim
-    |   |   |   |-- tag.vim
-    |   |   |   |-- undo.vim
-    |   |   |   `-- utils.vim
-    |   |   `-- ctrlp.vim
-    |   |-- doc
-    |   |   `-- ctrlp.txt
-    |   |-- plugin
-    |   |   `-- ctrlp.vim
-    |   `-- readme.md
-    …
-
-As always, be sure that your modifications are taken into account by restarting |vim| or by entering :vimcmd:`:source ~/.vimrc` while in normal mode.
-
-Now we need to add the shortcut to our |vimrc| to invoke CtrlP like in the listing below. Personnaly, I've chosen ``,c``, but you can choose whatever you want.::
-
-    let g:ctrlp_map = '<leader>c'
-
-Here is CtrlP in action.
-
-.. image:: ../../book-tex/graphics/vim-ctrlp.png
-
-Launch it with ``,c`` and then type the name of the file you want to search. When the searched file will be selected first, you will just have to press |ttenter| to open it.
-
-CtrlP can be used for navigating through the opened files (like Lusty), but I find Lusty handier for that. You can also use to navigate directly through your code by "following" your functions thanks to something called the tags (like you can do when using Eclipse). It's a too big topic for the scope of this book, but if you're interested you can read this blog article on the topic: http://andrew-stewart.ca/2012/10/31/vim-ctags.
+A full version of the configuration file is available online at http://vimebook.com/link/v2/en/full.
 
 
 Advanced plugins
@@ -216,8 +148,8 @@ Advanced plugins
 
 Writing an entire book about the |vim| plugin is definitely something doable, but I have to admit that I don't have enough courage. So, I will stop here with the plugins thing. However, below is a list of some plugins that may interest you. This list comes from a poll I did on Twitter asking my followers what were the most useful |vim| plugins to them. Here it is:
 
-* **neocomplcache**. An automatic completion plugin. It can autocomplete file names, language attributes, snippets and a lot more. The Github repo: https://github.com/Shougo/neocomplcache
+
+* **coc.vim**. This is a plugin that will turn your |vim| into a complete IDE à la VSCode: auto-completion of functions, classes, “go to definition”, etc. Although the trend is towards simpler plug-ins that integrate with `LSPs (Language Server Protocol) directly <https://github.com/prabirshrestha/vim-lsp>`_, *coc.vim* has the advantage of being complete, tested and based on VSCode-like configurations. It also has the disadvantage of using javascript. The Github repo: https://github.com/neoclide/coc.nvim.
 * **surround**. With this plugin, you can manage (change, add, delete) everything that "surrounds": parenthesis, brackets, quotes, etc. For example, you will be able to change "Hello world!" with 'Hello world!' or <q>Hello world!</q> with a simple key combination. The Github repo: https://github.com/tpope/vim-surround
 * **fugitive**. If you work with source code, you have to use a version control system. If it's not the case, you can go flog yourself. Otherwise, if you're using Git, fugitive was made for you. It allows you to manage your git command directly inside |vim|. The Github repo can be found here:  https://github.com/tpope/vim-fugitive
-* **syntastic**. Syntastic will check the syntax of your source code. It will directly display your syntax errors in your |vim|, much like, for example, Eclipse. It can be a time saver if you edit a lot of code. The Github repo can be found here: https://github.com/scrooloose/syntastic
-* **ctags + ctrlp**. Ctags is a small external program that will parse your source code and allow you to "follow" your functions calls through your source code. Very useful to navigate into your source code. Used with **ctrlp** described above, it will soon become a must. Everything is explained here: http://andrew-stewart.ca/2012/10/31/vim-ctags.
+* **ALE**. ALE checks the syntax of your source code for you. Like VSCode, for example, it will display your syntax errors directly in |vim|. Can save you a lot of time if you often edit code. If you want to use it with *coc.vim*, make sure you set ``"diagnostic.displayByAle": true`` in your ``:CocConfig`` as mentioned in the `ALE Github <https://github.com/dense-analysis/ale?tab=readme-ov-file#cocnvim>`_ repository. The Github repo is here: https://github.com/dense-analysis/ale
