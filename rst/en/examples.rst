@@ -121,17 +121,21 @@ Expected result                                                                 
 
 Search and/or replace
 ---------------------
+.. table::
+  :widths: 35 25 40
 
-=================================================================== ======================= =================================
-Expected result                                                     Action                  Comments
-=================================================================== ======================= =================================
-**Search**                                                          ``/*toto``              Search the *toto* string starting at the current cursor position
-**Next**                                                            ``n``                   Go to the next search result
-**Previous**                                                        ``N``                   Go to the previous search result
-**Replace on the current line (once)**                              ``:s/toto/titi``        Replace toto by titi on the current line (once)
-**Replace on the current line (multiple)**                          ``:s/toto/titi/g``      Replace toto by titi on the current line (for all occurences of toto)
-**Replace on all the lines (once)**                                 ``:%s/toto/titi``       Replace toto by titi on all the lines of the file (once per line)
-**Replace on all the lines (multiple)**                             ``:%s/toto/titi/g``     Replace toto by titi on all the lines of the file (for all occurences of toto)
-**Replace on the current line, case insensitive (once)**            ``:s/toto/titi/i``      Replace toto by titi on the current line, case insensitive (once)
-**Replace on the current line, case insensitive (multiple)**        ``:s/toto/titi/gi``     Replace toto by titi on the current line, case insensitive (for all occurences of toto)
-=================================================================== ======================= =================================
+  =================================================================== ========================= =================================
+  Expected result                                                     Action                    Comments
+  =================================================================== ========================= =================================
+  **Search**                                                          ``/*toto``                Search the *toto* string starting at the current cursor position
+  **Next**                                                            ``n``                     Go to the next search result
+  **Previous**                                                        ``N``                     Go to the previous search result
+  **Replace on the current line (once)**                              ``:s/toto/titi``          Replace toto by titi on the current line (once)
+  **Replace on the current line (multiple)**                          ``:s/toto/titi/g``        Replace toto by titi on the current line (for all occurences of toto)
+  **Replace on the specified lines (once)**                           ``:xx,yy s/toto/titi``    Replace toto by titi between the ``xx`` and ``yy`` line numbers (once)
+  **Replace on the specified lines (multiple)**                       ``:xx,yy s/toto/titi/g``  Replace toto by titi between the ``xx`` and ``yy`` line numbers (for all occurences of toto)
+  **Replace on all the lines (once)**                                 ``:%s/toto/titi``         Replace toto by titi on all the lines of the file (once per line)
+  **Replace on all the lines (multiple)**                             ``:%s/toto/titi/g``       Replace toto by titi on all the lines of the file (for all occurences of toto)
+  **Replace on the current line, case insensitive (once)**            ``:s/toto/titi/i``        Replace toto by titi on the current line, case insensitive (once)
+  **Replace on the current line, case insensitive (multiple)**        ``:s/toto/titi/gi``       Replace toto by titi on the current line, case insensitive (for all occurences of toto)
+  =================================================================== ========================= =================================

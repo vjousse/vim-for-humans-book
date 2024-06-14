@@ -51,15 +51,18 @@ Pense-bête
 Fichiers
 --------
 
-=================================================== ==================================== ============
-Résultat attendu                                    Action                               Commentaire
-=================================================== ==================================== ============
-**Sauvegarder**                                     ``:w``                               w pour write (écrire)
-**Sauvegarder sous**                                ``:w nomdefichier.txt``              Sauvegarde sous nomdefichier.txt mais n'ouvre pas nomdefichier.txt
-**Sauvegarder sous / ouvre**                        ``:sav nomdefichier.txt``            Sauvegarde sous et ouvre nomdefichier.txt
-**Quitter sans sauvegarder (forcer à quitter)**     ``:q!``
-**Sauvegarder et quitter**                          ``:wq``                              wq pour write (écrire) and quit (quitter)
-=================================================== ==================================== ============
+.. table::
+  :widths: 35 25 40
+
+  =================================================== ==================================== ============
+  Résultat attendu                                    Action                               Commentaire
+  =================================================== ==================================== ============
+  **Sauvegarder**                                     ``:w``                               w pour write (écrire)
+  **Sauvegarder sous**                                ``:w nomdefichier.txt``              Sauvegarde sous nomdefichier.txt mais n'ouvre pas nomdefichier.txt
+  **Sauvegarder sous / ouvre**                        ``:sav nomdefichier.txt``            Sauvegarde sous et ouvre nomdefichier.txt
+  **Quitter sans sauvegarder (forcer à quitter)**     ``:q!``
+  **Sauvegarder et quitter**                          ``:wq``                              wq pour write (écrire) and quit (quitter)
+  =================================================== ==================================== ============
 
 Déplacements
 ------------
@@ -119,17 +122,21 @@ Résultat attendu                                                               
 
 Chercher et/ou remplacer
 ------------------------
+.. table::
+  :widths: 35 25 40
 
-=================================================================== ======================= =================================
-Résultat attendu                                                    Action                  Commentaire
-=================================================================== ======================= =================================
-**Rechercher**                                                      ``/*toto``              Cherche la chaîne de caractères *toto* à partir de l'emplacement courant du curseur 
-**Suivant**                                                         ``n``                   Affiche le prochain résultat de recherche
-**Précédent**                                                       ``N``                   Affiche le précédent résultat de recherche
-**Remplacer sur la ligne courante**                                 ``:s/toto/titi``        Remplace toto par titi sur la ligne courante (une fois)
-**Remplacer tout sur la ligne courante**                            ``:s/toto/titi/g``      Remplace toto par titi sur la ligne courante (pour toutes les occurrences de toto)
-**Remplacer dans toutes les lignes**                                ``:%s/toto/titi``       Remplace toto par titi sur toutes les lignes du fichier (une fois par ligne)
-**Remplacer tout dans toutes les lignes**                           ``:%s/toto/titi/g``     Remplace toto par titi sur toutes les lignes du ficher (pour toutes les occurrences de toto par ligne)
-**Remplacer sur la ligne courante en ignorant la casse**            ``:s/toto/titi/i``      Remplace toto par titi sur la ligne courante (une fois)
-**Remplacer tout sur la ligne courante en ignorant la casse**       ``:s/toto/titi/gi``     Remplace toto par titi sur la ligne courante (pour toutes les occurrences de toto)
-=================================================================== ======================= =================================
+  =================================================================== ========================== =================================
+  Résultat attendu                                                    Action                     Commentaire
+  =================================================================== ========================== =================================
+  **Rechercher**                                                      ``/*toto``                 Cherche la chaîne de caractères *toto* à partir de l'emplacement courant du curseur 
+  **Suivant**                                                         ``n``                      Affiche le prochain résultat de recherche
+  **Précédent**                                                       ``N``                      Affiche le précédent résultat de recherche
+  **Remplacer sur la ligne courante**                                 ``:s/toto/titi``           Remplace toto par titi sur la ligne courante (une fois)
+  **Remplacer tout sur la ligne courante**                            ``:s/toto/titi/g``         Remplace toto par titi sur la ligne courante (pour toutes les occurrences de toto)
+  **Remplacer entre les lignes choisies**                             ``:xx,yy s/toto/titi``     Remplace toto par titi entre les lignes numéro ``xx`` et ``yy`` (une fois)
+  **Remplacer tout entre les lignes choisies**                        ``:xx,yy s/toto/titi/g``   Remplace toto par titi entre les lignes numéro ``xx`` et ``yy`` (pour toutes les occurences de toto)
+  **Remplacer dans toutes les lignes**                                ``:%s/toto/titi``          Remplace toto par titi sur toutes les lignes du fichier (une fois par ligne)
+  **Remplacer tout dans toutes les lignes**                           ``:%s/toto/titi/g``        Remplace toto par titi sur toutes les lignes du ficher (pour toutes les occurrences de toto par ligne)
+  **Remplacer sur la ligne courante en ignorant la casse**            ``:s/toto/titi/i``         Remplace toto par titi sur la ligne courante (une fois)
+  **Remplacer tout sur la ligne courante en ignorant la casse**       ``:s/toto/titi/gi``        Remplace toto par titi sur la ligne courante (pour toutes les occurrences de toto)
+  =================================================================== ========================== =================================
