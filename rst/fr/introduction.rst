@@ -22,14 +22,14 @@ Ce livre a pour but de pallier ce manque en vous guidant tout au long de votre d
 
 Vous trouverez beaucoup de personnes pour vous dire « mais tu n'as qu'à t'y mettre pour de bon », « tu verras après ça va aller mieux », certes, mais vous devez toujours être productif au jour le jour, ça ne change rien au problème. L'approche de ce livre est la suivante :
 
-- Disposer d'un |vim| un temps soit peu moderne : coloration syntaxique et jolies couleurs.
+- Disposer d'un |vim| un tant soit peu moderne : coloration syntaxique et jolies couleurs.
 - Pouvoir utiliser |vim| comme n'importe quel autre éditeur de texte : éditer facilement du code et naviguer entre les fichiers en utilisant la souris.
 - Apprendre des raccourcis clavier et se passer de la souris au fur et à mesure.
 - Installer un *best-of* des plugins pour commencer à tirer partie de la puissance de |vim|.
 
 À partir du point numéro 2, vous pourrez déjà utiliser |vim| au quotidien sans perdre énormément de productivité. Et c'est là que la différence se fait : si vous pouvez intégrer |vim| dans votre quotidien c'est gagné. Vous aurez ensuite toute votre vie pour connaître tous les raccourcis clavier.
 
-Vous aussi vous en avez marre d'attendre la release de TextMate 2 (à noter que depuis l'écriture de ce livre, le code de TextMate 2 a été publié sous licence GPL : https://github.com/textmate/textmate) ? D'essayer le n-ième éditeur à la mode et de devoir tout réapprendre et ce jusqu'à la prochaine mode ? De devoir changer d'éditeur quand vous passez de votre Mac, à votre Windows, à votre Linux ? De ne pas pouvoir utiliser VSCode sur votre serveur ou de le trouver trop lourd ? Alors vous aussi, rejoignez la communauté des gens heureux de leur éditeur de texte. **Le changement, c'est maintenant** !
+Vous aussi vous en avez marre d'attendre la release de TextMate 2 (à noter que depuis l'écriture de ce livre, le code de TextMate 2 a été publié sous licence GPL : https://github.com/textmate/textmate) ? D'essayer le énième éditeur à la mode et de devoir tout réapprendre et ce jusqu'à la prochaine mode ? De devoir changer d'éditeur quand vous passez de votre Mac, à votre Windows, à votre Linux ? De ne pas pouvoir utiliser VSCode sur votre serveur ou de le trouver trop lourd ? Alors vous aussi, rejoignez la communauté des gens heureux de leur éditeur de texte. **Le changement, c'est maintenant** !
 
 
 Et Neovim ?
@@ -65,7 +65,7 @@ Par exemple vous êtes :
 **Écrivain** 
     Si vous écrivez en markdown/reStructuredText/WikiMarkup ou en LaTeX, |vim| vous fera gagner beaucoup de temps. Vous ne pourrez plus repasser à un autre éditeur, ou vous voudrez le "Vimifier" à tout prix.
 
-Faites moi confiance, je suis passé et repassé par ces 5 rôles, mon meilleur investissement a toujours été |vim|, et de loin.
+Faites-moi confiance, je suis passé et repassé par ces 5 rôles, mon meilleur investissement a toujours été |vim|, et de loin.
 
 Ce que vous apprendrez (entre autres choses)
 ============================================
@@ -75,7 +75,7 @@ Ce que vous apprendrez (entre autres choses)
 - Comment vous passer de la souris et pourquoi c'est la meilleure chose qu'il puisse vous arriver quand vous programmez/tapez du texte.
 - Comment vous pouvez facilement déduire les raccourcis claviers avec quelques règles simples.
 
-Si je devais le résumer en une phrase : puisque vous vous considérez comme **un artiste, passez du temps à apprendre** comment utiliser l'outil qui vous permet de vous exprimer, une bonne fois pour toute.
+Si je devais le résumer en une phrase : puisque vous vous considérez comme **un artiste, passez du temps à apprendre** comment utiliser l'outil qui vous permet de vous exprimer, une bonne fois pour toutes.
 
 Ce que vous n'apprendrez pas (entre autres choses)
 ==================================================
@@ -94,8 +94,8 @@ Alors, prêt pour l'aventure ? Prêt à sacrifier une heure pour débuter avec |
 |vim| fait partie de ces outils avec lesquels vous allez galérer au début. Le but de ce guide est de vous mettre le pied à l'étrier et de diminuer la hauteur de la marche à franchir. Mais soyez conscients que vous mettre à |vim| va vous demander de la volonté et quelques efforts. Comme on dit souvent, on n'a rien sans rien. Voici la méthode que je vous recommande pour apprivoiser la bête :
 
 - Essayez de faire entrer |vim| dans vos habitudes. Suivez le premier chapitre de ce guide jusqu'à la partie concernant l'explorateur de fichiers utilisable à la souris *vim-fern*. Ensuite, vous pourrez utiliser |vim| comme un Notepad++ ou un TextMate ou un Sublime Text. Vous n'utiliserez que 1% des capacités de |vim| mais peu importe. Ce qui est important, c'est de le faire entrer dans votre quotidien.
-- Gardez une feuille avec les principaux raccourcis imprimée à côté de vous. Le but ce n'est pas de les apprendre par cœur, mais c'est de les avoir à portée de main quand vous vous demanderez « mais il y a certainement une façon plus efficace de faire cela ».
-- Gardez la foi. Au début vous resterez un sceptique quant à l'utilité de tout réapprendre avec |vim|. Et puis un jour vous aurez un déclic et vous vous demanderez pourquoi tous vos logiciels ne peuvent pas se contrôler avec les commandes de |vim|.
+- Gardez une feuille imprimée avec les principaux raccourcis à côté de vous. Le but ce n'est pas de les apprendre par cœur, mais c'est de les avoir à portée de main quand vous vous demanderez « mais il y a certainement une façon plus efficace de faire cela ».
+- Gardez la foi. Au début vous resterez un peu sceptique quant à l'utilité de tout réapprendre avec |vim|. Et puis un jour vous aurez un déclic et vous vous demanderez pourquoi tous vos logiciels ne peuvent pas se contrôler avec les commandes de |vim|.
 - Gardez à l'esprit que c'est un investissement pour vos 20 prochaines années, et c'est bien connu, un investissement ce n'est pas complètement rentable de suite.
 
 Trêve de bavardage, passons aux choses sérieuses. Go go go !

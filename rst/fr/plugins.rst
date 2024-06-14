@@ -4,7 +4,7 @@
 Les plugins indispensables
 **************************
 
-Soyons clair, |vim| sans ses plugins, c'est comme Milan sans Rémo (© François Corbier - Sans ma barbe - https://www.bide-et-musique.com/song/149.html) : ça ne rime à rien. C'est grâce aux plugins que |vim| va pouvoir pleinement exprimer toute sa puissance et vous élever à un autre niveau de productivité. Vous n'avez pas besoin d'en avoir des mille et des cents, mais quelques uns savamment choisis devraient faire l'affaire.
+Soyons clair, |vim| sans ses plugins, c'est comme Milan sans Rémo (© François Corbier - Sans ma barbe - https://www.bide-et-musique.com/song/149.html) : ça ne rime à rien. C'est grâce aux plugins que |vim| va pouvoir pleinement exprimer toute sa puissance et vous élever à un autre niveau de productivité. Vous n'avez pas besoin d'en avoir des mille et des cents, mais quelques-uns savamment choisis devraient faire l'affaire.
 
 Qu'on ne se méprenne pas, |vim| peut bien sûr s'utiliser sans plugins. Il peut d'ailleurs s'avérer utile de savoir faire les manipulations de base sans avoir besoin d'installer de plugin, car c'est souvent le cas sur des serveurs : il n'y a aucun plugin d'installé. Dans ce cas là, savoir ouvrir, sauvegarder sous, passer d'un fichier à l'autre avec les commandes de |vim| par défaut peut vous sauver la mise. En revanche, dans votre travail quotidien de rédaction ou de code, les plugins sont indispensables pour pleinement tirer partie de |vim|.
 
@@ -72,7 +72,7 @@ Ce plugin est indispensable et ajoute à lui seul énormément de valeur à |vim
 Recherche de fichiers, de chaînes de caractères et d'un peu tout : *fzf*
 ========================================================================
 
-Dans le monde informatique il existe un moyen très efficace pour rechercher des choses dont on connait « à peut prêt » le nom, on appelle ça le **Fuzzy Matching** (*recherche approximative* ou *recherche floue* en français, cf https://fr.wikipedia.org/wiki/Recherche_approximative). Cette technique va nous permettre de trouver des fichiers dont on connait une partie du nom, ou alors une partie du répertoire parent et une partie du nom par exemple. Elle va aussi nous permettre de faire la même chose pour le contenu des fichiers : pas besoin d'être très précis (majuscules, minuscules, accents, etc) le **Fuzzy Matching** nous retournera ce qui se rapproche le plus du terme que l'on recherche.
+Dans le monde informatique il existe un moyen très efficace pour rechercher des choses dont on connaît « à-peu-près » le nom, on appelle ça le **Fuzzy Matching** (*recherche approximative* ou *recherche floue* en français, cf https://fr.wikipedia.org/wiki/Recherche_approximative). Cette technique va nous permettre de trouver des fichiers dont on connaît une partie du nom, ou alors une partie du répertoire parent et une partie du nom par exemple. Elle va aussi nous permettre de faire la même chose pour le contenu des fichiers : pas besoin d'être très précis (majuscules, minuscules, accents, etc.) le **Fuzzy Matching** nous retournera ce qui se rapproche le plus du terme que l'on recherche.
 
 `fzf <https://github.com/junegunn/fzf>`_ est la référence dans le domaine : il permet de faire du **Fuzzy Matching** un peu partout et notamment avec vim (ça tombe bien hein 🤓) !
 
@@ -106,9 +106,9 @@ Tapez ``,ff`` en mode normal (ou ``:Files``) et vous devriez voir une fenêtre s
 
 .. image:: ../../book-tex/graphics/vim-fzf-files.png
 
-En fonction d'où vous avez ouvert votre |vim|, les résultats seront bien sûr différents. Je l'ai pour ma part ouvert dans le répertoire ``.vim``. Vous pouvez noter que j'ai juste tapé `REAmd` et qu'il a automatiquement trouvé tous les fichiers nommées `README.md`. Il a même mis en surbrillance dans les noms de fichiers ce qui a permis de faire la correspondance, dans notre cas le `REA` au début du nom du fichier puis le `md` dans l'extension du fichier.
+En fonction d'où vous avez ouvert votre |vim|, les résultats seront bien sûr différents. Je l'ai pour ma part ouvert dans le répertoire ``.vim``. Vous pouvez noter que j'ai juste tapé `REAmd` et qu'il a automatiquement trouvé tous les fichiers nommés `README.md`. Il a même mis en surbrillance dans les noms de fichiers ce qui a permis de faire la correspondance, dans notre cas le `REA` au début du nom du fichier puis le `md` dans l'extension du fichier.
 
-Vous pouvez naviguer dans les résultats de recherche avec les raccourcis |vim| par défaut, à savoir ``Ctrl-k`` pour bouger la sélection d'une ligne au dessus et ``Ctrl-j`` pour bouger la sélection d'une ligne en dessous. Il suffira ensuite d'appuyer sur |ttenter| pour ouvrir le fichier sélectionné. Vous noterez l'aperçu du fichier à droite de la fenêtre qui s'est ouverte. Vous pouvez naviguer dans cet aperçu grâce à ``Shift-haut`` et ``Shift-bas`` (eh oui, pas de raccourci |vim| pour cette fonction !)
+Vous pouvez naviguer dans les résultats de recherche avec les raccourcis |vim| par défaut, à savoir ``Ctrl-k`` pour bouger la sélection d'une ligne au-dessus et ``Ctrl-j`` pour bouger la sélection d'une ligne en dessous. Il suffira ensuite d'appuyer sur |ttenter| pour ouvrir le fichier sélectionné. Vous noterez l'aperçu du fichier à droite de la fenêtre qui s'est ouverte. Vous pouvez naviguer dans cet aperçu grâce à ``Shift-haut`` et ``Shift-bas`` (eh oui, pas de raccourci |vim| pour cette fonction !)
 
 Recherche de chaînes de caractères dans les fichiers
 ----------------------------------------------------
@@ -134,7 +134,7 @@ Tapez ``,fb`` en mode normal (ou ``:Buffers``) et vous devriez voir une fenêtre
 .. image:: ../../book-tex/graphics/vim-fzf-buffers.png
 
 
-Vous noterez que j'avais pour ma part 3 fichiers (buffers) ouvertse et vous aurez remarqué que cette fonctionnalité est similaire à celle déjà présente dans `LustyExplorer`. À vous de choisir celle que vous préférez !
+Vous noterez que j'avais pour ma part 3 fichiers (buffers) ouverts et vous aurez remarqué que cette fonctionnalité est similaire à celle déjà présente dans `LustyExplorer`. À vous de choisir celle que vous préférez !
 
 Vous trouverez une version complète du fichier de configuration en ligne ici http://vimebook.com/link/v2/fr/full.
 
@@ -147,6 +147,6 @@ J'aurais pu faire un livre entier qui recense les plugins |vim|, mais je pense q
 
 * **coc.vim**. C'est un plugin qui va transformer votre |vim| en IDE complet à la VSCode : auto-complétion des fonctions, des classes, « allez à la définition », etc. Même si la tendance est à utiliser des `plugins plus simples qui s'intègrent avec des LSP (Language Server Protocol) directement <https://github.com/prabirshrestha/vim-lsp>`_, *coc.vim* a l'avantage d'être complet, testé et de s'appuyer sur les configurations similaires à VSCode. Il a aussi le désavantage d'utiliser javascript. Le repo Github : https://github.com/neoclide/coc.nvim.
 * **surround**. Ce plugin permet de gérer (changer, ajouter, supprimer) tout ce qui « entoure » : les parenthèses, les crochets, les guillemets … Par exemple vous pourrez en une combinaison de touches changer "Hello world!" en 'Hello world!' ou <q>Hello world!</q>. Le repo Github : https://github.com/tpope/vim-surround.
-* **fugitive**. Si vous travaillez sur du code source vous utilisez forcément un gestionnaire de version de code source. Si ce n'est pas le cas vous pouvez aller vous cacher. Sinon si vous utilisez Git, Le plugin fugitive est pour vous. Il permet de gérer git directement dans |vim|. Le repo Github :  https://github.com/tpope/vim-fugitive
-* **ALE**. ALE vérifie pour vous la syntaxe de votre code source. Il va, comme peut le faire VSCode par exemple, vous afficher vos erreurs de syntaxe directement dans |vim|. Peut vous faire gagner un temps certain si vous éditez souvent du code. Si vous voulez l'utiliser avec *coc.vim*, assurez vous de mettre ``"diagnostic.displayByAle": true`` dans votre ``:CocConfig`` `comme mentionné dans le dépôt Github <https://github.com/dense-analysis/ale?tab=readme-ov-file#cocnvim>`_ de ALE. Le repo Github est par ici : https://github.com/dense-analysis/ale
+* **fugitive**. Si vous travaillez sur du code source vous utilisez forcément un gestionnaire de version de code source. Si ce n'est pas le cas vous pouvez aller vous cacher. Sinon si vous utilisez Git, Le plugin fugitive est pour vous. Il permet de gérer Git directement dans |vim|. Le repo Github :  https://github.com/tpope/vim-fugitive
+* **ALE**. ALE vérifie pour vous la syntaxe de votre code source. Il va, comme peut le faire VSCode par exemple, vous afficher vos erreurs de syntaxe directement dans |vim|. Peut vous faire gagner un temps certain si vous éditez souvent du code. Si vous voulez l'utiliser avec *coc.vim*, assurez-vous de mettre ``"diagnostic.displayByAle": true`` dans votre ``:CocConfig`` `comme mentionné dans le dépôt Github <https://github.com/dense-analysis/ale?tab=readme-ov-file#cocnvim>`_ de ALE. Le repo Github est par ici : https://github.com/dense-analysis/ale
 

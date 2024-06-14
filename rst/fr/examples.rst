@@ -2,12 +2,12 @@
 Pense-bête et exemples
 **********************
 
-Nous venons de faire un tour d'horizon de tout ce qui est nécessaire pour bien commencer dans la vie avec |vim|. Tout cela devrait être suffisant pour pouvoir l'utiliser au quotidien. C'est le secret de la réussite avec |vim| : réussir à l'encrer dans nos habitudes journalières. Une fois que cela est fait, le reste devrait couler de source.
+Nous venons de faire un tour d'horizon de tout ce qui est nécessaire pour bien commencer dans la vie avec |vim|. Tout cela devrait être suffisant pour pouvoir l'utiliser au quotidien. C'est le secret de la réussite avec |vim| : réussir à l'ancrer dans nos habitudes journalières. Une fois que cela est fait, le reste devrait couler de source.
 
 Cette dernière partie est là pour vous donner un endroit de référence où vous pourrez revenir comme bon vous semble lorsque vous serez un peu perdu sur comment faire telle ou telle chose avec |vim|. Ce chapitre est composé de deux parties. La première est un ensemble de questions réponses qui couvre les principaux problèmes que les débutants rencontrent lorsqu'ils commencent. Le but est de répondre aux questions du type : « rha mais comment on fait ça, c'était pourtant si simple avec mon ancien éditeur ». La seconde partie est une liste (non exhaustive) des commandes |vim| les plus utiles dont vous pourrez vous servir comme pense-bête. Allez hop, au boulot.
 
-Questions / réponses
-====================
+Questions/réponses
+==================
 
 Comment quitter |vim| ?
 -----------------------
@@ -24,13 +24,13 @@ Si vous souhaitez que |vim| sauvegarde sous *monfichier.txt* et ouvre ensuite ce
 Comment copier/couper coller ?
 ------------------------------
 
-Celle là est facile, j'y ai déjà consacré un chapitre, cf. :ref:`se-deplacer`. 
+Celle-là est facile, j'y ai déjà consacré un chapitre, cf. :ref:`se-deplacer`. 
 
 En résumé :
 
 * Passez en mode visuel avec |ttv|,
 * Sélectionnez ce que vous voulez copier en vous déplaçant,
-* Copiez avec |tty| ou couper avec |ttx| ou |ttd|,
+* Copiez avec |tty| ou coupez avec |ttx| ou |ttd|,
 * Collez après l'emplacement du curseur avec |ttp| ou avant l'emplacement du curseur avec |ttP|.
 
 Comment créer un nouveau fichier ?
@@ -38,12 +38,12 @@ Comment créer un nouveau fichier ?
 
 La façon traditionnelle de faire est de taper, en mode normal, ``:e monfichier.txt`` pour ouvrir un tampon (buffer) vide. Ensuite, sauvegardez votre tampon grâce à ``:w``. Il sera sauvegardé sous le nom ``monfichier.txt`` dans le répertoire courant.
 
-Vous pouvez aussi utiliser Lusty Explorer (cf. :ref:`seclusty`) pour ce faire. Lancez le grâce à ``,lr`` ou ``,lf``, tapez le nom du fichier que vous souhaitez créer puis appuyez sur |ttctrl| puis en même temps |tte|. Vous pouvez ensuite le sauvegarder de la même manière que ci-dessus.
+Vous pouvez aussi utiliser Lusty Explorer (cf. :ref:`seclusty`) pour ce faire. Lancez le grâce à ``,lr`` ou ``,lf``, tapez le nom du fichier que vous souhaitez créer, puis appuyez sur |ttctrl| puis, en même temps |tte|. Vous pouvez ensuite le sauvegarder de la même manière que ci-dessus.
 
-Annuler / Refaire
------------------
+Annuler/Refaire
+---------------
 
-Pour annuler il suffit d'utiliser |ttu| en mode normal. Pour annuler le annuler (donc refaire) maintenez |ttctrl| appuyée puis |ttr|.
+Pour annuler il suffit d'utiliser |ttu| en mode normal. Pour annuler le « annuler » (donc refaire) maintenez |ttctrl| appuyée puis, |ttr|.
 
 Pense-bête
 ==========
@@ -98,7 +98,7 @@ Résultat attendu                                                               
 **Insérer après le curseur**                                                    ``a`` 
 **Insérer à la fin de la ligne**                                                ``A`` 
 **Insérer une nouvelle ligne en dessous**                                       ``o`` 
-**Insérer une nouvelle ligne au dessus**                                        ``O`` 
+**Insérer une nouvelle ligne au-dessus**                                        ``O`` 
 **Remplace le reste de la ligne**                                               ``C`` 
 **Remplace un seul caractère (et reste en mode normal)**                        ``r`` 
 **Supprime le caractère après le curseur (comme la touche suppr.)**             ``x`` 
@@ -106,8 +106,8 @@ Résultat attendu                                                               
 **Supprime la ligne courante**                                                  ``dd`` 
 **Copie la ligne courante**                                                     ``yy`` 
 **Colle après le curseur. Si c'est une ligne, colle la ligne en dessous.**      ``p`` 
-**Colle avant le curseur. Si c'est une ligne, colle la ligne au dessus.**       ``P`` 
-**Intervertit la casse des caractères (majuscules / minuscules)**               ``~``       Marche en mode visuel
+**Colle avant le curseur. Si c'est une ligne, colle la ligne au-dessus.**       ``P`` 
+**Intervertit la casse des caractères (majuscules/minuscules)**                 ``~``       Marche en mode visuel
 **Déplace le texte vers la droite (indentation)**                               ``>``       Marche en mode visuel 
 **Déplace le texte vers la gauche**                                             ``<``       Marche en mode visuel 
 **En mode visuel, supprime la sélection**                                       ``d``       Mode visuel 

@@ -2,18 +2,18 @@
 L'outil de manipulation de texte rêvé
 *************************************
 
-Alors oui, pour ceux qui se demandent, je fais des rêves bizarres, mais bon, chacun a ses petites tares cachées. Et rêver d'un outil qui améliore ma vie quotidienne en tant que codeur (ou écrivain, ou formateur, ou …) n'est pas si étrange que ça.
+Alors oui, pour ceux qui se le demandent, je fais des rêves bizarres, mais bon, chacun a ses petites tares cachées. Et rêver d'un outil qui améliore ma vie quotidienne en tant que codeur (ou écrivain, ou formateur, ou …) n'est pas si étrange que ça.
 
-Ce qui fait et fera encore le succès de |vim| est sa capacité à **faciliter les manipulations de texte**. Certes il va vous proposer des fonctionnalités propres à chaque tâche que vous effectuerez (souvent par l'intermédiaire de plugins) comme la validation syntaxique de code, la correction orthographique, … Mais à la fin, c'est toujours à écrire/corriger/manipuler/se déplacer dans du texte que vous passerez la majeure partie de votre temps. 
+Ce qui fait et fera encore le succès de |vim| est sa capacité à **faciliter les manipulations de texte**. Certes il va vous proposer des fonctionnalités propres à chaque tâche que vous effectuerez (souvent par l'intermédiaire de plugins) comme la validation syntaxique de code, la correction orthographique, etc., mais à la fin, c'est toujours à écrire/corriger/manipuler/se déplacer dans du texte que vous passerez la majeure partie de votre temps. 
 
-C'est là que l'approche de |vim| est différente d'IDE comme VSCode / Eclipse / Netbeans / PhpStorm et consorts. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, |vim| adopte l'approche opposée : vous serez **très efficace** à manipuler/écrire du texte quel qu'il soit et vous pourrez enrichir |vim| avec des fonctionnalités propres à votre langage de programmation via des plugins.
+C'est là que l'approche de |vim| est différente d'IDE comme VSCode/Eclipse/Netbeans/PhpStorm et consorts. Là où ces IDE vont mettre l'accent sur les particularités de votre langage de programmation tout en vous fournissant des capacités de manipulation de texte basiques, |vim| adopte l'approche opposée : vous serez **très efficace** à manipuler/écrire du texte quel qu'il soit et vous pourrez enrichir |vim| avec des fonctionnalités propres à votre langage de programmation via des plugins.
 
 Nous allons donc voir dans ce chapitre comment utiliser |vim| à bon escient (vous allez commencer à oublier votre souris) et quelle est la logique derrière tous ces enchaînements de commandes qui paraissent barbares au non-initié. Vous devriez pouvoir, à la fin de ce chapitre, **vous passer de votre souris** pour éditer/manipuler le contenu d'un fichier. En tout cas, vous devriez vous forcer à le faire en apprenant |vim|, ce n'est pas si dur que ça, et c'est ce qui fait la différence entre |vim| et les autres : le tout clavier.
 
 .. _se-deplacer:
 
-Se déplacer par l'exemple : Essayer de copier / coller
-======================================================
+Se déplacer par l'exemple : Essayer de copier/coller
+====================================================
 
 
 Nous avons déjà vu dans la section « :ref:`modeinsertion` » comment passer du mode insertion (pour saisir du texte) au mode normal (*a priori* pour l'instant, vous ne savez pas trop à quoi sert ce mode). En appuyant sur |tti| votre curseur passe en mode insertion (lorsque vous êtes en mode normal) et en appuyant sur |ttesc| il repasse dans le mode normal. Bon bah on est bien Tintin. Et maintenant ? 
@@ -21,7 +21,7 @@ Nous avons déjà vu dans la section « :ref:`modeinsertion` » comment passer 
 Préambule
 ---------
 
-Nous allons apprendre notre première manipulation de texte : le copier / coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur |ttshift|) pour sélectionner du texte et vous allez dans le ``menu Édition`` de votre terminal puis ``Copier``. Et ensuite ``menu Édition`` puis ``Coller``. Bah tiens, essayez pour voir.
+Nous allons apprendre notre première manipulation de texte : le copier/coller. J'en vois certains d'entre vous se dire que ça ne sert à rien, car vous savez déjà le faire. Vous passez en mode insertion, vous prenez votre souris (ou vous vous déplacez avec les flèches directionnelles tout en appuyant sur |ttshift|) pour sélectionner du texte et vous allez dans le ``menu Édition`` de votre terminal puis ``Copier``. Et ensuite ``menu Édition`` puis ``Coller``. Bah tiens, essayez pour voir.
 
 Si vous avez suivi la section « :ref:`modes` » traitant de la position idéale pour vos mains, vous savez que vous avez fait une ou plusieurs choses que vous devriez vous interdire :
 
@@ -50,7 +50,7 @@ Pour réaliser un copier/coller avec |vim| tout se passe en mode « normal ».
 Lorsque rien n'est marqué en bas à gauche, c'est que vous êtes en mode normal. Pour sortir d'un mode afin de retourner au mode normal, il suffit d'appuyer sur |ttesc|. À noter que si vous vous demandez pourquoi je vous dis d'arrêter d'utiliser la souris et/ou les touches directionnelles, mais que je ne dis rien sur le fait qu'il faille se torturer la main pour atteindre |ttesc|, c'est que vous êtes sur la bonne voie. Je vous explique le comment du pourquoi dans « :ref:`secesc` ».
 
 
-Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre |vim| (inséré par vous même grâce à un passage par le mode insertion avec |tti| puis retour au mode normal avec |ttesc|). Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient que c'était impossible, alors ils l'ont fait. ». Votre |vim| devrait ressembler à celui de la figure ci-dessous. Notez l'absence d'affichage d'un quelconque mode en bas à gauche, c'est donc que l'on est en mode *normal*.
+Admettons donc que vous êtes en mode « normal » et que vous avez un peu de texte de saisi dans votre |vim| (inséré par vous même grâce à un passage par le mode insertion avec |tti| puis retour au mode normal avec |ttesc|). Par exemple, cette chouette citation de Mark Twain : « Ils ne savaient pas que c'était impossible, alors ils l'ont fait. ». Votre |vim| devrait ressembler à celui de la figure ci-dessous. Notez l'absence d'affichage d'un quelconque mode en bas à gauche, c'est donc que l'on est en mode *normal*.
 
 .. _twain:
 
@@ -109,7 +109,7 @@ Touche     Déplacement
 ========== ===============================================
 
 
-Vous avez ici le minimum pour vous déplacer en mode normal. Il existe aussi des commandes vous permettant de vous déplacer puis de rentrer en mode insertion directement, elles sont très pratiques car elles vont vous permettre d'économiser quelques touches. En voici quelques unes que j'utilise à peu près tout le temps :
+Vous avez ici le minimum pour vous déplacer en mode normal. Il existe aussi des commandes vous permettant de vous déplacer puis de rentrer en mode insertion directement, elles sont très pratiques car elles vont vous permettre d'économiser quelques touches. En voici quelques-unes que j'utilise à peu près tout le temps :
 
 ======== ================================================================
 Touche   Action
@@ -161,20 +161,20 @@ Se passer de la touche Échap
 
 Utiliser |ttesc| pour sortir du mode « insertion » semble être une hérésie tellement elle est difficilement accessible. Il faut déplacer entièrement la main gauche pour y accéder ou alors se torturer le petit doigt.
 
-Pour comprendre pourquoi |ttesc| est utilisée par défaut, il faut faire un bon de quelques années en arrière, pour se retrouver en face du clavier sur lequel *Vi* a été développé. Vous pouvez voir sur la photo ci-dessous que |ttesc| était très facilement accessible. Vous pouvez aussi noter l'emplacement des touches directionnelles. Malheureusement depuis, cela a bien changé.
+Pour comprendre pourquoi |ttesc| est utilisée par défaut, il faut faire un bond de quelques années en arrière, pour se retrouver en face du clavier sur lequel *Vi* a été développé. Vous pouvez voir sur la photo ci-dessous que |ttesc| était très facilement accessible. Vous pouvez aussi noter l'emplacement des touches directionnelles. Malheureusement depuis, cela a bien changé.
 
 .. _vi-keyboard:
 
 .. image:: ../../book-tex/graphics/lsi-adm3a-full-keyboard.jpg
 
-L'étape ultime (après avoir réussi à se passer des touches directionnelles) est donc de rapprocher |ttesc| de vos petits doigts. Il y a plusieurs solutions pour cela, mais celle que je vous recommande si vous avez un clavier avec une disposition française est la suivante (dans votre |vimrc|) :::
+L'étape ultime (après avoir réussi à se passer des touches directionnelles) est donc de rapprocher |ttesc| de vos petits doigts. Il y a plusieurs solutions pour cela, mais celle que je vous recommande, si vous avez un clavier avec une disposition française est la suivante (dans votre |vimrc|) :::
 
     " On attribue ;; à la touche <Esc>
     " Les ; sont rarement utilisés l'un à la suite de l'autre
     :imap ;; <Esc>
     :map ;; <Esc>
 
-Lorsque vous êtes en mode insertion, il vous suffit d'appuyer deux fois sur |ttsemicolon| pour retourner au mode normal. |ttsemicolon| ne vous demande pas de bouger votre main de la rangée de repos et on l'utilise rarement deux fois de suite (et si c'est le cas, il suffit d'attendre un peu avant de taper le deuxième |tsemicolon|), c'est donc le parfait candidat.
+Lorsque vous êtes en mode insertion, il vous suffit d'appuyer deux fois sur |ttsemicolon| pour retourner au mode normal. La touche |tsemicolon| ne vous demande pas de bouger votre main de la rangée de repos et on l'utilise rarement deux fois de suite (et si c'est le cas, il suffit d'attendre un peu avant de taper le deuxième |tsemicolon|), c'est donc le parfait candidat.
 
 Voici d'autres solutions possibles (cf https://vim.fandom.com/wiki/Avoid_the_escape_key):::
 
@@ -230,7 +230,7 @@ Action                   Résultat
 |tty| puis |tthat|      copie tout jusqu'au premier caractère non blanc de la ligne
 ======================= =============================================================
 
-Il ne vous restera qu'a appuyer sur |ttp| pour coller ce que vous voulez où vous voulez. Par défaut |ttp| colle le texte après la position courante du curseur. Si vous voulez coller avant la position du curseur, utilisez |ttP|.
+Il ne vous restera qu'à appuyer sur |ttp| pour coller ce que vous voulez où vous voulez. Par défaut |ttp| colle le texte après la position courante du curseur. Si vous voulez coller avant la position du curseur, utilisez |ttP|.
 
 Il arrive de temps en temps de vouloir aussi supprimer du texte (non sans blague !), voici quelques commandes utiles pour cela :
 
@@ -255,8 +255,8 @@ Action            Résultat
 ================= ============
 
 
-Rechercher / Se déplacer rapidement
-===================================
+Rechercher/Se déplacer rapidement
+=================================
 
 Maintenant que nous connaissons les commandes de base pour éditer du texte avec |vim|, voyons voir comment nous déplacer plus rapidement dans notre document. Nous avons déjà évoqué les touches |tw|, |tb|, |that| et |tdollar| qui nous permettent respectivement de se déplacer à la fin d'un mot, au début d'un mot, au début d'une ligne et la fin d'une ligne. Tout d'abord, voyons voir comment « scroller » sans la souris. À noter que toutes ces commandes se font en mode « normal ».
 
@@ -286,7 +286,7 @@ Un marqueur se pose en tapant |tm|\ |ta|. Pour déplacer votre curseur à la pos
 La recherche
 ------------
 
-En mode normal, vous pouvez lancez une recherche en utilisant |ttslash| suivi du texte que vous souhaitez rechercher puis de |ttenter|. Grâce à notre configuration de |vim| vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse. Vous pouvez vous déplacer à la prochaine occurrence de la recherche grâce à |ttn|. Pour vous déplacer à la précédente utilisez |ttN|.
+En mode normal, vous pouvez lancez une recherche en utilisant |ttslash| suivi du texte que vous souhaitez rechercher, puis de |ttenter|. Grâce à notre configuration de |vim| vous devriez voir vos occurrences de recherche surlignées en même temps que vous tapez. Par défaut la recherche n'est pas sensible à la casse (pas de différence entre minuscules/majuscules). En revanche, dès que vous taperez une majuscule, la recherche deviendra sensible à la casse. Vous pouvez vous déplacer à la prochaine occurrence de la recherche grâce à |ttn|. Pour vous déplacer à la précédente utilisez |ttN|.
 
 Pour rappel, voici les lignes de votre fichier de configuration qui permettent de faire cela : ::
 
@@ -305,11 +305,11 @@ Vous pouvez aussi rechercher directement le mot qui est placé sous votre curseu
 Le mode visuel
 ==============
 
-Je vous en ai déjà parlé lors de l'explication sur le Copier / Coller, mais comme je sais que certains d'entre vous sont tête en l'air, je vous fais un petit rappel ici.
+Je vous en ai déjà parlé lors de l'explication sur le Copier/Coller, mais comme je sais que certains d'entre vous sont tête en l'air, je vous fais un petit rappel ici.
 
-Lorsque vous êtes en mode « normal » appuyez sur |ttv| pour passer en mode "visuel". Vous pourrez alors sélectionner des caractères ou des lignes entières grâce aux différentes façon de vous déplacer que vous venez d'apprendre. Vous pourrez ensuite copier le texte sélectionné avec |tty| puis le coller avec |ttp|. Pour le couper il vous faudra utiliser |ttd|.
+Lorsque vous êtes en mode « normal » appuyez sur |ttv| pour passer en mode "visuel". Vous pourrez alors sélectionner des caractères ou des lignes entières grâce aux différentes façons de vous déplacer que vous venez d'apprendre. Vous pourrez ensuite copier le texte sélectionné avec |tty| puis le coller avec |ttp|. Pour le couper il vous faudra utiliser |ttd|.
 
-En mode normal vous pourrez utiliser |ttV| pour sélectionner lignes par lignes. Et bien sûr, utiliser |ttesc| ou :vimcmd:`;;` pour revenir au mode normal.
+En mode normal vous pourrez utiliser |ttV| pour sélectionner ligne par ligne. Et bien sûr, utiliser |ttesc| ou ``;;`` pour revenir au mode normal.
 
 À vous de jouer
 ===============
@@ -324,7 +324,7 @@ Voici une liste de ressources qui pourraient vous être utiles, malheureusement 
 
 * Le site de ce livre https://www.vimebook.com
 * A byte of |vim| https://vim.swaroopch.com/
-* Un petit pense bête sympathique de différents raccourcis clavier https://tuteurs.ens.fr/unix/editeurs/vim.html
+* Un petit pense-bête sympathique de différents raccourcis clavier https://tuteurs.ens.fr/unix/editeurs/vim.html
 * Un site avec plein de pense-bêtes pour les raccourcis https://vim.rtorr.com/
 * Les vidéos d'Andrew Stewart en anglais mais vraiment superbement réalisées : https://www.pluralsight.com/courses/smash-into-vim
 * Le blog de Derek Wyatt's en anglais http://derekwyatt.org/vim/tutorials/

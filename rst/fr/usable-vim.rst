@@ -34,11 +34,11 @@ Préambule indispensable : le mode insertion
 ===========================================
 
 Prenons le pari de créer le fichier |vimrc| avec |vim| lui-même. Comme je vous le disais, plus tôt vous commencerez, mieux ce sera.
-Vous devrez certainement commencer par installer une version de |vim|. Si vous utilisez un Mac, essayez MacVim (https://macvim.org/) sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système « Unix » vous devriez sûrement avoir la commande *vim* à disposition dans votre terminal. Vous pouvez aussi utiliser l'interface graphique *gVim* qui devrait être facilement installable grâce à votre gestionnaire de logiciels, pour Ubuntu le paquet correspondant est `vim-gnome`. Faites attention à bien installer la version **complète** de vim, notamment avec le support de Ruby et de Lua dont nous aurons besoin par la suite. Pour Ubuntu, le paquet sembler s'appeller `vim`. Pour Mac OS X, la question ne se pose pas, MacVim inclut déjà tout ce qu'il faut. Pour Windows, il semblerait y avoir une version disponible sur le site officiel de |vim| (https://www.vim.org/download.php), mais je ne l'ai pas testée.
+Vous devrez certainement commencer par installer une version de |vim|. Si vous utilisez un Mac, essayez MacVim (https://macvim.org/) sans aucune hésitation. Si vous utilisez GNU/Linux ou tout autre système « Unix » vous devriez sûrement avoir la commande *vim* à disposition dans votre terminal. Vous pouvez aussi utiliser l'interface graphique *gVim* qui devrait être facilement installable grâce à votre gestionnaire de logiciels, pour Ubuntu le paquet correspondant est `vim-gnome`. Faites attention à bien installer la version **complète** de vim, notamment avec le support de Ruby et de Lua dont nous aurons besoin par la suite. Pour Ubuntu, le paquet semble s'appeller `vim`. Pour Mac OS X, la question ne se pose pas, MacVim inclut déjà tout ce qu'il faut. Pour Windows, il semblerait y avoir une version disponible sur le site officiel de |vim| (https://www.vim.org/download.php), mais je ne l'ai pas testée.
 
-**Pour ma part**, j'utilise *vim* directement en ligne de commande, sous Archlinux, dans un terminal `kitty <https://sw.kovidgoyal.net/kitty/>`_ avec la police Nerd Fonts `FiraCode Nerd Font <https://www.nerdfonts.com/font-downloads>`_. C'est avec cette configuration que les capture d'écran de ce livre sont réalisées.
+**Pour ma part**, j'utilise *vim* directement en ligne de commande, sous Archlinux, dans un terminal `kitty <https://sw.kovidgoyal.net/kitty/>`_ avec la police Nerd Fonts `FiraCode Nerd Font <https://www.nerdfonts.com/font-downloads>`_. C'est avec cette configuration que les captures d'écran de ce livre sont réalisées.
 
-Au lancement de |vim|, vous devriez avoir un texte d'accueil vous encourageant à aider les pauvres enfants en Ouganda. Ce texte disparaitra dès que nous allons saisir des caractères dans |vim|. Nous allons commencer par entrer un commentaire dans l'en-tête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur |tti|. Vous devriez avoir `une page`_ qui ressemble plus ou moins à la figure ci-dessous, notez bien le ``--INSERT--`` en bas à gauche qui nous indique que nous sommes en mode insertion (le mode où nous pouvons saisir du texte). Pour information, le thème de mon terminal est un thème sombre, il est donc possible que pour l'instant, les couleurs de votre |vim| soient différentes.
+Au lancement de |vim|, vous devriez avoir un texte d'accueil vous encourageant à aider les pauvres enfants en Ouganda. Ce texte disparaîtra dès que nous allons saisir des caractères dans |vim|. Nous allons commencer par entrer un commentaire dans l'en-tête du fichier pour y mentionner notre nom. Pour pouvoir entrer du texte appuyez sur |tti|. Vous devriez avoir `une page`_ qui ressemble plus ou moins à la figure ci-dessous, notez bien le ``--INSERT--`` en bas à gauche qui nous indique que nous sommes en mode insertion (le mode où nous pouvons saisir du texte). Pour information, le thème de mon terminal est un thème sombre, il est donc possible que pour l'instant, les couleurs de votre |vim| soient différentes.
 
 À l'écriture de ces lignes, la version de |vim| que j'utilise est la ``9.1.380``.
 
@@ -111,7 +111,7 @@ La configuration par défaut : indispensable
 
 Passons aux choses sérieuses, c'est-à-dire comment rendre |vim| un tant soit peu utilisable. Nous allons donc éditer le fichier de configuration par défaut |vimrc| en y plaçant des valeurs que toute personne normalement constituée souhaiterait y voir figurer.
 
-Ce fichier doit se trouver dans votre répertoire d'accueil. */home/votre_user/.vimrc* sous Linux, */Users/votre_user/.vimrc* sous Mac OS X ou plus généralement *~/.vimrc*. Sous Windows vous pouvez créer un fichier nommé *_vimrc* qui doit se situer dans votre répertoire *%HOME%* qui change en fonction de votre version de Windows. C'est généralement le répertoire jute "au-dessus" de votre répertoire *Mes Documents*. Plus d'infos sur Wikipedia https://en.wikipedia.org/wiki/Home_directory#Default_Home_Directory_per_Operating_System.
+Ce fichier doit se trouver dans votre répertoire d'accueil. */home/votre_user/.vimrc* sous Linux, */Users/votre_user/.vimrc* sous Mac OS X ou plus généralement *~/.vimrc*. Sous Windows vous pouvez créer un fichier nommé *_vimrc* qui doit se situer dans votre répertoire *%HOME%* qui change en fonction de votre version de Windows. C'est généralement le répertoire juste "au-dessus" de votre répertoire *Mes Documents*. Plus d'infos sur Wikipedia https://en.wikipedia.org/wiki/Home_directory#Default_Home_Directory_per_Operating_System.
 
 J'ai commenté chacune des lignes du fichier directement dans le code. Rien de sorcier ici, on se demande juste pourquoi tout cela n'est pas inclus par défaut.
 
@@ -173,7 +173,7 @@ Bon c'est bien beau tout ça mais ça manque un peu de couleurs. Au suivant !
 Que la couleur soit !
 =====================
 
-Tout d'abord il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à là fin de votre fichier de configuration |vimrc|.
+Tout d'abord il faut commencer par activer la coloration syntaxique du code dans le fichier de configuration. Ajoutez ces lignes à la fin de votre fichier de configuration |vimrc|.
 
 .. code-block:: vim
 
@@ -203,7 +203,7 @@ Les thèmes vont vous permettre de rendre votre |vim| un peu moins austère en c
 https://raw.githubusercontent.com/ericbn/vim-solarized/master/colors/solarized.vim
 
 
-Pour l'installer, commencez tout d'abord par créer un répertoire nommé `.vim` au même endroit que votre |vimrc| (dans votre répertoire utilisateur donc). À noter que ce répertoire s'appelle `vimfiles` sous Windows. À chaque fois que je ferai référence au répertoire `.vim` ça sera en fait `vimfiles` pour les Windowsiens. Dans ce répertoire `.vim`, créez un sous-répertoire nommé `colors`. Téléchargez ensuite le fichier du thème *Solarized* https://raw.githubusercontent.com/ericbn/vim-solarized/master/colors/solarized.vim (c'est le même fichier pour les deux versions du thème) et copiez le dans le répertoire `vim/colors/` fraîchement créé.
+Pour l'installer, commencez tout d'abord par créer un répertoire nommé `.vim` au même endroit que votre |vimrc| (dans votre répertoire utilisateur donc). À noter que ce répertoire s'appelle `vimfiles` sous Windows. À chaque fois que je ferai référence au répertoire `.vim` ça sera en fait `vimfiles` pour les Windowsiens. Dans ce répertoire `.vim`, créez un sous-répertoire nommé `colors`. Téléchargez ensuite le fichier du thème *Solarized* https://raw.githubusercontent.com/ericbn/vim-solarized/master/colors/solarized.vim (c'est le même fichier pour les deux versions du thème) et copiez-le dans le répertoire `vim/colors/` fraîchement créé.
 
 
 Sous Linux vous pouvez faire tout ça via les commandes suivantes :
@@ -353,7 +353,7 @@ Modifions ensuite notre fichier ``~/.vimrc`` pour y ajouter **solarized** comme 
 
     call plug#end()
 
-Sauvegardez et quittez en utilisant en mode normal ``:wq``. Relancez |vim| pluis, tapez ``:PlugInstall`` pour installer notre nouveau plugin (appuyez sur |ttq| pour quitter la fenêtre d'installation). Au prochain chargement de |vim|, vous devriez avoir retrouvé vos couleurs.
+Sauvegardez et quittez en utilisant en mode normal ``:wq``. Relancez |vim| puis, tapez ``:PlugInstall`` pour installer notre nouveau plugin (appuyez sur |ttq| pour quitter la fenêtre d'installation). Au prochain chargement de |vim|, vous devriez avoir retrouvé vos couleurs.
 
 
 Voilà notre |vim| est presque prêt pour le grand bain. Il vous reste une petite étape à franchir : disposer d'un moyen pratique pour explorer les fichiers d'un projet. C'est ici que *vim-fern* entre en lice.

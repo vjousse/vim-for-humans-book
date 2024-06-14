@@ -9,7 +9,7 @@ Qu'est-ce que ça veut dire au juste ? Je suis persuadé que la culture et l'é
 
 Et que se passe-t-il si vous n'avez pas quelques euros à donner contre le travail que j'ai fourni en rédigeant ce livre ? Et bien téléchargez-le gratuitement, partagez-le et promettez-moi d'en faire bon usage, ça me fera plaisir !
 
-Quoique vous donniez, quoique vous fassiez pour partager ce savoir à d'autres personnes sera une motivation de plus pour moi à écrire d'autres livre dans le même style.
+Quoique vous donniez, quoique vous fassiez pour partager ce savoir à d'autres personnes sera une motivation de plus pour moi à l'écriture d'autres livres dans le même style.
 
 Si vous donnez en euros, 20% des gains seront reversés à l'association de promotion du libre `Framasoft <https://framasoft.org/fr/>`_.
 
