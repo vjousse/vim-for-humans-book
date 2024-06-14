@@ -41,8 +41,8 @@ If you're a *Neovim* user, everything in this book is still valid, as *Neovim* i
 The special feature of *Neovim* is that it is more actively maintained than |vim| and, among other things, uses the **Lua** programming language for plugin management. As a result, plugins written for *Neovim* are not compatible with |vim| (the reverse is not true: plugins written for |vim| are compatible with *Neovim*). Part of the |vim| community has switched to *Neovim*, and plugins for *Neovim* are flourishing much faster than those for |vim|. For the purpose of this book, this won't make any difference and you can follow it without any problem with |vim| or *Neovim*. I may be making more *Neovim*-specific content in the future.
 
 
-For who?
-========
+For whom?
+=========
 
 Every person having to produce text (code, book, reports, slideshows, …) regularly. Developers are of course concerned, but it's not only about them.
 
@@ -81,7 +81,7 @@ What you will not be learning
 =============================
 
 - You will not be learning how to install and to configure |vim| for Windows. It's doable, but I have very limited knowledge about Windows. It may happen, but not yet. Only Linux/Unix will be discussed (and by extension Mac OS X).
-- You will not be learning how to use *Vi* (notice the lack of "*m*"). I'll only teach you how to be productive writing text with |vim|, I won't be teachng you how to impress your friends with *Vi* (and anyway, |vim| is enough for that). For those who don't get what I'm talking about, *Vi* is the "ancestor of |vim| (which stands for *Vi* - *IMproved*)" and is installed by default on all Unix-like systems (even on Mac OS X).
+- You will not be learning how to use *Vi* (notice the lack of "*m*"). I'll only teach you how to be productive writing text with |vim|, I won't be teaching you how to impress your friends with *Vi* (and anyway, |vim| is enough for that). For those who don't get what I'm talking about, *Vi* is the "ancestor of |vim| (which stands for *Vi* - *IMproved*)" and is installed by default on all Unix-like systems (even on Mac OS X).
 - You will not be learning to know |vim| by heart: this book is not a reference it's a pragmatic smart way to learn |vim|.
 - You will not learn how to pimp the colors of your |vim|, although I will go over how to change your theme. I'll use the `Solarized <https://ethanschoonover.com/solarized>`_ theme, it's the best theme for your eyes.
 

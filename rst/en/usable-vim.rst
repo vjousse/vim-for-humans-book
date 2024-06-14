@@ -1,10 +1,10 @@
-*********************
-Having a usable |vim|
-*********************
+**********************
+Having a useable |vim|
+**********************
 
-This may be a surprising approach for you, but for me, the first thing to do is to have a |vim| usable by a normal human being. It seems that everybody agrees that |vim| is a very **powerful editor**. And I think that you will agree too if I say that, by default, |vim| is totally unusable. Let's be honest, without a decent minimal configuration, using |vim| is **counterproductive**.
+This may be a surprising approach for you, but for me, the first thing to do is to have a |vim| useable by a normal human being. It seems that everybody agrees that |vim| is a very **powerful editor**. And I think that you will agree too if I say that, by default, |vim| is totally unuseable. Let's be honest, without a decent minimal configuration, using |vim| is **counterproductive**.
 
-In my humble opinion, it's the first obstacle to tackle before anything else. This is what all the trendy editors like VSCode, TextMate, Sublime Text, Notepad++ or Netbeans are proposing: a default environment usable as it is, even if we don't use its full potential for now.
+In my humble opinion, it's the first obstacle to tackle before anything else. This is what all the trendy editors like VSCode, TextMate, Sublime Text, Notepad++ or Netbeans are proposing: a default environment useable as it is, even if we don't use its full potential for now.
 
 Here is what a default |vim| is missing (and why **most of people are giving up** before they can really see the power of |vim|):
 
@@ -22,7 +22,7 @@ Here is what a default |vim| is missing (and why **most of people are giving up*
     If you are using |vim| along with a graphical interface (I suppose it's the case for 99% of you) you will by default have a ``File`` menu available. This menu should allow you to open a file. It is, for sure, a good start. But having a file explorer a la Netbeans or Textmate can be very handy. To mimic the same behavior, we will be using `vim-fern <https://github.com/lambdalisue/vim-fern>`_. Be aware that, once you will have read this guide, you will not need the mouse anymore.
 
 
-This chapter is mandatory if you have very few (or not at all) experience with |vim|. By the end of the chapter, you will have a |vim| usable on a daily basis. It should be enough to then be able to learn it gradually. Because, of course, there is no magic, you will have to practice to be able to learn |vim|, and the sooner, the better.
+This chapter is mandatory if you have very few (or not at all) experience with |vim|. By the end of the chapter, you will have a |vim| useable on a daily basis. It should be enough to then be able to learn it gradually. Because, of course, there is no magic, you will have to practice to be able to learn |vim|, and the sooner, the better.
 
 However, if you are already familiar with |vim| and don't use the mouse anymore, you can skip this chapter. But be sure to give *Solarized* a try, as you would be missing something otherwise.
 
@@ -74,7 +74,7 @@ If you are asking yourself why those modes exist, why can't we even write down s
 Modes: the powerful |vim| secrets
 =================================
 
-I suppose you will agree if I say that, if you want to learn |vim|, it's to be more efficient when writing/manipulating text or code. To be more efficient when writing text, there are not many solutions. There is only one actually: you need to move your hands as less as you can (even not at all) and only move your fingers.
+I suppose you will agree if I say that, if you want to learn |vim|, it's to be more efficient when writing/manipulating text or code. To be more efficient when writing text, there are not many solutions. There is only one actually: you need to move your hands as little as you can (even not at all) and only move your fingers.
 
 To do so, of course, you will need to do without your mouse. In addition to being slow, the move keyboard -> mouse and then mouse -> keyboard is really bad for your joints. It's often the cause of musculoskeletal disorders. Maybe you are still young and don't know what I'm talking about, but believe me, you will have such problems one day or another (often sooner than you may think). If you are in front of your computer all day long, don't neglect those possible troubles, you may regret it someday. `According to Wikipedia <https://en.wikipedia.org/wiki/Musculoskeletal_disorder>`_, it's actually the most common professional disease.
 
@@ -92,7 +92,7 @@ So what do you have the ability to do? Not a lot to be honest (but it's for your
 
 You will also probably find on your keyboard some marks on the letters F and J. The goal of these marks is to give a landmark for the position of your fingers (the indexes) on the home row of the keyboard.
 
-Trying to move as less as possible the hands from the keyboard is the reason for having a *normal* mode and an *insert* mode in |vim|. When switching from one to the other, the keys under your fingers will sometimes allow you to move the cursor and to manipulate text: copy/paste, deletion, … (it's the normal mode), sometimes they will allow you to select some text (it's the *visual mode*) and sometimes to insert some text (it's the *insert* mode). And of course, all of that is possible without the extensive use of keys combinations like *Ctrl + key* that are very bad for your fingers (*Emacs*, this one is for you).
+Trying to move as little as possible the hands from the keyboard is the reason for having a *normal* mode and an *insert* mode in |vim|. When switching from one to the other, the keys under your fingers will sometimes allow you to move the cursor and to manipulate text: copy/paste, deletion, … (it's the normal mode), sometimes they will allow you to select some text (it's the *visual mode*) and sometimes to insert some text (it's the *insert* mode). And of course, all of that is possible without the extensive use of keys combinations like *Ctrl + key* that are very bad for your fingers (*Emacs*, this one is for you).
 
 By default, we can switch from the *insert* mode to the *normal* mode by pressing |ttesc|, but it will be one of the first things we will change: |ttesc| is to far from your fingers on current keyboards.
 
@@ -108,7 +108,7 @@ The ultimate change would be to switch your keyboard layout to a more efficient 
 The lifesaver default configuration
 ====================================
 
-Let's get serious and try to have a usable |vim|. We will start by editing the default configuration file |vimrc| and by entering default values that any sane person would love to find in it.
+Let's get serious and try to have a useable |vim|. We will start by editing the default configuration file |vimrc| and by entering default values that any sane person would love to find in it.
 
 You have to place this file in your home directory. It should be */home/your_user/.vimrc* if you are using Linux, */Users/your_user/.vimrc* if you are using Mac OS X. Generally speaking, it should be in your home directory under *~/.vimrc*. If you are using Windows, you'll need to create a file named *_vimrc* that you have to put in your *%HOME%* directory. This directory is obviously not the same across the different Windows versions. Usually, it's the directory just before your *My Documents* directory. More information is `available on Wikipedia <https://en.wikipedia.org/wiki/Home_directory#Default_Home_Directory_per_Operating_System>`_ if you want.
 

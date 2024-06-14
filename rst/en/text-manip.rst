@@ -1,6 +1,6 @@
-****************************************
-The text editor you've always dreamed of
-****************************************
+***************************************
+The text editor you've always dreamt of
+***************************************
 
 I confess, I have some weird dreams. But hey, maybe my dreams are not as weird as they seem: dreaming of a tool that can improve all the professional areas of my life as a programmer, writer, teacher, and more doesn't seem that weird after all.
 
@@ -45,7 +45,7 @@ To copy/paste using |vim|, you will have to switch to the "normal" mode (the def
 
 When there is nothing displayed at the bottom left, it's because you are currently in "normal" mode. In order to quit a mode to return to the normal one, you just have to press |ttesc|. You may already have noticed that pressing |ttesc| is a pain for your fingers. Don't worry, this is just temporary. I will explain why in the ":ref:`secesc`" section.
 
-Let's say that you are currently in the "normal" mode and that you already have some text in you |vim| (inserted by yourself by switching to insert mode with |tti| then back to normal mode with |ttesc|). For example, it could be this beautiful quote from Mark Twain: "They did not know it was impossible, so they did it.". Your |vim| should like the one in the figure below. Notice that there is nothing displayed at the bottom left, it means we are in *normaal* mode.
+Let's say that you are currently in the "normal" mode and that you already have some text in you |vim| (inserted by yourself by switching to insert mode with |tti| then back to normal mode with |ttesc|). For example, it could be this beautiful quote from Mark Twain: "They did not know it was impossible, so they did it.". Your |vim| should like the one in the figure below. Notice that there is nothing displayed at the bottom left, it means we are in *normal* mode.
 
 .. _twain:
 
@@ -117,7 +117,7 @@ Key      Action
 
 Let's discuss that a little bit. The secrets of |vim| rely on the contents of this chapter. There is one thing that you have to do when learning |vim|: **use the hjkl keys** to move. If you can manage to do that, you will learn everything else on the go.
 
-You'll find a lot of websites with all the possible commands, combinations and so on. You will learn and forgot them (depending on how useful they are to you). If you have a single effort to do: it is to use the directional keys and thus to force you to use the normal mode. Everything else will then be perfectly obvious.
+You'll find a lot of websites with all the possible commands, combinations and so on. You will learn and forget them (depending on how useful they are to you). If you have a single effort to do: it is to use the directional keys and thus to force you to use the normal mode. Everything else will then be perfectly obvious.
 
 Here is the ultimate configuration that you will need to put in your |vimrc| to achieve your goal: disabling the directional keys: ::
 
@@ -295,9 +295,9 @@ Visual mode
 
 I have already mentioned the "visual mode" when explaining how to Copy/Paste, but I will do a little reminder here, just in case.
 
-When you are in "normal mode", press |ttv| to switch to the "visual mode". You will then be able to select individual characters or entier lines thanks to the various ways of moving that you just learned above. You can then copy the selected text with |tty| and paste it with |ttp|. To cut it just use |ttd| instead of |tty|.
+When you are in "normal mode", press |ttv| to switch to the "visual mode". You will then be able to select individual characters or entier lines thanks to the various ways of moving that you just learnt above. You can then copy the selected text with |tty| and paste it with |ttp|. To cut it just use |ttd| instead of |tty|.
 
-In "normal mode" you will be able to use |ttV| to select line per line. And of course, use |ttesc| or :vimcmd:`;;` to switch back to "normal mode".
+In "normal mode" you will be able to use |ttV| to select line per line. And of course, use |ttesc| or ``;;`` to switch back to "normal mode".
 
 It's your turn!
 ===============
